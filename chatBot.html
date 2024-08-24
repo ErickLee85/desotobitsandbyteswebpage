@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ChatBot</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="styles_two.css">
+    <link rel="stylesheet" href="development.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script src="https://kit.fontawesome.com/449cb71b07.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <style>
+        .chatbot-container {
+            background: rgba(0,0,0,0.5);
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: none;
+            place-items: center;
+            z-index: 1000;
+        }
+
+        .chatbox {
+            background: white;
+            min-width: 400px;
+            max-width: 400px;
+            min-height: 500px;
+            border-radius: 15px;
+            display: block;
+            position: relative;
+            transform: translateY(150px);
+            animation: back-up 500ms linear forwards;
+        }
+
+        @keyframes back-up {
+            from {
+                transform: translateY(150px);
+            } to {
+                transform: translateY(0);
+            }   
+        }
+
+        #ellipsis {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.2rem;
+            color: gainsboro;
+            cursor: pointer;
+        }
+
+        .chat-window {
+            width: 100%;
+            height: 450px;
+            overflow: scroll;
+        }
+
+        .chat-input {
+            width: 100%;
+            height: 100%;
+        }
+        #chatbot-form {
+            width: 100%;
+            padding-inline: 20px;
+            border-top: 1px solid gainsboro;
+            padding-block: 5px;
+            position: relative;
+        }
+
+        #prompt-value {
+            border-radius: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+        }
+
+        #paper-plane {
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            padding: 8px 20px;
+            background: rgb(0, 119, 255);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #prompt-value::placeholder {
+            font-size: 0.8rem;
+        }
+
+        .chat-title {
+            width: 100%; 
+            padding: 20px;
+            border-bottom: 1px solid gainsboro;
+        }
+
+        .chat-title h2 {
+            font-size: 1.5rem;
+            color: gainsboro; 
+            font-weight: 300;
+        }
+
+        .chat-title img {
+            height: 20px;
+            width: 20px;
+        }
+
+        @media(max-width:400px) {
+            .chatbox {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <div class="main-container">
+        <!-- <div class="logo"></div> -->
+        <nav id="nav-two">
+            <div class="logo-img">
+                <a href="./index.html">
+                    <img src="./images/small_logo.png" height="250" width="250" alt="">
+                </a>
+            </div>
+            <ul id="desktop-nav-list">
+                <li class="underline-hover-effect dropdown">
+                    Development
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                            <a href="./mobileDevelopment.html">
+                                <i class="fa-thin fa-mobile"></i>Mobile App
+                            <p class="dropdown-description">Custom mobile applications tailored to your business needs,<br> available for both iOS and Android platforms.</p>
+                            </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./webAppDevelopment.html"> <i class="fa-thin fa-globe-pointer"></i> Web Application
+                                <p class="dropdown-description">Robust and scalable web applications with responsive design <br>  and seamless user experience.</p></a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./websiteDevelopment.html"> <i class="fa-thin fa-browser"></i> Company Website
+                            <p class="dropdown-description">Professional websites with modern design, optimized for <br>  performance and SEO.</p></a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./desktopDevelopment.html">
+                            <i class="fa-thin fa-desktop"></i> Desktop App
+                            <p class="dropdown-description">Powerful desktop applications with intuitive interfaces <br>  and high performance.</p>
+                           </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect dropdown">
+                    Visualization
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                           <a href="./dataCharts.html">
+                            <i class="fa-thin fa-chart-line"></i> Data Charts
+                            <p class="dropdown-description">Interactive and visually appealing data charts for better <br>  insights and decision-making.</p>
+                           </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect dropdown">
+                    AI Integration
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                            <i class="fa-thin fa-comments"></i> Chatbot
+                            <p class="dropdown-description">Advanced chatbots that provide seamless customer support <br> and enhance user interaction.</p>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./chatBot.html">
+                                <i class="fa-thin fa-image"></i> Image Generator
+                                <p class="dropdown-description">AI-powered image generators for creating unique and <br>  high-quality visuals.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect">About</li>
+                <li class="underline-hover-effect">Contact</li>
+            </ul>
+
+            <a href="tel:16624695894" style="color: white;"> <button class="call-now-btn">Call Now<i class="fa-solid fa-phone-flip"></i></button></a>
+          
+           <div class="hamburger-menu"> <i class="fa-sharp fa-light fa-bars"></i></div>
+
+        </nav>
+        <section class="mobile-nav">
+            <ul class="mobile-nav-items">
+                <li class="li-header"><span>Development</span>
+                    <ul>
+                        <li><i class="fa-thin fa-mobile"></i>Mobile Development</li>
+                        <li><i class="fa-thin fa-globe-pointer"></i>Company Website</li>
+                        <li><i class="fa-thin fa-browser"></i>Web App</li>
+                        <li><i class="fa-thin fa-desktop"></i>Desktop App</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>Visualization</span>
+                    <ul>
+                        <li><i class="fa-thin fa-chart-line"></i>Data Charts</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>AI Integration</span>
+                    <ul>
+                        <li><i class="fa-thin fa-comments"></i>ChatBot</li>
+                        <li><i class="fa-thin fa-image"></i>Image Generator</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>About</span></li>
+                <li class="li-header"><span>Contact</span></li>
+            </ul>
+        </section>
+        <section class="hero">
+            <div class="hero-block">
+                <header>
+                    <h1> Software Development Applications</h1>
+                    <h2>ChatBot</h2>
+                    <p>Advanced chatbots that provide seamless customer support <br> and enhance user interaction.</p>
+                    <div class="cta-container">
+                        
+                        <a href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"><button id="consult-btn">Schedule Meeting</button></a>
+                        <button id="mobile-service-btn">Learn More</button>
+                    </div>
+                </header>
+            </div>
+            <div class="hero-chatbot-img">
+            </div>
+
+        </section>
+
+        <section class="mobile-section">
+            <p>Integrate a powerful and flexible conversational AI into your apps with the ChatGPT API</p>
+            <h1>ChatGPT</h1>
+            <button id="activate-chatbot">Try It <i class="fa-light fa-arrow-right" style="margin-left: 10px;"></i></button>
+            <div class="mobile-container">
+                <div>
+                    <h2>Language Understanding</h2>
+                    <p>The ChatGPT API offers robust natural language processing capabilities, enabling your applications to interpret and respond to user inputs in a conversational manner.</p>
+                    <i class="fa-light fa-comments"></i>
+                </div>
+                <div>
+                    <h2>Customizable Responses</h2>
+                    <p>With the API, you can fine-tune response generation, allowing for tailored interactions that align with your application's tone and context.</p>
+                    <i class="fa-light fa-sliders-h"></i>
+                </div>
+                <div>
+                    <h2>Scalable Solution</h2>
+                    <p>The API is designed to handle a high volume of requests, making it a reliable solution for applications with large user bases and heavy interaction demands.</p>
+                    <i class="fa-light fa-server"></i>
+                </div>
+                <div>
+                    <h2>Efficient Development</h2>
+                    <p>Integrating the ChatGPT API into your applications streamlines development, reducing the need for building complex conversational logic from scratch.</p>
+                    <i class="fa-light fa-tools"></i>
+                </div>
+                <div>
+                    <h2>Flexible Integration</h2>
+                    <p>The API supports various programming languages and platforms, providing flexibility for developers to integrate conversational AI into diverse tech stacks.</p>
+                    <i class="fa-light fa-code"></i>
+                </div>
+                <div>
+                    <h2>Comprehensive Documentation</h2>
+                    <p>Access to detailed documentation and examples helps developers get started quickly and effectively with the ChatGPT API, reducing the learning curve.</p>
+                    <i class="fa-light fa-book"></i>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section class="contact-section">
+            <div class="custom-shape-divider-top-1723994128">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <p>From your questions to feedback.</p>
+            <h1>Contact</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h1>We would love to hear from you.</h1>
+                    <p>If you have any questions or simply want to leave feedback, please reach out.</p>
+                    <h2>Talk to Sales</h2>
+                    <p>Feel free to email us <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>, or give us a call at
+                    <a href="tel:16624695894">1(662) 469-5894</a></p>
+                </div>
+                <div class="contact-form">
+                    <h1>Message Us</h1>
+                    <form id="contact-form">
+                        <label for="services">Select Service*</label>
+                        <select name="services" id="service-select" required>
+                            <option value="mobile-app">Mobile Development</option>
+                            <option value="website">Company Website</option>
+                            <option value="web-app">Web Application</option>
+                            <option value="desktop-app">Desktop App</option>
+                            <option value="data-charts">Data Charts</option>
+                            <option value="3d">3D Objects</option>
+                            <option value="ai-chat">AI ChatBot</option>
+                            <option value="ai-image">AI Image Generator</option>
+                        </select>
+                        <div class="input-group">
+                            <div>
+                                <label for="first-name">First Name*</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+
+                            <div>
+                                <label for="">Last Name*</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" required>
+                            <label for="phone">Phone*</label>
+                            <input type="text" id="phone" required>
+                            <label for="message">Message*</label>
+                            <textarea name="message" id="message" cols="30" required></textarea>
+                            <button type="submit" id="form-submit-btn">Send Message <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        </div>
+        <footer class="company-footer">
+                <p>	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
+        </footer>
+
+    </div>
+
+  
+    <div class="loader-container">
+        <div class="loader">
+        </div>
+    </div>
+
+    <div class="chatbot-container">
+        <div class="chatbox">
+            <i class="fa-solid fa-xmark" id="ellipsis"></i>
+            <div class="chat-title"> <h2 >GPT-4o-mini <img src="./images/icons8-gpt.svg" alt="chatgpt"></h2></div>
+            <div class="chat-window"></div>
+            <div class="chat-input">  
+                <form id="chatbot-form">
+                    <input type="text" id="prompt-value" placeholder="Enter Prompt">
+                    <i class="fa-solid fa-paper-plane" id="paper-plane"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+
+const mobileServiceButton = document.getElementById('mobile-service-btn')
+
+mobileServiceButton.addEventListener('click', () => {
+  smoothScroll('.mobile-section')
+})
+
+function smoothScroll(section) {
+
+// const targetId = '.project-mgmt-section'
+const targetId = section
+const targetPosition = document.querySelector(targetId).offsetTop - 80;
+const startPosition = window.scrollY;
+const distance = targetPosition - startPosition;
+const duration = 1500;
+let start = null;
+
+window.requestAnimationFrame(step);
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  const progress = timestamp - start;
+  // window.scrollTo(0, distance*(progress/duration) + startPosition);
+  window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+  if (progress < duration) window.requestAnimationFrame(step);
+}
+}
+
+// Easing Functions
+
+function linear(t, b, c, d) {
+return c*t/d + b;
+};
+
+function easeInOutQuad(t, b, c, d) {
+t /= d/2;
+if (t < 1) return c/2*t*t + b;
+t--;
+return -c/2 * (t*(t-2) - 1) + b;
+};
+
+function easeInOutCubic(t, b, c, d) {
+t /= d/2;
+if (t < 1) return c/2*t*t*t + b;
+t -= 2;
+return c/2*(t*t*t + 2) + b;
+};
+
+</script>
+
+
+
+
+<script>
+    const chatbotForm = document.getElementById('chatbot-form');
+    const paperPlane = document.getElementById('paper-plane');
+    const ellipsis = document.getElementById('ellipsis');
+    const openChat = document.getElementById('activate-chatbot');
+
+    let active = false;
+
+    let currentCount = parseInt(localStorage.getItem('promptCount')) || 0;  // Get stored count or start at 0
+
+    function callAlert (msg) {
+        Swal.fire({
+        text: msg,
+        showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+            `
+        },
+        hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+            `
+        }
+        });
+    }
+
+    openChat.addEventListener('click', () => {
+        if(currentCount >= 5) {
+            callAlert('Prompt limit reached.')
+            return;
+        }
+        document.querySelector('.chatbot-container').style.display = 'grid';
+        getCompletion('hello there');
+    });
+
+    ellipsis.addEventListener('click', () => {
+        document.querySelector('.chatbot-container').style.display = 'none';
+        document.querySelector('.chat-window').innerHTML = '';
+    });
+
+    paperPlane.addEventListener('click', () => {
+        if(active) {
+            return;
+        }
+        handleUserQuestion();
+    });
+
+    chatbotForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if(active) {
+            return;
+        }
+        handleUserQuestion();
+    });
+
+    const appendMessage = (sender, message) => {
+        const msgElement = document.createElement('div');
+        const chatBox = document.querySelector('.chat-window');
+
+        msgElement.textContent = message;
+        msgElement.style.display = 'inline-block';
+        msgElement.style.padding = '10px 15px';
+        msgElement.style.margin = '10px';
+        msgElement.style.borderRadius = '15px';
+        msgElement.style.color = 'black';
+        msgElement.style.maxWidth = '70%';
+
+        if (sender === 'user') {
+            msgElement.style.alignSelf = 'flex-end';
+            msgElement.style.backgroundColor = '#DCF8C6';
+            msgElement.style.borderTopRightRadius = '0px';
+        } else {
+            msgElement.style.alignSelf = 'flex-start';
+            msgElement.style.backgroundColor = '#E0E0E0';
+            msgElement.style.borderTopLeftRadius = '0px';
+        }
+
+        chatBox.appendChild(msgElement);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    };
+
+    const handleUserQuestion = () => {
+        if (currentCount >= 5) {
+            alert('Prompt limit reached');
+            return;
+        }
+        
+        currentCount++;
+        localStorage.setItem('promptCount', currentCount);
+
+        userQuestion();
+    };
+
+    const userQuestion = async () => {
+        let msg = document.getElementById('prompt-value').value;
+        if (msg === '') {
+            return;
+        }
+         active = true;
+        appendMessage('user', msg);
+
+        try {
+            await getCompletion(msg);
+            document.getElementById('prompt-value').value = '';
+             active = false;
+        } catch (error) {
+            active = false;
+            console.error('Error:', error);
+        }
+    };
+
+    const getCompletion = async (userPrompt) => {
+        try {
+           
+            function _0x5d23(_0x469fc8,_0xca7313){const _0x297ad7=_0x367e();return _0x5d23=function(_0x6e56bd,_0xcd5e82){_0x6e56bd=_0x6e56bd-(0x13a2*0x1+0xf71+-0x221c);let _0x38a56d=_0x297ad7[_0x6e56bd];return _0x38a56d;},_0x5d23(_0x469fc8,_0xca7313);}const _0x184877=_0x5d23;function _0x367e(){const _0x1cf09a=['1331180oNtfMl','1344010jpwtkm','1201403uHiyqU','rAsBCixVxO','68NZzBJh','5832LVpmAC','22fJqfZI','35601UqYlEU','hujIty8Ovj','1098aPFoVI','sk-proj-K0','356492EkPpEm','6YRWumP','5B5vRqmKT3','BlbkFJBQ1G','83061hDlqiu','bLZ6rX'];_0x367e=function(){return _0x1cf09a;};return _0x367e();}(function(_0x558a62,_0x22f465){const _0x51aceb=_0x5d23,_0x499523=_0x558a62();while(!![]){try{const _0x34373f=parseInt(_0x51aceb(0x104))/(0x13ac+0xc4*-0x17+-0x20f)+-parseInt(_0x51aceb(0xf9))/(0x1a7c+0x2220+-0x3c9a*0x1)*(parseInt(_0x51aceb(0xfc))/(0xdd4+0x1d88+-0x2b59))+parseInt(_0x51aceb(0x100))/(-0xda4+-0xe9f+0x1c47)+parseInt(_0x51aceb(0x106))/(0xa14+-0x1*0x481+-0x12*0x4f)+-parseInt(_0x51aceb(0x101))/(-0x1*-0xb35+0x573+-0x2*0x851)*(parseInt(_0x51aceb(0xf7))/(0x17b*0x13+-0x1*0x2697+-0x5*-0x219))+parseInt(_0x51aceb(0xfa))/(-0x1835*0x1+-0x1038+0x2875)*(parseInt(_0x51aceb(0xfe))/(0x347+0x1052+0x4e4*-0x4))+parseInt(_0x51aceb(0x107))/(-0x267a*-0x1+0x1461+-0x3ad1)*(parseInt(_0x51aceb(0xfb))/(-0x86e+0x7a3*-0x5+0x2ea8));if(_0x34373f===_0x22f465)break;else _0x499523['push'](_0x499523['shift']());}catch(_0x50223d){_0x499523['push'](_0x499523['shift']());}}}(_0x367e,-0x56cc1+-0x33ace+0xc070c));const apiKey=_0x184877(0xff)+_0x184877(0xfd)+_0x184877(0x102)+_0x184877(0x103)+_0x184877(0xf8)+_0x184877(0x105);
+            const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: "gpt-4o-mini",
+                    messages: [
+                        { role: "system", content: "You are a helpful assistant with a great positive attitude." },
+                        { role: "user", content: userPrompt },
+                    ],
+                    stream: true,
+                })
+            });
+
+            if (!response.body) {
+                throw new Error('ReadableStream not supported in this browser.');
+            }
+
+            const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+            if (!reader) return false;
+
+            const msgElement = document.createElement('div');
+            const chatBox = document.querySelector('.chat-window');
+            msgElement.style.display = 'inline-block';
+            msgElement.style.overflow = 'hidden';
+            msgElement.style.padding = '10px 15px';
+            msgElement.style.margin = '20px';
+            msgElement.style.borderRadius = '15px';
+            msgElement.style.maxWidth = '70%';
+            msgElement.style.alignSelf = 'flex-start';
+            msgElement.style.backgroundColor = '#E0E0E0';
+            chatBox.appendChild(msgElement);
+
+            while (true) {
+                const { value, done } = await reader.read();
+                if (done) break;
+                let dataDone = false;
+                const arr = value.split('\n');
+                arr.forEach((data) => {
+                    if (data.length === 0) return;
+                    if (data.startsWith(':')) return;
+                    if (data === 'data: [DONE]') {
+                        dataDone = true;
+                        return;
+                    }
+                    const json = JSON.parse(data.substring(6));
+                    if (json.choices[0].delta.content) {
+                        msgElement.textContent += json.choices[0].delta.content;
+                    } else {
+                        return false;
+                    }
+                    msgElement.scrollIntoView({ behavior: 'smooth' });
+                });
+                if (dataDone) break;
+            }
+
+            return true;
+
+        } catch (error) {
+            console.error('Error fetching data from OpenAI:', error);
+            return false;
+        }
+    };
+</script>
+
+
+<script src="app.js"></script>
+</body>
+</html>

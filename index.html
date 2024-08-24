@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desoto Bits & Bytes - Software Solutions</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="styles_two.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/449cb71b07.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="main-container">
+        <!-- <div class="logo"></div> -->
+        <nav id="nav-two">
+            <div class="logo-img">
+                <img src="./images/small_logo.png" height="250" width="250" alt="">
+            </div>
+            <ul id="desktop-nav-list">
+                <li class="underline-hover-effect dropdown">
+                    Development
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                            <a href="./mobileDevelopment.html">
+                                <i class="fa-thin fa-mobile"></i>Mobile App
+                            <p class="dropdown-description">Custom mobile applications tailored to your business needs,<br> available for both iOS and Android platforms.</p>
+                            </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./webAppDevelopment.html"> <i class="fa-thin fa-globe-pointer"></i> Web Application
+                                <p class="dropdown-description">Robust and scalable web applications with responsive design <br>  and seamless user experience.</p></a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./websiteDevelopment.html"> <i class="fa-thin fa-browser"></i> Company Website
+                            <p class="dropdown-description">Professional websites with modern design, optimized for <br>  performance and SEO.</p></a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./desktopDevelopment.html">
+                            <i class="fa-thin fa-desktop"></i> Desktop App
+                            <p class="dropdown-description">Powerful desktop applications with intuitive interfaces <br>  and high performance.</p>
+                           </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect dropdown">
+                    Visualization
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                           <a href="./dataCharts.html">
+                            <i class="fa-thin fa-chart-line"></i> Data Charts
+                            <p class="dropdown-description">Interactive and visually appealing data charts for better <br>  insights and decision-making.</p>
+                           </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect dropdown">
+                    AI Integration
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                           <a href="./chatBot.html">
+                            <i class="fa-thin fa-comments"></i> Chatbot
+                            <p class="dropdown-description">Advanced chatbots that provide seamless customer support <br> and enhance user interaction.</p>
+                           </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <i class="fa-thin fa-image"></i> Image Generator
+                            <p class="dropdown-description">AI-powered image generators for creating unique and <br>  high-quality visuals.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect">About</li>
+                <li class="underline-hover-effect">Contact</li>
+            </ul>
+
+            <a href="tel:16624695894" style="color: white;"> <button class="call-now-btn">Call Now<i class="fa-solid fa-phone-flip"></i></button></a>
+          
+           <div class="hamburger-menu"> <i class="fa-sharp fa-light fa-bars"></i></div>
+
+        </nav>
+        <section class="mobile-nav">
+            <ul class="mobile-nav-items">
+                <li class="li-header"><span>Development</span>
+                    <ul>
+                        <li><i class="fa-thin fa-mobile"></i>Mobile Development</li>
+                        <li><i class="fa-thin fa-globe-pointer"></i>Company Website</li>
+                        <li><i class="fa-thin fa-browser"></i>Web App</li>
+                        <li><i class="fa-thin fa-desktop"></i>Desktop App</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>Visualization</span>
+                    <ul>
+                        <li><i class="fa-thin fa-chart-line"></i>Data Charts</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>AI Integration</span>
+                    <ul>
+                        <li><i class="fa-thin fa-comments"></i>ChatBot</li>
+                        <li><i class="fa-thin fa-image"></i>Image Generator</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>About</span></li>
+                <li class="li-header"><span>Contact</span></li>
+            </ul>
+        </section>
+        <section class="hero">
+            <div class="hero-block">
+                <header>
+                    <h1> Software Development in Desoto County, MS</h1>
+                    <h2>We Provide Custom Software Solutions for Businesses.</h2>
+                    <p>Schedule a meeting or call us at <a href="tel:16624695894">(662) 469-5894</a></p>
+                    <div class="cta-container">
+                        
+                        <a href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"><button id="consult-btn">Schedule Meeting</button></a>
+                        <button id="service-btn">Services</button>
+                    </div>
+                </header>
+            </div>
+            <div class="hero-img">
+            </div>
+
+        </section>
+        <section class="service-section">
+            <p>Lets turn your vision into a reality.</p>
+            <h1>Our Services</h1>
+            <div class="line-div"></div>
+            <div class="service-container">
+                <div onclick="comingSoon('mobile development')">
+                    <i class="fa-light fa-mobile"></i>
+                    <p>Mobile App</p>
+                    </div>
+                <div onclick="comingSoon('web app')">
+                    <i class="fa-light fa-globe-pointer"></i>
+                    <p>Web Application</p>
+                </div>
+                <div onclick="comingSoon('website')">
+                    <i class="fa-light fa-browser"></i>
+                    <p>Company Website</p>
+                    </div>
+            
+                <div onclick="comingSoon('desktop')">
+                    <i class="fa-thin fa-desktop"></i>
+                    <p>Desktop App</p>
+                </div>
+                <div onclick="comingSoon()">
+                    <i class="fa-thin fa-chart-line"></i>
+                    <p>Data Charts</p>
+                </div>
+                <div onclick="comingSoon()">
+                    <i class="fa-thin fa-comments"></i>
+                    <p>AI ChatBot</p>
+                </div>
+                <div onclick="comingSoon()">
+                     <i class="fa-thin fa-image"></i>
+                    <p>AI Image Generator</p>
+                    </div>
+            </div>
+        </section>
+        <section class="customer-reviews">
+            <div class="custom-shape-divider-top-1723994128">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <p>Read a few of our Google reviews.</p>
+            <h1>Customer Testimonials</h1>
+            <span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                (5.0)
+            </span>
+            <div class="review-container">
+                <div class="review-one main-review">
+                    <i class="fa-solid fa-quote-left font-awesome-quote"></i>
+                        <div class="img-holder">
+                            <img src="./images/icons8-google.svg" alt="scada img"  id="hawk-scada-img">
+                            <div class="name-holder">
+                                <h2>Olen Booth</h2>
+                                <p>Hawk Scada</p>
+                            </div>
+                        </div>
+                        <p>
+                            They built a web application for me and migrated existing databases into the new app. Very happy with the results. Definitely recommend to anyone needing anything software related.
+                        </p>
+                </div>
+                <div class="review-two main-review">
+                    <div class="img-holder">
+                        <img src="./images/icons8-google.svg"alt="scada img"  id="champz-img">
+                        <div class="name-holder">
+                            <h2>Chad Williamson</h2>
+                            <p>Champz Detailing</p>
+                        </div>
+                    </div>
+                    <p>
+                        Fantastic service and highly recommended!
+                    </p>
+                </div>
+                <div class="review-three main-review">
+                    <div class="img-holder">
+                        <img src="./images/icons8-google.svg" alt="memphis sealcoat img"  id="sealcoat-img">
+                        <div class="name-holder">
+                            <h2>Nathan Tapley</h2>
+                            <p>Memphis Sealcoat</p>
+                        </div>
+                    </div>
+                    <p>
+                        I recently had the pleasure of working with Desoto Bits And Bytes LLC for the creation and maintenance of my website, and I must say, I am thoroughly impressed! From the outset, the team displayed
+                         an exceptional level of professionalism and expertise. They took the time to understand my vision and requirements, translating them into a beautifully designed and highly functional website.
+                    </p>
+                </div>
+                <div class="review-four main-review">
+                    <div class="img-holder">
+                        <img src="./images/icons8-google.svg" alt="ozark img"  id="ozark-img">
+                        <div class="name-holder">
+                            <h2>Colby Crowne</h2>
+                            <p>Ozark Apps</p>
+                        </div>
+                    </div>
+                    <p>
+                        Really impressed by this company, Erick was great to work with. The price and quality are just hard to beat. Highly recommend to anyone looking to get a website or app built.
+                    </p>
+                </div>
+                <div class="review-five main-review">
+                    <i class="fa-solid fa-quote-right" id="right-quote"></i>
+                    <div class="img-holder">
+                        <img src="./images/icons8-google.svg" alt="ozark img"  id="lomberg-img">
+                        <div class="name-holder">
+                            <h2>Jon Lomberg</h2>
+                            <p>Artist</p>
+                        </div>
+                    </div>
+                    <p>
+                        I started working with Desoto Bits and Bytes last year to manage my web sites. Their service has been fast and exactly what I had hoped. They respond to my queries and requests promptly and accurately and resolve any issues I have had.                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="faq-section">
+            <p>Common questions on Software Development.</p>
+            <h1>FAQs</h1>
+            <section class="c-faqs">
+                <div class="c-faqs__items">
+                  <details class="c-faqs__item">
+                    <summary class="c-faqs__item-question">
+                        How long does software development take?
+                    </summary>
+
+                    <p class="c-faqs__item-answer">
+                        The duration varies greatly depending on the complexity of the project. Some projects may be completed in a few weeks, while others can take months. To estimate the timeframe, a thorough evaluation of the project scope is necessary.                    </p>
+                  </details>
+
+                  <details class="c-faqs__item">
+                    <summary class="c-faqs__item-question">
+                        Do I need to be tech-savvy?
+                    </summary>
+
+                    <p class="c-faqs__item-answer">
+                        No, you don't need to be a technical expert. The development team will guide you through the process, explain everything clearly, and focus on bringing your vision to life.                    </p>
+                  </details>
+
+                  <details class="c-faqs__item">
+                    <summary class="c-faqs__item-question">
+                       Should I choose a mobile app or web app?
+                    </summary>
+                    <p class="c-faqs__item-answer">
+                        Both have their pros and cons. Mobile apps offer more monetization options and data collection capabilities, while web apps are generally less expensive to develop. Progressive Web Apps (PWAs) provide a middle ground by combining features of both.                    </p>
+                  </details>
+
+                  <details class="c-faqs__item">
+                    <summary class="c-faqs__item-question">
+                        How do you guarantee the quality of the software?
+                    </summary>
+                    <p class="c-faqs__item-answer">
+                        Quality is ensured through regular testing and iteration, taking into account customer feedback at every stage. Agile methodologies are often employed to make sure that the product evolves with each iteration.                  </details>
+
+                  <details class="c-faqs__item">
+                    <summary class="c-faqs__item-question">
+                        Can the software be upgraded in the future?
+                    </summary>
+                    <p class="c-faqs__item-answer">
+                        Yes, the software can always be upgraded as new technologies emerge or as your business needs evolve. The development team can help with future updates and improvements.                  </details>
+                </div>
+              </section>
+        </section>
+        <section class="contact-section">
+            <div class="custom-shape-divider-top-1723994128">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <p>From your questions to feedback.</p>
+            <h1>Contact</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h1>We would love to hear from you.</h1>
+                    <p>If you have any questions or simply want to leave feedback, please reach out.</p>
+                    <h2>Talk to Sales</h2>
+                    <p>Feel free to email us <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>, or give us a call at
+                    <a href="tel:16624695894">1(662) 469-5894</a></p>
+                </div>
+                <div class="contact-form">
+                    <h1>Message Us</h1>
+                    <form id="contact-form">
+                        <label for="services">Select Service*</label>
+                        <select name="services" id="service-select" required>
+                            <option value="mobile-app">Mobile Development</option>
+                            <option value="website">Company Website</option>
+                            <option value="web-app">Web Application</option>
+                            <option value="desktop-app">Desktop App</option>
+                            <option value="data-charts">Data Charts</option>
+                            <option value="3d">3D Objects</option>
+                            <option value="ai-chat">AI ChatBot</option>
+                            <option value="ai-image">AI Image Generator</option>
+                        </select>
+                        <div class="input-group">
+                            <div>
+                                <label for="first-name">First Name*</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+
+                            <div>
+                                <label for="">Last Name*</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" required>
+                            <label for="phone">Phone*</label>
+                            <input type="text" id="phone" required>
+                            <label for="message">Message*</label>
+                            <textarea name="message" id="message" cols="30" required></textarea>
+                            <button type="submit" id="form-submit-btn">Send Message <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer class="company-footer">
+
+                <!-- <img src="./images/small_logo.png" height="250" width="250" alt=""> -->
+                <p>	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
+               <!-- <p> <a href="tel:16624695894">(662) 469-5894</a></p>
+               <p> <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a></p> -->
+       
+        </footer>
+
+    </div>
+
+    <div class="on-this-page">
+       <ul>
+        <li id="li-title">Content</li>
+        <li id="li-services" onclick="goTo('services')">Services</li>
+        <li id="li-testimonials" onclick="goTo('testimonials')">Testimonials</li>
+        <li id="li-faqs" onclick="goTo('faqs')">FAQs</li>
+        <li id="contact-section" onclick="goTo('contact')">Contact</li>
+       </ul>
+    </div>
+    <!-- Calendly link widget begin -->
+<!-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script> -->
+
+
+
+<div class="loader-container">
+    <div class="loader">
+    </div>
+</div>
+<script src="app.js"></script>
+<script>
+
+</script>
+</body>
+</html>

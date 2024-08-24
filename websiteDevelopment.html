@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="styles_two.css">
+    <link rel="stylesheet" href="development.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/449cb71b07.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <!-- <div class="logo"></div> -->
+        <nav id="nav-two">
+            <div class="logo-img">
+                <a href="./index.html">
+                    <img src="./images/small_logo.png" height="250" width="250" alt="">
+                </a>
+            </div>
+            <ul id="desktop-nav-list">
+                <li class="underline-hover-effect dropdown">
+                    Development
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                            <a href="./mobileDevelopment.html">
+                                <i class="fa-thin fa-mobile"></i>Mobile App
+                            <p class="dropdown-description">Custom mobile applications tailored to your business needs,<br> available for both iOS and Android platforms.</p>
+                            </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./webAppDevelopment.html"> <i class="fa-thin fa-globe-pointer"></i> Web Application
+                                <p class="dropdown-description">Robust and scalable web applications with responsive design <br>  and seamless user experience.</p></a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href=".//websiteDevelopment.html"> <i class="fa-thin fa-browser"></i> Company Website
+                            <p class="dropdown-description">Professional websites with modern design, optimized for <br>  performance and SEO.</p></a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./desktopDevelopment.html">
+                            <i class="fa-thin fa-desktop"></i> Desktop App
+                            <p class="dropdown-description">Powerful desktop applications with intuitive interfaces <br>  and high performance.</p>
+                           </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect dropdown">
+                    Visualization
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                           <a href="./dataCharts.html">
+                            <i class="fa-thin fa-chart-line"></i> Data Charts
+                            <p class="dropdown-description">Interactive and visually appealing data charts for better <br>  insights and decision-making.</p>
+                           </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect dropdown">
+                    AI Integration
+                    <ul class="dropdown-menu">
+                        <li class="underline-hover-effect-two">
+                            <a href="./chatBot.html">
+                                <i class="fa-thin fa-comments"></i> Chatbot
+                                <p class="dropdown-description">Advanced chatbots that provide seamless customer support <br> and enhance user interaction.</p>
+                               </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <i class="fa-thin fa-image"></i> Image Generator
+                            <p class="dropdown-description">AI-powered image generators for creating unique and <br>  high-quality visuals.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="underline-hover-effect">About</li>
+                <li class="underline-hover-effect">Contact</li>
+            </ul>
+
+            <a href="tel:16624695894" style="color: white;"> <button class="call-now-btn">Call Now<i class="fa-solid fa-phone-flip"></i></button></a>
+          
+           <div class="hamburger-menu"> <i class="fa-sharp fa-light fa-bars"></i></div>
+
+        </nav>
+        <section class="mobile-nav">
+            <ul class="mobile-nav-items">
+                <li class="li-header"><span>Development</span>
+                    <ul>
+                        <li><i class="fa-thin fa-mobile"></i>Mobile Development</li>
+                        <li><i class="fa-thin fa-globe-pointer"></i>Company Website</li>
+                        <li><i class="fa-thin fa-browser"></i>Web App</li>
+                        <li><i class="fa-thin fa-desktop"></i>Desktop App</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>Visualization</span>
+                    <ul>
+                        <li><i class="fa-thin fa-chart-line"></i>Data Charts</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>AI Integration</span>
+                    <ul>
+                        <li><i class="fa-thin fa-comments"></i>ChatBot</li>
+                        <li><i class="fa-thin fa-image"></i>Image Generator</li>
+                    </ul>
+                </li>
+                <li class="li-header"><span>About</span></li>
+                <li class="li-header"><span>Contact</span></li>
+            </ul>
+        </section>
+        <section class="hero">
+            <div class="hero-block">
+                <header>
+                    <h1>Software Development Applications</h1>
+                    <h2>Company Website</h2>
+                    <p>Professional websites with modern design, optimized for <br>  performance and SEO.</p>
+                    <div class="cta-container">
+                        
+                        <a href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"><button id="consult-btn">Schedule Meeting</button></a>
+                        <button id="mobile-service-btn">Learn More</button>
+                    </div>
+                </header>
+            </div>
+            <div class="hero-website-img">
+            </div>
+
+        </section>
+
+        <section class="mobile-section">
+            <p>Designing clean, efficient, and responsive websites from the ground up.</p>
+            <h1>HTML</h1>
+            <div class="mobile-container">
+                <div>
+                    <h2>Visibility</h2>
+                    <p>Having a website allows a company to be found by potential customers online. With proper SEO practices, your website can rank higher in search engine results, making it easier for people to discover your business.</p>
+                    <i class="fa-light fa-eye"></i>
+                </div>
+                <div>
+                    <h2>Reach</h2>
+                    <p>A website allows a company to reach a global audience, breaking geographical barriers. This expands your potential customer base and opens up new markets that were previously inaccessible.</p>
+                    <i class="fa-light fa-globe"></i>
+                </div>
+                <div>
+                    <h2>Credibility</h2>
+                    <p>A professional website helps build credibility and trust with potential customers. It serves as a platform to showcase your products, services, and customer testimonials, reinforcing your brand's reliability and reputation.</p>
+                    <i class="fa-light fa-shield-alt"></i>
+                </div>
+                <div>
+                    <h2>Availability</h2>
+                    <p>Unlike a physical store, a website is accessible 24/7. This allows customers to learn about your business, browse products, and make purchases at any time, increasing convenience and potential sales.</p>
+                    <i class="fa-light fa-clock"></i>
+                </div>
+                <div>
+                    <h2>Marketing</h2>
+                    <p>A website provides a cost-effective way to market your business. With digital marketing strategies like SEO, social media, and email marketing, you can reach a larger audience at a fraction of the cost of traditional advertising methods.</p>
+                    <i class="fa-light fa-bullhorn"></i>
+                </div>
+                <div>
+                    <h2>Engagement</h2>
+                    <p>A website enables better customer engagement through interactive features like blogs, contact forms, and chatbots. These tools help you connect with your audience, address their queries, and foster relationships that can lead to increased loyalty and sales.</p>
+                    <i class="fa-light fa-comments"></i>
+                </div>
+            </div>
+        </section>
+        <section class="contact-section">
+            <div class="custom-shape-divider-top-1723994128">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <p>From your questions to feedback.</p>
+            <h1>Contact</h1>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h1>We would love to hear from you.</h1>
+                    <p>If you have any questions or simply want to leave feedback, please reach out.</p>
+                    <h2>Talk to Sales</h2>
+                    <p>Feel free to email us <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>, or give us a call at
+                    <a href="tel:16624695894">1(662) 469-5894</a></p>
+                </div>
+                <div class="contact-form">
+                    <h1>Message Us</h1>
+                    <form id="contact-form">
+                        <label for="services">Select Service*</label>
+                        <select name="services" id="service-select" required>
+                            <option value="mobile-app">Mobile Development</option>
+                            <option value="website">Company Website</option>
+                            <option value="web-app">Web Application</option>
+                            <option value="desktop-app">Desktop App</option>
+                            <option value="data-charts">Data Charts</option>
+                            <option value="3d">3D Objects</option>
+                            <option value="ai-chat">AI ChatBot</option>
+                            <option value="ai-image">AI Image Generator</option>
+                        </select>
+                        <div class="input-group">
+                            <div>
+                                <label for="first-name">First Name*</label>
+                                <input type="text" id="first-name" required>
+                            </div>
+
+                            <div>
+                                <label for="">Last Name*</label>
+                                <input type="text" id="last-name" required>
+                            </div>
+                        </div>
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" required>
+                            <label for="phone">Phone*</label>
+                            <input type="text" id="phone" required>
+                            <label for="message">Message*</label>
+                            <textarea name="message" id="message" cols="30" required></textarea>
+                            <button type="submit" id="form-submit-btn">Send Message <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        </div>
+        <footer class="company-footer">
+                <p>	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
+        </footer>
+
+    </div>
+
+    <div class="loader-container">
+        <div class="loader">
+        </div>
+    </div>
+
+
+
+<script>
+
+
+const mobileServiceButton = document.getElementById('mobile-service-btn')
+
+mobileServiceButton.addEventListener('click', () => {
+  smoothScroll('.mobile-section')
+})
+
+function smoothScroll(section) {
+
+// const targetId = '.project-mgmt-section'
+const targetId = section
+const targetPosition = document.querySelector(targetId).offsetTop - 80;
+const startPosition = window.scrollY;
+const distance = targetPosition - startPosition;
+const duration = 1500;
+let start = null;
+
+window.requestAnimationFrame(step);
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  const progress = timestamp - start;
+  // window.scrollTo(0, distance*(progress/duration) + startPosition);
+  window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+  if (progress < duration) window.requestAnimationFrame(step);
+}
+}
+
+// Easing Functions
+
+function linear(t, b, c, d) {
+return c*t/d + b;
+};
+
+function easeInOutQuad(t, b, c, d) {
+t /= d/2;
+if (t < 1) return c/2*t*t + b;
+t--;
+return -c/2 * (t*(t-2) - 1) + b;
+};
+
+function easeInOutCubic(t, b, c, d) {
+t /= d/2;
+if (t < 1) return c/2*t*t*t + b;
+t -= 2;
+return c/2*(t*t*t + 2) + b;
+};
+
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
