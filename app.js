@@ -299,6 +299,7 @@ hamburgerMenu.addEventListener('click', () => {
 
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
+  document.querySelector('.form-loader-container').style.display = 'grid'
 
   const data = {
     services: document.getElementById('service-select').value,
@@ -309,18 +310,20 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     message: document.getElementById('message').value,
   };
 
-  console.log(data)
-
-  Swal.fire({
-    text: "Message Sent!",
-    icon: "success"
-  });
-
-  // try {
-  //   const response = await axios.post('/sendMessage', data);
-  //   alert(response.data);
-  // } catch (error) {
-  //   console.error('There was an error!', error);
-  // }
+  try {
+    const response = await axios.post('https://nodemailer-gold.vercel.app/sendMessage', data);
+    document.querySelector('.form-loader-container').style.display = 'none'
+    Swal.fire({
+      text: "Message Sent!",
+      icon: "success"
+    });
+  } catch (error) {
+    document.querySelector('.form-loader-container').style.display = 'none'
+    Swal.fire({
+      text: "Message Failed",
+      icon: "info"
+    });
+    console.error('There was an error!', error);
+  }
   document.getElementById('contact-form').reset();
 });

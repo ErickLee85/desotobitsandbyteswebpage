@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/449cb71b07.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -425,8 +426,12 @@
                     <a href="tel:16624695894">1(662) 469-5894</a></p>
                 </div>
                 <div class="contact-form">
+                    <div class="form-loader-container">
+                        <div class="form-loader"></div>
+                    </div>
                     <h1>Message Us</h1>
                     <form id="contact-form">
+                        
                         <label for="services">Select Service*</label>
                         <select name="services" id="service-select" required>
                             <option value="mobile-app">Mobile Development</option>

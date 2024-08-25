@@ -749,11 +749,14 @@ ul li {
     background: rgb(248,248,248);
     padding: 40px 40px;
     border-radius: 10px;
+    position: relative;
+   
 }
 
 .contact-form form {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 #service-select {
@@ -891,14 +894,25 @@ textarea {
     cursor: pointer;
 }
 
-.loader {
+.form-loader-container {
+    display: none;
+    place-items: center;
+    background: rgba(0,0,0,0.2);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+}
+
+.loader, .form-loader {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     position: relative;
     animation: rotate 1s linear infinite
   }
-  .loader::before {
+  .loader::before, .form-loader::before {
     content: "";
     box-sizing: border-box;
     position: absolute;

@@ -488,6 +488,19 @@ return c/2*(t*t*t + 2) + b;
     const openChat = document.getElementById('activate-chatbot');
     const aiLoader = document.querySelector('.ai-loader-container');
 
+    async function getApiKey() {
+        try {
+            const response = await fetch('https://nodemailer-gold.vercel.app/chat_api_key');
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            return data.apiKey;
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+        }
+
     let active = false;
     let aiThinking = false;
 
@@ -621,8 +634,7 @@ return c/2*(t*t*t + 2) + b;
 
     const getCompletion = async (userPrompt) => {
             aiThinking = true;
-         function _0x5d23(_0x469fc8,_0xca7313){const _0x297ad7=_0x367e();return _0x5d23=function(_0x6e56bd,_0xcd5e82){_0x6e56bd=_0x6e56bd-(0x13a2*0x1+0xf71+-0x221c);let _0x38a56d=_0x297ad7[_0x6e56bd];return _0x38a56d;},_0x5d23(_0x469fc8,_0xca7313);}const _0x184877=_0x5d23;function _0x367e(){const _0x1cf09a=['1331180oNtfMl','1344010jpwtkm','1201403uHiyqU','rAsBCixVxO','68NZzBJh','5832LVpmAC','22fJqfZI','35601UqYlEU','hujIty8Ovj','1098aPFoVI','sk-proj-K0','356492EkPpEm','6YRWumP','5B5vRqmKT3','BlbkFJBQ1G','83061hDlqiu','bLZ6rX'];_0x367e=function(){return _0x1cf09a;};return _0x367e();}(function(_0x558a62,_0x22f465){const _0x51aceb=_0x5d23,_0x499523=_0x558a62();while(!![]){try{const _0x34373f=parseInt(_0x51aceb(0x104))/(0x13ac+0xc4*-0x17+-0x20f)+-parseInt(_0x51aceb(0xf9))/(0x1a7c+0x2220+-0x3c9a*0x1)*(parseInt(_0x51aceb(0xfc))/(0xdd4+0x1d88+-0x2b59))+parseInt(_0x51aceb(0x100))/(-0xda4+-0xe9f+0x1c47)+parseInt(_0x51aceb(0x106))/(0xa14+-0x1*0x481+-0x12*0x4f)+-parseInt(_0x51aceb(0x101))/(-0x1*-0xb35+0x573+-0x2*0x851)*(parseInt(_0x51aceb(0xf7))/(0x17b*0x13+-0x1*0x2697+-0x5*-0x219))+parseInt(_0x51aceb(0xfa))/(-0x1835*0x1+-0x1038+0x2875)*(parseInt(_0x51aceb(0xfe))/(0x347+0x1052+0x4e4*-0x4))+parseInt(_0x51aceb(0x107))/(-0x267a*-0x1+0x1461+-0x3ad1)*(parseInt(_0x51aceb(0xfb))/(-0x86e+0x7a3*-0x5+0x2ea8));if(_0x34373f===_0x22f465)break;else _0x499523['push'](_0x499523['shift']());}catch(_0x50223d){_0x499523['push'](_0x499523['shift']());}}}(_0x367e,-0x56cc1+-0x33ace+0xc070c));const apiKey=_0x184877(0xff)+_0x184877(0xfd)+_0x184877(0x102)+_0x184877(0x103)+_0x184877(0xf8)+_0x184877(0x105);
-
+        const apiKey = await getApiKey();
         const config = {
             headers: {
                 'Content-Type': 'application/json',
