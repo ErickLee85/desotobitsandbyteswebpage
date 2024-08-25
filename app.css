@@ -16,6 +16,9 @@ p {
     line-height: 1.4;
 }
 
+button {
+    border-radius: 5px;
+}
 
 
 .main-container {
@@ -274,6 +277,24 @@ ul li {
     width: 400px;
     height: 500px;
     background: linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,1)), url('./images/opened-ai-chat-laptop.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.hero-image-gen-img {
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,1)), url('./images/pexels-teona-swift-6912818.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.hero-contact-img {
+    width: 400px;
+    height: 500px;
+    background: linear-gradient(to left, rgba(255,255,255,0.3), rgba(255,255,255,1)), url('./images/pexels-pixabay-356372.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 10px;
@@ -995,7 +1016,7 @@ textarea {
         padding-inline: 0px;
         justify-content: center;
     }
-    .hero-img, .hero-development-img, .hero-webapp-img, .hero-website-img, .hero-desktop-img, .hero-chart-img, .hero-chatbot-img {
+    .hero-img, .hero-development-img, .hero-webapp-img, .hero-website-img, .hero-desktop-img, .hero-chart-img, .hero-chatbot-img, .hero-image-gen-img, .hero-contact-img  {
         width: 300px;
         height: 400px;
     }
@@ -1039,7 +1060,7 @@ textarea {
     .hero {
         min-height: 50vh;
     }
-    .hero-img, .hero-development-img,  .hero-webapp-img, .hero-website-img, .hero-desktop-img, .hero-chart-img, .hero-chatbot-img {
+    .hero-img, .hero-development-img,  .hero-webapp-img, .hero-website-img, .hero-desktop-img, .hero-chart-img, .hero-chatbot-img, .hero-image-gen-img, .hero-contact-img  {
         display: none;
     }
 
