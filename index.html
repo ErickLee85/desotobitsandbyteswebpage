@@ -208,26 +208,27 @@
             <ul class="mobile-nav-items">
                 <li class="li-header"><span>Development</span>
                     <ul>
-                        <li><i class="fa-thin fa-mobile"></i>Mobile Development</li>
-                        <li><i class="fa-thin fa-globe-pointer"></i>Company Website</li>
-                        <li><i class="fa-thin fa-browser"></i>Web App</li>
-                        <li><i class="fa-thin fa-desktop"></i>Desktop App</li>
+                        <li onclick="goToRoute('mobile development')"><i class="fa-thin fa-mobile"></i>Mobile Development</li>
+                        <li onclick="goToRoute('website')"><i class="fa-thin fa-globe-pointer"></i>Company Website</li>
+                        <li onclick="goToRoute('web app')"><i class="fa-thin fa-browser"></i>Web App</li>
+                        <li onclick="goToRoute('desktop')"><i class="fa-thin fa-desktop"></i>Desktop App</li>
                     </ul>
                 </li>
                 <li class="li-header"><span>Visualization</span>
                     <ul>
-                        <li><i class="fa-thin fa-chart-line"></i>Data Charts</li>
+                        <li onclick="goToRoute('charts')"><i class="fa-thin fa-chart-line"></i>Data Charts</li>
                     </ul>
                 </li>
                 <li class="li-header"><span>AI Integration</span>
                     <ul>
-                        <li><i class="fa-thin fa-comments"></i>ChatBot</li>
-                        <li><i class="fa-thin fa-image"></i>Image Generator</li>
+                        <li onclick="goToRoute('chatbot')"><i class="fa-thin fa-comments"></i>ChatBot</li>
+                        <li onclick="goToRoute('imagegen')"><i class="fa-thin fa-image"></i>Image Generator</li>
                     </ul>
                 </li>
                 <li class="li-header"><span>Contact</span></li>
             </ul>
         </section>
+        
         <section class="hero">
             <div class="hero-block">
                 <header>
@@ -367,47 +368,63 @@
             <h1>FAQs</h1>
             <section class="c-faqs">
                 <div class="c-faqs__items">
-                  <details class="c-faqs__item">
-                    <summary class="c-faqs__item-question">
-                        How long does software development take?
-                    </summary>
-
-                    <p class="c-faqs__item-answer">
-                        The duration varies greatly depending on the complexity of the project. Some projects may be completed in a few weeks, while others can take months. To estimate the timeframe, a thorough evaluation of the project scope is necessary.                    </p>
-                  </details>
-
-                  <details class="c-faqs__item">
-                    <summary class="c-faqs__item-question">
-                        Do I need to be tech-savvy?
-                    </summary>
-
-                    <p class="c-faqs__item-answer">
-                        No, you don't need to be a technical expert. The development team will guide you through the process, explain everything clearly, and focus on bringing your vision to life.                    </p>
-                  </details>
-
-                  <details class="c-faqs__item">
-                    <summary class="c-faqs__item-question">
-                       Should I choose a mobile app or web app?
-                    </summary>
-                    <p class="c-faqs__item-answer">
-                        Both have their pros and cons. Mobile apps offer more monetization options and data collection capabilities, while web apps are generally less expensive to develop. Progressive Web Apps (PWAs) provide a middle ground by combining features of both.                    </p>
-                  </details>
-
-                  <details class="c-faqs__item">
-                    <summary class="c-faqs__item-question">
-                        How do you guarantee the quality of the software?
-                    </summary>
-                    <p class="c-faqs__item-answer">
-                        Quality is ensured through regular testing and iteration, taking into account customer feedback at every stage. Agile methodologies are often employed to make sure that the product evolves with each iteration.                  </details>
-
-                  <details class="c-faqs__item">
-                    <summary class="c-faqs__item-question">
-                        Can the software be upgraded in the future?
-                    </summary>
-                    <p class="c-faqs__item-answer">
-                        Yes, the software can always be upgraded as new technologies emerge or as your business needs evolve. The development team can help with future updates and improvements.                  </details>
+                    <div class="c-faqs__item">
+                        <button class="c-faqs__item-question">
+                            How long does software development take?
+                        </button>
+                        <div class="c-faqs__item-answer">
+                            <p>
+                                The duration varies greatly depending on the complexity of the project. Some projects may be completed in a few weeks, while others can take months. To estimate the timeframe, a thorough evaluation of the project scope is necessary.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <div class="c-faqs__item">
+                        <button class="c-faqs__item-question">
+                            Do I need to be tech-savvy?
+                        </button>
+                        <div class="c-faqs__item-answer">
+                            <p>
+                                No, you don't need to be a technical expert. The development team will guide you through the process, explain everything clearly, and focus on bringing your vision to life.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <div class="c-faqs__item">
+                        <button class="c-faqs__item-question">
+                            Should I choose a mobile app or web app?
+                        </button>
+                        <div class="c-faqs__item-answer">
+                            <p>
+                                Both have their pros and cons. Mobile apps offer more monetization options and data collection capabilities, while web apps are generally less expensive to develop. Progressive Web Apps (PWAs) provide a middle ground by combining features of both.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <div class="c-faqs__item">
+                        <button class="c-faqs__item-question">
+                            How do you guarantee the quality of the software?
+                        </button>
+                        <div class="c-faqs__item-answer">
+                            <p>
+                                Quality is ensured through regular testing and iteration, taking into account customer feedback at every stage. Agile methodologies are often employed to make sure that the product evolves with each iteration.
+                            </p>
+                        </div>
+                    </div>
+            
+                    <div class="c-faqs__item">
+                        <button class="c-faqs__item-question">
+                            Can the software be upgraded in the future?
+                        </button>
+                        <div class="c-faqs__item-answer">
+                            <p>
+                                Yes, the software can always be upgraded as new technologies emerge or as your business needs evolve. The development team can help with future updates and improvements.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </section>
+            </section>
+            
         </section>
         <section class="contact-section">
             <div class="custom-shape-divider-top-1723994128">

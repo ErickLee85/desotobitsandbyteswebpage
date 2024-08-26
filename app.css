@@ -605,67 +605,66 @@ ul li {
     border-radius: var(--faqs-border-radius, 8px);
     overflow: hidden;
     background-color: var(--faqs-bg, #fff);
-  }
-  
-  .c-faqs__header {
-    background: var(--faqs-header-bg, #ffeba7);
-    padding: var(--faqs-header-padding, 0.625rem);
-    text-align: var(--faqs-header-text-align, center);
-  }
-  
-  .c-faqs__title {
-    font-size: var(--faqs-header-font-size, 1.75rem);
-    color: var(--faqs-title-color, var(--color-dark));
-  }
-  
-  .c-faqs__items {
+}
+
+.c-faqs__items {
     display: grid;
     padding: 12px;
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-  
-  .c-faqs__item {
+}
+
+.c-faqs__item {
     width: 100%;
-    padding: var(--faqs-item-padding, 1rem);
     background-color: var(--color-medium);
     border-radius: var(--faqs-item-border-radius, 4px);
-  }
-  
-  .c-faqs__item[open] .c-faqs__item-question {
-    margin-bottom: var(--faqs-question-margin-bottom, 12px);
-  }
-  
-  .c-faqs__item[open] .c-faqs__item-question::after {
-    transform: rotate(180deg);
-  }
-  
-  .c-faqs__item[open] .c-faqs__item-question ~ * {
-    animation: openQuestion 0.5s ease-in-out;
-  }
-  
-  .c-faqs__item-question {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
+    overflow: hidden;
+}
+
+.c-faqs__item-question {
+    width: 100%;
+    padding: var(--faqs-question-padding, 1rem);
+    background-color: var(--color-medium);
+    border: none;
     cursor: pointer;
-    padding: var(--faqs-question-padding, 0.25rem 0);
-  }
-  
-  .c-faqs__item-question::after {
+    text-align: left;
+    font-size: var(--faqs-header-font-size, 1rem);
+    font-weight: 200;
+    color: var(--color-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-faqs__item-question::after {
     content: '';
     display: block;
     width: 18px;
     height: 10px;
     background: url('https://uploads.sitepoint.com/wp-content/uploads/2023/10/1697699669arrow.svg') no-repeat;
     transition: 0.2s;
-  }
-  
-  .c-faqs__item-answer {
-    font-size: var(--faqs-answer-font-size, 1rem);
-    line-height: 1.6em;
-  }
+}
+
+.c-faqs__item-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0 1rem;
+    background-color: var(--faqs-answer-bg, #f9f9f9);
+}
+
+.c-faqs__item-answer p {
+    margin: 1rem 0;
+}
+
+.c-faqs__item.active .c-faqs__item-answer {
+    max-height: 200px; /* Adjust based on your content's height */
+}
+
+.c-faqs__item.active .c-faqs__item-question::after {
+    transform: rotate(180deg);
+}
+
 
   .contact-section {
     min-height: 60vh;
