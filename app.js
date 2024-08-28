@@ -50,6 +50,8 @@ function goToRoute(route) {
         case 'imagegen':
             window.location.href = './imageGen.html';
             break;
+        case 'contact':
+            window.location.href = './contact.html';
         default:
             console.log('Unknown route:', route);
     }
