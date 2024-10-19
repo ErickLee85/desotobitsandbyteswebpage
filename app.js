@@ -65,121 +65,121 @@ function toggleAccordion(element) {
 
 
 
-// const servicesObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//             document.getElementById('li-faqs').style.color = 'black'
-//              document.getElementById('li-faqs').style.fontWeight = '400'
-//             document.getElementById('li-testimonials').style.fontWeight = '400'
-//             document.getElementById('li-testimonials').style.color = 'black';
-//              document.getElementById('contact-section').style.color = 'black'
-//              document.getElementById('contact-section').style.fontWeight = '400'
-//                 document.getElementById('li-services').style.fontWeight = '600'
-//                 document.getElementById('li-services').style.color = 'rgb(0, 119, 255)'
+const servicesObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+            document.getElementById('li-faqs').style.color = 'black'
+             document.getElementById('li-faqs').style.fontWeight = '400'
+            document.getElementById('li-testimonials').style.fontWeight = '400'
+            document.getElementById('li-testimonials').style.color = 'black';
+             document.getElementById('contact-section').style.color = 'black'
+             document.getElementById('contact-section').style.fontWeight = '400'
+                document.getElementById('li-services').style.fontWeight = '600'
+                document.getElementById('li-services').style.color = 'rgb(0, 119, 255)'
     
-//       } else {
-//         document.getElementById('li-services').style.fontWeight = '400'
-//           document.getElementById('li-services').style.color = 'black';
-//       }
-//     });
-//   }, {
-//     threshold: 0.5,
-//   });
+      } else {
+        document.getElementById('li-services').style.fontWeight = '400'
+          document.getElementById('li-services').style.color = 'black';
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
   
-//   const serviceSection = document.querySelector('.service-container');
+  const serviceSection = document.querySelector('.service-container');
 
-// if(serviceSection) {
-//     servicesObserver.observe(serviceSection);
-// }
+if(serviceSection) {
+    servicesObserver.observe(serviceSection);
+}
 
 
 
-// const testimonialObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//             document.getElementById('li-faqs').style.color = 'black'
-//              document.getElementById('li-faqs').style.fontWeight = '400'
-//             document.getElementById('li-services').style.fontWeight = '400'
-//             document.getElementById('li-services').style.color = 'black';
-//              document.getElementById('contact-section').style.color = 'black'
-//              document.getElementById('contact-section').style.fontWeight = '400'
-//             document.getElementById('li-testimonials').style.fontWeight = '600'
-//             document.getElementById('li-testimonials').style.color = 'rgb(0, 119, 255)'
+const testimonialObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+            document.getElementById('li-faqs').style.color = 'black'
+             document.getElementById('li-faqs').style.fontWeight = '400'
+            document.getElementById('li-services').style.fontWeight = '400'
+            document.getElementById('li-services').style.color = 'black';
+             document.getElementById('contact-section').style.color = 'black'
+             document.getElementById('contact-section').style.fontWeight = '400'
+            document.getElementById('li-testimonials').style.fontWeight = '600'
+            document.getElementById('li-testimonials').style.color = 'rgb(0, 119, 255)'
     
-//       } else {
-//         document.getElementById('li-testimonials').style.fontWeight = '400'
-//           document.getElementById('li-testimonials').style.color = 'black';
-//       }
-//     });
-//   }, {
-//     threshold: 0.5,
-//   });
+      } else {
+        document.getElementById('li-testimonials').style.fontWeight = '400'
+          document.getElementById('li-testimonials').style.color = 'black';
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
   
-//   const testimonials = document.querySelector('.customer-reviews');
+  const testimonials = document.querySelector('.customer-reviews');
 
-// if(testimonials) {
-//     testimonialObserver.observe(testimonials);
-// }
+if(testimonials) {
+    testimonialObserver.observe(testimonials);
+}
 
 
 
-// const faqObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         document.getElementById('li-services').style.fontWeight = '400'
-//         document.getElementById('li-services').style.color = 'black';
-//       document.getElementById('li-testimonials').style.fontWeight = '400'
-//        document.getElementById('li-testimonials').style.color = 'black'
-//             document.getElementById('contact-section').style.color = 'black'
-//              document.getElementById('contact-section').style.fontWeight = '400'
-//           document.getElementById('li-faqs').style.color = 'rgb(0, 119, 255)'
-//              document.getElementById('li-faqs').style.fontWeight = '600'
+const faqObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.getElementById('li-services').style.fontWeight = '400'
+        document.getElementById('li-services').style.color = 'black';
+      document.getElementById('li-testimonials').style.fontWeight = '400'
+       document.getElementById('li-testimonials').style.color = 'black'
+            document.getElementById('contact-section').style.color = 'black'
+             document.getElementById('contact-section').style.fontWeight = '400'
+          document.getElementById('li-faqs').style.color = 'rgb(0, 119, 255)'
+             document.getElementById('li-faqs').style.fontWeight = '600'
     
-//       } else {
-//        document.getElementById('li-faqs').style.color = 'black'
-//         document.getElementById('li-faqs').style.fontWeight = '400'
-//       }
-//     });
-//   }, {
-//     threshold: 0.5,
-//   });
+      } else {
+       document.getElementById('li-faqs').style.color = 'black'
+        document.getElementById('li-faqs').style.fontWeight = '400'
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
   
-//   const faqs = document.querySelector('.faq-section');
+  const faqs = document.querySelector('.faq-section');
 
-// if(faqs) {
-//     faqObserver.observe(faqs);
-// }
-
-
+if(faqs) {
+    faqObserver.observe(faqs);
+}
 
 
-// const contactObserver = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         document.getElementById('li-services').style.fontWeight = '400'
-//         document.getElementById('li-services').style.color = 'black';
-//       document.getElementById('li-testimonials').style.fontWeight = '400'
-//        document.getElementById('li-testimonials').style.color = 'black'
-//         document.getElementById('li-faqs').style.color = 'black'
-//         document.getElementById('li-faqs').style.fontWeight = '400'
-//           document.getElementById('contact-section').style.color = 'rgb(0, 119, 255)'
-//              document.getElementById('contact-section').style.fontWeight = '600'
+
+
+const contactObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.getElementById('li-services').style.fontWeight = '400'
+        document.getElementById('li-services').style.color = 'black';
+      document.getElementById('li-testimonials').style.fontWeight = '400'
+       document.getElementById('li-testimonials').style.color = 'black'
+        document.getElementById('li-faqs').style.color = 'black'
+        document.getElementById('li-faqs').style.fontWeight = '400'
+          document.getElementById('contact-section').style.color = 'rgb(0, 119, 255)'
+             document.getElementById('contact-section').style.fontWeight = '600'
     
-//       } else {
-//       document.getElementById('contact-section').style.color = 'black'
-//              document.getElementById('contact-section').style.fontWeight = '400'
-//       }
-//     });
-//   }, {
-//     threshold: 0.5,
-//   });
+      } else {
+      document.getElementById('contact-section').style.color = 'black'
+             document.getElementById('contact-section').style.fontWeight = '400'
+      }
+    });
+  }, {
+    threshold: 0.5,
+  });
   
-//   const contactSection = document.querySelector('.contact-section');
+  const contactSection = document.querySelector('.contact-section');
 
-// if(contactSection) {
-//     contactObserver.observe(contactSection);
+if(contactSection) {
+    contactObserver.observe(contactSection);
 
-// }
+}
 
 
 
@@ -225,26 +225,26 @@ if(sendMessage) {
 
 let lastScrollTop = 0;
 
-window.addEventListener("scroll", function() {
-    const mobileNav = document.querySelector('.mobile-nav');
-    if(mobileNav.classList.contains('reveal-mobile-nav')) {
-        return;
-    }
-    let scrollTop = window.scrollY || document.documentElement.scrollTop;
-    let nav = document.querySelector('#nav-two');
+// window.addEventListener("scroll", function() {
+//     const mobileNav = document.querySelector('.mobile-nav');
+//     if(mobileNav.classList.contains('reveal-mobile-nav')) {
+//         return;
+//     }
+//     let scrollTop = window.scrollY || document.documentElement.scrollTop;
+//     let nav = document.querySelector('#nav-two');
 
-    if (scrollTop > lastScrollTop) {
-        // Scrolling down
-        nav.classList.remove('fade-in');
-        nav.classList.add('fade-out');
-    } else {
-        // Scrolling up
-        nav.classList.remove('fade-out');
-        nav.classList.add('fade-in');
-    }
+//     if (scrollTop > lastScrollTop) {
+//         // Scrolling down
+//         nav.classList.remove('fade-in');
+//         nav.classList.add('fade-out');
+//     } else {
+//         // Scrolling up
+//         nav.classList.remove('fade-out');
+//         nav.classList.add('fade-in');
+//     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-});
+//     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+// });
 
 
 window.addEventListener('resize', () => {

@@ -45,6 +45,7 @@
     background: white;
     position: relative;
     padding: 20px;
+    box-shadow: 0 0 15px rgba(35, 67, 136, 0.1);
 }
 
 
