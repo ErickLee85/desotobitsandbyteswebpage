@@ -1,3 +1,32 @@
+const comingSoon = (route) => {
+
+  switch (route) {
+      case 'mobile development':
+          window.location.href = './mobileDevelopment.html';
+          break;
+      case 'web app':
+          window.location.href = './webAppDevelopment.html';
+          break;
+      case 'website':
+          window.location.href = './websiteDevelopment.html';
+          break;
+      case 'desktop':
+          window.location.href = './desktopDevelopment.html';
+          break;
+      case 'charts':
+          window.location.href = './dataCharts.html';
+          break;
+      case 'chatbot':
+          window.location.href = './chatBot.html';
+          break;
+      case 'imagegen':
+          window.location.href = './imageGen.html';
+          break;
+      default:
+          console.log('Unknown route:', route);
+  }
+}
+
 
 
 const heroSection = document.querySelector('.hero');
