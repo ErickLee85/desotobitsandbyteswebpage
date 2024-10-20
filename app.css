@@ -201,6 +201,14 @@ ul li {
     transform: translateX(-100%);
 }
 
+.mobile-section p {
+    color: rgb(49, 49, 49);
+}
+
+.mobile-container p {
+    color: rgb(85,85,85);
+}
+
 .reveal-mobile-nav {
     animation: mobile-nav 200ms linear forwards;
 }
@@ -284,7 +292,6 @@ ul li {
 .hamburger-menu.spin {
     transform:  rotate(180deg);
 }
-
 
 
 .hero-development-img {
@@ -384,8 +391,8 @@ ul li {
 }
 
 .hero h1 {
-    font-size: 1rem;
-    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    color: black;
     font-weight: 400;
     margin-block: 10px;
 }
@@ -401,7 +408,7 @@ ul li {
 .hero p {
     color: black;
     margin-block: 10px;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 #consult-btn {
@@ -443,13 +450,18 @@ ul li {
     justify-content:center;
     align-items:center;
     padding-inline: 20px;
-    gap: 50px;
+    gap: 100px;
   }
   
   .work-text {
     min-height:100%;
     max-width:350px;
   
+  }
+
+  .work-text p {
+    color: rgb(49, 49, 49);
+    font-size: 1.2rem;
   }
 
   .work-text h1 {
@@ -459,7 +471,7 @@ ul li {
   }
   
   .work-text span {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .work-text ul {
@@ -488,6 +500,15 @@ ul li {
     background-size: cover;
   }
 
+  .work-results-two {
+    min-width: 450px;
+    max-width: 500px;
+    position: relative;
+    height: 750px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
   @media(max-width:850px) {
     .work-container {
         flex-direction: column;
@@ -495,8 +516,9 @@ ul li {
         align-items: flex-start;
     }
 
-    .work-results {
+    .work-results, .work-results-two {
         min-width: 100%;
+        max-width: 100%;
         width: 100%;
     }
   }
@@ -647,6 +669,14 @@ ul li {
     color:  rgb(0, 119, 255);
 }
 
+.customer-reviews p {
+    color: rgb(49, 49, 49);
+}
+
+.service-section p, .contact-section p {
+    color: rgb(49, 49, 49);
+}
+
 .service-container {
     width: 100%;
     display: grid;
@@ -656,7 +686,7 @@ ul li {
 
 .service-container i {
     color: rgb(0, 119, 255);
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .service-container div {

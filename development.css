@@ -55,6 +55,10 @@
     box-shadow: 0 0 25px rgba(35, 67, 136, 0.4);
 }
 
+.mobile-container p {
+    color: rgb(85, 85, 85);
+}
+
 .mobile-container div:hover p, .mobile-container div:hover i, .mobile-container div:hover h2 {
     color: white;
 }

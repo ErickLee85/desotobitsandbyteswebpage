@@ -62,7 +62,6 @@ const images = [
     './images/pexels-wdnet-887751.jpg',
     './images/soft_dev.jpeg',
     './images/mope-app-hero.jpg',
-    './images/data_charts.jpg',
     './images/team_dev_2.jpeg'
 ];
 let currentImageIndex = 0;
