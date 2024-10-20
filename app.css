@@ -129,11 +129,11 @@ button {
 }
 
 #nav-two.fade-in {
-    animation: fade-in 500ms linear forwards;
+    animation: fade-in 200ms linear forwards;
   }
   
 #nav-two.fade-out {
-    animation: fade-out 500ms linear forwards;
+    animation: fade-out 200ms linear forwards;
   }
   
   @keyframes fade-out {
@@ -194,11 +194,11 @@ ul li {
 }
 
 .reveal-mobile-nav {
-    animation: mobile-nav 500ms linear forwards;
+    animation: mobile-nav 200ms linear forwards;
 }
 
 .hide-mobile-nav {
-    animation: hide-nav 500ms linear forwards;
+    animation: hide-nav 200ms linear forwards;
 }
 
 @keyframes mobile-nav {
