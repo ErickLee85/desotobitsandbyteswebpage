@@ -389,34 +389,68 @@ hamburgerMenu.addEventListener('click', () => {
 
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
-  document.querySelector('.form-loader-container').style.display = 'grid'
+  document.querySelector('.form-loader-container').style.display = 'grid';
 
+  // Retrieve form values
   const data = {
     services: document.getElementById('service-select').value,
-    firstName: document.getElementById('first-name').value,
-    lastName: document.getElementById('last-name').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    message: document.getElementById('message').value,
+    firstName: document.getElementById('first-name').value.trim(),
+    lastName: document.getElementById('last-name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    message: document.getElementById('message').value.trim(),
   };
 
+  // Simple validation function
+  const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
+  const isValidPhone = (phone) => /^\d{10}$/.test(phone); // Example: 10 digits for US format
+
+  // Check for missing or invalid values
+  if (!data.firstName || !data.lastName) {
+    Swal.fire({ text: "Please enter your full name", icon: "warning" });
+    document.querySelector('.form-loader-container').style.display = 'none';
+    return;
+  }
+
+  if (!isValidEmail(data.email)) {
+    Swal.fire({ text: "Please enter a valid email address", icon: "warning" });
+    document.querySelector('.form-loader-container').style.display = 'none';
+    return;
+  }
+
+  if (!isValidPhone(data.phone)) {
+    Swal.fire({ text: "Please enter a valid phone number (10 digits)", icon: "warning" });
+    document.querySelector('.form-loader-container').style.display = 'none';
+    return;
+  }
+
+  if (!data.message) {
+    Swal.fire({ text: "Please enter a message", icon: "warning" });
+    document.querySelector('.form-loader-container').style.display = 'none';
+    return;
+  }
+
+  // If all checks pass, submit the form
   try {
     const response = await axios.post('https://nodemailer-gold.vercel.app/sendMessage', data);
-    document.querySelector('.form-loader-container').style.display = 'none'
+    document.querySelector('.form-loader-container').style.display = 'none';
     Swal.fire({
       text: "Message Sent!",
       icon: "success"
     });
   } catch (error) {
-    document.querySelector('.form-loader-container').style.display = 'none'
+    document.querySelector('.form-loader-container').style.display = 'none';
     Swal.fire({
       text: "Message Failed",
       icon: "info"
     });
     console.error('There was an error!', error);
   }
+
+  // Reset the form after submission
   document.getElementById('contact-form').reset();
 });
+
 
 document.querySelectorAll('.c-faqs__item-question').forEach((button) => {
     button.addEventListener('click', () => {
