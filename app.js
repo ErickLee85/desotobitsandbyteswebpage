@@ -57,6 +57,91 @@ function goToRoute(route) {
     }
 }
 
+const heroSection = document.querySelector('.hero');
+const images = [
+    './images/pexels-wdnet-887751.jpg',
+    './images/soft_dev.jpeg',
+    './images/mope-app-hero.jpg',
+    './images/data_charts.jpg',
+    './images/team_dev_2.jpeg'
+];
+let currentImageIndex = 0;
+
+function preloadImages(images) {
+    images.forEach((image) => {
+        const img = new Image();
+        img.src = image;
+    });
+}
+
+function createBackgroundContainer() {
+    // Create a container for all background images
+    const bgContainer = document.createElement('div');
+    bgContainer.className = 'hero-backgrounds';
+    bgContainer.style.position = 'absolute';
+    bgContainer.style.top = '0';
+    bgContainer.style.left = '0';
+    bgContainer.style.width = '100%';
+    bgContainer.style.height = '100%';
+    bgContainer.style.zIndex = '1'; // Place behind content
+    return bgContainer;
+}
+
+function changeBackgroundImage() {
+    let bgContainer = heroSection.querySelector('.hero-backgrounds');
+    if (!bgContainer) {
+        bgContainer = createBackgroundContainer();
+        heroSection.insertBefore(bgContainer, heroSection.firstChild); // Insert at the beginning
+    }
+
+    const nextImageIndex = (currentImageIndex + 1) % images.length;
+    
+    // Create a new div for the next image
+    const nextImageDiv = document.createElement('div');
+    nextImageDiv.style.position = 'absolute';
+    nextImageDiv.style.top = '0';
+    nextImageDiv.style.left = '0';
+    nextImageDiv.style.width = '100%';
+    nextImageDiv.style.height = '100%';
+    nextImageDiv.style.opacity = '0';
+    nextImageDiv.style.transition = 'opacity 1s ease-in-out';
+    nextImageDiv.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 1)), url('${images[nextImageIndex]}')`;
+    nextImageDiv.style.backgroundPosition = 'center';
+    nextImageDiv.style.backgroundRepeat = 'no-repeat';
+    nextImageDiv.style.backgroundSize = 'cover';
+    
+    bgContainer.appendChild(nextImageDiv);
+    
+    // Force a reflow
+    nextImageDiv.offsetHeight;
+    
+    // Fade in the new image
+    nextImageDiv.style.opacity = '1';
+    
+    // Remove old background images after transition
+    setTimeout(() => {
+        const oldImages = bgContainer.getElementsByTagName('div');
+        while (oldImages.length > 1) {
+            bgContainer.removeChild(oldImages[0]);
+        }
+    }, 1000);
+    
+    currentImageIndex = nextImageIndex;
+}
+
+heroSection.style.position = 'relative';
+heroSection.style.overflow = 'hidden';
+
+// Preload images
+preloadImages(images);
+
+// Initial image setup
+window.addEventListener('load', () => {
+    changeBackgroundImage(); // Display first image immediately
+    // Start the interval
+    setInterval(changeBackgroundImage, 6000);
+});
+
 
 function toggleAccordion(element) {
     const body = element.nextElementSibling;
@@ -310,7 +395,10 @@ return c/2*(t*t*t + 2) + b;
 
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 
+
+
 hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('spin')
     const mobileNav = document.querySelector('.mobile-nav');
 
     if (mobileNav.classList.contains('reveal-mobile-nav')) {
