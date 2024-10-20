@@ -124,7 +124,7 @@ button {
 #contact-btn {
     padding-inline: 20px;
     padding-block: 15px;
-    min-width: 150px;
+    min-width: 100%;
     outline: none;
     border: 1px solid rgb(0, 119, 255);
     max-height: 50px;
@@ -238,18 +238,21 @@ ul li {
     margin-block: 25px;
 }
 
-.mobile-nav ul li i{
-    margin-right: 10px;
-}
 
 .li-header span {
     font-weight: 600;
-    color:rgb(0, 119, 255);
+    color:rgb(0, 0, 0);
 }
 
 .li-header ul li {
     margin-left: 10px;
     cursor: pointer;
+}
+
+.li-header li i {
+   color:rgb(0, 119, 255);
+   font-size: 20px;
+   margin-right:15px;
 }
 
 .hero-block {
@@ -1557,3 +1560,6 @@ textarea {
 h2 {
     font-weight: 500 !important;
 }
+
+
+
