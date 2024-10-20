@@ -105,7 +105,7 @@ function changeBackgroundImage() {
     nextImageDiv.style.height = '100%';
     nextImageDiv.style.opacity = '0';
     nextImageDiv.style.transition = 'opacity 1s ease-in-out';
-    nextImageDiv.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(248, 248, 248, 1)), url('${images[nextImageIndex]}')`;
+    nextImageDiv.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1)), url('${images[nextImageIndex]}')`;
     nextImageDiv.style.backgroundPosition = 'center';
     nextImageDiv.style.backgroundRepeat = 'no-repeat';
     nextImageDiv.style.backgroundSize = 'cover';

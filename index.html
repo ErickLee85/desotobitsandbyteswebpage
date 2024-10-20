@@ -253,6 +253,26 @@
             </div> -->
             <!-- <svg xmlns="http://www.w3.org/2000/svg"  class="svg-wave" viewBox="0 0 1440 320"><path fill="rgb(248, 248, 248)"  fill-opacity="1" d="M0,288L480,256L960,128L1440,256L1440,320L960,320L480,320L0,320Z"></path></svg> -->
         </section>
+
+        <div class="work-container">
+            <div class="work-text">
+              <p>Our Values</p>
+              <h1>Building Digital Solutions with Integrity</h1>
+               <span>From websites to mobile apps, we have created several software products for our clients, adding tremendous value to their business.</span>
+              <ul>
+                <li>SEO Optimized</li>
+                 <li>Mobile Friendly</li>
+                 <li>Clean & Modern Design</li>
+                 <li>Strict Coding Principles</li>
+                 <li>99.9% Up Time</li>
+                 <li>Safe & Secure</li>
+              </ul>
+            </div>
+            <div class="work-results">
+              
+            </div>
+          </div>
+
         <section class="service-section">
             <p>Lets turn your vision into a reality.</p>
             <h1>Our Services</h1>
@@ -492,10 +512,91 @@
             </div>
         </section>
         <footer class="company-footer">
-                <p>	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
-        </footer>
-
+            <div class="company-footer-container">
+                <section class="footer-logo">
+                    <img src="./images/logo_transparent.png" alt="logo" height="350px" width="350px">
+                    <small>Delivering innovative technology solutions for your business needs.</small>
+                </section>
+                <section class="footer-logo-alternate">
+                    <p>Delivering innovative technology solutions for your business needs.</p>
+                </section>
+                <section class="footer-development">
+                    <p>Development</p>
+                    <ul>
+                        <li class="underline-hover-effect-two">
+                            <a href="./mobileDevelopment.html">
+                              
+                               Mobile App
+                            </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./webAppDevelopment.html">  Web Application
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./websiteDevelopment.html"> Company Website
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="./desktopDevelopment.html">
+                          Desktop App
+                           </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="visualize">
+                    <p>Data Visuals</p>
+                    <ul>
+                        <li class="underline-hover-effect-two">
+                            <a href="./dataCharts.html">
+                             Data Charts
+                            </a>
+                         </li>
+                    </ul>
+                </section>
+                <section class="footer-ai">
+                    <p>AI Integration</p>
+                    <ul>
+                        <li class="underline-hover-effect-two">
+                            <a href="./chatBot.html">
+                           Chatbot
+                            </a>
+                         </li>
+                         <li class="underline-hover-effect-two">
+                           <a href="./imageGen.html">
+                            Image Generator
+                           </a>
+                         </li>
+                    </ul>
+                </section>
+                <section class="footer-help">
+                    <p>Quick Links</p>
+                    <ul>
+                        <li class="underline-hover-effect-two">
+                            <a href="./contact.html">
+                               Contact
+                              </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="tel:+19015704850">
+                                (901) 570-4850
+                              </a>
+                        </li>
+                        <li class="underline-hover-effect-two">
+                            <a href="mailto:admin@desotobitsandbytes.com">
+                                admin@desotobitsandbytes.com
+                              </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+    </footer>
+    <div style="height: 100px; display: flex; justify-content: center; align-items: center; background: white;">
+        <p>	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
     </div>
+       
+      
+       
+    </div>
+ 
 
     <div class="on-this-page">
        <ul>
@@ -516,6 +617,122 @@
     <div class="loader">
     </div>
 </div>
+<!-- <script>
+    const projects = [
+      {
+        id: 1,
+        title: "Web Application",
+        image: "./images/badger.png",
+        description: "Custom Home Builder Project Management Software"
+      },
+      {
+        id: 2,
+        title: "Web Application",
+        image: "./images/desotodeals.png",
+        description: "Deals/Coupon Software"
+      },
+      {
+        id: 3,
+        title: "Company Website",
+        image: "./images/memphissealcoat.png",
+        description: ""
+      },
+      {
+        id: 4,
+        title: "Web Dashboard",
+        image: "/api/placeholder/800/600",
+        description: "Analytics dashboard"
+      }
+    ];
+    
+    class Slideshow {
+      constructor(container) {
+        this.container = container;
+        this.currentSlide = 0;
+        this.slideNav = container.querySelector('.slide-nav');
+        this.autoplayInterval = null;
+        
+        this.init();
+        this.setupEventListeners();
+        this.startAutoplay();
+      }
+      
+      init() {
+        // Create slides
+        projects.forEach((project, index) => {
+          const slide = document.createElement('div');
+          slide.className = `slide ${index === 0 ? 'active' : ''}`;
+          slide.innerHTML = `
+            <img src="${project.image}" alt="${project.title}">
+            <div class="slide-content">
+              <h3>${project.title}</h3>
+              <p>${project.description}</p>
+            </div>
+          `;
+          this.container.insertBefore(slide, this.container.firstChild);
+          
+          // Create navigation dot
+          const dot = document.createElement('button');
+          dot.className = `slide-nav-dot ${index === 0 ? 'active' : ''}`;
+          dot.setAttribute('data-index', index);
+          this.slideNav.appendChild(dot);
+        });
+      }
+      
+      setupEventListeners() {
+        // Navigation dots
+        this.slideNav.addEventListener('click', (e) => {
+          if (e.target.classList.contains('slide-nav-dot')) {
+            this.goToSlide(parseInt(e.target.dataset.index));
+          }
+        });
+        
+        // Arrow navigation
+        this.container.querySelector('.prev').addEventListener('click', () => this.prevSlide());
+        this.container.querySelector('.next').addEventListener('click', () => this.nextSlide());
+        
+        // Pause autoplay on hover
+        this.container.addEventListener('mouseenter', () => this.stopAutoplay());
+        this.container.addEventListener('mouseleave', () => this.startAutoplay());
+      }
+      
+      goToSlide(index) {
+        const slides = this.container.querySelectorAll('.slide');
+        const dots = this.slideNav.querySelectorAll('.slide-nav-dot');
+        
+        slides[this.currentSlide].classList.remove('active');
+        dots[this.currentSlide].classList.remove('active');
+        
+        this.currentSlide = index;
+        
+        slides[this.currentSlide].classList.add('active');
+        dots[this.currentSlide].classList.add('active');
+      }
+      
+      nextSlide() {
+        const nextIndex = (this.currentSlide + 1) % projects.length;
+        this.goToSlide(nextIndex);
+      }
+      
+      prevSlide() {
+        const prevIndex = (this.currentSlide - 1 + projects.length) % projects.length;
+        this.goToSlide(prevIndex);
+      }
+      
+      startAutoplay() {
+        this.autoplayInterval = setInterval(() => this.nextSlide(), 5000);
+      }
+      
+      stopAutoplay() {
+        clearInterval(this.autoplayInterval);
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const slideshowContainer = document.querySelector('.work-results');
+      new Slideshow(slideshowContainer);
+    });
+    </script> -->
 <script src="app.js"></script>
 <script>
 
