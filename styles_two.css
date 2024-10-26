@@ -999,11 +999,7 @@ p {
 }
 
 
-.contact-container {
-  max-width: 400px;
-  margin:0 auto;
-  border-right: 1px solid white;
-}
+
 .contact-container p {
   margin-bottom: 50px;
 }
