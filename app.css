@@ -1985,7 +1985,7 @@ h2, h1 {
 
 .nav-button {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     background: white;
     border: none;

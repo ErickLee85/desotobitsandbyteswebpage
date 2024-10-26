@@ -735,11 +735,3 @@ dots.forEach((dot, index) => {
 });
 
 
-
-window.addEventListener('click', (event) => {
-  if (!event.target.closest('.modal') && !event.target.closest('.service-item')) {
-    if(event.target.closest('.modal')) {
-      alert('hello')
-    }
-  }
-});
