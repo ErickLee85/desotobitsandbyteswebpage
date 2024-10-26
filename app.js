@@ -45,7 +45,7 @@ function toggleMobileNav() {
 hamburger.addEventListener("click", toggleMobileNav);
 
 
-const textArray = ["Websites | Mobile Apps | Desktop Applications | Custom Dashboards ", "Data Charts", "AI Integration"];
+const textArray = ["Websites | Web Applications ","Mobile Apps", "Custom Dashboards", "Data Charts", "AI Integration"];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 1000; // Delay between current and next text

@@ -389,6 +389,7 @@ ul li {
 } */
 
 .hero-block {
+    margin-top: 90px;
     z-index: 10;
 }
 
@@ -406,7 +407,7 @@ ul li {
     align-items: center;
     width: 100%;
     position: relative;
-    padding-inline: 150px;
+    padding-inline: 250px;
     padding-bottom: 50px;
     background:linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/soft_dev.jpeg');
     background-size: cover;
@@ -1670,9 +1671,10 @@ textarea {
 
 @media(max-width:550px) {
 
-    .hero {
-        min-width: 60vh;
+    .hero-block {
+        margin-top: 0;
     }
+
 
  
     .c-faqs__item-question::after {
