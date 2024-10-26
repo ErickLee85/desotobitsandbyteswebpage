@@ -6,11 +6,12 @@
     <title>Business Software Development | Desoto Bits & Bytes</title>
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="styles_two.css">
-    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/apple-touch-icon.png" type="image/x-icon">
     <meta name="description" content="Discover tailored software development services designed to meet the unique needs of your business. Our expertise spans web and mobile app development, custom software solutions, AI integration, and data visualization tools. Whether you're a small business or an enterprise, our team delivers innovative, client-centered solutions to drive your success. Contact us today to learn how we can transform your digital presence.">
     <meta name="keywords" content="Software Development, Custom Software Solutions, Web Development, Mobile App Development, Nuxt.js Development, React Native Mobile Apps, Construction Management Software, Enterprise Software Solutions, SaaS Development, Project Management Tools, AI Integration in Software, Data Visualization Tools, Software Development Company, Software Consultancy, Agile Software Development, Custom Homebuilder Software, Responsive Web Design, Customer Relationship Management Software, Progressive Web Apps, Cloud-Based Software Solutions">
     <meta name="author" content="Desoto Bits & Bytes">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@tomoyakuroda/css-variables-hamburgers@1/css-variables-hamburgers.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/449cb71b07.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="application/ld+json">
@@ -126,414 +127,700 @@
 </head>
 <body>
     <div class="main-container">
-        <!-- <div class="logo"></div> -->
-        <nav id="nav-two">
-            <div class="logo-img">
-                <img src="./images/small_logo.png" height="250" width="250" alt="">
-            </div>
-            <ul id="desktop-nav-list">
-                <li class="underline-hover-effect dropdown">
-                    Development
-                    <ul class="dropdown-menu">
-                        <li class="underline-hover-effect-two">
-                            <a href="./mobileDevelopment.html">
-                                <i class="fa-thin fa-mobile"></i>Mobile App
-                            <p class="dropdown-description">Custom mobile applications tailored to your business needs,<br> available for both iOS and Android platforms.</p>
-                            </a>
-                        </li>
-                        <li class="underline-hover-effect-two">
-                            <a href="./webAppDevelopment.html"> <i class="fa-thin fa-globe-pointer"></i> Web Application
-                                <p class="dropdown-description">Robust and scalable web applications with responsive design <br>  and seamless user experience.</p></a>
-                        </li>
-                        <li class="underline-hover-effect-two">
-                            <a href="./websiteDevelopment.html"> <i class="fa-thin fa-browser"></i> Company Website
-                            <p class="dropdown-description">Professional websites with modern design, optimized for <br>  performance and SEO.</p></a>
-                        </li>
-                        <li class="underline-hover-effect-two">
-                            <a href="./desktopDevelopment.html">
-                            <i class="fa-thin fa-desktop"></i> Desktop App
-                            <p class="dropdown-description">Powerful desktop applications with intuitive interfaces <br>  and high performance.</p>
-                           </a>
-                        </li>
+            <header>
+                <nav id="nav-two">
+                    <div class="logo-img" onclick="goTo('logo')">
+                        <img src="./images/logo.png" height="250" width="250" alt="" class="night-logo">
+                        <img src="./images/logo_transparent.png" height="250" width="250" alt="" class="day-logo">
+                    </div>
+                    <ul class="main-nav-links">
+                        <li class="underline-hover-effect-two" onclick="goTo('services')">Services</li>
+                        <li class="underline-hover-effect-two" onclick="goTo('pricing')">Pricing</li>
+                        <li class="underline-hover-effect-two" onclick="goTo('testimonials')">Reviews</li>
+                        <li class="underline-hover-effect-two" onclick="goTo('faqs')">FAQs</li>
+                        <li class="underline-hover-effect-two" onclick="goTo('contact')">Contact</li>
                     </ul>
-                </li>
-                <li class="underline-hover-effect dropdown">
-                    Visualization
-                    <ul class="dropdown-menu">
-                        <li class="underline-hover-effect-two">
-                           <a href="./dataCharts.html">
-                            <i class="fa-thin fa-chart-line"></i> Data Charts
-                            <p class="dropdown-description">Interactive and visually appealing data charts for better <br>  insights and decision-making.</p>
-                           </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="underline-hover-effect dropdown">
-                    AI Integration
-                    <ul class="dropdown-menu">
-                        <li class="underline-hover-effect-two">
-                           <a href="./chatBot.html">
-                            <i class="fa-thin fa-comments"></i> Chatbot
-                            <p class="dropdown-description">Advanced chatbots that provide seamless customer support <br> and enhance user interaction.</p>
-                           </a>
-                        </li>
-                        <li class="underline-hover-effect-two">
-                          <a href="./imageGen.html">
-                            <i class="fa-thin fa-image"></i> Image Generator
-                            <p class="dropdown-description">AI-powered image generators for creating unique and <br>  high-quality visuals.</p>
-                          </a>
-                        </li>
-                    </ul>
-                </li>
-                <a href="./contact.html">
-                    <li class="underline-hover-effect">Contact</li>
-                </a>
-            </ul>
 
-            <a href="tel:19015704850" style="color: white;"> <button class="call-now-btn">Call Now<i class="fa-solid fa-phone-flip"></i></button></a>
-          
-           <div class="hamburger-menu"> <i class="fa-sharp fa-light fa-bars"></i></div>
+                        <div class="main-nav-btns">
+                            <a  href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"> <button class="call-now-btn">Schedule Meeting<i class="fa-solid fa-phone-flip" style="margin-left: 10px;"></i></button></a>
+                            <div class="theme-switch-wrapper">
+                             <label class="theme-switch" for="checkbox">
+                               <input type="checkbox" id="checkbox" checked />
+                               <div class="slider round"></div>
+                             </label>
+                           </div>
+                        </div>
+                       
+                   
+                           
+                            <button class="hamburger hamburger--spin" type="button" id="hamburger-menu" style="background:white;">
+                                <span class="hamburger-box">
+                                  <span class="hamburger-inner"></span>
+                                </span>
+                              </button> 
+                      
 
-        </nav>
+                </nav>
+            </header>
+     
         <section class="mobile-nav">
             <ul class="mobile-nav-items">
-                <li class="li-header">
-                    <span>Development</span>
-                    <ul>
-                        <li>
-                            <a href="./mobileDevelopment.html" >
-                                <i class="fa-thin fa-mobile"></i>Mobile Development
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./websiteDevelopment.html" >
-                                <i class="fa-thin fa-globe-pointer"></i>Company Website
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./webAppDevelopment.html" >
-                                <i class="fa-thin fa-browser"></i>Web App
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./desktopDevelopment.html" >
-                                <i class="fa-thin fa-desktop"></i>Desktop App
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="li-header">
-                    <span>Visualization</span>
-                    <ul>
-                        <li>
-                            <a href="./dataCharts.html" >
-                                <i class="fa-thin fa-chart-line"></i>Data Charts
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="li-header">
-                    <span>AI Integration</span>
-                    <ul>
-                        <li>
-                            <a href="./chatBot.html" >
-                                <i class="fa-thin fa-comments"></i>ChatBot
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./imageGen.html" >
-                                <i class="fa-thin fa-image"></i>Image Generator
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="li-header">
-                    <button id="contact-btn">Contact</button>
-                </li>
+                <li onclick="goTo('services', 'mobile')">Services</li>
+                <li onclick="goTo('pricing', 'mobile')">Pricing</li>
+                <li onclick="goTo('testimonials', 'mobile')">Reviews</li>
+                <li onclick="goTo('faqs', 'mobile')">FAQs</li>
+                <li onclick="goTo('contact', 'mobile')">Contact</li>
+                <li><a href="tel:19015704850"><i class="fa-solid fa-phone-flip"></i> (901) 570-4850</a></li>
+                <li><a href="mailto:admin@desotobitsandbytes.com"><i class="fa-solid fa-envelope"></i>admin@desotobitsandbytes.com</a></li>
             </ul>
         </section>
         
         
-        <section class="hero">
-            <div class="hero-block">
-                <header>
-                    <h1> Software Development in Desoto County, MS</h1>
-                    <h2>We Provide Custom Software Solutions for Businesses.</h2>
-                    <p>Schedule a meeting or call us at  <a href="tel:19015704850">(901) 570-4850</a></p>
-                    <div class="cta-container">
-                        
-                        <a href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"><button id="consult-btn">Schedule Meeting</button></a>
-                        <button id="service-btn">Services</button>
+        <main>
+            <section class="hero">
+                <div class="hero-block">
+                    <header>
+                        <h1>We Provide Custom Software Solutions for Businesses.</h1>
+                        <p class="software-sub-headline"><span class="typed-text"></span> <span class="cursor">&nbsp;</span></p>
+                        <span>
+                            <img src="./images/icons8-google.svg" alt="ozark img" class="google-img">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span style="color:white;"> (5.0)</span>
+                        </span>
+                        <p>Schedule a <a  href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank">Meeting</a> or call us at  <a href="tel:19015704850">(901) 570-4850</a></p>
+                        <div class="cta-container">
+                            <button id="consult-btn" onclick="goTo('pricing')">Pricing</button>
+                            <button id="service-btn">Services</button>
+                        </div>
+                    </header>
+                </div>
+            </section>
+    
+            <section class="sell">
+                <div class="sell-container">
+                    <div class="text-container">
+                    <h2>Custom Websites. Built for Companies That Demand Results.</h2>
                     </div>
-                </header>
-            </div>
-            <!-- <div class="hero-img">
-            </div> -->
-            <!-- <svg xmlns="http://www.w3.org/2000/svg"  class="svg-wave" viewBox="0 0 1440 320"><path fill="rgb(248, 248, 248)"  fill-opacity="1" d="M0,288L480,256L960,128L1440,256L1440,320L960,320L480,320L0,320Z"></path></svg> -->
-        </section>
+                    <div class="sell-grid">
+                        <div>
+                            <i class="fa-sharp fa-light fa-users"></i>
+                            <h3>Engage Customers</h3>
+                            <p>Build a dynamic and interactive online presence to attract and retain customers.</p>
 
-        <div class="work-container">
-            <div class="work-text">
-              <p>Our Values</p>
-              <h1>Building Digital Solutions with Integrity</h1>
-               <span>From websites to mobile apps, we have created several software products for our clients, adding tremendous value to their business.</span>
-              <ul>
-                <li>SEO Optimized</li>
-                 <li>Mobile Friendly</li>
-                 <li>Clean & Modern Design</li>
-                 <li>Strict Coding Principles</li>
-                 <li>99.9% Up Time</li>
-                 <li>Safe & Secure</li>
-              </ul>
-            </div>
-            <div class="work-results">
-              
-            </div>
-          </div>
+                          </div>
+                          <div>
+                            <i class="fa-sharp fa-light fa-seedling"></i>
+                            <h3>Drive Growth</h3>
+                            <p>Our custom websites enhance your brand and deliver real tangible results.</p>
+                          </div>
+                      <div>
+                        <i class="fa-sharp fa-light fa-clock" ></i>
+                        <h3>Increase Efficiency</h3>
+                        <p>Automate key tasks and simplify client interactions to save time and money.</p>
+                      </div>
+                      <div>
+                        <i class="fa-sharp fa-light fa-headset"></i>
+                        <h3>Dependable Support</h3>
+                        <p>We offer ongoing support to keep your website optimized and up-to-date.</p>
+                      </div>
+                    </div>
+                </div>
+              </section>
 
-        <section class="service-section">
-            <p>Lets turn your vision into a reality.</p>
-            <h1>Our Services</h1>
-            <div class="line-div"></div>
-            <div class="service-container">
-                <div onclick="comingSoon('mobile development')">
+           
+    
+            <section class="service-section">
+                <p>Let's turn your vision into a reality.</p>
+                <h2>Our Services</h2>
+           
+                <div class="service-container">
+                  <div class="service-item" data-service="0">
                     <i class="fa-light fa-mobile"></i>
                     <p>Mobile App</p>
-                    </div>
-                <div onclick="comingSoon('web app')">
+                  </div>
+                  <div class="service-item" data-service="1">
                     <i class="fa-light fa-globe-pointer"></i>
-                    <p>Web Application</p>
-                </div>
-                <div onclick="comingSoon('website')">
+                    <p>Web App</p>
+                  </div>
+                  <div class="service-item" data-service="2">
                     <i class="fa-light fa-browser"></i>
                     <p>Company Website</p>
-                    </div>
-            
-                <div onclick="comingSoon('desktop')">
+                  </div>
+                  <div class="service-item" data-service="3">
                     <i class="fa-thin fa-desktop"></i>
                     <p>Desktop App</p>
-                </div>
-                <div onclick="comingSoon('charts')">
+                  </div>
+                  <div class="service-item" data-service="4">
                     <i class="fa-thin fa-chart-line"></i>
                     <p>Data Charts</p>
-                </div>
-                <div onclick="comingSoon('chatbot')">
+                  </div>
+                  <div class="service-item" data-service="5">
                     <i class="fa-thin fa-comments"></i>
                     <p>AI ChatBot</p>
-                </div>
-                <div onclick="comingSoon('imagegen')">
-                     <i class="fa-thin fa-image"></i>
+                  </div>
+                  <div class="service-item" data-service="6">
+                    <i class="fa-thin fa-image"></i>
                     <p>AI Image Generator</p>
+                  </div>
+                  <div class="service-item" data-service="7">
+                    <i class="fa-thin fa-table-columns"></i>
+                    <p>Custom Dashboards</p>
+                  </div>
+                </div>
+              </section>
+    
+
+              <section class="pricing-container">
+                <p class="pricing-subtitle">Flexible Plans for Every Stage of Your Business</p>
+                <h2 class="pricing-title">Pricing</h2>
+                
+                <div class="pricing-grid">
+                  <!-- Small Business Card -->
+                  <div class="pricing-card">
+                    <div class="pricing-header">
+                      <h3>Small Business</h3>
+                      <div>
+                        <span class="pricing-price">$199</span>
+                        <span class="pricing-period">/month</span>
+                      </div>
+                      <p class="pricing-description">Perfect for small businesses needing a professional web presence</p>
                     </div>
-            </div>
-        </section>
-        <section class="customer-reviews">
-            <div class="custom-shape-divider-top-1723994128">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
-                </svg>
-            </div>
-            <p>Read a few of our Google reviews.</p>
-            <h1>Customer Testimonials</h1>
-            <span>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                (5.0)
-            </span>
-            <div class="review-container">
-                <div class="review-one main-review">
-                    <i class="fa-solid fa-quote-left font-awesome-quote"></i>
+                    <ul class="pricing-feature-list">
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Custom website (up to 5 pages)</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Hosting included</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Monthly maintenance</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Responsive design (Mobile, Tablet, Desktop)</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Contact form integration</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Google analytics</li>
+                    </ul>
+                    <button class="pricing-button gray" onclick="goTo('contact')">Get Started</button>
+                  </div>
+            
+                  <!-- Medium Business Card -->
+                  <div class="pricing-card highlight">
+                    <span class="pricing-badge">Most Popular</span>
+                    <div class="pricing-header">
+                      <h3>Medium Business</h3>
+                      <div>
+                        <span class="pricing-price">$999</span>
+                        <span class="pricing-period">/month</span>
+                      </div>
+                      <p class="pricing-description">Ideal for growing businesses requiring advanced functionality</p>
+                    </div>
+                    <ul class="pricing-feature-list">
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Custom website (up to 15 pages)</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> User Authentication</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Advanced SEO optimization</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Premium hosting</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Weekly maintenance</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Custom forms & workflows</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Content Updates</li>
+
+                    </ul>
+                    <button class="pricing-button blue" onclick="goTo('contact')">Get Started</button>
+                  </div>
+            
+                  <!-- Enterprise Card -->
+                  <div class="pricing-card">
+                    <div class="pricing-header">
+                      <h3>Enterprise</h3>
+                      <div>
+                        <span class="pricing-price">$2,499</span>
+                        <span class="pricing-period">/month</span>
+                      </div>
+                      <p class="pricing-description">Full-service solution for large organizations</p>
+                    </div>
+                    <ul class="pricing-feature-list">
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Unlimited pages</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> User Authentication</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Enterprise-grade hosting</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Priority support</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Custom API integration</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Advanced security features</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> AI Integration</li>
+
+                    </ul>
+                    <button class="pricing-button gray" onclick="goTo('contact')">Get Started</button>
+                  </div>
+            
+                  <!-- Custom Solutions Card -->
+                  <div class="pricing-card">
+                    <div class="pricing-header">
+                      <h3>Custom Solutions</h3>
+                      <div>
+                        <span class="pricing-period">Custom Quote</span>
+                      </div>
+                      <p class="pricing-description">Tailored development solutions for your unique needs</p>
+                    </div>
+                    <ul class="pricing-feature-list">
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Mobile app development</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Custom web applications</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Enterprise software solutions</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Legacy system modernization</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> API development & integration</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> AI/ML integration</li>
+                      <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Dedicated development team</li>
+                    </ul>
+                    <a href="https://calendly.com/desotobitsandbytes/software-meeting"
+                    target="_blank"
+                    >
+                        <button class="pricing-button purple">
+                            <i class="fas fa-comments"></i> Schedule Consultation
+                          </button>
+                    </a>
+                  </div>
+
+                  <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Website Maintenance</h3>
+                        <div>
+                            <span class="pricing-period">Custom Quote</span>
+                          </div>
+                        <p class="pricing-description">Ideal for businesses needing consistent website upkeep and support</p>
+                    </div>
+                    <ul class="pricing-feature-list">
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Monthly updates & backups</li>
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Security monitoring & malware protection</li>
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Performance optimization</li>
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Plugin and CMS updates</li>
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Uptime monitoring & quick issue resolution</li>
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Priority email support</li>
+                        <li class="pricing-feature"><i class="fas fa-check feature-icon"></i> Monthly analytics report</li>
+                    </ul>
+                    <button class="pricing-button gray" onclick="goTo('contact')">Get Started</button>
+                </div>
+                
+                </div>
+            </section>
+    
+            <div class="work-container">
+                <div class="work-text">
+                  <h2>Building Digital Solutions with Integrity</h2>
+                   <span>From websites to mobile apps, we have created several software products for our clients, adding tremendous value to their business.</span>
+                  <ul>
+                    <li>SEO Optimized</li>
+                     <li>Mobile Friendly</li>
+                     <li>Clean & Modern Design</li>
+                     <li>Strict Coding Principles</li>
+                     <li>99.9% Up Time</li>
+                     <li>Safe & Secure</li>
+                  </ul>
+                  <a  href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank" style="padding-top: 50px;"> <button class="call-now-btn">Schedule Meeting<i class="fa-solid fa-phone-flip" style="margin-left:10px;"></i></button></a>
+                </div>
+                <div class="work-results">
+                  
+                </div>
+              </div>
+        
+          
+              
+    
+             
+              <!-- Modal Structure -->
+              <div id="service-modal" class="modal">
+                <div class="modal-content">
+                    <div style="display:flex; align-items: center;">
+                        <h2 id="modal-title"></h2>
+                        <i id="font-awesome-icon" class="fa-thin"></i>
+                    </div>
+                  <p id="modal-description"></p>
+               
+                  <button class="close-btn" onclick="closeModal()">Close</button>
+                </div>
+             
+              </div>
+              
+            <section class="customer-reviews">
+                <p>Our Google Reviews from Actual Customers</p>
+                <h2>Customer Testimonials</h2>
+                <img src="./images/icons8-google.svg" alt="ozark img">
+                <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                 <span class="google-score">(5.0)</span>
+                </span> 
+                <div class="slideshow-container">
+                    <div class="review-card active">
+                        <div class="quote-mark">"</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="review-text">
+                            They built a web application for me and migrated existing databases into the new app. Very happy with the results. Definitely recommend to anyone needing anything software related.
+                        </div>
+                        <div class="review-author">
+                            <h3 class="author-name">Hawk Scada</h3>
+                            <p class="author-location"> <i class="fa-sharp fa-solid fa-location-dot" style="margin-right:5px; color:gainsboro;"></i>Starkville, MS</p>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="quote-mark">"</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="review-text">
+                            If you need a website built get ahold of Erick he took great care to make sure we got the product we wanted and then some! Over the moon happy with the website and the experience.
+                        </div>
+                        <div class="review-author">
+                            <h3 class="author-name">Nick Tapley</h3>
+                            <p class="author-location"><i class="fa-sharp fa-solid fa-location-dot" style="margin-right:5px; color:gainsboro;"></i>Olive Branch, MS</p>
+                        </div>
+                    </div>
+            
+                    <div class="review-card">
+                        <div class="quote-mark">"</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="review-text">
+                            Fantastic service and highly recommended!
+                        </div>
+                        <div class="review-author">
+                            <h3 class="author-name">Champz Detailing</h3>
+                            <p class="author-location"><i class="fa-sharp fa-solid fa-location-dot" style="margin-right:5px; color:gainsboro;"></i>Olive Branch, MS</p>
+                        </div>
+                    </div>
+            
+                    <div class="review-card">
+                        <div class="quote-mark">"</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="review-text">
+                            I recently had the pleasure of working with Desoto Bits And Bytes LLC for the creation and maintenance of my website, and I must say, I am thoroughly impressed! From the outset, the team displayed an exceptional level of professionalism and expertise. They took the time to understand my vision and requirements, translating them into a beautifully designed and highly functional website.
+                        </div>
+                        <div class="review-author">
+                            <h3 class="author-name">Memphis Sealcoat</h3>
+                            <p class="author-location"><i class="fa-sharp fa-solid fa-location-dot" style="margin-right:5px; color:gainsboro;"></i>Memphis, TN</p>
+                        </div>
+                    </div>
+            
+                    <div class="review-card">
+                        <div class="quote-mark">"</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="review-text">
+                            Really impressed by this company, Erick was great to work with. The price and quality are just hard to beat. Highly recommend to anyone looking to get a website or app built.
+                        </div>
+                        <div class="review-author">
+                            <h3 class="author-name">Ozark Apps</h3>
+                            <p class="author-location"><i class="fa-sharp fa-solid fa-location-dot" style="margin-right:5px; color:gainsboro;"></i>Fayetville, AR</p>
+                        </div>
+                    </div>
+            
+                    <div class="review-card">
+                        <div class="quote-mark">"</div>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <div class="review-text">
+                            I started working with Desoto Bits and Bytes last year to manage my web sites. Their service has been fast and exactly what I had hoped. They respond to my queries and requests promptly and accurately and resolve any issues I have had.
+                        </div>
+                        <div class="review-author">
+                            <h3 class="author-name">Jon Lomberg</h3>
+                            <p class="author-location"><i class="fa-sharp fa-solid fa-location-dot" style="margin-right:5px; color:gainsboro;"></i>Hawaii</p>
+                        </div>
+                    </div>
+            
+                    <button class="nav-button prev">❮</button>
+                    <button class="nav-button next">❯</button>
+            
+                    <div class="dots-container">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                <!-- <div class="review-container">
+                    <div class="review-one main-review">
+                        <i class="fa-solid fa-quote-left font-awesome-quote"></i>
+                            <div class="img-holder">                
+                              <h2>Hawk Scada <span>| Starkville, MS</span></h2>
+                            </div>
+                            <p>
+                                They built a web application for me and migrated existing databases into the new app. Very happy with the results. Definitely recommend to anyone needing anything software related.
+                            </p>
+                    </div>
+                    <div class="review-two main-review">
                         <div class="img-holder">
-                            <img src="./images/icons8-google.svg" alt="scada img"  id="hawk-scada-img">
                             <div class="name-holder">
-                                <h2>Olen Booth</h2>
-                                <p>Hawk Scada</p>
+                                <h2>Champz Detailing <span>| Olive Branch, MS</span></h2>
                             </div>
                         </div>
                         <p>
-                            They built a web application for me and migrated existing databases into the new app. Very happy with the results. Definitely recommend to anyone needing anything software related.
+                            Fantastic service and highly recommended!
                         </p>
-                </div>
-                <div class="review-two main-review">
-                    <div class="img-holder">
-                        <img src="./images/icons8-google.svg"alt="scada img"  id="champz-img">
-                        <div class="name-holder">
-                            <h2>Chad Williamson</h2>
-                            <p>Champz Detailing</p>
-                        </div>
                     </div>
-                    <p>
-                        Fantastic service and highly recommended!
-                    </p>
-                </div>
-                <div class="review-three main-review">
-                    <div class="img-holder">
-                        <img src="./images/icons8-google.svg" alt="memphis sealcoat img"  id="sealcoat-img">
-                        <div class="name-holder">
-                            <h2>Nathan Tapley</h2>
-                            <p>Memphis Sealcoat</p>
+                    <div class="review-three main-review">
+                        <div class="img-holder">
+                            <div class="name-holder">
+                                <h2>Memphis Sealcoat <span>| Memphis, TN</span></h2>
+                             
+                            </div>
                         </div>
+                        <p>
+                            I recently had the pleasure of working with Desoto Bits And Bytes LLC for the creation and maintenance of my website, and I must say, I am thoroughly impressed! From the outset, the team displayed
+                             an exceptional level of professionalism and expertise. They took the time to understand my vision and requirements, translating them into a beautifully designed and highly functional website.
+                        </p>
                     </div>
-                    <p>
-                        I recently had the pleasure of working with Desoto Bits And Bytes LLC for the creation and maintenance of my website, and I must say, I am thoroughly impressed! From the outset, the team displayed
-                         an exceptional level of professionalism and expertise. They took the time to understand my vision and requirements, translating them into a beautifully designed and highly functional website.
-                    </p>
-                </div>
-                <div class="review-four main-review">
-                    <div class="img-holder">
-                        <img src="./images/icons8-google.svg" alt="ozark img"  id="ozark-img">
-                        <div class="name-holder">
-                            <h2>Colby Crowne</h2>
-                            <p>Ozark Apps</p>
+                    <div class="review-four main-review">
+                        <div class="img-holder">
+                            <div class="name-holder">
+                                <h2>Ozark Apps <span>| Fayetville, AR</span></h2>
+                            
+                            </div>
                         </div>
+                        <p>
+                            Really impressed by this company, Erick was great to work with. The price and quality are just hard to beat. Highly recommend to anyone looking to get a website or app built.
+                        </p>
                     </div>
-                    <p>
-                        Really impressed by this company, Erick was great to work with. The price and quality are just hard to beat. Highly recommend to anyone looking to get a website or app built.
-                    </p>
-                </div>
-                <div class="review-five main-review">
-                    <i class="fa-solid fa-quote-right" id="right-quote"></i>
-                    <div class="img-holder">
-                        <img src="./images/icons8-google.svg" alt="ozark img"  id="lomberg-img">
-                        <div class="name-holder">
-                            <h2>Jon Lomberg</h2>
-                            <p>Artist</p>
+                    <div class="review-five main-review">
+                        <i class="fa-solid fa-quote-right" id="right-quote"></i>
+                        <div class="img-holder">
+                            <div class="name-holder">
+                                <h2>Jon Lomberg <span>| Hawaii</span></h2>
+                              
+                            </div>
                         </div>
+                        <p>
+                            I started working with Desoto Bits and Bytes last year to manage my web sites. Their service has been fast and exactly what I had hoped. They respond to my queries and requests promptly and accurately and resolve any issues I have had.                    </p>
                     </div>
-                    <p>
-                        I started working with Desoto Bits and Bytes last year to manage my web sites. Their service has been fast and exactly what I had hoped. They respond to my queries and requests promptly and accurately and resolve any issues I have had.                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="faq-section">
-            <p style="color: rgb(49, 49, 49);">Common questions on Software Development.</p>
-            <h1>FAQs</h1>
-            <section class="c-faqs">
-                <div class="c-faqs__items">
-                    <div class="c-faqs__item">
-                        <button class="c-faqs__item-question">
-                            How long does software development take?
-                        </button>
-                        <div class="c-faqs__item-answer">
-                            <p>
-                                The duration varies greatly depending on the complexity of the project. Some projects may be completed in a few weeks, while others can take months. To estimate the timeframe, a thorough evaluation of the project scope is necessary.
-                            </p>
-                        </div>
-                    </div>
+                </div> -->
+
+                
+            </section>
+            <section class="faq-section">
+                <p class="sub-title">Common questions on Software Development.</p>
+                <h2>FAQs</h2>
+                <section class="c-faqs">
+                    <div class="c-faqs__items">
             
-                    <div class="c-faqs__item">
-                        <button class="c-faqs__item-question">
-                            Do I need to be tech-savvy?
-                        </button>
-                        <div class="c-faqs__item-answer">
-                            <p>
-                                No, you don't need to be a technical expert. The development team will guide you through the process, explain everything clearly, and focus on bringing your vision to life.
-                            </p>
+                        <div class="c-faqs__item active">
+                            <button class="c-faqs__item-question">
+                                How long does software development take?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    The duration varies greatly depending on the complexity of the project. Some projects may be completed in a few weeks, while others can take months. To estimate the timeframe, a thorough evaluation of the project scope is necessary. Here are the typical stages involved:
+                                </p>
+                                <ol>
+                                    <li><strong>Planning and Analysis:</strong> Gathering requirements and defining project goals.</li>
+                                    <li><strong>Design:</strong> Creating the initial layout, wireframes, and prototypes.</li>
+                                    <li><strong>Development:</strong> Coding and integrating various components.</li>
+                                    <li><strong>Testing and Quality Assurance:</strong> Ensuring the software functions correctly and meets requirements.</li>
+                                    <li><strong>Deployment and Maintenance:</strong> Launching the software and addressing future updates or fixes.</li>
+                                </ol>
+                            </div>
                         </div>
-                    </div>
             
-                    <div class="c-faqs__item">
-                        <button class="c-faqs__item-question">
-                            Should I choose a mobile app or web app?
-                        </button>
-                        <div class="c-faqs__item-answer">
-                            <p>
-                                Both have their pros and cons. Mobile apps offer more monetization options and data collection capabilities, while web apps are generally less expensive to develop. Progressive Web Apps (PWAs) provide a middle ground by combining features of both.
-                            </p>
+                        <div class="c-faqs__item">
+                            <button class="c-faqs__item-question">
+                                Do I need to be tech-savvy?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    No, you don't need to be a technical expert. The development team will guide you through the process, explain everything clearly, and focus on bringing your vision to life. The process is structured to keep things simple for you:
+                                </p>
+                                <ol>
+                                    <li><strong>Initial Consultation:</strong> Share your goals and ideas without needing technical knowledge.</li>
+                                    <li><strong>Guided Walkthroughs:</strong> The team will clarify technical details and discuss feasible solutions.</li>
+                                    <li><strong>Regular Updates:</strong> You’ll receive progress reports in straightforward terms.</li>
+                                    <li><strong>Post-Launch Support:</strong> Training and support are available to help you get comfortable with the final product.</li>
+                                </ol>
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="c-faqs__item">
+                            <button class="c-faqs__item-question">
+                                What is SEO and why is it important?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    SEO, or Search Engine Optimization, is the process of improving your website to increase its visibility on search engines like Google. It’s crucial for driving organic (non-paid) traffic to your site, which helps grow your audience and customer base. Here are the main benefits of SEO:
+                                </p>
+                                <ol>
+                                    <li><strong>Increased Visibility:</strong> Helps your website appear at the top of search results, making it easier for customers to find you.</li>
+                                    <li><strong>Improved Credibility:</strong> High-ranking sites are perceived as more trustworthy by users.</li>
+                                    <li><strong>Cost-Effective:</strong> Drives organic traffic without the need for paid ads.</li>
+                                    <li><strong>Long-Term Growth:</strong> Provides a sustainable way to increase traffic over time.</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="c-faqs__item">
+                            <button class="c-faqs__item-question">
+                                How long does it take to see results from SEO?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    SEO is a long-term strategy, and results can vary depending on factors like competition, keywords, and website age. Generally, noticeable improvements can take from three to six months, but optimal results may take a year or more. Key milestones include:
+                                </p>
+                                <ol>
+                                    <li><strong>Initial Optimization (0-1 month):</strong> Adjusting your website for technical SEO and keyword optimization.</li>
+                                    <li><strong>Content Creation (1-3 months):</strong> Publishing optimized content regularly.</li>
+                                    <li><strong>Backlink Building (3-6 months):</strong> Gaining links from other reputable websites to boost authority.</li>
+                                    <li><strong>Monitoring and Adjustment (6+ months):</strong> Ongoing tracking and tweaking to maintain or improve rankings.</li>
+                                </ol>
+                            </div>
+                        </div>
             
-                    <div class="c-faqs__item">
-                        <button class="c-faqs__item-question">
-                            How do you guarantee the quality of the software?
-                        </button>
-                        <div class="c-faqs__item-answer">
-                            <p>
-                                Quality is ensured through regular testing and iteration, taking into account customer feedback at every stage. Agile methodologies are often employed to make sure that the product evolves with each iteration.
-                            </p>
+                        <div class="c-faqs__item">
+                            <button class="c-faqs__item-question">
+                                Should I choose a mobile app or web app?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    Both have their pros and cons. Mobile apps offer more monetization options and data collection capabilities, while web apps are generally less expensive to develop. Progressive Web Apps (PWAs) provide a middle ground by combining features of both. Here’s a breakdown:
+                                </p>
+                                <ol>
+                                    <li><strong>Mobile Apps:</strong> Ideal for frequent users needing offline access and high-speed performance.</li>
+                                    <li><strong>Web Apps:</strong> Cost-effective and easy to access on any device without installation.</li>
+                                    <li><strong>Progressive Web Apps:</strong> Blend mobile and web app features for enhanced user experience.</li>
+                                    <li><strong>Consultation:</strong> We can evaluate your goals to determine the best option for your business.</li>
+                                </ol>
+                            </div>
                         </div>
-                    </div>
             
-                    <div class="c-faqs__item">
-                        <button class="c-faqs__item-question">
-                            Can the software be upgraded in the future?
-                        </button>
-                        <div class="c-faqs__item-answer">
-                            <p>
-                                Yes, the software can always be upgraded as new technologies emerge or as your business needs evolve. The development team can help with future updates and improvements.
-                            </p>
+                        <div class="c-faqs__item">
+                            <button class="c-faqs__item-question">
+                                How do you guarantee the quality of the software?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    Quality is ensured through regular testing and iteration, taking into account customer feedback at every stage. Agile methodologies are often employed to make sure that the product evolves with each iteration. Key quality measures include:
+                                </p>
+                                <ol>
+                                    <li><strong>Continuous Testing:</strong> Testing during each development phase to catch issues early.</li>
+                                    <li><strong>User Feedback:</strong> Incorporating client and end-user feedback into the development process.</li>
+                                    <li><strong>Code Reviews:</strong> Peer and automated reviews to maintain code quality and standards.</li>
+                                    <li><strong>Agile Methodology:</strong> Iterative updates and improvements for a flexible, adaptive product.</li>
+                                </ol>
+                            </div>
                         </div>
+            
+                        <div class="c-faqs__item">
+                            <button class="c-faqs__item-question">
+                                Can the software be upgraded in the future?
+                            </button>
+                            <div class="c-faqs__item-answer">
+                                <p>
+                                    Yes, the software can always be upgraded as new technologies emerge or as your business needs evolve. The development team can help with future updates and improvements, which typically follow this approach:
+                                </p>
+                                <ol>
+                                    <li><strong>Scalable Architecture:</strong> Initial design that allows for future expansion.</li>
+                                    <li><strong>Modular Updates:</strong> Implementing changes without overhauling the entire system.</li>
+                                    <li><strong>Regular Maintenance:</strong> Periodic reviews to enhance performance and security.</li>
+                                    <li><strong>Future-Proofing:</strong> Adapting the software to align with emerging trends and needs.</li>
+                                </ol>
+                            </div>
+                        </div>
+            
+                    </div>
+                </section>
+            </section>
+            
+
+            <section class="contact-section">
+                <p class="contact-subtitle">Get in touch</p>
+                <h2>Contact</h2> 
+                <div class="contact-container">
+                  
+                    <div class="contact-info">
+                        <h2>Lets build something amazing together!</h2>
+                        <p>Fill out our contact form and we will be in touch soon, we look forward to working with you!</p>
+                            <ol>
+                                <li>Contact Us <span class="hand-desktop">👉</span></li>
+                                <li>Free Consultation</li>
+                                <li>Proposal</li>
+                            </ol>
+                        <!-- <p>Feel free to email us <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>, or give us a call at
+                        <a href="tel:19015704850">(901) 570-4850</a></p> -->
+                        <!-- <a href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"><button id="consult-btn-two">Schedule Meeting</button></a> -->
+                    </div>
+                    <div class="contact-form">
+                        <div class="form-loader-container">
+                            <div class="form-loader"></div>
+                        </div>
+                        <h2>Message</h2>
+                        <form id="contact-form">
+                            
+                            <label for="services">Select Service*</label>
+                            <select name="services" id="service-select" required>
+                                <option value="mobile-app">Mobile Development</option>
+                                <option value="website">Company Website</option>
+                                <option value="web-app">Web Application</option>
+                                <option value="desktop-app">Desktop App</option>
+                                <option value="custom-dashboards">Custom Dashboards</option>
+                                <option value="data-charts">Data Charts</option>
+                                <option value="ai-chat">AI ChatBot</option>
+                                <option value="ai-image">AI Image Generator</option>
+                            </select>
+                                <div class="input-group">
+                                    <label for="name">Full Name</label>
+                                   <input type="text" id="name" name="name" required class="form-input" autofocus>
+                                </div>
+                                <div class="input-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required class="form-input">
+                                </div>
+                                <div class="input-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" id="phone" name="phone" class="form-input">
+                                </div>
+                            
+                                <div class="input-group">
+                                    <label for="message">How can we help?</label>
+                                    <textarea name="message" id="message" cols="30" name="message"></textarea>
+                                </div>
+                                <button type="submit" id="form-submit-btn">Send Message <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 </div>
             </section>
-            
-        </section>
-        <section class="contact-section">
-            <div class="custom-shape-divider-top-1723994128">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
-                </svg>
-            </div>
-            <p>From your questions to feedback.</p>
-            <h1>Contact</h1>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h1>We would love to hear from you.</h1>
-                    <p>If you have any questions or simply want to leave feedback, please reach out.</p>
-                    
-                    <h2>Talk to Sales</h2>
-                    <p>Feel free to email us <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>, or give us a call at
-                    <a href="tel:19015704850">(901) 570-4850</a></p>
-                    <a href="https://calendly.com/desotobitsandbytes/software-meeting" target="_blank"><button id="consult-btn-two">Schedule Meeting</button></a>
-                </div>
-                <div class="contact-form">
-                    <div class="form-loader-container">
-                        <div class="form-loader"></div>
-                    </div>
-                    <h1>Message Us</h1>
-                    <form id="contact-form">
-                        
-                        <label for="services">Select Service*</label>
-                        <select name="services" id="service-select" required>
-                            <option value="mobile-app">Mobile Development</option>
-                            <option value="website">Company Website</option>
-                            <option value="web-app">Web Application</option>
-                            <option value="desktop-app">Desktop App</option>
-                            <option value="data-charts">Data Charts</option>
-                            <option value="3d">3D Objects</option>
-                            <option value="ai-chat">AI ChatBot</option>
-                            <option value="ai-image">AI Image Generator</option>
-                        </select>
-                        <div class="input-group">
-                            <div>
-                                <label for="first-name">First Name*</label>
-                                <input type="text" id="first-name" name="fist-name" required>
-                            </div>
-
-                            <div>
-                                <label for="last-name">Last Name*</label>
-                                <input type="text" id="last-name" name="last-name" required>
-                            </div>
-                        </div>
-                            <label for="email">Email*</label>
-                            <input type="email" id="email" name="email" required>
-                            <label for="phone">Phone*</label>
-                            <input type="text" id="phone" name="phone" required>
-                            <label for="message">Message*</label>
-                            <textarea name="message" id="message" cols="30" required name="message"></textarea>
-                            <button type="submit" id="form-submit-btn">Send Message <i class="fa-sharp fa-solid fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </section>
+          
+        </main>
         <footer class="company-footer">
+            
             <div class="company-footer-container">
                 <section class="footer-logo">
-                    <img src="./images/logo_transparent.png" alt="logo" height="350px" width="350px">
-                    <small>Delivering innovative technology solutions for your business needs.</small>
+                        <img src="./images/logo.png" height="350" width="350" alt="" class="night-logo">
+                        <img src="./images/logo_transparent.png" height="350" width="350" alt="" class="day-logo">
                 </section>
                 <section class="footer-logo-alternate">
                     <p>Delivering innovative technology solutions for your business needs.</p>
@@ -541,58 +828,45 @@
                 <section class="footer-development">
                     <p>Development</p>
                     <ul>
-                        <li class="underline-hover-effect-two">
-                            <a href="./mobileDevelopment.html">
-                              
+                        <li class="underline-hover-effect-two" data-service="0">
                                Mobile App
-                            </a>
                         </li>
-                        <li class="underline-hover-effect-two">
-                            <a href="./webAppDevelopment.html">  Web Application
+                        <li class="underline-hover-effect-two" data-service="1">
+                          Web Application
                         </li>
-                        <li class="underline-hover-effect-two">
-                            <a href="./websiteDevelopment.html"> Company Website
+                        <li class="underline-hover-effect-two" data-service="2">
+                           Company Website
                         </li>
-                        <li class="underline-hover-effect-two">
-                            <a href="./desktopDevelopment.html">
+                        <li class="underline-hover-effect-two" data-service="3">
                           Desktop App
-                           </a>
                         </li>
                     </ul>
                 </section>
                 <section class="visualize">
                     <p>Data Visuals</p>
                     <ul>
-                        <li class="underline-hover-effect-two">
-                            <a href="./dataCharts.html">
+                        <li class="underline-hover-effect-two" data-service="4">
                              Data Charts
-                            </a>
                          </li>
+                         <li class="underline-hover-effect-two" data-service="7">
+                            Custom Dashboards
+                        </li>
                     </ul>
                 </section>
                 <section class="footer-ai">
                     <p>AI Integration</p>
                     <ul>
-                        <li class="underline-hover-effect-two">
-                            <a href="./chatBot.html">
+                        <li class="underline-hover-effect-two" data-service="5">
                            Chatbot
-                            </a>
                          </li>
-                         <li class="underline-hover-effect-two">
-                           <a href="./imageGen.html">
+                         <li class="underline-hover-effect-two" data-service="6">
                             Image Generator
-                           </a>
                          </li>
                     </ul>
                 </section>
                 <section class="footer-help">
-                    <p>Quick Links</p>
+                    <p>Contact</p>
                     <ul>
-                        <li class="underline-hover-effect-two">
-                            <a href="./contact.html">
-                               Contact
-                              </a>
-                        </li>
                         <li class="underline-hover-effect-two">
                             <a href="tel:+19015704850">
                                 (901) 570-4850
@@ -605,152 +879,31 @@
                         </li>
                     </ul>
                 </section>
+                
             </div>
     </footer>
-    <div style="height: 100px; display: flex; justify-content: center; align-items: center; background: white;">
-        <p>	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
+    <div style="height: 100px; display: flex; justify-content: center; align-items: center; background: var(--bg-main);">
+        <p style="color: var(--text-color);">	&copy; Desoto Bits & Bytes LLC All Rights Reserved</p>
     </div>
        
       
        
     </div>
- 
 
-    <div class="on-this-page">
-       <ul>
-        <li id="li-title">Content</li>
-        <li id="li-services" onclick="goTo('services')">Services</li>
-        <li id="li-testimonials" onclick="goTo('testimonials')">Testimonials</li>
-        <li id="li-faqs" onclick="goTo('faqs')">FAQs</li>
-        <li id="contact-section" onclick="goTo('contact')">Contact</li>
-       </ul>
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    
     </div>
-    <!-- Calendly link widget begin -->
-<!-- <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script> -->
-
-
 
 <div class="loader-container">
     <div class="loader">
     </div>
 </div>
-<!-- <script>
-    const projects = [
-      {
-        id: 1,
-        title: "Web Application",
-        image: "./images/badger.png",
-        description: "Custom Home Builder Project Management Software"
-      },
-      {
-        id: 2,
-        title: "Web Application",
-        image: "./images/desotodeals.png",
-        description: "Deals/Coupon Software"
-      },
-      {
-        id: 3,
-        title: "Company Website",
-        image: "./images/memphissealcoat.png",
-        description: ""
-      },
-      {
-        id: 4,
-        title: "Web Dashboard",
-        image: "/api/placeholder/800/600",
-        description: "Analytics dashboard"
-      }
-    ];
-    
-    class Slideshow {
-      constructor(container) {
-        this.container = container;
-        this.currentSlide = 0;
-        this.slideNav = container.querySelector('.slide-nav');
-        this.autoplayInterval = null;
-        
-        this.init();
-        this.setupEventListeners();
-        this.startAutoplay();
-      }
-      
-      init() {
-        // Create slides
-        projects.forEach((project, index) => {
-          const slide = document.createElement('div');
-          slide.className = `slide ${index === 0 ? 'active' : ''}`;
-          slide.innerHTML = `
-            <img src="${project.image}" alt="${project.title}">
-            <div class="slide-content">
-              <h3>${project.title}</h3>
-              <p>${project.description}</p>
-            </div>
-          `;
-          this.container.insertBefore(slide, this.container.firstChild);
-          
-          // Create navigation dot
-          const dot = document.createElement('button');
-          dot.className = `slide-nav-dot ${index === 0 ? 'active' : ''}`;
-          dot.setAttribute('data-index', index);
-          this.slideNav.appendChild(dot);
-        });
-      }
-      
-      setupEventListeners() {
-        // Navigation dots
-        this.slideNav.addEventListener('click', (e) => {
-          if (e.target.classList.contains('slide-nav-dot')) {
-            this.goToSlide(parseInt(e.target.dataset.index));
-          }
-        });
-        
-        // Arrow navigation
-        this.container.querySelector('.prev').addEventListener('click', () => this.prevSlide());
-        this.container.querySelector('.next').addEventListener('click', () => this.nextSlide());
-        
-        // Pause autoplay on hover
-        this.container.addEventListener('mouseenter', () => this.stopAutoplay());
-        this.container.addEventListener('mouseleave', () => this.startAutoplay());
-      }
-      
-      goToSlide(index) {
-        const slides = this.container.querySelectorAll('.slide');
-        const dots = this.slideNav.querySelectorAll('.slide-nav-dot');
-        
-        slides[this.currentSlide].classList.remove('active');
-        dots[this.currentSlide].classList.remove('active');
-        
-        this.currentSlide = index;
-        
-        slides[this.currentSlide].classList.add('active');
-        dots[this.currentSlide].classList.add('active');
-      }
-      
-      nextSlide() {
-        const nextIndex = (this.currentSlide + 1) % projects.length;
-        this.goToSlide(nextIndex);
-      }
-      
-      prevSlide() {
-        const prevIndex = (this.currentSlide - 1 + projects.length) % projects.length;
-        this.goToSlide(prevIndex);
-      }
-      
-      startAutoplay() {
-        this.autoplayInterval = setInterval(() => this.nextSlide(), 5000);
-      }
-      
-      stopAutoplay() {
-        clearInterval(this.autoplayInterval);
-      }
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      const slideshowContainer = document.querySelector('.work-results');
-      new Slideshow(slideshowContainer);
-    });
-    </script> -->
+
 <script src="app.js"></script>
 <script>
 

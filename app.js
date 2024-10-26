@@ -27,91 +27,142 @@ const comingSoon = (route) => {
   }
 }
 
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+var hamburger = document.querySelector(".hamburger");
+const mobileNav = document.querySelector('.mobile-nav')
+
+function toggleMobileNav() {
+  if (mobileNav.classList.contains('reveal-mobile-nav')) {
+    mobileNav.classList.remove('reveal-mobile-nav');
+    mobileNav.classList.add('hide-mobile-nav');
+} else {
+    mobileNav.classList.remove('hide-mobile-nav');
+    mobileNav.classList.add('reveal-mobile-nav');
+}
+  hamburger.classList.toggle("is-active");
+}
+hamburger.addEventListener("click", toggleMobileNav);
 
 
-const heroSection = document.querySelector('.hero');
-const images = [
-    './images/pexels-wdnet-887751.jpg',
-    './images/soft_dev.jpeg',
-    './images/mope-app-hero.jpg',
-    './images/team_dev_2.jpeg'
-];
-let currentImageIndex = 0;
+const textArray = ["Websites | Mobile Apps | Desktop Applications | Custom Dashboards ", "Data Charts", "AI Integration"];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 1000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
 
-function preloadImages(images) {
-    images.forEach((image) => {
-        const img = new Image();
-        img.src = image;
-    });
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
 }
 
-function createBackgroundContainer() {
-    // Create a container for all background images
-    const bgContainer = document.createElement('div');
-    bgContainer.className = 'hero-backgrounds';
-    bgContainer.style.position = 'absolute';
-    bgContainer.style.top = '0';
-    bgContainer.style.left = '0';
-    bgContainer.style.width = '100%';
-    bgContainer.style.height = '100%';
-    bgContainer.style.zIndex = '1'; // Place behind content
-    return bgContainer;
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
 }
 
-function changeBackgroundImage() {
-    let bgContainer = heroSection.querySelector('.hero-backgrounds');
-    if (!bgContainer) {
-        bgContainer = createBackgroundContainer();
-        heroSection.insertBefore(bgContainer, heroSection.firstChild); // Insert at the beginning
-    }
+type()
 
-    const nextImageIndex = (currentImageIndex + 1) % images.length;
-    
-    // Create a new div for the next image
-    const nextImageDiv = document.createElement('div');
-    nextImageDiv.style.position = 'absolute';
-    nextImageDiv.style.top = '0';
-    nextImageDiv.style.left = '0';
-    nextImageDiv.style.width = '100%';
-    nextImageDiv.style.height = '100%';
-    nextImageDiv.style.opacity = '0';
-    nextImageDiv.style.transition = 'opacity 1s ease-in-out';
-    nextImageDiv.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)), url('${images[nextImageIndex]}')`;
-    nextImageDiv.style.backgroundPosition = 'center';
-    nextImageDiv.style.backgroundRepeat = 'no-repeat';
-    nextImageDiv.style.backgroundSize = 'cover';
-    
-    bgContainer.appendChild(nextImageDiv);
-    
-    // Force a reflow
-    nextImageDiv.offsetHeight;
-    
-    // Fade in the new image
-    nextImageDiv.style.opacity = '1';
-    
-    // Remove old background images after transition
-    setTimeout(() => {
-        const oldImages = bgContainer.getElementsByTagName('div');
-        while (oldImages.length > 1) {
-            bgContainer.removeChild(oldImages[0]);
-        }
-    }, 1000);
-    
-    currentImageIndex = nextImageIndex;
-}
 
-heroSection.style.position = 'relative';
-heroSection.style.overflow = 'hidden';
 
-// Preload images
-preloadImages(images);
+// const heroSection = document.querySelector('.hero');
+// const images = [
+//     './images/pexels-wdnet-887751.jpg',
+//     './images/soft_dev.jpeg',
+//     './images/team_dev_2.jpeg'
+// ];
 
-// Initial image setup
-window.addEventListener('load', () => {
-    changeBackgroundImage(); // Display first image immediately
-    // Start the interval
-    setInterval(changeBackgroundImage, 6000);
-});
+// let currentImageIndex = 0;
+
+// function preloadImages(images) {
+//     images.forEach((image) => {
+//         const img = new Image();
+//         img.src = image;
+//     });
+// }
+
+// function createBackgroundContainer() {
+
+//     const bgContainer = document.createElement('div');
+//     bgContainer.className = 'hero-backgrounds';
+//     bgContainer.style.position = 'absolute';
+//     bgContainer.style.top = '0';
+//     bgContainer.style.left = '0';
+//     bgContainer.style.width = '100%';
+//     bgContainer.style.height = '100%';
+//     bgContainer.style.zIndex = '1'; 
+//     return bgContainer;
+// }
+
+// function changeBackgroundImage() {
+//     let bgContainer = heroSection.querySelector('.hero-backgrounds');
+//     if (!bgContainer) {
+//         bgContainer = createBackgroundContainer();
+//         heroSection.insertBefore(bgContainer, heroSection.firstChild); 
+//     }
+
+//     const nextImageIndex = (currentImageIndex + 1) % images.length;
+    
+//     const nextImageDiv = document.createElement('div');
+//     nextImageDiv.style.position = 'absolute';
+//     nextImageDiv.style.top = '0';
+//     nextImageDiv.style.left = '0';
+//     nextImageDiv.style.width = '100%';
+//     nextImageDiv.style.height = '100%';
+//     nextImageDiv.style.opacity = '0';
+//     nextImageDiv.style.transition = 'opacity 1s ease-in-out';
+//     nextImageDiv.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.6)), url('${images[nextImageIndex]}')`;
+//     nextImageDiv.style.backgroundPosition = 'center';
+//     nextImageDiv.style.backgroundRepeat = 'no-repeat';
+//     nextImageDiv.style.backgroundSize = 'cover';
+    
+//     bgContainer.appendChild(nextImageDiv);
+    
+//     nextImageDiv.offsetHeight;
+    
+//     nextImageDiv.style.opacity = '1';
+    
+//     setTimeout(() => {
+//         const oldImages = bgContainer.getElementsByTagName('div');
+//         while (oldImages.length > 1) {
+//             bgContainer.removeChild(oldImages[0]);
+//         }
+//     }, 1000);
+    
+//     currentImageIndex = nextImageIndex;
+// }
+
+// heroSection.style.position = 'relative';
+// heroSection.style.overflow = 'hidden';
+
+
+// preloadImages(images);
+
+
+// window.addEventListener('load', () => {
+//     changeBackgroundImage(); 
+
+//     setInterval(changeBackgroundImage, 6000);
+// });
 
 
 function toggleAccordion(element) {
@@ -121,128 +172,20 @@ function toggleAccordion(element) {
 
 
 
-const servicesObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-            document.getElementById('li-faqs').style.color = 'black'
-             document.getElementById('li-faqs').style.fontWeight = '400'
-            document.getElementById('li-testimonials').style.fontWeight = '400'
-            document.getElementById('li-testimonials').style.color = 'black';
-             document.getElementById('contact-section').style.color = 'black'
-             document.getElementById('contact-section').style.fontWeight = '400'
-                document.getElementById('li-services').style.fontWeight = '600'
-                document.getElementById('li-services').style.color = 'rgb(0, 119, 255)'
-    
-      } else {
-        document.getElementById('li-services').style.fontWeight = '400'
-          document.getElementById('li-services').style.color = 'black';
-      }
-    });
-  }, {
-    threshold: 0.5,
-  });
-  
-  const serviceSection = document.querySelector('.service-container');
-
-if(serviceSection) {
-    servicesObserver.observe(serviceSection);
-}
 
 
 
-const testimonialObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-            document.getElementById('li-faqs').style.color = 'black'
-             document.getElementById('li-faqs').style.fontWeight = '400'
-            document.getElementById('li-services').style.fontWeight = '400'
-            document.getElementById('li-services').style.color = 'black';
-             document.getElementById('contact-section').style.color = 'black'
-             document.getElementById('contact-section').style.fontWeight = '400'
-            document.getElementById('li-testimonials').style.fontWeight = '600'
-            document.getElementById('li-testimonials').style.color = 'rgb(0, 119, 255)'
-    
-      } else {
-        document.getElementById('li-testimonials').style.fontWeight = '400'
-          document.getElementById('li-testimonials').style.color = 'black';
-      }
-    });
-  }, {
-    threshold: 0.5,
-  });
-  
-  const testimonials = document.querySelector('.customer-reviews');
-
-if(testimonials) {
-    testimonialObserver.observe(testimonials);
-}
-
-
-
-const faqObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        document.getElementById('li-services').style.fontWeight = '400'
-        document.getElementById('li-services').style.color = 'black';
-      document.getElementById('li-testimonials').style.fontWeight = '400'
-       document.getElementById('li-testimonials').style.color = 'black'
-            document.getElementById('contact-section').style.color = 'black'
-             document.getElementById('contact-section').style.fontWeight = '400'
-          document.getElementById('li-faqs').style.color = 'rgb(0, 119, 255)'
-             document.getElementById('li-faqs').style.fontWeight = '600'
-    
-      } else {
-       document.getElementById('li-faqs').style.color = 'black'
-        document.getElementById('li-faqs').style.fontWeight = '400'
-      }
-    });
-  }, {
-    threshold: 0.5,
-  });
-  
-  const faqs = document.querySelector('.faq-section');
-
-if(faqs) {
-    faqObserver.observe(faqs);
-}
-
-
-
-
-const contactObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        document.getElementById('li-services').style.fontWeight = '400'
-        document.getElementById('li-services').style.color = 'black';
-      document.getElementById('li-testimonials').style.fontWeight = '400'
-       document.getElementById('li-testimonials').style.color = 'black'
-        document.getElementById('li-faqs').style.color = 'black'
-        document.getElementById('li-faqs').style.fontWeight = '400'
-          document.getElementById('contact-section').style.color = 'rgb(0, 119, 255)'
-             document.getElementById('contact-section').style.fontWeight = '600'
-    
-      } else {
-      document.getElementById('contact-section').style.color = 'black'
-             document.getElementById('contact-section').style.fontWeight = '400'
-      }
-    });
-  }, {
-    threshold: 0.5,
-  });
-  
-  const contactSection = document.querySelector('.contact-section');
-
-if(contactSection) {
-    contactObserver.observe(contactSection);
-
-}
-
-
-
-
-///////////////// Intersection Observer ////////////////
-const goTo = (section) => {
+const goTo = (section, nav) => {
+  if(nav === 'mobile') {
+    toggleMobileNav()
+  } 
     switch (section) {
+        case 'logo': 
+        smoothScroll('logo')
+        break;
+        case 'pricing':
+          smoothScroll('.pricing-container');
+          break;
         case 'services':
             smoothScroll('.service-section');
             break;
@@ -303,15 +246,15 @@ let lastScrollTop = 0;
 // });
 
 
-window.addEventListener('resize', () => {
-    if(window.innerWidth > 1050) {
-        const mobileNav = document.querySelector('.mobile-nav');
-        if(mobileNav.classList.contains('reveal-mobile-nav')) {
-            mobileNav.classList.remove('reveal-mobile-nav')
-            mobileNav.classList.add('hide-mobile-nav')
-        }
-    }
-})
+// window.addEventListener('resize', () => {
+//     if(window.innerWidth > 1050) {
+//         const mobileNav = document.querySelector('.mobile-nav');
+//         if(mobileNav.classList.contains('reveal-mobile-nav')) {
+//             mobileNav.classList.remove('reveal-mobile-nav')
+//             mobileNav.classList.add('hide-mobile-nav')
+//         }
+//     }
+// })
 
 window.addEventListener('load', () => {
   document.querySelector('.loader-container').style.display = 'none';
@@ -323,10 +266,19 @@ window.addEventListener('load', () => {
 
 function smoothScroll(section) {
 
+  if(section === 'logo') {
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+    return;
+  }
+
 // const targetId = '.project-mgmt-section'
 const targetId = section
-const targetPosition = document.querySelector(targetId).offsetTop - 20;
+const targetPosition = document.querySelector(targetId).offsetTop - 50;
 const startPosition = window.scrollY;
+
 const distance = targetPosition - startPosition;
 const duration = 1500;
 let start = null;
@@ -364,22 +316,22 @@ return c/2*(t*t*t + 2) + b;
 
 
 
-const hamburgerMenu = document.querySelector('.hamburger-menu');
+// const hamburgerMenu = document.querySelector('.hamburger-menu');
 
 
 
-hamburgerMenu.addEventListener('click', () => {
-    hamburgerMenu.classList.toggle('spin')
-    const mobileNav = document.querySelector('.mobile-nav');
+// hamburgerMenu.addEventListener('click', () => {
+//     hamburgerMenu.classList.toggle('spin')
+//     const mobileNav = document.querySelector('.mobile-nav');
 
-    if (mobileNav.classList.contains('reveal-mobile-nav')) {
-        mobileNav.classList.remove('reveal-mobile-nav');
-        mobileNav.classList.add('hide-mobile-nav');
-    } else {
-        mobileNav.classList.remove('hide-mobile-nav');
-        mobileNav.classList.add('reveal-mobile-nav');
-    }
-});
+//     if (mobileNav.classList.contains('reveal-mobile-nav')) {
+//         mobileNav.classList.remove('reveal-mobile-nav');
+//         mobileNav.classList.add('hide-mobile-nav');
+//     } else {
+//         mobileNav.classList.remove('hide-mobile-nav');
+//         mobileNav.classList.add('reveal-mobile-nav');
+//     }
+// });
 
 
 // window.addEventListener('load', () => {
@@ -394,8 +346,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   // Retrieve form values
   const data = {
     services: document.getElementById('service-select').value,
-    firstName: document.getElementById('first-name').value.trim(),
-    lastName: document.getElementById('last-name').value.trim(),
+    name: document.getElementById('name').value.trim(),
     email: document.getElementById('email').value.trim(),
     phone: document.getElementById('phone').value.trim(),
     message: document.getElementById('message').value.trim(),
@@ -406,7 +357,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   const isValidPhone = (phone) => /^\d{10}$/.test(phone); // Example: 10 digits for US format
 
   // Check for missing or invalid values
-  if (!data.firstName || !data.lastName) {
+  if (!data.name) {
     Swal.fire({ text: "Please enter your full name", icon: "warning" });
     document.querySelector('.form-loader-container').style.display = 'none';
     return;
@@ -418,17 +369,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     return;
   }
 
-  if (!isValidPhone(data.phone)) {
-    Swal.fire({ text: "Please enter a valid phone number (10 digits)", icon: "warning" });
-    document.querySelector('.form-loader-container').style.display = 'none';
-    return;
-  }
-
-  if (!data.message) {
-    Swal.fire({ text: "Please enter a message", icon: "warning" });
-    document.querySelector('.form-loader-container').style.display = 'none';
-    return;
-  }
+  // if (!isValidPhone(data.phone)) {
+  //   Swal.fire({ text: "Please enter a valid phone number (10 digits)", icon: "warning" });
+  //   document.querySelector('.form-loader-container').style.display = 'none';
+  //   return;
+  // }
 
   // If all checks pass, submit the form
   try {
@@ -467,3 +412,280 @@ document.querySelectorAll('.c-faqs__item-question').forEach((button) => {
         item.classList.toggle('active');
     });
 });
+
+
+
+
+// Generate service divs dynamically
+const services = [
+  {
+      title: "Mobile App",
+      description: `
+        We craft user-friendly mobile apps that deliver high performance on both iOS and Android platforms. Our apps are built to scale and designed to meet the needs of modern businesses.
+        <ul>
+          <li>Native performance for iOS & Android</li>
+          <li>Seamless integration with backend systems</li>
+          <li>Customizable UI/UX for a personalized experience</li>
+          <li>Offline support for uninterrupted access</li>
+        </ul>
+      `,
+      icon: "fa-light fa-mobile",
+  },
+  {
+      title: "Web App",
+      description: `
+        Our web apps are built for scalability, speed, and cross-browser compatibility, ensuring a seamless experience for all users. Whether you're building an e-commerce platform or a SaaS product, we have you covered.
+        <ul>
+          <li>Responsive design for all screen sizes</li>
+          <li>High-performance architecture</li>
+          <li>Secure user authentication & data protection</li>
+          <li>Custom dashboards and real-time analytics</li>
+        </ul>
+      `,
+      icon: "fa-light fa-globe-pointer",
+  },
+  {
+      title: "Company Website",
+      description: `
+        We build fast, responsive websites that establish your brand and engage your audience effectively. From small businesses to large corporations, our websites are optimized for conversions.
+        <ul>
+          <li>Custom designs tailored to your brand</li>
+          <li>SEO-friendly for higher search rankings</li>
+          <li>Optimized for speed and mobile usability</li>
+          <li>Easy-to-manage CMS integration</li>
+        </ul>
+      `,
+      icon: "fa-light fa-browser",
+  },
+  {
+      title: "Desktop App",
+      description: `
+        We develop desktop applications that work seamlessly across operating systems to meet your business needs. Our desktop apps are optimized for speed, reliability, and security.
+        <ul>
+          <li>Cross-platform support (Windows, MacOS, Linux)</li>
+          <li>Optimized for large-scale data processing</li>
+          <li>Custom user interfaces for enterprise applications</li>
+          <li>Integration with third-party services and APIs</li>
+        </ul>
+      `,
+      icon: "fa-thin fa-desktop",
+  },
+  {
+      title: "Data Charts",
+      description: `
+        Our data visualization solutions turn complex data into easy-to-understand charts for informed decision-making. We help you unlock insights from your data and present it in visually engaging formats.
+        <ul>
+          <li>Interactive charts with real-time data updates</li>
+          <li>Customizable data visualization options</li>
+          <li>Integration with existing data systems</li>
+          <li>Support for various chart types (line, bar, pie, etc.)</li>
+        </ul>
+      `,
+      icon: "fa-thin fa-chart-line",
+  },
+  {
+      title: "AI ChatBot",
+      description: `
+        Our AI-powered chatbots provide personalized, real-time responses to customer queries, improving engagement and customer satisfaction. Automate routine tasks while offering a human-like experience.
+        <ul>
+          <li>24/7 automated customer support</li>
+          <li>Natural language processing (NLP) integration</li>
+          <li>Seamless handoff to human agents</li>
+          <li>Integration with CRM systems</li>
+        </ul>
+      `,
+      icon: "fa-thin fa-comments",
+  },
+  {
+      title: "AI Image Generator",
+      description: `
+        Our AI tools generate stunning, high-quality images to enhance your creative projects. Whether for marketing, design, or content creation, our AI image generator provides endless creative possibilities.
+        <ul>
+          <li>AI-powered generation of unique images</li>
+          <li>Customizable parameters for specific styles</li>
+          <li>Support for high-resolution outputs</li>
+          <li>Integration with design software tools</li>
+        </ul>
+      `,
+      icon: "fa-thin fa-image",
+  },
+  {
+    title: "Custom Dashboards",
+    description: `
+      Design and build personalized dashboards tailored to your specific needs. Our dashboard solutions provide an intuitive interface to manage, visualize, and interact with data seamlessly.
+      <ul>
+        <li>Fully customizable layouts to match your workflow</li>
+        <li>Real-time data integration and updates</li>
+        <li>Drag-and-drop widgets for easy configuration</li>
+        <li>Support for various data visualization types (charts, graphs, etc.)</li>
+        <li>Role-based access control for team collaboration</li>
+      </ul>
+    `,
+    icon: "fa-thin fa-table-columns",
+  }
+];
+
+// Generate service divs dynamically
+document.querySelectorAll('.service-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const serviceIndex = this.getAttribute('data-service');
+    openModal(serviceIndex);
+  });
+});
+
+document.querySelectorAll('.footer-development ul li').forEach(item => {
+  item.addEventListener('click', () => {
+    const serviceIndex = item.getAttribute('data-service');
+    openModal(serviceIndex);
+  });
+});
+
+document.querySelectorAll('.visualize ul li').forEach(item => {
+  item.addEventListener('click', () => {
+    const serviceIndex = item.getAttribute('data-service');
+    openModal(serviceIndex);
+  });
+});
+
+document.querySelectorAll('.footer-ai ul li').forEach(item => {
+  item.addEventListener('click', () => {
+    const serviceIndex = item.getAttribute('data-service');
+    openModal(serviceIndex);
+  });
+});
+
+let newClass;
+
+function openModal(serviceIndex) {
+  const modalTitle = document.getElementById('modal-title');
+  const modalDescription = document.getElementById('modal-description');
+  const faIcon = document.getElementById('font-awesome-icon')
+
+  
+  modalTitle.textContent = services[serviceIndex].title;
+  modalDescription.innerHTML = services[serviceIndex].description;
+  const faClass = services[serviceIndex].icon
+  const parts = faClass.split(' ');  
+  const part2 = parts[1];  
+
+  if(newClass) {
+    faIcon.classList.remove(newClass)
+  }
+  faIcon.classList.add(part2)
+
+  newClass = part2
+  
+  
+  document.getElementById('service-modal').style.display = 'flex';
+  const modalContent =  document.querySelector('.modal-content')
+  if(modalContent.classList.contains('scale-down')) {
+    modalContent.classList.remove('scale-down') 
+    modalContent.classList.add('scale-up')
+  } 
+}
+
+function closeModal() {
+  const modalContent =  document.querySelector('.modal-content')
+  modalContent.classList.remove('scale-up')
+  modalContent.classList.add('scale-down')
+ 
+ setTimeout(() => {
+  document.getElementById('service-modal').style.display = 'none';
+ },300)
+}
+
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+// Function to switch theme
+function switchTheme(e) {
+  const nightLogos = document.querySelectorAll('.night-logo');
+  const dayLogos = document.querySelectorAll('.day-logo');
+
+  if (e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    nightLogos.forEach(logo => logo.style.display = 'block');
+    dayLogos.forEach(logo => logo.style.display = 'none');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    nightLogos.forEach(logo => logo.style.display = 'none');
+    dayLogos.forEach(logo => logo.style.display = 'block');
+  }
+}
+
+// Check if the user has a stored theme preference
+function checkStoredTheme() {
+  const nightLogos = document.querySelectorAll('.night-logo');
+  const dayLogos = document.querySelectorAll('.day-logo');
+  const currentTheme = localStorage.getItem('theme') || 'dark'; // default to light theme
+
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    nightLogos.forEach(logo => logo.style.display = 'block');
+    dayLogos.forEach(logo => logo.style.display = 'none');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    nightLogos.forEach(logo => logo.style.display = 'none');
+    dayLogos.forEach(logo => logo.style.display = 'block');
+  }
+}
+
+// Save theme preference in localStorage
+toggleSwitch.addEventListener('change', function (e) {
+  switchTheme(e);
+  localStorage.setItem('theme', e.target.checked ? 'dark' : 'light');
+}, false);
+
+// Call this function when the page loads
+checkStoredTheme();
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.review-card');
+const dots = document.querySelectorAll('.dot');
+let slideInterval = setInterval(nextSlide, 10000);
+
+function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function previousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+function resetInterval() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 10000);
+}
+
+// Event listeners
+document.querySelector('.next').addEventListener('click', () => {
+    nextSlide();
+    resetInterval();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    previousSlide();
+    resetInterval();
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        showSlide(index);
+        resetInterval();
+    });
+});
+
+
+
+
+
+
