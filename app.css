@@ -1057,27 +1057,6 @@ ul li {
     
   }
 
-  .custom-shape-divider-top-1724098451 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-top-1724098451 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 100px;
-    transform: rotateY(180deg);
-}
-
-.custom-shape-divider-top-1724098451 .shape-fill {
-    fill: rgb(248,248,248);
-}
-
   .contact-container {
     display: flex;
     justify-content: space-around;
