@@ -1998,7 +1998,7 @@ h2, h1 {
 }
 
 .author-location {
-    color: #6b7280;
+    color: #6b7280 !important;
     margin: 0.25rem 0 0 0;
 }
 
