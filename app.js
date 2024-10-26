@@ -612,11 +612,16 @@ function switchTheme(e) {
   }
 }
 
-// Check if the user has a stored theme preference
-function checkStoredTheme() {
+// Check theme preference from local storage, or fall back to system preference
+function checkStoredOrSystemTheme() {
   const nightLogos = document.querySelectorAll('.night-logo');
   const dayLogos = document.querySelectorAll('.day-logo');
-  const currentTheme = localStorage.getItem('theme') || 'dark'; // default to light theme
+  let currentTheme = localStorage.getItem('theme');
+
+  if (!currentTheme) {
+    // Check for system preference if no theme is stored
+    currentTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
 
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true;
@@ -624,6 +629,7 @@ function checkStoredTheme() {
     nightLogos.forEach(logo => logo.style.display = 'block');
     dayLogos.forEach(logo => logo.style.display = 'none');
   } else {
+    toggleSwitch.checked = false;
     document.documentElement.setAttribute('data-theme', 'light');
     nightLogos.forEach(logo => logo.style.display = 'none');
     dayLogos.forEach(logo => logo.style.display = 'block');
@@ -636,8 +642,52 @@ toggleSwitch.addEventListener('change', function (e) {
   localStorage.setItem('theme', e.target.checked ? 'dark' : 'light');
 }, false);
 
-// Call this function when the page loads
-checkStoredTheme();
+checkStoredOrSystemTheme();
+
+
+// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+// // Function to switch theme
+// function switchTheme(e) {
+//   const nightLogos = document.querySelectorAll('.night-logo');
+//   const dayLogos = document.querySelectorAll('.day-logo');
+
+//   if (e.target.checked) {
+//     document.documentElement.setAttribute('data-theme', 'dark');
+//     nightLogos.forEach(logo => logo.style.display = 'block');
+//     dayLogos.forEach(logo => logo.style.display = 'none');
+//   } else {
+//     document.documentElement.setAttribute('data-theme', 'light');
+//     nightLogos.forEach(logo => logo.style.display = 'none');
+//     dayLogos.forEach(logo => logo.style.display = 'block');
+//   }
+// }
+
+// // Check if the user has a stored theme preference
+// function checkStoredTheme() {
+//   const nightLogos = document.querySelectorAll('.night-logo');
+//   const dayLogos = document.querySelectorAll('.day-logo');
+//   const currentTheme = localStorage.getItem('theme') || 'dark'; // default to light theme
+
+//   if (currentTheme === 'dark') {
+//     toggleSwitch.checked = true;
+//     document.documentElement.setAttribute('data-theme', 'dark');
+//     nightLogos.forEach(logo => logo.style.display = 'block');
+//     dayLogos.forEach(logo => logo.style.display = 'none');
+//   } else {
+//     document.documentElement.setAttribute('data-theme', 'light');
+//     nightLogos.forEach(logo => logo.style.display = 'none');
+//     dayLogos.forEach(logo => logo.style.display = 'block');
+//   }
+// }
+
+// // Save theme preference in localStorage
+// toggleSwitch.addEventListener('change', function (e) {
+//   switchTheme(e);
+//   localStorage.setItem('theme', e.target.checked ? 'dark' : 'light');
+// }, false);
+
+// checkStoredTheme();
 
 let currentSlide = 0;
 const slides = document.querySelectorAll('.review-card');
