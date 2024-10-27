@@ -375,14 +375,42 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   //   return;
   // }
 
-  // If all checks pass, submit the form
+  // Axios API
+  // try {
+  //   const response = await axios.post('https://nodemailer-gold.vercel.app/sendMessage', data);
+  //   document.querySelector('.form-loader-container').style.display = 'none';
+  //   Swal.fire({
+  //     text: "Message Sent!",
+  //     icon: "success"
+  //   });
+  // } catch (error) {
+  //   document.querySelector('.form-loader-container').style.display = 'none';
+  //   Swal.fire({
+  //     text: "Message Failed",
+  //     icon: "info"
+  //   });
+  //   console.error('There was an error!', error);
+  // }
+
   try {
-    const response = await axios.post('https://nodemailer-gold.vercel.app/sendMessage', data);
-    document.querySelector('.form-loader-container').style.display = 'none';
-    Swal.fire({
-      text: "Message Sent!",
-      icon: "success"
+    const response = await fetch('https://nodemailer-gold.vercel.app/sendMessage', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     });
+  
+    document.querySelector('.form-loader-container').style.display = 'none';
+    
+    if (response.ok) {
+      Swal.fire({
+        text: "Message Sent!",
+        icon: "success"
+      });
+    } else {
+      throw new Error('Network response was not ok');
+    }
   } catch (error) {
     document.querySelector('.form-loader-container').style.display = 'none';
     Swal.fire({
@@ -390,9 +418,8 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       icon: "info"
     });
     console.error('There was an error!', error);
-  }
+  } 
 
-  // Reset the form after submission
   document.getElementById('contact-form').reset();
 });
 

@@ -409,24 +409,13 @@ ul li {
     position: relative;
     padding-inline: 250px;
     padding-bottom: 50px;
-    background:linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/soft_dev.jpeg');
+    background:linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/team_dev.jpeg');
     background-size: cover;
     background-position: center;
     opacity: 0;
     animation: fade-in 500ms linear forwards;
 }
 
-.hero-img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background:linear-gradient(rgba(248,248,248, 0.5), rgba(248,248,248, 1)), url('./images/soft_dev.jpeg');
-    background-size: cover;
-    background-position: center;
-}
 
 .svg-wave {
     position: absolute;
@@ -561,8 +550,9 @@ ul li {
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    background: url('./images/team_dev.jpeg');
+    background: url('./images/soft_dev.jpeg');
     background-size: cover;
+    background-position: left;
   }
 
   .work-results-two {
