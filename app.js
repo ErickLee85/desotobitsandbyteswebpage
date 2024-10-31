@@ -404,19 +404,13 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     document.querySelector('.form-loader-container').style.display = 'none';
     
     if (response.ok) {
-      Swal.fire({
-        text: "Message Sent!",
-        icon: "success"
-      });
+      openSnack()
     } else {
       throw new Error('Network response was not ok');
     }
   } catch (error) {
     document.querySelector('.form-loader-container').style.display = 'none';
-    Swal.fire({
-      text: "Message Failed",
-      icon: "info"
-    });
+    alert('Message Failed To Send')
     console.error('There was an error!', error);
   } 
 
@@ -446,112 +440,126 @@ document.querySelectorAll('.c-faqs__item-question').forEach((button) => {
 // Generate service divs dynamically
 const services = [
   {
-      title: "Mobile App",
-      description: `
-        We craft user-friendly mobile apps that deliver high performance on both iOS and Android platforms. Our apps are built to scale and designed to meet the needs of modern businesses.
-        <ul>
-          <li>Native performance for iOS & Android</li>
-          <li>Seamless integration with backend systems</li>
-          <li>Customizable UI/UX for a personalized experience</li>
-          <li>Offline support for uninterrupted access</li>
-        </ul>
-      `,
-      icon: "fa-light fa-mobile",
+    title: "Mobile App",
+    description: `
+      We craft powerful, user-friendly mobile applications that set new standards in performance and user experience. Our expert team delivers native-quality apps for both iOS and Android platforms, ensuring your business stays ahead in the mobile-first world.
+      <ul>
+        <li>Native & cross-platform development using React Native</li>
+        <li>Seamless integration with existing systems and third-party APIs</li>
+        <li>Advanced features including offline mode, push notifications, and real-time updates</li>
+        <li>Rigorous testing across multiple devices and OS versions</li>
+        <li>App Store optimization and submission support</li>
+        <li>Performance monitoring and analytics integration</li>
+      </ul>
+    `,
+    icon: "fa-light fa-mobile",
   },
   {
-      title: "Web App",
-      description: `
-        Our web apps are built for scalability, speed, and cross-browser compatibility, ensuring a seamless experience for all users. Whether you're building an e-commerce platform or a SaaS product, we have you covered.
-        <ul>
-          <li>Responsive design for all screen sizes</li>
-          <li>High-performance architecture</li>
-          <li>Secure user authentication & data protection</li>
-          <li>Custom dashboards and real-time analytics</li>
-        </ul>
-      `,
-      icon: "fa-light fa-globe-pointer",
+    title: "Web App",
+    description: `
+      Transform your business with our cutting-edge web applications built for the modern digital landscape. We combine innovative technology with exceptional user experience to create scalable, secure, and high-performance solutions that drive real business results.
+      <ul>
+        <li>Modern frontend frameworks (React, Vue.js, Angular) for optimal performance</li>
+        <li>Robust backend architecture with Node.js, Python, or Java</li>
+        <li>Advanced security features including SSL, 2FA, and data encryption</li>
+        <li>Real-time analytics and reporting dashboards</li>
+        <li>Cloud deployment with AWS, Google Cloud, or Azure</li>
+        <li>Progressive Web App capabilities for enhanced user engagement</li>
+      </ul>
+    `,
+    icon: "fa-light fa-globe-pointer",
   },
   {
-      title: "Company Website",
-      description: `
-        We build fast, responsive websites that establish your brand and engage your audience effectively. From small businesses to large corporations, our websites are optimized for conversions.
-        <ul>
-          <li>Custom designs tailored to your brand</li>
-          <li>SEO-friendly for higher search rankings</li>
-          <li>Optimized for speed and mobile usability</li>
-          <li>Easy-to-manage CMS integration</li>
-        </ul>
-      `,
-      icon: "fa-light fa-browser",
+    title: "Company Website",
+    description: `
+      Create a powerful online presence with our custom-designed, conversion-focused websites. We blend stunning design with technical excellence to build websites that not only look impressive but also drive business growth and user engagement.
+      <ul>
+        <li>Custom-designed UI/UX optimized for your target audience</li>
+        <li>Advanced SEO implementation with schema markup and optimization</li>
+        <li>Lightning-fast page loads with modern optimization techniques</li>
+        <li>Content Management System with intuitive admin controls</li>
+        <li>Integration with marketing tools and analytics platforms</li>
+        <li>Regular security updates and performance monitoring</li>
+      </ul>
+    `,
+    icon: "fa-light fa-browser",
   },
   {
-      title: "Desktop App",
-      description: `
-        We develop desktop applications that work seamlessly across operating systems to meet your business needs. Our desktop apps are optimized for speed, reliability, and security.
-        <ul>
-          <li>Cross-platform support (Windows, MacOS, Linux)</li>
-          <li>Optimized for large-scale data processing</li>
-          <li>Custom user interfaces for enterprise applications</li>
-          <li>Integration with third-party services and APIs</li>
-        </ul>
-      `,
-      icon: "fa-thin fa-desktop",
+    title: "Desktop App",
+    description: `
+      Elevate your business operations with powerful desktop applications designed for performance and efficiency. Our cross-platform solutions deliver enterprise-grade functionality with intuitive interfaces, perfect for complex business operations and data-intensive tasks.
+      <ul>
+        <li>Cross-platform development using Electron or .NET</li>
+        <li>Powerful offline capabilities with local data synchronization</li>
+        <li>Advanced security features for sensitive business data</li>
+        <li>Custom automation tools for improved productivity</li>
+        <li>Integration with existing enterprise systems</li>
+        <li>Regular updates and maintenance support</li>
+      </ul>
+    `,
+    icon: "fa-thin fa-desktop",
   },
   {
-      title: "Data Charts",
-      description: `
-        Our data visualization solutions turn complex data into easy-to-understand charts for informed decision-making. We help you unlock insights from your data and present it in visually engaging formats.
-        <ul>
-          <li>Interactive charts with real-time data updates</li>
-          <li>Customizable data visualization options</li>
-          <li>Integration with existing data systems</li>
-          <li>Support for various chart types (line, bar, pie, etc.)</li>
-        </ul>
-      `,
-      icon: "fa-thin fa-chart-line",
+    title: "Data Charts",
+    description: `
+      Transform complex data into actionable insights with our advanced data visualization solutions. We create interactive, real-time charts and graphs that make data interpretation intuitive and decision-making easier for your team and stakeholders.
+      <ul>
+        <li>Interactive visualizations using D3.js, Chart.js, or Highcharts</li>
+        <li>Real-time data updates and historical trend analysis</li>
+        <li>Custom filters and drill-down capabilities</li>
+        <li>Export functionality for reports and presentations</li>
+        <li>Integration with multiple data sources and APIs</li>
+        <li>Mobile-responsive design for on-the-go access</li>
+      </ul>
+    `,
+    icon: "fa-thin fa-chart-line",
   },
   {
-      title: "AI ChatBot",
-      description: `
-        Our AI-powered chatbots provide personalized, real-time responses to customer queries, improving engagement and customer satisfaction. Automate routine tasks while offering a human-like experience.
-        <ul>
-          <li>24/7 automated customer support</li>
-          <li>Natural language processing (NLP) integration</li>
-          <li>Seamless handoff to human agents</li>
-          <li>Integration with CRM systems</li>
-        </ul>
-      `,
-      icon: "fa-thin fa-comments",
+    title: "AI ChatBot",
+    description: `
+      Revolutionize your customer service with our AI-powered chatbots. Using cutting-edge natural language processing and machine learning, our chatbots provide intelligent, context-aware responses while continuously learning from interactions to improve service quality.
+      <ul>
+        <li>Advanced NLP for human-like conversations and intent recognition</li>
+        <li>Multi-language support with automatic translation</li>
+        <li>Smart routing between automated and human support</li>
+        <li>Custom training with your business knowledge base</li>
+        <li>Analytics dashboard for performance monitoring</li>
+        <li>Integration with popular messaging platforms and CRM systems</li>
+      </ul>
+    `,
+    icon: "fa-thin fa-comments",
   },
   {
-      title: "AI Image Generator",
-      description: `
-        Our AI tools generate stunning, high-quality images to enhance your creative projects. Whether for marketing, design, or content creation, our AI image generator provides endless creative possibilities.
-        <ul>
-          <li>AI-powered generation of unique images</li>
-          <li>Customizable parameters for specific styles</li>
-          <li>Support for high-resolution outputs</li>
-          <li>Integration with design software tools</li>
-        </ul>
-      `,
-      icon: "fa-thin fa-image",
+    title: "AI Image Generator",
+    description: `
+      Harness the power of artificial intelligence to create stunning, unique visuals for your projects. Our AI image generation platform combines cutting-edge machine learning models with intuitive controls to produce high-quality, customizable images for any creative need.
+      <ul>
+        <li>State-of-the-art AI models for high-quality image generation</li>
+        <li>Custom style transfer and image manipulation options</li>
+        <li>Batch processing for multiple images</li>
+        <li>Advanced editing tools and filters</li>
+        <li>Commercial usage rights for generated content</li>
+        <li>Integration with popular design software</li>
+      </ul>
+    `,
+    icon: "fa-thin fa-image",
   },
   {
     title: "Custom Dashboards",
     description: `
-      Design and build personalized dashboards tailored to your specific needs. Our dashboard solutions provide an intuitive interface to manage, visualize, and interact with data seamlessly.
+      Empower your decision-making with our sophisticated, customizable dashboard solutions. We create intuitive, data-rich interfaces that bring together key metrics, analytics, and controls in one seamless platform, tailored specifically to your business needs.
       <ul>
-        <li>Fully customizable layouts to match your workflow</li>
-        <li>Real-time data integration and updates</li>
-        <li>Drag-and-drop widgets for easy configuration</li>
-        <li>Support for various data visualization types (charts, graphs, etc.)</li>
-        <li>Role-based access control for team collaboration</li>
+        <li>Fully customizable layouts with drag-and-drop functionality</li>
+        <li>Real-time data visualization and monitoring</li>
+        <li>Interactive reports with advanced filtering options</li>
+        <li>Role-based access control and user permissions</li>
+        <li>Integration with multiple data sources and APIs</li>
+        <li>Automated reporting and alert systems</li>
       </ul>
     `,
     icon: "fa-thin fa-table-columns",
   }
 ];
-
 // Generate service divs dynamically
 document.querySelectorAll('.service-item').forEach(item => {
   item.addEventListener('click', function() {
@@ -610,6 +618,14 @@ function openModal(serviceIndex) {
     modalContent.classList.add('scale-up')
   } 
 }
+
+const modal = document.getElementById('service-modal');
+
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
 
 function closeModal() {
   const modalContent =  document.querySelector('.modal-content')
@@ -761,4 +777,17 @@ dots.forEach((dot, index) => {
     });
 });
 
+
+const closeBtn = document.querySelector('.close-snack')
+const snack = document.querySelector('.snack')
+
+if(closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    snack.classList.add('hide')
+})
+}
+
+function openSnack() {
+ snack.classList.add('open')
+}
 
