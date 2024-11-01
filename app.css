@@ -418,16 +418,6 @@ ul li {
     z-index: 2;
 }
 
-.hero-image {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    inset: 0;
-    background:linear-gradient(to bottom, var(--linear-one), var(--linear-two));
-}
 
 
 .svg-wave {
@@ -600,7 +590,7 @@ ul li {
         align-items: flex-start;
     }
 
-    .work-results img, .work-results-two {
+    .work-results, .work-results-two {
         min-width: 100%;
         max-width: 100%;
         width: 100%;
