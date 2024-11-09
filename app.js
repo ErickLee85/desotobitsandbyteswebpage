@@ -82,89 +82,6 @@ function erase() {
 
 type()
 
-
-
-// const heroSection = document.querySelector('.hero');
-// const images = [
-//     './images/pexels-wdnet-887751.jpg',
-//     './images/soft_dev.jpeg',
-//     './images/team_dev_2.jpeg'
-// ];
-
-// let currentImageIndex = 0;
-
-// function preloadImages(images) {
-//     images.forEach((image) => {
-//         const img = new Image();
-//         img.src = image;
-//     });
-// }
-
-// function createBackgroundContainer() {
-
-//     const bgContainer = document.createElement('div');
-//     bgContainer.className = 'hero-backgrounds';
-//     bgContainer.style.position = 'absolute';
-//     bgContainer.style.top = '0';
-//     bgContainer.style.left = '0';
-//     bgContainer.style.width = '100%';
-//     bgContainer.style.height = '100%';
-//     bgContainer.style.zIndex = '1'; 
-//     return bgContainer;
-// }
-
-// function changeBackgroundImage() {
-//     let bgContainer = heroSection.querySelector('.hero-backgrounds');
-//     if (!bgContainer) {
-//         bgContainer = createBackgroundContainer();
-//         heroSection.insertBefore(bgContainer, heroSection.firstChild); 
-//     }
-
-//     const nextImageIndex = (currentImageIndex + 1) % images.length;
-    
-//     const nextImageDiv = document.createElement('div');
-//     nextImageDiv.style.position = 'absolute';
-//     nextImageDiv.style.top = '0';
-//     nextImageDiv.style.left = '0';
-//     nextImageDiv.style.width = '100%';
-//     nextImageDiv.style.height = '100%';
-//     nextImageDiv.style.opacity = '0';
-//     nextImageDiv.style.transition = 'opacity 1s ease-in-out';
-//     nextImageDiv.style.background = `linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.6)), url('${images[nextImageIndex]}')`;
-//     nextImageDiv.style.backgroundPosition = 'center';
-//     nextImageDiv.style.backgroundRepeat = 'no-repeat';
-//     nextImageDiv.style.backgroundSize = 'cover';
-    
-//     bgContainer.appendChild(nextImageDiv);
-    
-//     nextImageDiv.offsetHeight;
-    
-//     nextImageDiv.style.opacity = '1';
-    
-//     setTimeout(() => {
-//         const oldImages = bgContainer.getElementsByTagName('div');
-//         while (oldImages.length > 1) {
-//             bgContainer.removeChild(oldImages[0]);
-//         }
-//     }, 1000);
-    
-//     currentImageIndex = nextImageIndex;
-// }
-
-// heroSection.style.position = 'relative';
-// heroSection.style.overflow = 'hidden';
-
-
-// preloadImages(images);
-
-
-// window.addEventListener('load', () => {
-//     changeBackgroundImage(); 
-
-//     setInterval(changeBackgroundImage, 6000);
-// });
-
-
 function toggleAccordion(element) {
     const body = element.nextElementSibling;
     body.classList.toggle('active');
@@ -224,37 +141,6 @@ if(sendMessage) {
 
 let lastScrollTop = 0;
 
-// window.addEventListener("scroll", function() {
-//     const mobileNav = document.querySelector('.mobile-nav');
-//     if(mobileNav.classList.contains('reveal-mobile-nav')) {
-//         return;
-//     }
-//     let scrollTop = window.scrollY || document.documentElement.scrollTop;
-//     let nav = document.querySelector('#nav-two');
-
-//     if (scrollTop > lastScrollTop) {
-//         // Scrolling down
-//         nav.classList.remove('fade-in');
-//         nav.classList.add('fade-out');
-//     } else {
-//         // Scrolling up
-//         nav.classList.remove('fade-out');
-//         nav.classList.add('fade-in');
-//     }
-
-//     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-// });
-
-
-// window.addEventListener('resize', () => {
-//     if(window.innerWidth > 1050) {
-//         const mobileNav = document.querySelector('.mobile-nav');
-//         if(mobileNav.classList.contains('reveal-mobile-nav')) {
-//             mobileNav.classList.remove('reveal-mobile-nav')
-//             mobileNav.classList.add('hide-mobile-nav')
-//         }
-//     }
-// })
 
 window.addEventListener('load', () => {
   document.querySelector('.loader-container').style.display = 'none';
@@ -315,30 +201,6 @@ return c/2*(t*t*t + 2) + b;
 };
 
 
-
-// const hamburgerMenu = document.querySelector('.hamburger-menu');
-
-
-
-// hamburgerMenu.addEventListener('click', () => {
-//     hamburgerMenu.classList.toggle('spin')
-//     const mobileNav = document.querySelector('.mobile-nav');
-
-//     if (mobileNav.classList.contains('reveal-mobile-nav')) {
-//         mobileNav.classList.remove('reveal-mobile-nav');
-//         mobileNav.classList.add('hide-mobile-nav');
-//     } else {
-//         mobileNav.classList.remove('hide-mobile-nav');
-//         mobileNav.classList.add('reveal-mobile-nav');
-//     }
-// });
-
-
-// window.addEventListener('load', () => {
-//   document.querySelector('.loader-container').style.display = 'none'
-// })
-
-
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
   event.preventDefault();
   document.querySelector('.form-loader-container').style.display = 'grid';
@@ -368,29 +230,6 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     document.querySelector('.form-loader-container').style.display = 'none';
     return;
   }
-
-  // if (!isValidPhone(data.phone)) {
-  //   Swal.fire({ text: "Please enter a valid phone number (10 digits)", icon: "warning" });
-  //   document.querySelector('.form-loader-container').style.display = 'none';
-  //   return;
-  // }
-
-  // Axios API
-  // try {
-  //   const response = await axios.post('https://nodemailer-gold.vercel.app/sendMessage', data);
-  //   document.querySelector('.form-loader-container').style.display = 'none';
-  //   Swal.fire({
-  //     text: "Message Sent!",
-  //     icon: "success"
-  //   });
-  // } catch (error) {
-  //   document.querySelector('.form-loader-container').style.display = 'none';
-  //   Swal.fire({
-  //     text: "Message Failed",
-  //     icon: "info"
-  //   });
-  //   console.error('There was an error!', error);
-  // }
 
   try {
     const response = await fetch('https://nodemailer-gold.vercel.app/sendMessage', {
@@ -688,50 +527,6 @@ toggleSwitch.addEventListener('change', function (e) {
 checkStoredOrSystemTheme();
 
 
-// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
-// // Function to switch theme
-// function switchTheme(e) {
-//   const nightLogos = document.querySelectorAll('.night-logo');
-//   const dayLogos = document.querySelectorAll('.day-logo');
-
-//   if (e.target.checked) {
-//     document.documentElement.setAttribute('data-theme', 'dark');
-//     nightLogos.forEach(logo => logo.style.display = 'block');
-//     dayLogos.forEach(logo => logo.style.display = 'none');
-//   } else {
-//     document.documentElement.setAttribute('data-theme', 'light');
-//     nightLogos.forEach(logo => logo.style.display = 'none');
-//     dayLogos.forEach(logo => logo.style.display = 'block');
-//   }
-// }
-
-// // Check if the user has a stored theme preference
-// function checkStoredTheme() {
-//   const nightLogos = document.querySelectorAll('.night-logo');
-//   const dayLogos = document.querySelectorAll('.day-logo');
-//   const currentTheme = localStorage.getItem('theme') || 'dark'; // default to light theme
-
-//   if (currentTheme === 'dark') {
-//     toggleSwitch.checked = true;
-//     document.documentElement.setAttribute('data-theme', 'dark');
-//     nightLogos.forEach(logo => logo.style.display = 'block');
-//     dayLogos.forEach(logo => logo.style.display = 'none');
-//   } else {
-//     document.documentElement.setAttribute('data-theme', 'light');
-//     nightLogos.forEach(logo => logo.style.display = 'none');
-//     dayLogos.forEach(logo => logo.style.display = 'block');
-//   }
-// }
-
-// // Save theme preference in localStorage
-// toggleSwitch.addEventListener('change', function (e) {
-//   switchTheme(e);
-//   localStorage.setItem('theme', e.target.checked ? 'dark' : 'light');
-// }, false);
-
-// checkStoredTheme();
-
 let currentSlide = 0;
 const slides = document.querySelectorAll('.review-card');
 const dots = document.querySelectorAll('.dot');
@@ -791,3 +586,39 @@ function openSnack() {
  snack.classList.add('open')
 }
 
+const phoneInput = document.getElementById('phone');
+    
+phoneInput.addEventListener('input', function(e) {
+    // Get only the numbers from the input
+    let numbers = this.value.replace(/\D/g, '');
+    
+    // Format the numbers into phone format
+    if (numbers.length > 0) {
+        if (numbers.length <= 3) {
+            this.value = `(${numbers}`;
+        } else if (numbers.length <= 6) {
+            this.value = `(${numbers.slice(0,3)}) ${numbers.slice(3)}`;
+        } else {
+            this.value = `(${numbers.slice(0,3)}) ${numbers.slice(3,6)}-${numbers.slice(6,10)}`;
+        }
+    } else {
+        this.value = '';
+    }
+});
+
+// Optional: Prevent non-numeric keys
+phoneInput.addEventListener('keydown', function(e) {
+    // Allow: backspace, delete, tab, escape, enter
+    if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
+        // Allow: Ctrl+A, Command+A
+        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+        // Allow: home, end, left, right, down, up
+        (e.keyCode >= 35 && e.keyCode <= 40)) {
+        return;
+    }
+    // Block any non-number
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) &&
+        (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+    }
+});
