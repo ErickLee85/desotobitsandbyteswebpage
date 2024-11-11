@@ -543,6 +543,7 @@ ul li {
     display: block;
     margin-block: 5px;
     color: var(--text-color) !important;
+    font-size: 0.9rem;
   }
 
   .work-text ul li::before {
@@ -706,7 +707,7 @@ ul li {
     text-align: center;
     font-weight: 300;
     color: var(--light-gray);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .service-section {
@@ -1812,10 +1813,8 @@ h2, h1 {
 .modal-content ul {
     margin-top: 25px;
   }
-  .modal-content ul li {
-    display: block;
-    margin-block: 5px;
-  }
+  
+
 
   nav.fade-in {
     animation: fade-in 500ms linear forwards;
@@ -1964,9 +1963,8 @@ h2, h1 {
 
 .review-text {
     text-align: center;
-    font-style: italic;
     color: var(--text-color);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin: 1.5rem 0;
     min-height: 100px;
     display: flex;
@@ -2191,7 +2189,7 @@ ol li strong {
   .pricing-feature {
     display: flex;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-color) !important;
     margin-block: 5px;
   }
@@ -2485,3 +2483,10 @@ ol li strong {
             font-size: 1.125rem;
         }
     }
+
+    .modal-content ul li {
+        display: block;
+        margin-block: 5px;
+        font-size: 1rem;
+        color: var(--light-gray) !important;
+      }
