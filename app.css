@@ -61,7 +61,7 @@
     --icon-color: #222325;
     --switch-bg: #fff;
     --switch-knob: #222325;
-    --light-gray: #777;
+    --light-gray: #cecece;
     --light-color-alt: rgb(194, 194, 194);
     --label-color: #adadad;
     --label-focus-color: #007bff;
@@ -410,14 +410,24 @@ ul li {
     position: relative;
     padding-inline: 250px;
     padding-bottom: 50px;
-    background: linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/team_dev.webp');
-    background-size: cover;
-    background-position: center;
     opacity: 0;
     animation: fade-in 500ms linear forwards;
     z-index: 2;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -5px;  /* Slightly larger */
+    left: -5px;  /* Slightly larger */
+    width: calc(100% + 10px);  /* Compensate for negative positioning */
+    height: calc(100% + 10px);  /* Compensate for negative positioning */
+    background: linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/team_dev.webp');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
 
 
 .svg-wave {
@@ -435,7 +445,7 @@ ul li {
 
 .hero h1 {
     font-size: 3rem !important;
-    color: rgb(255, 255, 255) !important;
+    color: white !important;
     font-weight: 400;
     margin-block: 10px;
     transform: translateY(25px);
@@ -587,6 +597,11 @@ ul li {
   }
 
   @media(max-width:850px) {
+
+    .work-text {
+        max-width: none;
+        width: 100%;
+    }
     .hand-desktop {
         display: none;
     }
@@ -615,7 +630,7 @@ ul li {
     padding-block: 15px;
     min-width: 150px;
     outline: none;
-    border: 1px solid var(--button-color);
+    border:none;
     max-height: 50px;
     color: var(--button-color);
     font-weight: 600;
@@ -2437,6 +2452,10 @@ ol li strong {
 
     /* Mobile Responsive */
     @media (max-width: 768px) {
+
+        #second-btn {
+            min-width: 100%;
+        }
         .timeline-stage {
             flex-direction: column;
             gap: 1rem;
