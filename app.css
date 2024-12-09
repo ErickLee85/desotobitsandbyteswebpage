@@ -96,22 +96,6 @@ ul li {
     cursor: pointer;
 }
 
-
-/* .main-container {
-    min-height: 100vh;
-    max-width: 1400px;
-    background-color:var(--text-color);
-    border-right: 1px solid gainsboro;
-    border-left: 1px solid gainsboro;
-    margin: 0 auto;
-    background-image: 
-    linear-gradient(rgba(236, 236, 236, 0.2) 1px, transparent 1px), 
-    linear-gradient(to right, rgba(236, 236, 236, 0.2) 1px, rgba(255, 255, 255, 0.2) 1px);  
-    background-size: 20px 20px;
-} */
-
-
-
 #top-nav {
     width: 100%;
     top: 0;
@@ -161,13 +145,11 @@ ul li {
 }
 
 .call-now-btn:hover, #consult-btn:hover, #service-btn:hover, #consult-btn-two:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(35, 67, 136, 0.2);
+    filter: brightness(0.9);
 }
 
 #top-nav button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(35, 67, 136, 0.2);
+  filter: brightness(0.9);
 }
 
 #nav-two {
@@ -392,7 +374,20 @@ ul li {
 .hero-block {
     margin-top: 90px;
     z-index: 10;
+    position: relative;
 }
+
+.hero-block header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.001);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 3rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
 
 .hero a {
     color: rgb(255, 255, 255) !important;
@@ -425,7 +420,6 @@ ul li {
     background: linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/team_dev.webp');
     background-size: cover;
     background-position: center;
-    filter: blur(5px);
     z-index: -1;
 }
 
@@ -571,6 +565,7 @@ ul li {
     overflow: hidden;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   }
 
   .work-results img {
@@ -632,7 +627,6 @@ ul li {
     color: var(--button-color);
     font-weight: 600;
     cursor: pointer;
-    background:white;
     transition: 300ms ease-in-out;
 }
 
@@ -705,7 +699,7 @@ ul li {
 }
 
 .sell-grid i {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--button-color);
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -768,7 +762,7 @@ ul li {
 
 .service-container i {
     color: var(--button-color);
-    font-size: 4rem;
+    font-size: 3rem;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
 }
@@ -796,6 +790,66 @@ ul li {
     box-shadow: 0 0 0 0;
 }
 
+.service-subtitle {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .service-item {
+    position: relative;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-title {
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+  
+  .service-description {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+  
+  .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+  }
+  
+  .service-features li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin: 0.3rem 0;
+    color: var(--text-color);
+  }
+  
+  .service-features li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+  }
+  
+  .service-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .service-description {
+      font-size: 0.8rem;
+    }
+    
+    .service-features {
+      font-size: 0.75rem;
+    }
+  }
 
 .customer-reviews {
     min-height: 100vh;
@@ -1270,8 +1324,7 @@ textarea {
 }
 
 #form-submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(35, 67, 136, 0.2);
+    filter: brightness(0.9);
 }
 
 .company-footer {
@@ -1740,8 +1793,8 @@ h2, h1 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     justify-content: center;
     align-items: center;
 }
