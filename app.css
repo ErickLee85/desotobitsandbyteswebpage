@@ -79,11 +79,11 @@ body, html {
 }
 p {
    font-size: 1.1rem;
-   font-weight: 500;
+   font-weight: 200;
     line-height: 1.4;
 }
 
-ul li, ol li, h3, p, span, label, .contact-form h2, #modal-title, .review-text, .footer-logo small {
+ul li, ol li, h3, p, span, label, h2, .contact-form h2, #modal-title, .review-text, .footer-logo small {
     font-family: Poppins, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -448,9 +448,6 @@ ul li {
     color: white !important;
     font-weight: 400;
     margin-block: 10px;
-    transform: translateY(25px);
-    opacity: 0;
-    animation: come-up-hero 2s linear forwards;
 }
 
 @keyframes come-up-hero {
@@ -787,7 +784,6 @@ ul li {
     transition: all 300ms ease;
     background: var(--bg-alternate-two);
     border: 1px solid var(--border-color);
-    /* box-shadow: 0 0 5px rgba(37, 37, 59, 0.3); */
 }
 
 .service-container div p {
@@ -2123,6 +2119,7 @@ ol li strong {
     padding-inline: 250px;
     background:var(--bg-alternate-two);
     padding-block: 50px;
+
   }
 
   .pricing-title {
@@ -2508,4 +2505,8 @@ ol li strong {
         margin-block: 5px;
         font-size: 1rem;
         color: var(--light-gray) !important;
+      }
+
+      h2 {
+        font-weight: 200 !important;
       }

@@ -1,3 +1,163 @@
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Set initial states
+  gsap.set('.service-item', { autoAlpha: 1 });
+  gsap.set('.pricing-container', { overflow: 'hidden' });
+
+  // Hero section animations
+  gsap.from('.hero-block header', {
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    ease: 'power2.out'
+  });
+
+  // Sell section animations
+  gsap.from('.sell-grid > div', {
+    scrollTrigger: {
+      trigger: '.sell-grid',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: 'power2.out'
+  });
+
+  // Service section animations
+  const serviceItems = document.querySelectorAll('.service-item');
+  serviceItems.forEach((item, index) => {
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      },
+      y: 50,
+      duration: 0.5,
+      delay: index * 0.1,
+      ease: 'power2.out'
+    });
+  });
+
+  // Pricing cards animation - Modified
+  const pricingTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.pricing-grid',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    }
+  });
+
+  pricingTimeline.from('.pricing-card', {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    stagger: {
+      each: 0.15,
+      ease: 'power2.out'
+    },
+    clearProps: 'all' // Clean up after animation
+  });
+
+  // Work container animation
+  gsap.from('.work-text', {
+    scrollTrigger: {
+      trigger: '.work-container',
+      start: 'top 70%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -100,
+    duration: 1,
+    ease: 'power2.out'
+  });
+
+  gsap.from('.work-results img', {
+    scrollTrigger: {
+      trigger: '.work-container',
+      start: 'top 70%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: 100,
+    duration: 1,
+    ease: 'power2.out'
+  });
+
+  // Review cards animation
+  gsap.from('.review-card', {
+    scrollTrigger: {
+      trigger: '.customer-reviews',
+      start: 'top 75%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    scale: 0.9,
+    duration: 0.8,
+    ease: 'power2.out'
+  });
+
+  // FAQ items animation
+  gsap.from('.c-faqs__item', {
+    scrollTrigger: {
+      trigger: '.faq-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: 'power2.out'
+  });
+
+  // Contact section animation
+  gsap.from('.contact-info', {
+    scrollTrigger: {
+      trigger: '.contact-container',
+      start: 'top 75%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -50,
+    duration: 0.8,
+    ease: 'power2.out'
+  });
+
+  gsap.from('.contact-form', {
+    scrollTrigger: {
+      trigger: '.contact-container',
+      start: 'top 75%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: 50,
+    duration: 0.8,
+    ease: 'power2.out'
+  });
+
+  // Footer animation
+  gsap.from('.company-footer-container > section', {
+    scrollTrigger: {
+      trigger: '.company-footer',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: 'power2.out'
+  });
+});
+
 const comingSoon = (route) => {
 
   switch (route) {
@@ -397,7 +557,22 @@ const services = [
       </ul>
     `,
     icon: "fa-thin fa-table-columns",
-  }
+  },
+  {
+    title: "Graphic Design",
+    description: `
+      Transform your brand's visual identity with our professional graphic design services. We create stunning, purpose-driven designs that capture your brand's essence and connect with your target audience, from logos and marketing materials to digital assets.
+      <ul>
+        <li>Brand identity design and logo creation</li>
+        <li>Print materials (business cards, brochures, flyers)</li>
+        <li>Social media graphics and digital marketing assets</li>
+        <li>Product packaging and label design</li>
+        <li>Custom illustrations and infographics</li>
+        <li>Website graphics and UI elements</li>
+      </ul>
+    `,
+    icon: "fa-thin fa-pen-nib",
+}
 ];
 // Generate service divs dynamically
 document.querySelectorAll('.service-item').forEach(item => {
