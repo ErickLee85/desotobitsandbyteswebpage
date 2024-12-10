@@ -1,36 +1,36 @@
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', () => {
   // Set initial states
   gsap.set('.service-item', { autoAlpha: 1 });
   gsap.set('.pricing-container', { overflow: 'hidden' });
 
-  // Hero section animations
+  // Hero section - dramatic entrance
   gsap.from('.hero-block header', {
     opacity: 0,
     y: 100,
-    duration: 1,
-    ease: 'power2.out'
+    scale: 0.8,
+    duration: 0.4,
+    ease: 'back.out(1.7)'
   });
 
-  // Sell section animations
+  // Sell section - bigger scale and movement
   gsap.from('.sell-grid > div', {
     scrollTrigger: {
       trigger: '.sell-grid',
-      start: 'top 80%',
+      start: 'top 85%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    y: 50,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power2.out'
+    y: 100,
+    scale: 0.5,
+    duration: 0.4,
+    stagger: 0.1,
+    ease: 'back.out(2)'
   });
 
-  // Service section animations
+  // Service section - enhanced movement
   const serviceItems = document.querySelectorAll('.service-item');
   serviceItems.forEach((item, index) => {
     gsap.from(item, {
@@ -39,125 +39,257 @@ document.addEventListener('DOMContentLoaded', () => {
         start: 'top 85%',
         toggleActions: 'play none none none'
       },
-      y: 50,
-      duration: 0.5,
-      delay: index * 0.1,
-      ease: 'power2.out'
+      scale: 0.5,
+      duration: 0.4,
+      delay: index * 0.08,
+      ease: 'back.out(2)'
     });
   });
 
-  // Pricing cards animation - Modified
+  // Pricing cards - dramatic reveal
   const pricingTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: '.pricing-grid',
-      start: 'top 80%',
+      start: 'top 85%',
       toggleActions: 'play none none none'
     }
   });
-
   pricingTimeline.from('.pricing-card', {
-    y: 30,
+    scale: 0.9,
     opacity: 0,
-    duration: 0.6,
+    duration: 0.5,
     stagger: {
-      each: 0.15,
-      ease: 'power2.out'
+      each: 0.1,
+      ease: 'back.out(2)'
     },
-    clearProps: 'all' // Clean up after animation
+    clearProps: 'all'
   });
 
-  // Work container animation
+  // Work container - enhanced slide in
   gsap.from('.work-text', {
     scrollTrigger: {
       trigger: '.work-container',
-      start: 'top 70%',
+      start: 'top 80%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    x: -100,
-    duration: 1,
-    ease: 'power2.out'
+    x: -200,
+    scale: 0.5,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
   });
 
-  gsap.from('.work-results img', {
+  gsap.from('.text-container h2', {
     scrollTrigger: {
-      trigger: '.work-container',
-      start: 'top 70%',
+      trigger: '.text-container',
+      start: 'top 80%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    x: 100,
-    duration: 1,
-    ease: 'power2.out'
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
   });
 
-  // Review cards animation
-  gsap.from('.review-card', {
+  gsap.from('.service-section p', {
+    scrollTrigger: {
+      trigger: '.service-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.service-section h2', {
+    scrollTrigger: {
+      trigger: '.service-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.pricing-title', {
+    scrollTrigger: {
+      trigger: '.pricing-title',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.pricing-subtitle', {
+    scrollTrigger: {
+      trigger: '.pricing-subtitle',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.customer-subtitle', {
     scrollTrigger: {
       trigger: '.customer-reviews',
-      start: 'top 75%',
+      start: 'top 80%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    scale: 0.9,
-    duration: 0.8,
-    ease: 'power2.out'
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
   });
 
-  // FAQ items animation
-  gsap.from('.c-faqs__item', {
+  gsap.from('.customer-title', {
+    scrollTrigger: {
+      trigger: '.customer-reviews',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.faq-sub', {
     scrollTrigger: {
       trigger: '.faq-section',
       start: 'top 80%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    y: 30,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'power2.out'
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
   });
 
-  // Contact section animation
-  gsap.from('.contact-info', {
+  gsap.from('.faq-title', {
     scrollTrigger: {
-      trigger: '.contact-container',
-      start: 'top 75%',
+      trigger: '.faq-container',
+      start: 'top 80%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    x: -50,
-    duration: 0.8,
-    ease: 'power2.out'
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.contact-title', {
+    scrollTrigger: {
+      trigger: '.contact-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  gsap.from('.contact-subtitle', {
+    scrollTrigger: {
+      trigger: '.contact-section',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -200,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+
+
+
+
+
+  gsap.from('.work-results img', {
+    scrollTrigger: {
+      trigger: '.work-container',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: 200,
+    scale: 0.5,
+    rotation: -10,
+    duration: 0.5,
+    ease: 'back.out(1.7)'
+  });
+
+  // Review cards - dramatic scale and rotate
+
+
+  // FAQ items - enhanced slide up
+  gsap.from('.c-faqs__item', {
+    scrollTrigger: {
+      trigger: '.faq-section',
+      start: 'top 85%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    y: 80,
+    scale: 0.5,
+    duration: 0.3,
+    stagger: 0.08,
+    ease: 'back.out(1.7)'
+  });
+
+  // Contact section - dramatic slide in
+  gsap.from('.contact-info', {
+    scrollTrigger: {
+      trigger: '.contact-container',
+      start: 'top 80%',
+      toggleActions: 'play none none reverse'
+    },
+    opacity: 0,
+    x: -150,
+    scale: 0.5,
+    duration: 0.4,
+    ease: 'back.out(1.7)'
   });
 
   gsap.from('.contact-form', {
     scrollTrigger: {
       trigger: '.contact-container',
-      start: 'top 75%',
+      start: 'top 80%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    x: 50,
-    duration: 0.8,
-    ease: 'power2.out'
+    x: 150,
+    scale: 0.5,
+    duration: 0.4,
+    ease: 'back.out(1.7)'
   });
 
-  // Footer animation
+  // Footer - enhanced reveal
   gsap.from('.company-footer-container > section', {
     scrollTrigger: {
       trigger: '.company-footer',
-      start: 'top 85%',
+      start: 'top 90%',
       toggleActions: 'play none none reverse'
     },
     opacity: 0,
-    y: 30,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'power2.out'
+    y: 50,
+    scale: 0.5,
+    duration: 0.3,
+    stagger: 0.08,
+    ease: 'back.out(1.7)'
   });
 });
-
 const comingSoon = (route) => {
 
   switch (route) {
