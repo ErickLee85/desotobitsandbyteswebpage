@@ -70,7 +70,7 @@
   }
 
 body {
-   background-color: var(--bg-main);
+ 
 
 }
 
@@ -385,9 +385,12 @@ ul li {
 } */
 
 .hero-block {
-    margin-top: 90px;
+    margin-block: 90px;
     z-index: 10;
     position: relative;
+    /* display: flex; */
+    /* gap: 50px; */
+    /* margin: 90px auto; */
 }
 
 
@@ -399,7 +402,7 @@ ul li {
 
 
 .hero {
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -419,7 +422,7 @@ ul li {
     left: -5px;  /* Slightly larger */
     width: calc(100% + 10px);  /* Compensate for negative positioning */
     height: calc(100% + 10px);  /* Compensate for negative positioning */
-    background: linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/team_dev.webp');
+    background: linear-gradient(to bottom, var(--linear-one), var(--linear-two)), url('./images/compressed.webp');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -440,9 +443,9 @@ ul li {
 
 
 .hero h1 {
-    font-size: 3rem !important;
+    font-size: clamp(2rem, 10vw, 4rem) !important;
     color: white !important;
-    font-weight: 400;
+    font-weight: 800;
     margin-block: 10px;
 }
 
@@ -656,6 +659,19 @@ ul li {
     display: flex;
     justify-content: center;
     background: var(--bg-alternate-two);
+    /* background: 
+    linear-gradient(to right, 
+      rgb(255, 255, 255) 0%,
+      rgba(255, 255, 255, 0) 25%
+    ),
+    linear-gradient(to left, 
+      rgb(255, 255, 255) 0%,
+      rgba(255, 255, 255, 0) 25%
+    ),
+    radial-gradient(circle at center,
+      #d1d5db 1px,
+      transparent 1px
+    ) 0 0 / 24px 24px; */
     transition: all 300ms ease-in-out;
 
 }
@@ -1311,7 +1327,7 @@ textarea {
 }
 
 
-#form-submit-btn {
+#form-submit-btn, #hero-submit-btn {
     min-width: 100% !important;
     padding: 14px 25px;
     background: var(--button-color);
@@ -2565,5 +2581,5 @@ ol li strong {
       }
 
       h2 {
-        font-weight: 200 !important;
+        font-weight: 800 !important;
       }
