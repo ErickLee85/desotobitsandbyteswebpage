@@ -25,6 +25,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 2rem;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    height: auto;
 }
 
 h1 {
@@ -46,4 +47,10 @@ h2 {
 
 h2 img {
     filter: drop-shadow(0 0 0.75rem rgb(43, 43, 43));
+}
+
+@media(max-width:612px) {
+    h1,h2 {
+        text-align: left;
+    }
 }
