@@ -5,6 +5,18 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
+.main {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: all 200ms ease;
+}
+
+.main.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
 
 .hero {
     min-height: 100vh;
@@ -23,9 +35,10 @@
     -webkit-backdrop-filter: blur(8px); /* For Safari */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 2rem;
+    padding: 3rem;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     height: auto;
+    position:relative;
 }
 
 h1 {
@@ -45,8 +58,11 @@ h2 {
     gap: 20px;
 }
 
-h2 img {
+.glass img {
     filter: drop-shadow(0 0 0.75rem rgb(43, 43, 43));
+    position:absolute;
+    top:-20%;
+    left:4%;
 }
 
 @media(max-width:612px) {
