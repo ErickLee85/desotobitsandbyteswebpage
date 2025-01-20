@@ -21,7 +21,7 @@
 
     <!-- Main Service Pages -->
     <url>
-        <loc>https://desotobitsandbytes.com/services</loc>
+        <loc>https://desotobitsandbytes.com/services.html</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -50,54 +50,24 @@
 
     <!-- Individual Service Pages -->
     <url>
-        <loc>https://desotobitsandbytes.com/services/web-development</loc>
+        <loc>https://desotobitsandbytes.com/webApp.html</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/services/mobile-apps</loc>
+        <loc>https://desotobitsandbytes.com/mobileApp.html</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/services/custom-software</loc>
+        <loc>https://desotobitsandbytes.com/customSoftware.html</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Legal Pages -->
-    <url>
-        <loc>https://desotobitsandbytes.com/privacy</loc>
-        <lastmod>2025-01-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <url>
-        <loc>https://desotobitsandbytes.com/terms</loc>
-        <lastmod>2025-01-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- Blog Section (if you add one in the future) -->
-    <url>
-        <loc>https://desotobitsandbytes.com/blog</loc>
-        <lastmod>2025-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-
-    <!-- Portfolio Section (if you add one in the future) -->
-    <url>
-        <loc>https://desotobitsandbytes.com/portfolio</loc>
-        <lastmod>2025-01-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
 </urlset>
