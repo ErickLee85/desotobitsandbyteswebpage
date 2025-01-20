@@ -1,5 +1,36 @@
+# DeSoto Bits & Bytes robots.txt
+
 User-agent: *
 Allow: /
-Disallow: /private/
+Allow: /sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 1
+
+# Prevent crawling of admin or system pages
+Disallow: /admin/
+Disallow: /login/
+Disallow: /backend/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /includes/
+Disallow: /cgi-bin/
 Disallow: /tmp/
-Sitemap: https://www.desotobitsandbytes.com/sitemap.xml
+
+# Prevent indexing of search results and similar dynamic pages
+Disallow: /*?s=
+Disallow: /*?p=
+Disallow: /search/
+
+# Block access to specific file types
+Disallow: /*.sql$
+Disallow: /*.sql.gz$
+Disallow: /*.log$
+Disallow: /*.env$
+Disallow: /*.config$
+Disallow: /*.json$
+Disallow: /*.txt$
+Allow: /robots.txt
+
+# Sitemap location
+Sitemap: https://desotobitsandbytes.com/sitemap.xml
