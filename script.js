@@ -209,40 +209,41 @@ document.addEventListener('DOMContentLoaded', function() {
     let chart = null;
 
     // Function to initialize or reinitialize the chart
-    function initializeChart() {
-        const chartElement = document.querySelector('#metrics-radar');
-        if (!chartElement) return;
+    // function initializeChart() {
+    //     const chartElement = document.querySelector('#metrics-radar');
+    //     if (!chartElement) return;
 
-        // If chart exists, destroy it first
-        if (chart) {
-            chart.destroy();
-        }
+    //     // If chart exists, destroy it first
+    //     if (chart) {
+    //         chart.destroy();
+    //     }
 
-        // Create new chart instance
-        chart = new ApexCharts(chartElement, options);
-        chart.render();
-    }
+    //     // Create new chart instance
+       
+    // }
 
     // Initialize chart when element is visible
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.3
-    };
+    // const observerOptions = {
+    //     root: null,
+    //     rootMargin: '0px',
+    //     threshold: 0.3
+    // };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                initializeChart();
-            }
-        });
-    }, observerOptions);
+    // const observer = new IntersectionObserver((entries) => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             initializeChart();
+    //         }
+    //     });
+    // }, observerOptions);
 
     // Start observing the chart container
-    const chartElement = document.querySelector('#metrics-radar');
-    if (chartElement) {
-        observer.observe(chartElement);
-    }
+    // const chartElement = document.querySelector('#metrics-radar');
+    // if (chartElement) {
+    //     observer.observe(chartElement);
+    // }
+    chart = new ApexCharts(chartElement, options);
+    chart.render();
 
     // Handle page visibility changes
     document.addEventListener('visibilitychange', () => {
