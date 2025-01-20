@@ -944,7 +944,7 @@ h1 {
             background-image: url('./images/world_digital.webp');
             background-size: cover;
             background-repeat: no-repeat;
-            padding-inline: 20px;
+            padding:50px 20px;
         }
 
         .contact-form {
