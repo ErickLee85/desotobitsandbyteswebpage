@@ -20,54 +20,73 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.slider-btn.next');
     let currentSlide = 0;
 
-    // Initialize buttons state
-    if(prevBtn) {
-        prevBtn.disabled = true;
-    }
-
     function updateSlides() {
+        if (!slides.length) return; // Guard clause for when elements don't exist
+        
         slides.forEach((slide, index) => {
             if (index === currentSlide) {
                 slide.classList.add('active');
                 slide.style.transform = 'translateX(0)';
+                slide.style.opacity = '1';
             } else if (index < currentSlide) {
                 slide.classList.remove('active');
                 slide.style.transform = 'translateX(-100%)';
+                slide.style.opacity = '0';
             } else {
                 slide.classList.remove('active');
                 slide.style.transform = 'translateX(100%)';
+                slide.style.opacity = '0';
             }
         });
 
         // Update button states
-        prevBtn.disabled = currentSlide === 0;
-        nextBtn.disabled = currentSlide === slides.length - 1;
+        if (prevBtn && nextBtn) {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
     }
 
-   if(nextBtn) {
-    nextBtn.addEventListener('click', () => {
-        if (currentSlide < slides.length - 1) {
-            currentSlide++;
-            updateSlides();
-        }
-    });
-   }
+    // Initialize button states
+    if (prevBtn) {
+        prevBtn.disabled = true;
+    }
 
-  if(prevBtn) {
-    prevBtn.addEventListener('click', () => {
-        if (currentSlide > 0) {
-            currentSlide--;
-            updateSlides();
-        }
-    });
-  }
+    // Add button event listeners with touch support
+    if (nextBtn) {
+        ['click', 'touchend'].forEach(evt => 
+            nextBtn.addEventListener(evt, (e) => {
+                e.preventDefault();
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlides();
+                }
+            })
+        );
+    }
+
+    if (prevBtn) {
+        ['click', 'touchend'].forEach(evt => 
+            prevBtn.addEventListener(evt, (e) => {
+                e.preventDefault();
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlides();
+                }
+            })
+        );
+    }
 
     // Chart configuration
     const options = {
         series: [100, 99, 99, 100],
         chart: {
-            height: 600,
+            height: 500, // Reduced height for mobile
             type: 'radialBar',
+            animations: {
+                enabled: true,
+                easing: 'easeinout',
+                speed: 800
+            }
         },
         plotOptions: {
             radialBar: {
@@ -77,8 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hollow: {
                     margin: 5,
                     size: '30%',
-                    background: 'transparent',
-                    image: undefined,
+                    background: 'transparent'
                 },
                 dataLabels: {
                     name: {
@@ -92,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     enabled: true,
                     useSeriesColors: true,
                     offsetX: -8,
-                    fontSize: '16px',
+                    fontSize: '14px', // Smaller font for mobile
                     formatter: function(seriesName, opts) {
                         return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex] + "%"
                     },
@@ -107,62 +125,61 @@ document.addEventListener('DOMContentLoaded', function() {
         responsive: [{
             breakpoint: 480,
             options: {
-                legend: {
-                    show: false
+                chart: {
+                    height: 300 // Even smaller for mobile
+                },
+                plotOptions: {
+                    radialBar: {
+                        hollow: {
+                            size: '25%'
+                        }
+                    }
                 }
             }
         }]
     };
 
-    // Initialize chart
     let chart = null;
     
     function initializeChart() {
         const chartElement = document.querySelector('#metrics-radar');
         if (!chartElement) return;
         
-        // If chart exists, destroy it first
         if (chart) {
             chart.destroy();
         }
         
-        // Create new chart
         chart = new ApexCharts(chartElement, options);
-        chart.render();
+        chart.render().catch(err => console.error('Chart render error:', err));
     }
 
     // Initialize chart when element is visible
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.3
-    };
-
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && !chart) {
+            if (entry.isIntersecting) {
                 initializeChart();
+                // Once initialized, disconnect observer
+                observer.disconnect();
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.1 // Lower threshold for mobile
+    });
 
     const chartElement = document.querySelector('#metrics-radar');
     if (chartElement) {
         observer.observe(chartElement);
     }
 
-    // Handle visibility changes
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible' && !chart) {
-            initializeChart();
-        }
-    });
-
-    // Handle page show event
-    window.addEventListener('pageshow', (event) => {
-        if (event.persisted && !chart) {
-            initializeChart();
-        }
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (chart) {
+                initializeChart(); // Reinitialize chart on resize
+            }
+        }, 250);
     });
 });
 
