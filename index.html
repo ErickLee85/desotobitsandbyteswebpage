@@ -19,7 +19,6 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="canonical" href="https://desotobitsandbytes.com">
         <link rel="stylesheet" href="./styles.css">
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         
         <script src="./script.js" async></script>
@@ -281,7 +280,7 @@
              
           
             </section>
-            <img src="./images/undraw_feeling-proud_tdos.svg" loading="lazy" alt="Phone Preview" height="450" width="550" class="hero-img">
+            <img src="./images/out.webp" loading="eager" alt="Phone Preview" height="450" width="450" class="hero-img">
             <div class="custom-shape-divider-bottom-1737399524">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
@@ -389,60 +388,52 @@
       
       
 
-        <article class="service-container">
-            <div class="metrics-layout">
-                <div class="metrics-content">
-                    <h2 class="metrics-title">Our Standards
-                        <img src="./images/icons8-checkmark-128.png" height="48" alt="checkmark">
+        <article class="metrics-section">
+            <div class="metrics-container">
+                <header class="metrics-header">
+                    <h2 class="metrics-title">
+                        Our Standards
+                        <img src="./images/icons8-checkmark-128.png" alt="checkmark" height="48">
                     </h2>
                     <p class="metrics-subtitle">We build applications that exceed industry standards</p>
-                    <div class="metrics-slider">
-                        <div class="metrics-details">
-                            <!-- Each metric is a slide -->
-                            <div class="metric-item active">
-                                <div class="metric-title-container">
-                                    <h3>Performance</h3>
-                                    <img src="./images/icons8-lightning-48.png" alt="Lightning Bolt" height="50" width="50">
-                                </div>
-                                <p>In today's fast-paced digital world, slow applications aren't just frustrating – they're costly. When users encounter delays, 53% will abandon your site after just 3 seconds of loading time. We tackle this head-on with advanced optimization techniques that reduce load times by up to 70%. Our solutions include intelligent caching, code splitting, and server-side rendering, ensuring your application performs flawlessly even in challenging network conditions. The result? Our clients typically see bounce rates drop by 25% and user engagement increase by 35%, directly impacting their bottom line.</p>
-                            </div>
-                            
-                            <div class="metric-item">
-                                <div class="metric-title-container">
-                                    <h3>Accessibility</h3>
-                                    <img src="./images/icons8-user-48.png"  height="50" width="50" alt="User Icon">
-                                </div>
-                                <p>Excluding users isn't just bad for business – it can have serious legal implications. Many organizations don't realize their applications are inaccessible until they face complaints or legal challenges. We prioritize inclusive design from day one, implementing WCAG guidelines while maintaining visual appeal. This means comprehensive keyboard navigation, screen reader compatibility, and thoughtful color contrast choices. By making your application accessible, you're not just avoiding potential legal issues – you're expanding your market reach to the over 1 billion people worldwide who have disabilities.</p>
-                            </div>
-                            
-                            <div class="metric-item">
-                                <div class="metric-title-container">
-                                    <h3>Best Practices</h3>
-                                    <img src="./images/icons8-shield-48.png"  height="50" width="50" alt="Shield">
-                                </div>
-                                <p>Technical debt and security vulnerabilities can cripple your business growth. We've seen companies spend up to 40% of their development time dealing with outdated code and security patches. Our development approach follows industry-leading standards and security practices, creating maintainable, scalable applications that grow with your business. We implement automated testing, continuous integration, and robust security measures from the start, reducing future maintenance costs by an average of 30% and preventing costly security breaches.</p>
-                            </div>
-                            
-                            <div class="metric-item">
-                                <div class="metric-title-container">
-                                    <h3>SEO</h3>
-                                    <img src="./images/icons8-marketing-48.png"  height="50" width="50" alt="Marketing Icon">
-                                </div>
-                                <p>Poor search engine visibility means missed opportunities and lost revenue. Many beautifully designed applications fail to attract organic traffic because they weren't built with SEO in mind. Our development process integrates SEO best practices from the ground up – including semantic HTML structure, optimized meta data, and proper handling of dynamic content. We've helped clients achieve front-page Google rankings for their target keywords, resulting in sustained organic traffic growth and reduced marketing costs.</p>
-                            </div>
+                </header>
+                
+                <div class="metrics-grid">
+                    <!-- Performance Card -->
+                    <div class="metric-card">
+                        <div class="metric-card-header">
+                            <h3>Performance</h3>
+                            <img src="./images/icons8-lightning-48.png" alt="Lightning Bolt" height="48" width="48">
                         </div>
-                        <div class="slider-controls">
-                            <button class="slider-btn prev">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
-                            </button>
-                            <button class="slider-btn next">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
-                            </button>
-                        </div>
+                        <p>In today's fast-paced digital world, slow applications aren't just frustrating – they're costly. When users encounter delays, 53% will abandon your site after just 3 seconds of loading time. We tackle this head-on with advanced optimization techniques that reduce load times by up to 70%. Our solutions include intelligent caching, code splitting, and server-side rendering, ensuring your application performs flawlessly even in challenging network conditions.</p>
                     </div>
-                </div>
-                <div class="metrics-chart">
-                   <div id="metrics-radar"></div>
+        
+                    <!-- Accessibility Card -->
+                    <div class="metric-card">
+                        <div class="metric-card-header">
+                            <h3>Accessibility</h3>
+                            <img src="./images/icons8-user-48.png" alt="User Icon" height="48" width="48">
+                        </div>
+                        <p>Excluding users isn't just bad for business – it can have serious legal implications. Many organizations don't realize their applications are inaccessible until they face complaints or legal challenges. We prioritize inclusive design from day one, implementing WCAG guidelines while maintaining visual appeal. This means comprehensive keyboard navigation, screen reader compatibility, and thoughtful color contrast choices.</p>
+                    </div>
+        
+                    <!-- Best Practices Card -->
+                    <div class="metric-card">
+                        <div class="metric-card-header">
+                            <h3>Best Practices</h3>
+                            <img src="./images/icons8-shield-48.png" alt="Shield" height="48" width="48">
+                        </div>
+                        <p>Technical debt and security vulnerabilities can cripple your business growth. We've seen companies spend up to 40% of their development time dealing with outdated code and security patches. Our development approach follows industry-leading standards and security practices, creating maintainable, scalable applications that grow with your business.</p>
+                    </div>
+        
+                    <!-- SEO Card -->
+                    <div class="metric-card">
+                        <div class="metric-card-header">
+                            <h3>SEO</h3>
+                            <img src="./images/icons8-marketing-48.png" alt="Marketing Icon" height="48" width="48">
+                        </div>
+                        <p>Poor search engine visibility means missed opportunities and lost revenue. Many beautifully designed applications fail to attract organic traffic because they weren't built with SEO in mind. Our development process integrates SEO best practices from the ground up – including semantic HTML structure, optimized meta data, and proper handling of dynamic content.</p>
+                    </div>
                 </div>
             </div>
         </article>
@@ -475,7 +466,7 @@
                     <div class="stat-card">
                         <svg xmlns="http://www.w3.org/2000/svg" class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                         <div class="stat-value">
-                            <span class="stat-number" data-target="18">0</span>
+                            <span class="stat-number" data-target="25">0</span>
                             <span class="stat-symbol">+</span>
                         </div>
                         <div class="stat-label">Projects Completed</div>
