@@ -109,7 +109,7 @@
                 overflow: hidden;
                 transition: all 300ms ease;
                 opacity: 0;
-                color: slategray;
+                color:black;
                 line-height: 1.6;
             }
 
@@ -139,6 +139,11 @@
                 border: 1px solid var(--border-c);
                 position: sticky;
                 top: 100px;
+            }
+
+            .my-form {
+                border: none;
+                padding: 0;
             }
 
             .contact-form h2 {
@@ -338,9 +343,9 @@
 
                 <div class="contact-form">
                     <h2>Still Have Questions?</h2>
-                    <p style="margin-bottom: 20px; color: slategray;">Send us your question and we'll get back to you as soon as possible.</p>
+                    <p style="margin-bottom: 20px; color: black;">Send us your question and we'll get back to you as soon as possible.</p>
                     
-                    <form class="question-form">
+                    <form class="my-form">
                         <div class="form-group">
                             <input minlength="5" type="email" id="email" name="email" placeholder="Your Email Address" required>
                         </div>
@@ -495,8 +500,8 @@
     </footer>
 
     <!-- Your existing footer -->
-    <script>
-        const form = document.querySelector('.question-form');
+    <!-- <script>
+        const form = document.querySelector('.my-form');
         const submitBtn = document.querySelector('.form-submit-btn')
         const successToast = document.querySelector('.success-toast')
         const failToast = document.querySelector('.fail-toast')
@@ -572,19 +577,7 @@
             document.querySelector('.form-active').style.display = 'none';
         }
     });
-        </script>
-    
-        <script>
-          const successClose = document.querySelector('.close-btn-success');
-          const failClose = document.querySelector('.close-btn-fail')
-          successClose.addEventListener('click', () => {
-            document.querySelector('.success-toast').classList.add('close')
-          })
-    
-          failClose.addEventListener('click', () => {
-            document.querySelector('.fail-toast').classList.add('close')
-          })
-        </script>
+        </script> -->
 
     <script>
         // FAQ Accordion functionality
@@ -604,22 +597,6 @@
                 }
             });
         });
-    </script>
-    <script>
-            const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const overlay = document.querySelector('.mobile-menu-overlay');
-        const mobileMenuClose = document.querySelector('.mobile-menu .hamburger');
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('is-active');
-            overlay.classList.toggle('is-active');
-            document.body.style.overflow = mobileMenu.classList.contains('is-active') ? 'hidden' : '';
-        }
-
-        hamburger.addEventListener('click', toggleMenu);
-        mobileMenuClose.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
     </script>
         <script src="./script.js"></script>
         <script src="./animations.js"></script>

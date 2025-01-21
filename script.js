@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
 
     // Initialize buttons state
-    prevBtn.disabled = true;
+    if(prevBtn) {
+        prevBtn.disabled = true;
+    }
 
     function updateSlides() {
         slides.forEach((slide, index) => {
@@ -42,60 +44,30 @@ document.addEventListener('DOMContentLoaded', function() {
         nextBtn.disabled = currentSlide === slides.length - 1;
     }
 
+   if(nextBtn) {
     nextBtn.addEventListener('click', () => {
         if (currentSlide < slides.length - 1) {
             currentSlide++;
             updateSlides();
         }
     });
+   }
 
+  if(prevBtn) {
     prevBtn.addEventListener('click', () => {
         if (currentSlide > 0) {
             currentSlide--;
             updateSlides();
         }
     });
+  }
 
     // Chart configuration
     const options = {
         series: [100, 99, 99, 100],
         chart: {
-            height: 500,
+            height: 600,
             type: 'radialBar',
-            animations: {
-                enabled: true,
-                easing: 'easeinout',
-                speed: 800,
-                animateGradually: {
-                    enabled: true,
-                    delay: 150
-                },
-                dynamicAnimation: {
-                    enabled: true,
-                    speed: 350
-                }
-            },
-            events: {
-                mounted: function(chartContext, config) {
-                    const defaultLabel = document.querySelector('.apexcharts-datalabel-label');
-                    if (defaultLabel) {
-                        defaultLabel.textContent = 'Performance';
-                    }
-                },
-                dataPointMouseEnter: function(event, chartContext, config) {
-                    const label = config.w.config.labels[config.dataPointIndex];
-                    const labelElement = document.querySelector('.apexcharts-datalabel-label');
-                    if (labelElement) {
-                        labelElement.textContent = label;
-                    }
-                },
-                dataPointMouseLeave: function(event, chartContext, config) {
-                    const labelElement = document.querySelector('.apexcharts-datalabel-label');
-                    if (labelElement) {
-                        labelElement.textContent = 'Performance';
-                    }
-                }
-            }
         },
         plotOptions: {
             radialBar: {
@@ -106,165 +78,92 @@ document.addEventListener('DOMContentLoaded', function() {
                     margin: 5,
                     size: '30%',
                     background: 'transparent',
+                    image: undefined,
                 },
                 dataLabels: {
                     name: {
-                        show: true,
-                        fontSize: '16px',
-                        offsetY: 30
+                        show: false,
                     },
                     value: {
-                        show: true,
-                        fontSize: '24px',
-                        offsetY: -10,
-                        formatter: function(val) {
-                            return val + '%';
-                        }
+                        show: false,
                     }
                 },
-                track: {
-                    background: '#f2f2f2',
-                    strokeWidth: '100%',
-                    margin: 5,
-                    dropShadow: {
-                        enabled: true,
-                        top: -3,
-                        left: 0,
-                        blur: 4,
-                        opacity: 0.15
-                    }
+                barLabels: {
+                    enabled: true,
+                    useSeriesColors: true,
+                    offsetX: -8,
+                    fontSize: '16px',
+                    formatter: function(seriesName, opts) {
+                        return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex] + "%"
+                    },
                 }
             }
         },
         colors: ['#00C853', '#2979FF', '#FF6D00', '#AA00FF'],
         labels: ['Performance', 'Accessibility', 'Best Practices', 'SEO'],
         legend: {
-            show: true,
-            fontSize: '14px',
-            position: 'bottom',
-            horizontalAlign: 'center',
-            floating: false,
-            offsetX: 0,
-            offsetY: 0,
-            formatter: function(seriesName, opts) {
-                return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex] + "%";
-            }
+            show: false
         },
         responsive: [{
-            breakpoint: 1024,
+            breakpoint: 480,
             options: {
-                chart: {
-                    height: 400
-                },
                 legend: {
-                    position: 'bottom',
-                    fontSize: '12px',
-                    offsetX: 0,
-                    offsetY: 0,
-                    horizontalAlign: 'center',
-                    itemMargin: {
-                        horizontal: 5,
-                        vertical: 10
-                    }
-                }
-            }
-        }, {
-            breakpoint: 768,
-            options: {
-                chart: {
-                    height: 350
-                },
-                legend: {
-                    position: 'bottom',
-                    fontSize: '11px',
-                    formatter: function(seriesName, opts) {
-                        return seriesName + ": " + opts.w.globals.series[opts.seriesIndex] + "%";
-                    },
-                    itemMargin: {
-                        horizontal: 4,
-                        vertical: 8
-                    }
-                },
-                plotOptions: {
-                    radialBar: {
-                        hollow: {
-                            size: '25%'
-                        },
-                        dataLabels: {
-                            name: {
-                                fontSize: '14px',
-                                offsetY: 25
-                            },
-                            value: {
-                                fontSize: '20px',
-                                offsetY: -15
-                            }
-                        }
-                    }
+                    show: false
                 }
             }
         }]
     };
 
+    // Initialize chart
     let chart = null;
-
-    // Function to initialize or reinitialize the chart
-    // function initializeChart() {
-    //     const chartElement = document.querySelector('#metrics-radar');
-    //     if (!chartElement) return;
-
-    //     // If chart exists, destroy it first
-    //     if (chart) {
-    //         chart.destroy();
-    //     }
-
-    //     // Create new chart instance
-       
-    // }
+    
+    function initializeChart() {
+        const chartElement = document.querySelector('#metrics-radar');
+        if (!chartElement) return;
+        
+        // If chart exists, destroy it first
+        if (chart) {
+            chart.destroy();
+        }
+        
+        // Create new chart
+        chart = new ApexCharts(chartElement, options);
+        chart.render();
+    }
 
     // Initialize chart when element is visible
-    // const observerOptions = {
-    //     root: null,
-    //     rootMargin: '0px',
-    //     threshold: 0.3
-    // };
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+    };
 
-    // const observer = new IntersectionObserver((entries) => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             initializeChart();
-    //         }
-    //     });
-    // }, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !chart) {
+                initializeChart();
+            }
+        });
+    }, observerOptions);
 
-    // Start observing the chart container
-    // const chartElement = document.querySelector('#metrics-radar');
-    // if (chartElement) {
-    //     observer.observe(chartElement);
-    // }
-    chart = new ApexCharts(chartElement, options);
-    chart.render();
+    const chartElement = document.querySelector('#metrics-radar');
+    if (chartElement) {
+        observer.observe(chartElement);
+    }
 
-    // Handle page visibility changes
+    // Handle visibility changes
     document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-            const chartElement = document.querySelector('#metrics-radar');
-            if (chartElement) {
-                initializeChart();
-            }
+        if (document.visibilityState === 'visible' && !chart) {
+            initializeChart();
         }
     });
 
-    // Optional: Handle page show event (when navigating back)
+    // Handle page show event
     window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-            const chartElement = document.querySelector('#metrics-radar');
-            if (chartElement) {
-                initializeChart();
-            }
+        if (event.persisted && !chart) {
+            initializeChart();
         }
     });
-    
 });
 
     const form = document.querySelector('.my-form');
@@ -273,86 +172,92 @@ document.addEventListener('DOMContentLoaded', function() {
     const failToast = document.querySelector('.fail-toast')
     const closeTimer = document.querySelector('.close-timer');
     const closeTimerFail = document.querySelector('.close-timer-fail');
-    form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Get the reCAPTCHA response token
-    const recaptchaToken = grecaptcha.getResponse();
-    
-    if (!recaptchaToken) {
-        alert('Please complete the reCAPTCHA');
-        return;
-    }
-    
-    // Get form data
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    document.querySelector('.form-inactive').style.display = 'none';
-    document.querySelector('.form-active').style.display = 'flex';
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.8';
-    
-    try {
+    if(form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get the reCAPTCHA response token
+            const recaptchaToken = grecaptcha.getResponse();
+            
+            if (!recaptchaToken) {
+                alert('Please complete the reCAPTCHA');
+                return;
+            }
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            document.querySelector('.form-inactive').style.display = 'none';
+            document.querySelector('.form-active').style.display = 'flex';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.8';
+            
+            try {
+                
+           
+                
+                const response = await fetch('https://nodemailer-gold.vercel.app/sendMessage', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ...data,
+                        recaptchaToken
+                    })
+                });
+                // const response = await fetch('http://localhost:3000/sendMessage', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json',
+                //     },
+                //     body: JSON.stringify({
+                //         ...data,
+                //         recaptchaToken
+                //     })
+                // });
+                
+                const result = await response.json();
+                if (result.success) {
+                   successToast.classList.add('open')
+                   closeTimer.classList.add('start')
         
-   
-        
-        const response = await fetch('https://nodemailer-gold.vercel.app/sendMessage', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                ...data,
-                recaptchaToken
-            })
+                   setTimeout(() => {
+                    successToast.classList.add('close')
+                   }, 5000);
+                    form.reset();
+                    grecaptcha.reset(); // Reset the reCAPTCHA widget
+                } else {
+                   failToast.classList.add('open')
+                   closeTimerFail.classList.add('start')
+                   setTimeout(() => {
+                    failToast.classList.add('close')
+                   }, 5000);
+                   submitBtn.disabled = false;
+                   submitBtn.style.opacity = '1';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            } finally {
+                document.querySelector('.form-inactive').style.display = 'flex';
+                document.querySelector('.form-active').style.display = 'none';
+            }
         });
-        // const response = await fetch('http://localhost:3000/sendMessage', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({
-        //         ...data,
-        //         recaptchaToken
-        //     })
-        // });
         
-        const result = await response.json();
-        if (result.success) {
-           successToast.classList.add('open')
-           closeTimer.classList.add('start')
-
-           setTimeout(() => {
-            successToast.classList.add('close')
-           }, 5000);
-            form.reset();
-            grecaptcha.reset(); // Reset the reCAPTCHA widget
-        } else {
-           failToast.classList.add('open')
-           closeTimerFail.classList.add('start')
-           setTimeout(() => {
-            failToast.classList.add('close')
-           }, 5000);
-           submitBtn.disabled = false;
-           submitBtn.style.opacity = '1';
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    } finally {
-        document.querySelector('.form-inactive').style.display = 'flex';
-        document.querySelector('.form-active').style.display = 'none';
     }
-});
-
 const successClose = document.querySelector('.close-btn-success');
 const failClose = document.querySelector('.close-btn-fail')
-successClose.addEventListener('click', () => {
-  document.querySelector('.success-toast').classList.add('close')
-})
+if(successClose) {
+    successClose.addEventListener('click', () => {
+        document.querySelector('.success-toast').classList.add('close')
+      })
+}
 
-failClose.addEventListener('click', () => {
-  document.querySelector('.fail-toast').classList.add('close')
-})
+if(failClose) {
+    failClose.addEventListener('click', () => {
+        document.querySelector('.fail-toast').classList.add('close')
+      })
+}
 
 // Get all navigation links in the mobile menu
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');

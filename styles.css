@@ -232,6 +232,7 @@ nav.fade-in {
 
 .highlight {
     color: var(--brand-c);
+    font-style: italic;
     
 }
 
@@ -429,7 +430,7 @@ a.underline-hover-effect {
 
 .hero-description {
     font-size: clamp(1.2rem, 7vw, 4rem);
-    font-weight: 500;
+    font-weight: 900;
 }
 
 .service-container {
@@ -448,8 +449,8 @@ a.underline-hover-effect {
 h1 {
     line-height: 1.6;
     font-size: 1.2rem;
-    font-weight: 500;
-    color: slategray;
+    font-weight: 400;
+    color: black;
 }
 
 .grid-container {
@@ -476,6 +477,10 @@ h1 {
         flex-direction: column;
         height: auto !important;
         gap: 50px;
+    }
+
+    .hero-img {
+        display: none;
     }
 
  
@@ -541,7 +546,7 @@ h1 {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 200px;
+    gap: 100px;
     
 }
 
@@ -567,7 +572,7 @@ h1 {
 
 .metrics-subtitle {
     font-size: 1.2rem;
-    color: #c2c2c2;
+    color: slategray;
     line-height: 1.6;
     margin-bottom: 40px;
     display: flex;
@@ -611,7 +616,7 @@ h1 {
 }
 
 .metric-item p {
-    color: #c2c2c2;
+    color: slategray;
     line-height: 1.6;
     margin: 20px;
     transition: color 200ms ease-in-out;
@@ -799,7 +804,7 @@ h1 {
 
         .stat-label {
             font-size: 1.1rem;
-            color: #c2c2c2;
+            color: slategray;
             font-weight: 500;
         }
 
@@ -881,7 +886,7 @@ h1 {
 
         .stat-label {
             font-size: 1.1rem;
-            color: #c2c2c2;
+            color: slategray;
             font-weight: 500;
         }
 
@@ -916,7 +921,7 @@ h1 {
         }
 
         .experience-text {
-            color: #c2c2c2;
+            color: slategray;
             line-height: 1.6;
         }
 
@@ -978,7 +983,7 @@ h1 {
             font-size: clamp(1.5rem, 5vw, 2rem);
             font-weight: 100;
             max-width: 350px;
-            color: #c2c2c2;
+            color: slategray;
         }
 
         .my-form {
@@ -1724,6 +1729,10 @@ h1 {
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .review-card {
+                pointer-events: none;
+            }
         }
         
         @media (max-width: 768px) {
@@ -2112,10 +2121,5 @@ button {
 @media(max-width:1143px) {
     .our-process-btn {
         min-width: 100%;
-    }
-}
-@media(max-width: 1025px) {
-    .metrics-chart {
-        display: none;
     }
 }
