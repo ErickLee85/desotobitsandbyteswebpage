@@ -899,7 +899,7 @@ h1 {
 
         @media(max-width:766px) {
             .metric-card, .service-card {
-                pointer-events: none;
+                
             }
         }
 
