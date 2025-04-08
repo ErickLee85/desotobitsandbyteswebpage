@@ -2266,7 +2266,7 @@ button {
     .testimonials-track {
         display: flex !important;
         flex-direction: column !important;
-        gap: 30px;
+        gap: 10px;
         transform: none !important;
         width: 100% !important;
         
