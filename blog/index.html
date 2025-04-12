@@ -21,7 +21,18 @@
         <link rel="stylesheet" href="../styles.css">
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="../script.js" async></script>
-        
+        <script type="speculationrules">
+            {
+                "prerender" : [
+                {
+                    "urls": [
+                     "/about", "/process", "/services", "/faq", "/services/mobile-app", "/services/custom-software",
+                    "/services/company-website", "/services/web-app", "/blog", "/blog/ai-revolution"
+                    ]
+                }
+                ]
+            }
+        </script>
         <style>
             .blog-hero {
                 min-height: 70vh;
