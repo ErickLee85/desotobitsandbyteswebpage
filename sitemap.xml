@@ -21,28 +21,28 @@
 
     <!-- Main Service Pages -->
     <url>
-        <loc>https://desotobitsandbytes.com/services.html</loc>
+        <loc>https://desotobitsandbytes.com/services</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/about.html</loc>
+        <loc>https://desotobitsandbytes.com/about</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/process.html</loc>
+        <loc>https://desotobitsandbytes.com/process</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/faq.html</loc>
+        <loc>https://desotobitsandbytes.com/faq</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -50,24 +50,38 @@
 
     <!-- Individual Service Pages -->
     <url>
-        <loc>https://desotobitsandbytes.com/webApp.html</loc>
+        <loc>https://desotobitsandbytes.com/services/web-app</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/mobileApp.html</loc>
+            <loc>https://desotobitsandbytes.com/services/mobile-app</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://desotobitsandbytes.com/customSoftware.html</loc>
+        <loc>https://desotobitsandbytes.com/services/custom-software</loc>
         <lastmod>2025-01-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Page -->
+    <url>
+        <loc>https://desotobitsandbytes.com/blog</loc>
+        <lastmod>2025-01-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://desotobitsandbytes.com/blog/ai-revolution</loc>
+        <lastmod>2025-01-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 
 </urlset>

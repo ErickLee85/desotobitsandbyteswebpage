@@ -994,14 +994,14 @@ h1 {
         }
 
         .contact-text p {
-            font-size: 1.2rem;
-            color: #c2c2c2;
-            line-height: 1.6;
+            font-size: 1.2rem !important;
+            color: #c2c2c2 !important;
+            line-height: 1.6 !important;
         }
 
         .contact-text h2 {
             font-size: clamp(2rem, 5vw, 3.5rem);
-            color: white;
+            color: white !important;
             margin-bottom: 15px;
             font-weight: 500;
         }
@@ -1014,7 +1014,7 @@ h1 {
             font-size: clamp(1.5rem, 5vw, 2rem);
             font-weight: 100;
             max-width: 350px;
-            color: rgb(50, 57, 63);
+            color: rgb(50, 57, 63) !important;
         }
 
         .my-form {

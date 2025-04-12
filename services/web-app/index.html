@@ -5,33 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         
         <!-- Primary Meta Tags -->
-        <title>Professional Company Websites | Desoto Bits & Bytes</title>
-        <meta name="title" content="Professional Company Websites | Desoto Bits & Bytes">
-        <meta name="description" content="Expert company website development with a focus on SEO, speed, and conversion. Modern, responsive websites that drive business growth.">
-        
-        <!-- Same stylesheet and existing styles -->
-        <link rel="stylesheet" href="./styles.css">
+        <title>Modern Web Development | Desoto Bits & Bytes</title>
+        <meta name="title" content="Modern Web Development | Desoto Bits & Bytes">
+        <meta name="description" content="Custom web development using modern frameworks like Nuxt 3 and Next.js. Fast, scalable, and SEO-friendly web solutions.">
         <script src="https://www.google.com/recaptcha/api.js" async></script>
         <script type="speculationrules">
             {
                 "prerender" : [
                 {
                     "urls": [
-                     "/about.html", "/process.html", "/services.html", "/faq.html", "/mobileApp.html", "/customSoftware.html",
-                    "/companyWebsite.html", "/webApp.html"
+                    "/about", "/process", "/services", "/faq", "/services/mobile-app", "/services/custom-software",
+                    "/services/company-website", "/services/web-app"
                     ]
                 }
                 ]
             }
         </script>
-
-        <!-- Schema Markup -->
+        <link rel="stylesheet" href="../../styles.css">
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Company Website Development",
-                "serviceType": "Website Development",
+                "name": "Web Development",
+                "serviceType": "Web Application Development",
                 "provider": {
                     "@type": "LocalBusiness",
                     "name": "Desoto Bits & Bytes",
@@ -42,35 +38,46 @@
                         "addressLocality": "Olive Branch",
                         "addressRegion": "MS",
                         "addressCountry": "US"
-                    }
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": "34.9618",
+                        "longitude": "-89.8297"
+                    },
+                    "telephone": "+19015704850",
+                    "priceRange": "$"
                 },
-                "description": "Professional website development services focused on SEO, performance, and user experience",
+                "description": "Professional web development services using modern JavaScript frameworks like Nuxt 3 and Next.js",
+                "areaServed": {
+                    "@type": "State",
+                    "name": "Mississippi"
+                },
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Website Development Services",
+                    "name": "Web Development Services",
                     "itemListElement": [
                         {
                             "@type": "Offer",
                             "itemOffered": {
                                 "@type": "Service",
-                                "name": "SEO-Optimized Websites",
-                                "description": "Websites built with search engine optimization as a core focus"
+                                "name": "Full-Stack Web Applications",
+                                "description": "Modern web applications built with Nuxt 3 and Next.js"
                             }
                         },
                         {
                             "@type": "Offer",
                             "itemOffered": {
                                 "@type": "Service",
-                                "name": "High-Performance Development",
-                                "description": "Lightning-fast websites with optimal Core Web Vitals scores"
+                                "name": "Firebase Integration",
+                                "description": "Scalable backend solutions with Firebase"
                             }
                         },
                         {
                             "@type": "Offer",
                             "itemOffered": {
                                 "@type": "Service",
-                                "name": "Conversion-Focused Design",
-                                "description": "Websites designed to convert visitors into customers"
+                                "name": "Modern UI Development",
+                                "description": "Beautiful interfaces using NuxtUI and NextUI"
                             }
                         }
                     ]
@@ -98,6 +105,7 @@
                 justify-content: center;
                 gap: 100px;
             }
+
 
             .features-grid {
                 display: grid;
@@ -220,6 +228,115 @@
     padding: 80px 20px;
 }
 
+.mobile-cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-content > p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-columns {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-column {
+    flex: 2;
+}
+
+.call-column {
+    flex: 1;
+    text-align: center;
+}
+
+.mobile-contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.mobile-contact-form input,
+.mobile-contact-form textarea {
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: white;
+    
+}
+
+.mobile-contact-form input::placeholder,
+.mobile-contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-contact-form .form-group {
+    display: flex;
+    gap: 15px;
+}
+
+.mobile-contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.or-divider {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.or-divider span {
+    padding: 0 15px;
+}
+
+.call-btn {
+    margin-top: 15px;
+    border: 1px solid rgb(16, 8, 107) !important;
+    padding: 15px 25px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(45deg, rgb(16, 8, 107), var(--brand-c))!important;
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+    font-weight: var(--button-weight);
+    color:white  !important;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
 
 @media (max-width: 768px) {
     .cta-columns {
@@ -260,15 +377,16 @@
                    </a> -->
            
                 <div style="display: flex; align-items: center; justify-content: center;">
-                    <a href="./index.html">
-                        <img src="./images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
+                    <a href="/">
+                        <img src="../../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
                        </a>
                     <ul class="desktop-links">
                         <li><a href="/" class="underline-hover-effect ">Home</a></li>
-                        <li><a href="/about.html"   class="underline-hover-effect active">About</a></li>
-                        <li><a href="/services.html" class="underline-hover-effect active-page">Services</a></li>
-                        <li><a href="/process.html" class="underline-hover-effect">Process</a></li>
-                        <li><a href="/faq.html" class="underline-hover-effect">FAQ</a></li>
+                        <li><a href="/about"   class="underline-hover-effect active">About</a></li>
+                        <li><a href="/services" class="underline-hover-effect active-page">Services</a></li>
+                        <li><a href="/process" class="underline-hover-effect">Process</a></li>
+                        <li><a href="/faq" class="underline-hover-effect">FAQ</a></li>
+                        <li><a href="/blog" class="underline-hover-effect">Blog</a></li>
                     </ul>
                 </div>
                 <!-- <a href="tel:19015704850" class="contact-btn">
@@ -284,17 +402,18 @@
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                 </div>
-                <img src="./images/logo_light.png" alt="Company Logo" height="60" width="300" class="nav-logo">
+                <img src="../../images/logo_light.png" alt="Company Logo" height="60" width="300" class="nav-logo">
           
             </div>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/process.html">Process</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/about"   >About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/blog">Blog</a></li>
                 <li><a href="tel:19015704850" class="contact-btn-mobile">
-                    <img src="./images/icons8-phone-50.png" alt="Phone Icon" height="20" width="20">
+                    <img src="../../images/icons8-phone-50.png" alt="Phone Icon" height="20" width="20">
                     Contact</a></li>
             </ul>
         </div>
@@ -302,52 +421,62 @@
         <main id="main-content" role="main">
             <section class="service-hero">
                 <div class="service-hero-content">
-                   <div>
-                    <div class="breadcrumbs">
-                        <a href="/">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-                            Home
-                        </a>
-                        <span class="breadcrumb-separator">/</span>
-                        <a href="/services.html">Services</a>
-                        <span class="breadcrumb-separator">/</span>
-                        <span style="font-style: italic;">Company Website</span>
+                    <div>
+                        <div class="breadcrumbs">
+                            <a href="/">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                Home
+                            </a>
+                            <span class="breadcrumb-separator">/</span>
+                            <a href="./services.html">Services</a>
+                            <span class="breadcrumb-separator">/</span>
+                            <span style="font-style: italic;">Web Application</span>
+                        </div>
+                        <h1 style="font-size: 3rem; margin-bottom: 20px; font-weight: 700; color: white;">Modern Web App Development</h1>
+                        <p style="font-size: 1.2rem; max-width: 600px; line-height: 1.6; opacity: 0.9;">
+                            Transform your digital presence with blazing-fast, SEO-friendly web applications. We use cutting-edge frameworks like Nuxt 3 and Next.js to deliver exceptional user experiences that drive results.
+                        </p>
                     </div>
-                    <h1 style="font-size: 3rem; margin-bottom: 20px; font-weight: 700; color: white;">Professional Company Website</h1>
-                    <p style="font-size: 1.2rem; max-width: 600px; line-height: 1.6; opacity: 0.9;">
-                        Stand out online with a high-performance, SEO-optimized website that converts visitors into customers. We build company websites that combine stunning design with technical excellence.
-                    </p>
-                   </div>
-                   <img src="./images/undraw_website_27ju.svg" alt="mobile app" height="400px" width="350px" class="hero-svg">
+                    <img src="../../images/web_app.svg" alt="mobile app" height="400px" width="350px" class="hero-svg">
                 </div>
             </section>
 
             <section class="features-section" style="padding: 100px 20px;">
                 <div style="max-width: 1200px; margin: 0 auto;">
-                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Why Choose Our Website Development?</h2>
+                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Why Choose Our Web Development Services?</h2>
                     <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: rgb(50, 57, 63);">
-                        We build websites that don't just look great – they perform exceptionally well, rank higher in search results, and help grow your business.
+                        We leverage modern JavaScript frameworks and best practices to create fast, secure, and scalable web applications that your users will love.
                     </p>
 
                     <div class="features-grid">
                         <div class="feature-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                            <h3 class="feature-title">SEO-First Development</h3>
-                            <p class="feature-description">Built with search engines in mind from day one. Semantic HTML, optimized meta tags, structured data, and lightning-fast performance ensure your site ranks well in search results.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/>
+                                <path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/>
+                                <path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/>
+                            </svg>
+                            <h3 class="feature-title">Server-Side Rendering</h3>
+                            <p class="feature-description">Boost your SEO and performance with built-in server-side rendering capabilities of Nuxt 3 and Next.js. Faster load times, better indexing, and improved user experience.</p>
                         </div>
 
                         <div class="feature-card">
                             <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
                             </svg>
-                            <h3 class="feature-title">Lightning-Fast Speed</h3>
-                            <p class="feature-description">Achieve perfect Core Web Vitals scores with our performance-optimized development approach. Fast loading times mean better user experience and higher conversion rates.</p>
+                            <h3 class="feature-title">Modern UI Components</h3>
+                            <p class="feature-description">Create stunning user interfaces with modern UI libraries like NuxtUI and NextUI. Responsive, accessible, and customizable components that match your brand.</p>
                         </div>
 
                         <div class="feature-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-                            <h3 class="feature-title">Conversion-Focused</h3>
-                            <p class="feature-description">Strategic design and clear call-to-actions guide visitors toward becoming customers. Every element is carefully crafted to maximize your business goals.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                            <h3 class="feature-title">Firebase Integration</h3>
+                            <p class="feature-description">Leverage Firebase's powerful backend services for authentication, real-time updates, and cloud functions. Scale effortlessly with built-in hosting and CDN.</p>
                         </div>
                     </div>
                 </div>
@@ -355,76 +484,80 @@
 
             <section class="technology-section">
                 <div class="tech-container">
-                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Our Website Development Stack</h2>
+                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Our Technology Stack</h2>
                     <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: rgb(50, 57, 63);">
-                        We use modern, proven technologies to create websites that excel in performance, security, and search engine rankings.
+                        We use the latest technologies and frameworks to build modern, performant web applications.
                     </p>
 
                     <div class="tech-grid">
                         <div class="tech-item">
-                            <img src="./images/file-type-html.svg" alt="HTML5" class="tech-icon">
-                            <p class="tech-name">HTML5</p>
+                            <img src="../../images/4691337_dot_js_nuxt_icon.svg" alt="Nuxt 3" class="tech-icon">
+                            <p class="tech-name">Nuxt 3</p>
                         </div>
                         <div class="tech-item">
-                            <img src="./images/tailwind-css.svg" alt="TailwindCSS" class="tech-icon">
-                            <p class="tech-name">TailwindCSS</p>
+                            <img src="../../images/nextjs-icon-svgrepo-com.svg" alt="Next.js" class="tech-icon">
+                            <p class="tech-name">Next.js</p>
                         </div>
                         <div class="tech-item">
-                            <img src="./images/javascript.svg" alt="TypeScript" class="tech-icon">
-                            <p class="tech-name">JavaScript</p>
+                            <img src="../../images/1175532_developer_firebase_google_coding_programming_icon.svg" alt="Firebase" class="tech-icon">
+                            <p class="tech-name">Firebase</p>
                         </div>
                         <div class="tech-item">
-                            <img src="./images/vercel.svg" alt="Vercel" class="tech-icon">
-                            <p class="tech-name">Vercel CDN</p>
+                            <img src="../../images/vercel.svg" alt="Firebase" class="tech-icon">
+                            <p class="tech-name">Vercel Server</p>
                         </div>
                         <div class="tech-item">
-                            <img src="./images/chart-spline.svg" alt="Analytics" class="tech-icon">
-                            <p class="tech-name">Analytics</p>
+                            <img src="../../images/icon-green.svg" alt="NuxtUI" class="tech-icon">
+                            <p class="tech-name">NuxtUI</p>
+                        </div>
+                        <div class="tech-item">
+                            <img src="../../images/apple-touch-icon.png" alt="NextUI" class="tech-icon">
+                            <p class="tech-name">NextUI</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <div class="process-timeline">
-                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px;">Our Development Advantages</h2>
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 60px;">Our Technology Stack Advantages</h2>
 
                 <div class="timeline-item">
                     <div class="timeline-number">1</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Semantic HTML & Accessibility</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">We build with semantic HTML5 elements and follow WCAG guidelines to ensure your website is accessible to all users and easily understood by search engines. This approach improves both SEO rankings and user experience.</p>
+                        <h3 class="timeline-title">Nuxt 3 & Next.js</h3>
+                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">Modern meta-frameworks that provide optimal developer experience and end-user performance. Built-in features like server-side rendering, file-based routing, and automatic code splitting ensure your web app is fast and SEO-friendly.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-number">2</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Performance Optimization</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">Every website we build is optimized for speed using advanced techniques like image optimization, code splitting, and lazy loading. We consistently achieve 90+ scores in Google's Core Web Vitals, ensuring your site loads quickly and ranks well.</p>
+                        <h3 class="timeline-title">Firebase Backend</h3>
+                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">A powerful and scalable backend solution that handles authentication, real-time data, hosting, and more. Firebase's extensive features and Google's infrastructure ensure your app can grow without limits.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-number">3</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">SEO Best Practices</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">From meta tags to structured data and optimized content structure, we implement comprehensive SEO best practices. Every page is built to rank well in search results and attract organic traffic to your business.</p>
+                        <h3 class="timeline-title">Modern UI Libraries</h3>
+                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">NuxtUI and NextUI provide beautiful, accessible components that speed up development while maintaining flexibility for custom designs. Built with modern best practices and full TypeScript support.</p>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-number">4</div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Analytics & Conversion Tracking</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">We integrate advanced analytics and conversion tracking to help you understand your visitors and optimize your site's performance. Track key metrics, understand user behavior, and make data-driven decisions to improve your online presence.</p>
+                        <h3 class="timeline-title">Vercel Deployment</h3>
+                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">Deploy your web applications with confidence using Vercel's enterprise-grade infrastructure. Benefit from automatic SSL, global CDN, instant deployments with git integration, and serverless functions. Every deployment gets a unique URL for preview, making collaboration and testing seamless. Plus, with Edge Functions and Image Optimization, your app delivers lightning-fast performance worldwide.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Call to Action Section -->
-            <article class="contact-section" id="contact-sect">
+              <!-- Call to Action Section -->
+              <article class="contact-section" id="contact-sect">
                 <section class="contact-text">
-                    <h2>Ready To Build Your Website?</h2>
+                    <h2>Ready To Build Your Web App?</h2>
                     <p>Typical response time is less than 24 hours.
                         Consultations are free of charge.
                     </p>
@@ -450,7 +583,7 @@
                          type="submit"
                          >
                          <span class="form-inactive">
-                            Get My Website
+                            Get My App
                             </span>
                             <span class="form-active">
                                 Submitting...
@@ -461,10 +594,9 @@
                     </form>
                 </section>
             </article>
-        </main>
         <div class="success-toast">
             <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%; flex-direction: row; gap: 20px;">
-                <img src="./images/icons8-check-30.png" alt="checkmark" height="30" width="30">
+                <img src="../../images/icons8-check-30.png" alt="checkmark" height="30" width="30">
                 <p>Message Sent Successfully</p>
                 <svg class="close-btn-success" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </div>
@@ -472,19 +604,20 @@
         </div>
         <div class="fail-toast">
             <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%; flex-direction: row; gap: 20px;">
-                <img src="./images/icons8-error-48.png" alt="error icon" height="30" width="30">
+                <img src="../../images/icons8-error-48.png" alt="error icon" height="30" width="30">
                 <p>Message Failed</p>
                 <svg class="close-btn-fail" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </div>
             <div class="close-timer-fail"></div> 
         </div>
+        </main>
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-content">
                     <!-- Brand Section -->
                     <div class="footer-brand">
                         <p style="font-size: 1.2rem; font-weight: 600; opacity: 1; display: flex; align-items: center; gap: 10px;">Desoto Bits & Bytes LLC
-                            <img src="./images/icons8-american-flag-96.png" loading="lazy" alt="American Flag" height="45" width="45">
+                            <img src="../../images/icons8-american-flag-96.png" loading="lazy" alt="American Flag" height="45" width="45">
                         </p>
                         <p>We're a veteran-owned software development company dedicated to delivering exceptional digital solutions, from Mobile Apps to Custom Software.</p>
                         <a href="https://www.bbb.org/us/ms/olive-branch/profile/information-technology-services/desoto-bits-and-bytes-llc-0543-44187735/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-memphis.bbb.org/seals/blue-seal-187-130-whitetxt-bbb-44187735.png" style="border: 0;" alt="Desoto Bits And Bytes, LLC BBB Business Review" /></a>
@@ -515,10 +648,11 @@
                     <div class="footer-column">
                         <h3>Quick Links</h3>
                         <div class="footer-links">
-                            <a href="/about.html" class="footer-link">About Us</a>
-                            <a href="/services.html" class="footer-link">Services</a>
-                            <a href="/process.html" class="footer-link">Our Process</a>
-                            <a href="/faq.html" class="footer-link">Frequent Questions</a>
+                            <a href="/about" class="footer-link">About Us</a>
+                            <a href="/services" class="footer-link">Services</a>
+                            <a href="/process" class="footer-link">Our Process</a>
+                            <a href="/faq" class="footer-link">Frequent Questions</a>
+                            <a href="/blog" class="footer-link">Blog</a>
                         </div>
                     </div>
     
@@ -526,10 +660,10 @@
                     <div class="footer-column">
                         <h3>Our Services</h3>
                         <div class="footer-links">
-                            <a href="/webApp.html" class="footer-link">Web Application</a>
-                            <a href="/companyWebsite.html" class="footer-link">Company Website</a>
-                            <a href="/mobileApp.html" class="footer-link">Mobile Apps</a>
-                            <a href="/customSoftware.html" class="footer-link">Custom Software</a>
+                            <a href="/services/web-app" class="footer-link">Web Application</a>
+                            <a href="/services/company-website" class="footer-link">Company Website</a>
+                            <a href="/services/mobile-app" class="footer-link">Mobile Apps</a>
+                            <a href="/services/custom-software" class="footer-link">Custom Software</a>
                         </div>
                     </div>
     
@@ -588,8 +722,7 @@
                 </div>
             </div>
         </footer>
-        <!-- Footer remains the same -->
-        <script src="./script.js"></script>
-        <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+          <script src="../../script.js"></script>
+          <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     </body>
 </html>
