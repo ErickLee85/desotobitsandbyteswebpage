@@ -422,51 +422,114 @@
         <article class="metrics-section">
             <div class="metrics-container">
                 <header class="metrics-header">
-                    <h2 class="metrics-title">
-                        Our Standards
-                        <img src="./images/icons8-checkmark-128.png" alt="checkmark" height="48">
-                    </h2>
+                    <h2 class="metrics-title">Our Standards <img src="./images/icons8-checkmark-128.png" alt="checkmark" height="48"></h2>
                     <p class="metrics-subtitle">We build applications that exceed industry standards</p>
                 </header>
                 
-                <div class="metrics-grid">
-                    <!-- Performance Card -->
-                    <div class="metric-card">
-                        <div class="metric-card-header">
-                            <h3>Performance</h3>
-                            <img src="./images/icons8-lightning-48.png" alt="Lightning Bolt" height="48" width="48">
-                        </div>
-                        <p>In today's fast-paced digital world, slow applications aren't just frustrating – they're costly. When users encounter delays, 53% will abandon your site after just 3 seconds of loading time. We tackle this head-on with advanced optimization techniques that reduce load times by up to 70%. Our solutions include intelligent caching, code splitting, and server-side rendering, ensuring your application performs flawlessly even in challenging network conditions.</p>
+                <div class="metrics-tabs">
+                    <div class="metrics-nav">
+                        <button class="metric-tab active" data-target="performance">
+                            <img src="./images/icons8-lightning-48.png" alt="Lightning Bolt" height="24" width="24">
+                            <span>Performance</span>
+                        </button>
+                        <button class="metric-tab" data-target="accessibility">
+                            <img src="./images/icons8-user-48.png" alt="User Icon" height="24" width="24">
+                            <span>Accessibility</span>
+                        </button>
+                        <button class="metric-tab" data-target="best-practices">
+                            <img src="./images/icons8-shield-48.png" alt="Shield" height="24" width="24">
+                            <span>Best Practices</span>
+                        </button>
+                        <button class="metric-tab" data-target="seo">
+                            <img src="./images/icons8-marketing-48.png" alt="Marketing Icon" height="24" width="24">
+                            <span>SEO</span>
+                        </button>
                     </div>
-        
-                    <!-- Accessibility Card -->
-                    <div class="metric-card">
-                        <div class="metric-card-header">
-                            <h3>Accessibility</h3>
-                            <img src="./images/icons8-user-48.png" alt="User Icon" height="48" width="48">
+                    
+                    <div class="metrics-content">
+                        <div class="metric-panel active" id="performance">
+                            <div class="metric-icon">
+                                <img src="./images/icons8-lightning-48.png" alt="Lightning Bolt" height="48" width="48">
+                            </div>
+                            <div class="metric-details">
+                                <h3>Speed Up Your Business</h3>
+                                <p>In today's fast-paced digital world, slow applications aren't just frustrating – they're costly. When users encounter delays, 53% will abandon your site after just 3 seconds of loading time. We tackle this head-on with advanced optimization techniques that reduce load times by up to 70%. Our solutions include intelligent caching, code splitting, and server-side rendering, ensuring your application performs flawlessly even in challenging network conditions.</p>
+                                <div class="metric-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">70%</span>
+                                        <span class="stat-label">Faster Load Times</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">3s</span>
+                                        <span class="stat-label">User Abandonment Threshold</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>Excluding users isn't just bad for business – it can have serious legal implications. Many organizations don't realize their applications are inaccessible until they face complaints or legal challenges. We prioritize inclusive design from day one, implementing WCAG guidelines while maintaining visual appeal. This means comprehensive keyboard navigation, screen reader compatibility, and thoughtful color contrast choices.</p>
-                    </div>
-        
-                    <!-- Best Practices Card -->
-                    <div class="metric-card">
-                        <div class="metric-card-header">
-                            <h3>Best Practices</h3>
-                            <img src="./images/icons8-shield-48.png" alt="Shield" height="48" width="48">
+                        
+                        <div class="metric-panel" id="accessibility">
+                            <div class="metric-icon">
+                                <img src="./images/icons8-user-48.png" alt="User Icon" height="48" width="48">
+                            </div>
+                            <div class="metric-details">
+                                <h3>Reach Every User</h3>
+                                <p>Excluding users isn't just bad for business – it can have serious legal implications. Many organizations don't realize their applications are inaccessible until they face complaints or legal challenges. We prioritize inclusive design from day one, implementing WCAG guidelines while maintaining visual appeal. This means comprehensive keyboard navigation, screen reader compatibility, and thoughtful color contrast choices.</p>
+                                <div class="metric-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">100%</span>
+                                        <span class="stat-label">WCAG Compliance</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">15%</span>
+                                        <span class="stat-label">More Users Reached</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>Technical debt and security vulnerabilities can cripple your business growth. We've seen companies spend up to 40% of their development time dealing with outdated code and security patches. Our development approach follows industry-leading standards and security practices, creating maintainable, scalable applications that grow with your business.</p>
-                    </div>
-        
-                    <!-- SEO Card -->
-                    <div class="metric-card">
-                        <div class="metric-card-header">
-                            <h3>SEO</h3>
-                            <img src="./images/icons8-marketing-48.png" alt="Marketing Icon" height="48" width="48">
+                        
+                        <div class="metric-panel" id="best-practices">
+                            <div class="metric-icon">
+                                <img src="./images/icons8-shield-48.png" alt="Shield" height="48" width="48">
+                            </div>
+                            <div class="metric-details">
+                                <h3>Build It Right, Build It Once</h3>
+                                <p>Technical debt and security vulnerabilities can cripple your business growth. We've seen companies spend up to 40% of their development time dealing with outdated code and security patches. Our development approach follows industry-leading standards and security practices, creating maintainable, scalable applications that grow with your business.</p>
+                                <div class="metric-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">40%</span>
+                                        <span class="stat-label">Dev Time Saved</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">99%</span>
+                                        <span class="stat-label">Security Standard Score</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p>Poor search engine visibility means missed opportunities and lost revenue. Many beautifully designed applications fail to attract organic traffic because they weren't built with SEO in mind. Our development process integrates SEO best practices from the ground up – including semantic HTML structure, optimized meta data, and proper handling of dynamic content.</p>
+                        
+                        <div class="metric-panel" id="seo">
+                            <div class="metric-icon">
+                                <img src="./images/icons8-marketing-48.png" alt="Marketing Icon" height="48" width="48">
+                            </div>
+                            <div class="metric-details">
+                                <h3>Get Found Online</h3>
+                                <p>Poor search engine visibility means missed opportunities and lost revenue. Many beautifully designed applications fail to attract organic traffic because they weren't built with SEO in mind. Our development process integrates SEO best practices from the ground up – including semantic HTML structure, optimized meta data, and proper handling of dynamic content.</p>
+                                <div class="metric-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">87%</span>
+                                        <span class="stat-label">Higher Search Rankings</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">2x</span>
+                                        <span class="stat-label">Organic Traffic Increase</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </article>
         <article class="stats-section">
             <div class="stats-wrapper">
@@ -679,6 +742,46 @@
                 </div>
             </div>
         </article>
+
+        <article class="latest-blog-section">
+            <div class="latest-blog-container">
+                <header class="latest-blog-header">
+                    <h2>From Our Blog</h2>
+                    <p>Explore our latest insights and articles on software development trends.</p>
+                </header>
+                <div class="latest-blog-grid">
+                    <!-- Blog Post 1: Custom CRM -->
+                    <div class="blog-card">
+                        <img loading="lazy" src="./images/crm_.png" alt="Abstract CRM dashboard interface" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">April 16, 2025</div>
+                            <h3 class="blog-card-title">Why a Custom CRM is Your Business's Secret Weapon</h3>
+                            <p class="blog-card-excerpt">Stop forcing your process into rigid software. Discover the power of a CRM built specifically for your unique business needs...</p>
+                            <a href="/blog/custom-crm" class="blog-card-link">
+                                Read More
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2: AI Revolution -->
+                    <div class="blog-card">
+                        <img loading="lazy" src="./images/ai_chip.jpg" alt="AI in Business Software" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <div class="blog-card-date">April 12, 2025</div>
+                            <h3 class="blog-card-title">How AI is Revolutionizing Custom Business Software</h3>
+                            <p class="blog-card-excerpt">In today's rapidly evolving business landscape, AI is no longer just a buzzword—it's becoming an essential component...</p>
+                            <a href="/blog/ai-revolution" class="blog-card-link">
+                                Read More
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="view-all-blogs-link">
+                    <a href="/blog">View All Blog Posts</a>
+                </div>
+            </div>
+        </article>
        
     </main>
 
@@ -888,5 +991,228 @@ function animateCounter(element, target) {
  
         </script>
     <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+    <script>
+    // Add this to your existing script.js file or include it at the end of your HTML
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.metric-tab');
+        const panels = document.querySelectorAll('.metric-panel');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all panels
+                panels.forEach(panel => panel.classList.remove('active'));
+                // Show corresponding panel
+                const targetPanel = document.getElementById(tab.dataset.target);
+                if (targetPanel) targetPanel.classList.add('active');
+            });
+        });
+    });
+    </script>
+    <style>
+    /* Updated styles for metrics section with vertical tabs */
+    .metrics-section {
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ee 100%);
+        padding: 6rem 0;
+        position: relative;
+    }
+
+    .metrics-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .metrics-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .metrics-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .metrics-tabs {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+    }
+
+    .metrics-nav {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #eaeaea;
+        background: #f8f9fa;
+        min-width: 200px;
+    }
+
+    .metric-tab {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 1.25rem 1.5rem;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        color: #555;
+        font-weight: 600;
+        position: relative;
+        transition: all 0.3s ease;
+        text-align: left;
+    }
+
+    .metric-tab::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .metric-tab.active {
+        color: #2b5dff;
+        background: rgba(43, 93, 255, 0.05);
+    }
+
+    .metric-tab.active::after {
+        background: #2b5dff;
+    }
+
+    .metrics-content {
+        flex: 1;
+    }
+
+    .metric-panel {
+        display: none;
+        padding: 2rem;
+    }
+
+    .metric-panel.active {
+        display: flex;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .metric-icon {
+        flex: 0 0 100px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+
+    .metric-details {
+        flex: 1;
+    }
+
+    .metric-details h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #222;
+    }
+
+    .metric-details p {
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        color: #444;
+    }
+
+    .metric-stats {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2b5dff;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .metrics-tabs {
+            flex-direction: column;
+        }
+        
+        .metrics-nav {
+            flex-direction: row;
+            overflow-x: auto;
+            min-width: 100%;
+            border-right: none;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .metric-tab {
+            padding: 1rem;
+            white-space: nowrap;
+        }
+        
+        .metric-tab::after {
+            top: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+        }
+        
+        .metric-panel.active {
+            flex-direction: column;
+        }
+        
+        .metric-icon {
+            margin-bottom: 1.5rem;
+        }
+        
+        .metric-stats {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .stat-item {
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+        }
+    }
+    </style>
 </body>
 </html>
