@@ -2165,7 +2165,7 @@ button {
 
 .metrics-section {
     padding: 100px 20px;
-    background: #f5f5f5;
+    background: #f5f5f5 !important;
 }
 
 .metrics-container {
