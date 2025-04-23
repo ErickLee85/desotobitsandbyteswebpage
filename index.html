@@ -439,6 +439,70 @@
     </div>
 </article>
 
+<article class="case-study-section case-study-alt">
+    <div class="case-study-container">
+        <header class="case-study-header">
+            <h2>Legacy Application Migration</h2>
+            <p>Modernizing critical business systems for performance and scalability</p>
+        </header>
+        
+        <div class="case-study-content">
+         
+            <div class="case-study-details">
+                <div class="case-study-tag">Case Study</div>
+                <h3>Complete System Migration & Database Rebuild</h3>
+                <p class="case-study-description">
+                    Our client was operating on an outdated platform built with legacy technology that was becoming increasingly difficult to maintain and scale. We were tasked with migrating their entire application to a modern programming framework while preserving all functionality and data integrity. This involved reverse engineering their existing database structure, migrating years of business-critical data, and rebuilding the application with improved architecture and security.
+                </p>
+                <div class="case-study-results">
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="result-content">
+                            <h4>Performance Boost</h4>
+                            <p>Increased application speed by 300%, dramatically improving user experience and productivity</p>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="result-content">
+                            <h4>Enhanced Security</h4>
+                            <p>Implemented modern security protocols, eliminating vulnerabilities in the legacy system</p>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <div class="result-content">
+                            <h4>Zero Data Loss</h4>
+                            <p>Successfully migrated 100% of business data with complete integrity and improved query performance</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <a href="/case-studies/system-migration" class="case-study-link">
+                    Read Full Case Study
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a> -->
+            </div>
+               <div class="case-study-image">
+                <img loading="lazy" src="./images/sql.webp" alt="Application Migration Dashboard" class="case-study-img">
+            </div>
+        </div>
+    </div>
+</article>
+
       
 
         <article class="contact-section" id="contact-sect">
@@ -790,6 +854,21 @@
                                 </div>
                             </div>
                         </div>
+                          <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="quote-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
+                                </div>
+                                <p>Fantastic service and highly recommended!</p>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar" style="background: #ffd52b">C</div>
+                                    <div class="author-details">
+                                        <h4>Chad Williamson</h4>
+                                        <div class="review-stars">★★★★★</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
                         <!-- Testimonial 6 -->
                      
@@ -1052,29 +1131,8 @@ function animateCounter(element, target) {
             observer.observe(statsContainer);
         }
  
-        </script>
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
-    <script>
-    // Add this to your existing script.js file or include it at the end of your HTML
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.metric-tab');
-        const panels = document.querySelectorAll('.metric-panel');
-        
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove('active'));
-                // Add active class to clicked tab
-                tab.classList.add('active');
-                
-                // Hide all panels
-                panels.forEach(panel => panel.classList.remove('active'));
-                // Show corresponding panel
-                const targetPanel = document.getElementById(tab.dataset.target);
-                if (targetPanel) targetPanel.classList.add('active');
-            });
-        });
-    });
+        </script>        <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+        <!-- GSAP and ScrollTrigger for animations -->
     </script>
     <style>
     /* Updated styles for metrics section with vertical tabs */

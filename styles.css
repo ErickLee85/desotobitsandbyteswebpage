@@ -2510,7 +2510,9 @@ button {
 .case-study-image {
     flex: 1;
     min-width: 45%;
-box-shadow: 0 10px 30px rgba(71, 92, 109, 0.1);
+    box-shadow: 0 10px 30px rgba(71, 92, 109, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .case-study-img {
