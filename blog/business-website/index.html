@@ -109,6 +109,7 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
+                gap:20px;
             }
             
             .article-date {
@@ -263,21 +264,34 @@
             }
 
             @media (max-width: 768px) {
-                .article-content {
+              .article-content {
                     padding: 30px 20px;
-                }
-                
-                .stat-box {
-                    width: 100%;
-                }
-                
-                .article-author {
-                    margin-top: 20px;
+                    margin-top: -40px;
+                    border-radius: 15px 15px 0 0;
                 }
                 
                 .article-meta {
                     flex-direction: column;
                     align-items: flex-start;
+                    gap: 20px;
+                    color:rgb(169, 169, 169);
+                }
+                
+                .article-date {
+                    background:none;
+                    font-size: 0.8rem
+                }
+
+                .article-date svg {
+                    display: none;
+                }                
+                .stat-box {
+                    width: 100%;
+                }
+                
+                .tech-icon {
+                    width: 80px;
+                    margin: 10px;
                 }
             }
         </style>
@@ -350,9 +364,8 @@
                     </div>
                 </div>
                 <div class="article-date">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16"><path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/></svg>
-                    <span id="publish-date">April 24, 2025</span> <!-- Dynamically set or update -->
-                </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>        
+                    <span id="publish-date">April 24, 2025</span>
             </div>
             <p>In today's digital-first world, many small business owners find themselves asking a critical question: "Do I really need a website?" With social media platforms, online directories, and marketplace listings available, it's tempting to think a dedicated website is unnecessary—especially when you're watching your budget carefully.</p>
             
@@ -629,5 +642,6 @@
         </div>
     </footer>
     <script src="../../script.js"></script>
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 </body>
 </html>
