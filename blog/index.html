@@ -54,7 +54,7 @@
             .blog-section {
                 max-width: 1200px;
                 margin: -60px auto 80px;
-                padding: 0 20px;
+                padding: 50px 20px;
                 position: relative;
                 z-index: 3;
             }
@@ -183,6 +183,9 @@
             }
             
             @media (max-width: 768px) {
+                .blog-section {
+                    padding: 0px 20px;
+                }
                 .blog-grid {
                     grid-template-columns: 1fr;
                 }
@@ -289,9 +292,27 @@
                 <div class="blog-category">Software Engineering</div>
                 <div class="blog-category">Business Insights</div>
             </div> -->
-            
-            <div class="blog-grid">
-                <!-- New UX Design Blog Post -->
+              <div class="blog-grid">
+                <!-- Business Website Blog Post -->
+                <article class="blog-card" data-category="business small business website">
+                    <img src="../images/modern.webp" alt="Modern business website on laptop and mobile devices" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <div class="blog-card-date">April 22, 2025</div>
+                        <h2 class="blog-card-title">5 Reasons Why Your Small Business Needs a Website in 2025</h2>
+                        <p class="blog-card-excerpt">
+                            In today's digital-first world, many small business owners wonder if they really need a website, especially when operating on a limited budget. Discover why having a professional website is more essential and affordable than you might think.
+                        </p>
+                        <a href="/blog/business-website" class="blog-card-link">
+                            Read Full Article
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- UX Design Blog Post -->
                 <article class="blog-card" data-category="software development ux design">
                     <img src="../images/ui_design_two.webp" alt="User Experience (UX) Design illustration showing a designer working on interface" class="blog-card-image">
                     <div class="blog-card-content">
