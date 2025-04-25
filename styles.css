@@ -147,7 +147,6 @@ nav.fade-in {
 /* Utility Classes */
 .nav-logo {
     object-fit: cover;
-    margin-right: -50px;
 }
 
 .center {
@@ -531,6 +530,10 @@ h1 {
 
     nav {
         justify-content: flex-start;
+    }
+
+    .nav-logo {
+        margin-left:0px !important;
     }
 
     .hamburger {
