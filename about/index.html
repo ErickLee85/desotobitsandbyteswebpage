@@ -159,7 +159,7 @@
             }
 
             .about-hero-content {
-                max-width: 1200px;
+                max-width: 1400px;
                 margin: 0 auto;
                 padding: 40px 20px;
                 position: relative;
@@ -168,7 +168,7 @@
 
 
             .about-section {
-                max-width: 1200px;
+                max-width: 1400px;
                 margin: 0 auto;
                 padding: 80px 20px;
             }
@@ -180,12 +180,14 @@
                 align-items: center;
             }
 
+
             .founder-image {
                 width: 100%;
                 aspect-ratio: 1;
-                border-radius: 12px;
                 overflow: hidden;
                 position: relative;
+                clip-path: xywh(0 5px 100% 75% round 15% 0);
+                box-shadow: 0 0 15px rgba(0,0,0,0.4);
             }
 
             img {
@@ -244,9 +246,7 @@
                 color: slategray;
                 line-height: 1.6;
                 font-size: 0.9rem;
-            }
-
-            @media (max-width: 968px) {
+            }            @media (max-width: 968px) {
                 .founder-section {
                     grid-template-columns: 1fr;
                 }
@@ -302,6 +302,192 @@
     width: 16px;
     border-radius: 4px;
     background: white;
+}
+
+/* New Achievements Section Styles */
+.achievements-section {
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-c);
+}
+
+.section-subheading {
+    font-size: 1.2rem;
+    color: slategray;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--brand-c);
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-c);
+}
+
+.stat-description {
+    color: slategray;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.project-overview {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-c);
+}
+
+.project-content p {
+    color: rgb(50, 57, 63);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.rounded-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position:right;
+    border-radius:12px;
+}
+
+.project-highlights {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.project-highlights li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: rgb(50, 57, 63);
+}
+
+.highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--brand-c);
+}
+
+.testimonials-preview {
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-quote {
+    color: var(--brand-c);
+    opacity: 0.2;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgb(50, 57, 63);
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-info {
+    margin-left: 10px;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--text-c);
+    margin-bottom: 5px;
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: slategray;
+}
+
+@media (max-width: 968px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-image {
+        order: -1;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
 }
 
         </style>
@@ -414,6 +600,93 @@
                             <img loading="eager" src="../images/owner_img.webp" alt="Erick Crowne, Founder of Desoto Bits & Bytes" class="carousel-image active">
                         </div>
                     </div>
+            </div>
+        </section>
+
+        <!-- New Section: Our Work and Achievements -->
+        <section class="about-section achievements-section">
+            <div class="section-header">
+                <h2>Our Work: Beyond the Code</h2>
+                <p class="section-subheading">Transforming ideas into reality, one project at a time</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Successful Projects</div>
+                    <p class="stat-description">From mobile apps and web platforms to custom software solutions, each project delivered with precision and excellence.</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Hours of Coding</div>
+                    <p class="stat-description">Dedicated time spent crafting, testing, and perfecting solutions that make a difference for our clients.</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">Lines of Code</div>
+                    <p class="stat-description">Every line meticulously written with attention to detail, performance, and security.</p>
+                </div>
+            </div>
+            
+            <div class="project-overview">
+                <div class="project-content">
+                    <h3>The Projects That Define Us</h3>
+                    <p>
+                        Since our founding, we've poured our expertise into a diverse range of projects that have helped businesses transform their operations and reach new heights. Each project represents not just code, but a solution to real-world challenges.
+                    </p>
+                    <p>
+                        Our portfolio spans multiple industries—from communications and logistics to local small businesses. We've built mobile apps that streamline field operations, web applications that automate complex business processes, and custom software that gives our clients a competitive edge in their industry.
+                    </p>
+                    <p>
+                        What makes us different is our approach to each project. We don't just write code—we engineer solutions with purpose, considering scalability, performance, and user experience at every step. Our military-inspired attention to detail ensures that every feature is thoroughly tested and every interaction is intuitive.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>
+                            <span class="highlight-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </span>
+                            React Native mobile applications with offline-first architecture
+                        </li>
+                        <li>
+                            <span class="highlight-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </span>
+                            High-performance web applications built with Next.js and Nuxt
+                        </li>
+                        <li>
+                            <span class="highlight-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </span>
+                            Custom CRM systems tailored to specific business workflows
+                        </li>
+                        <li>
+                            <span class="highlight-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            </span>
+                            SEO-optimized company websites that drive real business results
+                        </li>
+                    </ul>
+                </div>
+                <div class="project-image">
+                    <img loading="lazy" src="../images/custom_software.webp" alt="Software development project" class="rounded-img">
+                </div>
+            </div>
+            
+            <div class="testimonials-preview">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M11.1 11.5c.3-.7.5-1.5.5-2.4 0-3-2.5-5.5-5.5-5.5S.6 6.1.6 9.1s2.5 5.5 5.5 5.5c.9 0 1.7-.2 2.4-.5l3.6 3.6c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4l-2.4-4.8zm-10-2.4c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"/><path d="M23.4 11.5c.3-.7.5-1.5.5-2.4 0-3-2.5-5.5-5.5-5.5s-5.5 2.5-5.5 5.5 2.5 5.5 5.5 5.5c.9 0 1.7-.2 2.4-.5l3.6 3.6c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4l-2.4-4.8zm-10-2.4c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"/></svg>
+                    </div>
+                    <p class="testimonial-text">I am the owner of two businesses and have been in business over 18 years. I have worked with several software companies over the years. Erick, with Desoto Bits and Bytes, has helped me more than most. His knowledge and dedication to help others is first class. It is great to have someone that I can speak with whenever needed, and who understands what I am needing, From websites, SEO, custom software, app development etc… Erick is the best.</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <p class="author-name">Paul Ollar</p>
+                            <p class="author-title">CEO, Ultimate Roofing</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
