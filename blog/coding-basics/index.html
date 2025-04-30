@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Learn the basics of coding with this beginner-friendly guide covering fundamental concepts, programming languages, and resources to start your coding journey.">
+        <meta name="keywords" content="coding for beginners, learn to code, programming basics, coding fundamentals, beginner coding projects">
+        <meta name="author" content="Desoto Bits & Bytes">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Getting Started with Coding: A Beginner's Guide">
+        <meta property="og:description" content="Learn the basics of coding with this beginner-friendly guide covering fundamental concepts, programming languages, and resources to start your coding journey.">
+        <meta property="og:image" content="../../images/coding_bg.jpg">
+        <meta property="og:url" content="https://desotobitsandbytes.com/blog/getting-started-with-coding">
+        
+        <title>Getting Started with Coding: A Beginner's Guide | Desoto Bits & Bytes</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="stylesheet" href="../../styles.css">
+        <link rel="canonical" href="https://desotobitsandbytes.com/blog/getting-started-with-coding">
+        <script type="speculationrules">
+        {
+            "prerender" : [
+            {
+                "urls": [
+                    "/about", "/process", "/services", "/faq", "/services/mobile-app", "/services/custom-software",
+                "/services/company-website", "/services/web-app", "/blog", "/blog/ai-revolution", "/contact", "services/ux-design"
+                ]
+            }
+            ]
+        }
+    </script>
+        
+        <style>
+          
+            /* Article Hero */
+            .article-hero {
+                min-height: 60vh;
+                padding-top: 120px;
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('../../images/undraw_programming_65t2.svg');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .blog-hero-content {
+                max-width: 1200px;
+                padding: 0 20px;
+                z-index: 2;
+            }
+            
+            /* Article Content */
+            .article-content {
+                margin: -80px auto 100px;
+                max-width: 1200px;
+                padding: 50px;
+                position: relative;
+                z-index: 3;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            }
+            
+            .article-content h2 {
+                font-size: 2rem;
+                color: #1a1a1a;
+                margin: 2.5rem 0 1.2rem;
+                border-bottom: 2px solid #f0f0f0;
+                padding-bottom: 0.5rem;
+            }
+            
+            .article-content h3 {
+                font-size: 1.5rem;
+                color: #333;
+                margin: 2rem 0 1rem;
+            }
+            
+            .article-content p {
+                font-size: 1.1rem;
+                line-height: 1.9;
+                color: #444;
+                margin-bottom: 1.8rem;
+            }
+            
+            .article-content ul {
+                margin: 1.5rem 0;
+                padding-left: 2rem;
+            }
+            
+            .article-content li {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                color: #444;
+                margin-bottom: 0.8rem;
+            }
+            
+            /* Article Meta */
+            .article-meta {
+                margin-bottom: 2.5rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            
+            .article-date {
+                display: flex;
+                gap: 10px;
+                font-size: 0.95rem;
+                background: #ececec;
+                padding: 8px 12px;
+                border-radius: 20px;
+            }
+            
+            .article-author {
+                display: flex;
+                align-items: center;
+            }
+            
+            .author-avatar {
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                margin-right: 1rem;
+                border: 2px solid #f0f0f0;
+                object-fit: cover;
+            }
+            
+            .author-info {
+                font-size: 0.95rem;
+            }
+            
+            .author-name {
+                font-weight: 600;
+                color: #1a1a1a;
+                margin-bottom: 3px;
+            }
+            
+            .author-role {
+                color: #666;
+            }
+            
+            /* Highlight Box */
+            .highlight-box {
+                background: #f8f9ff;
+                border-left: 4px solid #3a56e4;
+                padding: 25px;
+                margin: 30px 0;
+                border-radius: 0 8px 8px 0;
+            }
+            
+            .highlight-box h3 {
+                margin-top: 0;
+                color: #3a56e4;
+            }
+            
+            /* Stat Boxes */
+            .stat-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 40px 0;
+            }
+            
+            .stat-box {
+                background: #f9f9f9;
+                border-radius: 8px;
+                padding: 20px;
+                width: calc(50% - 15px);
+                margin-bottom: 30px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .stat-box:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #3a56e4;
+                margin-bottom: 10px;
+            }
+            
+            .stat-description {
+                font-size: 1rem;
+                color: #555;
+                line-height: 1.5;
+            }
+            
+            /* Case Study */
+            .case-study {
+                background: #f5f8ff;
+                border-radius: 12px;
+                padding: 30px;
+                margin: 40px 0;
+            }
+            
+            .case-study h3 {
+                color: #2a3b8f;
+                margin-top: 0;
+            }
+              /* Implementation Steps */
+            .implementation-steps {
+                counter-reset: step-counter;
+                list-style-type: none;
+                padding-left: 0;
+                max-width: 90%;
+                margin: 30px auto;
+            }
+            
+            .implementation-steps li {
+                position: relative;
+                padding-left: 60px;
+                margin-bottom: 30px;
+                counter-increment: step-counter;
+            }
+            
+            .implementation-steps li::before {
+                content: counter(step-counter);
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 40px;
+                background: #3a56e4;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 1.1rem;
+            }
+            
+            .implementation-steps li strong {
+                display: block;
+                font-size: 1.2rem;
+                color: #333;
+                margin-bottom: 8px;
+            }
+            
+            /* Conclusion */
+            .conclusion {
+                background: white;
+                padding: 30px;
+                border-radius: 12px;
+                margin: 40px 0 20px;
+            }
+            
+            /* CTA Box */
+            .cta-box {
+                background: linear-gradient(45deg, #3a56e4, #2a3b8f);
+                color: white;
+                padding: 40px;
+                border-radius: 12px;
+                text-align: center;
+                margin: 50px 0 20px;
+            }
+            
+            .cta-box h3 {
+                color: white;
+                margin-top: 0;
+                font-size: 1.8rem;
+            }
+            
+            .cta-box p {
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 25px;
+            }
+            
+            .cta-button {
+                display: inline-block;
+                background: white;
+                color: #3a56e4;
+                padding: 12px 30px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+            
+            /* Code Examples */
+            .code-example {
+                margin-bottom: 2rem;
+                background: #f5f5f5;
+                padding: 1.5rem;
+                border-radius: 0.5rem;
+            }
+            
+            .code-example-header {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .code-example-title {
+                font-size: 1.125rem;
+                font-weight: 600;
+            }
+            
+            .code-block {
+                background: #1e1e1e;
+                color: #fff;
+                padding: 1rem;
+                border-radius: 0.375rem;
+                overflow-x: auto;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+            
+            /* Resource Cards */
+            .resource-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .resource-card {
+                border: 1px solid #e0e0e0;
+                border-radius: 0.5rem;
+                padding: 1.5rem;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .resource-card:hover {
+                transform: translateY(-0.25rem);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .resource-card h3 {
+                font-size: 1.25rem;
+                margin-bottom: 0.75rem;
+                color: #1a1a1a;
+            }
+            
+            .resource-card ul {
+                padding-left: 0;
+            }
+            
+            .resource-card li {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .resource-card a {
+                color: #3a56e4;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+            
+            .resource-card a:hover {
+                text-decoration: underline;
+            }
+            
+            /* Contact Section */
+            .contact-section {
+                min-height: 100vh;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 100px;
+                background-image: url('../../images/world_digital.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding: 50px 20px;
+                background: linear-gradient(to right, #0a072c, #1a1a1a);
+                margin-top: 4rem;
+                border-radius: 0.75rem;
+            }
+            
+            .contact-form {
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            .contact-text {
+                height: 500px;
+                max-width: 500px;
+            }
+            
+            .contact-text p {
+                font-size: 1.2rem !important;
+                color: #c2c2c2 !important;
+                line-height: 1.6 !important;
+            }
+            
+            .contact-text h2 {
+                font-size: clamp(2rem, 5vw, 3.5rem);
+                color: white !important;
+                margin-bottom: 15px;
+                font-weight: 500;
+                border-bottom: none;
+            }
+            
+            .contact-text h3 {
+                font-size: clamp(1.5rem, 5vw, 2rem);
+                font-weight: 100;
+                max-width: 350px;
+                color: rgb(50, 57, 63) !important;
+            }
+            
+            .my-form {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                border-radius: 8px;
+                border: 1px solid gainsboro;
+                padding: 30px;
+                background: white;
+            }
+            
+            .my-form h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                border-bottom: none;
+            }
+            
+            input, textarea {
+                padding: 15px;
+                background: white;
+                outline: none;
+                border: 1px solid var(--border-c);
+                color: rgb(50, 57, 63);
+                transition: all 300ms ease-in-out;
+                min-width: 100%;
+                border-radius: 5px;
+            }
+            
+            textarea {
+                resize: none;
+            }
+            
+            .form-submit-btn {
+                padding: 15px;
+                background: linear-gradient(45deg, rgb(16, 8, 107), var(--brand-c)) !important;
+                color: white;
+                cursor: pointer;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
+                font-weight: 700;
+                margin-top: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                transition: all 300ms ease-in-out;
+            }
+            
+            .form-submit-btn:hover {
+                filter: brightness(1.1);
+            }
+            
+            input:focus, textarea:focus {
+                border-color: rgb(16, 8, 107);
+                box-shadow: 0 0 25px rgba(28, 82, 92, 0.1);
+            }
+            
+            /* Toast Notifications */
+            .success-toast, .fail-toast {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                border-radius: 5px;
+                height: 60px;
+                width: 350px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transform: translateX(150%);
+                font-weight: 600;
+            }
+            
+            .success-toast {
+                background: #4caf50;
+                color: rgb(235, 235, 235);
+            }
+            
+            .fail-toast {
+                background: #252424;
+                color: rgb(235, 235, 235);
+            }
+            
+            .close-timer, .close-timer-fail {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 6px;
+            }
+            
+            .close-timer {
+                background: rgb(58, 226, 36);
+            }
+            
+            .close-timer-fail {
+                background: rgb(255, 194, 38);
+            }
+            
+            .close-btn-fail, .close-btn-success {
+                cursor: pointer;
+                transition: 200ms color ease;
+            }
+            
+            .close-btn-fail:hover, .close-btn-success:hover {
+                color: white;
+            }
+            
+            /* Form States */
+            .form-inactive, .form-active {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .form-active {
+                display: none;
+            }
+            
+            /* Spinner Animation */
+            .spinner {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 4px solid #ffffff;
+                animation: spinner-bulqg1 0.96s infinite linear alternate, spinner-oaa3wk 1.92s infinite linear;
+            }
+            
+            @keyframes spinner-bulqg1 {
+                0% {
+                    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+                }
+                12.5% {
+                    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+                }
+                25% {
+                    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+                }
+                50% {
+                    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+                }
+                62.5% {
+                    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+                }
+                75% {
+                    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+                }
+                100% {
+                    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+                }
+            }
+            
+            @keyframes spinner-oaa3wk {
+                0% {
+                    transform: scaleY(1) rotate(0deg);
+                }
+                49.99% {
+                    transform: scaleY(1) rotate(135deg);
+                }
+                50% {
+                    transform: scaleY(-1) rotate(0deg);
+                }
+                100% {
+                    transform: scaleY(-1) rotate(-135deg);
+                }
+            }
+            
+            /* Footer */
+            .footer {
+                background: rgb(16, 8, 107);
+                color: white;
+                padding: 6rem 1rem;
+            }
+            
+            .footer-container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            
+            .footer-content {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 4rem;
+                padding-bottom: 3rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .footer-brand {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .footer-brand p {
+                color: #f5f5f5;
+                line-height: 1.6;
+                font-size: 0.95rem;
+                opacity: 0.8;
+            }
+            
+            .footer-social {
+                display: flex;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: var(--brand-c);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+            
+            .social-link:hover {
+                background: var(--brand-c);
+                transform: translateY(-3px);
+            }
+            
+            .social-icon {
+                width: 20px;
+                height: 20px;
+                color: white;
+            }
+            
+            .footer-column h3 {
+                color: white;
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+            }
+            
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .footer-link {
+                color: #f5f5f5;
+                opacity: 0.8;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                font-size: 0.95rem;
+            }
+            
+            .footer-link:hover {
+                opacity: 1;
+                color: var(--brand-c);
+                transform: translateX(5px);
+            }
+            
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: #f5f5f5;
+                opacity: 0.8;
+                font-size: 0.95rem;
+            }
+            
+            .contact-icon {
+                width: 18px;
+                height: 18px;
+                color: var(--brand-c);
+            }
+            
+            .footer-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 2rem;
+                font-size: 0.9rem;
+                color: #f5f5f5;
+                opacity: 0.8;
+            }
+            
+            .footer-bottom-links {
+                display: flex;
+                gap: 2rem;
+            }
+            
+            .footer-bottom-link {
+                color: #f5f5f5;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .footer-bottom-link:hover {
+                color: var(--brand-c);
+            }
+            
+            /* Featured Video Container */
+            .featured-video-container {
+                margin: 2.5rem 0;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            
+            .featured-video-container h3 {
+                color: #3a56e4;
+                margin-bottom: 1.5rem;
+            }
+            
+            .video-responsive {
+                position: relative;
+                overflow: hidden;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                border-radius: 8px;
+            }
+            
+            .video-responsive iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+            /* Responsive Styles */
+            @media (max-width: 1024px) {
+                .footer-content {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .resource-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            @media (max-width: 891px) {
+                .desktop-links {
+                    display: none;
+                }
+                
+                nav {
+                    justify-content: flex-start;
+                }
+                
+                .hamburger {
+                    display: block;
+                }
+                
+                .nav-logo {
+                    margin-left: 0px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+             
+                .article-content {
+                    padding: 30px 20px;
+                    margin-top: -40px;
+                    border-radius: 15px 15px 0 0;
+                }
+                
+                .article-meta {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+                
+                .footer-content {
+                    grid-template-columns: 1fr;
+                    gap: 3rem;
+                }
+                
+                .footer-bottom {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .footer-bottom-links {
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                
+                .contact-section {
+                    flex-direction: column;
+                    gap: 0;
+                }
+                
+                .contact-text {
+                    height: auto;
+                    padding-bottom: 50px;
+                }
+                
+                .resource-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .stat-box {
+                    width: 100%;
+                }
+                
+                .implementation-steps {
+                    max-width: 100%;
+                    margin: 20px 0;
+                }
+                
+                .implementation-steps li {
+                    padding-left: 50px;
+                }
+                
+                .implementation-steps li::before {
+                    width: 36px;
+                    height: 36px;
+                }
+
+             
+            }
+               strong {
+                    font-weight: 700;
+                    color: #3a56e4;
+               
+                }
+        </style>
+    </head>
+    
+    <body>
+        <header role="banner">
+            <nav role="navigation" aria-label="Main navigation">
+                <div class="hamburger is-md">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <a href="/">
+                        <img src="../../images/logo_dark.png" alt="Company Logo" height="40" width="300" class="nav-logo">
+                    </a>
+                    <ul class="desktop-links">
+                        <li><a href="/" class="underline-hover-effect">Home</a></li>
+                        <li><a href="/about" class="underline-hover-effect">About</a></li>
+                        <li><a href="/services" class="underline-hover-effect">Services</a></li>
+                        <li><a href="/process" class="underline-hover-effect">Process</a></li>
+                        <li><a href="/faq" class="underline-hover-effect">FAQ</a></li>
+                        <li><a href="/blog" class="underline-hover-effect active-page">Blog</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="mobile-menu-overlay"></div>
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="hamburger is-md is-active">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+                <img src="../../images/logo_light.png" alt="Company Logo" height="60" width="300" class="nav-logo">
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/process">Process</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="tel:19015704850" class="contact-btn-mobile">
+                    <img src="../../images/icons8-phone-50.png" alt="Phone Icon" height="20" width="20">
+                    Contact</a></li>
+            </ul>
+        </div>
+
+        <main id="main-content" role="main">
+            <section class="article-hero">
+                <div class="blog-hero-content">
+                    <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; font-weight: 700; color: white; font-style: italic;">
+                        Getting Started with Coding: A Beginner's Guide
+                    </h1>
+                </div>
+            </section>
+
+            <article class="article-content">
+                <div class="article-meta">
+                    <div class="article-author">
+                        <img src="../../images/owner_img.webp" alt="Author Avatar" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">Erick Crowne</div>
+                            <div class="author-role">CEO | Founder</div>
+                        </div>
+                    </div>
+                    <div class="article-date">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
+                        April 30, 2025
+                    </div>
+                </div>
+
+                <p>
+                    So you've decided to learn coding? Congratulations on taking the first step into an exciting world of creativity and problem-solving! Whether you're looking to change careers, enhance your current job skills, or simply explore a new hobby, learning to code is a rewarding journey that opens up countless opportunities. In this beginner-friendly guide, we'll walk through the basics of coding, share resources to help you get started, and provide simple examples to build your confidence.
+                </p>
+
+                <div class="highlight-box">
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>Coding is a learnable skill that anyone can master with practice and patience</li>
+                        <li>Start with the fundamentals before diving into complex programming concepts</li>
+                        <li>Choose a programming language that aligns with your goals and interests</li>
+                        <li>Utilize free online resources, interactive platforms, and supportive communities</li>
+                        <li>Build projects to apply your knowledge and develop a portfolio</li>
+                    </ul>
+                </div>
+
+                <h2>What is Coding, Really?</h2>
+                <p>
+                    At its core, coding (or programming) is the process of giving instructions to a computer to perform specific tasks. Think of it as writing a detailed recipe for the computer to follow. Just as recipes use specific ingredients and steps, coding uses specific syntax and logic to create applications, websites, games, and more.
+                </p>
+
+                <p>
+                    Coding isn't about memorizing complex commands or being a math genius. It's about learning to think logically, break down problems into smaller parts, and communicate your solutions clearly. With practice, these skills become second nature, allowing you to create increasingly sophisticated programs.
+                </p>
+
+                <img src="../../images/custom_software.webp" alt="Person coding on a laptop with code displayed on screen" style="width: 100%; height: auto; margin: 2rem 0; border-radius: 8px;">
+
+                <h2>Choosing Your First Programming Language</h2>
+                <p>
+                    One of the most common questions beginners ask is, "Which programming language should I learn first?" The answer depends on your goals, but here are some popular options for beginners:
+                </p>
+
+                <div class="stat-container">
+                    <div class="stat-box">
+                        <div class="stat-number">HTML & CSS</div>
+                        <div class="stat-description">Perfect for web development beginners. These aren't programming languages per se, but they're essential for creating websites.</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">JavaScript</div>
+                        <div class="stat-description">The language of the web. Allows you to add interactivity to websites and is versatile enough for both frontend and backend development.</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">Python</div>
+                        <div class="stat-description">Known for its readability and simplicity. Great for beginners and widely used in data science, AI, automation, and web development.</div>
+                    </div>
+                </div>
+
+                <p>
+                    Remember, there's no "perfect" first language. The most important thing is to start learning and building. Many concepts transfer between languages, so once you learn one, picking up others becomes easier.
+                </p>
+
+                <h2>Understanding Coding Fundamentals</h2>
+                <p>
+                    Before diving into a specific language, it helps to understand some universal coding concepts. These fundamentals form the building blocks of virtually all programming languages:
+                </p>
+
+                <h3>Variables and Data Types</h3>
+                <p>
+                    Variables are containers for storing data values. Think of them as labeled boxes where you can store information for later use. Different programming languages support various data types, but common ones include:
+                </p>
+
+                <div class="code-example">
+                    <div class="code-example-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3a56e4;">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <div class="code-example-title">Example: Variables in JavaScript</div>
+                    </div>
+                    <pre class="code-block">// String - for text
+let name = "John Doe";
+
+// Number - for numeric values
+let age = 25;
+let price = 19.99;
+
+// Boolean - true or false
+let isStudent = true;
+
+// Array - collection of values
+let colors = ["red", "green", "blue"];
+
+// Object - complex data structure
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 25
+};</pre>
+                </div>
+
+                <h3>Control Flow</h3>
+                <p>
+                    Control flow determines the order in which code executes. It includes conditional statements (if/else) and loops that allow your program to make decisions and repeat actions.
+                </p>
+
+                <div class="code-example">
+                    <div class="code-example-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3a56e4;">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <div class="code-example-title">Example: Conditional Statement in Python</div>
+                    </div>
+                    <pre class="code-block"># If-else statement
+temperature = 75
+
+if temperature > 85:
+    print("It's hot outside!")
+elif temperature > 65:
+    print("It's a nice day!")
+else:
+    print("It's a bit chilly.")</pre>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-example-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3a56e4;">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <div class="code-example-title">Example: Loop in JavaScript</div>
+                    </div>
+                    <pre class="code-block">// For loop to count from 1 to 5
+for (let i = 1; i <= 5; i++) {
+  console.log("Count: " + i);
+}</pre>
+                </div>
+
+                <h3>Functions</h3>
+                <p>
+                    Functions are reusable blocks of code designed to perform specific tasks. They help organize code, reduce repetition, and make programs more manageable.
+                </p>
+
+                <div class="code-example">
+                    <div class="code-example-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3a56e4;">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <div class="code-example-title">Example: Function in JavaScript</div>
+                    </div>
+                    <pre class="code-block">// Function to calculate the area of a rectangle
+function calculateArea(width, height) {
+  return width * height;
+}
+
+// Using the function
+let rectangleArea = calculateArea(5, 10);
+console.log("The area is: " + rectangleArea); // Output: The area is: 50</pre>
+                </div>
+
+                <div class="case-study">
+                    <h3>Real-World Application: Building a Simple Calculator</h3>
+                    <p>
+                        Let's see how these concepts come together in a practical example. A simple calculator demonstrates variables, functions, and control flow working together:
+                    </p>
+                    <div class="code-example">
+                        <div class="code-example-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #3a56e4;">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            <div class="code-example-title">Simple Calculator in JavaScript</div>
+                        </div>
+                        <pre class="code-block">function calculator(num1, num2, operation) {
+// Variable to store the result
+let result;
+
+// Control flow to determine the operation
+if (operation === "add") {
+    result = num1 + num2;
+} else if (operation === "subtract") {
+    result = num1 - num2;
+} else if (operation === "multiply") {
+    result = num1 * num2;
+} else if (operation === "divide") {
+    // Check for division by zero
+    if (num2 === 0) {
+    return "Cannot divide by zero";
+    }
+    result = num1 / num2;
+} else {
+    return "Invalid operation";
+}
+
+return result;
+}
+
+// Using the calculator function
+console.log(calculator(10, 5, "add"));      // Output: 15
+console.log(calculator(10, 5, "subtract")); // Output: 5
+console.log(calculator(10, 5, "multiply")); // Output: 50
+console.log(calculator(10, 5, "divide"));   // Output: 2</pre>
+                    </div>
+                    <p>
+                        This simple example demonstrates how coding concepts work together to solve a real problem. As you learn more, you'll be able to build increasingly complex applications.
+                    </p>
+                </div>
+
+                <h2>Best Resources for Learning to Code</h2>
+                <p>
+                    The internet is filled with resources for learning to code, many of them free or low-cost. Here are some of the best platforms to start your coding journey:
+                </p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>Interactive Platforms</h3>
+                        <ul>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a> - Comprehensive curriculum with certificates
+                                </span>
+                            </li>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.codecademy.com/" target="_blank" rel="noopener noreferrer">Codecademy</a> - Interactive lessons with immediate feedback
+                                </span>
+                            </li>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.theodinproject.com/" target="_blank" rel="noopener noreferrer">The Odin Project</a> - Full-stack web development curriculum
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>Video Tutorials</h3>
+                        <ul>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.youtube.com/c/TraversyMedia" target="_blank" rel="noopener noreferrer">Traversy Media</a> - Practical project-based tutorials
+                                </span>
+                            </li>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.youtube.com/c/TheNetNinja" target="_blank" rel="noopener noreferrer">The Net Ninja</a> - Clear, step-by-step coding tutorials
+                                </span>
+                            </li>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.youtube.com/c/CS50" target="_blank" rel="noopener noreferrer">CS50</a> - Harvard's intro to computer science
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>Practice Platforms</h3>
+                        <ul>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.codewars.com/" target="_blank" rel="noopener noreferrer">Codewars</a> - Coding challenges of increasing difficulty
+                                </span>
+                            </li>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer">LeetCode</a> - Practice problems often used in interviews
+                                </span>
+                            </li>
+                            <li>
+                                <span style="color: #3a56e4;">•</span>
+                                <span>
+                                    <a href="https://www.frontendmentor.io/" target="_blank" rel="noopener noreferrer">Frontend Mentor</a> - Real-world frontend projects
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="featured-video-container">
+                    <h3>Featured Tutorial: Learn to Code for Beginners</h3>
+                    <p>This comprehensive tutorial will walk you through the basics of coding and help you understand fundamental programming concepts:</p>
+                    <div class="video-responsive">
+                        <iframe 
+                            width="560" 
+                            height="315" 
+                            src="https://www.youtube.com/embed/zOjov-2OZ0E" 
+                            title="Programming Basics for Absolute Beginners" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <h2>Your First Coding Project: Where to Start</h2>
+                <p>
+                    The best way to learn coding is by doing. After learning the basics, start working on small projects that interest you. Here are some beginner-friendly project ideas:
+                </p>
+
+                <ol class="implementation-steps">
+                    <li>
+                        <strong>Personal Portfolio Website</strong>
+                        <p>
+                            Create a simple website about yourself using HTML and CSS. Add your interests, skills, and contact information. As you learn more, enhance it with JavaScript for interactivity.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>To-Do List Application</strong>
+                        <p>
+                            Build an app that allows users to add, edit, and delete tasks. This project teaches you about user input, data storage, and dynamic content updates.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Weather App</strong>
+                        <p>
+                            Create an application that displays weather information based on a user's location or search query. This introduces you to working with APIs (Application Programming Interfaces).
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Simple Game</strong>
+                        <p>
+                            Develop a basic game like Rock, Paper, Scissors or a quiz app. Games are fun to create and help you practice logic and user interaction.
+                        </p>
+                    </li>
+                </ol>
+
+                <div class="conclusion">
+                    <h2>Common Challenges for Beginners (And How to Overcome Them)</h2>
+                    <p>
+                        Learning to code can be challenging, but knowing the common hurdles can help you prepare for them:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Feeling Overwhelmed</strong> - Break learning into small, manageable chunks. Focus on one concept at a time and practice it thoroughly before moving on.
+                        </li>
+                        <li>
+                            <strong>Debugging Frustration</strong> - Everyone encounters bugs! Learn to use debugging tools and read error messages carefully. They're actually helpful guides, not just annoyances.
+                        </li>
+                        <li>
+                            <strong>Tutorial Paralysis</strong> - Avoid endlessly watching tutorials without practice. Apply what you learn immediately by coding along and then trying to build something on your own.
+                        </li>
+                        <li>
+                            <strong>Imposter Syndrome</strong> - Remember that everyone starts as a beginner. Focus on your progress rather than comparing yourself to others who may have years of experience.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="conclusion">
+                    <h2 style="border:none;">Conclusion: Your Coding Adventure Awaits</h2>
+                    <p>
+                        Learning to code is a journey, not a destination. It's about continuous growth, problem-solving, and creativity. Don't be discouraged by challenges—they're opportunities to learn and improve.
+                    </p>
+                    <p>
+                        Remember that every expert programmer was once a beginner. The difference between success and failure often comes down to persistence and a willingness to learn from mistakes.
+                    </p>
+                    <p>
+                        Start small, be consistent, and celebrate your progress. Before you know it, you'll be building projects you never thought possible and opening doors to new opportunities.
+                    </p>
+                    <p>Happy coding!</p>
+                </div>
+
+        
+
+            </article>
+        </main>
+
+        <!-- Footer section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <!-- Brand Section -->
+                    <div class="footer-brand">
+                        <p style="font-size: 1.2rem; font-weight: 600; opacity: 1; display: flex; align-items: center; gap: 10px;">Desoto Bits & Bytes LLC
+                            <img src="../../images/icons8-american-flag-96.png" loading="lazy" alt="American Flag" height="45" width="45">
+                        </p>
+                        <p>We're a veteran-owned software development company dedicated to delivering exceptional digital solutions, from Mobile Apps to Custom Software.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6   stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Quick Links -->
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <div class="footer-links">
+                            <a href="/about" class="footer-link">About Us</a>
+                            <a href="/services" class="footer-link">Services</a>
+                            <a href="/process" class="footer-link">Our Process</a>
+                            <a href="/faq" class="footer-link">Frequent Questions</a>
+                            <a href="/blog" class="footer-link">Blog</a>
+                        </div>
+                    </div>
+        
+                    <!-- Services -->
+                    <div class="footer-column">
+                        <h3>Our Services</h3>
+                        <div class="footer-links">
+                            <a href="/services/web-app" class="footer-link">Web Application</a>
+                            <a href="/services/company-website" class="footer-link">Company Website</a>
+                            <a href="/services/mobile-app" class="footer-link">Mobile Apps</a>
+                            <a href="/services/custom-software" class="footer-link">Custom Software</a>
+                        </div>
+                    </div>
+        
+                    <!-- Contact Info -->
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                (901) 570-4850
+                            </div>
+                            <div class="contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                admin@desotobitsandbytes.com
+                            </div>
+                            <div class="contact-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Olive Branch, Mississippi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        © 2025 Desoto Bits & Bytes. All rights reserved.
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+                        <a href="#" class="footer-bottom-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            // Mobile menu toggle
+            document.addEventListener('DOMContentLoaded', function() {
+                const hamburger = document.querySelector('.hamburger');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+                const closeBtn = document.querySelector('.mobile-menu .hamburger');
+                
+                hamburger.addEventListener('click', function() {
+                    mobileMenu.classList.add('is-active');
+                    mobileMenuOverlay.classList.add('is-active');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    mobileMenu.classList.remove('is-active');
+                    mobileMenuOverlay.classList.remove('is-active');
+                });
+                
+                mobileMenuOverlay.addEventListener('click', function() {
+                    mobileMenu.classList.remove('is-active');
+                    mobileMenuOverlay.classList.remove('is-active');
+                });
+                
+                // Form submission handling
+                const form = document.querySelector('.my-form');
+                const successToast = document.querySelector('.success-toast');
+                const failToast = document.querySelector('.fail-toast');
+                const closeSuccessBtn = document.querySelector('.close-btn-success');
+                const closeFailBtn = document.querySelector('.close-btn-fail');
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulate form submission
+                    const formInactive = document.querySelector('.form-inactive');
+                    const formActive = document.querySelector('.form-active');
+                    
+                    formInactive.style.display = 'none';
+                    formActive.style.display = 'flex';
+                    
+                    // Simulate API call
+                    setTimeout(function() {
+                        // Show success message (you can change to fail for testing)
+                        successToast.classList.add('open');
+                        document.querySelector('.close-timer').classList.add('start');
+                        
+                        // Reset form
+                        form.reset();
+                        formInactive.style.display = 'flex';
+                        formActive.style.display = 'none';
+                        
+                        // Auto close after 5 seconds
+                        setTimeout(function() {
+                            successToast.classList.remove('open');
+                            successToast.classList.add('close');
+                            setTimeout(function() {
+                                successToast.classList.remove('close');
+                                document.querySelector('.close-timer').classList.remove('start');
+                            }, 400);
+                        }, 5000);
+                    }, 2000);
+                });
+                
+                // Close toast buttons
+                closeSuccessBtn.addEventListener('click', function() {
+                    successToast.classList.remove('open');
+                    successToast.classList.add('close');
+                    setTimeout(function() {
+                        successToast.classList.remove('close');
+                        document.querySelector('.close-timer').classList.remove('start');
+                    }, 400);
+                });
+                
+                closeFailBtn.addEventListener('click', function() {
+                    failToast.classList.remove('open');
+                    failToast.classList.add('close');
+                    setTimeout(function() {
+                        failToast.classList.remove('close');
+                        document.querySelector('.close-timer-fail').classList.remove('start');
+                    }, 400);
+                });
+            });
+        </script>
+    </body>
+</html>
