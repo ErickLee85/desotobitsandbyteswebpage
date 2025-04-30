@@ -52,7 +52,7 @@ a {
 
 .top-nav {
     width: 100%;
-    height: 75px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,9 +69,9 @@ a {
 }
 
 nav {
-    height: 100px;
+    height: 75px;
     width: 100%;
-    background: rgb(250, 249, 249);
+    background:white;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -111,7 +111,7 @@ strong {
 nav ul li {
     display: inline-block;
     margin-inline: 20px;
-
+    font-weight: 600;
     font-size: 1rem;
     height: 100%;
 }
@@ -166,6 +166,10 @@ nav.fade-in {
     cursor: pointer;
     display: none;
   }
+
+  .hamburger.is-active {
+   margin-top:10px;
+  }
   
   .hamburger.is-sm {
     font-size: 1rem;
@@ -187,7 +191,7 @@ nav.fade-in {
     border-radius: 0.125em;
     background: currentColor;
     transition: inherit;
-    color: rgb(87, 87, 87);
+    color: rgb(0, 0, 0);
   }
   
   .hamburger-line:nth-child(1) {
@@ -198,6 +202,7 @@ nav.fade-in {
   .w-nav-button.w--open .hamburger-line:nth-child(1) {
     top: 50%;
     transform: translateY(-50%) rotateZ(-135deg);
+        color:white;
   }
   
   .hamburger-line:nth-child(2) {
@@ -208,6 +213,7 @@ nav.fade-in {
   .w-nav-button.w--open .hamburger-line:nth-child(2) {
     right: 50%;
     width: 0;
+        color:white;
   }
   
   .hamburger-line:nth-child(3) {
@@ -220,6 +226,7 @@ nav.fade-in {
     top: 50%;
     width: 100%;
     transform: translateY(-50%) rotateZ(135deg);
+    color:white;
   }
 
 
@@ -772,7 +779,10 @@ h1 {
             display: flex;
             align-items: center;
             margin-bottom: 30px;
-            padding:20px;
+            padding-inline:20px;
+            padding-bottom:12px;
+            border-bottom:1px solid rgb(72, 72, 72);
+            padding-top:10px;
         }
 
         .mobile-menu ul {
@@ -785,7 +795,7 @@ h1 {
             font-size: 1.4rem;
             color: white;
             padding:10px 20px;
-            font-weight: 300;
+            font-weight: 500;
         }
 
         .mobile-menu ul li:last-child {
