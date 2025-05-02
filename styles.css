@@ -807,10 +807,7 @@ h1 {
         }
 
         @media(max-width: 893px) {
-            .nav-logo {
-                margin: 0 auto;
-         
-            }
+        
         }
 
         @media (min-width: 892px) {
@@ -1019,9 +1016,7 @@ h1 {
             font-weight: 500;
         }
 
-        h2 {
-            font-weight: 600 !important;
-        }
+       
 
         .contact-text h3 {
             font-size: clamp(1.5rem, 5vw, 2rem);
@@ -1040,8 +1035,8 @@ h1 {
             background:white;
         }
 
-        .my-form h2 {
-            font-size: 2rem;
+        .my-form h3 {
+            font-size: 2rem !important;
             margin-bottom: 20px;
         }
 
@@ -1151,6 +1146,10 @@ h1 {
             border: 1px solid var(--border-c);
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-height:500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card img {
@@ -1162,11 +1161,6 @@ h1 {
         }
 
         
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0,0,0,0.1);
-        }
-        
         .service-icon {
             width: 48px;
             height: 48px;
@@ -1175,10 +1169,12 @@ h1 {
         }
         
         .service-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.8rem !important;
             margin: 1rem;
             color: black;
             font-weight: 600;
+            border-bottom: 1px solid var(--border-c);
+            padding-bottom: 20px;
         }
         
         .service-card p {
@@ -1189,25 +1185,22 @@ h1 {
 
         .service-card a {
             margin: 1rem;
-            padding-bottom: 20px;
             display: flex;
             align-items: center;
         }
         
         .service-link {
-            display: inline-flex;
-            align-items: center;
-            margin-top: 1rem;
-            color: var(--primary-color, #2563eb);
+            display:block;
+            color: var(--brand-c);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
             cursor: pointer;
+            padding:15px 20px;
+            border-radius: 5px;
+            background-color: rgba(42, 122, 243, 0.1);
         }
         
-        .service-link:hover {
-            color: var(--primary-color-dark, #1d4ed8);
-        }
         
         .service-link svg {
             width: 20px;
@@ -2676,3 +2669,9 @@ button {
         margin-bottom: 0.5rem;
     }
 }
+
+ h2 {
+            font-weight: 900 !important;
+            font-size: 3rem !important;
+            color:black !important
+        }

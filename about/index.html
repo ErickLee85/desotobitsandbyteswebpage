@@ -29,7 +29,7 @@
         <meta property="twitter:image" content="https://desotobitsandbytes.com/images/logo_dark.png">
         
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="canonical" href="https://desotobitsandbytes.com/about">
         <script type="speculationrules">
@@ -176,7 +176,7 @@
             .founder-section {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                gap: 60px;
+                gap: 120px;
                 align-items: center;
             }
 
@@ -186,7 +186,6 @@
                 aspect-ratio: 1;
                 overflow: hidden;
                 position: relative;
-                clip-path: xywh(0 5px 100% 75% round 15% 0);
                 box-shadow: 0 0 15px rgba(0,0,0,0.4);
             }
 
@@ -258,55 +257,21 @@
                 }
             }
             .image-carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
 
-.carousel-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+            .carousel-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
 
-.carousel-image.active {
-    opacity: 1;
-}
-
-.carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    width: 16px;
-    border-radius: 4px;
-    background: white;
-}
 
 /* New Achievements Section Styles */
 .achievements-section {
-    background-color: #f8f9fa;
     border-radius: 16px;
     padding: 60px 20px;
     margin-top: 40px;
@@ -597,7 +562,7 @@
                 <!-- Replace your current founder-image div with this -->
                     <div class="founder-image">
                         <div class="image-carousel">
-                            <img loading="eager" src="../images/owner_img.webp" alt="Erick Crowne, Founder of Desoto Bits & Bytes" class="carousel-image active">
+                            <img loading="eager" src="../images/home.jpg" alt="Erick Crowne, Founder of Desoto Bits & Bytes" class="carousel-image active">
                         </div>
                     </div>
             </div>
@@ -755,21 +720,21 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
-                            (901) 570-4850
+                            <a href="tel:+19015704850">(901) 570-4850</a>
                         </div>
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            admin@desotobitsandbytes.com
+                            <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>
                         </div>
                         <div class="contact-item">
                             <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                 <circle cx="12" cy="10" r="3"/>
                             </svg>
-                            Olive Branch, Mississippi
+                            <a href="https://www.google.com/maps/place/Olive+Branch,+MS/@34.9423705,-89.8291196,13z/data=!3m1!4b1!4m6!3m5!1s0x8878205740333333:0x42a822421f720d0!8m2!3d34.9499256!4d-89.8123678!16s%2Fg%2F11c403x3cy?hl=en" target="_blank" rel="nofollow">Olive Branch, Mississippi</a>
                         </div>
                     </div>
                 </div>
