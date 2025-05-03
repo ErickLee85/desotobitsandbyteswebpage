@@ -52,40 +52,16 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 30px;
-                max-width: 1200px;
+                max-width: 1400px;
                 margin: 60px auto;
                 padding: 0 20px;
             }
 
             .service-card {
-                background: white;
-                border-radius: 12px;
-                padding: 30px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
+                margin-top:30px;
             }
 
-            .service-icon {
-                width: 50px;
-                height: 50px;
-                color: var(--brand-c);
-                margin-bottom: 20px;
-            }
-
-            .service-title {
-                font-size: 1.8rem !important;
-                font-weight: 700 !important;
-                color: rgb(39, 39, 39) !important;
-                border:none !important;
-                margin-top:30px !important;
-            }
-
-            .service-description {
-                color: rgb(50, 57, 63);
-                line-height: 1.6;
-                margin-bottom: 20px;
-                border: 1px solid blue;
-            }
+      
 
             .feature-list {
                 list-style: none;
@@ -391,153 +367,60 @@
             </p>
         </div>
     
-        <div class="services-grid">
-       
-       
-    
-       
-            <div class="service-card">
-                <div style="display: flex; align-items: center; width: 100%; border-bottom: 1px solid gainsboro; margin-bottom: 30px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
-                        <path d="M12 18h.01"/>
-                    </svg>
-                    <div class="service-header" style="margin-bottom:20px;">
-                        <h3 class="service-title">Mobile Apps</h3>
-                    </div>
-                </div>
-             
-                <ul class="feature-list">
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Cross-platform development with React Native
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Native performance and smooth animations
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Offline-first architecture
-                    </li>
-                    <li class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Firebase backend integration
-                    </li>
-                </ul>
-                <a href="/services/mobile-app" class="service-link">
-                    Explore Mobile Apps
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
+             <div class="services-grid">
+                        <div class="service-card">
+                            <img loading="lazy" src="../images/mobile_app_development.webp" alt="mobile app" class="mobile-app-img">
+                            <h3>Mobile App</h3>
+                            <p>Custom iOS and Android applications built with the latest technologies to deliver exceptional user experiences. Our mobile apps are designed to be intuitive, fast, and scalable to meet your business objectives and delight your users.</p>
+                            <a href="/services/mobile-app" class="service-link">
+                                Learn More 
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                            <div class="service-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M260-40q-24 0-42-18t-18-42v-760q0-24 18-42t42-18h440q24 0 42 18t18 42v760q0 24-18 42t-42 18H260Zm0-150v90h440v-90H260Zm220.18 75q12.82 0 21.32-8.68 8.5-8.67 8.5-21.5 0-12.82-8.68-21.32-8.67-8.5-21.5-8.5-12.82 0-21.32 8.68-8.5 8.67-8.5 21.5 0 12.82 8.68 21.32 8.67 8.5 21.5 8.5ZM260-250h440v-520H260v520Zm0-580h440v-30H260v30Zm0 640v90-90Zm0-640v-30 30Z"/></svg>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <img loading="lazy" src="../images/web_app.webp" alt="web app">
+                            <h3>Web Application</h3>
+                            <p>Cutting-edge web applications built with modern frameworks. We build progressive web apps (PWAs) that work seamlessly across all devices while providing native-like functionality and offline capabilities.</p>
+                            <a href="/services/web-app" class="service-link">
+                                Learn More
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                             <div class="service-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M334-120v-60h86v-100H140q-24 0-42-18t-18-42v-440q0-24 18-42t42-18h680q24 0 42 18t18 42v440q0 24-18 42t-42 18H540v100h86v60H334ZM140-340h680v-440H140v440Zm0 0v-440 440Z"/></svg>
+                             </div>
+                        </div>
 
-            <div class="service-card">
-                <div style="display: flex; align-items: center; width: 100%; border-bottom: 1px solid gainsboro; margin-bottom: 30px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="3" y1="9" x2="21" y2="9"></line>
-                        <line x1="9" y1="21" x2="9" y2="9"></line>
-                    </svg>
-                   <div class="service-header" style="margin-bottom:20px;">
-                    <h3 class="service-title">Web Apps</h3>
-                   </div>
-                </div>
-         
-                <ul class="feature-list">
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Server-Side Rendering for optimal SEO
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Modern UI Components with NuxtUI/NextUI
-                    </li>
-                    <li class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Firebase Integration for scalable backend
-                    </li>
-                    <li class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Enterprise-grade infrastructure with Vercel
-                    </li>
-                </ul>
-                <a href="/services/web-app" class="service-link">
-                    Learn about Web Apps
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
-    
-            <div class="service-card">
-                <div style="display: flex; align-items: center; width: 100%; border-bottom: 1px solid gainsboro; margin-bottom: 30px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                    <div class="service-header" style="margin-bottom:20px;">
-                        <h3 class="service-title">Company Site</h3>
+                        <div class="service-card">
+                            <img loading="lazy" src="../images/company_site.webp" alt="company website">
+                            <h3>Company Website</h3>
+                            <p>SEO-optimized, high-performance company websites that convert visitors into customers and strengthen your online presence. Our websites are built with scalability in mind, ensuring they grow with your business while maintaining lightning-fast load times.</p>
+                            <a href="/services/company-website" class="service-link">
+                                Learn More
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                             <div class="service-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="M480-80q-84 0-157-31.5T196-197q-54-54-85-127.5T80-482q0-84 31-156.5T196-765q54-54 127-84.5T480-880q84 0 157 30.5T764-765q54 54 85 126.5T880-482q0 84-31 157.5T764-197q-54 54-127 85.5T480-80Zm0-58q35-36 58.5-82.5T577-331H384q14 60 37.5 108t58.5 85Zm-85-12q-25-38-43-82t-30-99H172q38 71 88 111.5T395-150Zm171-1q72-23 129.5-69T788-331H639q-13 54-30.5 98T566-151ZM152-391h159q-3-27-3.5-48.5T307-482q0-25 1-44.5t4-43.5H152q-7 24-9.5 43t-2.5 45q0 26 2.5 46.5T152-391Zm221 0h215q4-31 5-50.5t1-40.5q0-20-1-38.5t-5-49.5H373q-4 31-5 49.5t-1 38.5q0 21 1 40.5t5 50.5Zm275 0h160q7-24 9.5-44.5T820-482q0-26-2.5-45t-9.5-43H649q3 35 4 53.5t1 34.5q0 22-1.5 41.5T648-391Zm-10-239h150q-33-69-90.5-115T565-810q25 37 42.5 80T638-630Zm-254 0h194q-11-53-37-102.5T480-820q-32 27-54 71t-42 119Zm-212 0h151q11-54 28-96.5t43-82.5q-75 19-131 64t-91 115Z"/></svg>
+                             </div>
+                        </div>
+                    
+                        
+                      <div class="service-card">
+                            <img loading="lazy" src="../images/custom_software.webp" alt="custom software">
+                            <h3>Custom Software</h3>
+                            <p>Not finding what you're looking for so far? No worries, we can create anything you need, seriously! From specialized business tools to unique digital experiences, our team has the expertise to bring your most ambitious ideas to life.</p>
+                            <a href="/services/custom-software" class="service-link">
+                                Learn More
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </a>
+                             <div class="service-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#FFFFFF"><path d="m388-80-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521L80-600l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669-710l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592-206L572-80H388Zm48-60h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Zm44-210q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-130Z"/></svg>
+                             </div>
+                        </div> 
                     </div>
-                </div>
-          
-                <ul class="feature-list">
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        SEO-first development approach
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Lightning-fast performance
-                    </li>
-                    <li class="feature-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Conversion-focused design
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Analytics integration
-                    </li>
-                </ul>
-                <a href="/services/company-website" class="service-link">
-                    View Website Services
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
-    
-            <div class="service-card">
-               <div style="display: flex; align-items: center; width: 100%; border-bottom: 1px solid gainsboro; margin-bottom: 30px;">
-                <svg xmlns="http://www.w3.org/2000/svg" class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                    <path d="M21 8V5a2 2 0 0 0-2-2h-3"></path>
-                    <path d="M3 16v3a2 2 0 0 0 2 2h3"></path>
-                    <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-                    <path d="m10 9-4 4 4 4"></path>
-                    <path d="m14 9 4 4-4 4"></path>
-                </svg>
-                <div class="service-header" style="margin-bottom:20px;">
-                    <h3 class="service-title">Custom Software</h3>
-                </div>
-               </div>
-          
-                <ul class="feature-list">
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Custom CRM Systems
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Inventory Management Solutions
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Data Visualization Tools
-                    </li>
-                    <li class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>                        Business Process Automation
-                    </li>
-                </ul>
-                <a href="/services/custom-software" class="service-link">
-                    Discover Custom Software
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </a>
-            </div>
-        </div>
     </section>
 
     <section class="expertise-section">

@@ -1136,6 +1136,13 @@ h1 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 1rem;
+            padding-top:50px;
+        }
+
+        @media(max-width: 1121px) {
+            .services-grid {
+                gap: 5rem;
+            }
         }
         
         .service-card {
@@ -1144,12 +1151,28 @@ h1 {
             text-align: left;
             transition: all 300ms ease !important;
             border: 1px solid var(--border-c);
-            overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             min-height:500px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position:relative;
+        }
+
+        .service-card-icon {
+            position: absolute;
+            height: 75px;
+            width: 75px;
+            border-radius: 8px;
+           background-color: rgba(42, 122, 243, 1);
+           color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: -40px;
+            left: 20px;
+            z-index: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
         }
 
         .service-card img {
