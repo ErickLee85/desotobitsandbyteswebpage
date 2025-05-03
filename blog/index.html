@@ -497,9 +497,7 @@
                     <div class="blog-category active" data-filter="all">All</div>
                     <div class="blog-category" data-filter="coding">Coding</div>
                     <div class="blog-category" data-filter="website">Website</div>
-                    <div class="blog-category" data-filter="crm">CRM</div>
                     <div class="blog-category" data-filter="mobile apps">Mobile Apps</div>
-                    <div class="blog-category" data-filter="programming">Programming</div>
                     <div class="blog-category" data-filter="business">Business</div>
                     <div class="blog-category" data-filter="design">UX/UI Design</div>
                     <div class="blog-category" data-filter="ai">Artificial Intelligence</div>
@@ -828,48 +826,50 @@
             }
               // Filter by tag
             function filterByTag(tag) {
-                const tagText = tag.textContent.toLowerCase();
-                
+                const clickedTagText = tag.textContent.toLowerCase();
+
                 blogCards.forEach(card => {
-                    // Get tags from the card's data attribute
-                    const tags = card.getAttribute('data-tags') || '';
-                    // Get card's contents for tags that might be in the HTML
-                    const tagElements = card.querySelectorAll('.blog-tag');
                     let hasTag = false;
-                    
-                    // First check data attribute
-                    if (tags.toLowerCase().includes(tagText)) {
-                        hasTag = true;
-                    }
-                    
-                    // Then check actual tag elements
+
+                    // 1. Check the visible tag elements within the card first
+                    const cardTagElements = card.querySelectorAll('.blog-tag');
+                    cardTagElements.forEach(element => {
+                        if (element.textContent.toLowerCase() === clickedTagText) {
+                            hasTag = true;
+                        }
+                    });
+
+                    // 2. If not found in visible tags, check the data-tags attribute for an exact match
                     if (!hasTag) {
-                        tagElements.forEach(element => {
-                            if (element.textContent.toLowerCase() === tagText) {
-                                hasTag = true;
-                            }
-                        });
+                        const dataTags = card.getAttribute('data-tags') || '';
+                        const dataTagsArray = dataTags.toLowerCase().split(' ');
+                        if (dataTagsArray.includes(clickedTagText)) {
+                            hasTag = true;
+                        }
+                        // Optional: Add logic here if you need to match parts of hyphenated data-tags
+                        // Example: Check if 'custom-software' includes 'software'
+                        // else {
+                        //     for (const dataTag of dataTagsArray) {
+                        //         if (dataTag.includes('-') && dataTag.split('-').includes(clickedTagText)) {
+                        //              hasTag = true;
+                        //              break;
+                        //         }
+                        //     }
+                        // }
                     }
-                    
+
+                    // Set card visibility
                     if (hasTag) {
                         card.style.display = '';
                     } else {
                         card.style.display = 'none';
                     }
                 });
-                
-                // Remove active class from categories and tags
-                blogCategories.forEach(cat => {
-                    cat.classList.remove('active');
-                });
-                
-                // Add active class to the clicked tag
-                blogTags.forEach(t => {
-                    t.classList.remove('active');
-                });
+
+                // UI updates for active tag and empty state
+                blogCategories.forEach(cat => cat.classList.remove('active'));
+                blogTags.forEach(t => t.classList.remove('active'));
                 tag.classList.add('active');
-                
-                // Check if no blogs visible and show empty state if needed
                 checkEmptyState();
             }
             
@@ -888,11 +888,11 @@
             });
             
             // Tag click
-            // blogTags.forEach(tag => {
-            //     tag.addEventListener('click', function() {
-            //         filterByTag(this);
-            //     });
-            // });
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('blog-tag')) {
+                    filterByTag(event.target);
+                }
+            });
             
             // Search input (on enter key)
             searchInput.addEventListener('keyup', function(event) {
