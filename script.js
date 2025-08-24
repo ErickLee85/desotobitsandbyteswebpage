@@ -334,4 +334,9 @@ function initTestimonialSlider() {
     });
 }
 
+window.addEventListener('load', () => {
+    document.querySelector('body').classList.add('active-bod')
+
+})
+
 
