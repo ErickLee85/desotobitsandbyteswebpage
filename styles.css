@@ -2758,3 +2758,12 @@ button {
 .hero-title {
     font-weight: 500;
 }
+
+.star {
+    transition: 200ms all ease-in-out;
+}
+
+.star:hover {
+    transform: translateY(-4px);
+    
+}
