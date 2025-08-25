@@ -334,9 +334,33 @@ function initTestimonialSlider() {
     });
 }
 
-window.addEventListener('load', () => {
-    document.querySelector('body').classList.add('active-bod')
 
-})
+
+window.addEventListener('load', () => {
+    let lastScrollTop = 0;
+    let isScrolling = false;
+    
+    window.addEventListener("scroll", function(ev) {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const nav = document.querySelector('nav');
+        
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                if (currentScrollTop > lastScrollTop && currentScrollTop > 80) {
+                    nav.classList.add('hide');
+                }
+                else if (currentScrollTop < lastScrollTop || currentScrollTop <= 80) {
+                    nav.classList.remove('hide');
+                }
+                
+                lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; 
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    });
+    
+    document.querySelector('body').classList.add('active-bod');
+});
 
 

@@ -283,10 +283,27 @@ nav {
     left:0;
     right:0;
     z-index: 1000;
-
     border:1px solid gainsboro;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     margin:0 auto;
+    transition:all 300ms linear;
+    animation: show-nav 300ms linear;
+}
+
+nav.hide {
+    animation: hide-nav 300ms linear forwards;
+}
+
+@keyframes show-nav {
+    from {
+        opacity: 0;
+    } to {opacity:1};
+}
+
+@keyframes hide-nav {
+    from {
+        opacity: 1;
+    } to { opacity: 0;}
 }
 
 @media(max-width:1250px) {
@@ -295,6 +312,7 @@ nav {
         border-radius: 0px;
         top:0;
         margin:0;
+        background:rgba(255,255,255,1);
     }
 }
 
