@@ -24,6 +24,7 @@ ul, li {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-weight: 400 !important;
 }
 
 a {
@@ -45,6 +46,198 @@ a {
     --brand-c: #2a7af3;
     --transition-time: 200ms;
     --button-weight:500;
+      --shiny-cta-bg: #000000;
+  --shiny-cta-bg-subtle: #1a1818;
+  --shiny-cta-fg: #ffffff;
+  --shiny-cta-highlight: #2a7af3;
+  --shiny-cta-highlight-subtle: #8484ff;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-angle-offset {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --gradient-percent {
+  syntax: "<percentage>";
+  initial-value: 5%;
+  inherits: false;
+}
+
+@property --gradient-shine {
+  syntax: "<color>";
+  initial-value: white;
+  inherits: false;
+}
+
+.shiny-cta {
+  --animation: gradient-angle linear infinite;
+  --duration: 3s;
+  --shadow-size: 2px;
+  isolation: isolate;
+  min-width: 250px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline-offset: 4px;
+  padding: 1.25rem 2.5rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--shiny-cta-fg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg))
+      padding-box,
+    conic-gradient(
+        from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+        transparent,
+        var(--shiny-cta-highlight) var(--gradient-percent),
+        var(--gradient-shine) calc(var(--gradient-percent) * 2),
+        var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
+        transparent calc(var(--gradient-percent) * 4)
+      )
+      border-box;
+  box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle);
+
+  &::before,
+  &::after,
+  span::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+  }
+
+  &:active {
+    translate: 0 1px;
+  }
+}
+
+/* Dots pattern */
+.shiny-cta::before {
+  --size: calc(100% - var(--shadow-size) * 3);
+  --position: 2px;
+  --space: calc(var(--position) * 2);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(
+      circle at var(--position) var(--position),
+      white calc(var(--position) / 4),
+      transparent 0
+    )
+    padding-box;
+  background-size: var(--space) var(--space);
+  background-repeat: space;
+  mask-image: conic-gradient(
+    from calc(var(--gradient-angle) + 45deg),
+    black,
+    transparent 10% 90%,
+    black
+  );
+  border-radius: inherit;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Inner shimmer */
+.shiny-cta::after {
+  --animation: shimmer linear infinite;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    -50deg,
+    transparent,
+    var(--shiny-cta-highlight),
+    transparent
+  );
+  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+  opacity: 0.6;
+}
+
+.shiny-cta span {
+  z-index: 1;
+
+  &::before {
+    --size: calc(100% + 1rem);
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
+    opacity: 0;
+  }
+}
+
+/* Animate */
+.shiny-cta {
+  --transition: 800ms cubic-bezier(0.25, 1, 0.5, 1);
+  transition: var(--transition);
+  transition-property: --gradient-angle-offset, --gradient-percent,
+    --gradient-shine;
+
+  &,
+  &::before,
+  &::after {
+    animation: var(--animation) var(--duration),
+      var(--animation) calc(var(--duration) / 0.4) reverse paused;
+    animation-composition: add;
+  }
+
+  span::before {
+    transition: opacity var(--transition);
+    animation: calc(var(--duration) * 1.5) breathe linear infinite;
+  }
+}
+
+.shiny-cta:is(:hover, :focus-visible) {
+  --gradient-percent: 20%;
+  --gradient-angle-offset: 95deg;
+  --gradient-shine: var(--shiny-cta-highlight-subtle);
+
+  &,
+  &::before,
+  &::after {
+    animation-play-state: running;
+  }
+
+  span::before {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes breathe {
+  from,
+  to {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
 }
 
 .contact-nav {
@@ -434,25 +627,120 @@ a.underline-hover-effect {
 
 .hero {
     width: 100%;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding-block: 80px;
-    padding-inline: 20px;
-    min-height: 100dvh;
+    align-items: center;
+    padding-block: 160px;
+
     position: relative;
-    gap: 100px;
+    gap: 50px;
 }
 
 .hero::before {
     content:'';
-    background-image: url('./images/memphis_compressed.webp');
+    background-image: url('./images/desktop_simple-min.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    min-height: 100vh;
-    width: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     z-index: -1;
+    filter: grayscale(2);
+}
+
+/* Hero Service Cards */
+.hero-services {
+    flex: 1;
+    max-width: 1400px;
+    z-index: 1;
+}
+
+.hero-services-grid {
+      display: grid;
+      max-width: 1250px;
+        grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+        gap:20px;
+        place-items: center;
+        width: 100%;
+}
+
+.hero-service-card {
+    background: rgba(0,0,0, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 300ms ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width:400px;
+    height:300px;
+}
+
+.hero-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+}
+
+.hero-service-card:hover {
+    background:rgba(255,255,255,0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.learn-more {
+    height:70px;
+    width: 100%;
+    background:rgba(0,0,0,0.3);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color:white;
+    cursor: pointer;
+    padding:30px;
+}
+
+.hero-service-icon {
+    background: rgba(42, 122, 243, 0.8);
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(42, 122, 243, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.hero-service-card h3 {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-service-card p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -466,7 +754,7 @@ a.underline-hover-effect {
 }
 
 .hero-text-container {
-    max-width: 600px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -476,6 +764,7 @@ a.underline-hover-effect {
     background:var(--brand-c);
     color:white;
     border: none;
+    max-width: 150px !important;
 }
 
 .hero-description {
@@ -524,16 +813,26 @@ h1 {
 
 @media(max-width:1252px) {
     .hero {
-        flex-direction: column;
-        height: auto !important;
-        gap: 50px;
+        padding-inline: 20px;
+        gap: 40px;
     }
 
-    .hero-img {
-        display: none;
+    .hero-services {
+        max-width: 100%;
+        width: 100%;
     }
 
- 
+    .hero-services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        max-width: 100%;
+    }
+    
+    .hero-service-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 @media(max-width:891px) {
@@ -545,6 +844,12 @@ h1 {
         display: none;
     }
 
+    .hero::before {
+        background-attachment: scroll;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
 
     .metric-item {
         max-height: none;
@@ -558,14 +863,12 @@ h1 {
         justify-content: flex-start;
     }
 
-   
-
     .hamburger {
         display: block;
     }
     .cta-button {
         min-width: 100%;
-        max-width: none;
+        max-width: 150px !important;
     }
 
     .top-nav {
@@ -577,14 +880,42 @@ h1 {
         width: 250px;
         margin-left: -50px;
     }
-}
-
-@media(max-width: 670px) {
-    .hero-img {
-        width: calc(100% - 20px);
-        height: 250px;
+    
+    .hero-services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .hero-service-card {
+        width: 100%;
+        margin: 0 auto;
     }
 }
+
+
+/* @media(max-width: 670px) {
+    .hero-services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .hero-service-card {
+        padding: 20px;
+    }
+    
+    .hero-service-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hero-service-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .hero-service-card p {
+        font-size: 0.9rem;
+    }
+} */
 
 .service-container {
     width: 100%;
@@ -2747,7 +3078,7 @@ button {
     fill: #FFFFFF;
 }
 
-.hero-div {
+/* .hero-div {
     background:rgba(0,0,0,0.5);
     border-radius: 15px;
   
@@ -2758,11 +3089,12 @@ button {
 
 .hero-div:hover {
     backdrop-filter: blur(5px);
-}
+} */
 
 .hero-title {
     font-weight: 500;
     letter-spacing: 0.5px;
+    font-size: 1.4rem !important;
 }
 
 .star {
@@ -2777,4 +3109,15 @@ button {
 
 @keyframes fade-into-view {
     from{ opacity: 0;} to {opacity: 1;}
+}
+
+@media(max-width:883px) {
+    .hero-service-card {
+        min-width: 100%;
+    }
+
+    .shiny-cta {
+        min-width: 100% !important;
+        max-width: none;
+    }
 }
