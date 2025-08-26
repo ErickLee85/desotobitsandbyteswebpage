@@ -870,7 +870,7 @@
                 
              
                     <a href="/">
-                        <img src="../../images/logo_dark.png" alt="Company Logo" height="40" width="300" class="nav-logo">
+                        <img src="../../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
                     </a>
                     <ul class="desktop-links">
                         <li><a href="/" class="underline-hover-effect">Home</a></li>
@@ -1422,7 +1422,8 @@ console.log(calculator(10, 5, "divide"));   // Output: 2</pre>
                 const closeSuccessBtn = document.querySelector('.close-btn-success');
                 const closeFailBtn = document.querySelector('.close-btn-fail');
                 
-                form.addEventListener('submit', function(e) {
+               if(form) {
+                     form.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
                     // Simulate form submission
@@ -1454,9 +1455,11 @@ console.log(calculator(10, 5, "divide"));   // Output: 2</pre>
                         }, 5000);
                     }, 2000);
                 });
+               }
                 
                 // Close toast buttons
-                closeSuccessBtn.addEventListener('click', function() {
+              if(closeSuccessBtn) {
+                      closeSuccessBtn.addEventListener('click', function() {
                     successToast.classList.remove('open');
                     successToast.classList.add('close');
                     setTimeout(function() {
@@ -1464,8 +1467,10 @@ console.log(calculator(10, 5, "divide"));   // Output: 2</pre>
                         document.querySelector('.close-timer').classList.remove('start');
                     }, 400);
                 });
+              }
                 
-                closeFailBtn.addEventListener('click', function() {
+              if(closeFailBtn) {
+                  closeFailBtn.addEventListener('click', function() {
                     failToast.classList.remove('open');
                     failToast.classList.add('close');
                     setTimeout(function() {
@@ -1473,6 +1478,7 @@ console.log(calculator(10, 5, "divide"));   // Output: 2</pre>
                         document.querySelector('.close-timer-fail').classList.remove('start');
                     }, 400);
                 });
+              }
             });
         </script>
     </body>

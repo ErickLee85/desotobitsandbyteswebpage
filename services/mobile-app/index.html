@@ -158,12 +158,33 @@
 
     
             .feature-card {
-                background: white;
+                 background: rgba(0,0,0, 0.15);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
                 border-radius: 12px;
                 padding: 30px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                 transition: transform 0.3s ease;
             }
+
+           .features-section {
+            position: relative;
+           }
+
+           .features-section::before {
+            content: '';
+            position: absolute;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            background-image: url('../../images/ui_design_two.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter:brightness(30%) ;
+            z-index: 0;
+           }
 
             .feature-card:hover {
                 transform: translateY(-5px);
@@ -183,12 +204,12 @@
             }
 
             .feature-description {
-                color: rgb(50, 57, 63);
+                color: #666;
                 line-height: 1.6;
             }
 
             .technology-section {
-                background: #f8f9fa;
+                background: black;
                 padding: 80px 20px;
             }
 
@@ -199,7 +220,7 @@
 
             .tech-grid {
                 display: grid;
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 30px;
                 margin-top: 40px;
             }
@@ -379,7 +400,10 @@
     transition: all 0.3s ease;
 }
 
-
+#main-content {
+    background:rgb(31,31,31);
+    position:relative;
+}
 
 
 @media (max-width: 768px) {
@@ -423,7 +447,7 @@
        
            
                 <a href="/">
-                    <img src="../../images/logo_dark.png" alt="Company Logo" height="40" width="300" class="nav-logo">
+                    <img src="../../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
                    </a>
                 <ul class="desktop-links">
                     <li><a href="/" class="underline-hover-effect ">Home</a></li>
@@ -486,10 +510,10 @@
                 </div>
         </section> -->
 
-        <section class="features-section" style="padding: 200px 20px;">
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Mobile App Development</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: rgb(50, 57, 63);">
+        <section class="features-section" style="padding: 200px 20px; position: relative; background: transparent;">
+            <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: white;">Mobile App Development</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: rgba(255,255,255,0.9);">
                     We leverage React Native and modern development practices to deliver exceptional mobile experiences that engage users and drive results.
                 </p>
 
@@ -529,7 +553,7 @@
         <section class="technology-section">
             <div class="tech-container">
                 <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Our Technology Stack</h2>
-                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: rgb(50, 57, 63);">
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #666;">
                     We use the latest technologies and best practices to ensure your mobile app is future-proof and performant.
                 </p>
 
@@ -538,10 +562,7 @@
                         <img src="../../images/1174949_js_react js_logo_react_react native_icon.svg" alt="React Native" class="tech-icon">
                         <p class="tech-name">React Native</p>
                     </div>
-                    <div class="tech-item">
-                        <img src="../../images/11120662_fi_brands_typescript_icon.svg" alt="TypeScript" class="tech-icon">
-                        <p class="tech-name">TypeScript</p>
-                    </div>
+
                     <div class="tech-item">
                         <img src="../../images/rn_paper.svg" alt="TypeScript" class="tech-icon">
                         <p class="tech-name">React Native Paper</p>
@@ -567,17 +588,7 @@
                 </div>
                 <div class="timeline-content">
                     <h3 class="timeline-title">React Native</h3>
-                    <p style="color: rgb(50, 57, 63); line-height: 1.6;">Our foundation for cross-platform excellence. React Native lets us write once and deploy everywhere, saving you time and money while maintaining native app performance. It's trusted by Instagram, Walmart, and Tesla for its reliability and speed.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-number">
-                    <img src="../../images/11120662_fi_brands_typescript_icon.svg" alt="TypeScript" style="width: 24px; height: 24px;">
-                </div>
-                <div class="timeline-content">
-                    <h3 class="timeline-title">TypeScript</h3>
-                    <p style="color: rgb(50, 57, 63); line-height: 1.6;">TypeScript adds an extra layer of reliability to your app. It catches errors before they happen, makes your code more maintainable, and speeds up development. This means fewer bugs, easier updates, and a more stable app for your users.</p>
+                    <p style="color:#666; line-height: 1.6;">Our foundation for cross-platform excellence. React Native lets us write once and deploy everywhere, saving you time and money while maintaining native app performance. It's trusted by Instagram, Walmart, and Tesla for its reliability and speed.</p>
                 </div>
             </div>
 
@@ -587,7 +598,7 @@
                 </div>
                 <div class="timeline-content">
                     <h3 class="timeline-title">React Native Paper</h3>
-                    <p style="color: rgb(50, 57, 63); line-height: 1.6;">A premium UI toolkit that gives your app a polished, professional look right out of the box. It follows Material Design guidelines, ensures consistent styling across platforms, and provides smooth animations for a premium user experience.</p>
+                    <p style="color: #666; line-height: 1.6;">A premium UI toolkit that gives your app a polished, professional look right out of the box. It follows Material Design guidelines, ensures consistent styling across platforms, and provides smooth animations for a premium user experience.</p>
                 </div>
             </div>
 
@@ -597,7 +608,7 @@
                 </div>
                 <div class="timeline-content">
                     <h3 class="timeline-title">React Native Reanimated</h3>
-                    <p style="color: rgb(50, 57, 63); line-height: 1.6;">Elevate your app's user experience with fluid, native-powered animations. Reanimated lets us create butter-smooth interactions, sophisticated gestures, and engaging micro-animations that run at 60 FPS. From subtle loading states to complex UI transitions, we ensure your app feels responsive and polished.</p>
+                    <p style="color: #666; line-height: 1.6;">Elevate your app's user experience with fluid, native-powered animations. Reanimated lets us create butter-smooth interactions, sophisticated gestures, and engaging micro-animations that run at 60 FPS. From subtle loading states to complex UI transitions, we ensure your app feels responsive and polished.</p>
                 </div>
             </div>
 
@@ -607,7 +618,7 @@
                 </div>
                 <div class="timeline-content">
                     <h3 class="timeline-title">Firebase</h3>
-                    <p style="color: rgb(50, 57, 63); line-height: 1.6;">Google's powerful backend platform handles authentication, real-time data sync, hosting, and analytics. It scales automatically with your user base, provides crash reporting, and offers powerful marketing tools - all without managing servers.</p>
+                    <p style="color: #666; line-height: 1.6;">Google's powerful backend platform handles authentication, real-time data sync, hosting, and analytics. It scales automatically with your user base, provides crash reporting, and offers powerful marketing tools - all without managing servers.</p>
                 </div>
             </div>
         </div>

@@ -111,7 +111,9 @@
             }
 
             .feature-card {
-                background: white;
+                background: rgba(0,0,0, 0.15);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
                 border-radius: 12px;
                 padding: 30px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -136,12 +138,31 @@
             }
 
             .feature-description {
-                color: rgb(50, 57, 63);
+                color: rgba(255,255,255,0.8);
                 line-height: 1.6;
             }
 
+            .features-section {
+                position: relative;
+            }
+
+            .features-section::before {
+                content: '';
+                position: absolute;
+                top:0;
+                left:0;
+                height: 100%;
+                width: 100%;
+                background-image: url('../../images/custom_software.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                filter:brightness(20%) grayscale(1);
+                z-index: 0;
+            }
+
             .technology-section {
-                background: #f8f9fa;
+                background: black;
                 padding: 80px 20px;
             }
 
@@ -173,6 +194,11 @@
                 color: var(--text-c);
             }
 
+            #main-content {
+                background:rgb(31,31,31);
+                position:relative;
+            }
+
             .process-timeline {
                 max-width: 1200px;
                 margin: 80px auto;
@@ -189,7 +215,8 @@
             .timeline-number {
                 width: 40px;
                 height: 40px;
-                border: 1px solid var(--border-c);
+                border: 1px solid #666;
+                color:#f0f0f0;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
@@ -378,7 +405,7 @@
            
              
                     <a href="/">
-                        <img src="../../images/logo_dark.png" alt="Company Logo" height="40" width="300" class="nav-logo">
+                        <img src="../../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
                        </a>
                     <ul class="desktop-links">
                         <li><a href="/" class="underline-hover-effect ">Home</a></li>
@@ -441,10 +468,10 @@
                 </div>
             </section> -->
 
-            <section class="features-section" style="padding: 200px 20px;">
-                <div style="max-width: 1200px; margin: 0 auto;">
-                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Custom Solutions for Every Need</h2>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: rgb(50, 57, 63);">
+            <section class="features-section" style="padding: 200px 20px; position: relative; background: transparent;">
+                <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+                    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px; color: white;">Custom Solutions for Every Need</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 60px; color: rgba(255,255,255,0.9);">
                         We specialize in developing powerful, scalable software solutions that streamline your operations and drive business growth.
                     </p>
 
@@ -508,14 +535,14 @@
             <section class="technology-section">
                 <div class="tech-container">
                     <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Our Technology Stack</h2>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: rgb(50, 57, 63);">
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #666;">
                         We leverage powerful technologies to create robust, scalable custom software solutions.
                     </p>
 
                     <div class="tech-grid">
                         <div class="tech-item">
-                            <img src="../../images/three-js-icon.svg" alt="Three.js" class="tech-icon">
-                            <p class="tech-name">Three.js</p>
+                            <img src="../../images/icons8-javascript.svg" alt="Javascript icon" class="tech-icon">
+                            <p class="tech-name">Javascript</p>
                         </div>
                         <div class="tech-item">
                             <img src="../../images/apex.png" alt="ApexCharts" class="tech-icon">
@@ -530,8 +557,8 @@
                             <p class="tech-name">Electron</p>
                         </div>
                         <div class="tech-item">
-                            <img src="../../images/4691337_dot_js_nuxt_icon.svg" alt="Nuxt" class="tech-icon">
-                            <p class="tech-name">Nuxt</p>
+                            <img src="../../images/icons8-next.js.svg" alt="Nuxt" class="tech-icon">
+                            <p class="tech-name">NextJS</p>
                         </div>
 
                     </div>
@@ -546,7 +573,7 @@
                     <div class="timeline-number">1</div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Requirements Analysis</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">We start by thoroughly understanding your business processes and needs. Through detailed consultation, we identify pain points, opportunities for automation, and key features that will drive efficiency in your operations.</p>
+                        <p style="color: #666; line-height: 1.6;">We start by thoroughly understanding your business processes and needs. Through detailed consultation, we identify pain points, opportunities for automation, and key features that will drive efficiency in your operations.</p>
                     </div>
                 </div>
 
@@ -554,7 +581,7 @@
                     <div class="timeline-number">2</div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Modern Data Visualization</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">Using ApexCharts, we create responsive, interactive dashboards and data visualizations that help you understand your business metrics at a glance. From real-time analytics to historical trends, our charts and graphs make complex data easily digestible and actionable.</p>
+                        <p style="color: #666; line-height: 1.6;">Using ApexCharts, we create responsive, interactive dashboards and data visualizations that help you understand your business metrics at a glance. From real-time analytics to historical trends, our charts and graphs make complex data easily digestible and actionable.</p>
                     </div>
                 </div>
 
@@ -562,7 +589,7 @@
                     <div class="timeline-number">3</div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Agile Development</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">Using agile methodologies, we develop your software in iterative cycles, ensuring regular feedback and flexibility to adapt to changing requirements. This approach delivers value faster and maintains high quality throughout development.</p>
+                        <p style="color: #666; line-height: 1.6;">Using agile methodologies, we develop your software in iterative cycles, ensuring regular feedback and flexibility to adapt to changing requirements. This approach delivers value faster and maintains high quality throughout development.</p>
                     </div>
                 </div>
 
@@ -570,7 +597,7 @@
                     <div class="timeline-number">4</div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Integration & Training</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">We ensure smooth deployment and integration with your existing systems. Our team provides comprehensive training and documentation to help your team make the most of your new software solution.</p>
+                        <p style="color: #666; line-height: 1.6;">We ensure smooth deployment and integration with your existing systems. Our team provides comprehensive training and documentation to help your team make the most of your new software solution.</p>
                     </div>
                 </div>
 
@@ -578,7 +605,7 @@
                     <div class="timeline-number">5</div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">AI Model Training & Integration</h3>
-                        <p style="color: rgb(50, 57, 63); line-height: 1.6;">For AI-powered solutions, we train models on your business data, fine-tune for accuracy, and integrate them seamlessly with your workflows. Our AI components continuously learn and improve, becoming more valuable over time.</p>
+                        <p style="color: #666; line-height: 1.6;">For AI-powered solutions, we train models on your business data, fine-tune for accuracy, and integrate them seamlessly with your workflows. Our AI components continuously learn and improve, becoming more valuable over time.</p>
                     </div>
                 </div>
             </div>
