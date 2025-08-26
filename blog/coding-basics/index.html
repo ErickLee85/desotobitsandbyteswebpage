@@ -13,13 +13,13 @@
         <meta property="og:type" content="article">
         <meta property="og:title" content="Getting Started with Coding: A Beginner's Guide">
         <meta property="og:description" content="Learn the basics of coding with this beginner-friendly guide covering fundamental concepts, programming languages, and resources to start your coding journey.">
-        <meta property="og:image" content="../../images/coding_bg.jpg">
-        <meta property="og:url" content="https://desotobitsandbytes.com/blog/getting-started-with-coding">
+        <meta property="og:image" content="../../images/undraw_programming_65t2.svg">
+        <meta property="og:url" content="https://desotobitsandbytes.com/blog/coding-basics">
         
         <title>Getting Started with Coding: A Beginner's Guide | Desoto Bits & Bytes</title>
         <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
         <link rel="stylesheet" href="../../styles.css">
-        <link rel="canonical" href="https://desotobitsandbytes.com/blog/getting-started-with-coding">
+        <link rel="canonical" href="https://desotobitsandbytes.com/blog/coding-basics">
         <script type="speculationrules">
         {
             "prerender" : [
@@ -1416,69 +1416,7 @@ console.log(calculator(10, 5, "divide"));   // Output: 2</pre>
                 });
                 
                 // Form submission handling
-                const form = document.querySelector('.my-form');
-                const successToast = document.querySelector('.success-toast');
-                const failToast = document.querySelector('.fail-toast');
-                const closeSuccessBtn = document.querySelector('.close-btn-success');
-                const closeFailBtn = document.querySelector('.close-btn-fail');
-                
-               if(form) {
-                     form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Simulate form submission
-                    const formInactive = document.querySelector('.form-inactive');
-                    const formActive = document.querySelector('.form-active');
-                    
-                    formInactive.style.display = 'none';
-                    formActive.style.display = 'flex';
-                    
-                    // Simulate API call
-                    setTimeout(function() {
-                        // Show success message (you can change to fail for testing)
-                        successToast.classList.add('open');
-                        document.querySelector('.close-timer').classList.add('start');
-                        
-                        // Reset form
-                        form.reset();
-                        formInactive.style.display = 'flex';
-                        formActive.style.display = 'none';
-                        
-                        // Auto close after 5 seconds
-                        setTimeout(function() {
-                            successToast.classList.remove('open');
-                            successToast.classList.add('close');
-                            setTimeout(function() {
-                                successToast.classList.remove('close');
-                                document.querySelector('.close-timer').classList.remove('start');
-                            }, 400);
-                        }, 5000);
-                    }, 2000);
-                });
-               }
-                
-                // Close toast buttons
-              if(closeSuccessBtn) {
-                      closeSuccessBtn.addEventListener('click', function() {
-                    successToast.classList.remove('open');
-                    successToast.classList.add('close');
-                    setTimeout(function() {
-                        successToast.classList.remove('close');
-                        document.querySelector('.close-timer').classList.remove('start');
-                    }, 400);
-                });
-              }
-                
-              if(closeFailBtn) {
-                  closeFailBtn.addEventListener('click', function() {
-                    failToast.classList.remove('open');
-                    failToast.classList.add('close');
-                    setTimeout(function() {
-                        failToast.classList.remove('close');
-                        document.querySelector('.close-timer-fail').classList.remove('start');
-                    }, 400);
-                });
-              }
+              
             });
         </script>
     </body>
