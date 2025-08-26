@@ -676,7 +676,7 @@ a.underline-hover-effect {
 
 .hero::before {
     content:'';
-    background-image: url('./images/desktop_simple-min.jpeg');
+    background-image: url('./images/home_page_img.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
