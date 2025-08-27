@@ -296,6 +296,139 @@
                 transform: scale(1);
             }
         }
+
+        /* Home FAQ Section Styles */
+        .faq-section-home {
+            padding: 80px 20px;
+            position: relative;
+            background:rgb(31,31,31)
+        }
+
+        /* .faq-section-home::before {
+            content:'';
+            position:absolute;
+            inset:0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background-image:url('./images/faq_img.webp');
+            background-size: cover;
+            background-position: bottom;
+            filter:brightness(0.1)
+        } */
+
+        .faq-container-home {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-header-home {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header-home h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-c);
+            font-weight: 700;
+        }
+
+        .faq-header-home p {
+            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-grid-home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .faq-item-home {
+            background:black;
+            border: 1px solid var(--border-c);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 300ms ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .faq-question-home {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--brand-c);
+            margin-bottom: 20px;
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .faq-answer-home {
+            color: #f0f0f0;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .faq-cta-home {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            border-radius: 12px;
+            border: 1px solid var(--brand-c);
+            background:var(--brand-c)
+        }
+
+        .faq-cta-home p {
+            color: var(--text-c);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-link-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            background:black;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: 2px solid var(--brand-c);
+            border-radius: 8px;
+            transition: all 300ms ease;
+  
+        }
+        @media (max-width: 768px) {
+            .faq-grid-home {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .faq-header-home h2 {
+                font-size: 2rem;
+            }
+            
+            .faq-item-home {
+                padding: 25px;
+            }
+            
+            .faq-question-home {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            
+            .faq-answer-home {
+                font-size: 0.95rem;
+            }
+        }
     </style>
 
 <body>
@@ -433,7 +566,7 @@
         
         <div class="case-study-content">
             <div class="case-study-image">
-                <img loading="lazy" src="./images/his_prayer.webp" alt="His Prayer Mobile App Interface" class="case-study-img">
+                <img loading="lazy" src="./images/his_prayer.webp" alt="His Prayer Mobile App Interface" class="case-study-img" id="hisPrayerImage">
             </div>
             <div class="case-study-details">
                 <div class="case-study-tag">
@@ -797,6 +930,82 @@
                 </form>
             </section>
         </article>
+
+        <!-- FAQ Section -->
+        <!-- <article class="faq-section-home">
+            <div class="faq-container-home">
+                <header class="faq-header-home">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Quick answers to common questions about our software development services</p>
+                </header>
+                
+                <div class="faq-grid-home">
+        
+                    <div class="faq-item-home">
+                        <div class="faq-question-home">
+                            <span>How does your software development process work?</span>
+                        </div>
+                        <div class="faq-answer-home">
+                            Our development process follows a systematic approach: First, we have a detailed discovery phase to understand your needs and objectives. Then, we create a project roadmap and design mockups. After your approval, we move into development with regular updates and testing. Finally, we deploy your solution and provide training and support.
+                        </div>
+                    </div>
+
+                    <div class="faq-item-home">
+                        <div class="faq-question-home">
+                            <span>How do you determine the cost of a project?</span>
+                        </div>
+                        <div class="faq-answer-home">
+                            Project costs are determined by several factors: scope, complexity, features required, timeline, and ongoing maintenance needs. We provide detailed estimates after our initial consultation and discovery phase. We're transparent about all costs and work with you to find solutions that fit your budget.
+                        </div>
+                    </div>
+
+                    <div class="faq-item-home">
+                        <div class="faq-question-home">
+                            <span>What technologies do you use for development?</span>
+                        </div>
+                        <div class="faq-answer-home">
+                            We use modern, industry-standard technologies including React, Node.js, Next JS/NuxtJS, Python, and cloud services like AWS and Firebase. For mobile development, we work with React Native and native iOS/Android development. Our tech stack is chosen based on your specific needs and project requirements.
+                        </div>
+                    </div>
+
+                    <div class="faq-item-home">
+                        <div class="faq-question-home">
+                            <span>What kind of support do you provide after launch?</span>
+                        </div>
+                        <div class="faq-answer-home">
+                            We provide comprehensive post-launch support including bug fixes, security updates, and performance monitoring. We offer various maintenance packages to ensure your software stays up-to-date and runs smoothly. Our team is available for technical support and can implement new features as your needs evolve.
+                        </div>
+                    </div>
+
+                    <div class="faq-item-home">
+                        <div class="faq-question-home">
+                            <span>How long does it typically take to develop a software solution?</span>
+                        </div>
+                        <div class="faq-answer-home">
+                            Development timelines vary based on project complexity. Simple websites might take 4-6 weeks, while complex web applications can take 3-6 months. Mobile apps typically require 3-9 months depending on features. Custom enterprise software may take 6-12 months or longer. During our discovery phase, we'll provide a detailed timeline based on your specific requirements.
+                        </div>
+                    </div>
+
+                    <div class="faq-item-home">
+                        <div class="faq-question-home">
+                            <span>Who owns the code and intellectual property of my project?</span>
+                        </div>
+                        <div class="faq-answer-home">
+                            You retain full ownership of all intellectual property and source code developed specifically for your project. Once final payment is made, we transfer all rights to you. We may use third-party libraries with their own licenses, which we'll clearly document. Our contracts explicitly outline these ownership terms to protect your interests.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-cta-home">
+                    <p>Have more questions?</p>
+                    <a href="/faq" class="faq-link-home">
+                        View All FAQs
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </article> -->
+
         <article class="reviews-section">
             <div class="reviews-container">
                 <header class="reviews-header">
@@ -1498,37 +1707,53 @@ function animateCounter(element, target) {
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const crmImage = document.getElementById('crmImage');
+            const hisPrayerImage = document.getElementById('hisPrayerImage');
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const closeModal = document.querySelector('.close-modal');
 
-            // Open modal when CRM image is clicked
-            crmImage.addEventListener('click', function() {
+            // Function to open modal with any image
+            function openModal(imageElement) {
                 modal.style.display = 'block';
-                modalImage.src = crmImage.src;
-                modalImage.alt = crmImage.alt;
+                modalImage.src = imageElement.src;
+                modalImage.alt = imageElement.alt;
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
-            });
+            }
 
-            // Close modal when X is clicked
-            closeModal.addEventListener('click', function() {
+            // Function to close modal
+            function closeModalFunc() {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Restore scrolling
-            });
+            }
+
+            // Open modal when CRM image is clicked
+            if (crmImage) {
+                crmImage.addEventListener('click', function() {
+                    openModal(crmImage);
+                });
+            }
+
+            // Open modal when His Prayer image is clicked
+            if (hisPrayerImage) {
+                hisPrayerImage.addEventListener('click', function() {
+                    openModal(hisPrayerImage);
+                });
+            }
+
+            // Close modal when X is clicked
+            closeModal.addEventListener('click', closeModalFunc);
 
             // Close modal when clicking outside the image
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Restore scrolling
+                    closeModalFunc();
                 }
             });
 
             // Close modal with Escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Restore scrolling
+                    closeModalFunc();
                 }
             });
         });
