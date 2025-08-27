@@ -90,7 +90,8 @@
                 border: 1px solid var(--border-c);
                 border-radius: 12px;
                 overflow: hidden;
-                transition: all 300ms ease;
+                height:auto;
+                transition: all 1000ms ease;
             }
 
             .faq-question {
@@ -110,9 +111,9 @@
 
             .faq-answer {
                 padding: 0 24px;
-                height: 0;
+                max-height: 0;
                 overflow: hidden;
-                transition: all 300ms ease;
+                transition: max-height 600ms ease, opacity 400ms ease, padding 400ms ease;
                 opacity: 0;
                 color:#f0f0f0;
                 line-height: 1.6;
@@ -132,7 +133,7 @@
             }
 
             .faq-item.active .faq-answer {
-                height: auto;
+                max-height: 300px;
                 opacity: 1;
                 padding: 0 24px 24px;
             }
