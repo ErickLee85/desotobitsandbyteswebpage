@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Primary Meta Tags -->
+    <title>Contact Us | Desoto Bits & Bytes | Get Your Free Consultation</title>
+    <meta name="title" content="Contact Us | Desoto Bits & Bytes | Get Your Free Consultation">
+    <meta name="description" content="Ready to start your next software project? Contact Desoto Bits & Bytes for a free consultation. We respond within 24 hours and serve clients nationwide.">
+    <meta name="keywords" content="contact software developer, free consultation, custom software quote, web development contact, mobile app development inquiry, Mississippi software company contact">
+    <meta name="author" content="Desoto Bits & Bytes">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desotobitsandbytes.com/contact">
+    <meta property="og:title" content="Contact Desoto Bits & Bytes | Free Software Development Consultation">
+    <meta property="og:description" content="Get in touch with our expert development team. Free consultations, 24-hour response time, and nationwide service.">
+    <meta property="og:image" content="https://desotobitsandbytes.com/images/logo_dark.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://desotobitsandbytes.com/contact">
+    <meta property="twitter:title" content="Contact Desoto Bits & Bytes | Free Software Development Consultation">
+    <meta property="twitter:description" content="Get in touch with our expert development team. Free consultations, 24-hour response time, and nationwide service.">
+    <meta property="twitter:image" content="https://desotobitsandbytes.com/images/logo_dark.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="canonical" href="https://desotobitsandbytes.com/contact">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- Scripts -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="../script.js" defer async></script>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Desoto Bits & Bytes",
+            "url": "https://desotobitsandbytes.com",
+            "telephone": "+16629321047",
+            "email": "admin@desotobitsandbytes.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Olive Branch",
+                "addressRegion": "MS",
+                "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "08:00",
+                    "closes": "19:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Saturday", "Sunday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <style>
+        .contact-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(42,122,243,0.1)), url('../images/pc_coffee.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 80px 20px;
+        }
+        
+        .contact-hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .contact-hero-content p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        
+        .contact-main-section {
+            padding: 80px 20px;
+            background: black;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        
+        .contact-info {
+            padding: 40px;
+            background: rgba(42,122,243,0.05);
+            border: 1px solid rgba(42,122,243,0.2);
+            border-radius: 16px;
+        }
+        
+        .contact-info h2 {
+            font-size: 2rem;
+            color: var(--text-c);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-info p {
+            color: #ccc;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-details .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-details .contact-item:hover {
+            border-color: var(--brand-c);
+            transform: translateY(-2px);
+        }
+        
+        .contact-details .contact-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--brand-c);
+            flex-shrink: 0;
+        }
+        
+        .contact-details .contact-item-content h3 {
+            font-size: 1.1rem;
+            color: var(--text-c);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        
+        .contact-details .contact-item-content p {
+            color: #ccc;
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .contact-details .contact-item-content a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details .contact-item-content a:hover {
+            color: var(--brand-c);
+        }
+        
+        .contact-form-section {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px;
+        }
+        
+        .contact-form-section h2 {
+            font-size: 2rem;
+            color: var(--text-c);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .contact-form-section .subtitle {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .my-form {
+            background:transparent;
+            border:none;
+            padding:0;
+        }
+        
+        .my-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .my-form .form-group label {
+            display: block;
+            color: var(--text-c);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .my-form .form-group input,
+        .my-form .form-group textarea,
+        .my-form .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: var(--text-c);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        /* Dark mode select styling */
+        .my-form .form-group select {
+            background: rgba(0,0,0,0.8);
+            color: var(--text-c);
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        .my-form .form-group select option {
+            background: #1a1a1a;
+            color: var(--text-c);
+            padding: 8px 12px;
+            border: none;
+        }
+        
+        .my-form .form-group select option:hover {
+            background: rgba(42,122,243,0.2);
+        }
+        
+        .my-form .form-group select option:checked {
+            background: var(--brand-c);
+            color: white;
+        }
+        
+        .my-form .form-group input:focus,
+        .my-form .form-group textarea:focus,
+        .my-form .form-group select:focus {
+            outline: none;
+            border-color: var(--brand-c);
+            box-shadow: 0 0 0 3px rgba(42,122,243,0.1);
+        }
+        
+        /* Remove browser default validation styling */
+        .my-form .form-group input:valid,
+        .my-form .form-group input:invalid,
+        .my-form .form-group textarea:valid,
+        .my-form .form-group textarea:invalid,
+        .my-form .form-group select:valid,
+        .my-form .form-group select:invalid {
+            box-shadow: none !important;
+            outline: none !important;
+            border-color: rgba(255,255,255,0.2) !important;
+        }
+        
+        .my-form .form-group input:required:valid,
+        .my-form .form-group textarea:required:valid,
+        .my-form .form-group select:required:valid {
+            border-color: rgba(255,255,255,0.2) !important;
+            box-shadow: none !important;
+        }
+        
+        .my-form .form-group input:required:invalid,
+        .my-form .form-group textarea:required:invalid,
+        .my-form .form-group select:required:invalid {
+            border-color: rgba(255,255,255,0.2) !important;
+            box-shadow: none !important;
+        }
+        
+        /* Additional overrides for specific input types */
+        .my-form .form-group input[type="tel"]:valid,
+        .my-form .form-group input[type="text"]:valid,
+        .my-form .form-group input[type="email"]:valid {
+            border-color: rgba(255,255,255,0.2) !important;
+            box-shadow: none !important;
+        }
+        
+        /* Remove any browser-specific validation styling */
+        .my-form .form-group input:-webkit-autofill,
+        .my-form .form-group input:-webkit-autofill:hover,
+        .my-form .form-group input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,0.05) inset !important;
+            box-shadow: 0 0 0 1000px rgba(255,255,255,0.05) inset !important;
+            border-color: rgba(255,255,255,0.2) !important;
+        }
+        
+        .my-form .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .my-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--brand-c);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .submit-btn:hover {
+            background: #1e5ce6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(42,122,243,0.3);
+        }
+        
+        .response-time {
+            background: linear-gradient(135deg, var(--brand-c), #1e5ce6);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .response-time h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .response-time p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .business-hours {
+            margin-top: 2rem;
+            padding: 20px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+        }
+        
+        .business-hours h3 {
+            color: var(--text-c);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+        
+        .hour-item .day {
+            font-weight: 500;
+        }
+        
+        /* Loading animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-hero {
+                min-height: 50vh;
+                padding: 60px 20px;
+            }
+            
+            .contact-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info,
+            .contact-form-section {
+                padding: 30px 20px;
+            }
+            
+            .my-form .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        h1 {
+            text-shadow: 0 0 15px rgba(0,0,0,0.8) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="hamburger is-md">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+                <a href="/">
+                    <img src="../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
+                   </a>
+            <ul class="desktop-links">
+                <li><a href="/" class="underline-hover-effect">Home</a></li>
+                <li><a href="/about" class="underline-hover-effect">About</a></li>
+                <li><a href="/services" class="underline-hover-effect">Services</a></li>
+                <li><a href="/process" class="underline-hover-effect">Process</a></li>
+                <li><a href="/faq" class="underline-hover-effect">FAQ</a></li>
+                <li><a href="/blog" class="underline-hover-effect">Blog</a></li>
+                <li><a href="/contact" class="underline-hover-effect active-page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="hamburger is-md is-active">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+            <img src="../images/logo_light.png" alt="Company Logo" height="60" width="300" class="nav-logo">
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/process">Process</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="tel:+16629321047" class="contact-btn-mobile">
+                <img src="../images/icons8-phone-50.png" alt="Phone Icon" height="20" width="20">
+                Contact</a></li>
+        </ul>
+    </div>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h1>Get in Touch</h1>
+                <p> Fill out our form or just give us a call.</p>
+            </div>
+        </section>
+
+        <!-- Main Contact Section -->
+        <section class="contact-main-section">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>We believe great software starts with great communication. Whether you have a detailed project plan or just an idea, we're here to guide you through every step of the development process.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div class="contact-item-content">
+                                <h3>Phone</h3>
+                                <p><a href="tel:+16629321047">(662) 932-1047</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div class="contact-item-content">
+                                <h3>Email</h3>
+                                <p><a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div class="contact-item-content">
+                                <h3>Location</h3>
+                                <p>Olive Branch, Mississippi<br>
+                                <small style="color: #999;">Serving clients nationwide</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <div class="hours-list">
+                            <div class="hour-item">
+                                <span class="day">Monday - Friday</span>
+                                <span>8:00 AM - 7:00 PM</span>
+                            </div>
+                            <div class="hour-item">
+                                <span class="day">Saturday - Sunday</span>
+                                <span>8:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="hour-item" style="margin-top: 0.5rem; font-size: 0.85rem; color: #999;">
+                                <span colspan="2">* Hours may vary on holidays</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Start Your Project</h2>
+                    <p class="subtitle">Tell us about your project and we'll get back to you with a detailed proposal and timeline. All consultations are completely free.</p>
+                    
+                    <form action="" class="my-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Project Type *</label>
+                            <select id="project-type" name="projectType" required>
+                                <option value="">Select your project type</option>
+                                <option value="web-application">Web Application</option>
+                                <option value="mobile-app">Mobile App (iOS/Android)</option>
+                                <option value="company-website">Company Website</option>
+                                <option value="custom-software">Custom Software Solution</option>
+                                <option value="system-migration">System Migration/Modernization</option>
+                                <option value="consultation">Technical Consultation</option>
+                                <option value="other">Other (please specify in message)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Estimated Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-15k">$5,000 - $15,000</option>
+                                <option value="15k-30k">$15,000 - $30,000</option>
+                                <option value="30k-50k">$30,000 - $50,000</option>
+                                <option value="over-50k">$50,000+</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Desired Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="1-3-months">1-3 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="6-months-plus">6+ months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project goals, requirements, and any specific features you have in mind..." required></textarea>
+                        </div>
+
+                    <div class="g-recaptcha" data-sitekey="6LdG5LoqAAAAAP49W6aUwIIS6JEVBefNItQvpKWo"></div>
+
+                        <button type="submit" class="submit-btn form-submit-btn">
+                            <div class="form-inactive" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                Send Message
+                            </div>
+                            <div class="form-active" style="display: none; align-items: center; justify-content: center; gap: 8px;">
+                                <div style="width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top: 2px solid white; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                                Sending...
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success/Error Toast Messages -->
+    <div class="success-toast">
+        <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%; flex-direction: row; gap: 20px;">
+            <img src="../images/icons8-check-30.png" alt="checkmark" height="30" width="30">
+            <p>Message Sent Successfully! We'll be in touch within 24 hours.</p>
+            <svg class="close-btn-success" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </div>
+        <div class="close-timer"></div>  
+    </div>
+
+    <div class="fail-toast">
+        <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%; flex-direction: row; gap: 20px;">
+            <img src="../images/icons8-error-48.png" alt="error icon" height="30" width="30">
+            <p>Message Failed to Send. Please try again or call us directly.</p>
+            <svg class="close-btn-fail" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </div>
+        <div class="close-timer-fail"></div> 
+    </div>
+
+     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <p style="font-size: 1.2rem; font-weight: 600; opacity: 1; display: flex; align-items: center; gap: 10px;">Desoto Bits & Bytes LLC
+                        <img src="../images/icons8-american-flag-96.png" loading="lazy" alt="American Flag" height="45" width="45">
+                    </p>
+                    <p>We're a veteran-owned software development company dedicated to delivering exceptional digital solutions, from Mobile Apps to Custom Software.</p>
+                    <a href="https://www.bbb.org/us/ms/olive-branch/profile/information-technology-services/desoto-bits-and-bytes-llc-0543-44187735/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-memphis.bbb.org/seals/blue-seal-187-130-whitetxt-bbb-44187735.png" style="border: 0;" alt="Desoto Bits And Bytes, LLC BBB Business Review" /></a>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/people/Desoto-Bits-Bytes-LLC/61560805109211/" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/desotobitsandbytes/?igsh=MWoyN2NzNHlvMGFvZQ%3D%3D&utm_source=qr" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/desoto-bits-bytes/" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="/about" class="footer-link">About Us</a>
+                        <a href="/services" class="footer-link">Services</a>
+                        <a href="/process" class="footer-link">Our Process</a>
+                        <a href="/faq" class="footer-link">Frequent Questions</a>
+                        <a href="/blog" class="footer-link">Blog</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+                    <div class="footer-links">
+                        <a href="/services/web-app" class="footer-link">Web Application</a>
+                        <a href="/services/company-website" class="footer-link">Company Website</a>
+                        <a href="/services/mobile-app" class="footer-link">Mobile Apps</a>
+                        <a href="/services/custom-software" class="footer-link">Custom Software</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+16629321047">(662) 932-1047</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <a href="https://www.google.com/maps/place/Olive+Branch,+MS/@34.9423705,-89.8291196,13z/data=!3m1!4b1!4m6!3m5!1s0x8878205740333333:0x42a822421f720d0!8m2!3d34.9499256!4d-89.8123678!16s%2Fg%2F11c403x3cy?hl=en" target="_blank" rel="nofollow">Olive Branch, Mississippi</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Hours -->
+                <div class="footer-column">
+                    <h3>Business Hours</h3>
+                    <div class="footer-hours">
+                        <div class="hours-item">Monday: 8 AM–7 PM</div>
+                        <div class="hours-item">Tuesday: 8 AM–7 PM</div>
+                        <div class="hours-item">Wednesday: 8 AM–7 PM</div>
+                        <div class="hours-item">Thursday: 8 AM–7 PM</div>
+                        <div class="hours-item">Friday: 8 AM–7 PM</div>
+                        <div class="hours-item">Saturday: 8 AM–5 PM</div>
+                        <div class="hours-item">Sunday: 8 AM–5 PM</div>
+                        <div class="hours-note">Hours might differ on holidays</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 Desoto Bits & Bytes. All rights reserved.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef" class="footer-bottom-link">Privacy Policy</a>
+                    <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-bottom-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+</body>
+</html>
+</body>
+</html>

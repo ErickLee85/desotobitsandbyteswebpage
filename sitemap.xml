@@ -10,7 +10,7 @@
     <!-- Homepage -->
     <url>
         <loc>https://desotobitsandbytes.com/</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -22,28 +22,28 @@
     <!-- Main Service Pages -->
     <url>
         <loc>https://desotobitsandbytes.com/services</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
         <loc>https://desotobitsandbytes.com/about</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://desotobitsandbytes.com/process</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://desotobitsandbytes.com/faq</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -51,21 +51,28 @@
     <!-- Individual Service Pages -->
     <url>
         <loc>https://desotobitsandbytes.com/services/web-app</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
             <loc>https://desotobitsandbytes.com/services/mobile-app</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://desotobitsandbytes.com/services/custom-software</loc>
-        <lastmod>2025-01-14</lastmod>
+        <lastmod>2025-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://desotobitsandbytes.com/services/company-website</loc>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -73,38 +80,44 @@
     <!-- Blog Page -->
     <url>
         <loc>https://desotobitsandbytes.com/blog</loc>
-        <lastmod>2025-04-12</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://desotobitsandbytes.com/blog/ai-revolution</loc>
-        <lastmod>2025-04-12</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://desotobitsandbytes.com/blog/custom-crm</loc>
-        <lastmod>2025-04-16</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://desotobitsandbytes.com/blog/ux-design</loc>
-        <lastmod>2025-04-20</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     
         <url>
             <loc>https://desotobitsandbytes.com/blog/business-website</loc>
-            <lastmod>2025-04-24</lastmod>
+            <lastmod>2025-08-29</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.9</priority>
         </url>
     <url>
         <loc>https://desotobitsandbytes.com/blog/coding-basics</loc>
-        <lastmod>2025-04-30</lastmod>
+        <lastmod>2025-08-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-</urlset>
+    </url>
+    <url>
+        <loc>https://desotobitsandbytes.com/blog/react-native-development</loc>
+        <lastmod>2025-08-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
