@@ -685,7 +685,6 @@ a.underline-hover-effect {
     justify-content: center;
     align-items: center;
     padding-block: 160px;
-
     position: relative;
     gap: 50px;
 }
@@ -698,7 +697,6 @@ a.underline-hover-effect {
     background-position: center center;
     background-attachment: fixed;
     position: fixed;
-    filter:brightness(30%);
     top: 0;
     left: 0;
     height: 100vh;
