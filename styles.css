@@ -886,6 +886,11 @@ h1 {
     }
 }
 
+.call-link {
+    display: none;
+    transform: rotateY(180deg)
+}
+
 @media(max-width:891px) {
     .desktop-links, .contact-btn {
         display: none;
@@ -911,7 +916,11 @@ h1 {
     }
 
     nav {
-        justify-content: flex-start;
+        justify-content: space-between;
+    }
+
+    .call-link {
+        display: block;
     }
 
     .hamburger {

@@ -60,7 +60,9 @@
             .service-card {
                 margin-top:30px;
                 background:black;
+                box-shadow: 0 0 25px rgba(0,0,0,0.5);
             }
+             
 
             .service-card h3 {
                 color:#f0f0f0 !important;
@@ -281,6 +283,31 @@
     #main-content {
         background:rgb(31,31,31)
     }
+
+            .services-hero-section {
+                position: relative;
+            }
+
+            .services-hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-image: url('../images/modern_office-1.webp');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                filter: brightness(40%);
+                z-index: 1;
+            }
+
+            .services-hero-section .services-header,
+            .services-hero-section .services-grid {
+                position: relative;
+                z-index: 2;
+            }
         </style>
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJTRDWHLY7"></script>
             <script>
@@ -309,6 +336,10 @@
             <a href="/">
                 <img src="../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
                </a>
+            <a href="tel:+16629321047" class="call-link">
+                <img src="../images/icons8-phone-50.png" alt="Phone Icon" height="30" width="30">
+            </a>
+
             <ul class="desktop-links">
                 <li><a href="/" class="underline-hover-effect ">Home</a></li>
                 <li><a href="/about"   class="underline-hover-effect active">About</a></li>
@@ -351,10 +382,10 @@
 </div>
 
 <main id="main-content" role="main">
-    <section style="padding: 200px 0px">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+    <section style="padding: 200px 0px" class="services-hero-section">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;" class="services-header">
             <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--text-c);">Our Services</h2>
-            <p style="color: #666; line-height: 1.6; font-size: 1.2rem; padding-inline:20px;">
+            <p style="color: #d3d3d3; line-height: 1.6; font-size: 1.2rem; padding-inline:20px;">
                 From concept to deployment, we offer end-to-end services to help businesses thrive in the digital age. Each solution is tailored to meet your specific needs and goals.
             </p>
         </div>
