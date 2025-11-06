@@ -580,20 +580,22 @@
         const mobileMenu = document.querySelector('.mobile-menu');
         const mobileMenuLinks = document.querySelectorAll('.mobile-menu nav a');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-
-        // Close mobile menu when clicking a link
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
             });
-        });
+
+            // Close mobile menu when clicking a link
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
 
         // Hero Image Slider
         const slides = document.querySelectorAll('.hero-slide');
@@ -896,25 +898,31 @@
         }
 
         // Event listeners
-        getQuoteBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openContactForm();
-        });
+        if (getQuoteBtn) {
+            getQuoteBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openContactForm();
+            });
+        }
 
-        contactCloseBtn.addEventListener('click', () => {
-            closeContactForm();
-        });
-
-        // Close on overlay click (outside panel)
-        contactOverlay.addEventListener('click', (e) => {
-            if (e.target === contactOverlay) {
+        if (contactCloseBtn) {
+            contactCloseBtn.addEventListener('click', () => {
                 closeContactForm();
-            }
-        });
+            });
+        }
+
+        if (contactOverlay) {
+            // Close on overlay click (outside panel)
+            contactOverlay.addEventListener('click', (e) => {
+                if (e.target === contactOverlay) {
+                    closeContactForm();
+                }
+            });
+        }
 
         // Close on Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && contactOverlay.classList.contains('active')) {
+            if (e.key === 'Escape' && contactOverlay && contactOverlay.classList.contains('active')) {
                 closeContactForm();
             }
         });
