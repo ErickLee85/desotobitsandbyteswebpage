@@ -70,10 +70,11 @@
         }
 
         nav a {
+            font-family: "Bebas Neue", sans-serif;
             color: var(--light);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             transition: color 0.3s;
             position: relative;
         }
@@ -294,7 +295,8 @@
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 1.5rem;
             font-weight: 300;
             letter-spacing: 2px;
             color: var(--light);
@@ -333,6 +335,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
+            filter: brightness(0.5);
         }
 
         .hero-slide {
@@ -561,6 +564,7 @@
         }
 
         .review-author-company {
+            font-family: "Bebas Neue", sans-serif;
             font-size: 0.95rem;
             color: var(--gray);
             font-weight: 400;
@@ -910,6 +914,7 @@
 
 
         .service-title {
+            font-family: "Bebas Neue", sans-serif;
             font-size: 4.5rem;
             font-weight: 400;
             color: var(--light);
@@ -1007,6 +1012,7 @@
         }
 
         .stat-label {
+            font-family: "Bebas Neue", sans-serif;
             font-size: 1.1rem;
             color: var(--gray);
             font-weight: 400;
@@ -1909,6 +1915,7 @@
         .footer-link {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
+            font-family: "Bebas Neue", sans-serif;
             font-size: 0.95rem;
             font-weight: 400;
             transition: all 0.3s ease;
@@ -1958,3 +1965,45 @@
                 font-size: 0.9rem;
             }
         }
+
+    /* From Uiverse.io by xXJollyHAKERXx */
+
+    .spinner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        position: fixed;
+        inset:0;
+        background: var(--dark);
+        z-index:10000;
+        overflow: hidden;
+    }
+    .spinner-container::-webkit-scrollbar {
+        display: none;
+    }
+    .spinner {
+        background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+        width: 100px;
+        height: 100px;
+        animation: spinning82341 1.7s linear infinite;
+        text-align: center;
+        border-radius: 50px;
+        filter: blur(1px);
+        box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    }
+
+    .spinner1 {
+        background-color: rgb(36, 36, 36);
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        filter: blur(10px);
+    }
+
+    @keyframes spinning82341 {
+        to {
+            transform: rotate(360deg);
+        }
+    }

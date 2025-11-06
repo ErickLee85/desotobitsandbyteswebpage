@@ -110,7 +110,7 @@
             // Split the tagline text
           
                 const infoBtn = document.querySelector('.btn-secondary')
-                let words = document.querySelectorAll(".trusted-logo")
+                /*let words = document.querySelectorAll(".trusted-logo")*/
                 
                 // Only create ScrollSmoother on desktop devices
                 if (!isMobile) {
@@ -614,17 +614,16 @@
 
             // GSAP animation for smooth transition
             gsap.to(oldSlide, {
-                transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}`,
-                ease: "power2.out",
-                duration:0.2
+              /*  transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}`,*/
+                transform:'blur(10px)',
+                duration:0.5
             });
 
             gsap.fromTo(newSlide, 
-                { transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}` },
+                { /*transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}`*/transform:'blur(10px)' },
                 { 
-                    duration:0.2,
-                    transform:'translateX(0)',
-                    ease: "power2.out",
+                    duration:0.5,
+                    transform:'blur(0px)',
                     onComplete: () => {
                         oldSlide.classList.remove('active');
                         newSlide.classList.add('active');
