@@ -1583,13 +1583,12 @@
                 margin-bottom: 0.8rem;
             }
 
+            .services-section{
+                padding-top: 150px;
+            }
+
             .services-heading {
-                position: relative;
-                top: auto;
-                left: auto;
-                transform: none;
-                max-width: 100%;
-                margin: 0 auto 3rem;
+                top:50px;
             }
         }
         @media(max-width:643px) {
