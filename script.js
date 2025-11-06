@@ -1,366 +1,952 @@
-const form = document.querySelector('.my-form');
-const submitBtn = document.querySelector('.form-submit-btn')
-const successToast = document.querySelector('.success-toast')
-const failToast = document.querySelector('.fail-toast')
-const closeTimer = document.querySelector('.close-timer');
-const closeTimerFail = document.querySelector('.close-timer-fail');
-if(form) {
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Get the reCAPTCHA response token
-        const recaptchaToken = grecaptcha.getResponse();
-        
-        if (!recaptchaToken) {
-            alert('Please complete the reCAPTCHA');
-            return;
-        }
-        
-        // Get form data
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        document.querySelector('.form-inactive').style.display = 'none';
-        document.querySelector('.form-active').style.display = 'flex';
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.8';
-        
-        try {
+ gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother, DrawSVGPlugin);
+
+        // Form submission handlers
+        async function submitContactForm(contactForm) {
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            const originalBtnText = submitBtn.innerHTML;
             
-       
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.8';
+            submitBtn.innerHTML = 'Sending...';
             
-            const response = await fetch('https://nodemailer-gold.vercel.app/sendMessage', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...data,
-                    recaptchaToken
-                })
-            });
-            // const response = await fetch('http://localhost:3000/sendMessage', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({
-            //         ...data,
-            //         recaptchaToken
-            //     })
-            // });
-            
-            const result = await response.json();
-            if (result.success) {
-               successToast.classList.add('open')
-               closeTimer.classList.add('start')
-    
-               setTimeout(() => {
-                successToast.classList.add('close')
-               }, 5000);
-                form.reset();
-                grecaptcha.reset(); // Reset the reCAPTCHA widget
-            } else {
-               failToast.classList.add('open')
-               closeTimerFail.classList.add('start')
-               setTimeout(() => {
-                failToast.classList.add('close')
-               }, 5000);
-               submitBtn.disabled = false;
-               submitBtn.style.opacity = '1';
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        } finally {
-            document.querySelector('.form-inactive').style.display = 'flex';
-            document.querySelector('.form-active').style.display = 'none';
-        }
-    });
-    
-}
-const successClose = document.querySelector('.close-btn-success');
-const failClose = document.querySelector('.close-btn-fail')
-if(successClose) {
-    successClose.addEventListener('click', () => {
-        document.querySelector('.success-toast').classList.add('close')
-      })
-}
-
-if(failClose) {
-    failClose.addEventListener('click', () => {
-        document.querySelector('.fail-toast').classList.add('close')
-      })
-}
-
-// Get all navigation links in the mobile menu
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-
-// Function to handle smooth navigation
-function handleMobileNavigation(e) {
-    // Only handle links that navigate to other pages (not tel: links)
-    if (!e.target.href.startsWith('tel:')) {
-        e.preventDefault(); // Prevent immediate navigation
-        const targetHref = e.target.href;
-        
-        // Toggle menu closed
-        mobileMenu.classList.remove('is-active');
-        overlay.classList.remove('is-active');
-        document.body.style.overflow = '';
-
-        // Wait for the menu closing animation to complete
-        // The CSS transition is 0.3s, so we wait slightly longer
-        setTimeout(() => {
-            window.location.href = targetHref;
-        }, 600); // Match this with your CSS transition duration
-    }
-}
-
-// Add click event listeners to all mobile menu links
-mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', handleMobileNavigation);
-});
-
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-const overlay = document.querySelector('.mobile-menu-overlay');
-const mobileMenuClose = document.querySelector('.mobile-menu .hamburger');
-
-function toggleMenu() {
-    mobileMenu.classList.toggle('is-active');
-    overlay.classList.toggle('is-active');
-    document.body.style.overflow = mobileMenu.classList.contains('is-active') ? 'hidden' : '';
-}
-
-hamburger.addEventListener('click', toggleMenu);
-mobileMenuClose.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
-
-// Testimonial Slider Functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize testimonial slider
-    initTestimonialSlider();
-});
-
-function initTestimonialSlider() {
-    const track = document.querySelector('.testimonials-track');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.querySelector('.prev-testimonial');
-    const nextBtn = document.querySelector('.next-testimonial');
-    const dotsContainer = document.querySelector('.testimonial-dots');
-    
-    if (!track || !cards.length || !prevBtn || !nextBtn || !dotsContainer) return;
-    
-    // Variables
-    let currentIndex = 0;
-    let cardWidth;
-    let visibleCards = 3;
-    const totalCards = cards.length;
-    const gap = 24; // Gap between cards in pixels (from CSS)
-    
-    // Create dots
-    createDots();
-    
-    // Mark first card as active
-    updateActiveCard();
-    
-    // Calculate how many cards to show based on screen width
-    function calculateVisibleCards() {
-        const windowWidth = window.innerWidth;
-        if (windowWidth < 768) {
-            visibleCards = 1;
-            // For mobile view, show all cards in a column layout
-            track.style.transform = 'none';
-            
-            // Make sure ALL cards are visible
-            cards.forEach(card => {
-                card.style.display = 'block';
-                card.style.opacity = '1';
-                card.style.transform = 'none';
-                card.classList.add('active');
-                // Remove any width limitations
-                card.style.width = '100%';
-                card.style.minWidth = '100%';
-            });
-            
-            // Force column layout on the track
-            track.style.display = 'flex';
-            track.style.flexDirection = 'column';
-            
-            // Hide controls on mobile
-            const controls = document.querySelector('.testimonial-controls');
-            if (controls) controls.style.display = 'none';
-            
-            // Clear any intervals to prevent auto-sliding on mobile
-            if (autoplayInterval) {
-                clearInterval(autoplayInterval);
-            }
-            return;
-        } else if (windowWidth < 992) {
-            visibleCards = 2;
-        } else {
-            visibleCards = 3;
-        }
-        
-        // Restore desktop view properties
-        track.style.display = 'flex';
-        track.style.flexDirection = 'row';
-        cards.forEach(card => {
-            card.style.display = '';
-            card.style.width = '';
-            card.style.minWidth = '';
-        });
-        const controls = document.querySelector('.testimonial-controls');
-        if (controls) controls.style.display = 'flex';
-        
-        cardWidth = (track.clientWidth - ((visibleCards - 1) * gap)) / visibleCards;
-        goToSlide(currentIndex);
-    }
-    
-    // Initialize
-    calculateVisibleCards();
-    window.addEventListener('resize', calculateVisibleCards);
-    
-    // Create dot indicators
-    function createDots() {
-        // Calculate how many dots we need based on cards and visible cards
-        const totalDots = Math.max(1, totalCards - visibleCards + 1);
-        
-        dotsContainer.innerHTML = '';
-        for (let i = 0; i < totalDots; i++) {
-            const dot = document.createElement('div');
-            dot.classList.add('testimonial-dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            dotsContainer.appendChild(dot);
-        }
-    }
-    
-    // Update active card
-    function updateActiveCard() {
-        const windowWidth = window.innerWidth;
-        
-        if (windowWidth < 768) {
-            // For mobile, show ALL cards, no exceptions
-            cards.forEach((card) => {
-                card.classList.add('active');
-                card.style.display = 'block';
-            });
-        } else {
-            // For desktop, use the original logic
-            cards.forEach((card, index) => {
-                if (index >= currentIndex && index < currentIndex + visibleCards) {
-                    card.classList.add('active');
-                    card.style.display = 'block';
+            try {
+                // Get form data
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData);
+                
+                // Send to API
+                const response = await fetch('https://dbb-node-server.vercel.app/sendMessage', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    contactForm.reset();
+                    // Close the contact form overlay
+                    const contactOverlay = document.getElementById('contactOverlay');
+                    if (contactOverlay) {
+                        contactOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        // Reset panel position
+                        const contactFormPanel = document.getElementById('contactFormPanel');
+                        if (contactFormPanel) {
+                            gsap.set(contactFormPanel, { x: '100%' });
+                            gsap.set(contactOverlay, { opacity: 0 });
+                        }
+                    }
                 } else {
-                    card.classList.remove('active');
-                    card.style.display = 'block';
+                    alert('Failed to send message. Please try again.');
                 }
-            });
-        }
-        
-        // Update active dot
-        const dots = document.querySelectorAll('.testimonial-dot');
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-    
-    // Go to specific slide
-    function goToSlide(index) {
-        // Enforce boundaries
-        if (index < 0) index = 0;
-        if (index > totalCards - visibleCards) index = totalCards - visibleCards;
-        
-        currentIndex = index;
-        
-        const windowWidth = window.innerWidth;
-        if (windowWidth < 768) {
-            // For mobile, don't use transform, show all cards
-            updateActiveCard();
-        } else {
-            // For desktop, use transform logic
-            const offset = -index * (cardWidth + gap);
-            track.style.transform = `translateX(${offset}px)`;
-            updateActiveCard();
-        }
-        
-        updateButtonStates();
-    }
-    
-    // Update button states (disabled at boundaries)
-    function updateButtonStates() {
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= totalCards - visibleCards;
-        
-        // Visual feedback for button state
-        prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
-        nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
-    }
-    
-    // Button click handlers
-    prevBtn.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
-    });
-    
-    // Initialize button states
-    updateButtonStates();
-    
-    // Auto-advance the slider every 5 seconds
-    let autoplayInterval = setInterval(() => {
-        if (currentIndex < totalCards - visibleCards) {
-            goToSlide(currentIndex + 1);
-        } else {
-            goToSlide(0); // Loop back to start
-        }
-    }, 5000);
-    
-    // Pause autoplay on hover
-    track.addEventListener('mouseenter', () => {
-        clearInterval(autoplayInterval);
-    });
-    
-    // Resume autoplay on mouse leave
-    track.addEventListener('mouseleave', () => {
-        autoplayInterval = setInterval(() => {
-            if (currentIndex < totalCards - visibleCards) {
-                goToSlide(currentIndex + 1);
-            } else {
-                goToSlide(0);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to send message. Please try again.');
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.innerHTML = originalBtnText;
             }
-        }, 5000);
-    });
-}
-
-
-
-window.addEventListener('load', () => {
-    let lastScrollTop = 0;
-    let isScrolling = false;
-    
-    window.addEventListener("scroll", function(ev) {
-        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const nav = document.querySelector('nav');
+        }
         
-        if (!isScrolling) {
-            window.requestAnimationFrame(() => {
-                if (currentScrollTop > lastScrollTop && currentScrollTop > 80) {
-                    nav.classList.add('hide');
+        async function submitGetInTouchForm(getInTouchForm) {
+            const submitBtn = getInTouchForm.querySelector('.btn-touch-submit');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.8';
+            submitBtn.innerHTML = 'Sending...';
+            
+            try {
+                // Get form data
+                const formData = new FormData(getInTouchForm);
+                const data = Object.fromEntries(formData);
+                
+                // Send to API
+                const response = await fetch('https://dbb-node-server.vercel.app/sendMessage', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Thank you for reaching out! We\'ll get back to you soon.');
+                    getInTouchForm.reset();
+                } else {
+                    alert('Failed to send message. Please try again.');
                 }
-                else if (currentScrollTop < lastScrollTop || currentScrollTop <= 80) {
-                    nav.classList.remove('hide');
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to send message. Please try again.');
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.innerHTML = originalBtnText;
+            }
+        }
+
+        // Detect mobile/touch devices
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                        (window.innerWidth <= 943) || 
+                        ('ontouchstart' in window);
+
+        // Global smoother variable
+        let smoother = null;
+
+        // Hero animations on load with SplitText
+        window.addEventListener('load', () => {
+            // Split the tagline text
+          
+                const infoBtn = document.querySelector('.btn-secondary')
+                let words = document.querySelectorAll(".trusted-logo")
+                
+                // Only create ScrollSmoother on desktop devices
+                if (!isMobile) {
+                    smoother = ScrollSmoother.create({
+                        wrapper:'#smooth-wrapper',
+                        content:'#smooth-content',
+                        smooth:2
+                    });
+                    // Refresh ScrollTrigger after ScrollSmoother is created
+                    ScrollTrigger.refresh();
+                } else {
+                    // On mobile, add a class to enable normal scrolling
+                    const smoothWrapper = document.getElementById('smooth-wrapper');
+                    if (smoothWrapper) {
+                        smoothWrapper.classList.add('mobile-scroll');
+                    }
+                }
+
+                if (infoBtn) {
+                    infoBtn.addEventListener('click',(e) => {
+                        e.preventDefault();
+                        const statsSection = document.querySelector(".stats-section");
+                        if (statsSection) {
+                            if (smoother) {
+                                smoother.scrollTo(".stats-section", true, "center center");
+                            } else {
+                                // Fallback for mobile
+                                statsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    });
+                }
+               document.fonts.ready.then(() => {
+                        let split = SplitText.create([".hero-tagline"], { type: "words" });
+                        let split2 = SplitText.create(".hero-subtitle", {type:"words"})
+                        let split3 = SplitText.create(".hero-subtext",{type:"words"})
+                        let split4 = SplitText.create(".trusted-logo", {type:"words"})
+                        let split5 = SplitText.create(".stats-content h2", {type:"words"})
+                        let split6 = SplitText.create(".stats-content p",{type:"words"})
+                        
+                
+                    gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,});
+                    gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1})
+                    gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:1,stagger:0.1,delay:1.2})
+                    gsap.fromTo(".stats-image",{opacity:0},{
+                        opacity:1,duration:1.5,scrollTrigger: {
+                                trigger: ".stats-section",
+                                start: "top 50%",
+                                toggleActions: "play none none none",
+                            }})
+                    gsap.from(split4.words,{opacity:0, stagger:0.2,
+                        scrollTrigger: {
+                        trigger: split4.words[0].parentElement,
+                        start: "top 85%", // adjust this value (higher % = triggers sooner)
+                        toggleActions: "play none none none", // only play once when entering
+                    }
+                    })
+                    gsap.fromTo(".hero-cta > a",{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5})
+                    
+                    // Stats animation with ScrollTrigger
+                    gsap.fromTo(".stat-item",
+                        {
+                            x: -50,
+                            opacity: 0,
+                            filter: 'blur(10px)'
+                        },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            filter: 'blur(0px)',
+                            stagger: 0.2,
+                            duration: 0.8,
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: ".stats-section",
+                                start: "top 50%",
+                                toggleActions: "play none none none",
+                            }
+                        }
+                    )
+
+                      document.querySelectorAll('.stat-number').forEach((statNumber) => {
+                        const text = statNumber.textContent.trim();
+                        // Extract number by removing all non-digits
+                        const number = parseInt(text.replace(/\D/g, ''));
+                        // Extract suffix - get everything after the last digit (including commas, +, etc.)
+                        const suffix = text.replace(/[\d,]/g, '');
+                        
+                        // Function to format number with commas
+                        const formatNumber = (num) => {
+                            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        };
+                        
+                        gsap.fromTo(statNumber, 
+                            { textContent: 0 },
+                            {
+                                textContent: number,
+                                duration: 2,
+                                ease: 'power1.out',
+                                snap: { textContent: 1 },
+                                scrollTrigger: {
+                                    trigger: ".stats-section",
+                                    start: "top 50%",
+                                    toggleActions: "play none none none",
+                                },
+                                onUpdate: function() {
+                                    const currentValue = Math.ceil(statNumber.textContent);
+                                    statNumber.textContent = formatNumber(currentValue) + suffix;
+                                }
+                            }
+                        );
+                    });
+                    
+                    gsap.fromTo(split5.words,{opacity:0,filter:'blur(5px)'},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,
+                        scrollTrigger: {
+                                trigger: ".stats-section",
+                                start: "top 50%",
+                                toggleActions: "play none none none",
+                        }
+                    })
+                     gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:1,stagger:0.1,delay:1.2,
+                         scrollTrigger: {
+                                 trigger: ".stats-section",
+                                 start: "top 50%",
+                                 toggleActions: "play none none none",
+                         }
+                     })
+
+                     // Animate reviews heading on scroll
+                     const reviewsHeading = document.querySelector('.reviews-heading');
+                     if (reviewsHeading) {
+                         let splitReviewsHeading = SplitText.create([".reviews-heading"], { type: "words" });
+                         gsap.fromTo(splitReviewsHeading.words, {
+                             opacity: 0,
+                             filter: 'blur(10px)'
+                         }, {
+                             opacity: 1,
+                             filter: 'blur(0px)',
+                             duration: 1,
+                             stagger: 0.1,
+                             delay: 0.5,
+                             scrollTrigger: {
+                                 trigger: reviewsHeading,
+                                 start: "top 80%",
+                                 toggleActions: "play none none none"
+                             }
+                         });
+                     }
+
+                     // Services Section Pin Animation
+                    const servicesSection = document.querySelector('.services-section');
+                    const serviceItems = document.querySelectorAll('.service-item');
+                    const servicesHeading = document.querySelector('.services-heading');
+                    
+                    if (servicesSection && serviceItems.length > 0) {
+                        // Animate the SVG text paths with DrawSVG (handwriting effect)
+                        if (servicesHeading) {
+                            const servicePaths = servicesHeading.querySelectorAll('.services-path');
+                            
+                            // Set initial state
+                            gsap.set(servicePaths, { drawSVG: '0% 0%' });
+                            
+                            // Animate drawing in
+                            gsap.to(servicePaths, {
+                                drawSVG: '100%',
+                                duration: 1.5,
+                                stagger: 0.08,
+                                scrollTrigger: {
+                                    trigger: servicesHeading,
+                                    start: "top 80%",
+                                    toggleActions: "play none none none",
+                                    markers: false
+                                }
+                            });
+                        }
+
+                        // Only pin on desktop devices
+                        if (!isMobile) {
+                            ScrollTrigger.create({
+                                trigger: servicesSection,
+                                start: "top top",
+                                end: "+=4000",
+                                pin: ".services-container",
+                                anticipatePin: 1,
+                                scrub: 1
+                            });
+                        }
+
+                        // Animate each service item as it comes into view
+                        serviceItems.forEach((item, index) => {
+                            const title = item.querySelector('.service-title');
+                            const description = item.querySelector('.service-description');
+                            const number = item.querySelector('.service-number');
+                            const featureItems = item.querySelectorAll('.service-feature-item');
+                            
+                            // On mobile, use simpler animations without scrub
+                            if (isMobile) {
+                                // Set initial states
+                                gsap.set([title, description], { 
+                                    opacity: 0, 
+                                    y: 30,
+                                    filter: 'blur(10px)'
+                                });
+                                gsap.set(number, { 
+                                    opacity: 0, 
+                                    y: 30,
+                                    filter: 'blur(10px)',
+                                    scale: 0.8 
+                                });
+                                gsap.set(featureItems, {
+                                    opacity: 0,
+                                    x: -30,
+                                    filter: 'blur(5px)'
+                                });
+
+                                // Simple scroll-triggered animation for mobile
+                                const mobileTimeline = gsap.timeline({
+                                    scrollTrigger: {
+                                        trigger: item,
+                                        start: "top 80%",
+                                        toggleActions: "play none none none"
+                                    }
+                                });
+
+                                mobileTimeline
+                                    .to([number, title, description], {
+                                        opacity: 1,
+                                        y: 0,
+                                        filter: 'blur(0px)',
+                                        scale: 1,
+                                        duration: 1.2,
+                                        stagger: 0.2,
+                                        ease: 'power3.out'
+                                    })
+                                    .to(featureItems, {
+                                        opacity: 1,
+                                        x: 0,
+                                        filter: 'blur(0px)',
+                                        duration: 0.6,
+                                        stagger: 0.1,
+                                        ease: 'power2.out'
+                                    }, '-=0.3');
+                            } else {
+                                // Desktop animation with scrub
+                                // Alternate between left and right animation
+                                const isEven = index % 2 === 0;
+                                const xOffset = isEven ? -200 : 200;
+                                
+                                // Set initial states - animate from x-axis
+                                gsap.set([title, description], { 
+                                    opacity: 0, 
+                                    x: xOffset,
+                                    filter: 'blur(10px)'
+                                });
+                                gsap.set(number, { 
+                                    opacity: 0, 
+                                    x: xOffset,
+                                    scale: 0.8 
+                                });
+                                gsap.set(featureItems, {
+                                    opacity: 0,
+                                    x: xOffset + 50,
+                                    filter: 'blur(5px)'
+                                });
+                                gsap.set(item, {
+                                    x: 0
+                                });
+
+                                // Create timeline for each service
+                                const serviceTimeline = gsap.timeline({
+                                    scrollTrigger: {
+                                        trigger: servicesSection,
+                                        start: `top+=${index * 800} top`,
+                                        end: `top+=${(index + 1) * 800} top`,
+                                        scrub: 1,
+                                        onEnter: () => {
+                                            // Remove active class from all items
+                                            serviceItems.forEach(si => si.classList.remove('active'));
+                                            // Add active class to current item
+                                            item.classList.add('active');
+                                        },
+                                        onEnterBack: () => {
+                                            serviceItems.forEach(si => si.classList.remove('active'));
+                                            item.classList.add('active');
+                                        },
+                                        onLeave: () => {
+                                            if (index < serviceItems.length - 1) {
+                                                item.classList.remove('active');
+                                            }
+                                        },
+                                        onLeaveBack: () => {
+                                            if (index > 0) {
+                                                item.classList.remove('active');
+                                            }
+                                        }
+                                    }
+                                });
+
+                                // Animate from x-axis - number first, then title, then description, then features
+                                serviceTimeline
+                                    .to(number, {
+                                        opacity: 1,
+                                        x: 0,
+                                        scale: 1,
+                                        duration: 0.8,
+                                        ease: 'power3.out'
+                                    })
+                                    .to(title, {
+                                        opacity: 1,
+                                        x: 0,
+                                        filter: 'blur(0px)',
+                                        duration: 1,
+                                        ease: 'power3.out'
+                                    }, '-=0.4')
+                                    .to(description, {
+                                        opacity: 1,
+                                        x: 0,
+                                        filter: 'blur(0px)',
+                                        duration: 1,
+                                        ease: 'power3.out'
+                                    }, '-=0.6')
+                                    .to(featureItems, {
+                                        opacity: 1,
+                                        x: 0,
+                                        filter: 'blur(0px)',
+                                        duration: 0.8,
+                                        stagger: 0.1,
+                                        ease: 'power2.out'
+                                    }, '-=0.4');
+                            }
+                        });
+
+                        // Set first service as active initially (only on desktop)
+                        if (!isMobile) {
+                            serviceItems[0]?.classList.add('active');
+                        }
+                    }
+               })
+
+             // Number counter animation
+           
+            
+            
+
+        });
+
+        // Custom smooth scroll function using requestAnimationFrame
+        function smoothScrollTo(element, duration = 800) {
+            const startPosition = window.pageYOffset;
+            const targetPosition = element.getBoundingClientRect().top + startPosition - 80; // Offset for header
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function easeInOutCubic(t) {
+                return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            }
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                const ease = easeInOutCubic(progress);
+
+                window.scrollTo(0, startPosition + distance * ease);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                } else {
+                    window.scrollTo(0, targetPosition);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                
+                // Close mobile menu if open
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const menuToggle = document.querySelector('.mobile-menu-toggle');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    menuToggle.classList.remove('active');
                 }
                 
-                lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; 
-                isScrolling = false;
+                // Special handling for Home link - scroll to top
+                if (href === '#home' || href === '#') {
+                    if (isMobile) {
+                        // Use native smooth scroll on mobile
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        // Use GSAP ScrollSmoother on desktop
+                        if (smoother) {
+                            smoother.scrollTo(0, true);
+                        } else {
+                            gsap.to(window, {
+                                duration: 1,
+                                scrollTo: 0,
+                                ease: 'power3.inOut'
+                            });
+                        }
+                    }
+                    return;
+                }
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    // Use different scrolling method based on device
+                    if (isMobile) {
+                        // Special handling for Services link on mobile - use custom smooth scroll
+                        if (href === '#services') {
+                            smoothScrollTo(target);
+                        } else {
+                            // Use native smooth scroll on mobile for other links
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    } else {
+                        // Use GSAP scrollTo on desktop
+                        if (smoother) {
+                            // Use selector string for ScrollSmoother
+                            smoother.scrollTo(href, true, "top top");
+                        } else {
+                            gsap.to(window, {
+                                duration: 1,
+                                scrollTo: target,
+                                ease: 'power3.inOut'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+
+        let lastScrollY = 0;
+        const navbar = document.querySelector('header'); // or whatever your navbar selector is
+
+        ScrollTrigger.create({
+        start: 'top top',
+        end: 'max',
+        onUpdate: (self) => {
+            const currentScrollY = self.scroll();
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down & past hero section
+            gsap.to(navbar, {
+                y: -100, // adjust based on your navbar height
+                duration: 0.3,
+            });
+            } else if (currentScrollY < lastScrollY) {
+            // Scrolling up
+            gsap.to(navbar, {
+                y: 0,
+                duration: 0.3,
+            });
+            }
+            
+            lastScrollY = currentScrollY;
+        }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu nav a');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Hero Image Slider
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        let isAnimating = false;
+        let slideClicked = false;
+
+        function goToSlide(index, direction) {
+            if (isAnimating || index === currentSlide) return;
+            isAnimating = true;
+
+            const oldSlide = slides[currentSlide];
+            const newSlide = slides[index];
+
+            
+
+            // GSAP animation for smooth transition
+            gsap.to(oldSlide, {
+                transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}`,
+                ease: "power2.out",
+                duration:0.2
+            });
+
+            gsap.fromTo(newSlide, 
+                { transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}` },
+                { 
+                    duration:0.2,
+                    transform:'translateX(0)',
+                    ease: "power2.out",
+                    onComplete: () => {
+                        oldSlide.classList.remove('active');
+                        newSlide.classList.add('active');
+                        isAnimating = false;
+                    }
+                }
+            );
+
+            currentSlide = index;
+        }
+
+         // Auto-play (optional - every 5 seconds)
+         setInterval(() => {
+             if(slideClicked) {
+                 slideClicked = false
+                 return;
+             }
+             const nextIndex = (currentSlide + 1) % slides.length;
+             goToSlide(nextIndex, 'right');
+         }, 10000);
+
+         // Reviews Section Animation
+         const reviewCards = document.querySelectorAll('.review-card');
+         const reviewDots = document.querySelectorAll('.review-dot');
+         const reviewNavPrev = document.querySelector('.review-nav-prev');
+         const reviewNavNext = document.querySelector('.review-nav-next');
+         
+         if (reviewCards.length > 0 && reviewDots.length > 0) {
+             let currentReview = 0;
+             let isReviewAnimating = false;
+
+             function showReview(index) {
+                 if (isReviewAnimating || index === currentReview) return;
+                 isReviewAnimating = true;
+
+                 const oldCard = reviewCards[currentReview];
+                 const newCard = reviewCards[index];
+
+                 // Animate out current card with blur/opacity
+                 gsap.to(oldCard, {
+                     opacity: 0,
+                     filter: 'blur(10px)',
+                     duration: 0.6,
+                     ease: 'power2.in',
+                     onComplete: () => {
+                         oldCard.classList.remove('active');
+                     }
+                 });
+
+                 // Animate in new card with blur/opacity
+                 gsap.fromTo(newCard, 
+                     { opacity: 0, filter: 'blur(10px)' },
+                     { 
+                         opacity: 1,
+                         filter: 'blur(0px)',
+                         duration: 0.6,
+                         ease: 'power2.out',
+                         delay: 0.1,
+                         onComplete: () => {
+                             newCard.classList.add('active');
+                             isReviewAnimating = false;
+                         }
+                     }
+                 );
+
+                 // Update dots
+                 reviewDots[currentReview].classList.remove('active');
+                 reviewDots[index].classList.add('active');
+
+                 currentReview = index;
+             }
+
+             // Initialize first review
+             reviewCards[0].classList.add('active');
+             gsap.set(reviewCards[0], { opacity: 1, filter: 'blur(0px)' });
+
+             // Dot navigation
+             reviewDots.forEach((dot, index) => {
+                 dot.addEventListener('click', () => {
+                     showReview(index);
+                 });
+             });
+
+             // Arrow navigation
+             if (reviewNavPrev) {
+                 reviewNavPrev.addEventListener('click', () => {
+                     const prevIndex = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+                     showReview(prevIndex);
+                 });
+             }
+
+             if (reviewNavNext) {
+                 reviewNavNext.addEventListener('click', () => {
+                     const nextIndex = (currentReview + 1) % reviewCards.length;
+                     showReview(nextIndex);
+                 });
+             }
+         }
+
+         // Get In Touch Section Animation
+         document.fonts.ready.then(() => {
+             const getInTouchHero = document.querySelector('.get-in-touch-hero');
+             if (getInTouchHero) {
+                 let splitTouchHero = SplitText.create([".get-in-touch-hero"], { type: "words" });
+                 gsap.fromTo(splitTouchHero.words, {
+                     opacity: 0,
+                     filter: 'blur(10px)'
+                 }, {
+                     opacity: 1,
+                     filter: 'blur(0px)',
+                     duration: 1,
+                     stagger: 0.1,
+                     delay: 0.5,
+                     scrollTrigger: {
+                         trigger: getInTouchHero,
+                         start: "top 80%",
+                         toggleActions: "play none none none"
+                     }
+                 });
+             }
+
+             // Animate arrow indicator
+             const heroArrowIndicator = document.getElementById('heroArrowIndicator');
+             if (heroArrowIndicator) {
+                 gsap.fromTo(heroArrowIndicator, {
+                     opacity: 0,
+                     scale: 0
+                 }, {
+                     opacity: 1,
+                     scale: 1,
+                     duration: 0.6,
+                     delay: 1.2,
+                     ease: 'back.out(1.7)',
+                     scrollTrigger: {
+                         trigger: getInTouchHero,
+                         start: "top 80%",
+                         toggleActions: "play none none none"
+                     }
+                 });
+
+                 // Click handler to scroll to form
+                 heroArrowIndicator.addEventListener('click', () => {
+                     const form = document.querySelector('.get-in-touch-right');
+                     if (form) {
+                         if (isMobile) {
+                             form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                         } else {
+                             if (smoother) {
+                                 smoother.scrollTo('.get-in-touch-right', true, "top top");
+                             } else {
+                                 gsap.to(window, {
+                                     duration: 1,
+                                     scrollTo: form,
+                                     ease: 'power3.inOut'
+                                 });
+                             }
+                         }
+                     }
+                 });
+             }
+
+             // Animate left content
+             const getInTouchLeft = document.querySelector('.get-in-touch-left');
+             if (getInTouchLeft) {
+                 gsap.fromTo(getInTouchLeft, {
+                     opacity: 0,
+                     x: -50
+                 }, {
+                     opacity: 1,
+                     x: 0,
+                     duration: 0.8,
+                     scrollTrigger: {
+                         trigger: getInTouchLeft,
+                         start: "top 80%",
+                         toggleActions: "play none none none"
+                     }
+                 });
+             }
+
+             // Animate form fields
+             const formFields = document.querySelectorAll('.get-in-touch-form .form-field-group');
+             formFields.forEach((field, index) => {
+                 gsap.fromTo(field, {
+                     opacity: 0,
+                     y: 30
+                 }, {
+                     opacity: 1,
+                     y: 0,
+                     duration: 0.6,
+                     delay: 0.2 + (index * 0.1),
+                     scrollTrigger: {
+                         trigger: '.get-in-touch-right',
+                         start: "top 80%",
+                         toggleActions: "play none none none"
+                     }
+                 });
+             });
+         });
+
+         // Get In Touch Form Submission
+         const getInTouchForm = document.getElementById('getInTouchForm');
+         if (getInTouchForm) {
+             getInTouchForm.addEventListener('submit', async (e) => {
+                 e.preventDefault();
+                 await submitGetInTouchForm(getInTouchForm);
+             });
+         }
+
+         // Contact Form Animation - Declare variables first
+        const contactOverlay = document.getElementById('contactOverlay');
+        const contactFormPanel = document.getElementById('contactFormPanel');
+        const contactCloseBtn = document.getElementById('contactCloseBtn');
+        const getQuoteBtn = document.getElementById('getQuoteBtn');
+        const contactForm = document.getElementById('contactForm');
+        
+        // Only initialize if elements exist
+        if (contactOverlay && contactFormPanel && getQuoteBtn) {
+            const formGroups = document.querySelectorAll('.form-group');
+            const formTitle = document.querySelector('.contact-form-title');
+            const formSubtitle = document.querySelector('.contact-form-subtitle');
+
+        // Create timeline for opening animation
+        const openTimeline = gsap.timeline({ paused: true });
+
+        // Set initial states for overlay and panel only
+        gsap.set(contactOverlay, { opacity: 0 });
+        gsap.set(contactFormPanel, { x: '100%' });
+
+        // Open animation - faster and only animates the overlay and panel
+        openTimeline
+            .to(contactOverlay, {
+                opacity: 1,
+                duration: 0.2,
+                ease: 'power2.out'
+            })
+            .to(contactFormPanel, {
+                x: '0%',
+                duration: 0.4,
+                ease: 'power3.out'
+            }, '-=0.1');
+
+        // Close animation - faster and only animates the overlay and panel
+        const closeTimeline = gsap.timeline({ paused: true });
+
+        closeTimeline
+            .to(contactFormPanel, {
+                x: '100%',
+                duration: 0.4,
+                ease: 'power3.in'
+            })
+            .to(contactOverlay, {
+                opacity: 0,
+                duration: 0.2,
+                ease: 'power2.in',
+                onComplete: () => {
+                    contactOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }, '-=0.1');
+
+        // Open contact form
+        function openContactForm() {
+            contactOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            openTimeline.restart();
+        }
+
+        // Close contact form
+        function closeContactForm() {
+            closeTimeline.restart();
+        }
+
+        // Event listeners
+        getQuoteBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openContactForm();
+        });
+
+        contactCloseBtn.addEventListener('click', () => {
+            closeContactForm();
+        });
+
+        // Close on overlay click (outside panel)
+        contactOverlay.addEventListener('click', (e) => {
+            if (e.target === contactOverlay) {
+                closeContactForm();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactOverlay.classList.contains('active')) {
+                closeContactForm();
+            }
+        });
+
+        // Form submission
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                await submitContactForm(contactForm);
             });
         }
-        isScrolling = true;
-    });
-    
-    document.querySelector('body').classList.add('active-bod');
-});
+        } // End of contact form initialization check
 
+        // FAQ Bento Box Animation
+        document.fonts.ready.then(() => {
 
+            // Animate FAQ bento cards on scroll
+            const faqBentoCards = document.querySelectorAll('.faq-bento-card');
+            faqBentoCards.forEach((card, index) => {
+                gsap.fromTo(card, {
+                    opacity: 0,
+                }, {
+                    opacity: 1,
+                    delay: index * 0.1,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            });
+
+            // Animate FAQ subtitle
+         
+        });

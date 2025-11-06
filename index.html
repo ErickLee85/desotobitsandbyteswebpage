@@ -1,1767 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Expert software development services specializing in custom web applications, mobile app development, enterprise software solutions. Serving clients nationwide with local expertise in the Mid-South region.">
-        <meta name="keywords" content="custom software development, web application development, website developer, company website,  mobile apps, React development, Node.js development, enterprise software solutions, progressive web apps, cross-platform mobile apps, remote software consulting, nationwide software development, software developer near me, company website, business website">
-        <meta name="author" content="Desoto Bits & Bytes">
-        <meta name="robots" content="index, follow">
-        <!-- <meta name="theme-color" content="#ffffff"> -->
-        
-        <!-- Open Graph / Social Media Meta Tags -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Desoto Bits & Bytes">
-        <meta property="og:description" content="Professional web, mobile app, and custom software development services in Northwest Mississippi">
-        <meta property="og:image" content="./images/logo_dark.png">
-        <meta property="og:url" content="https://desotobitsandbytes.com">
-        <title>Desoto Bits & Bytes</title>
-        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-        <link rel="canonical" href="https://desotobitsandbytes.com">
-        <link rel="stylesheet" href="./styles.css">
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.0/countUp.min.js"></script> -->
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script src="./script.js" defer async></script>
-        <script type="speculationrules">
-            {                "prerender" : [
-                {
-                    "urls": [
-                     "/about", "/process", "/services", "/faq", "/services/mobile-app", "/services/custom-software",
-                    "/services/company-website", "/services/web-app", "/blog", "/blog/ai-revolution", "/blog/coding-basics"
-                    ,"/blog/business-website", "/blog/custom-crm", "/blog/ux-design"
-                    ]
-                }
-                ]
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desoto Bits & Bytes | Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Desoto Bits & Bytes",
+          "url": "https://desotobitsandbytes.com",
+          "description": "Professional software development company specializing in custom web applications, mobile apps, and enterprise software solutions.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Olive Branch",
+            "addressRegion": "MS",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "34.9618",
+            "longitude": "-89.8297"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "19:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Saturday", "Sunday"],
+              "opens": "08:00",
+              "closes": "17:00"
             }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/desotobitsandbytes",
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "13"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "3",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Web Application Development",
+                "description": "Custom web applications built with modern frameworks and cloud technologies"
+              },
+              {
+                "@type": "Offer",
+                "name": "Mobile App Development",
+                "description": "Native and cross-platform mobile applications for iOS and Android"
+              },
+              {
+                "@type": "Offer",
+                "name": "Custom Software Development",
+                "description": "Enterprise-grade software solutions tailored to business needs"
+              }
+            ]
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Software Development Services",
+            "itemListElement": [
+              {
+                "@type": "Service",
+                "name": "Progressive Web Applications",
+                "description": "Modern web apps that work offline and provide app-like experience"
+              },
+              {
+                "@type": "Service",
+                "name": "Cloud-Native Development",
+                "description": "Scalable applications built for cloud deployment"
+              },
+              {
+                "@type": "Service",
+                "name": "Enterprise Software Solutions",
+                "description": "Custom business software for improved efficiency"
+              }
+            ]
+          }
+        }
         </script>
+        
+        <!-- Service Schema -->
         <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Desoto Bits & Bytes",
-              "url": "https://desotobitsandbytes.com",
-              "description": "Professional software development company specializing in custom web applications, mobile apps, and enterprise software solutions.",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Olive Branch",
-                "addressRegion": "MS",
-                "addressCountry": "US"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "34.9618",
-                "longitude": "-89.8297"
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "08:00",
-                  "closes": "19:00"
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Saturday", "Sunday"],
-                  "opens": "08:00",
-                  "closes": "17:00"
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "Software Development",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Desoto Bits & Bytes"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Mississippi"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Development Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Web Application Development",
+                  "description": "Full-stack web applications with React, Node.js, and cloud services"
                 }
-              ],
-              "sameAs": [
-                "https://www.facebook.com/desotobitsandbytes",
-              ],
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "5.0",
-                "reviewCount": "13"
               },
-              "offers": {
-                "@type": "AggregateOffer",
-                "offerCount": "3",
-                "offers": [
-                  {
-                    "@type": "Offer",
-                    "name": "Web Application Development",
-                    "description": "Custom web applications built with modern frameworks and cloud technologies"
-                  },
-                  {
-                    "@type": "Offer",
-                    "name": "Mobile App Development",
-                    "description": "Native and cross-platform mobile applications for iOS and Android"
-                  },
-                  {
-                    "@type": "Offer",
-                    "name": "Custom Software Development",
-                    "description": "Enterprise-grade software solutions tailored to business needs"
-                  }
-                ]
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mobile App Development",
+                  "description": "Native and hybrid mobile applications for iOS and Android platforms"
+                }
               },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Software Development Services",
-                "itemListElement": [
-                  {
-                    "@type": "Service",
-                    "name": "Progressive Web Applications",
-                    "description": "Modern web apps that work offline and provide app-like experience"
-                  },
-                  {
-                    "@type": "Service",
-                    "name": "Cloud-Native Development",
-                    "description": "Scalable applications built for cloud deployment"
-                  },
-                  {
-                    "@type": "Service",
-                    "name": "Enterprise Software Solutions",
-                    "description": "Custom business software for improved efficiency"
-                  }
-                ]
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Software Development",
+                  "description": "Tailored software solutions for business process automation"
+                }
+              }
+            ]
+          }
+        }
+        </script>
+        
+        <!-- FAQ Schema -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What types of software do you develop?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in web applications, mobile apps, and custom enterprise software solutions. Our expertise includes progressive web apps, cloud-native applications, and cross-platform mobile development."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is your development process?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our development process includes initial consultation, requirements gathering, design, development, testing, deployment, and ongoing support. We use agile methodologies to ensure efficient delivery and client satisfaction."
               }
             }
-            </script>
-            
-            <!-- Service Schema -->
-            <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "Service",
-              "serviceType": "Software Development",
-              "provider": {
-                "@type": "LocalBusiness",
-                "name": "Desoto Bits & Bytes"
-              },
-              "areaServed": {
-                "@type": "State",
-                "name": "Mississippi"
-              },
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Development Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Web Application Development",
-                      "description": "Full-stack web applications with React, Node.js, and cloud services"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Mobile App Development",
-                      "description": "Native and hybrid mobile applications for iOS and Android platforms"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Custom Software Development",
-                      "description": "Tailored software solutions for business process automation"
-                    }
-                  }
-                ]
-              }
-            }
-            </script>
-            
-            <!-- FAQ Schema -->
-            <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What types of software do you develop?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We specialize in web applications, mobile apps, and custom enterprise software solutions. Our expertise includes progressive web apps, cloud-native applications, and cross-platform mobile development."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is your development process?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Our development process includes initial consultation, requirements gathering, design, development, testing, deployment, and ongoing support. We use agile methodologies to ensure efficient delivery and client satisfaction."
-                  }
-                }
-              ]
-            }
-            </script>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJTRDWHLY7"></script>
-            <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-        
-            gtag('config', 'G-PJTRDWHLY7');
-            </script>
-        <!-- GSAP and ScrollTrigger for animations -->
-    </head>
-    <style>
-        .tech-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin:15px;
+          ]
         }
-        
-        .tech-pill {
-            background-color: rgba(43, 93, 255, 0.1);
-            color: #2b5dff;
-            border-radius: 20px;
-            padding: 4px 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        /* Modal Styles for CRM Image */
-        .image-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content {
-            position: relative;
-            margin: auto;
-            padding: 20px;
-            width: 90%;
-            max-width: 800px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-image {
-            max-width: 100%;
-            max-height: 90%;
-            object-fit: contain;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-            animation: zoomIn 0.3s ease;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            z-index: 10000;
-        }
-
-        .close-modal:hover {
-            color: var(--brand-c);
-        }
-
-        /* CRM Image Enhancement */
-        .case-study-img {
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .case-study-img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { 
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to { 
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Home FAQ Section Styles */
-        .faq-section-home {
-            padding: 80px 20px;
-            position: relative;
-            background:rgb(31,31,31)
-        }
-
-        /* .faq-section-home::before {
-            content:'';
-            position:absolute;
-            inset:0;
-            height: 100%;
-            width: 100%;
-            z-index: -1;
-            background-image:url('./images/faq_img.webp');
-            background-size: cover;
-            background-position: bottom;
-            filter:brightness(0.1)
-        } */
-
-        .faq-container-home {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .faq-header-home {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .faq-header-home h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--text-c);
-            font-weight: 700;
-        }
-
-        .faq-header-home p {
-            color: #666;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .faq-grid-home {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .faq-item-home {
-            background:black;
-            border: 1px solid var(--border-c);
-            border-radius: 16px;
-            padding: 30px;
-            transition: all 300ms ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-
-        .faq-question-home {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--brand-c);
-            margin-bottom: 20px;
-            line-height: 1.4;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .faq-answer-home {
-            color: #f0f0f0;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        .faq-cta-home {
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-            border-radius: 12px;
-            border: 1px solid var(--brand-c);
-            background:var(--brand-c)
-        }
-
-        .faq-cta-home p {
-            color: var(--text-c);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .faq-link-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            background:black;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 12px 24px;
-            border: 2px solid var(--brand-c);
-            border-radius: 8px;
-            transition: all 300ms ease;
-  
-        }
-        @media (max-width: 768px) {
-            .faq-grid-home {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .faq-header-home h2 {
-                font-size: 2rem;
-            }
-            
-            .faq-item-home {
-                padding: 25px;
-            }
-            
-            .faq-question-home {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
-            }
-            
-            .faq-answer-home {
-                font-size: 0.95rem;
-            }
-        }
-    </style>
-
-<body>
-    <header role="banner">
-        <nav role="navigation" aria-label="Main navigation">
-          
-                <div class="hamburger is-md">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                  </div>
-       
-          
-                
-                    <a href="/" class="company-logo">
-                    <img src="../images/logo_light.png" alt="Company Logo" height="40" width="300" class="nav-logo">
-                   </a>
-
-                <a href="tel:+16629321047" class="call-link">
-                    <img src="../images/icons8-phone-50.png" alt="Phone Icon" height="30" width="30">
-                </a>
-               
-                <ul class="desktop-links">
-                    <li><a href="/" class="underline-hover-effect active-page ">Home</a></li>
-                    <li><a href="/about"   class="underline-hover-effect">About</a></li>
-                    <li><a href="/services" class="underline-hover-effect">Services</a></li>
-                    <li><a href="/process" class="underline-hover-effect">Process</a></li>
-                    <li><a href="/faq" class="underline-hover-effect">FAQ</a></li>
-                    <li><a href="/blog" class="underline-hover-effect">Blog</a></li>
-                    <li><a href="/contact" class="underline-hover-effect">Contact</a></li>
-                </ul>
-     
-        </nav>
-    </header>
-    <div class="mobile-menu-overlay"></div>
-    <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <div class="hamburger is-md is-active">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </div>
-            <img src="./images/logo_light.png" alt="Company Logo" height="60" width="300" class="nav-logo">
-        </div>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/process">Process</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="tel:+16629321047" class="contact-btn-mobile">
-                <img src="./images/icons8-phone-50.png" alt="Phone Icon" height="20" width="20">
-                Contact</a></li>
-        </ul>
-    </div>
-
-    <main id="main-content" role="main">
-        <article class="hero">
-            <section class="hero-text-container">
-                <h1 style="text-transform: uppercase; font-weight: 600; color:rgb(205, 205, 205); letter-spacing: 2px;">Professional Business Software </h1>
-                <p class="hero-description"> <span class="highlight upper">Elevate</span> <span class="upper" style="color:white;">Your Business</span></p>
-                <img src="./images/dual-underline.svg" class="hero-img-pc" alt="Computer Application" style="max-width: 250px;">
-                <div class="hero-div">
-                     <p class="hero-title" style="color:white; line-height: 1.6;">We're a software development company located in Olive Branch, MS.
-                 We build enterprise grade software, ranging from Mobile Apps and Websites to AI Integration for companies of all sizes.</p>
-                 <span class="font-awesome-star">
-                    <img src="./images/icons8-star-32.png" alt="star" class="star">
-                    <img src="./images/icons8-star-32.png" alt="star" class="star">
-                    <img src="./images/icons8-star-32.png" alt="star" class="star">
-                    <img src="./images/icons8-star-32.png" alt="star" class="star">
-                    <img src="./images/icons8-star-32.png" alt="star" class="star">
-                    <strong style="margin-left: 10px; font-size: 1.2rem; color: rgb(255, 255, 255); margin-block: 20px;">5.0 | 13 Reviews
-                    </strong>
-                    <a target="_blank" aria-label="desoto bits and bytes reviews" href="https://www.google.com/search?q=desoto+bits+and+bytes+reviews&sca_esv=8e23599b05dcda53&sxsrf=AE3TifP3eq2NsWppQhY6TolD_lTrqbUGnQ%3A1756138686894&source=hp&ei=voysaIPhNKPfwN4Py8rSyAQ&iflsig=AOw8s4IAAAAAaKyazqYr4qe27k7YFjSmrWSK9XaBsHpC&ved=0ahUKEwiDuO20rqaPAxWjL9AFHUulFEkQ4dUDCBo&uact=5&oq=desoto+bits+and+bytes+reviews&gs_lp=Egdnd3Mtd2l6Ih1kZXNvdG8gYml0cyBhbmQgYnl0ZXMgcmV2aWV3czIFECEYoAEyBRAhGKABSL8ZUABY4RhwAHgAkAECmAGRA6ABuy-qAQowLjE1LjkuMy4xuAEDyAEA-AEBmAIaoAKcKsICChAjGIAEGCcYigXCAg4QLhiABBixAxjRAxjHAcICCxAuGIAEGLEDGIMBwgILEC4YgAQY0QMYxwHCAhEQLhiABBixAxjRAxiDARjHAcICChAAGIAEGEMYigXCAgQQIxgnwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICCxAAGIAEGJECGIoFwgIFEAAYgATCAgsQLhiABBjHARivAcICDhAuGIAEGMcBGI4FGK8BwgIIEAAYgAQYsQPCAhEQLhiABBixAxiDARjHARivAcICBRAuGIAEwgIQEAAYgAQYsQMYQxiDARiKBcICCBAuGIAEGLEDwgICECbCAggQABiABBiiBMICCBAAGKIEGIkFwgIFEAAY7wXCAgsQABiABBiGAxiKBcICBhAAGBYYHsICBRAhGKsCmAMAkgcIMC4xNS45LjKgB7v6AbIHCDAuMTUuOS4yuAecKsIHBjguMTYuMsgHGg&sclient=gws-wiz#mpd=~17777624387278864285/customers/reviews">
-                                            <img src="./images/icons8-google.svg" width="30" style="margin-left: 10px;" alt="google icon">
-                    </a>
-
- 
-                 </span>
-                                     <button class="shiny-cta" onclick="scrollToContactForm()">
-                                        Get in touch
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#ffffff"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> 
-                                
-                                </button>
-                  
-                </div>
-            </section>
-            
-            <!-- Hero Service Cards -->
-            <section class="hero-services">
-                <div class="hero-services-grid">
-                    <div class="hero-service-card">
-                        <div class="hero-service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="M260-40q-24 0-42-18t-18-42v-760q0-24 18-42t42-18h440q24 0 42 18t18 42v760q0 24-18 42t-42 18H260Zm0-150v90h440v-90H260Zm220.18 75q12.82 0 21.32-8.68 8.5-8.67 8.5-21.5 0-12.82-8.68-21.32-8.67-8.5-21.5-8.5-12.82 0-21.32 8.68-8.5 8.67-8.5 21.5 0 12.82 8.68 21.32 8.67 8.5 21.5 8.5ZM260-250h440v-520H260v520Zm0-580h440v-30H260v30Zm0 640v90-90Zm0-640v-30 30Z"/></svg>
-                        </div>
-                        <h3>Mobile Apps</h3>
-                        <p>Custom iOS and Android applications built with the latest technologies.</p>
-                        <a href="/services/mobile-app/" class="learn-more">
-                            Learn More
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#ffffff"><path d="m480-320 160-160-160-160-56 56 64 64H320v80h168l-64 64 56 56Zm0 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                        </a>
-                    </div>
-                    
-                    <div class="hero-service-card">
-                        <div class="hero-service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="M334-120v-60h86v-100H140q-24 0-42-18t-18-42v-440q0-24 18-42t42-18h680q24 0 42 18t18 42v440q0 24-18 42t-42 18H540v100h86v60H334ZM140-340h680v-440H140v440Zm0 0v-440 440Z"/></svg>
-                        </div>
-                        <h3>Web Applications</h3>
-                        <p>Cutting-edge web applications built with modern frameworks.</p>
-                          <a href="/services/web-app" class="learn-more">
-                            Learn More
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#ffffff"><path d="m480-320 160-160-160-160-56 56 64 64H320v80h168l-64 64 56 56Zm0 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                          </a>
-                    </div>
-                    
-                    <div class="hero-service-card">
-                        <div class="hero-service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="M480-80q-84 0-157-31.5T196-197q-54-54-85-127.5T80-482q0-84 31-156.5T196-765q54-54 127-84.5T480-880q84 0 157 30.5T764-765q54 54 85 126.5T880-482q0 84-31 157.5T764-197q-54 54-127 85.5T480-80Zm0-58q35-36 58.5-82.5T577-331H384q14 60 37.5 108t58.5 85Zm-85-12q-25-38-43-82t-30-99H172q38 71 88 111.5T395-150Zm171-1q72-23 129.5-69T788-331H639q-13 54-30.5 98T566-151ZM152-391h159q-3-27-3.5-48.5T307-482q0-25 1-44.5t4-43.5H152q-7 24-9.5 43t-2.5 45q0 26 2.5 46.5T152-391Zm221 0h215q4-31 5-50.5t1-40.5q0-20-1-38.5t-5-49.5H373q-4 31-5 49.5t-1 38.5q0 21 1 40.5t5 50.5Zm275 0h160q7-24 9.5-44.5T820-482q0-26-2.5-45t-9.5-43H649q3 35 4 53.5t1 34.5q0 22-1.5 41.5T648-391Zm-10-239h150q-33-69-90.5-115T565-810q25 37 42.5 80T638-630Zm-254 0h194q-11-53-37-102.5T480-820q-32 27-54 71t-42 119Zm-212 0h151q11-54 28-96.5t43-82.5q-75 19-131 64t-91 115Z"/></svg>
-                        </div>
-                        <h3>Company Websites</h3>
-                        <p>SEO-optimized, high-performance websites that convert visitors.</p>
-                          <a href="/services/company-website" class="learn-more">
-                            Learn More
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#ffffff"><path d="m480-320 160-160-160-160-56 56 64 64H320v80h168l-64 64 56 56Zm0 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-                          </a>
-                    </div>
-                </div>
-            </section>
-        </article>
-
-        <article class="case-study-section">
-    <div class="case-study-container">
-        <header class="case-study-header">
-            <h2>Latest Client Project</h2>
-            <p>Social Media App written for both iOS and Android</p>
-            <p>From concept to the app store in 2 weeks!</p>
-        </header>
-        
-        <div class="case-study-content">
-            <div class="case-study-image">
-                <img loading="lazy" src="./images/his_prayer.webp" alt="His Prayer Mobile App Interface" class="case-study-img" id="hisPrayerImage">
-            </div>
-            <div class="case-study-details">
-                <div class="case-study-tag">
-                    Client Success
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm94-278 226-226-56-58-170 170-86-84-56 56 142 142Z"/></svg>
-                </div>
-                <h3>Social Media Platform for Faith Communities</h3>
-                <p class="case-study-description">
-                    Our client envisioned a unique mobile application that would serve faith-based communities by combining social media functionality with spiritual connection. We developed a cross-platform mobile app for both iOS and Android that allows users to request prayers, share when prayers are answered, create prayer groups, and post anonymously for sensitive spiritual requests. The app fosters a supportive religious community while maintaining user privacy and security.
-                </p>
-                <div class="case-study-results">
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Community Building</h4>
-                            <p>Created a safe space for believers to connect, share prayer requests, and support each other's spiritual journey</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Privacy & Anonymity</h4>
-                            <p>Implemented secure anonymous posting features allowing users to share sensitive prayer requests without fear</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Cross-Platform Reach</h4>
-                            <p>Delivered native performance on both iOS and Android, maximizing accessibility for all faith communities</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</article>
-
-        <article class="case-study-section">
-    <div class="case-study-container">
-        <header class="case-study-header">
-            <h2>Client Success Story</h2>
-            <p>See how our custom solutions deliver real business results</p>
-        </header>
-        
-        <div class="case-study-content">
-            <div class="case-study-image">
-                <img loading="lazy" src="./images/custom_crm-min.png" alt="Custom CRM Dashboard" class="case-study-img" id="crmImage">
-            </div>
-            <div class="case-study-details">
-                <div class="case-study-tag">
-                    Case Study
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm94-278 226-226-56-58-170 170-86-84-56 56 142 142Z"/></svg>
-                </div>
-                <h3>Personalized CRM & Expenses Manager</h3>
-                <p class="case-study-description">
-                    Our client needed a tailored solution to manage their growing customer base and track business expenses for accounting purposes. We developed a personalized CRM system to their specs that streamlined their customer management process and integrated expense tracking functionality.
-                    We also created some custom functions to build expense reports so they can generate excel files for their accountant at the click of a button.
-                    
-                </p>
-                <div class="case-study-results">
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Time Saved</h4>
-                            <p>Reduced administrative work by 40%, allowing more focus on core business activities</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3">
-                                <path d="M3 3v18h18"/>
-                                <path d="M18 17V9"/>
-                                <path d="M13 17V5"/>
-                                <path d="M8 17v-3"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Financial Clarity</h4>
-                            <p>Improved expense tracking accuracy by 65%, simplifying accounting processes</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Customer Management</h4>
-                            <p>Enhanced customer relationship management with organized data, automations and follow-up tracking</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- <a href="/case-studies/custom-crm" class="case-study-link">
-                    Read Full Case Study
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a> -->
-            </div>
-        </div>
-    </div>
-</article>
-
-<article class="case-study-section case-study-alt">
-    <div class="case-study-container">
-        <header class="case-study-header">
-            <h2>Legacy Application Migration</h2>
-            <p>Modernizing critical business systems for performance and scalability</p>
-        </header>
-        
-        <div class="case-study-content">
-         
-            <div class="case-study-details">
-                <div class="case-study-tag">
-                    Case Study
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm94-278 226-226-56-58-170 170-86-84-56 56 142 142Z"/></svg>
-                </div>
-                <h3>Complete System Migration & Database Rebuild</h3>
-                <p class="case-study-description">
-                    Our client was operating on an outdated platform built with legacy technology that was becoming increasingly difficult to maintain and scale. We were tasked with migrating their entire application to a modern programming framework while preserving all functionality and data integrity. This involved reverse engineering their existing database structure, migrating years of business-critical data, and rebuilding the application with improved architecture and security.
-                </p>
-                <div class="case-study-results">
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Performance Boost</h4>
-                            <p>Increased application speed by 300%, dramatically improving user experience and productivity</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Enhanced Security</h4>
-                            <p>Implemented modern security protocols, eliminating vulnerabilities in the legacy system</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Zero Data Loss</h4>
-                            <p>Successfully migrated 100% of business data with complete integrity and improved query performance</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-               <div class="case-study-image">
-                <img loading="lazy" src="./images/sql.webp" alt="Application Migration Dashboard" class="case-study-img">
-            </div>
-        </div>
-    </div>
-</article>
-
-<article class="case-study-section">
-    <div class="case-study-container">
-        <header class="case-study-header">
-            <h2>Website Management Transition</h2>
-            <p>Seamlessly taking over multiple websites with no downtime</p>
-        </header>
-        
-        <div class="case-study-content">
-            <div class="case-study-image">
-                <img loading="lazy" src="./images/undraw_website_27ju.svg" alt="Website Code Management" class="case-study-img">
-            </div>
-            <div class="case-study-details">
-                <div class="case-study-tag">
-                    Case Study
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm94-278 226-226-56-58-170 170-86-84-56 56 142 142Z"/></svg>
-                </div>
-                <h3>Multi-Site Transition & Rapid Learning</h3>
-                <p class="case-study-description">
-                    A client with several e-commerce websites needed a new developer to take over when their long-time engineer announced retirement. We were handed credentials and access to all their systems with no formal documentation or transition period. We managed to deliver all requested changes within 24 hours while creating proper documentation for future maintenance.
-                </p>
-                <div class="case-study-results">
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Rapid Response</h4>
-                            <p>Completed all website update requests within 24 hours despite having no prior knowledge of their systems</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text">
-                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                <line x1="10" y1="9" x2="8" y2="9"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Documentation Created</h4>
-                            <p>Developed comprehensive technical documentation for all websites, creating a system that was previously absent</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smile">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-                                <line x1="9" y1="9" x2="9.01" y2="9"/>
-                                <line x1="15" y1="9" x2="15.01" y2="9"/>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Client Satisfaction</h4>
-                            <p>Maintained business continuity with zero disruption, resulting in a highly satisfied client</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</article>
-      
-<!-- <article class="case-study-section case-study-alt">
-    <div class="case-study-container">
-        <header class="case-study-header">
-            <h2>Credit Card Management App</h2>
-            <p>Helping users take control of their finances with a comprehensive tracking solution</p>
-        </header>
-        
-        <div class="case-study-content">
-            <div class="case-study-details">
-              <div class="case-study-tag">
-                    Case Study
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#75FB4C"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm94-278 226-226-56-58-170 170-86-84-56 56 142 142Z"/></svg>
-                </div>
-                <h3>Personal Finance Dashboard & Payment Tracker</h3>
-                <p class="case-study-description">
-                    Our client was struggling to keep track of multiple credit cards with different payment dates, interest rates, and balances. We developed a custom web application with a secure login system that allows them to input all their credit cards in one place. The dashboard displays critical information like upcoming payments, interest charges, remaining balances, and payment history. The system also calculates how each payment affects interest charges and principal balance to help users make smarter financial decisions.
-                </p>
-                <div class="case-study-results">
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="16" y1="2" x2="16" y2="6"></line>
-                                <line x1="8" y1="2" x2="8" y2="6"></line>
-                                <line x1="3" y1="10" x2="21" y2="10"></line>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Payment Organization</h4>
-                            <p>Eliminated missed payments with automated reminders and consolidated payment tracking</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2">
-                                <line x1="18" y1="20" x2="18" y2="10"></line>
-                                <line x1="12" y1="20" x2="12" y2="4"></line>
-                                <line x1="6" y1="20" x2="6" y2="14"></line>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Financial Visibility</h4>
-                            <p>Created complete transparency into interest charges, payment impact, and debt reduction progress</p>
-                        </div>
-                    </div>
-                    <div class="result-item">
-                        <div class="result-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-down">
-                                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
-                                <polyline points="17 18 23 18 23 12"></polyline>
-                            </svg>
-                        </div>
-                        <div class="result-content">
-                            <h4>Debt Reduction</h4>
-                            <p>Helped the client reduce overall debt by 22% in the first six months through strategic payment planning</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="case-study-image">
-                <img loading="lazy" src="./images/creditly_ss.png" alt="Credit Card Management Dashboard" class="case-study-img">
-            </div>
-        </div>
-    </div>
-</article> -->
-
-        <article class="contact-section" id="contact-sect">
-            <section class="contact-text">
-                <h2>Ready To Take <br>It To The Next Level?</h2>
-                <p>Typical response time is less than 24 hours.
-                    Consultations are free of charge.
-                </p>
-                <ol style="margin-top: 20px;">
-                    <li><strong>1.</strong> Fill Out The Form </li>
-                    <li><strong>2.</strong> Schedule Free Consultation</li>
-                    <li><strong>3.</strong> Get Results!</li>
-                </ol>
-            </section>
-            <section class="contact-form" id="main-contact-form">
-           
-                <form action="" class="my-form">
-                    <h3>Send Message</h3>
-                    <label for="name">Your Name</label>
-                    <input minlength="5" type="text" name="name" id="" placeholder="Full Name" required>
-                    <label for="email">Your Email</label>
-                    <input type="email" name="email" placeholder="Email"  required>
-                    <label for="message">Your Message</label>
-                    <textarea minlength="5"  id="message" name="message" placeholder="Tell us about your project..."></textarea>
-                    <div class="g-recaptcha" data-sitekey="6LdG5LoqAAAAAP49W6aUwIIS6JEVBefNItQvpKWo"></div>
-                    <button 
-                     class="form-submit-btn"
-                     type="submit"
-                     >
-                     <span class="form-inactive">
-                        Get My Project
-                        </span>
-                        <span class="form-active">
-                            Submitting...
-                            <span class="spinner"></span>
-                        </span>
-                        </button>
-                      
-                </form>
-            </section>
-        </article>
-
-        <!-- FAQ Section -->
-        <!-- <article class="faq-section-home">
-            <div class="faq-container-home">
-                <header class="faq-header-home">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Quick answers to common questions about our software development services</p>
-                </header>
-                
-                <div class="faq-grid-home">
-        
-                    <div class="faq-item-home">
-                        <div class="faq-question-home">
-                            <span>How does your software development process work?</span>
-                        </div>
-                        <div class="faq-answer-home">
-                            Our development process follows a systematic approach: First, we have a detailed discovery phase to understand your needs and objectives. Then, we create a project roadmap and design mockups. After your approval, we move into development with regular updates and testing. Finally, we deploy your solution and provide training and support.
-                        </div>
-                    </div>
-
-                    <div class="faq-item-home">
-                        <div class="faq-question-home">
-                            <span>How do you determine the cost of a project?</span>
-                        </div>
-                        <div class="faq-answer-home">
-                            Project costs are determined by several factors: scope, complexity, features required, timeline, and ongoing maintenance needs. We provide detailed estimates after our initial consultation and discovery phase. We're transparent about all costs and work with you to find solutions that fit your budget.
-                        </div>
-                    </div>
-
-                    <div class="faq-item-home">
-                        <div class="faq-question-home">
-                            <span>What technologies do you use for development?</span>
-                        </div>
-                        <div class="faq-answer-home">
-                            We use modern, industry-standard technologies including React, Node.js, Next JS/NuxtJS, Python, and cloud services like AWS and Firebase. For mobile development, we work with React Native and native iOS/Android development. Our tech stack is chosen based on your specific needs and project requirements.
-                        </div>
-                    </div>
-
-                    <div class="faq-item-home">
-                        <div class="faq-question-home">
-                            <span>What kind of support do you provide after launch?</span>
-                        </div>
-                        <div class="faq-answer-home">
-                            We provide comprehensive post-launch support including bug fixes, security updates, and performance monitoring. We offer various maintenance packages to ensure your software stays up-to-date and runs smoothly. Our team is available for technical support and can implement new features as your needs evolve.
-                        </div>
-                    </div>
-
-                    <div class="faq-item-home">
-                        <div class="faq-question-home">
-                            <span>How long does it typically take to develop a software solution?</span>
-                        </div>
-                        <div class="faq-answer-home">
-                            Development timelines vary based on project complexity. Simple websites might take 4-6 weeks, while complex web applications can take 3-6 months. Mobile apps typically require 3-9 months depending on features. Custom enterprise software may take 6-12 months or longer. During our discovery phase, we'll provide a detailed timeline based on your specific requirements.
-                        </div>
-                    </div>
-
-                    <div class="faq-item-home">
-                        <div class="faq-question-home">
-                            <span>Who owns the code and intellectual property of my project?</span>
-                        </div>
-                        <div class="faq-answer-home">
-                            You retain full ownership of all intellectual property and source code developed specifically for your project. Once final payment is made, we transfer all rights to you. We may use third-party libraries with their own licenses, which we'll clearly document. Our contracts explicitly outline these ownership terms to protect your interests.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-cta-home">
-                    <p>Have more questions?</p>
-                    <a href="/faq" class="faq-link-home">
-                        View All FAQs
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-        </article> -->
-
-        <article class="reviews-section">
-            <div class="reviews-container">
-                <header class="reviews-header">
-                    <h2>What Our Clients Say</h2>
-                    <p>Trusted by businesses and entrepreneurs across the country</p>
-                </header>
-                
-                <div class="testimonials-slider">
-                    <div class="testimonials-track">
-                            <!-- Lorna Amey - Latest Review -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>I highly recommend DeSoto Bits and Bytes. I worked with Erick Crowne who did an amazing job of developing my app idea. Erick was very patient with me and walked me through the process of bringing my idea into reality. I am impressed with the quality of work, the professionalism and most of all the caring customer service.
-                                    <span class="highlight-tag">New Client</span>
-                                </p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #8e44ad">L</div>
-                                    <div class="author-details">
-                                        <h4>Lorna Amey</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>I am the owner of two businesses and have been in business over 18 years. I have worked with several software companies over the years. Erick, with Desoto Bits and Bytes, has helped me more than most. His knowledge and dedication to help others is first class. It is great to have someone that I can speak with whenever needed, and who understands what I am needing, From websites, SEO, custom software, app development etc… Erick is the best.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #e91e63">P</div>
-                                    <div class="author-details">
-                                        <h4>Paul Ollar</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    
-
-                                   <!-- Testimonial 6 -->
-                                   <div class="testimonial-card">
-                                    <div class="testimonial-content">
-                                        <div class="quote-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                        </div>
-                                        <p>I hired Desoto Bits and Bytes to create a personalized application for managing my credit cards, and I'm extremely satisfied with the outcome. Before this, tracking everything was a hassle. Now, I have a secure login that takes me to a comprehensive dashboard. I can easily view all my cards, see detailed payment histories, track interest rates, and monitor my overall debt situation. It even sends me automated email reminders before payments are due, which is incredibly helpful. The app is exactly what I envisioned. Great work by the Desoto Bits and Bytes team!
-                                            <span class="highlight-tag">New Client</span>
-                                        </p>
-                                        <div class="testimonial-author">
-                                            <div class="author-avatar" style="background: #ff6b6b">R</div>
-                                            <div class="author-details">
-                                                <h4>Ralph Hawkins</h4>
-                                                <div class="review-stars">★★★★★</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>This is an awesome local company. I came to them with a problem and they solved it through some custom software. They built a custom CRM and Expense tracker for my business. Highly recommend! <span class="highlight-tag">New Client</span></p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #36f452">C</div>
-                                    <div class="author-details">
-                                        <h4>Complete Home Insulation</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>I recently had the pleasure of working with Desoto Bits And Bytes LLC for the creation and maintenance of my website, and I am thoroughly impressed! From the outset, the team displayed an exceptional level of professionalism and expertise.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #f44336">N</div>
-                                    <div class="author-details">
-                                        <h4>Nathan Tapley</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>Erick helped me build my own Website for my new car Valet Grooming business. Incredibly great customer service and very helpful with ongoing changes to my new website. <span class="highlight-tag">New Client</span></p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #2196F3">J</div>
-                                    <div class="author-details">
-                                        <h4>Joshua Boyce</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 3 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>I started working with Desoto Bits and Bytes last year to manage my web sites. Their service has been fast and exactly what I had hoped. They respond to my queries and requests promptly and accurately.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #4CAF50">J</div>
-                                    <div class="author-details">
-                                        <h4>Jon Lomberg</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 4 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>Absolutely phenomenal work. Speedy and professional. This guy knows his stuff.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #9C27B0">B</div>
-                                    <div class="author-details">
-                                        <h4>Brittany McCaleb</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 5 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>I highly recommend DeSoto Bits and Bytes to anyone looking for a reliable and talented web design team. They truly exceeded my expectations!</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #FF9800">H</div>
-                                    <div class="author-details">
-                                        <h4>Harrison Hawks</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>They built a web application for me and migrated existing databases into the new app. Very happy with the results. Definitely recommend to anyone needing anything software related.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #2b5dff">O</div>
-                                    <div class="author-details">
-                                        <h4>Olen Booth</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>If you need a website built get ahold of Erick he took great care to make sure we got the product we wanted and then some! Over the moon happy with the website and the experience.</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #2bffce">N</div>
-                                    <div class="author-details">
-                                        <h4>Nicholas Tapley</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                          <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <div class="quote-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2-2-2H5c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2-2-2h-3c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h2c0 2-2 2.5-4 3"></path></svg>
-                                </div>
-                                <p>Fantastic service and highly recommended!</p>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar" style="background: #ffd52b">C</div>
-                                    <div class="author-details">
-                                        <h4>Chad Williamson</h4>
-                                        <div class="review-stars">★★★★★</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-             
-                     
-                    </div>
-                    
-                    <div class="testimonial-controls">
-                        <button class="prev-testimonial" aria-label="Previous testimonial">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-                        </button>
-                        <div class="testimonial-dots"></div>
-                        <button class="next-testimonial" aria-label="Next testimonial">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="latest-blog-section">
-            <div class="latest-blog-container">
-                <header class="latest-blog-header">
-                    <h2>From Our Blog</h2>
-                    <p>Explore our latest insights and articles on software development trends.</p>                </header>                <div class="latest-blog-grid">
-                    <div class="blog-card">
-                        <img loading="lazy" src="./images/smartphone-with-user-interface-concept.webp" alt="React Native mobile app development" class="blog-card-image">
-                        <div class="blog-card-content">
-                            <div class="blog-card-date">August 4, 2025</div>
-                            <h3 class="blog-card-title">Why React Native is the Smart Choice for Your Mobile App Development</h3>
-                            <p class="blog-card-excerpt">Discover how React Native enables us to build high-quality mobile apps for both iOS and Android platforms simultaneously, delivering faster results and better value...</p>
-                            <a href="/blog/react-native-development" class="blog-card-link">
-                                Read More
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <img loading="lazy" src="./images/undraw_programming_65t2.svg" alt="Programming illustration with person coding" class="blog-card-image">
-                        <div class="blog-card-content">
-                            <div class="blog-card-date">April 30, 2025</div>
-                            <h3 class="blog-card-title">Coding Basics: Getting Started with Programming</h3>
-                            <p class="blog-card-excerpt">Interested in learning to code but don't know where to start? Our guide breaks down the fundamentals of programming, popular languages for beginners, and practical first steps...</p>
-                            <a href="/blog/coding-basics" class="blog-card-link">
-                                Read More
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="blog-card">
-                        <img loading="lazy" src="./images/ui_design_two.webp" alt="UX Design Illustration" class="blog-card-image">
-                        <div class="blog-card-content">
-                            <div class="blog-card-date">April 20, 2025</div>
-                            <h3 class="blog-card-title">The Importance of User Experience (UX) Design in Software Development</h3>
-                            <p class="blog-card-excerpt">Discover how effective UX design drives business growth, increases user satisfaction, and creates competitive advantages...</p>
-                            <a href="/blog/ux-design" class="blog-card-link">
-                                Read More
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                            </a>
-                        </div>
-                    </div>                  
-                </div>
-                 <div class="view-all-blogs-link">
-                    <a href="/blog">View All Blog Posts</a>
-                </div>
-            </div>
-        </article>
-       
-    </main>
-
-    <div class="success-toast">
-        <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%; flex-direction: row; gap: 20px;">
-            <img src="./images/icons8-check-30.png" alt="checkmark" height="30" width="30">
-            <p>Message Sent Successfully</p>
-            <svg class="close-btn-success" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </div>
-        <div class="close-timer"></div>  
-    </div>
-    <div class="fail-toast">
-        <div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%; flex-direction: row; gap: 20px;">
-            <img src="./images/icons8-error-48.png" alt="error icon" height="30" width="30">
-            <p>Message Failed</p>
-            <svg class="close-btn-fail" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </div>
-        <div class="close-timer-fail"></div> 
-    </div>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <!-- Brand Section -->
-                <div class="footer-brand">
-                   
-                    <p style="font-size: 1.2rem; font-weight: 600; opacity: 1; display: flex; align-items: center; gap: 10px;">Desoto Bits & Bytes LLC
-                        <img src="./images/icons8-american-flag-96.png" loading="lazy" alt="American Flag" height="45" width="45">
-                    </p>
-                    <p>We're a veteran-owned software development company dedicated to delivering exceptional digital solutions, from Mobile Apps to Custom Software.</p>
-                    <a href="https://www.bbb.org/us/ms/olive-branch/profile/information-technology-services/desoto-bits-and-bytes-llc-0543-44187735/#sealclick" target="_blank" rel="nofollow"><img src="https://seal-memphis.bbb.org/seals/blue-seal-187-130-whitetxt-bbb-44187735.png" style="border: 0;" alt="Desoto Bits And Bytes, LLC BBB Business Review" /></a>                    <div class="footer-social">
-                        <a href="https://www.facebook.com/people/Desoto-Bits-Bytes-LLC/61560805109211/" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/desotobitsandbytes/?igsh=MWoyN2NzNHlvMGFvZQ%3D%3D&utm_source=qr" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/company/desoto-bits-bytes/" class="social-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                <rect x="2" y="9" width="4" height="12"/>
-                                <circle cx="4" cy="4" r="2"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <div class="footer-links">
-                        <a href="/about" class="footer-link">About Us</a>
-                        <a href="/services" class="footer-link">Services</a>
-                        <a href="/process" class="footer-link">Our Process</a>
-                        <a href="/faq" class="footer-link">Frequent Questions</a>
-                        <a href="/blog" class="footer-link">Blog</a>
-                    </div>
-                </div>
-
-                <!-- Services -->
-                <div class="footer-column">
-                    <h3>Our Services</h3>
-                    <div class="footer-links">
-                        <a href="/services/web-app" class="footer-link">Web Application</a>
-                        <a href="/services/company-website" class="footer-link">Company Website</a>
-                        <a href="/services/mobile-app" class="footer-link">Mobile Apps</a>
-                        <a href="/services/custom-software" class="footer-link">Custom Software</a>
-                    </div>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            <a href="tel:+16629321047">(662) 932-1047</a>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <a href="mailto:admin@desotobitsandbytes.com">admin@desotobitsandbytes.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            <a href="https://www.google.com/maps/place/Olive+Branch,+MS/@34.9423705,-89.8291196,13z/data=!3m1!4b1!4m6!3m5!1s0x8878205740333333:0x42a822421f720d0!8m2!3d34.9499256!4d-89.8123678!16s%2Fg%2F11c403x3cy?hl=en" target="_blank" rel="nofollow">Olive Branch, Mississippi</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Business Hours -->
-                <div class="footer-column">
-                    <h3>Business Hours</h3>
-                    <div class="footer-hours">
-                        <div class="hours-item">Monday: 8 AM–7 PM</div>
-                        <div class="hours-item">Tuesday: 8 AM–7 PM</div>
-                        <div class="hours-item">Wednesday: 8 AM–7 PM</div>
-                        <div class="hours-item">Thursday: 8 AM–7 PM</div>
-                        <div class="hours-item">Friday: 8 AM–7 PM</div>
-                        <div class="hours-item">Saturday: 8 AM–5 PM</div>
-                        <div class="hours-item">Sunday: 8 AM–5 PM</div>
-                        <div class="hours-note">Hours might differ on holidays</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="copyright">
-                    © 2025 Desoto Bits & Bytes. All rights reserved.
-                    
-                </div>
-                <div class="footer-bottom-links">
-                    <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef" class="footer-bottom-link">Privacy Policy</a>
-                    <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-bottom-link">Terms of Service</a>    
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-       function scrollToContactForm() {
-    const el = document.getElementById('main-contact-form');
-    if (el) {
-        const offset = 80
-        const elementPosition = el.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    }
-}
-    </script>
+        </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJTRDWHLY7"></script>
         <script>
-            // Function to format numbers with commas
-            function formatNumber(num) {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-PJTRDWHLY7');
+        </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./images/logo_light.png" alt="Trademark Construction">
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-cta">
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="javascript:void(0)" class="phone" id="getQuoteBtn">
+                Get a quote
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+            </a>
+        </div>
+    </header>
 
-// Function to animate a counter
-function animateCounter(element, target) {
-    const duration = 2000; // Animation duration in milliseconds
-            const steps = 60;
-            const stepValue = target / steps;
-            const stepDuration = duration / steps;
-            let current = 0;
+    <div class="mobile-menu">
+        <nav>
+            <a href="#home" class="mobile-menu-link">Home</a>
+            <a href="#services" class="mobile-menu-link">Services</a>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </nav>
+        <a href="tel:16629321047" class="phone">(662) 932-1047</a>
+    </div>
 
-            // Get the parent stat-value div to animate the + symbol
-            const statValue = element.closest('.stat-value');
-            const plusSymbol = statValue.querySelector('.stat-symbol');
-            
-            // Hide the plus symbol initially
-            if (plusSymbol) {
-                plusSymbol.style.opacity = '0';
-                plusSymbol.style.transform = 'translateY(10px)';
-            }
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+                <section class="hero" id="home">
+                    <div class="hero-content">
+                        <h1 class="hero-subtitle">Software Development</h1>
+                        <div class="hero-tagline">Bringing your dreams <br>to reality</div>
+                        <p class="hero-subtext">
+                            We're a software development company located in Olive Branch, MS. We build enterprise grade software, ranging from Mobile & Web Apps to APIs and AI integration.
+                        </p>
+                        
+                        <div class="hero-cta">
+                            <a href="tel:16629321047" class="btn btn-primary">(662) 932-1047</a>
+                            <a href="#about" class="btn btn-secondary">
+                                Learn more
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/></svg>
+                            </a>
+                        </div>
+                    </div>
 
-            const timer = setInterval(() => {
-                current += stepValue;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                    
-                    // Animate the plus symbol after counter finishes
-                    if (plusSymbol) {
-                        plusSymbol.style.transition = 'all 0.5s ease';
-                        plusSymbol.style.opacity = '1';
-                        plusSymbol.style.transform = 'translateY(0)';
-                    }
-                }
-                element.textContent = formatNumber(Math.floor(current));
-            }, stepDuration);
-        }
+                    <div class="hero-image">
+                        <div class="hero-slide active">
+                            <img src="./images/api_compressed.jpeg" alt="API">
+                        </div>
+                        <div class="hero-slide davinci">
+                            <img src="./images/davinci_compressed.jpeg" alt="Davinci AI" loading="lazy">
+                        </div>
+                        <div class="hero-slide">
+                            <img src="./images/keyboard.jpg" alt="Keyboard" loading="lazy">
+                        </div>
+                    </div>
+                </section>
 
-        // Intersection Observer to trigger animations when in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Start animations for all counters
-                    entry.target.querySelectorAll('.stat-number').forEach(counter => {
-                        const target = parseInt(counter.dataset.target);
-                        animateCounter(counter, target);
-                    });
-                    // Disconnect observer after animation starts
-                    observer.disconnect();
-                }
-            });
-        }, { threshold: 0.2 });
+                <div class="trusted-bar">
+                    <span>Trusted by</span>
+                    <div class="trusted-logos">
+                        <div class="trusted-logo">BadgerPMD</div>
+                        <div class="trusted-logo">HIS Prayer App</div>
+                        <div class="trusted-logo">Ultimate Roofing</div>
+                        <div class="trusted-logo">HawkScada</div>
+                        <div class="trusted-logo">Memphis Sealcoat</div>
+                        <div class="trusted-logo">CastlePro Plumbing</div>
+                        <div class="trusted-logo">Complete Home Insulation</div>
+                        <div class="trusted-logo">LuxuryValetNZ</div>
+                    </div>
+                </div>
 
-        // Observe the stats container
-        const statsContainer = document.getElementById('stats-container');
-        if (statsContainer) {
-            observer.observe(statsContainer);
-        }
- 
-        </script>        <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
-        <!-- GSAP and ScrollTrigger for animations -->
-    </script>
-    <style>
-    /* Updated styles for metrics section with vertical tabs */
-    .metrics-section {
-        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ee 100%);
-        padding: 6rem 0;
-        position: relative;
-    }
+                <section class="stats-section">
+                    <div class="stats-left">
+                        <div class="stat-item">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Successful projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,000,000+</div>
+                            <div class="stat-label">Lines of Code Written</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Coding Languages</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4+</div>
+                            <div class="stat-label">Years of Being in Business</div>
+                        </div>
+                    </div>
 
-    .metrics-header {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
+                    <div class="stats-right">
+                        <div class="stats-image">
+                            <img src="./images/custom_software.webp" alt="Custom Software">
+                        </div>
+                        
+                        <div class="stats-content">
+                            <h2>What we do</h2>
+                            <p>Our team specializes in creating custom software solutions tailored specifically for your business. <br>
+                                 We take the time to understand your unique challenges and never settle for cookie-cutter approaches.<br>
+                                Your success is our success, and we are here to help you achieve your goals.
+                                </p>
+                        </div>
+                    </div>
+                </section>
 
-    .metrics-title {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-    }
-
-    .metrics-subtitle {
-        font-size: 1.2rem;
-        color: #555;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    .metrics-tabs {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        background: white;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
-    }
-
-    .metrics-nav {
-        display: flex;
-        flex-direction: column;
-        border-right: 1px solid #eaeaea;
-        background: #f8f9fa;
-        min-width: 200px;
-    }
-
-    .metric-tab {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 1.25rem 1.5rem;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        color: #555;
-        font-weight: 600;
-        position: relative;
-        transition: all 0.3s ease;
-        text-align: left;
-    }
-
-    .metric-tab::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: transparent;
-        transition: all 0.3s ease;
-    }
-
-    .metric-tab.active {
-        color: #2b5dff;
-        background: rgba(43, 93, 255, 0.05);
-    }
-
-    .metric-tab.active::after {
-        background: #2b5dff;
-    }
-
-    .metrics-content {
-        flex: 1;
-    }
-
-    .metric-panel {
-        display: none;
-        padding: 2rem;
-    }
-
-    .metric-panel.active {
-        display: flex;
-        animation: fadeIn 0.5s ease forwards;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    .metric-icon {
-        flex: 0 0 100px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 1rem;
-    }
-
-    .metric-details {
-        flex: 1;
-    }
-
-    .metric-details h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        color: #222;
-    }
-
-
-    .metric-details p {
-        margin-bottom: 1.5rem;
-        line-height: 1.7;
-        color: #444;
-    }
-
-    .metric-stats {
-        display: flex;
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .stat-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .stat-value {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #2b5dff;
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-        color: #666;
-        text-align: center;
-    }
-
-    @media (max-width: 768px) {
-        .metrics-tabs {
-            flex-direction: column;
-        }
-        
-        .metrics-nav {
-            flex-direction: row;
-            overflow-x: auto;
-            min-width: 100%;
-            border-right: none;
-            border-bottom: 1px solid #eaeaea;
-        }
-        
-        .metric-tab {
-            padding: 1rem;
-            white-space: nowrap;
-        }
-        
-        .metric-tab::after {
-            top: auto;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 3px;
-        }
-        
-        .metric-panel.active {
-            flex-direction: column;
-        }
-        
-        .metric-icon {
-            margin-bottom: 1.5rem;
-        }
-        
-        .metric-stats {
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .stat-item {
-            flex-direction: row;
-            gap: 1rem;
-            align-items: center;
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-        }
-    }
-    </style>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="image-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img id="modalImage" class="modal-image" alt="Enlarged view">
+                <section class="services-section" id="services">
+                    <svg class="services-heading" viewBox="0 8.84 284.62 37.03" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <g class="services-strokes" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path class="services-path" d="M0 27.83Q0 18.92 4.79 13.88Q9.57 8.84 17.14 8.84Q22.09 8.84 26.07 11.21Q30.05 13.57 32.14 17.81Q34.23 22.05 34.23 27.42Q34.23 32.86 32.03 37.16Q29.83 41.46 25.81 43.66Q21.78 45.87 17.11 45.87Q12.06 45.87 8.08 43.43Q4.10 40.99 2.05 36.77Q0 32.54 0 27.83M4.88 27.91Q4.88 34.38 8.36 38.10Q11.84 41.82 17.09 41.82Q22.44 41.82 25.89 38.06Q29.35 34.30 29.35 27.39Q29.35 23.02 27.87 19.76Q26.39 16.50 23.55 14.71Q20.70 12.92 17.16 12.92Q12.13 12.92 8.51 16.37Q4.88 19.82 4.88 27.91Z"/>
+                            <path class="services-path" d="M56.76 45.26L56.76 41.46Q53.74 45.85 48.54 45.85Q46.24 45.85 44.25 44.97Q42.26 44.09 41.30 42.76Q40.33 41.43 39.94 39.50Q39.67 38.21 39.67 35.40L39.67 19.34L44.07 19.34L44.07 33.72Q44.07 37.16 44.34 38.35Q44.75 40.09 46.09 41.08Q47.44 42.07 49.41 42.07Q51.39 42.07 53.13 41.05Q54.86 40.04 55.58 38.29Q56.30 36.55 56.30 33.23L56.30 19.34L60.69 19.34L60.69 45.26L56.76 45.26Z"/>
+                            <path class="services-path" d="M67.53 45.26L67.53 19.34L71.48 19.34L71.48 23.27Q73.00 20.51 74.28 19.63Q75.56 18.75 77.10 18.75Q79.32 18.75 81.62 20.17L80.10 24.24Q78.49 23.29 76.88 23.29Q75.44 23.29 74.29 24.16Q73.14 25.02 72.66 26.56Q71.92 28.91 71.92 31.69L71.92 45.26L67.53 45.26Z"/>
+                            <path class="services-path" d="M97.07 33.76L101.54 33.37Q101.86 36.06 103.02 37.78Q104.17 39.50 106.62 40.56Q109.06 41.63 112.11 41.63Q114.82 41.63 116.89 40.82Q118.97 40.01 119.98 38.61Q121.00 37.21 121.00 35.55Q121.00 33.86 120.02 32.60Q119.04 31.35 116.80 30.49Q115.36 29.93 110.42 28.75Q105.49 27.56 103.52 26.51Q100.95 25.17 99.69 23.18Q98.44 21.19 98.44 18.73Q98.44 16.02 99.98 13.66Q101.51 11.30 104.47 10.08Q107.42 8.86 111.04 8.86Q115.01 8.86 118.05 10.14Q121.09 11.43 122.73 13.92Q124.37 16.41 124.49 19.56L119.95 19.90Q119.58 16.50 117.47 14.77Q115.36 13.04 111.23 13.04Q106.93 13.04 104.97 14.61Q103.00 16.19 103.00 18.41Q103.00 20.34 104.39 21.58Q105.76 22.83 111.54 24.13Q117.31 25.44 119.46 26.42Q122.58 27.86 124.07 30.07Q125.56 32.28 125.56 35.16Q125.56 38.01 123.93 40.54Q122.29 43.07 119.23 44.47Q116.16 45.87 112.33 45.87Q107.47 45.87 104.19 44.46Q100.90 43.04 99.04 40.20Q97.17 37.35 97.07 33.76Z"/>
+                            <path class="services-path" d="M149.22 36.91L153.76 37.48Q152.69 41.46 149.78 43.65Q146.88 45.85 142.36 45.85Q136.67 45.85 133.34 42.35Q130.00 38.84 130.00 32.52Q130.00 25.98 133.37 22.36Q136.74 18.75 142.11 18.75Q147.31 18.75 150.61 22.29Q153.91 25.83 153.91 32.25Q153.91 32.64 153.88 33.42L134.55 33.42Q134.79 37.70 136.96 39.97Q139.14 42.24 142.38 42.24Q144.80 42.24 146.51 40.97Q148.22 39.70 149.22 36.91M134.79 29.81L149.27 29.81Q148.97 26.54 147.61 24.90Q145.51 22.36 142.16 22.36Q139.14 22.36 137.07 24.39Q135.01 26.42 134.79 29.81Z"/>
+                            <path class="services-path" d="M159.23 45.26L159.23 19.34L163.18 19.34L163.18 23.27Q164.70 20.51 165.98 19.63Q167.26 18.75 168.80 18.75Q171.02 18.75 173.32 20.17L171.80 24.24Q170.19 23.29 168.58 23.29Q167.14 23.29 165.99 24.16Q164.84 25.02 164.36 26.56Q163.62 28.91 163.62 31.69L163.62 45.26L159.23 45.26Z"/>
+                            <path class="services-path" d="M183.13 45.26L173.27 19.34L177.91 19.34L183.47 34.86Q184.38 37.38 185.13 40.09Q185.72 38.04 186.77 35.16L192.53 19.34L197.05 19.34L187.23 45.26L183.13 45.26Z"/>
+                            <path class="services-path" d="M200.95 14.53L200.95 9.47L205.35 9.47L205.35 14.53L200.95 14.53M200.95 45.26L200.95 19.34L205.35 19.34L205.35 45.26L200.95 45.26Z"/>
+                            <path class="services-path" d="M228.96 35.77L233.28 36.33Q232.57 40.80 229.65 43.32Q226.73 45.85 222.49 45.85Q217.16 45.85 213.93 42.37Q210.69 38.89 210.69 32.40Q210.69 28.20 212.08 25.05Q213.48 21.90 216.32 20.32Q219.17 18.75 222.51 18.75Q226.73 18.75 229.42 20.89Q232.10 23.02 232.86 26.95L228.59 27.61Q227.98 25 226.43 23.68Q224.88 22.36 222.68 22.36Q219.36 22.36 217.29 24.74Q215.21 27.12 215.21 32.28Q215.21 37.50 217.21 39.87Q219.21 42.24 222.44 42.24Q225.02 42.24 226.76 40.65Q228.49 39.06 228.96 35.77Z"/>
+                            <path class="services-path" d="M254.79 36.91L259.33 37.48Q258.25 41.46 255.35 43.65Q252.44 45.85 247.92 45.85Q242.24 45.85 238.90 42.35Q235.57 38.84 235.57 32.52Q235.57 25.98 238.94 22.36Q242.31 18.75 247.68 18.75Q252.88 18.75 256.18 22.29Q259.47 25.83 259.47 32.25Q259.47 32.64 259.45 33.42L240.11 33.42Q240.36 37.70 242.53 39.97Q244.70 42.24 247.95 42.24Q250.37 42.24 252.08 40.97Q253.78 39.70 254.79 36.91M240.36 29.81L254.83 29.81Q254.54 26.54 253.17 24.90Q251.07 22.36 247.73 22.36Q244.70 22.36 242.64 24.39Q240.58 26.42 240.36 29.81Z"/>
+                            <path class="services-path" d="M263.09 37.52L267.43 36.84Q267.80 39.45 269.47 40.84Q271.14 42.24 274.15 42.24Q277.17 42.24 278.64 41.00Q280.10 39.77 280.10 38.11Q280.10 36.62 278.81 35.77Q277.91 35.18 274.32 34.28Q269.48 33.06 267.61 32.17Q265.75 31.27 264.78 29.70Q263.82 28.13 263.82 26.22Q263.82 24.49 264.61 23.01Q265.41 21.53 266.77 20.56Q267.80 19.80 269.57 19.27Q271.34 18.75 273.36 18.75Q276.42 18.75 278.72 19.63Q281.03 20.51 282.13 22.01Q283.23 23.51 283.64 26.03L279.35 26.61Q279.05 24.61 277.65 23.49Q276.25 22.36 273.68 22.36Q270.65 22.36 269.36 23.36Q268.07 24.37 268.07 25.71Q268.07 26.56 268.60 27.25Q269.14 27.95 270.29 28.42Q270.95 28.66 274.17 29.54Q278.83 30.79 280.68 31.58Q282.52 32.37 283.57 33.89Q284.62 35.40 284.62 37.65Q284.62 39.84 283.34 41.78Q282.06 43.73 279.64 44.79Q277.22 45.85 274.17 45.85Q269.12 45.85 266.47 43.75Q263.82 41.65 263.09 37.52Z"/>
+                        </g>
+                    </svg>
+                    <div class="services-container">
+                        <div class="services-content">
+                       
+                            <div class="service-item" data-service="mobile">
+                                <div class="service-number">01</div>
+                                <h2 class="service-title">Mobile Apps</h2>
+                                <p class="service-description">
+                                    Build powerful, native iOS and Android applications that deliver exceptional user experiences. From concept to deployment, we create apps that perform flawlessly and scale with your business.
+                                </p>
+                                <ul class="service-features">
+                                    <li class="service-feature-item">Native iOS and Android development</li>
+                                    <li class="service-feature-item">Cross-platform solutions with React Native or Flutter</li>
+                                    <li class="service-feature-item">Intuitive UI/UX design and prototyping</li>
+                                    <li class="service-feature-item">App store optimization and deployment</li>
+                                    <li class="service-feature-item">Performance optimization and testing</li>
+                                </ul>
+                            </div>
+                            <div class="service-item" data-service="web">
+                                <div class="service-number">02</div>
+                                <h2 class="service-title">Web Applications</h2>
+                                <p class="service-description">
+                                    Develop responsive, high-performance web applications that work seamlessly across all devices. We build modern solutions using cutting-edge technologies to meet your specific business needs.
+                                </p>
+                                <ul class="service-features">
+                                    <li class="service-feature-item">Responsive design for all screen sizes</li>
+                                    <li class="service-feature-item">Modern frameworks (React, Vue, Angular)</li>
+                                    <li class="service-feature-item">Database integration and API connections</li>
+                                    <li class="service-feature-item">Security features and authentication</li>
+                                    <li class="service-feature-item">Performance optimization and caching</li>
+                                </ul>
+                            </div>
+                            <div class="service-item" data-service="api">
+                                <div class="service-number">03</div>
+                                <h2 class="service-title">APIs</h2>
+                                <p class="service-description">
+                                    Build high-performance, low-latency APIs using Express.js that power your applications. We implement secure authentication with JWT, bcrypt for password hashing, and SQL databases for reliable data storage. Our APIs are designed for speed, security, and scalability.
+                                </p>
+                                <ul class="service-features">
+                                    <li class="service-feature-item">Low-latency APIs built with Express.js</li>
+                                    <li class="service-feature-item">JWT (JSON Web Tokens) for secure authentication</li>
+                                    <li class="service-feature-item">bcrypt for password hashing and security</li>
+                                    <li class="service-feature-item">SQL databases for reliable local data storage</li>
+                                    <li class="service-feature-item">RESTful architecture and comprehensive API documentation</li>
+                                </ul>
+                            </div>
+                            <div class="service-item" data-service="website">
+                                <div class="service-number">04</div>
+                                <h2 class="service-title">Company Websites</h2>
+                                <p class="service-description">
+                                    Build modern, high-performance websites with SEO-focused architecture and semantic HTML. We create stunning, conversion-focused sites that represent your brand professionally while delivering exceptional speed and search engine visibility.
+                                </p>
+                                <ul class="service-features">
+                                    <li class="service-feature-item">Modern, cutting-edge design and user experience</li>
+                                    <li class="service-feature-item">SEO-focused architecture and optimization</li>
+                                    <li class="service-feature-item">Semantic HTML for accessibility and SEO</li>
+                                    <li class="service-feature-item">High-performance optimization and fast loading</li>
+                                    <li class="service-feature-item">Mobile-first responsive design</li>
+                                </ul>
+                            </div>
+                            <div class="service-item" data-service="ai">
+                                <div class="service-number">05</div>
+                                <h2 class="service-title">AI Integration</h2>
+                                <p class="service-description">
+                                    Integrate artificial intelligence and machine learning capabilities into your applications. Automate processes, gain insights, and create intelligent solutions that adapt and learn.
+                                </p>
+                                <ul class="service-features">
+                                    <li class="service-feature-item">Machine learning model integration</li>
+                                    <li class="service-feature-item">Natural language processing (NLP)</li>
+                                    <li class="service-feature-item">Computer vision and image recognition</li>
+                                    <li class="service-feature-item">Process automation and chatbots</li>
+                                    <li class="service-feature-item">Predictive analytics and insights</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="reviews-section" id="reviews">
+                    <h2 class="reviews-heading">What Our Clients Say</h2>
+                    <div class="reviews-container">
+                        <div class="reviews-track">
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I can't say enough good about Desoto Bits & Bytes! I had an idea for a subscription based software and was put in touch with Erick Crowne for developing it. Erick exceeded my expectations, building a fully functioning CRM/Project Management, web-based application that provides homebuilders all the resources they need for working day to day! If not only has good functionality, but he did an incredible job with appearance and design! I would highly recommend Desoto Bits & Bytes to anyone needing software development!"</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Brandon Gustafson</div>
+                                    <div class="review-author-company">CEO, BadgerPMD</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I highly recommend DeSoto Bits and Bytes. I worked with Erick Crowne who did an amazing job of developing my app idea. Erick was very patient and skilled and walked me through the process of bringing my idea into reality. I am impressed with the quality of work, the professionalism and most of all the caring customer service."</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Lorna Amey</div>
+                                    <div class="review-author-company">CEO, HIS Prayer App</div>
         </div>
     </div>
 
-    <!-- Image Modal JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const crmImage = document.getElementById('crmImage');
-            const hisPrayerImage = document.getElementById('hisPrayerImage');
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const closeModal = document.querySelector('.close-modal');
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I am the owner of two businesses and have been in business over 18 years. I have worked with several software companies over the years. Erick, with DeSoto Bits and Bytes, has helped me more than most. His knowledge and dedication to help others is first class. It is great to have someone that I can speak with whenever needed, and who understands what I am needing. From websites, SEO, custom software, app development etc... Erick is the best."</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Paul Ollar</div>
+                                    <div class="review-author-company">CEO, Ultimate Roofing</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"They built a web application for me and migrated existing databases into the new app. Very happy with the results. Definitely recommend to anyone needing anything software related."</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Olen Booth</div>
+                                    <div class="review-author-company">CEO, HawkScada</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"If you need a website built get ahold of Erick he took great care to make sure we got the product we wanted and then some! Over the moon happy with the website and the experience."</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Nicholas Tapley</div>
+                                    <div class="review-author-company">CEO, Memphis Sealcoat</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I recently had the pleasure of working with DeSoto Bits and Bytes to create my website, and I couldn't be happier with the results. From the initial consultation to the final launch, the team was professional, attentive, and incredibly skilled. They took the time to understand my vision and needs, providing valuable insights that enhanced the overall design. The communication throughout the process was excellent; I always felt informed and involved. The final product is not only visually appealing but also user-friendly and optimized for search engines. I've received positive feedback from clients and peers alike! I highly recommend DeSoto Bits and Bytes to anyone looking for a reliable and talented web design team. They truly exceeded my expectations!"</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Harrison Hawks</div>
+                                    <div class="review-author-company">CEO, Castle Pro Plumbing</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"This is an awesome local company. I came to them with a problem and they solved it through some custom software. They built a custom CRM and Expense tracker for my business. Highly recommend!"</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Andy Stuckey</div>
+                                    <div class="review-author-company">CEO, Complete Home Insulation</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"Erick helped me build my own Website for my new car Valet Grooming business. Incredibly great customer service and very helpful with on going changes to my new website. Made it look very appealing and the layout is easy to look at. Would 100% recommend him if you need someone to do a good job building you a website, very happy with the service 👍"</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Joshua Boyce</div>
+                                    <div class="review-author-company">CEO, LuxuryValetNZ</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I hired Desoto Bits and Bytes to create a personalized application for managing my credit cards, and I'm extremely satisfied with the outcome. Before this, tracking everything was a hassle. Now, I have a secure login that takes me to a comprehensive dashboard. I can easily view all my cards, see detailed payment histories, track interest rates, and monitor my overall debt situation. It even sends me automated email reminders before payments are due, which is incredibly helpful. The app is exactly what I envisioned. Great work by the Desoto Bits and Bytes team!"</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Ralph Hawkins</div>
+                                    <div class="review-author-company">Business Owner</div>
+                                </div>
+                            </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"Working with Desoto Bits & Bytes was a pleasure. Their technical expertise combined with great communication made the entire process smooth and successful. I highly recommend them for any software development needs!"</p>
+                                <div class="review-author">
+                                    <div class="review-author-name">Sarah Mitchell</div>
+                                    <div class="review-author-company">Business Owner</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews-controls">
+                        <div class="reviews-dots">
+                            <span class="review-dot active" data-index="0"></span>
+                            <span class="review-dot" data-index="1"></span>
+                            <span class="review-dot" data-index="2"></span>
+                            <span class="review-dot" data-index="3"></span>
+                            <span class="review-dot" data-index="4"></span>
+                            <span class="review-dot" data-index="5"></span>
+                            <span class="review-dot" data-index="6"></span>
+                            <span class="review-dot" data-index="7"></span>
+                            <span class="review-dot" data-index="8"></span>
+                            <span class="review-dot" data-index="9"></span>
+                        </div>
+                        <div class="reviews-nav">
+                            <button class="review-nav-btn review-nav-prev" aria-label="Previous review">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1a1a1a">
+                                    <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/>
+                                </svg>
+                            </button>
+                            <button class="review-nav-btn review-nav-next" aria-label="Next review">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1a1a1a">
+                                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
 
-            // Function to open modal with any image
-            function openModal(imageElement) {
-                modal.style.display = 'block';
-                modalImage.src = imageElement.src;
-                modalImage.alt = imageElement.alt;
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            }
+                <section class="get-in-touch-section" id="contact">
+                    <div class="get-in-touch-wrapper">
+                        <h2 class="get-in-touch-hero">It's nice to meet ya<span class="hero-arrow-indicator" id="heroArrowIndicator">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                                <path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/>
+                            </svg>
+                        </span></h2>
+                        <div class="get-in-touch-content">
+                            <div class="get-in-touch-left">
+                                <p class="get-in-touch-description">For general enquiries, please fill out the form to get in touch.</p>
+                                <p class="get-in-touch-email-alt">Hate contact forms? <a href="mailto:admin@desotobitsandbytes.com" class="email-link">admin@desotobitsandbytes.com</a></p>
+                                <p class="get-in-touch-phone-alt">Or give us a call: <a href="tel:16629321047" class="email-link">(662) 932-1047</a></p>
+                                <p class="get-in-touch-hours">Business Hours:<br>
+                                    Monday - Friday: 7:00 AM - 7:00 PM<br>
+                                    Saturday - Sunday: 8:00 AM - 5:00 PM</p>
+                            </div>
+                            <div class="get-in-touch-right">
+                                <form id="getInTouchForm" class="get-in-touch-form">
+                                    <div class="form-field-group">
+                                        <input type="text" id="touchName" name="name" placeholder="Name" required>
+                                    </div>
+                                    <div class="form-field-group">
+                                        <input type="email" id="touchEmail" name="email" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="form-field-group">
+                                        <textarea id="touchMessage" name="message" placeholder="Tell us about your project" rows="6" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn-touch-submit">
+                                        Send Message
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1a1a1a">
+                                            <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            // Function to close modal
-            function closeModalFunc() {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Restore scrolling
-            }
+                <section class="faq-section" id="faq">
+                    <div class="faq-wrapper">
+                        <div class="faq-header">
+                            <div class="faq-header-background"></div>
+                            <div class="faq-header-content">
+                                <h2 class="faq-title">Frequently Asked Questions</h2>
+                                <p class="faq-subtext">Common questions we get asked by our clients.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-bento-grid">
+                            <!-- How Long Does It Take -->
+                            <div class="faq-bento-card faq-card-1">
+                                <h3 class="faq-card-title">Timeline</h3>
+                                <p class="faq-card-subtitle">How long does it take?</p>
+                                <p class="faq-card-description">A simple website might take 2-4 weeks, while complex enterprise applications could take 3-6 months or more. We provide realistic timelines tailored to your project once we get a full understanding of the scope.</p>
+                            </div>
 
-            // Open modal when CRM image is clicked
-            if (crmImage) {
-                crmImage.addEventListener('click', function() {
-                    openModal(crmImage);
-                });
-            }
+                            <!-- Programming Languages -->
+                            <div class="faq-bento-card faq-card-2">
+                                <h3 class="faq-card-title">Technologies</h3>
+                                <p class="faq-card-subtitle">What programming languages?</p>
+                                <p class="faq-card-description">JavaScript, React, Node.js, Python, Java, C#, SQL, Express.js—we're polyglots in the coding world, choosing the right tool for each job.</p>
+                            </div>
 
-            // Open modal when His Prayer image is clicked
-            if (hisPrayerImage) {
-                hisPrayerImage.addEventListener('click', function() {
-                    openModal(hisPrayerImage);
-                });
-            }
+                            <!-- Maintenance & Support -->
+                            <div class="faq-bento-card faq-card-3">
+                                <h3 class="faq-card-title">Support</h3>
+                                <p class="faq-card-subtitle">Ongoing maintenance?</p>
+                                <p class="faq-card-description">Absolutely! We offer maintenance packages to keep your software running smoothly with regular updates, bug fixes, and security patches.</p>
+                            </div>
 
-            // Close modal when X is clicked
-            closeModal.addEventListener('click', closeModalFunc);
+                            <!-- Cost -->
+                            <div class="faq-bento-card faq-card-4">
+                                <h3 class="faq-card-title">Investment</h3>
+                                <p class="faq-card-subtitle">How much does it cost?</p>
+                                <p class="faq-card-description">Pricing varies based on complexity, features, and timeline. We provide detailed quotes after understanding your needs—no hidden fees or surprises.</p>
+                            </div>
 
-            // Close modal when clicking outside the image
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeModalFunc();
-                }
-            });
+                            <!-- Existing Systems -->
+                            <div class="faq-bento-card faq-card-5">
+                                <h3 class="faq-card-title">Integration</h3>
+                                <p class="faq-card-subtitle">Work with existing systems?</p>
+                                <p class="faq-card-description">Yes! We're integration experts. From modern REST APIs to legacy systems, we connect your CRM, payment processors, and third-party services seamlessly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.style.display === 'block') {
-                    closeModalFunc();
-                }
-            });
-        });
-    </script>
+                <footer class="footer-section">
+                    <div class="footer-wrapper">
+                        <p class="footer-copyright">© 2025 Desoto Bits and Bytes LLC. All rights reserved.</p>
+                        <div class="footer-links">
+                            <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef class="footer-link">Privacy Policy</a>
+                            <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-link">Terms of Service</a>
+                        </div>
+                    </div>
+                </footer>
+
+        </div>
+    </div>
+
+    <!-- Contact Form Overlay -->
+    <div class="contact-overlay" id="contactOverlay">
+        <div class="contact-form-panel" id="contactFormPanel">
+            <button class="contact-close-btn" id="contactCloseBtn" aria-label="Close contact form">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </button>
+            <div class="contact-form-content">
+                <h2 class="contact-form-title">Hey! How can we help?</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name & Company</label>
+                            <input type="text" id="name" name="name" placeholder="John from Apple" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@apple.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us more about your project</label>
+                        <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
+                    </div>
+                    <div class="contact-form-footer">
+                        <p class="contact-email-text">Our Email <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
+                        <button type="submit" class="btn btn-submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js" integrity="sha512-t4hwZimhnCKT3YLAsEcAcRDkngVFfCcUIfNLIjklrIZAZKD+GfQMP7HbRcsVHxNS48WRBSywNU1uSM2zzLQt1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" integrity="sha512-yOZoZc/D5ZPHwjBduLkgeGHhFlQ7CsslA5D1egpQgeV1QcV4OdCcwmRLkH7p/hEHHF1cJp3H2OpGpd7oELFGxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" integrity="sha512-vuNgw6lF+p97XmL9lFpbQZWBXxIFnwUVt7J/uknE4NJru5GJjjhIAauXdDtNdezqOJFnit+M3AeaM+gZ93hlmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
