@@ -162,6 +162,10 @@
             position: absolute;
         }
 
+        #getQuoteBtn{
+            cursor: pointer;
+        }
+
         .mobile-menu-toggle span:nth-child(1) {
             top: 0;
         }
