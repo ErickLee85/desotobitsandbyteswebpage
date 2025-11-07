@@ -7,7 +7,7 @@
             
             // Disable submit button
             submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.8';
+            submitBtn.style.opacity = '0.5';
             submitBtn.innerHTML = 'Sending...';
             
             try {
@@ -27,7 +27,41 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    var count = 200;
+                    var defaults = {
+                    origin: { y: 0.7 }
+                    };
+        
+                    function fire(particleRatio, opts) {
+                    confetti({
+                        ...defaults,
+                        ...opts,
+                        particleCount: Math.floor(count * particleRatio)
+                    });
+                    }
+        
+                    fire(0.25, {
+                    spread: 26,
+                    startVelocity: 55,
+                    });
+                    fire(0.2, {
+                    spread: 60,
+                    });
+                    fire(0.35, {
+                    spread: 100,
+                    decay: 0.91,
+                    scalar: 0.8
+                    });
+                    fire(0.1, {
+                    spread: 120,
+                    startVelocity: 25,
+                    decay: 0.92,
+                    scalar: 1.2
+                    });
+                    fire(0.1, {
+                    spread: 120,
+                    startVelocity: 45,
+                    });
                     contactForm.reset();
                     // Close the contact form overlay
                     const contactOverlay = document.getElementById('contactOverlay');
@@ -61,7 +95,7 @@
             
             // Disable submit button
             submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.8';
+            submitBtn.style.opacity = '0.5';
             submitBtn.innerHTML = 'Sending...';
             
             try {
@@ -81,7 +115,41 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert('Thank you for reaching out! We\'ll get back to you soon.');
+                    var count = 200;
+                    var defaults = {
+                    origin: { y: 0.7 }
+                    };
+        
+                    function fire(particleRatio, opts) {
+                    confetti({
+                        ...defaults,
+                        ...opts,
+                        particleCount: Math.floor(count * particleRatio)
+                    });
+                    }
+        
+                    fire(0.25, {
+                    spread: 26,
+                    startVelocity: 55,
+                    });
+                    fire(0.2, {
+                    spread: 60,
+                    });
+                    fire(0.35, {
+                    spread: 100,
+                    decay: 0.91,
+                    scalar: 0.8
+                    });
+                    fire(0.1, {
+                    spread: 120,
+                    startVelocity: 25,
+                    decay: 0.92,
+                    scalar: 1.2
+                    });
+                    fire(0.1, {
+                    spread: 120,
+                    startVelocity: 45,
+                    });
                     getInTouchForm.reset();
                 } else {
                     alert('Failed to send message. Please try again.');
