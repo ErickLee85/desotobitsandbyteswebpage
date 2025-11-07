@@ -1405,11 +1405,10 @@
             header {
                 padding: 1rem 5%;
                 overflow: hidden;
+                background: transparent !important;
+                backdrop-filter: none !important;
             }
 
-            .logo img {
-                display: none;
-            }
 
             nav {
                 display: none;
