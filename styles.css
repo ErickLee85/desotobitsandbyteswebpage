@@ -986,6 +986,12 @@
             align-items: center;
         }
 
+        .stats-section > .marquee-wrapper {
+            grid-column: 1 / -1;
+            width: 100%;
+            margin-top: 4rem;
+        }
+
         .stats-left {
             display: flex;
             flex-direction: column;
@@ -1447,6 +1453,20 @@
                 grid-template-columns: 1fr;
                 gap: 3rem;
                 padding: 4rem 5%;
+            }
+
+            .stats-section > .marquee-wrapper {
+                margin-top: 2rem;
+                padding: 2rem 0;
+            }
+
+            .marquee__item {
+                width: 100px;
+                margin-inline-end: 2rem;
+            }
+
+            .marquee__item img {
+                height: 50px;
             }
 
             .stats-left {
@@ -1964,8 +1984,59 @@
 
             .footer-link {
                 font-size: 0.9rem;
-            }
         }
+    }
+
+    /* Marquee Styles */
+    .marquee-wrapper {
+        width: 100%;
+        padding: 3rem 0;
+    }
+
+    .marquee {
+        overflow: hidden;
+        position: relative;
+        mask-image: linear-gradient(
+            to right,
+            hsl(0 0% 0% / 0),
+            hsl(0 0% 0% / 1) 10%,
+            hsl(0 0% 0% / 1) 90%,
+            hsl(0 0% 0% / 0)
+        );
+    }
+
+    .marquee__ctn {
+        display: flex;
+        width: 100%;
+    }
+
+    .marquee__track {
+        display: flex;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+        .marquee__ctn {
+            transform: translate3d(0, 0, 0) scale(1);
+            perspective: 1px;
+        }
+    }
+
+    .marquee__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 120px;
+        margin-inline-end: 3rem;
+    }
+
+    .marquee__item img {
+        height: 60px;
+        width: 100%;
+        object-fit: contain;
+        backface-visibility: hidden;
+        filter: brightness(100%);
+    }
 
     /* From Uiverse.io by xXJollyHAKERXx */
 
