@@ -165,6 +165,7 @@
 
         #getQuoteBtn{
             cursor: pointer;
+
         }
 
         .mobile-menu-toggle span:nth-child(1) {
@@ -1290,6 +1291,7 @@
             font-size: 0.95rem;
             color: rgba(0, 0, 0, 0.6);
             margin: 0;
+            
         }
 
         .contact-email-link {
@@ -1704,7 +1706,6 @@
         }
 
         .faq-bento-card {
-            background: var(--card-bg);
             border-radius: 24px;
             padding: 2.5rem;
             display: flex;
@@ -1712,10 +1713,9 @@
             position: relative;
             overflow: hidden;
             transition: all 500ms ease;
-            border:1px solid #aeaeae;
-            background: linear-gradient(145deg, #f0f0f0, #cacaca);
-            box-shadow:  5px 5px 7px #707070,
-            -5px -5px 7px #ffffff;
+            box-shadow: inset 5px -5px 5px #d6d6d6,
+            inset 5px -5px 5px #ffffff;
+            border:1px solid #e1e1e1;
 
         }
 
@@ -1784,8 +1784,7 @@
             color: rgba(0, 0, 0, 0.9);
             margin-bottom: 0.5rem;
             line-height: 1.2;
-            letter-spacing: -0.5px;
-        }
+            font-family: "Bebas Neue", sans-serif;        }
 
         .faq-card-subtitle {
             font-size: 1rem;
