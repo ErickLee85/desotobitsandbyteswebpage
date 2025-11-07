@@ -61,12 +61,14 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            overflow: visible;
         }
 
         .logo img {
             height: 220px;
             position: absolute;
             width: auto;
+            pointer-events: none;
         }
 
         nav {
@@ -1403,6 +1405,11 @@
         @media (max-width: 943px) {
             header {
                 padding: 1rem 5%;
+                overflow: hidden;
+            }
+
+            .logo img {
+                display: none;
             }
 
             nav {
