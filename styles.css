@@ -1039,10 +1039,12 @@
             height: 100%;
             object-fit: cover;
             transition: transform 400ms ease;
+            object-position: right;
+            transform: scale(1.4);
         }
 
         .stats-image img:hover {
-            transform: scale(1.1);
+                transform: scale(1.5);
         }
         .stats-content h2 {
             font-size: 4rem;
