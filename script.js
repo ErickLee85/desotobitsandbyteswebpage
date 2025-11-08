@@ -347,23 +347,6 @@
                          });
                      }
                      
-                     // Animate WebGL canvas
-                     if (webglCanvas) {
-                         gsap.fromTo(webglCanvas, {
-                             opacity: 0
-                         }, {
-                             opacity: 1,
-                             duration: 1.5,
-                             delay: 0.8,
-                             ease: 'power2.out',
-                             scrollTrigger: {
-                                 trigger: ".webgl-section",
-                                 start: "top 80%",
-                                 toggleActions: "play none none none"
-                             }
-                         });
-                     }
-
                      // Animate reviews heading on scroll
                      const reviewsHeading = document.querySelector('.reviews-heading');
                      if (reviewsHeading) {
