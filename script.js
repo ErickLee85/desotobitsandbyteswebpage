@@ -185,10 +185,10 @@
                     smoother = ScrollSmoother.create({
                         wrapper:'#smooth-wrapper',
                         content:'#smooth-content',
-                        smooth:2
+                        smoother:1
                     });
                     // Refresh ScrollTrigger after ScrollSmoother is created
-                    ScrollTrigger.refresh();
+                  
                 } else {
                     // On mobile, add a class to enable normal scrolling
                     const smoothWrapper = document.getElementById('smooth-wrapper');

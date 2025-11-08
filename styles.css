@@ -23,6 +23,7 @@
             overflow-x: hidden;
             width: 100%;
             max-width: 100vw;
+            position: relative;
         }
 
         /* Mobile scroll fix - allow normal scrolling when ScrollSmoother is disabled */
@@ -2103,4 +2104,11 @@
         to {
             transform: rotate(360deg);
         }
+    }
+
+    .social-links {display: flex; gap: 10px;}
+
+    .social-icon {
+        height:40px;
+        width:40px;
     }
