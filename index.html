@@ -535,7 +535,7 @@
                 <section class="webgl-section">
                     <div class="webgl-container">
                         <div class="webgl-header">
-                            <h2 class="webgl-title">We Build 3D Stuff, Too</h2>
+                            <h2 class="webgl-title">We Build <span>3D</span> Stuff, Too</h2>
                             <p class="webgl-subtitle">From interactive visualizations to immersive 3D experiences, we bring your ideas to life in ways that captivate and engage. Because great software isn't just functional—it's unforgettable.</p>
                         </div>
                         <canvas class="webgl-content"></canvas>
@@ -895,7 +895,7 @@
             // scene.background = new THREE.Color(0x1a1a1a);
             
             const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1, 100 );
-            camera.position.set( 0, 2, 5 );
+            camera.position.set( 3, 1.5, 4 ); // Changed to angled view: right, slightly up, and forward
             
             const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true});
             // const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true}); // use this to make background transparent
@@ -1003,7 +1003,7 @@
 
                 // Optional: rotate the model slowly
                 if (model) {
-                    model.rotation.y += 0.003;
+                    model.rotation.y += 0.0009;
                 }
 
                 renderer.render(scene, camera);

@@ -222,7 +222,7 @@
                 
                     gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,});
                     gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1})
-                    gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:1,stagger:0.1,delay:1.2})
+                    gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2})
                     gsap.fromTo(".stats-image",{opacity:0},{
                         opacity:1,duration:1.5,scrollTrigger: {
                                 trigger: ".stats-section",
@@ -299,7 +299,7 @@
                                 toggleActions: "play none none none",
                         }
                     })
-                     gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:1,stagger:0.1,delay:1.2,
+                     gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2,
                          scrollTrigger: {
                                  trigger: ".stats-section",
                                  start: "top 50%",
