@@ -307,6 +307,63 @@
                          }
                      })
 
+                     // Animate WebGL section title and subtitle
+                     const webglTitle = document.querySelector('.webgl-title');
+                     const webglSubtitle = document.querySelector('.webgl-subtitle');
+                     const webglCanvas = document.querySelector('.webgl-content');
+                     
+                     if (webglTitle && webglSubtitle) {
+                         let splitWebglTitle = SplitText.create([".webgl-title"], { type: "words" });
+                         let splitWebglSubtitle = SplitText.create([".webgl-subtitle"], { type: "words" });
+                         
+                         gsap.fromTo(splitWebglTitle.words, {
+                             opacity: 0,
+                             filter: 'blur(10px)'
+                         }, {
+                             opacity: 1,
+                             filter: 'blur(0px)',
+                             duration: 1,
+                             stagger: 0.1,
+                             delay: 0.5,
+                             scrollTrigger: {
+                                 trigger: ".webgl-section",
+                                 start: "top 80%",
+                                 toggleActions: "play none none none"
+                             }
+                         });
+                         
+                         gsap.fromTo(splitWebglSubtitle.words, {
+                             opacity: 0
+                         }, {
+                             opacity: 1,
+                             duration: 1,
+                             stagger: 0.1,
+                             delay: 1.2,
+                             scrollTrigger: {
+                                 trigger: ".webgl-section",
+                                 start: "top 80%",
+                                 toggleActions: "play none none none"
+                             }
+                         });
+                     }
+                     
+                     // Animate WebGL canvas
+                     if (webglCanvas) {
+                         gsap.fromTo(webglCanvas, {
+                             opacity: 0
+                         }, {
+                             opacity: 1,
+                             duration: 1.5,
+                             delay: 0.8,
+                             ease: 'power2.out',
+                             scrollTrigger: {
+                                 trigger: ".webgl-section",
+                                 start: "top 80%",
+                                 toggleActions: "play none none none"
+                             }
+                         });
+                     }
+
                      // Animate reviews heading on scroll
                      const reviewsHeading = document.querySelector('.reviews-heading');
                      if (reviewsHeading) {

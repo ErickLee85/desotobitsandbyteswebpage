@@ -303,6 +303,9 @@
                                         <img src="./images/marquee/gsap.svg" alt="GSAP">
                                     </div>
                                     <div class="marquee__item">
+                                        <img src="./images/marquee/three.png" alt="Three.js">
+                                    </div>
+                                    <div class="marquee__item">
                                         <img src="./images/marquee/typescript-svgrepo-com.svg" alt="TypeScript">
                                     </div>
                                     <div class="marquee__item">
@@ -369,6 +372,9 @@
                                     </div>
                                     <div class="marquee__item">
                                         <img src="./images/marquee/gsap.svg" alt="GSAP">
+                                    </div>
+                                    <div class="marquee__item">
+                                        <img src="./images/marquee/three.png" alt="Three.js">
                                     </div>
                                     <div class="marquee__item">
                                         <img src="./images/marquee/typescript-svgrepo-com.svg" alt="TypeScript">
@@ -523,6 +529,16 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <section class="webgl-section">
+                    <div class="webgl-container">
+                        <div class="webgl-header">
+                            <h2 class="webgl-title">We Like 3D Stuff, Too</h2>
+                            <p class="webgl-subtitle">From interactive visualizations to immersive 3D experiences, we bring your ideas to life in ways that captivate and engage. Because great software isn't just functional—it's unforgettable.</p>
+                        </div>
+                        <canvas class="webgl-content"></canvas>
                     </div>
                 </section>
                 
@@ -680,6 +696,8 @@
                     </div>
                 </section>
 
+             
+
                 <section class="faq-section" id="faq">
                     <div class="faq-wrapper">
                         <div class="faq-header">
@@ -793,7 +811,60 @@
         <div class="spinner">
             <div class="spinner1"></div>
         </div>
-    </div>-->
+    </div> -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "GLTFLoader": "https://unpkg.com/three@0.158.0/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+    <script type="module">
+           import * as THREE from 'three';
+           const { OrbitControls } = await import('OrbitControls');
+            const canvas = document.querySelector('.webgl-content');
+            const scene = new THREE.Scene();
+            // scene.background = new THREE.Color(0x1a1a1a);
+            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
+            // const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true}); // use this to make background transparent
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.setAnimationLoop( animate );
+            const controls = new OrbitControls( camera, renderer.domElement );
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.enableZoom = true;
+            const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            const material = new THREE.MeshPhysicalMaterial({color: 0x0091ff, shininess:150, clearcoat:1, clearcoatRoughness:0.1});
+            const cube = new THREE.Mesh( geometry, material );
+            scene.add( cube );
+
+            camera.position.z = 3;
+
+            const color = 0xFFFFFF;
+            const intensity = 2;
+            const light = new THREE.DirectionalLight(color, intensity);
+            const light2 = new THREE.AmbientLight(color, 1);
+            light2.position.set(1, 2, 4);
+            light.position.set(-1, 2, 4);
+            scene.add(light);
+            scene.add(light2);
+
+            function animate() {
+                cube.rotation.x += 0.005;
+                cube.rotation.y += 0.005;
+                renderer.render( scene, camera );
+            }
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js" integrity="sha512-BQAAkzDHfly7jPwVhh0SpGxbvjRNEapCNkJ0VNSMFervZLsaeUch4P92skLoD70NXWlI1GOgrXRfR50b/quSSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -801,6 +872,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" integrity="sha512-yOZoZc/D5ZPHwjBduLkgeGHhFlQ7CsslA5D1egpQgeV1QcV4OdCcwmRLkH7p/hEHHF1cJp3H2OpGpd7oELFGxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" integrity="sha512-dgqdovLK5r/NMiV5YfWA0xC94DKGrm+6q1OZpuWHm+uBGLTck6wu58WAX9lmy8wec6cVnsgxbPJ60DtmNFnfgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" integrity="sha512-vuNgw6lF+p97XmL9lFpbQZWBXxIFnwUVt7J/uknE4NJru5GJjjhIAauXdDtNdezqOJFnit+M3AeaM+gZ93hlmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
+
 </html>
