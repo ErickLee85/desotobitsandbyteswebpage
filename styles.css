@@ -531,6 +531,12 @@
             position: relative;
             overflow: hidden;
             height: 600px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            touch-action: pan-y; /* Allow vertical scrolling but capture horizontal swipes */
+            cursor: url('./images/hand-shake-cursor.svg') 32 32, auto;
         }
 
         .reviews-track {

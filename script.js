@@ -840,6 +840,84 @@
                      showReview(nextIndex);
                  });
              }
+
+             // Swipe functionality
+             const reviewsContainer = document.querySelector('.reviews-container');
+             if (reviewsContainer) {
+                 let startX = 0;
+                 let startY = 0;
+                 let distX = 0;
+                 let distY = 0;
+                 let isDragging = false;
+                 const threshold = 50; // Minimum distance to trigger swipe
+
+                 // Mouse events
+                 reviewsContainer.addEventListener('mousedown', (e) => {
+                     startX = e.clientX;
+                     startY = e.clientY;
+                     isDragging = true;
+                 });
+
+                 reviewsContainer.addEventListener('mousemove', (e) => {
+                     if (!isDragging) return;
+                     e.preventDefault();
+                 });
+
+                 reviewsContainer.addEventListener('mouseup', (e) => {
+                     if (!isDragging) return;
+                     distX = e.clientX - startX;
+                     distY = e.clientY - startY;
+                     
+                     // Check if horizontal swipe is dominant
+                     if (Math.abs(distX) > Math.abs(distY) && Math.abs(distX) > threshold) {
+                         if (distX > 0) {
+                             // Swipe right - show previous
+                             const prevIndex = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+                             showReview(prevIndex);
+                         } else {
+                             // Swipe left - show next
+                             const nextIndex = (currentReview + 1) % reviewCards.length;
+                             showReview(nextIndex);
+                         }
+                     }
+                     
+                     isDragging = false;
+                 });
+
+                 reviewsContainer.addEventListener('mouseleave', () => {
+                     isDragging = false;
+                 });
+
+                 // Touch events
+                 reviewsContainer.addEventListener('touchstart', (e) => {
+                     startX = e.touches[0].clientX;
+                     startY = e.touches[0].clientY;
+                 }, { passive: true });
+
+                 reviewsContainer.addEventListener('touchmove', (e) => {
+                     // Allow scrolling but track the touch movement
+                     distX = e.touches[0].clientX - startX;
+                     distY = e.touches[0].clientY - startY;
+                 }, { passive: true });
+
+                 reviewsContainer.addEventListener('touchend', (e) => {
+                     // Check if horizontal swipe is dominant
+                     if (Math.abs(distX) > Math.abs(distY) && Math.abs(distX) > threshold) {
+                         if (distX > 0) {
+                             // Swipe right - show previous
+                             const prevIndex = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+                             showReview(prevIndex);
+                         } else {
+                             // Swipe left - show next
+                             const nextIndex = (currentReview + 1) % reviewCards.length;
+                             showReview(nextIndex);
+                         }
+                     }
+                     
+                     distX = 0;
+                     distY = 0;
+                 }, { passive: true });
+             }
          }
 
          // Get In Touch Section Animation
