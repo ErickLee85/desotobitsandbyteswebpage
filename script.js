@@ -664,9 +664,11 @@
         end: 'max',
         onUpdate: (self) => {
             const currentScrollY = self.scroll();
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const fiftyPercentScroll = 500;
             
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
-            // Scrolling down & past hero section
+            if (currentScrollY > lastScrollY && currentScrollY > fiftyPercentScroll) {
+            // Scrolling down & past 50% of page
             gsap.to(navbar, {
                 y: -100, // adjust based on your navbar height
                 duration: 0.3,
@@ -705,62 +707,62 @@
             });
         }
 
-        // Hero Image Slider
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-        let isAnimating = false;
-        let slideClicked = false;
+        // // Hero Image Slider
+        // const slides = document.querySelectorAll('.hero-slide');
+        // let currentSlide = 0;
+        // let isAnimating = false;
+        // let slideClicked = false;
 
-        // Set initial clip-path for all slides (hidden on the right)
-        gsap.set(slides, { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' });
-        // Show first slide
-        gsap.set(slides[0], { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' });
+        // // Set initial clip-path for all slides (hidden on the right)
+        // gsap.set(slides, { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' });
+        // // Show first slide
+        // gsap.set(slides[0], { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' });
 
-        function goToSlide(index, direction) {
-            if (isAnimating || index === currentSlide) return;
-            isAnimating = true;
+        // function goToSlide(index, direction) {
+        //     if (isAnimating || index === currentSlide) return;
+        //     isAnimating = true;
 
-            const oldSlide = slides[currentSlide];
-            const newSlide = slides[index];
+        //     const oldSlide = slides[currentSlide];
+        //     const newSlide = slides[index];
 
-            // Create a timeline for synchronized animation
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    oldSlide.classList.remove('active');
-                    newSlide.classList.add('active');
-                    isAnimating = false;
-                }
-            });
+        //     // Create a timeline for synchronized animation
+        //     const tl = gsap.timeline({
+        //         onComplete: () => {
+        //             oldSlide.classList.remove('active');
+        //             newSlide.classList.add('active');
+        //             isAnimating = false;
+        //         }
+        //     });
 
-            // Animate old slide out (wipe left)
-            tl.to(oldSlide, {
-                clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
-                duration: 0.8,
-                ease: 'power2.inOut'
-            })
-            // Animate new slide in (reveal from right)
-            .fromTo(newSlide, 
-                { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' },
-                { 
-                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-                    duration: 0.8,
-                    ease: 'power2.inOut'
-                },
-                '<' // Start at the same time as the previous animation
-            );
+        //     // Animate old slide out (wipe left)
+        //     tl.to(oldSlide, {
+        //         clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
+        //         duration: 0.8,
+        //         ease: 'power2.inOut'
+        //     })
+        //     // Animate new slide in (reveal from right)
+        //     .fromTo(newSlide, 
+        //         { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' },
+        //         { 
+        //             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+        //             duration: 0.8,
+        //             ease: 'power2.inOut'
+        //         },
+        //         '<' // Start at the same time as the previous animation
+        //     );
 
-            currentSlide = index;
-        }
+        //     currentSlide = index;
+        // }
 
-         // Auto-play (optional - every 5 seconds)
-         setInterval(() => {
-             if(slideClicked) {
-                 slideClicked = false
-                 return;
-             }
-             const nextIndex = (currentSlide + 1) % slides.length;
-             goToSlide(nextIndex, 'right');
-         }, 10000);
+        //  // Auto-play (optional - every 5 seconds)
+        //  setInterval(() => {
+        //      if(slideClicked) {
+        //          slideClicked = false
+        //          return;
+        //      }
+        //      const nextIndex = (currentSlide + 1) % slides.length;
+        //      goToSlide(nextIndex, 'right');
+        //  }, 10000);
 
          // Reviews Section Animation
          const reviewCards = document.querySelectorAll('.review-card');

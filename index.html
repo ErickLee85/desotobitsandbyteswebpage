@@ -232,12 +232,6 @@
                         <div class="hero-slide active">
                             <img src="./images/davinci_compressed.jpeg" alt="API" loading="eager">
                         </div>
-                        <div class="hero-slide api">
-                            <img src="./images/api_compressed.jpeg" alt="Davinci AI" loading="lazy">
-                        </div>
-                        <div class="hero-slide keyboard">
-                            <img src="./images/keyboard.jpg" alt="Keyboard" loading="lazy">
-                        </div>
                     </div>
                 </section>
 
@@ -894,8 +888,8 @@
             const scene = new THREE.Scene();
             // scene.background = new THREE.Color(0x1a1a1a);
             
-            const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.1, 100 );
-            camera.position.set( 3, 1.5, 4 ); // Changed to angled view: right, slightly up, and forward
+            const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.5, 100 );
+            camera.position.z = 25;
             
             const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true});
             // const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true}); // use this to make background transparent
@@ -925,8 +919,8 @@
 
             // Function to frame the camera around the loaded model
             function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
-                const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.5;
-                const halfFovY = THREE.MathUtils.degToRad(camera.fov * 0.5);
+                const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.125;
+                const halfFovY = THREE.MathUtils.degToRad(camera.fov * 0.125);
                 const distance = halfSizeToFitOnScreen / Math.tan(halfFovY);
                 
                 const direction = (new THREE.Vector3())
@@ -939,6 +933,10 @@
                 camera.far = boxSize * 100;
                 camera.updateProjectionMatrix();
                 camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z);
+                console.log('box center x: ', boxCenter.x)
+                console.log('box center y: ', boxCenter.y)
+                console.log('box center z: ', boxCenter.z)
+
             }
 
             // Load the GLTF model
@@ -964,7 +962,7 @@
                     frameArea(boxSize * 0.8, boxSize, boxCenter, camera);
 
                     // Update controls
-                    controls.maxDistance = boxSize * 5;
+                    controls.maxDistance = boxSize * 2;
                     controls.target.copy(boxCenter);
                     controls.update();
                 },
