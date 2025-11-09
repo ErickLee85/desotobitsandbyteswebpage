@@ -232,10 +232,10 @@
                         <div class="hero-slide active">
                             <img src="./images/davinci_compressed.jpeg" alt="API" loading="eager">
                         </div>
-                        <div class="hero-slide">
+                        <div class="hero-slide api">
                             <img src="./images/api_compressed.jpeg" alt="Davinci AI" loading="lazy">
                         </div>
-                        <div class="hero-slide">
+                        <div class="hero-slide keyboard">
                             <img src="./images/keyboard.jpg" alt="Keyboard" loading="lazy">
                         </div>
                     </div>
@@ -951,9 +951,9 @@
                     model = track(gltf.scene);
                     
                     // Scale down the model
-                    model.scale.set(0.6, 0.6, 0.6); // Adjust this value (0.6 = 60% of original size)
-                    
+                  
                     scene.add(model);
+          
                     
                     // Compute the box that contains the model
                     const box = new THREE.Box3().setFromObject(model);
@@ -1003,7 +1003,7 @@
 
                 // Optional: rotate the model slowly
                 if (model) {
-                    model.rotation.y += 0.0009;
+                model.rotation.y += 0.0009;
                 }
 
                 renderer.render(scene, camera);

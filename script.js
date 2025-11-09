@@ -711,6 +711,11 @@
         let isAnimating = false;
         let slideClicked = false;
 
+        // Set initial clip-path for all slides (hidden on the right)
+        gsap.set(slides, { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' });
+        // Show first slide
+        gsap.set(slides[0], { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' });
+
         function goToSlide(index, direction) {
             if (isAnimating || index === currentSlide) return;
             isAnimating = true;
@@ -718,26 +723,30 @@
             const oldSlide = slides[currentSlide];
             const newSlide = slides[index];
 
-            
-
-            // GSAP animation for smooth transition
-            gsap.to(oldSlide, {
-              /*  transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}`,*/
-                transform:'blur(10px)',
-                duration:0.5
+            // Create a timeline for synchronized animation
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    oldSlide.classList.remove('active');
+                    newSlide.classList.add('active');
+                    isAnimating = false;
+                }
             });
 
-            gsap.fromTo(newSlide, 
-                { /*transform:`${direction === 'left' ? 'translateX(-100%)' : 'translateX(100%)'}`*/transform:'blur(10px)' },
+            // Animate old slide out (wipe left)
+            tl.to(oldSlide, {
+                clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
+                duration: 0.8,
+                ease: 'power2.inOut'
+            })
+            // Animate new slide in (reveal from right)
+            .fromTo(newSlide, 
+                { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' },
                 { 
-                    duration:0.5,
-                    transform:'blur(0px)',
-                    onComplete: () => {
-                        oldSlide.classList.remove('active');
-                        newSlide.classList.add('active');
-                        isAnimating = false;
-                    }
-                }
+                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+                    duration: 0.8,
+                    ease: 'power2.inOut'
+                },
+                '<' // Start at the same time as the previous animation
             );
 
             currentSlide = index;
@@ -1047,6 +1056,17 @@
         document.fonts.ready.then(() => {
 
             // Animate FAQ bento cards on scroll
+            const faqImg = document.querySelector('.faq-header-background')
+            gsap.fromTo(faqImg, {
+                clipPath: 'circle(10% at 50% 50%)'
+            }, {
+                clipPath: 'circle(100% at 50% 50%)',
+                scrollTrigger: {
+                    trigger: '.faq-header-background',
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            })
             const faqBentoCards = document.querySelectorAll('.faq-bento-card');
             faqBentoCards.forEach((card, index) => {
                 gsap.fromTo(card, {
