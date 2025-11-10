@@ -1340,19 +1340,17 @@
             font-size: 0.95rem;
             color: rgba(0, 0, 0, 0.6);
             margin: 0;
+            font-family: "Bebas Neue", sans-serif; 
             
         }
 
         .contact-email-link {
-            color: var(--dark);
+            color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
             margin-left: 1rem;
-        }
-
-        .contact-email-link:hover {
-            color: var(--primary);
+            font-family: 'Inter Tight', sans-serif;
         }
 
         .btn-submit {
@@ -1369,21 +1367,6 @@
             align-items: center;
             gap: 0.8rem;
             border-radius: 50px;
-        }
-
-        .btn-submit:hover {
-            background: transparent;
-            color: var(--dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-submit:hover svg {
-            transform: translateX(5px);
-        }
-
-        .btn-submit svg {
-            transition: transform 0.3s ease;
         }
 
         /* Mobile Responsive */
