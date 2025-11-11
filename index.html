@@ -824,70 +824,6 @@
                (window.innerWidth <= 943) ||
                ('ontouchstart' in window);
            
-            // Resource Tracker for memory management
-            class ResourceTracker {
-                constructor() {
-                    this.resources = new Set();
-                }
-                track(resource) {
-                    if (!resource) {
-                        return resource;
-                    }
-
-                    // handle children and when material is an array of materials or
-                    // uniform is array of textures
-                    if (Array.isArray(resource)) {
-                        resource.forEach(resource => this.track(resource));
-                        return resource;
-                    }
-
-                    if (resource.dispose || resource instanceof THREE.Object3D) {
-                        this.resources.add(resource);
-                    }
-                    if (resource instanceof THREE.Object3D) {
-                        this.track(resource.geometry);
-                        this.track(resource.material);
-                        this.track(resource.children);
-                    } else if (resource instanceof THREE.Material) {
-                        // We have to check if there are any textures on the material
-                        for (const value of Object.values(resource)) {
-                            if (value instanceof THREE.Texture) {
-                                this.track(value);
-                            }
-                        }
-                        // We also have to check if any uniforms reference textures or arrays of textures
-                        if (resource.uniforms) {
-                            for (const value of Object.values(resource.uniforms)) {
-                                if (value) {
-                                    const uniformValue = value.value;
-                                    if (uniformValue instanceof THREE.Texture ||
-                                        Array.isArray(uniformValue)) {
-                                        this.track(uniformValue);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    return resource;
-                }
-                untrack(resource) {
-                    this.resources.delete(resource);
-                }
-                dispose() {
-                    for (const resource of this.resources) {
-                        if (resource instanceof THREE.Object3D) {
-                            if (resource.parent) {
-                                resource.parent.remove(resource);
-                            }
-                        }
-                        if (resource.dispose) {
-                            resource.dispose();
-                        }
-                    }
-                    this.resources.clear();
-                }
-            }
-
             const canvas = document.querySelector('.webgl-content');
             const scene = new THREE.Scene();
             // scene.background = new THREE.Color(0x1a1a1a);
@@ -907,10 +843,6 @@
                   controls.enableZoom = true;
                   controls.update();
               }
-
-            // Create resource tracker for the scene
-            const resTracker = new ResourceTracker();
-            const track = resTracker.track.bind(resTracker);
 
             // Lighting setup
             const ambientLight = new THREE.AmbientLight(0xFFFFFF, 5);
@@ -951,8 +883,7 @@
             
             gltfLoader.load('./boombox_2k.gltf/boombox_2k.gltf', 
                 (gltf) => {
-                    // Track all resources from the loaded model
-                    model = track(gltf.scene);
+                    model = gltf.scene;
                     
                     // Scale down the model
                   
@@ -1023,23 +954,6 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
 
-            // Cleanup function - call this if you need to dispose of the scene
-            // For example: when navigating away or loading a different model
-            function cleanupScene() {
-                console.log('Cleaning up Three.js resources...');
-                resTracker.dispose();
-                renderer.dispose();
-                controls.dispose();
-                console.log('Three.js resources cleaned up successfully');
-            }
-
-            // Optional: Clean up when page is about to unload (good practice)
-            window.addEventListener('beforeunload', () => {
-                cleanupScene();
-            });
-
-            // Expose cleanup function globally if you need to call it manually
-            window.cleanupThreeScene = cleanupScene;
     </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
