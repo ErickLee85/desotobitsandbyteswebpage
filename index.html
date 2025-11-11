@@ -834,15 +834,16 @@
             const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true});
             // const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true}); // use this to make background transparent
             renderer.setSize( window.innerWidth, window.innerHeight );
-           const controls = new OrbitControls( camera, renderer.domElement );
-              if(!isMobile) {
-
-                  controls.target.set( 0, 0, 0 );
-                  controls.enableDamping = true;
-                  controls.dampingFactor = 0.25;
-                  controls.enableZoom = true;
-                  controls.update();
-              }
+           
+           let controls;
+           if(!isMobile) {
+               controls = new OrbitControls( camera, renderer.domElement );
+               controls.target.set( 0, 0, 0 );
+               controls.enableDamping = true;
+               controls.dampingFactor = 0.25;
+               controls.enableZoom = true;
+               controls.update();
+           }
 
             // Lighting setup
             const ambientLight = new THREE.AmbientLight(0xFFFFFF, 5);
@@ -898,10 +899,12 @@
                     // Frame the camera to fit the model (comment out to use manual camera position)
                     frameArea(boxSize * 0.8, boxSize, boxCenter, camera);
 
-                    // Update controls
-                    controls.maxDistance = boxSize * 2;
-                    controls.target.copy(boxCenter);
-                    controls.update();
+                    // Update controls (only if not on mobile)
+                    if (controls) {
+                        controls.maxDistance = boxSize * 2;
+                        controls.target.copy(boxCenter);
+                        controls.update();
+                    }
                 },
                 (progress) => {
                     // Optional: handle loading progress
@@ -926,8 +929,10 @@
 
             // Animation loop
             function animate() {
-                // Update controls for damping
-                controls.update();
+                // Update controls for damping (only if not on mobile)
+                if (controls) {
+                    controls.update();
+                }
                 
                 // Handle resize
                 if (resizeRendererToDisplaySize(renderer)) {
