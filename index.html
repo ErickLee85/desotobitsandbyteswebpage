@@ -819,6 +819,10 @@
            import * as THREE from 'three';
            const { OrbitControls } = await import('OrbitControls');
            const { GLTFLoader } = await import('GLTFLoader');
+
+           const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+               (window.innerWidth <= 943) ||
+               ('ontouchstart' in window);
            
             // Resource Tracker for memory management
             class ResourceTracker {
@@ -894,13 +898,15 @@
             const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true});
             // const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true}); // use this to make background transparent
             renderer.setSize( window.innerWidth, window.innerHeight );
-            
-            const controls = new OrbitControls( camera, renderer.domElement );
-            controls.target.set( 0, 0, 0 );
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.25;
-            controls.enableZoom = true;
-            controls.update();
+           const controls = new OrbitControls( camera, renderer.domElement );
+              if(!isMobile) {
+
+                  controls.target.set( 0, 0, 0 );
+                  controls.enableDamping = true;
+                  controls.dampingFactor = 0.25;
+                  controls.enableZoom = true;
+                  controls.update();
+              }
 
             // Create resource tracker for the scene
             const resTracker = new ResourceTracker();
