@@ -6,7 +6,7 @@
 
         :root {
             --primary: #0091ff;
-            --dark: #000000;
+            --dark: #0b0b0b;
             --light: #ffffff;
             --gray: #666;
             --card-bg: #fafafa;
@@ -411,8 +411,6 @@
             color: var(--dark);
             border: 2px solid var(--light);
             display: flex; justify-content: center; align-items: center;
-            opacity: 0;
-            transform: translateY(20px);
         }
 
         .btn-primary:hover .arrow {
@@ -424,8 +422,6 @@
             color: var(--light);
             border: 2px solid var(--light);
             display: flex; justify-content: center; align-items: center; gap:10px;
-            opacity: 0;
-            transform: translateY(20px);
             position: relative;
             transition: color 1s ease;
         }

@@ -212,50 +212,15 @@ window.addEventListener('load', () => {
         mobileReviewCards[0].classList.add('active');
         gsap.set(mobileReviewCards[0], { opacity: 1, filter: 'blur(0px)' });
     }
-
-    // Animate FAQ heading on scroll
-    const mobileFaqHeading = document.querySelector('.mobile-faq-heading');
-    if (mobileFaqHeading) {
-        let splitMobileFaqHeading = SplitText.create([".mobile-faq-heading"], { type: "words" });
-        gsap.fromTo(splitMobileFaqHeading.words, {
-            opacity: 0,
-            filter: 'blur(10px)'
-        }, {
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: 1,
-            stagger: 0.1,
-            delay: 0.5,
-            scrollTrigger: {
-                trigger: mobileFaqHeading,
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
-    }
-
-    // Animate FAQ accordion items on scroll
-    const mobileFaqItems = document.querySelectorAll('.mobile-faq-item');
-    if (mobileFaqItems.length > 0) {
-        gsap.fromTo(mobileFaqItems, {
-            opacity: 0,
-            y: 30,
-            filter: 'blur(5px)'
-        }, {
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            duration: 0.6,
-            stagger: 0.1,
-            delay: 0.8,
-            scrollTrigger: {
-                trigger: '.mobile-faq-container',
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
-    }
 });
+
+const faqHeading = SplitText.create('.mobile-faq-heading', {type:'words'})
+gsap.fromTo(faqHeading.words, {opacity:0, filter:'blur(10px'}, {opacity:1, filter:'blur(0px)', stagger:0.1, duration:1,
+    scrollTrigger: {
+        trigger: '.mobile-faq-section',
+        start: 'top 80%',
+    }
+})
 
 // FAQ Accordion Functionality
 const faqQuestions = document.querySelectorAll('.mobile-faq-question');

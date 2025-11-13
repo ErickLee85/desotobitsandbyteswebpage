@@ -568,20 +568,6 @@
                             </div>
                             <div class="review-card">
                                 <div class="review-stars">★★★★★</div>
-                                <p class="review-text">"I highly recommend DeSoto Bits and Bytes. I worked with Erick Crowne who did an amazing job of developing my app idea. Erick was very patient and skilled and walked me through the process of bringing my idea into reality. I am impressed with the quality of work, the professionalism and most of all the caring customer service."</p>
-                                <div class="review-author">
-                                    <div class="review-author-avatar">
-                                        <img src="./images/reviews/lorna.jpg" alt="Lorna Amey">
-                                    </div>
-                                    <div class="review-author-info">
-                                        <div class="review-author-name">Lorna Amey</div>
-                                        <div class="review-author-company">CEO, HIS Prayer App</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="review-card">
-                                <div class="review-stars">★★★★★</div>
                                 <p class="review-text">"I am the owner of two businesses and have been in business over 18 years. I have worked with several software companies over the years. Erick, with DeSoto Bits and Bytes, has helped me more than most. His knowledge and dedication to help others is first class. It is great to have someone that I can speak with whenever needed, and who understands what I am needing. From websites, SEO, custom software, app development etc... Erick is the best."</p>
                                 <div class="review-author">
                                     <div class="review-author-avatar">
@@ -606,6 +592,20 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"I highly recommend DeSoto Bits and Bytes. I worked with Erick Crowne who did an amazing job of developing my app idea. Erick was very patient and skilled and walked me through the process of bringing my idea into reality. I am impressed with the quality of work, the professionalism and most of all the caring customer service."</p>
+                                <div class="review-author">
+                                    <div class="review-author-avatar">
+                                        <img src="./images/reviews/lorna.jpg" alt="Lorna Amey">
+                                    </div>
+                                    <div class="review-author-info">
+                                        <div class="review-author-name">Lorna Amey</div>
+                                        <div class="review-author-company">CEO, HIS Prayer App</div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="review-card">
                                 <div class="review-stars">★★★★★</div>
                                 <p class="review-text">"If you need a website built get ahold of Erick he took great care to make sure we got the product we wanted and then some! Over the moon happy with the website and the experience."</p>
@@ -995,6 +995,13 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
 
+    </script>
+    <script>
+        const arrow = document.querySelector('.hero-arrow-indicator')
+        arrow.addEventListener('click',(e) => {
+            console.log('arrow clicked')
+            document.querySelector('#touchName').value = 'Your Name here...'
+        })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

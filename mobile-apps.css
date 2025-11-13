@@ -509,6 +509,7 @@ body {
     background: var(--light);
     padding: 8rem 5%;
     position: relative;
+    min-height: 110vh;
 }
 
 .mobile-faq-heading {
@@ -590,12 +591,13 @@ body {
 .mobile-faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
 }
 
 .mobile-faq-item.active .mobile-faq-answer {
     max-height: 500px;
-    padding: 0 2rem 1.5rem 2rem;
+    opacity: 1;
 }
 
 .mobile-faq-answer p {
@@ -603,6 +605,7 @@ body {
     line-height: 1.8;
     color: var(--gray);
     margin: 0;
+    padding: 0 2rem 1.5rem 2rem;
 }
 
 /* Responsive Design for FAQ Section */

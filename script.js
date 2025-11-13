@@ -242,11 +242,11 @@
                         }
                         
                         // Hero subtitle animation
-                        const heroSubtitle = document.querySelector(".hero-subtitle");
-                        if (heroSubtitle) {
-                            let split2 = SplitText.create(".hero-subtitle", {type:"words"});
-                            gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1});
-                        }
+                        // const heroSubtitle = document.querySelector(".hero-subtitle");
+                        // if (heroSubtitle) {
+                        //     let split2 = SplitText.create(".hero-subtitle", {type:"words"});
+                        //     gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1});
+                        // }
                         
                         // Hero subtext animation
                         const heroSubtext = document.querySelector(".hero-subtext");
@@ -269,9 +269,9 @@
                         }
                         
                         // Hero CTA animation
-                        const heroCta = document.querySelector(".hero-cta > a");
+                        const heroCta = document.querySelector(".hero-cta");
                         if (heroCta) {
-                            gsap.fromTo(".hero-cta > a",{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5});
+                            gsap.fromTo(".hero-cta",{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5});
                         }
                         
                         // Stats section animations
