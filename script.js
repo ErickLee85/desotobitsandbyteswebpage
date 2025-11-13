@@ -188,7 +188,7 @@
                     smoother = ScrollSmoother.create({
                         wrapper:'#smooth-wrapper',
                         content:'#smooth-content',
-                        smoother:3
+                        smoother:1
                     });
                     // Refresh ScrollTrigger after ScrollSmoother is created
                   

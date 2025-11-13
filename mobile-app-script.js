@@ -162,23 +162,117 @@ async function submitGetInTouchForm(getInTouchForm) {
     }
 }
 
-const menuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu nav a');
-
-if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close mobile menu when clicking a link
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+// GSAP Animations for Mobile Reviews Section
+window.addEventListener('load', () => {
+    // Animate reviews heading on scroll
+    const mobileReviewsHeading = document.querySelector('.mobile-reviews-heading');
+    if (mobileReviewsHeading) {
+        let splitMobileReviewsHeading = SplitText.create([".mobile-reviews-heading"], { type: "words" });
+        gsap.fromTo(splitMobileReviewsHeading.words, {
+            opacity: 0,
+            filter: 'blur(10px)'
+        }, {
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: 1,
+            stagger: 0.1,
+            delay: 0.5,
+            scrollTrigger: {
+                trigger: mobileReviewsHeading,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
         });
+    }
+
+    // Animate review container on scroll
+    const mobileReviewContainer = document.querySelector('.mobile-reviews-container');
+    if (mobileReviewContainer) {
+        gsap.fromTo(mobileReviewContainer, {
+            opacity: 0,
+            y: 50,
+            filter: 'blur(10px)'
+        }, {
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 1,
+            delay: 0.8,
+            scrollTrigger: {
+                trigger: mobileReviewContainer,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+    }
+
+    // Initialize first review card with GSAP
+    const mobileReviewCards = document.querySelectorAll('.mobile-review-card');
+    if (mobileReviewCards.length > 0) {
+        mobileReviewCards[0].classList.add('active');
+        gsap.set(mobileReviewCards[0], { opacity: 1, filter: 'blur(0px)' });
+    }
+
+    // Animate FAQ heading on scroll
+    const mobileFaqHeading = document.querySelector('.mobile-faq-heading');
+    if (mobileFaqHeading) {
+        let splitMobileFaqHeading = SplitText.create([".mobile-faq-heading"], { type: "words" });
+        gsap.fromTo(splitMobileFaqHeading.words, {
+            opacity: 0,
+            filter: 'blur(10px)'
+        }, {
+            opacity: 1,
+            filter: 'blur(0px)',
+            duration: 1,
+            stagger: 0.1,
+            delay: 0.5,
+            scrollTrigger: {
+                trigger: mobileFaqHeading,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+    }
+
+    // Animate FAQ accordion items on scroll
+    const mobileFaqItems = document.querySelectorAll('.mobile-faq-item');
+    if (mobileFaqItems.length > 0) {
+        gsap.fromTo(mobileFaqItems, {
+            opacity: 0,
+            y: 30,
+            filter: 'blur(5px)'
+        }, {
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.6,
+            stagger: 0.1,
+            delay: 0.8,
+            scrollTrigger: {
+                trigger: '.mobile-faq-container',
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+    }
+});
+
+// FAQ Accordion Functionality
+const faqQuestions = document.querySelectorAll('.mobile-faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem.classList.contains('active');
+        
+        // Close all other FAQ items
+        document.querySelectorAll('.mobile-faq-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Toggle current item
+        if (!isActive) {
+            faqItem.classList.add('active');
+        }
     });
-}
+});

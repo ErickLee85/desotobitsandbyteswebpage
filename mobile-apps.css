@@ -234,6 +234,7 @@ body {
     counter-reset: feature-counter;
     padding: 0;
     margin: 0;
+    margin-left:20px;
 }
 
 .mobile-app-feature-item {
@@ -321,5 +322,334 @@ body {
     .mobile-app-features-image {
         max-width: 100%;
         aspect-ratio: 9 / 16;
+    }
+}
+
+/* Mobile Reviews Section - Black Background */
+.mobile-reviews-section {
+    background: var(--dark);
+    padding: 8rem 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-reviews-heading {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--light);
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+}
+
+.mobile-reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: pan-y;
+}
+
+.mobile-reviews-track {
+    display: flex;
+    gap: 3rem;
+    height: 100%;
+    position: relative;
+}
+
+.mobile-review-card {
+    min-width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    filter: blur(10px);
+    position: absolute;
+    will-change: opacity filter;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-review-card.active {
+    opacity: 1;
+    filter: blur(0px);
+    position: relative;
+    will-change: opacity filter;
+}
+
+.mobile-review-stars {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.mobile-review-text {
+    font-size: 2.0rem;
+    line-height: 1.8;
+    color: var(--light);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    line-clamp: 8;
+    -webkit-box-orient: vertical;
+}
+
+.mobile-review-author {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-review-author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-review-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mobile-review-author-info {
+    flex: 1;
+}
+
+.mobile-review-author-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--light);
+    margin-bottom: 0.3rem;
+}
+
+.mobile-review-author-company {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+/* Responsive Design for Mobile Reviews Section */
+@media (max-width: 943px) {
+    .mobile-reviews-section {
+        padding: 4rem 5%;
+    }
+
+    .mobile-reviews-heading {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .mobile-reviews-container {
+        height: 500px;
+    }
+
+    .mobile-review-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .mobile-review-text {
+        font-size: 1.2rem;
+    }
+
+    .mobile-review-author-name {
+        font-size: 1rem;
+    }
+
+    .mobile-review-author-company {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mobile-reviews-heading {
+        font-size: 2rem;
+    }
+
+    .mobile-reviews-container {
+        height: 450px;
+    }
+
+    .mobile-review-card {
+        padding: 1.5rem;
+    }
+
+    .mobile-review-text {
+        font-size: 1.1rem;
+    }
+
+    .mobile-review-stars {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile FAQ Section */
+.mobile-faq-section {
+    background: var(--light);
+    padding: 8rem 5%;
+    position: relative;
+}
+
+.mobile-faq-heading {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 1.2;
+}
+
+.mobile-faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mobile-faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mobile-faq-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.mobile-faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-faq-question {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+    transition: all 0.3s ease;
+}
+
+.mobile-faq-question:hover {
+    color: var(--primary);
+}
+
+.mobile-faq-question span {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.mobile-faq-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    fill: var(--dark);
+}
+
+.mobile-faq-item.active .mobile-faq-icon {
+    transform: rotate(180deg);
+}
+
+.mobile-faq-item.active .mobile-faq-question {
+    color: var(--primary);
+}
+
+.mobile-faq-item.active .mobile-faq-icon {
+    fill: var(--primary);
+}
+
+.mobile-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.mobile-faq-item.active .mobile-faq-answer {
+    max-height: 500px;
+    padding: 0 2rem 1.5rem 2rem;
+}
+
+.mobile-faq-answer p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--gray);
+    margin: 0;
+}
+
+/* Responsive Design for FAQ Section */
+@media (max-width: 943px) {
+    .mobile-faq-section {
+        padding: 4rem 5%;
+    }
+
+    .mobile-faq-heading {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .mobile-faq-question {
+        padding: 1.2rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .mobile-faq-item.active .mobile-faq-answer {
+        padding: 0 1.5rem 1.2rem 1.5rem;
+    }
+
+    .mobile-faq-answer p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mobile-faq-heading {
+        font-size: 2rem;
+    }
+
+    .mobile-faq-question {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .mobile-faq-item.active .mobile-faq-answer {
+        padding: 0 1.2rem 1rem 1.2rem;
+    }
+
+    .mobile-faq-answer p {
+        font-size: 0.9rem;
+    }
+
+    .mobile-faq-icon {
+        width: 20px;
+        height: 20px;
     }
 }
