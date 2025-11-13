@@ -233,7 +233,7 @@
                         }
                     });
                 }
-               document.fonts.ready.then(() => {
+            
                         // Hero tagline animation
                      
                         
@@ -434,7 +434,7 @@
                      }
 
                      // Animate Mobile App Features Section
-                     document.fonts.ready.then(() => {
+                     
                          const mobileAppFeaturesSection = document.querySelector('.mobile-app-features-section');
                          if (mobileAppFeaturesSection) {
                              const mobileAppFeaturesContent = document.querySelector('.mobile-app-features-content');
@@ -771,16 +771,7 @@
                             serviceItems[0]?.classList.add('active');
                         }
                     }
-               })
 
-             // Number counter animation
-           
-            
-            
-
-        });
-
-        // Custom smooth scroll function using requestAnimationFrame
         function smoothScrollTo(element, duration = 800) {
             const startPosition = window.pageYOffset;
             const targetPosition = element.getBoundingClientRect().top + startPosition - 80; // Offset for header

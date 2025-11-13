@@ -2125,6 +2125,18 @@
     .spinner-container::-webkit-scrollbar {
         display: none;
     }
+
+    .spinner-container.disabled {
+        animation: hide-loader 500ms linear forwards;
+    }
+    @keyframes hide-loader {
+        from {
+            opacity: 1;
+        } to {
+            opacity: 0;
+            display: none;
+        }
+    }
     .spinner {
         background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
         width: 100px;
