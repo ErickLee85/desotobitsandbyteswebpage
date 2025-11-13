@@ -62,13 +62,13 @@
             align-items: center;
             gap: 0.5rem;
             overflow: visible;
+            cursor: pointer;
         }
 
         .logo img {
             height: 220px;
             position: absolute;
             width: auto;
-            pointer-events: none;
         }
 
         nav {
@@ -77,6 +77,7 @@
             align-items: center;
             position: absolute;
             left: 50%;
+            will-change:transform;
             transform: translateX(-50%);
         }
 
@@ -174,8 +175,9 @@
             position: absolute;
         }
 
-        #getQuoteBtn{
+        .getQuoteBtn{
             cursor: pointer;
+            will-change:clip-path;
 
         }
 
@@ -313,6 +315,7 @@
             letter-spacing: 2px;
             color: var(--light);
             margin-bottom: 1rem;
+            will-change:opacity;
         }
 
         .hero-tagline {
@@ -321,6 +324,7 @@
             margin-bottom: 0.5rem;
             font-weight: 400;
             letter-spacing: -1px;
+            will-change:opacity;
         }
 
         .hero-subtext {
@@ -330,6 +334,7 @@
             max-width: 700px;
             margin-block: 1.5rem;
             line-height: 1.5;
+            will-change:opacity;
         }
 
         .hero-description {
@@ -338,6 +343,7 @@
             line-height: 1.7;
             margin-bottom: 2.5rem;
             max-width: 550px;
+            will-change:opacity;
         }
 
         .hero-image {
@@ -347,7 +353,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            filter: brightness(0.8);
+            will-change:clip-path;
         }
 
         .hero-slide {
@@ -559,6 +565,7 @@
             opacity: 0;
             filter: blur(10px);
             position: absolute;
+            will-change:opacity filter;
             top: 0;
             left: 0;
         }
@@ -567,6 +574,7 @@
             opacity: 1;
             filter: blur(0px);
             position: relative;
+            will-change:opacity filter;
         }
 
         .review-stars {
@@ -593,6 +601,33 @@
         .review-author {
             border-top: 1px solid #e0e0e0;
             padding-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #f5f5f5;
+        }
+
+        .review-author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .review-author-info {
+            flex: 1;
+        }
+
+        /* Fallback for reviews without avatar wrapper */
+        .review-author > .review-author-name {
+            flex: 1;
         }
 
         .review-author-name {
@@ -1168,6 +1203,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            will-change:opacity;
         }
 
         /* Location Bar */
@@ -1711,6 +1747,7 @@
             clip-path: circle(0% at 50% 50%);
             transition:clip-path 1s ease;
             z-index: 1;
+            will-change:clip-path;
         }
 
         .faq-header-background::after {
@@ -1770,6 +1807,7 @@
             box-shadow: inset 5px -5px 5px #d6d6d6,
             inset 5px -5px 5px #ffffff;
             border:1px solid #e1e1e1;
+            will-change:opacity;
         }
 
         /* .faq-card-1::before {

@@ -178,23 +178,45 @@
             // Split the tagline text
           
                 const infoBtn = document.querySelector('.btn-secondary')
+              
                 /*let words = document.querySelectorAll(".trusted-logo")*/
                 
                 // Only create ScrollSmoother on desktop devices
-                if (!isMobile) {
+                const smoothWrapper = document.getElementById('smooth-wrapper');
+                const smoothContent = document.getElementById('smooth-content');
+                if (!isMobile && smoothWrapper && smoothContent) {
                     smoother = ScrollSmoother.create({
                         wrapper:'#smooth-wrapper',
                         content:'#smooth-content',
-                        smoother:1
+                        smoother:3
                     });
                     // Refresh ScrollTrigger after ScrollSmoother is created
                   
                 } else {
                     // On mobile, add a class to enable normal scrolling
-                    const smoothWrapper = document.getElementById('smooth-wrapper');
                     if (smoothWrapper) {
                         smoothWrapper.classList.add('mobile-scroll');
                     }
+                }
+
+                const mobileLearnMore = document.querySelector('.mobile-learn-more');
+                if (mobileLearnMore) {
+                    mobileLearnMore.addEventListener('click',(e) => {
+                        e.preventDefault();
+                        const mobileAppFeaturesSection = document.querySelector('#mobile-app-features-section') || document.querySelector('.mobile-app-features-section');
+                        if (mobileAppFeaturesSection) {
+                            if (smoother) {
+                                try {
+                                    smoother.scrollTo(mobileAppFeaturesSection, true, 'center center');
+                                } catch (error) {
+                                    // Fallback if ScrollSmoother fails
+                                    mobileAppFeaturesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            } else {
+                                mobileAppFeaturesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    });
                 }
 
                 if (infoBtn) {
@@ -212,100 +234,292 @@
                     });
                 }
                document.fonts.ready.then(() => {
-                        let split = SplitText.create([".hero-tagline"], { type: "words" });
-                        let split2 = SplitText.create(".hero-subtitle", {type:"words"})
-                        let split3 = SplitText.create(".hero-subtext",{type:"words"})
-                        let split4 = SplitText.create(".trusted-logo", {type:"words"})
-                        let split5 = SplitText.create(".stats-content h2", {type:"words"})
-                        let split6 = SplitText.create(".stats-content p",{type:"words"})
-                        
-                
-                    gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,});
-                    gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1})
-                    gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2})
-                    gsap.fromTo(".stats-image",{opacity:0},{
-                        opacity:1,duration:1.5,scrollTrigger: {
-                                trigger: ".stats-section",
-                                start: "top 50%",
-                                toggleActions: "play none none none",
-                            }})
-                    gsap.from(split4.words,{opacity:0, stagger:0.2,
-                        scrollTrigger: {
-                        trigger: split4.words[0].parentElement,
-                        start: "top 85%", // adjust this value (higher % = triggers sooner)
-                        toggleActions: "play none none none", // only play once when entering
-                    }
-                    })
-                    gsap.fromTo(".hero-cta > a",{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5})
-                    
-                    // Stats animation with ScrollTrigger
-                    gsap.fromTo(".stat-item",
-                        {
-                            x: -50,
-                            opacity: 0,
-                            filter: 'blur(10px)'
-                        },
-                        {
-                            x: 0,
-                            opacity: 1,
-                            filter: 'blur(0px)',
-                            stagger: 0.2,
-                            duration: 0.8,
-                            ease: 'power3.out',
-                            scrollTrigger: {
-                                trigger: ".stats-section",
-                                start: "top 50%",
-                                toggleActions: "play none none none",
-                            }
+                        // Hero tagline animation
+                        const heroTagline = document.querySelector(".hero-tagline");
+                        if (heroTagline) {
+                            let split = SplitText.create([".hero-tagline"], { type: "words" });
+                            gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,});
                         }
-                    )
-
-                      document.querySelectorAll('.stat-number').forEach((statNumber) => {
-                        const text = statNumber.textContent.trim();
-                        // Extract number by removing all non-digits
-                        const number = parseInt(text.replace(/\D/g, ''));
-                        // Extract suffix - get everything after the last digit (including commas, +, etc.)
-                        const suffix = text.replace(/[\d,]/g, '');
                         
-                        // Function to format number with commas
-                        const formatNumber = (num) => {
-                            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                        };
+                        // Hero subtitle animation
+                        const heroSubtitle = document.querySelector(".hero-subtitle");
+                        if (heroSubtitle) {
+                            let split2 = SplitText.create(".hero-subtitle", {type:"words"});
+                            gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1});
+                        }
                         
-                        gsap.fromTo(statNumber, 
-                            { textContent: 0 },
-                            {
-                                textContent: number,
-                                duration: 2,
-                                ease: 'power1.out',
-                                snap: { textContent: 1 },
+                        // Hero subtext animation
+                        const heroSubtext = document.querySelector(".hero-subtext");
+                        if (heroSubtext) {
+                            let split3 = SplitText.create(".hero-subtext",{type:"words"});
+                            gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2});
+                        }
+                        
+                        // Trusted logo animation
+                        const trustedLogo = document.querySelector(".trusted-logo");
+                        if (trustedLogo) {
+                            let split4 = SplitText.create(".trusted-logo", {type:"words"});
+                            gsap.from(split4.words,{opacity:0, stagger:0.1,
                                 scrollTrigger: {
-                                    trigger: ".stats-section",
-                                    start: "top 50%",
-                                    toggleActions: "play none none none",
-                                },
-                                onUpdate: function() {
-                                    const currentValue = Math.ceil(statNumber.textContent);
-                                    statNumber.textContent = formatNumber(currentValue) + suffix;
-                                }
-                            }
-                        );
-                    });
-                    
-                    gsap.fromTo(split5.words,{opacity:0,filter:'blur(5px)'},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,
-                        scrollTrigger: {
-                                trigger: ".stats-section",
-                                start: "top 50%",
+                                trigger: split4.words[0].parentElement,
+                                start: "top 85%",
                                 toggleActions: "play none none none",
+                            }
+                            });
                         }
-                    })
-                     gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2,
-                         scrollTrigger: {
-                                 trigger: ".stats-section",
-                                 start: "top 50%",
-                                 toggleActions: "play none none none",
+                        
+                        // Hero CTA animation
+                        const heroCta = document.querySelector(".hero-cta > a");
+                        if (heroCta) {
+                            gsap.fromTo(".hero-cta > a",{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5});
+                        }
+                        
+                        // Stats section animations
+                        const statsSection = document.querySelector(".stats-section");
+                        if (statsSection) {
+                            const statsImage = document.querySelector(".stats-image");
+                            if (statsImage) {
+                                gsap.fromTo(".stats-image",{opacity:0},{
+                                    opacity:1,duration:1.5,scrollTrigger: {
+                                            trigger: ".stats-section",
+                                            start: "top 50%",
+                                            toggleActions: "play none none none",
+                                        }});
+                            }
+                            
+                            // Stats animation with ScrollTrigger
+                            const statItems = document.querySelectorAll(".stat-item");
+                            if (statItems.length > 0) {
+                                gsap.fromTo(".stat-item",
+                                    {
+                                        x: -50,
+                                        opacity: 0,
+                                        filter: 'blur(10px)'
+                                    },
+                                    {
+                                        x: 0,
+                                        opacity: 1,
+                                        filter: 'blur(0px)',
+                                        stagger: 0.2,
+                                        duration: 0.8,
+                                        ease: 'power3.out',
+                                        scrollTrigger: {
+                                            trigger: ".stats-section",
+                                            start: "top 50%",
+                                            toggleActions: "play none none none",
+                                        }
+                                    }
+                                );
+                            }
+
+                            // Stat number counter animation
+                            const statNumbers = document.querySelectorAll('.stat-number');
+                            if (statNumbers.length > 0) {
+                                statNumbers.forEach((statNumber) => {
+                                    const text = statNumber.textContent.trim();
+                                    // Extract number by removing all non-digits
+                                    const number = parseInt(text.replace(/\D/g, ''));
+                                    // Extract suffix - get everything after the last digit (including commas, +, etc.)
+                                    const suffix = text.replace(/[\d,]/g, '');
+                                    
+                                    // Function to format number with commas
+                                    const formatNumber = (num) => {
+                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                                    };
+                                    
+                                    gsap.fromTo(statNumber, 
+                                        { textContent: 0 },
+                                        {
+                                            textContent: number,
+                                            duration: 2,
+                                            ease: 'power1.out',
+                                            snap: { textContent: 1 },
+                                            scrollTrigger: {
+                                                trigger: ".stats-section",
+                                                start: "top 50%",
+                                                toggleActions: "play none none none",
+                                            },
+                                            onUpdate: function() {
+                                                const currentValue = Math.ceil(statNumber.textContent);
+                                                statNumber.textContent = formatNumber(currentValue) + suffix;
+                                            }
+                                        }
+                                    );
+                                });
+                            }
+                            
+                            // Stats content heading animation
+                            const statsContentH2 = document.querySelector(".stats-content h2");
+                            if (statsContentH2) {
+                                let split5 = SplitText.create(".stats-content h2", {type:"words"});
+                                gsap.fromTo(split5.words,{opacity:0,filter:'blur(5px)'},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,
+                                    scrollTrigger: {
+                                            trigger: ".stats-section",
+                                            start: "top 50%",
+                                            toggleActions: "play none none none",
+                                    }
+                                });
+                            }
+                            
+                            // Stats content paragraph animation
+                            const statsContentP = document.querySelector(".stats-content p");
+                            if (statsContentP) {
+                                let split6 = SplitText.create(".stats-content p",{type:"words"});
+                                gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2,
+                                     scrollTrigger: {
+                                             trigger: ".stats-section",
+                                             start: "top 50%",
+                                             toggleActions: "play none none none",
+                                     }
+                                 });
+                            }
+                        }
+
+                     // Mobile Hero Section Animations
+                     const mobileHeroSubtitle = document.querySelector('.mobile-hero-subtitle');
+                     const mobileHeroTitle = document.querySelector('.mobile-hero-title');
+                     const mobileHeroSubtext = document.querySelector('.mobile-hero-subtext');
+                     const mobileHeroCta = document.querySelector('.mobile-hero-cta');
+                     
+                     if (mobileHeroSubtitle) {
+                         let splitMobileSubtitle = SplitText.create([".mobile-hero-subtitle"], { type: "words" });
+                         gsap.fromTo(splitMobileSubtitle.words, {
+                             opacity: 0
+                         }, {
+                             opacity: 1,
+                             duration: 1,
+                             stagger: 0.1,
+                             delay: 0.3
+                         });
+                     }
+                     
+                     if (mobileHeroTitle) {
+                         let splitMobileTitle = SplitText.create([".mobile-hero-title"], { type: "words" });
+                         gsap.fromTo(splitMobileTitle.words, {
+                             opacity: 0,
+                             filter: 'blur(10px)'
+                         }, {
+                             opacity: 1,
+                             filter: 'blur(0px)',
+                             duration: 1,
+                             stagger: 0.1,
+                             delay: 0.5
+                         });
+                     }
+                     
+                     if (mobileHeroSubtext) {
+                         let splitMobileSubtext = SplitText.create([".mobile-hero-subtext"], { type: "words" });
+                         gsap.fromTo(splitMobileSubtext.words, {
+                             opacity: 0
+                         }, {
+                             opacity: 1,
+                             duration: 0.5,
+                             stagger: 0.1,
+                             delay: 1.2
+                         });
+                     }
+                     
+                     if (mobileHeroCta) {
+                         gsap.fromTo(".mobile-hero-cta button", {
+                             y: 20,
+                             opacity: 0
+                         }, {
+                             y: 0,
+                             opacity: 1,
+                             duration: 1,
+                             stagger: 0.1,
+                             delay: 1.5
+                         });
+                     }
+
+                     // Animate Mobile App Features Section
+                     document.fonts.ready.then(() => {
+                         const mobileAppFeaturesSection = document.querySelector('.mobile-app-features-section');
+                         if (mobileAppFeaturesSection) {
+                             const mobileAppFeaturesContent = document.querySelector('.mobile-app-features-content');
+                             const mobileAppFeaturesHeading = mobileAppFeaturesContent?.querySelector('h2');
+                             const mobileAppFeaturesParagraph = mobileAppFeaturesContent?.querySelector('p');
+                             const mobileAppFeatureItems = document.querySelectorAll('.mobile-app-feature-item');
+
+                             // Animate heading with SplitText
+                             if (mobileAppFeaturesHeading) {
+                                 let splitMobileFeaturesHeading = SplitText.create(".mobile-app-features-content h2", {type:"words"});
+                                 gsap.fromTo(splitMobileFeaturesHeading.words, {
+                                     opacity: 0,
+                                     filter: 'blur(5px)'
+                                 }, {
+                                     opacity: 1,
+                                     filter: 'blur(0px)',
+                                     duration: 1,
+                                     stagger: 0.1,
+                                     delay: 0.5,
+                                     scrollTrigger: {
+                                         trigger: mobileAppFeaturesSection,
+                                         start: "top 80%",
+                                         toggleActions: "play none none none"
+                                     }
+                                 });
+                             }
+
+                             // Animate paragraph with SplitText
+                             if (mobileAppFeaturesParagraph) {
+                                 let splitMobileFeaturesParagraph = SplitText.create(".mobile-app-features-content p", {type:"words"});
+                                 gsap.fromTo(splitMobileFeaturesParagraph.words, {
+                                     opacity: 0
+                                 }, {
+                                     opacity: 1,
+                                     duration: 0.5,
+                                     stagger: 0.1,
+                                     delay: 1.2,
+                                     scrollTrigger: {
+                                         trigger: mobileAppFeaturesSection,
+                                         start: "top 80%",
+                                         toggleActions: "play none none none"
+                                     }
+                                 });
+                             }
+
+                             // Animate feature items
+                             if (mobileAppFeatureItems.length > 0) {
+                                 // Set initial state
+                                 gsap.set(mobileAppFeatureItems, {
+                                     x: -50,
+                                     opacity: 0
+                                 });
+
+                                 // Animate on scroll
+                                 gsap.to(mobileAppFeatureItems, {
+                                     x: 0,
+                                     opacity: 1,
+                                     duration: 0.8,
+                                     stagger: 0.1,
+                                     delay: 1.5,
+                                     ease: 'power3.out',
+                                     scrollTrigger: {
+                                         trigger: mobileAppFeaturesSection,
+                                         start: "top 80%",
+                                         toggleActions: "play none none none"
+                                     }
+                                 });
+                             }
+
+                             // Animate image
+                             const mobileAppFeaturesImage = document.querySelector(".mobile-app-features-image");
+                             if (mobileAppFeaturesImage) {
+                                 gsap.fromTo(".mobile-app-features-image", {
+                                     opacity: 0
+                                 }, {
+                                     opacity: 1,
+                                     duration: 1.5,
+                                     scrollTrigger: {
+                                         trigger: mobileAppFeaturesSection,
+                                         start: "top 80%",
+                                         toggleActions: "play none none none"
+                                     }
+                                 });
+                             }
                          }
-                     })
+                     });
 
                      // Animate WebGL section title and subtitle
                      const webglTitle = document.querySelector('.webgl-title');
@@ -595,7 +809,9 @@
         }
 
         // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        if (anchorLinks.length > 0) {
+        anchorLinks.forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
@@ -655,10 +871,12 @@
                 }
             });
         });
+        }
 
         let lastScrollY = 0;
         const navbar = document.querySelector('header'); // or whatever your navbar selector is
 
+        if (navbar) {
         ScrollTrigger.create({
         start: 'top top',
         end: 'max',
@@ -684,6 +902,7 @@
             lastScrollY = currentScrollY;
         }
         });
+        }
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -770,7 +989,7 @@
          const reviewNavPrev = document.querySelector('.review-nav-prev');
          const reviewNavNext = document.querySelector('.review-nav-next');
          
-         if (reviewCards.length > 0 && reviewDots.length > 0) {
+         if (reviewCards.length > 0) {
              let currentReview = 0;
              let isReviewAnimating = false;
 
@@ -809,8 +1028,10 @@
                  );
 
                  // Update dots
-                 reviewDots[currentReview].classList.remove('active');
-                 reviewDots[index].classList.add('active');
+                 if (reviewDots.length > 0) {
+                     reviewDots[currentReview].classList.remove('active');
+                     reviewDots[index].classList.add('active');
+                 }
 
                  currentReview = index;
              }
@@ -820,11 +1041,13 @@
              gsap.set(reviewCards[0], { opacity: 1, filter: 'blur(0px)' });
 
              // Dot navigation
-             reviewDots.forEach((dot, index) => {
-                 dot.addEventListener('click', () => {
-                     showReview(index);
+             if (reviewDots.length > 0) {
+                 reviewDots.forEach((dot, index) => {
+                     dot.addEventListener('click', () => {
+                         showReview(index);
+                     });
                  });
-             });
+             }
 
              // Arrow navigation
              if (reviewNavPrev) {
@@ -1033,11 +1256,11 @@
         const contactOverlay = document.getElementById('contactOverlay');
         const contactFormPanel = document.getElementById('contactFormPanel');
         const contactCloseBtn = document.getElementById('contactCloseBtn');
-        const getQuoteBtn = document.getElementById('getQuoteBtn');
+        const getQuoteBtns = document.querySelectorAll('.getQuoteBtn');
         const contactForm = document.getElementById('contactForm');
         
         // Only initialize if elements exist
-        if (contactOverlay && contactFormPanel && getQuoteBtn) {
+        if (contactOverlay && contactFormPanel && getQuoteBtns.length > 0) {
             const formGroups = document.querySelectorAll('.form-group');
             const formTitle = document.querySelector('.contact-form-title');
             const formSubtitle = document.querySelector('.contact-form-subtitle');
@@ -1093,13 +1316,13 @@
             closeTimeline.restart();
         }
 
-        // Event listeners
-        if (getQuoteBtn) {
-            getQuoteBtn.addEventListener('click', (e) => {
+        // Event listeners - attach to all buttons with getQuoteBtn class
+        getQuoteBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
                 e.preventDefault();
                 openContactForm();
             });
-        }
+        });
 
         if (contactCloseBtn) {
             contactCloseBtn.addEventListener('click', () => {
@@ -1136,7 +1359,8 @@
         document.fonts.ready.then(() => {
 
             // Animate FAQ bento cards on scroll
-            const faqImg = document.querySelector('.faq-header-background')
+            const faqImg = document.querySelector('.faq-header-background');
+            if (faqImg) {
             gsap.fromTo(faqImg, {
                 clipPath: 'circle(10% at 50% 50%)'
             }, {
@@ -1146,8 +1370,10 @@
                     start: "top 85%",
                     toggleActions: "play none none none"
                 }
-            })
+            });
+            }
             const faqBentoCards = document.querySelectorAll('.faq-bento-card');
+            if (faqBentoCards.length > 0) {
             faqBentoCards.forEach((card, index) => {
                 gsap.fromTo(card, {
                     opacity: 0,
@@ -1161,6 +1387,7 @@
                     }
                 });
             });
+            }
 
             // Animate FAQ subtitle
          

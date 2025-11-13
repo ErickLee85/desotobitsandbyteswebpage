@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0091ff;
+    --dark: #000000;
+    --light: #ffffff;
+    --gray: #666;
+    --card-bg: #fafafa;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+    background: var(--dark);
+}
+
+/* Mobile Hero Section */
+.mobile-hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-hero-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+.mobile-hero-subtitle {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--light);
+    margin-bottom: 1rem;
+    pointer-events: none;
+}
+
+.mobile-hero-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.mobile-hero-title {
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--light);
+    pointer-events: none;
+}
+
+.mobile-hero-subtext {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--light);
+    pointer-events: none;
+    span {
+        color: orange;
+        font-weight: 600;
+        font-style: italic;
+    }
+}
+
+.mobile-phone-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.mobile-hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    pointer-events: auto;
+}
+
+.mobile-cta {
+    background: var(--light);
+    color: var(--dark);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.mobile-learn-more {
+    background: transparent;
+    color: var(--light);
+    border: 2px solid var(--light);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 1s ease;
+    overflow: hidden;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.mobile-learn-more::before {
+    content: '';
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1s ease;
+    z-index: -1;
+    will-change: clip-path;
+}
+
+.mobile-learn-more:hover::before {
+    clip-path: circle(100% at 50% 50%);
+}
+
+.mobile-learn-more:hover {
+    color: black;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .mobile-hero-title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 943px) {
+    .mobile-hero-title {
+        font-size: 3rem;
+    }
+
+    .mobile-hero-header {
+        min-width:100%;
+    }
+
+    .mobile-hero-subtext {
+        font-size: 1.1rem;
+    }
+
+    .mobile-hero-cta {
+        flex-direction: column;
+    }
+    .mobile-cta {
+        width: 100%;
+    }
+    .mobile-learn-more {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .mobile-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .mobile-hero-subtext {
+        font-size: 1rem;
+    }
+
+    .mobile-hero-header {
+        padding: 1rem;
+    }
+}
+
+/* Mobile App Features Section */
+.mobile-app-features-section {
+    background: var(--light);
+    padding: 8rem 5%;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.mobile-app-features-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 15rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.mobile-app-features-content h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.mobile-app-features-content p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.mobile-app-features-list {
+    list-style: none;
+    counter-reset: feature-counter;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-app-feature-item {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+    position: relative;
+    font-weight: 400;
+    counter-increment: feature-counter;
+}
+
+.mobile-app-feature-item:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-app-feature-item::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-app-feature-item:hover::before {
+    opacity: 1;
+}
+
+.mobile-app-features-image {
+    overflow: visible;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-app-features-image img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    object-fit: contain;
+    will-change: transform;
+    transition: transform 400ms ease;
+    display: block;
+}
+
+.mobile-app-features-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Mobile App Features Section */
+@media (max-width: 943px) {
+    .mobile-app-features-section {
+        padding: 4rem 5%;
+    }
+
+    .mobile-app-features-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .mobile-app-features-content h2 {
+        font-size: 2rem;
+    }
+
+    .mobile-app-features-content p {
+        font-size: 1rem;
+    }
+
+    .mobile-app-feature-item {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .mobile-app-features-image {
+        max-width: 100%;
+        aspect-ratio: 9 / 16;
+    }
+}
