@@ -225,7 +225,7 @@
                         const statsSection = document.querySelector(".stats-section");
                         if (statsSection) {
                             if (smoother) {
-                                smoother.scrollTo(".stats-section", true, "center center");
+                                smoother.scrollTo(".stats-section", true, "top top");
                             } else {
                                 // Fallback for mobile
                                 statsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -235,24 +235,25 @@
                 }
                document.fonts.ready.then(() => {
                         // Hero tagline animation
+                     
+                        
+                        const heroSubtitle = document.querySelector(".hero-subtitle");
+                        if (heroSubtitle) {
+                            let split2 = SplitText.create([".hero-subtitle"], {type:"words"});
+                            gsap.fromTo(split2.words,{opacity:0,},{opacity:1});
+                        }
+
                         const heroTagline = document.querySelector(".hero-tagline");
                         if (heroTagline) {
                             let split = SplitText.create([".hero-tagline"], { type: "words" });
-                            gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,});
+                            gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.25,});
                         }
-                        
-                        // Hero subtitle animation
-                        // const heroSubtitle = document.querySelector(".hero-subtitle");
-                        // if (heroSubtitle) {
-                        //     let split2 = SplitText.create(".hero-subtitle", {type:"words"});
-                        //     gsap.fromTo(split2.words,{opacity:0,},{opacity:1,duration:1,stagger:0.1});
-                        // }
                         
                         // Hero subtext animation
                         const heroSubtext = document.querySelector(".hero-subtext");
                         if (heroSubtext) {
-                            let split3 = SplitText.create(".hero-subtext",{type:"words"});
-                            gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2});
+                            let split3 = SplitText.create([".hero-subtext"],{type:"words"});
+                            gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1});
                         }
                         
                         // Trusted logo animation
@@ -271,7 +272,7 @@
                         // Hero CTA animation
                         const heroCta = document.querySelector(".hero-cta");
                         if (heroCta) {
-                            gsap.fromTo(".hero-cta",{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5});
+                            gsap.fromTo([".hero-cta"],{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5});
                         }
                         
                         // Stats section animations
