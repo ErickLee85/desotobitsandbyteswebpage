@@ -519,6 +519,9 @@
                                      }
                                  });
                              }
+
+                             // Animate mobile learn more button
+                           
                          }
                      });
 
@@ -612,10 +615,11 @@
 
                         // Only pin on desktop devices
                         if (!isMobile) {
+                            // Calculate total scroll distance: 5 items * 1200px = 6000px
                             ScrollTrigger.create({
                                 trigger: servicesSection,
                                 start: "top top",
-                                end: "+=4000",
+                                end: "+=6000",
                                 pin: ".services-container",
                                 anticipatePin: 1,
                                 scrub: 1
@@ -628,6 +632,7 @@
                             const description = item.querySelector('.service-description');
                             const number = item.querySelector('.service-number');
                             const featureItems = item.querySelectorAll('.service-feature-item');
+                            const mobileLearnMoreBtn = item.querySelector('.mobile-learn-more-btn');
                             
                             // On mobile, use simpler animations without scrub
                             if (isMobile) {
@@ -648,6 +653,13 @@
                                     x: -30,
                                     filter: 'blur(5px)'
                                 });
+                                if (mobileLearnMoreBtn) {
+                                    gsap.set(mobileLearnMoreBtn, {
+                                        opacity: 0,
+                                        y: 30,
+                                        filter: 'blur(5px)'
+                                    });
+                                }
 
                                 // Simple scroll-triggered animation for mobile
                                 const mobileTimeline = gsap.timeline({
@@ -676,6 +688,15 @@
                                         stagger: 0.1,
                                         ease: 'power2.out'
                                     }, '-=0.3');
+                                if (mobileLearnMoreBtn) {
+                                    mobileTimeline.to(mobileLearnMoreBtn, {
+                                        opacity: 1,
+                                        y: 0,
+                                        filter: 'blur(0px)',
+                                        duration: 0.6,
+                                        ease: 'power2.out'
+                                    }, '-=0.2');
+                                }
                             } else {
                                 // Desktop animation with scrub
                                 // Alternate between left and right animation
@@ -698,16 +719,25 @@
                                     x: xOffset + 50,
                                     filter: 'blur(5px)'
                                 });
+                                if (mobileLearnMoreBtn) {
+                                    gsap.set(mobileLearnMoreBtn, {
+                                        opacity: 0,
+                                        x: xOffset + 50,
+                                        filter: 'blur(5px)'
+                                    });
+                                }
                                 gsap.set(item, {
                                     x: 0
                                 });
 
                                 // Create timeline for each service
+                                // Increased scroll distance from 800 to 1200 for more buffer
+                                const scrollDistance = 1200;
                                 const serviceTimeline = gsap.timeline({
                                     scrollTrigger: {
                                         trigger: servicesSection,
-                                        start: `top+=${index * 800} top`,
-                                        end: `top+=${(index + 1) * 800} top`,
+                                        start: `top+=${index * scrollDistance} top`,
+                                        end: `top+=${(index + 1) * scrollDistance} top`,
                                         scrub: 1,
                                         onEnter: () => {
                                             // Remove active class from all items
@@ -733,6 +763,7 @@
                                 });
 
                                 // Animate from x-axis - number first, then title, then description, then features
+                                // Button appears earlier (at 60% of timeline instead of end) for more visibility
                                 serviceTimeline
                                     .to(number, {
                                         opacity: 1,
@@ -763,6 +794,16 @@
                                         stagger: 0.1,
                                         ease: 'power2.out'
                                     }, '-=0.4');
+                                if (mobileLearnMoreBtn) {
+                                    // Button appears earlier in the timeline (starts with features) for more visibility buffer
+                                    serviceTimeline.to(mobileLearnMoreBtn, {
+                                        opacity: 1,
+                                        x: 0,
+                                        filter: 'blur(0px)',
+                                        duration: 1.2, // Longer duration = more scroll distance = more time visible
+                                        ease: 'power2.out'
+                                    }, '-=0.6'); // Start earlier, overlapping significantly with features
+                                }
                             }
                         });
 

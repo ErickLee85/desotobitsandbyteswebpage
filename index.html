@@ -183,7 +183,7 @@
         </div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#services">Services</a>
+            <a href="#services" class="service-link">Services</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-cta">
@@ -464,6 +464,11 @@
                                     <li class="service-feature-item">App store optimization and deployment</li>
                                     <li class="service-feature-item">Performance optimization and testing</li>
                                 </ul>
+                                <button class="mobile-learn-more-btn">
+                                    <div class="blob1"></div>
+                                    <div class="blob2"></div>
+                                    <div class="inner">Learn More</div>
+                                </button>
                             </div>
                             <div class="service-item" data-service="web">
                                 <div class="service-number">02</div>
@@ -478,6 +483,11 @@
                                     <li class="service-feature-item">Security features and authentication</li>
                                     <li class="service-feature-item">Performance optimization and caching</li>
                                 </ul>
+                                <button class="mobile-learn-more-btn">
+                                    <div class="blob1"></div>
+                                    <div class="blob2"></div>
+                                    <div class="inner">Learn More</div>
+                                </button>
                             </div>
                             <div class="service-item" data-service="api">
                                 <div class="service-number">03</div>
@@ -492,6 +502,11 @@
                                     <li class="service-feature-item">SQL databases for reliable local data storage</li>
                                     <li class="service-feature-item">RESTful architecture and comprehensive API documentation</li>
                                 </ul>
+                                <button class="mobile-learn-more-btn">
+                                    <div class="blob1"></div>
+                                    <div class="blob2"></div>
+                                    <div class="inner">Learn More</div>
+                                </button>
                             </div>
                             <div class="service-item" data-service="website">
                                 <div class="service-number">04</div>
@@ -506,6 +521,11 @@
                                     <li class="service-feature-item">High-performance optimization and fast loading</li>
                                     <li class="service-feature-item">Mobile-first responsive design</li>
                                 </ul>
+                                <button class="mobile-learn-more-btn">
+                                    <div class="blob1"></div>
+                                    <div class="blob2"></div>
+                                    <div class="inner">Learn More</div>
+                                </button>
                             </div>
                             <div class="service-item" data-service="ai">
                                 <div class="service-number">05</div>
@@ -520,6 +540,11 @@
                                     <li class="service-feature-item">Process automation and chatbots</li>
                                     <li class="service-feature-item">Predictive analytics and insights</li>
                                 </ul>
+                                <button class="mobile-learn-more-btn">
+                                    <div class="blob1"></div>
+                                    <div class="blob2"></div>
+                                    <div class="inner">Learn More</div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -800,6 +825,13 @@
         </div>
     </div>
 
+    <!-- <div class="services-overlay">
+        <div class="services-menu">
+
+        </div>
+    </div> -->
+
+
     <!-- Contact Form Overlay -->
     <div class="contact-overlay" id="contactOverlay">
         <div class="contact-form-panel" id="contactFormPanel">
@@ -1000,6 +1032,32 @@
         arrow.addEventListener('click',(e) => {
             console.log('arrow clicked')
             document.querySelector('#touchName').value = 'Your Name here...'
+        })
+        const mobileBtns = document.querySelectorAll('.mobile-learn-more-btn')
+        mobileBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault()
+                const serviceItem = btn.closest('.service-item')
+                const serviceType = serviceItem?.getAttribute('data-service')
+                
+                // For mobile apps, redirect to mobile-apps page
+                if (serviceType === 'mobile') {
+                    window.location.href = './mobile-apps'
+                } else {
+                    // For other services, open contact form or scroll to contact section
+                    const contactOverlay = document.getElementById('contactOverlay')
+                    const getQuoteBtns = document.querySelectorAll('.getQuoteBtn')
+                    if (getQuoteBtns.length > 0 && contactOverlay) {
+                        getQuoteBtns[0].click()
+                    } else {
+                        // Fallback: scroll to contact section
+                        const contactSection = document.querySelector('#contact')
+                        if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                        }
+                    }
+                }
+            })
         })
     </script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
