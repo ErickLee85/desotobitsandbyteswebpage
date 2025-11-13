@@ -77,7 +77,6 @@
             align-items: center;
             position: absolute;
             left: 50%;
-            will-change:transform;
             transform: translateX(-50%);
         }
 
@@ -177,7 +176,6 @@
 
         .getQuoteBtn{
             cursor: pointer;
-            will-change:clip-path;
 
         }
 
@@ -315,7 +313,6 @@
             letter-spacing: 2px;
             color: var(--light);
             margin-bottom: 1rem;
-            will-change:opacity;
         }
 
         .hero-tagline {
@@ -324,7 +321,6 @@
             margin-bottom: 0.5rem;
             font-weight: 400;
             letter-spacing: -1px;
-            will-change:opacity;
         }
 
         .hero-subtext {
@@ -334,7 +330,6 @@
             max-width: 700px;
             margin-block: 1.5rem;
             line-height: 1.5;
-            will-change:opacity;
         }
 
         .hero-description {
@@ -343,7 +338,6 @@
             line-height: 1.7;
             margin-bottom: 2.5rem;
             max-width: 550px;
-            will-change:opacity;
         }
 
         .hero-image {
@@ -353,7 +347,6 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            will-change:clip-path;
         }
 
         .hero-slide {
@@ -362,8 +355,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            transition: clip-path 0.8s ease;
         }
 
         .hero-slide img {
@@ -386,12 +377,8 @@
 
         .hero-slide.active {
             z-index: 1;
-            clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
 
-        .keyboard, .api {
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%)
-        }
 
         .hero-cta {
             display: flex;
