@@ -2217,6 +2217,11 @@
         background: var(--dark);
         z-index:10000;
         overflow: hidden;
+        /* GPU acceleration and optimization */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: opacity;
+        -webkit-font-smoothing: antialiased;
     }
     .spinner-container::-webkit-scrollbar {
         display: none;
@@ -2230,7 +2235,6 @@
             opacity: 1;
         } to {
             opacity: 0;
-            display: none;
         }
     }
     .spinner {
@@ -2318,3 +2322,188 @@
         position: relative;
     
     }
+
+      .loader-absolute {
+        position: absolute;
+      }
+      
+      .inline-block {
+        display: inline-block;
+        /* GPU acceleration for each letter */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: transform;
+      }
+      
+      .loader {
+        display: flex;
+        margin: 0.25em 0;
+        /* GPU acceleration */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+      
+      .w-2 {
+        width: 0.5em;
+      }
+      
+      .dash {
+        animation: dashArray 2s ease-in-out infinite,
+          dashOffset 2s linear infinite;
+        /* GPU acceleration for smoother animation */
+        transform: translateZ(0);
+        will-change: stroke-dasharray, stroke-dashoffset;
+      }
+      
+      .spin {
+        animation: spinDashArray 2s ease-in-out infinite,
+          spin 8s ease-in-out infinite,
+          dashOffset 2s linear infinite;
+        transform-origin: center;
+        /* GPU acceleration for smoother animation */
+        will-change: stroke-dasharray, stroke-dashoffset, transform;
+        backface-visibility: hidden;
+      }
+      
+      @keyframes dashArray {
+        0% {
+          stroke-dasharray: 0 1 359 0;
+        }
+      
+        50% {
+          stroke-dasharray: 0 359 1 0;
+        }
+      
+        100% {
+          stroke-dasharray: 359 1 0 0;
+        }
+      }
+      
+      @keyframes spinDashArray {
+        0% {
+          stroke-dasharray: 270 90;
+        }
+      
+        50% {
+          stroke-dasharray: 0 360;
+        }
+      
+        100% {
+          stroke-dasharray: 270 90;
+        }
+      }
+      
+      @keyframes dashOffset {
+        0% {
+          stroke-dashoffset: 365;
+        }
+      
+        100% {
+          stroke-dashoffset: 5;
+        }
+      }
+      
+      @keyframes spin {
+        0% {
+          rotate: 0deg;
+        }
+      
+        12.5%,
+        25% {
+          rotate: 270deg;
+        }
+      
+        37.5%,
+        50% {
+          rotate: 540deg;
+        }
+      
+        62.5%,
+        75% {
+          rotate: 810deg;
+        }
+      
+        87.5%,
+        100% {
+          rotate: 1080deg;
+        }
+      }
+      
+
+
+      .spinner2 {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-left: -75px;
+      }
+      
+      .spinner2 span {
+        position: absolute;
+        top: 50%;
+        left: var(--left);
+        width: 35px;
+        height: 7px;
+        background: #ffff;
+        animation: dominos 1s ease infinite;
+        box-shadow: 2px 2px 3px 0px black;
+      }
+      
+      .spinner2 span:nth-child(1) {
+        --left: 80px;
+        animation-delay: 0.125s;
+      }
+      
+      .spinner2 span:nth-child(2) {
+        --left: 70px;
+        animation-delay: 0.3s;
+      }
+      
+      .spinner2 span:nth-child(3) {
+        left: 60px;
+        animation-delay: 0.425s;
+      }
+      
+      .spinner2 span:nth-child(4) {
+        animation-delay: 0.54s;
+        left: 50px;
+      }
+      
+      .spinner2 span:nth-child(5) {
+        animation-delay: 0.665s;
+        left: 40px;
+      }
+      
+      .spinner2 span:nth-child(6) {
+        animation-delay: 0.79s;
+        left: 30px;
+      }
+      
+      .spinner2 span:nth-child(7) {
+        animation-delay: 0.915s;
+        left: 20px;
+      }
+      
+      .spinner2 span:nth-child(8) {
+        left: 10px;
+      }
+      
+      @keyframes dominos {
+        50% {
+          opacity: 0.7;
+        }
+      
+        75% {
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+      
+        80% {
+          opacity: 1;
+        }
+      }
+      
