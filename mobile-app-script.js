@@ -222,22 +222,4 @@ gsap.fromTo(faqHeading.words, {opacity:0, filter:'blur(10px'}, {opacity:1, filte
     }
 })
 
-// FAQ Accordion Functionality
-const faqQuestions = document.querySelectorAll('.mobile-faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const faqItem = question.parentElement;
-        const isActive = faqItem.classList.contains('active');
-        
-        // Close all other FAQ items
-        document.querySelectorAll('.mobile-faq-item').forEach(item => {
-            item.classList.remove('active');
-        });
-        
-        // Toggle current item
-        if (!isActive) {
-            faqItem.classList.add('active');
-        }
-    });
-});
+// FAQ items are now always expanded - no accordion functionality needed
