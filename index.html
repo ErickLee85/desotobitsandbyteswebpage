@@ -1020,6 +1020,20 @@
             </svg>
           </div>
     </div> -->
+    <script>
+        // Check if mobile BEFORE loading any 3D libraries
+        const isMobile_ = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (window.innerWidth <= 943) ||
+            ('ontouchstart' in window);
+        
+        // Hide the 3D section on mobile
+        if (isMobile_) {
+            const webglSection = document.querySelector('.webgl-section');
+            if (webglSection) {
+                webglSection.style.display = 'none';
+            }
+        }
+    </script>
     <script type="importmap">
         {
             "imports": {
@@ -1029,17 +1043,21 @@
             }
         }
     </script>
-    <script>
-
-    </script>
     <script type="module">
-           import * as THREE from 'three';
-           const { OrbitControls } = await import('OrbitControls');
+        // Only load 3D earth model on desktop devices
+        // Check if mobile (using window to access the variable from the previous script scope)
+        const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (window.innerWidth <= 943) ||
+            ('ontouchstart' in window);
+        
+        // Exit early on mobile - don't load anything
+        if (isMobileDevice) {
+            // Do nothing - completely bypass 3D loading
+        } else {
+            // Only load Three.js and create 3D scene on desktop using dynamic imports
+            const THREE = await import('three');
+            const { OrbitControls } = await import('OrbitControls');
         //    const { GLTFLoader } = await import('GLTFLoader');
-
-           const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-               (window.innerWidth <= 943) ||
-               ('ontouchstart' in window);
            
             const canvas = document.querySelector('.webgl-content');
             const scene = new THREE.Scene();
@@ -1117,13 +1135,12 @@
             // Camera controls
             let controls;
           
-            if (!isMobile) {
-                controls = new OrbitControls(camera, canvas);
-                controls.enableDamping = true;
-                controls.enablePan = true;
-                controls.minDistance = 50;
-                controls.maxDistance = 100;
-            }
+            // We're already in the desktop-only block, so controls are always enabled
+            controls = new OrbitControls(camera, canvas);
+            controls.enableDamping = true;
+            controls.enablePan = true;
+            controls.minDistance = 50;
+            controls.maxDistance = 100;
             
 
             // Load textures
@@ -1247,7 +1264,7 @@
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
-
+        } // End of desktop-only block
     </script>
     <script>
         const arrow = document.querySelector('.hero-arrow-indicator')

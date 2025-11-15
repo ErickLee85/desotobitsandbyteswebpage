@@ -1892,6 +1892,9 @@
             }
         }
         @media(max-width:643px) {
+            .mobile-learn-more-btn {
+                min-width: 100%;
+            }            
             .stats-image {
                 max-width: calc(100vw - 50px);
             }
