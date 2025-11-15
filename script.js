@@ -845,6 +845,11 @@
         const anchorLinks = document.querySelectorAll('a[href^="#"]');
         if (anchorLinks.length > 0) {
         anchorLinks.forEach(anchor => {
+            // Skip services dropdown triggers
+            if (anchor.classList.contains('service-link') || anchor.classList.contains('mobile-services-toggle')) {
+                return;
+            }
+            
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const href = this.getAttribute('href');
@@ -949,12 +954,65 @@
                 document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
             });
 
-            // Close mobile menu when clicking a link
+            // Close mobile menu when clicking a link (except dropdown toggle)
             mobileMenuLinks.forEach(link => {
+                if (!link.classList.contains('mobile-services-toggle')) {
+                    link.addEventListener('click', () => {
+                        menuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+            });
+        }
+
+        // Mobile services dropdown toggle
+        const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
+        const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
+
+        if (mobileServicesToggle && mobileMenuDropdown) {
+            mobileServicesToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileMenuDropdown.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking submenu links
+            const submenuLinks = document.querySelectorAll('.mobile-submenu-link');
+            submenuLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     menuToggle.classList.remove('active');
                     mobileMenu.classList.remove('active');
+                    mobileMenuDropdown.classList.remove('active');
                     document.body.style.overflow = '';
+                });
+            });
+        }
+
+        // Desktop services dropdown toggle
+        const desktopServicesLink = document.querySelector('.nav-dropdown > .service-link');
+        const navDropdown = document.querySelector('.nav-dropdown');
+
+        if (desktopServicesLink && navDropdown) {
+            desktopServicesLink.addEventListener('mouseenter', () => {
+                navDropdown.classList.add('active');
+            });
+            desktopServicesLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                navDropdown.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navDropdown.contains(e.target)) {
+                    navDropdown.classList.remove('active');
+                }
+            });
+
+            // Close dropdown when clicking a dropdown item
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navDropdown.classList.remove('active');
                 });
             });
         }
@@ -1492,6 +1550,10 @@
 
         // Initialize marquee when page loads
         window.addEventListener("load", () => {
+            const serviceLink = document.querySelector('.service-link');
+            serviceLink.addEventListener('click', (e) => {
+                e.preventDefault();
+            });
             const marqueeElement = document.querySelector('.marquee');
             if (marqueeElement) {
                 const speed = marqueeElement.getAttribute('data-speed') || 60;

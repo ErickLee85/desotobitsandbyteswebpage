@@ -10,6 +10,17 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <script type="speculationrules">
+        {
+            "prerender" : [
+            {
+                "urls": [
+                 "/mobile-apps", "/web-applications"
+                ]
+            }
+            ]
+        }
+    </script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -183,7 +194,36 @@
         </div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#services" class="service-link">Services</a>
+            <div class="nav-dropdown">
+                <a href="#" class="service-link">
+                    Services
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="./mobile-apps" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="./web-applications" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M482-80q-50 0-85-35t-35-85q0-38 22-68.5t56-43.5v-256L303-402q8 14 12.5 29.5T320-340q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t20 5.5l172-208q-24-17-38.5-42.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 31-14.5 56.5T547-661l172 208q10-4 20-5.5t21-1.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-17 4.5-32.5T657-402L520-568v254q36 12 59 43t23 71q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T522-200q0-17-11.5-28.5T482-240q-17 0-28.5 11.5T442-200q0 17 11.5 28.5T482-160ZM200-300q17 0 28.5-11.5T240-340q0-17-11.5-28.5T200-380q-17 0-28.5 11.5T160-340q0 17 11.5 28.5T200-300Zm560 0q17 0 28.5-11.5T800-340q0-17-11.5-28.5T760-380q-17 0-28.5 11.5T720-340q0 17 11.5 28.5T760-300ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                </div>
+            </div>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-cta">
@@ -202,7 +242,36 @@
     <div class="mobile-menu">
         <nav>
             <a href="#home" class="mobile-menu-link">Home</a>
-            <a href="#services" class="mobile-menu-link">Services</a>
+            <div class="mobile-menu-dropdown">
+                <a href="#services" class="mobile-menu-link mobile-services-toggle">
+                    Services
+                    <svg class="mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="mobile-submenu">
+                    <a href="./mobile-apps/index.html" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M482-80q-50 0-85-35t-35-85q0-38 22-68.5t56-43.5v-256L303-402q8 14 12.5 29.5T320-340q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t20 5.5l172-208q-24-17-38.5-42.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 31-14.5 56.5T547-661l172 208q10-4 20-5.5t21-1.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-17 4.5-32.5T657-402L520-568v254q36 12 59 43t23 71q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T522-200q0-17-11.5-28.5T482-240q-17 0-28.5 11.5T442-200q0 17 11.5 28.5T482-160ZM200-300q17 0 28.5-11.5T240-340q0-17-11.5-28.5T200-380q-17 0-28.5 11.5T160-340q0 17 11.5 28.5T200-300Zm560 0q17 0 28.5-11.5T800-340q0-17-11.5-28.5T760-380q-17 0-28.5 11.5T720-340q0 17 11.5 28.5T760-300ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                </div>
+            </div>
             <a href="#contact" class="mobile-menu-link">Contact</a>
         </nav>
         <a href="tel:16629321047" class="phone">(662) 932-1047</a>
@@ -713,7 +782,7 @@
 
                 <section class="get-in-touch-section" id="contact">
                     <div class="get-in-touch-wrapper">
-                        <h2 class="get-in-touch-hero">It's nice to meet ya<span class="hero-arrow-indicator" id="heroArrowIndicator">
+                        <h2 class="get-in-touch-hero">Get in touch<span class="hero-arrow-indicator" id="heroArrowIndicator">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                                 <path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/>
                             </svg>
@@ -960,10 +1029,13 @@
             }
         }
     </script>
+    <script>
+
+    </script>
     <script type="module">
            import * as THREE from 'three';
            const { OrbitControls } = await import('OrbitControls');
-           const { GLTFLoader } = await import('GLTFLoader');
+        //    const { GLTFLoader } = await import('GLTFLoader');
 
            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
                (window.innerWidth <= 943) ||
@@ -974,7 +1046,8 @@
             // scene.background = new THREE.Color(0x1a1a1a);
             
             const camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.5, 100 );
-            camera.position.z = 25;
+            camera.position.z = 100;
+            camera.position.x = -15;
             
             const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true});
             // const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha:true, premultipliedAlpha:true}); // use this to make background transparent
@@ -991,15 +1064,15 @@
         //    }
 
             // Lighting setup
-            const ambientLight = new THREE.AmbientLight(0xFFFFFF, 5);
-            scene.add(ambientLight);
+            // const ambientLight = new THREE.AmbientLight(0xFFFFFF, 5);
+            // scene.add(ambientLight);
             
-            const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 3.5);
-            directionalLight.position.set(5, 10, 2);
-            scene.add(directionalLight);
+            // const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 3.5);
+            // directionalLight.position.set(5, 10, 2);
+            // scene.add(directionalLight);
             
-            const hemisphereLight = new THREE.HemisphereLight(0xB1E1FF, 0xB97A20, 1);
-            scene.add(hemisphereLight);
+            // const hemisphereLight = new THREE.HemisphereLight(0xB1E1FF, 0xB97A20, 1);
+            // scene.add(hemisphereLight);
 
             // Function to frame the camera around the loaded model
             function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
@@ -1020,45 +1093,114 @@
                 console.log('box center x: ', boxCenter.x)
                 console.log('box center y: ', boxCenter.y)
                 console.log('box center z: ', boxCenter.z)
-
             }
 
-            // Load the GLTF model
-            const gltfLoader = new GLTFLoader();
-            let model = null;
+            var sunLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            sunLight.position.set(400, 0, 0);
+            sunLight.castShadow = true;
+            sunLight.shadow.mapSize.width = 2048;
+            sunLight.shadow.mapSize.height = 2048;
+            sunLight.shadow.camera.near = 0.1;
+            sunLight.shadow.camera.far = 1000;
+            sunLight.shadow.camera.left = -100;
+            sunLight.shadow.camera.right = 100;
+            sunLight.shadow.camera.top = 100;
+            sunLight.shadow.camera.bottom = -100;
+            sunLight.shadow.radius = 8;
+            sunLight.shadow.blurSamples = 25;
+            scene.add(sunLight);
+
+            // Add subtle moonlight/starlight for the night side
+            var nightLight = new THREE.AmbientLight(0x2a2a3e, 0.25); // Increased from 0.15 to 0.25
+            scene.add(nightLight);
+
+            // Camera controls
+            let controls;
+          
+            if (!isMobile) {
+                controls = new OrbitControls(camera, canvas);
+                controls.enableDamping = true;
+                controls.enablePan = true;
+                controls.minDistance = 50;
+                controls.maxDistance = 100;
+            }
             
-            gltfLoader.load('./boombox_4k.gltf/boombox_4k.gltf', 
-                (gltf) => {
-                    model = gltf.scene;
+
+            // Load textures
+            // 8k_earth_nightmap.jpg
+            const textureLoader = new THREE.TextureLoader();
+            const earthTexture = textureLoader.load('./images/tinified/8k_earth_daymap.webp');
+            const earthBump = textureLoader.load('./images/tinified/elev_bump_16k.jpg');
+            const earthSpec = textureLoader.load('./images/tinified/2k_earth_specular_map (1).jpg');
+            const earthAtmosphere = textureLoader.load('./images/tinified/2k_earth_clouds.jpg');
+            const earthNightTexture = textureLoader.load('./images/tinified/8k_earth_nightmap.jpg'); // Added night texture
+
+            var mySphere = new THREE.Mesh(
+                new THREE.SphereGeometry(20, 100, 100),
+                new THREE.MeshStandardMaterial({
+                    map: earthTexture,
+                    bumpMap: earthBump,
+                    bumpScale: 0.8,
+                    metalnessMap: earthSpec,
+                    metalness: 0.1,
+                    roughness: 0.4,
+                    emissiveMap: earthNightTexture, // City lights on night side
+                    emissive: new THREE.Color(0x444444), // Subtle emission color
+                    transparent: false,
+                })
+            );
+            mySphere.receiveShadow = true;
+            mySphere.castShadow = false;
+            scene.add(mySphere);
+
+            // Earth atmosphere
+            var sphereAtmosphere = new THREE.Mesh(
+                new THREE.SphereGeometry(20.2, 100, 100),
+                new THREE.MeshBasicMaterial({
+                    map: earthAtmosphere,
+                    transparent: true,
+                    opacity: 0.3,
+                    blending: THREE.AdditiveBlending
+                })
+            );
+            scene.add(sphereAtmosphere);
+
+            // Load the GLTF model
+            // const gltfLoader = new GLTFLoader();
+            // let model = null;
+            
+            // gltfLoader.load('./boombox_4k.gltf/boombox_4k.gltf', 
+            //     (gltf) => {
+            //         model = gltf.scene;
                     
-                    // Scale down the model
+            //         // Scale down the model
                   
-                    scene.add(model);
+            //         scene.add(model);
           
                     
-                    // Compute the box that contains the model
-                    const box = new THREE.Box3().setFromObject(model);
-                    const boxSize = box.getSize(new THREE.Vector3()).length();
-                    const boxCenter = box.getCenter(new THREE.Vector3());
+            //         // Compute the box that contains the model
+            //         const box = new THREE.Box3().setFromObject(model);
+            //         const boxSize = box.getSize(new THREE.Vector3()).length();
+            //         const boxCenter = box.getCenter(new THREE.Vector3());
 
-                    // Frame the camera to fit the model (comment out to use manual camera position)
-                    frameArea(boxSize * 0.8, boxSize, boxCenter, camera);
+            //         // Frame the camera to fit the model (comment out to use manual camera position)
+            //         frameArea(boxSize * 0.8, boxSize, boxCenter, camera);
 
-                    // // Update controls (only if not on mobile)
-                    // if (controls) {
-                    //     controls.maxDistance = boxSize * 2;
-                    //     controls.target.copy(boxCenter);
-                    //     controls.update();
-                    // }
-                },
-                (progress) => {
-                    // Optional: handle loading progress
-                    console.log('Loading model...', (progress.loaded / progress.total * 100) + '%');
-                },
-                (error) => {
-                    console.error('Error loading model:', error);
-                }
-            );
+            //         // // Update controls (only if not on mobile)
+            //         // if (controls) {
+            //         //     controls.maxDistance = boxSize * 2;
+            //         //     controls.target.copy(boxCenter);
+            //         //     controls.update();
+            //         // }
+            //     },
+            //     (progress) => {
+            //         // Optional: handle loading progress
+            //         console.log('Loading model...', (progress.loaded / progress.total * 100) + '%');
+            //     },
+            //     (error) => {
+            //         console.error('Error loading model:', error);
+            //     }
+            // );
 
             // Resize handler
             function resizeRendererToDisplaySize(renderer) {
@@ -1087,8 +1229,10 @@
                 }
 
                 // Optional: rotate the model slowly
-                if (model) {
-                model.rotation.y += 0.0009;
+               sphereAtmosphere.rotation.y += 0.0001;
+                mySphere.rotation.y += 0.0001;
+                if (controls) {
+                    controls.update();
                 }
 
                 renderer.render(scene, camera);

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../web-applications.css">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/logo_light.png" alt="Desoto Bits and Bytes">
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <div class="nav-dropdown">
+                <a href="#" class="service-link">
+                    Services
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/mobile-apps" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M482-80q-50 0-85-35t-35-85q0-38 22-68.5t56-43.5v-256L303-402q8 14 12.5 29.5T320-340q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t20 5.5l172-208q-24-17-38.5-42.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 31-14.5 56.5T547-661l172 208q10-4 20-5.5t21-1.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-17 4.5-32.5T657-402L520-568v254q36 12 59 43t23 71q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T522-200q0-17-11.5-28.5T482-240q-17 0-28.5 11.5T442-200q0 17 11.5 28.5T482-160ZM200-300q17 0 28.5-11.5T240-340q0-17-11.5-28.5T200-380q-17 0-28.5 11.5T160-340q0 17 11.5 28.5T200-300Zm560 0q17 0 28.5-11.5T800-340q0-17-11.5-28.5T760-380q-17 0-28.5 11.5T720-340q0 17 11.5 28.5T760-300ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                </div>
+            </div>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-cta">
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="phone getQuoteBtn">
+                Get Quote
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <nav>
+            <a href="/" class="mobile-menu-link">Home</a>
+            <div class="mobile-menu-dropdown">
+                <a href="#services" class="mobile-menu-link mobile-services-toggle">
+                    Services
+                    <svg class="mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="mobile-submenu">
+                    <a href="/mobile-apps" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M482-80q-50 0-85-35t-35-85q0-38 22-68.5t56-43.5v-256L303-402q8 14 12.5 29.5T320-340q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t20 5.5l172-208q-24-17-38.5-42.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 31-14.5 56.5T547-661l172 208q10-4 20-5.5t21-1.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-17 4.5-32.5T657-402L520-568v254q36 12 59 43t23 71q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T522-200q0-17-11.5-28.5T482-240q-17 0-28.5 11.5T442-200q0 17 11.5 28.5T482-160ZM200-300q17 0 28.5-11.5T240-340q0-17-11.5-28.5T200-380q-17 0-28.5 11.5T160-340q0 17 11.5 28.5T200-300Zm560 0q17 0 28.5-11.5T800-340q0-17-11.5-28.5T760-380q-17 0-28.5 11.5T720-340q0 17 11.5 28.5T760-300ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="#" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                </div>
+            </div>
+            <a href="#contact" class="mobile-menu-link">Contact</a>
+        </nav>
+        <a href="tel:16629321047" class="phone">(662) 932-1047</a>
+    </div>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- Hero Section -->
+            <section class="web-hero">
+                <div class="web-hero-container">
+                    <!-- Centered Text Content -->
+                    <div class="web-hero-header">
+                        <h2 class="web-hero-subtitle">Services</h2>
+                        <h1 class="web-hero-title">Web Application Development</h1>
+                        <p class="web-hero-subtext">
+                            Build powerful, scalable web applications that transform your business. From <span>enterprise solutions</span> 
+                            to <span>custom platforms</span>, we deliver cutting-edge web experiences that drive results.
+                        </p>
+                        <div class="web-hero-cta">
+                            <button class="web-cta getQuoteBtn">
+                                Get a free consultation
+                            </button>
+                            <button class="web-learn-more">Learn More</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 3D MacBook Model Canvas -->
+                    <canvas class="web-laptop-canvas"></canvas>
+                </div>
+            </section>
+            <section class="main">
+          
+                        <div class="dashboard-container">
+                            <div class="dash-nav">
+                                <div>
+                                    <img src="../images/pie-chart-svgrepo-com.svg" height="40px" width="40px" alt="pie chart">
+                                </div>
+                                <div class="nav-icon-container">
+                                    <div class="active-dash-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M513.33-580v-260H840v260H513.33ZM120-446.67V-840h326.67v393.33H120ZM513.33-120v-393.33H840V-120H513.33ZM120-120v-260h326.67v260H120Zm66.67-393.33H380v-260H186.67v260ZM580-186.67h193.33v-260H580v260Zm0-460h193.33v-126.66H580v126.66Zm-393.33 460H380v-126.66H186.67v126.66ZM380-513.33Zm200-133.34Zm0 200ZM380-313.33Z"/></svg>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#808080"><path d="M94.33-407.67 40-447.33l195.33-313.34 123.34 144L522-882l123.33 184 140.34-222 53.66 39-192.66 305.33L524.33-758 367.67-503.67 244-648 94.33-407.67Zm487.67 181q46 0 78.67-32 32.66-32 32.66-78 0-46.66-32.33-79Q628.67-448 582-448q-46 0-78 32.67-32 32.66-32 78.66t32 78q32 32 78 32ZM792.67-80 682-190.67Q660.33-176 635.17-168 610-160 582-160q-73.67 0-125.17-51.5t-51.5-125.17q0-73.66 51.5-125.83T582-514.67q74.33 0 126.17 51.84Q760-411 760-336.67q0 28-8 53.17t-23.33 46.83l110.66 110L792.67-80Z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#808080"><path d="M606.61-40q-30.28 0-51.78-21.54t-21.5-51.79q0-21.67 11-39.34 11-17.66 29-26.66V-415q-18-9-29-26.17-11-17.16-11-38.52 0-30.64 21.56-52.14t51.84-21.5q30.27 0 51.77 21.54Q680-510.25 680-480q0 21.67-11 38.83Q658-424 640-415v128.33l173.33-57.66V-415q-18-9-29-26.17-11-17.16-11-38.52 0-30.64 21.56-52.14t51.84-21.5q30.27 0 51.77 21.54Q920-510.25 920-480q0 21.67-11 38.83Q898-424 880-415v118.6l-240 79.73v37.34q18 9 29 26.66 11 17.67 11 39.03Q680-83 658.44-61.5T606.61-40ZM146.67-160v-573.33V-160Zm0 0q-27 0-46.84-20.17Q80-200.33 80-226.67v-506.66q0-26.34 19.83-46.5Q119.67-800 146.67-800H414l66.67 66.67h332.66q27.5 0 47.09 19.58Q880-694.17 880-666.67H453l-66.67-66.66H146.67v506.66h320V-160h-320Z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#808080"><path d="M213.33-100q-13.66 0-28.5-8.5Q170-117 163.33-129L56.67-315.33q-6.67-12-6.67-28.84Q50-361 56.67-373l266.66-458q6.67-12 21.5-20.5 14.84-8.5 28.5-8.5h213.34q13.66 0 28.5 8.5Q630-843 636.67-831L822-513q-19.67-5.33-40.17-7.33t-41.16 0l-159.34-273H378.67L116.67-344 218-166.67h330.67q10.33 19 23.5 35.67 13.16 16.67 28.83 31H213.33ZM290-280l-29-51 183-319h72l101 176q-14.33 10.33-26.17 22.83Q579-438.67 568.67-425L480-578.67l-133.33 232H530q-5 15.67-7.5 32.34Q520-297.67 520-280H290Zm436.67 153.33v-120h-120v-66.66h120v-120h66.66v120h120v66.66h-120v120h-66.66Z"/></svg>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#808080"><path d="M480-120.67q-75 0-140.5-28.5t-114-77q-48.5-48.5-77-114T120-480.67q0-75 28.5-140.5t77-114q48.5-48.5 114-77t140.5-28.5V-774q-121.67 0-207.5 85.83-85.83 85.84-85.83 207.5 0 122.34 85.83 207.84t207.5 85.5v66.66Zm168.67-168.66L602-337l109.67-109.67H360v-66.66h351.67L602-624l46.67-46.67L839.33-480 648.67-289.33Z"/></svg>
+                                </div>
+                            </div>
+                            <div class="dash-content">
+                            <div class="title">
+                                <h1 class="crm-title">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 -960 960 960" width="35px" fill="#FFFFFF"><path d="M513.33-580v-260H840v260H513.33ZM120-446.67V-840h326.67v393.33H120ZM513.33-120v-393.33H840V-120H513.33ZM120-120v-260h326.67v260H120Zm66.67-393.33H380v-260H186.67v260ZM580-186.67h193.33v-260H580v260Zm0-460h193.33v-126.66H580v126.66Zm-393.33 460H380v-126.66H186.67v126.66ZM380-513.33Zm200-133.34Zm0 200ZM380-313.33Z"/></svg>
+                                    Dashboard
+                                </h1>
+                                <div class="icon-container">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q10 0 20.5.67 10.5.66 24.17 2-37.67 31-59.17 77.83T444-660q0 90 63 153t153 63q53 0 99.67-20.5 46.66-20.5 77.66-56.17 1.34 12.34 2 21.84.67 9.5.67 18.83 0 150-105 255T480-120Zm0-66.67q102 0 179.33-61.16Q736.67-309 760.67-395.67q-23.34 9-49.11 13.67-25.78 4.67-51.56 4.67-117.46 0-200.06-82.61-82.61-82.6-82.61-200.06 0-22.67 4.34-47.67 4.33-25 14.66-55-91.33 28.67-150.5 107-59.16 78.34-59.16 175.67 0 122 85.66 207.67Q358-186.67 480-186.67Zm-6-288Z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M198.67-326.67Q178-363.33 169-401t-9-77q0-132 94-226.33 94-94.34 226-94.34h31l-74.67-74.66L481-918l152.67 152.67L481-612.67 435.67-658l74-74H480q-104.67 0-179 74.5T226.67-478q0 28 5.66 53.67 5.67 25.66 15 49l-48.66 48.66ZM477.67-40 325-192.67l152.67-152.66 44.66 44.66L447.67-226H480q104.67 0 179-74.5T733.33-480q0-28-5.33-53.67-5.33-25.66-16-49l48.67-48.66q20.66 36.66 30 74.33 9.33 37.67 9.33 77 0 132-94 226.33-94 94.34-226 94.34h-32.33l74.66 74.66L477.67-40Z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M477.33-80q-82.27 0-154.63-31.17-72.37-31.16-126.37-85.16T111.17-322.7Q80-395.06 80-477.33q0-83.24 31.5-156.46Q143-707 197-761.63q54-54.63 127-86.5Q397-880 480-880t156 31.87q73 31.87 127 86.5 54 54.63 85.5 127.84Q880-560.57 880-477.33v316q0 33.55-23.89 57.44T798.67-80H477.33Zm0-70q138 0 235.67-95.13 97.67-95.13 97.67-232.2 0-140-96.1-238t-234.57-98q-140 0-236.67 98-96.66 98-96.66 238 0 27.12 4.33 53.06T163.33-374l157.34-157.33 132 111.66 146.33-147h-72.33v-66.66h186.66v186.66h-66.66V-519L456-329.33l-131.67-112L193-310q43.33 72.33 118.17 116.17Q386-150 477.33-150Zm315 14.67q14 0 23.5-9.84 9.5-9.83 9.5-23.83 0-14-9.83-23.5T792-202q-13.67 0-23.5 9.58-9.83 9.59-9.83 23.75 0 13.67 9.83 23.5 9.83 9.84 23.83 9.84ZM461.67-482Z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#FFFFFF"><path d="M792-120.67 532.67-380q-30 25.33-69.64 39.67Q423.39-326 378.67-326q-108.44 0-183.56-75.17Q120-476.33 120-583.33t75.17-182.17q75.16-75.17 182.5-75.17 107.33 0 182.16 75.17 74.84 75.17 74.84 182.27 0 43.23-14 82.9-14 39.66-40.67 73l260 258.66-48 48Zm-414-272q79.17 0 134.58-55.83Q568-504.33 568-583.33q0-79-55.42-134.84Q457.17-774 378-774q-79.72 0-135.53 55.83-55.8 55.84-55.8 134.84t55.8 134.83q55.81 55.83 135.53 55.83Z"/></svg>            </div>
+                            </div>
+                            <div class="bento-container">
+                                <div class="bento-item chart-large">
+                                    <h3>Monthly Revenue</h3>
+                                    <div class="value">$847,392</div>
+                                    <div class="subtext"><span class="change-positive">↑ 23.8%</span> vs last month</div>
+                                    <div class="chart-container">
+                                        <canvas id="revenueChart"></canvas>
+                                    </div>
+                                </div>
+                                <div class="bento-item to-left">
+                                    <h3>Active Users</h3>
+                                    <div class="value">12,487</div>
+                                    <div class="subtext"><span class="change-positive">↑ 8.2%</span> from last week</div>
+                                </div>
+                                <div class="bento-item to-left">
+                                    <h3>Conversion Rate</h3>
+                                    <div class="value">3.82%</div>
+                                    <div class="subtext"><span class="change-positive">↑ 0.4%</span> improvement</div>
+                                </div>
+
+                                <div class="bento-item">
+                                    <h3>Avg. Session</h3>
+                                    <div class="value">5m 42s</div>
+                                    <div class="subtext"><span class="change-negative">↓ 12s</span> vs yesterday</div>
+                                </div>
+
+                                <div class="bento-item users-tall">
+                                    <h3>Recent Users</h3>
+                                    <div class="user-list">
+                                        <div class="user-item">
+                                            <div class="user-avatar">AT</div>
+                                            <div class="user-info">
+                                                <div class="user-name">Alex Thompson</div>
+                                                <div class="user-time">2 mins ago</div>
+                                            </div>
+                                        </div>
+                                        <div class="user-item">
+                                            <div class="user-avatar">JM</div>
+                                            <div class="user-info">
+                                                <div class="user-name">Jessica Martinez</div>
+                                                <div class="user-time">14 mins ago</div>
+                                            </div>
+                                        </div>
+                                        <div class="user-item">
+                                            <div class="user-avatar">RO</div>
+                                            <div class="user-info">
+                                                <div class="user-name">Ryan O'Connor</div>
+                                                <div class="user-time">23 mins ago</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bento-item users-tall to-left">
+                                    <h3>Total Customers</h3>
+                                    <div class="value">8,294</div>
+                                    <div class="subtext"><span class="change-positive">↑ 156</span> this month</div>
+                                </div>
+
+                                <div class="bento-item">
+                                    <h3>Bounce Rate</h3>
+                                    <div class="value">42.3%</div>
+                                    <div class="subtext"><span class="change-positive">↓ 3.1%</span> improvement</div>
+                                </div>
+
+                            </div>
+                            </div>
+                        </div>
+              
+            </section>
+
+            <!-- Web App Features Section -->
+            <section class="web-app-features-section" id="web-app-features-section">
+                <div class="web-app-features-container">
+                    <div class="web-app-features-content">
+                        <h2>Web Application Development</h2>
+                        <p>
+                            Our web applications are built with cutting-edge technologies and best practices, delivering 
+                            enterprise-grade solutions that scale with your business. From dashboards to full-stack platforms, 
+                            we create robust applications that users love. We build custom web applications tailored to your specific needs, whether you need a simple dashboard, a complex CRM, or a full-fledged e-commerce platform.
+                        </p>
+                        <ul class="web-app-features-list">
+                            <li class="web-app-feature-item">Real-time data dashboards & analytics</li>
+                            <li class="web-app-feature-item">Secure user authentication & authorization</li>
+                            <li class="web-app-feature-item">RESTful & GraphQL API development</li>
+                            <li class="web-app-feature-item">Database design & optimization</li>
+                            <li class="web-app-feature-item">Cloud deployment & scalability</li>
+                            <li class="web-app-feature-item">Payment gateway integration</li>
+                            <li class="web-app-feature-item">Admin panels & CMS solutions</li>
+                            <li class="web-app-feature-item">Third-party API integrations</li>
+                            <li class="web-app-feature-item">Responsive design for all devices</li>
+                            <li class="web-app-feature-item">Performance optimization & caching</li>
+                        </ul>
+                    </div>
+                    <div class="web-app-features-image">
+                        <img src="../mockuper.webp" alt="Web Application Example" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Review Section -->
+            <section class="web-reviews-section" id="web-reviews">
+                <h2 class="web-reviews-heading">What Our Clients Say</h2>
+                <div class="web-reviews-container">
+                    <div class="web-reviews-track">
+                         <div class="web-review-card active">
+                            <div class="web-review-stars">★★★★★</div>
+                            <p class="web-review-text">"Erick is FANTASTIC to work with. He built a CRM Platform for me to send email campaigns to potential customers. It is easy to use and had all of the template necessities for my creative brain to bring my vision to life! Oh, and he did it super fast!"</p>
+                            <div class="web-review-author">
+                                <div class="web-review-author-avatar">
+                                    <img src="../images/reviews/shelby.png" alt="Shelby McFarland">
+                                </div>
+                                <div class="web-review-author-info">
+                                    <div class="web-review-author-name">Shelby McFarland</div>
+                                    <div class="web-review-author-company">CEO, The Marketing Broker</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="web-faq-section" id="web-faq">
+                <h2 class="web-faq-heading">Frequently Asked Questions</h2>
+                <div class="web-faq-container">
+                    <div class="web-faq-accordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="web-faq-item active">
+                            <h3 class="web-faq-question">
+                                What technologies do you use for web applications?
+                            </h3>
+                            <div class="web-faq-answer">
+                                <p>We use modern, battle-tested technologies including React, Next.js, Node.js, and various databases (PostgreSQL, MongoDB, Firebase). We select the best tech stack based on your specific needs, scalability requirements, and budget to ensure optimal performance and maintainability.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="web-faq-item active">
+                            <h3 class="web-faq-question">
+                                How long does it take to build a web application?
+                            </h3>
+                            <div class="web-faq-answer">
+                                <p>Timeline varies based on complexity. A simple dashboard or MVP can take 3-4 weeks, while a comprehensive platform with multiple features, integrations, and custom functionality typically takes 2-4 months. We'll provide a detailed project timeline after understanding your requirements.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="web-faq-item active">
+                            <h3 class="web-faq-question">
+                                Can you integrate with existing systems and APIs?
+                            </h3>
+                            <div class="web-faq-answer">
+                                <p>Absolutely! We specialize in integrating with third-party services, existing databases, payment processors, CRM systems, and custom APIs. Whether it's Stripe, Salesforce, or your proprietary system, we'll ensure seamless data flow and functionality.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 4 -->
+                        <div class="web-faq-item active">
+                            <h3 class="web-faq-question">
+                                What kind of web applications do you build?
+                            </h3>
+                            <div class="web-faq-answer">
+                                <p>We build a wide range of web applications including SaaS platforms, CRM systems, admin dashboards, e-commerce solutions, booking systems, project management tools, internal business tools, and custom enterprise applications tailored to your specific business needs.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 5 -->
+                        <div class="web-faq-item active">
+                            <h3 class="web-faq-question">
+                                Do you provide hosting and maintenance?
+                            </h3>
+                            <div class="web-faq-answer">
+                                <p>Yes! We offer comprehensive deployment services on platforms like AWS, Vercel, and DigitalOcean, plus ongoing maintenance packages that include updates, security patches, bug fixes, feature enhancements, and 24/7 monitoring to keep your application running smoothly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <footer class="footer-section">
+                <div class="footer-wrapper">
+                    <p class="footer-copyright">© 2025 Desoto Bits and Bytes LLC. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Desoto-Bits-Bytes-LLC-61560805109211/" class="social-link">
+                            <img src="../images/socials/facebook-1-svgrepo-com.svg" alt="Desoto Bits & Bytes Facebook Profile" class="social-icon">
+                        </a>
+                        <a href="https://www.linkedin.com/company/desoto-bits-bytes/" class="social-link">
+                            <img src="../images/socials/linkedin-1-svgrepo-com.svg" alt="Desoto Bits & Bytes LinkedIn Profile" class="social-icon">
+                        </a>
+                        <a href="https://www.google.com/search?q=desoto+bits+and+bytes" class="social-link">
+                            <img src="../images/socials/google-svgrepo-com.svg" alt="Google Business Profile" class="social-icon">
+                        </a>
+                    </div>
+                    <div class="footer-links">
+                        <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef" class="footer-link">Privacy Policy</a>
+                        <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-link">Terms of Service</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="contact-overlay" id="contactOverlay">
+        <div class="contact-form-panel" id="contactFormPanel">
+            <button class="contact-close-btn" id="contactCloseBtn" aria-label="Close contact form">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </button>
+            <div class="contact-form-content">
+                <h2 class="contact-form-title">Hey! How can we help?</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name & Company</label>
+                            <input type="text" id="name" name="name" placeholder="John from Apple" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@apple.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us more about your project</label>
+                        <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
+                    </div>
+                    <div class="contact-form-footer">
+                        <p class="contact-email-text">Email us <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
+                        <button type="submit" class="btn btn-submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('click', () => {
+            window.location.href = '/';
+            console.log('logo clicked');
+        });
+    </script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+                "OrbitControls": "https://unpkg.com/three@0.158.0/examples/jsm/controls/OrbitControls.js",
+                "GLTFLoader": "https://unpkg.com/three@0.158.0/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        const { GLTFLoader } = await import('GLTFLoader');
+
+        const isScreenMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (window.innerWidth <= 943) ||
+            ('ontouchstart' in window);
+        
+        const canvas = document.querySelector('.web-laptop-canvas');
+        const scene = new THREE.Scene();
+        
+        const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.5, 1000);
+        camera.position.z = 25;
+        
+        const renderer = new THREE.WebGLRenderer({antialias: true, canvas, alpha: true, premultipliedAlpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    
+
+        // Lighting setup
+        const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 3.5);
+        directionalLight.position.set(5, 10, 2);
+        scene.add(directionalLight);
+        
+        const hemisphereLight = new THREE.HemisphereLight(0xB1E1FF, 0xB97A20, 1);
+        scene.add(hemisphereLight);
+
+        // Function to frame the camera around the loaded model
+        function frameArea(sizeToFitOnScreen, boxSize, boxCenter, camera) {
+            const halfSizeToFitOnScreen = sizeToFitOnScreen * 0.5;
+            const halfFovY = THREE.MathUtils.degToRad(camera.fov * 0.5);
+            const distance = halfSizeToFitOnScreen / Math.tan(halfFovY);
+            
+            const direction = (new THREE.Vector3())
+                .subVectors(camera.position, boxCenter)
+                .multiply(new THREE.Vector3(1, 0, 1))
+                .normalize();
+
+            // Multiply distance to push camera further back
+            camera.position.copy(direction.multiplyScalar(distance * 3.5).add(boxCenter));
+            camera.near = boxSize / 100;
+            camera.far = boxSize * 100;
+            camera.updateProjectionMatrix();
+            camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z);
+        }
+
+        // Load the GLTF model
+        const gltfLoader = new GLTFLoader();
+        let model = null;
+        
+        gltfLoader.load('../macbook_pro_14-inch_m5/scene.gltf', 
+            (gltf) => {
+                model = gltf.scene;
+                scene.add(model);
+                
+                // Compute the box that contains the model
+                const box = new THREE.Box3().setFromObject(model);
+                const boxSize = box.getSize(new THREE.Vector3()).length();
+                const boxCenter = box.getCenter(new THREE.Vector3());
+
+                // Use frameArea to properly frame the laptop
+                frameArea(boxSize * 0.8, boxSize, boxCenter, camera);
+                
+                // Adjust camera distance to make laptop visible at good size
+                const currentDistance = camera.position.distanceTo(boxCenter);
+                const direction = new THREE.Vector3()
+                    .subVectors(camera.position, boxCenter)
+                    .normalize();
+                camera.position.copy(direction.multiplyScalar(currentDistance * 0.5).add(boxCenter));
+                camera.lookAt(boxCenter);
+            },
+            (progress) => {
+                console.log('Loading MacBook model...', (progress.loaded / progress.total * 100) + '%');
+            },
+            (error) => {
+                console.error('Error loading MacBook model:', error);
+            }
+        );
+
+        // Resize handler
+        function resizeRendererToDisplaySize(renderer) {
+            const canvas = renderer.domElement;
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+            const needResize = canvas.width !== width || canvas.height !== height;
+            if (needResize) {
+                renderer.setSize(width, height, false);
+            }
+            return needResize;
+        }
+
+        // Animation loop
+        function animate() {
+            // Handle resize
+            if (resizeRendererToDisplaySize(renderer)) {
+                const canvas = renderer.domElement;
+                camera.aspect = canvas.clientWidth / canvas.clientHeight;
+                camera.updateProjectionMatrix();
+            }
+
+            // Rotate the model slowly
+            if (model) {
+                model.rotation.y += 0.0009;
+            }
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js" integrity="sha512-BQAAkzDHfly7jPwVhh0SpGxbvjRNEapCNkJ0VNSMFervZLsaeUch4P92skLoD70NXWlI1GOgrXRfR50b/quSSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js" integrity="sha512-t4hwZimhnCKT3YLAsEcAcRDkngVFfCcUIfNLIjklrIZAZKD+GfQMP7HbRcsVHxNS48WRBSywNU1uSM2zzLQt1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" integrity="sha512-yOZoZc/D5ZPHwjBduLkgeGHhFlQ7CsslA5D1egpQgeV1QcV4OdCcwmRLkH7p/hEHHF1cJp3H2OpGpd7oELFGxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" integrity="sha512-dgqdovLK5r/NMiV5YfWA0xC94DKGrm+6q1OZpuWHm+uBGLTck6wu58WAX9lmy8wec6cVnsgxbPJ60DtmNFnfgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" integrity="sha512-vuNgw6lF+p97XmL9lFpbQZWBXxIFnwUVt7J/uknE4NJru5GJjjhIAauXdDtNdezqOJFnit+M3AeaM+gZ93hlmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../web-app-script.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

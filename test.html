@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 32px;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Services Dropdown Container */
+        .services-container {
+            position: relative;
+        }
+
+        .services-link {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .services-link:hover {
+            color: #00d4ff;
+        }
+
+        .services-link::after {
+            content: '▼';
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .services-container:hover .services-link::after {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 32px;
+            min-width: 900px;
+            margin-top: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            box-shadow: 0 20px 60px 0 rgba(31, 38, 135, 0.5);
+            z-index: 1000;
+        }
+
+        /* Added gap to dropdown container to keep dropdown visible while moving mouse */
+        .services-container::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 16px;
+            pointer-events: auto;
+        }
+
+        .services-container:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+
+        /* Service Card */
+        .service-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(138, 43, 226, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-card:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(138, 43, 226, 0.2) 100%);
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.2);
+        }
+
+        .service-icon {
+            font-size: 32px;
+            min-width: 40px;
+        }
+
+        .service-name {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .service-card:hover .service-name {
+            color: #00d4ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                gap: 24px;
+                padding: 16px 24px;
+            }
+
+            .dropdown-menu {
+                min-width: 700px;
+                padding: 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .dropdown-menu {
+                min-width: calc(100vw - 40px);
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .service-card {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dropdown-menu {
+                min-width: calc(100vw - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        
+        <div class="services-container">
+            <div class="services-link">Services</div>
+            <div class="dropdown-menu">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <div class="service-name">Mobile App Development</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <div class="service-name">Web Application Development</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌐</div>
+                        <div class="service-name">Company Websites</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔌</div>
+                        <div class="service-name">APIs</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🤖</div>
+                        <div class="service-name">AI Integration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <script>
+        // Add click interaction to service cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const serviceName = this.querySelector('.service-name').textContent;
+                console.log(`Selected: ${serviceName}`);
+                // You can add navigation or other functionality here
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const servicesContainer = document.querySelector('.services-container');
+            if (!servicesContainer.contains(event.target)) {
+                // Optional: add any close logic here
+            }
+        });
+    </script>
+</body>
+</html>
