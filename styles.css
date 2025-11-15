@@ -436,6 +436,11 @@
         .hero {
             height: 100vh;
             background: var(--dark);
+            background-image: 
+            radial-gradient(circle at center, transparent 0%, var(--dark) 70%),
+            linear-gradient(rgba(41, 43, 41, 0.7) .1em, transparent .1em), 
+            linear-gradient(90deg, rgba(40, 43, 40, 0.7) .1em, transparent .1em);
+            background-size: 100% 100%, 3em 3em, 3em 3em;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1892,9 +1897,6 @@
             }
         }
         @media(max-width:643px) {
-            .mobile-learn-more-btn {
-                min-width: 100%;
-            }            
             .stats-image {
                 max-width: calc(100vw - 50px);
             }

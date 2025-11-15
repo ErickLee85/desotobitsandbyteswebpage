@@ -250,11 +250,11 @@
                     </svg>
                 </a>
                 <div class="mobile-submenu">
-                    <a href="./mobile-apps" class="mobile-submenu-link">
+                    <a href="./mobile-apps/index.html" class="mobile-submenu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
                         Mobile Apps
                     </a>
-                    <a href="./web-applications" class="mobile-submenu-link">
+                    <a href="#" class="mobile-submenu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
                         Web Applications
                     </a>
@@ -296,11 +296,11 @@
                         </div>
                     </div>
 
-                    <div class="hero-image">
+                    <!-- <div class="hero-image">
                         <div class="hero-slide active">
                             <img src="./images/davinci_compressed.jpeg" alt="API" loading="eager">
                         </div>
-                    </div>
+                    </div> -->
                 </section>
 
                 <div class="trusted-bar">
@@ -1020,20 +1020,6 @@
             </svg>
           </div>
     </div> -->
-    <script>
-        // Check if mobile BEFORE loading any 3D libraries
-        const isMobile_ = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-            (window.innerWidth <= 943) ||
-            ('ontouchstart' in window);
-        
-        // Hide the 3D section on mobile
-        if (isMobile_) {
-            const webglSection = document.querySelector('.webgl-section');
-            if (webglSection) {
-                webglSection.style.display = 'none';
-            }
-        }
-    </script>
     <script type="importmap">
         {
             "imports": {
@@ -1043,21 +1029,17 @@
             }
         }
     </script>
+    <script>
+
+    </script>
     <script type="module">
-        // Only load 3D earth model on desktop devices
-        // Check if mobile (using window to access the variable from the previous script scope)
-        const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
-            (window.innerWidth <= 943) ||
-            ('ontouchstart' in window);
-        
-        // Exit early on mobile - don't load anything
-        if (isMobileDevice) {
-            // Do nothing - completely bypass 3D loading
-        } else {
-            // Only load Three.js and create 3D scene on desktop using dynamic imports
-            const THREE = await import('three');
-            const { OrbitControls } = await import('OrbitControls');
+           import * as THREE from 'three';
+           const { OrbitControls } = await import('OrbitControls');
         //    const { GLTFLoader } = await import('GLTFLoader');
+
+           const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+               (window.innerWidth <= 943) ||
+               ('ontouchstart' in window);
            
             const canvas = document.querySelector('.webgl-content');
             const scene = new THREE.Scene();
@@ -1135,12 +1117,13 @@
             // Camera controls
             let controls;
           
-            // We're already in the desktop-only block, so controls are always enabled
-            controls = new OrbitControls(camera, canvas);
-            controls.enableDamping = true;
-            controls.enablePan = true;
-            controls.minDistance = 50;
-            controls.maxDistance = 100;
+            if (!isMobile) {
+                controls = new OrbitControls(camera, canvas);
+                controls.enableDamping = true;
+                controls.enablePan = true;
+                controls.minDistance = 50;
+                controls.maxDistance = 100;
+            }
             
 
             // Load textures
@@ -1264,7 +1247,7 @@
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
-        } // End of desktop-only block
+
     </script>
     <script>
         const arrow = document.querySelector('.hero-arrow-indicator')
