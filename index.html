@@ -250,11 +250,11 @@
                     </svg>
                 </a>
                 <div class="mobile-submenu">
-                    <a href="./mobile-apps/index.html" class="mobile-submenu-link">
+                    <a href="./mobile-apps" class="mobile-submenu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
                         Mobile Apps
                     </a>
-                    <a href="#" class="mobile-submenu-link">
+                    <a href="/web-applications" class="mobile-submenu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
                         Web Applications
                     </a>
@@ -619,7 +619,7 @@
                     </div>
                 </section>
 
-                <section class="webgl-section">
+                <!-- <section class="webgl-section">
                     <div class="webgl-container">
                         <div class="webgl-header">
                             <h2 class="webgl-title">We Build <span>3D</span> Stuff, Too</h2>
@@ -627,7 +627,7 @@
                         </div>
                         <canvas class="webgl-content"></canvas>
                     </div>
-                </section>
+                </section> -->
                 
                 <section class="reviews-section" id="reviews">
                     <h2 class="reviews-heading">What Our Clients Say</h2>
@@ -1020,7 +1020,7 @@
             </svg>
           </div>
     </div> -->
-    <script type="importmap">
+    <!-- <script type="importmap">
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
@@ -1030,7 +1030,19 @@
         }
     </script>
     <script>
-
+        // Remove 3D section on mobile devices
+        (function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                (window.innerWidth <= 943) ||
+                ('ontouchstart' in window);
+            
+            if (isMobile) {
+                const webglSection = document.querySelector('.webgl-section');
+                if (webglSection) {
+                    webglSection.remove();
+                }
+            }
+        })();
     </script>
     <script type="module">
            import * as THREE from 'three';
@@ -1042,6 +1054,11 @@
                ('ontouchstart' in window);
            
             const canvas = document.querySelector('.webgl-content');
+            
+            // Exit early if canvas doesn't exist (section was removed on mobile)
+            if (!canvas) {
+                return;
+            }
             const scene = new THREE.Scene();
             // scene.background = new THREE.Color(0x1a1a1a);
             
@@ -1248,7 +1265,7 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
 
-    </script>
+    </script> -->
     <script>
         const arrow = document.querySelector('.hero-arrow-indicator')
         arrow.addEventListener('click',(e) => {
