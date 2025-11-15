@@ -234,38 +234,17 @@
                     });
                 }
             
-                        // Hero tagline animation
-                     
-                        
-                        // const heroSubtitle = document.querySelector(".hero-subtitle");
-                        // if (heroSubtitle) {
-                        //     let split2 = SplitText.create([".hero-subtitle"], {type:"words"});
-                        //     gsap.fromTo(split2.words,{opacity:0,},{opacity:1});
-                        // }
-
-                        // const heroTagline = document.querySelector(".hero-tagline");
-                        // if (heroTagline) {
-                        //     let split = SplitText.create([".hero-tagline"], { type: "words" });
-                        //     gsap.fromTo(split.words, {opacity: 0,filter:'blur(10px)',},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.25,});
-                        // }
-                        
-                        // // Hero subtext animation
-                        // const heroSubtext = document.querySelector(".hero-subtext");
-                        // if (heroSubtext) {
-                        //     let split3 = SplitText.create([".hero-subtext"],{type:"words"});
-                        //     gsap.fromTo(split3.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1});
-                        // }
-                        
-                        // Trusted logo animation
                         const trustedLogo = document.querySelector(".trusted-logo");
                         if (trustedLogo) {
-                            let split4 = SplitText.create(".trusted-logo", {type:"words"});
-                            gsap.from(split4.words,{opacity:0, stagger:0.1,
-                                scrollTrigger: {
-                                trigger: split4.words[0].parentElement,
-                                start: "top 85%",
-                                toggleActions: "play none none none",
-                            }
+                            document.fonts.ready.then(() => {
+                                let split4 = SplitText.create(".trusted-logo", {type:"words"});
+                                gsap.from(split4.words,{opacity:0, stagger:0.1,
+                                    scrollTrigger: {
+                                    trigger: split4.words[0].parentElement,
+                                    start: "top 85%",
+                                    toggleActions: "play none none none",
+                                }
+                                });
                             });
                         }
                         
@@ -352,27 +331,31 @@
                             // Stats content heading animation
                             const statsContentH2 = document.querySelector(".stats-content h2");
                             if (statsContentH2) {
-                                let split5 = SplitText.create(".stats-content h2", {type:"words"});
-                                gsap.fromTo(split5.words,{opacity:0,filter:'blur(5px)'},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,
-                                    scrollTrigger: {
-                                            trigger: ".stats-section",
-                                            start: "top 50%",
-                                            toggleActions: "play none none none",
-                                    }
+                                document.fonts.ready.then(() => {
+                                    let split5 = SplitText.create(".stats-content h2", {type:"words"});
+                                    gsap.fromTo(split5.words,{opacity:0,filter:'blur(5px)'},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,
+                                        scrollTrigger: {
+                                                trigger: ".stats-section",
+                                                start: "top 50%",
+                                                toggleActions: "play none none none",
+                                        }
+                                    });
                                 });
                             }
                             
                             // Stats content paragraph animation
                             const statsContentP = document.querySelector(".stats-content p");
                             if (statsContentP) {
-                                let split6 = SplitText.create(".stats-content p",{type:"words"});
-                                gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2,
-                                     scrollTrigger: {
-                                             trigger: ".stats-section",
-                                             start: "top 50%",
-                                             toggleActions: "play none none none",
-                                     }
-                                 });
+                                document.fonts.ready.then(() => {
+                                    let split6 = SplitText.create(".stats-content p",{type:"words"});
+                                    gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2,
+                                         scrollTrigger: {
+                                                 trigger: ".stats-section",
+                                                 start: "top 50%",
+                                                 toggleActions: "play none none none",
+                                         }
+                                     });
+                                });
                             }
                         }
 
@@ -383,40 +366,46 @@
                      const mobileHeroCta = document.querySelector('.mobile-hero-cta');
                      
                      if (mobileHeroSubtitle) {
-                         let splitMobileSubtitle = SplitText.create([".mobile-hero-subtitle"], { type: "words" });
-                         gsap.fromTo(splitMobileSubtitle.words, {
-                             opacity: 0
-                         }, {
-                             opacity: 1,
-                             duration: 1,
-                             stagger: 0.1,
-                             delay: 0.3
+                         document.fonts.ready.then(() => {
+                             let splitMobileSubtitle = SplitText.create([".mobile-hero-subtitle"], { type: "words" });
+                             gsap.fromTo(splitMobileSubtitle.words, {
+                                 opacity: 0
+                             }, {
+                                 opacity: 1,
+                                 duration: 1,
+                                 stagger: 0.1,
+                                 delay: 0.3
+                             });
                          });
                      }
                      
                      if (mobileHeroTitle) {
-                         let splitMobileTitle = SplitText.create([".mobile-hero-title"], { type: "words" });
-                         gsap.fromTo(splitMobileTitle.words, {
-                             opacity: 0,
-                             filter: 'blur(10px)'
-                         }, {
-                             opacity: 1,
-                             filter: 'blur(0px)',
-                             duration: 1,
-                             stagger: 0.1,
-                             delay: 0.5
+                         document.fonts.ready.then(() => {
+                             let splitMobileTitle = SplitText.create([".mobile-hero-title"], { type: "words" });
+                             gsap.fromTo(splitMobileTitle.words, {
+                                 opacity: 0,
+                                 filter: 'blur(10px)'
+                             }, {
+                                 opacity: 1,
+                                 filter: 'blur(0px)',
+                                 duration: 1,
+                                 stagger: 0.1,
+                                 delay: 0.5
+                             });
                          });
                      }
                      
                      if (mobileHeroSubtext) {
-                         let splitMobileSubtext = SplitText.create([".mobile-hero-subtext"], { type: "words" });
-                         gsap.fromTo(splitMobileSubtext.words, {
-                             opacity: 0
-                         }, {
-                             opacity: 1,
-                             duration: 0.5,
-                             stagger: 0.1,
-                             delay: 1.2
+                         document.fonts.ready.then(() => {
+                             let splitMobileSubtext = SplitText.create([".mobile-hero-subtext"], { type: "words" });
+                             gsap.fromTo(splitMobileSubtext.words, {
+                                 opacity: 0
+                             }, {
+                                 opacity: 1,
+                                 duration: 0.5,
+                                 stagger: 0.1,
+                                 delay: 1.2
+                             });
                          });
                      }
                      
@@ -444,39 +433,43 @@
 
                              // Animate heading with SplitText
                              if (mobileAppFeaturesHeading) {
-                                 let splitMobileFeaturesHeading = SplitText.create(".mobile-app-features-content h2", {type:"words"});
-                                 gsap.fromTo(splitMobileFeaturesHeading.words, {
-                                     opacity: 0,
-                                     filter: 'blur(5px)'
-                                 }, {
-                                     opacity: 1,
-                                     filter: 'blur(0px)',
-                                     duration: 1,
-                                     stagger: 0.1,
-                                     delay: 0.5,
-                                     scrollTrigger: {
-                                         trigger: mobileAppFeaturesSection,
-                                         start: "top 80%",
-                                         toggleActions: "play none none none"
-                                     }
+                                 document.fonts.ready.then(() => {
+                                     let splitMobileFeaturesHeading = SplitText.create(".mobile-app-features-content h2", {type:"words"});
+                                     gsap.fromTo(splitMobileFeaturesHeading.words, {
+                                         opacity: 0,
+                                         filter: 'blur(5px)'
+                                     }, {
+                                         opacity: 1,
+                                         filter: 'blur(0px)',
+                                         duration: 1,
+                                         stagger: 0.1,
+                                         delay: 0.5,
+                                         scrollTrigger: {
+                                             trigger: mobileAppFeaturesSection,
+                                             start: "top 80%",
+                                             toggleActions: "play none none none"
+                                         }
+                                     });
                                  });
                              }
 
                              // Animate paragraph with SplitText
                              if (mobileAppFeaturesParagraph) {
-                                 let splitMobileFeaturesParagraph = SplitText.create(".mobile-app-features-content p", {type:"words"});
-                                 gsap.fromTo(splitMobileFeaturesParagraph.words, {
-                                     opacity: 0
-                                 }, {
-                                     opacity: 1,
-                                     duration: 0.5,
-                                     stagger: 0.1,
-                                     delay: 1.2,
-                                     scrollTrigger: {
-                                         trigger: mobileAppFeaturesSection,
-                                         start: "top 80%",
-                                         toggleActions: "play none none none"
-                                     }
+                                 document.fonts.ready.then(() => {
+                                     let splitMobileFeaturesParagraph = SplitText.create(".mobile-app-features-content p", {type:"words"});
+                                     gsap.fromTo(splitMobileFeaturesParagraph.words, {
+                                         opacity: 0
+                                     }, {
+                                         opacity: 1,
+                                         duration: 0.5,
+                                         stagger: 0.1,
+                                         delay: 1.2,
+                                         scrollTrigger: {
+                                             trigger: mobileAppFeaturesSection,
+                                             start: "top 80%",
+                                             toggleActions: "play none none none"
+                                         }
+                                     });
                                  });
                              }
 
@@ -531,58 +524,62 @@
                      const webglCanvas = document.querySelector('.webgl-content');
                      
                      if (webglTitle && webglSubtitle) {
-                         let splitWebglTitle = SplitText.create([".webgl-title"], { type: "words" });
-                         let splitWebglSubtitle = SplitText.create([".webgl-subtitle"], { type: "words" });
-                         
-                         gsap.fromTo(splitWebglTitle.words, {
-                             opacity: 0,
-                             filter: 'blur(10px)'
-                         }, {
-                             opacity: 1,
-                             filter: 'blur(0px)',
-                             duration: 1,
-                             stagger: 0.1,
-                             delay: 0.5,
-                             scrollTrigger: {
-                                 trigger: ".webgl-section",
-                                 start: "top 80%",
-                                 toggleActions: "play none none none"
-                             }
-                         });
-                         
-                         gsap.fromTo(splitWebglSubtitle.words, {
-                             opacity: 0
-                         }, {
-                             opacity: 1,
-                             duration: 1,
-                             stagger: 0.1,
-                             delay: 1.2,
-                             scrollTrigger: {
-                                 trigger: ".webgl-section",
-                                 start: "top 80%",
-                                 toggleActions: "play none none none"
-                             }
+                         document.fonts.ready.then(() => {
+                             let splitWebglTitle = SplitText.create([".webgl-title"], { type: "words" });
+                             let splitWebglSubtitle = SplitText.create([".webgl-subtitle"], { type: "words" });
+                             
+                             gsap.fromTo(splitWebglTitle.words, {
+                                 opacity: 0,
+                                 filter: 'blur(10px)'
+                             }, {
+                                 opacity: 1,
+                                 filter: 'blur(0px)',
+                                 duration: 1,
+                                 stagger: 0.1,
+                                 delay: 0.5,
+                                 scrollTrigger: {
+                                     trigger: ".webgl-section",
+                                     start: "top 80%",
+                                     toggleActions: "play none none none"
+                                 }
+                             });
+                             
+                             gsap.fromTo(splitWebglSubtitle.words, {
+                                 opacity: 0
+                             }, {
+                                 opacity: 1,
+                                 duration: 1,
+                                 stagger: 0.1,
+                                 delay: 1.2,
+                                 scrollTrigger: {
+                                     trigger: ".webgl-section",
+                                     start: "top 80%",
+                                     toggleActions: "play none none none"
+                                 }
+                             });
                          });
                      }
                      
                      // Animate reviews heading on scroll
                      const reviewsHeading = document.querySelector('.reviews-heading');
                      if (reviewsHeading) {
-                         let splitReviewsHeading = SplitText.create([".reviews-heading"], { type: "words" });
-                         gsap.fromTo(splitReviewsHeading.words, {
-                             opacity: 0,
-                             filter: 'blur(10px)'
-                         }, {
-                             opacity: 1,
-                             filter: 'blur(0px)',
-                             duration: 1,
-                             stagger: 0.1,
-                             delay: 0.5,
-                             scrollTrigger: {
-                                 trigger: reviewsHeading,
-                                 start: "top 80%",
-                                 toggleActions: "play none none none"
-                             }
+                         document.fonts.ready.then(() => {
+                             let splitReviewsHeading = SplitText.create([".reviews-heading"], { type: "words" });
+                             gsap.fromTo(splitReviewsHeading.words, {
+                                 opacity: 0,
+                                 filter: 'blur(10px)'
+                             }, {
+                                 opacity: 1,
+                                 filter: 'blur(0px)',
+                                 duration: 1,
+                                 stagger: 0.1,
+                                 delay: 0.5,
+                                 scrollTrigger: {
+                                     trigger: reviewsHeading,
+                                     start: "top 80%",
+                                     toggleActions: "play none none none"
+                                 }
+                             });
                          });
                      }
 
@@ -1017,64 +1014,6 @@
             });
         }
 
-        // // Hero Image Slider
-        // const slides = document.querySelectorAll('.hero-slide');
-        // let currentSlide = 0;
-        // let isAnimating = false;
-        // let slideClicked = false;
-
-        // // Set initial clip-path for all slides (hidden on the right)
-        // gsap.set(slides, { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' });
-        // // Show first slide
-        // gsap.set(slides[0], { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' });
-
-        // function goToSlide(index, direction) {
-        //     if (isAnimating || index === currentSlide) return;
-        //     isAnimating = true;
-
-        //     const oldSlide = slides[currentSlide];
-        //     const newSlide = slides[index];
-
-        //     // Create a timeline for synchronized animation
-        //     const tl = gsap.timeline({
-        //         onComplete: () => {
-        //             oldSlide.classList.remove('active');
-        //             newSlide.classList.add('active');
-        //             isAnimating = false;
-        //         }
-        //     });
-
-        //     // Animate old slide out (wipe left)
-        //     tl.to(oldSlide, {
-        //         clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)',
-        //         duration: 0.8,
-        //         ease: 'power2.inOut'
-        //     })
-        //     // Animate new slide in (reveal from right)
-        //     .fromTo(newSlide, 
-        //         { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' },
-        //         { 
-        //             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-        //             duration: 0.8,
-        //             ease: 'power2.inOut'
-        //         },
-        //         '<' // Start at the same time as the previous animation
-        //     );
-
-        //     currentSlide = index;
-        // }
-
-        //  // Auto-play (optional - every 5 seconds)
-        //  setInterval(() => {
-        //      if(slideClicked) {
-        //          slideClicked = false
-        //          return;
-        //      }
-        //      const nextIndex = (currentSlide + 1) % slides.length;
-        //      goToSlide(nextIndex, 'right');
-        //  }, 10000);
-
-         // Reviews Section Animation
          const reviewCards = document.querySelectorAll('.review-card');
          const reviewDots = document.querySelectorAll('.review-dot');
          const reviewNavPrev = document.querySelector('.review-nav-prev');
