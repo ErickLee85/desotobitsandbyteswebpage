@@ -2657,3 +2657,8 @@
         }
       }
       
+      @media(max-width:700px) {
+        .mobile-learn-more-btn {
+            min-width: 100%;
+        }
+      }
