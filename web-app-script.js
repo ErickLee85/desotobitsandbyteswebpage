@@ -164,6 +164,25 @@ window.addEventListener('load', () => {
             delay: 2.2,
             ease: 'power3.out'
         });
+
+        // Add click handler to scroll to features section
+        webLearnMore.addEventListener('click', (e) => {
+            e.preventDefault();
+            const webAppFeaturesSection = document.querySelector('#web-app-features-section') || document.querySelector('.web-app-features-section');
+            if (webAppFeaturesSection) {
+                const smoother = ScrollSmoother.get();
+                if (smoother) {
+                    try {
+                        smoother.scrollTo(webAppFeaturesSection, true, 'center center');
+                    } catch (error) {
+                        // Fallback if ScrollSmoother fails
+                        webAppFeaturesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                } else {
+                    webAppFeaturesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
     }
 
     // Dashboard Container Scroll Animation

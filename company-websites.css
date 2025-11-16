@@ -84,14 +84,15 @@ body {
 
 .company-hero-subtext {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.8);
+     color: var(--gray);
     line-height: 1.8;
     margin-bottom: 2.5rem;
 }
 
 .company-hero-subtext span {
-    color: var(--primary);
     font-weight: 600;
+    color:white;
+    color:var(--primary)
 }
 
 .company-hero-cta {

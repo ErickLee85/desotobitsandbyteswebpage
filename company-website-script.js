@@ -88,6 +88,25 @@ window.addEventListener('load', () => {
             delay: 2.2,
             ease: 'power3.out'
         });
+
+        // Add click handler to scroll to features section
+        companyLearnMore.addEventListener('click', (e) => {
+            e.preventDefault();
+            const companyFeaturesSection = document.querySelector('#company-features-section') || document.querySelector('.company-features-section');
+            if (companyFeaturesSection) {
+                const smoother = ScrollSmoother.get();
+                if (smoother) {
+                    try {
+                        smoother.scrollTo(companyFeaturesSection, true, 'center center');
+                    } catch (error) {
+                        // Fallback if ScrollSmoother fails
+                        companyFeaturesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                } else {
+                    companyFeaturesSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
     }
 
     // Hero Sample Container Scroll Animation
