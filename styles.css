@@ -1321,18 +1321,19 @@
             max-width: 600px;
             height:500px;
             overflow: hidden;
+            clip-path:circle()
         }
         .stats-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 400ms ease;
-            object-position: right;
-            transform: scale(1.4);
+            object-position: top;
+            transform: scale(1.2);
         }
 
         .stats-image img:hover {
-                transform: scale(1.5);
+                transform: scale(1.05);
         }
         .stats-content h2 {
             font-size: 4rem;
