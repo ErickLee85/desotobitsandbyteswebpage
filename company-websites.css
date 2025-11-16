@@ -404,36 +404,25 @@ body {
 
 .company-features-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
 }
 
 .company-feature-item {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--dark);
-    padding: 1rem 0;
-    border-bottom: 1px solid #e0e0e0;
-    position: relative;
     padding-left: 2rem;
+    position: relative;
 }
 
 .company-feature-item::before {
-    content: '✓';
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--primary);
-    font-weight: 700;
+    font-weight: bold;
     font-size: 1.2rem;
-}
-
-.company-features-image {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
 .company-features-image img {
@@ -448,9 +437,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 0 30px 0 rgba(121, 121, 121, 0.5);
+    box-shadow:  5px 5px 10px #bebebe,
+    -5px -5px 10px #ffffff;
 }
 
 .company-features-image img {
@@ -460,7 +449,6 @@ body {
     will-change: transform;
     transition: transform 400ms ease;
     display: block;
-    border-radius: 18px;
 
 }
 
