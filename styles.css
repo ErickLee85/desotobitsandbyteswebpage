@@ -1953,9 +1953,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('./images/gradient-abstract-borders-min.png');
+            background-image: url('./images/office_compressed.jpeg');
             background-size: cover;
             background-position: center;
+            filter:blur(5px) brightness(0.8);
             clip-path: circle(0% at 50% 50%);
             transition:clip-path 1s ease;
             z-index: 1;
@@ -1985,7 +1986,7 @@
         .faq-title {
             font-size: 6rem;
             font-weight: 400;
-            color: var(--dark);
+            color: var(--light);
             margin-bottom: 2rem;
             line-height: 1.2;
             letter-spacing: -1px;
@@ -1993,7 +1994,7 @@
 
         .faq-subtext {
             font-size: 1.2rem;
-            color: var(--gray);
+            color: var(--light);
             line-height: 1.8;
             margin: 0 auto;
             font-weight: 400;
