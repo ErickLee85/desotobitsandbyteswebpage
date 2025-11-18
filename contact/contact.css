@@ -2,24 +2,25 @@
 .contact-section-container {
     min-height: 100vh;
     width: 100%;
-    background:var(--dark);
-    padding:100px;
+    background:var(--light);
+    padding:200px 50px;
     display: flex;
     justify-content: center;
     gap: 50px;
     align-items: center;
     position: relative;
+    border:1px solid lime;
 }
 
 
 .left-contact {
-    display: flex; flex-direction: column; gap: 20px;
-    flex:1;
-    height:100%
+    display: flex; flex-direction: column;gap: 20px;
+    flex:3;
+    min-height:calc(100vh - 150px);
+    
 }
 
 .left-contact h1 {
-    color:white;
     font-size: 4rem;
     font-weight: 400;
 }
@@ -33,9 +34,79 @@
     color:var(--primary)
 }
 
+.left-contact > .support {
+    display: flex;
+    margin-top: 50px;
+    gap:20px;
+     h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+     }
+     p {
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        max-width: 200px;
+     }
+}
+
 .right-contact {
+    display: flex;
+    flex-direction: column;
     flex:2;
     width:100%;
-    border:2px solid red;
-    height:100%;
+     min-height:calc(100vh - 100px);
+    gap:20px;
+    background:var(--primary);
+    padding:50px;
+    border-radius: 24px;
+}
+
+
+
+.right-contact h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color:white;
+}
+
+.right-contact label {
+    font-size: 1rem;
+    font-weight: 200;
+    color:white;
+}
+
+.last-group {
+    margin-top: 20px;
+}
+
+.contact-submit-btn {
+    min-height: 55px;
+    border-radius: 24px;
+    border:none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.input-container {
+    position:  relative !important;
+}
+.input-container > svg {
+    position: absolute;
+    top:50%;
+    left:25px;
+    transform: translate(-50%, -50%);
+    fill:gray;
+}
+.input-container input {
+    padding-left: 50px;
+    border-radius: 24px;
+}
+textarea {
+    border-radius: 24px;
 }

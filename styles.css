@@ -45,8 +45,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
+            background:black;
             padding: 1.2rem 5%;
             display: flex;
             justify-content: space-between;
@@ -965,6 +964,10 @@
 
         .form-field-group {
             position: relative;
+        }
+
+        textarea {
+            resize: none !important;
         }
 
         .form-field-group input,
