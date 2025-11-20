@@ -42,5 +42,17 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>https://desotobitsandbytes.com/ai_integration</loc>
+        <lastmod>2025-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://desotobitsandbytes.com/contact</loc>
+        <lastmod>2025-08-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
 </urlset>
