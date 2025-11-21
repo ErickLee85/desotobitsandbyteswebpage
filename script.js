@@ -105,13 +105,15 @@
         }
 
         function setupTurnstileWhenReady(attempt = 0) {
-            if (window.turnstile && typeof window.turnstile.ready === 'function') {
-                window.turnstile.ready(initializeTurnstileWidgets);
+            if (window.turnstile && typeof window.turnstile.render === 'function') {
+                initializeTurnstileWidgets();
                 return;
             }
 
-            if (attempt < 10) {
+            if (attempt < 20) {
                 setTimeout(() => setupTurnstileWhenReady(attempt + 1), 300);
+            } else {
+                console.warn('Turnstile script did not load in time. Forms will remain enabled but tokens are still required.');
             }
         }
 
