@@ -8,12 +8,6 @@
     <title>Web Application Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://challenges.cloudflare.com">
-    <script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        async
-        defer
-    ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -456,15 +450,6 @@
                         <label for="message">Tell us more about your project</label>
                         <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
                     </div>
-                    <input type="hidden" name="turnstileToken" value="">
-                    <div
-                        id="contactFormTurnstile"
-                        class="cf-turnstile"
-                        data-sitekey="0x4AAAAAACCREQrrdh14nsL1"
-                        data-theme="light"
-                        data-size="normal"
-                        data-auto="false"
-                    ></div>
                     <div class="contact-form-footer">
                         <p class="contact-email-text">Email us <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
                         <button type="submit" class="btn btn-submit">

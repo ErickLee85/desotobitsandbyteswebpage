@@ -10,8 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://challenges.cloudflare.com">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <script type="speculationrules">
@@ -812,16 +810,6 @@
                                     <div class="form-field-group">
                                         <textarea id="touchMessage" name="message" placeholder="Tell us about your project" rows="6" required></textarea>
                                     </div>
-                                    <input type="hidden" name="turnstileToken" value="">
-                                    <div
-                                        id="getInTouchTurnstile"
-                                        class="cf-turnstile"
-                                        data-sitekey="0x4AAAAAACCREQrrdh14nsL1"
-                                        data-theme="light"
-                                        data-size="normal"
-                                        data-auto="false"
-                                        >
-                                    </div>
                                     <button type="submit" class="btn-touch-submit">
                                         Send Message
                                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1a1a1a">
@@ -940,16 +928,6 @@
                     <div class="form-group">
                         <label for="message">Tell us more about your project</label>
                         <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
-                    </div>
-                    <input type="hidden" name="turnstileToken" value="">
-                    <div
-                        id="contactFormTurnstile"
-                        class="cf-turnstile"
-                        data-sitekey="0x4AAAAAACCREQrrdh14nsL1"
-                        data-theme="light"
-                        data-size="normal"
-                        data-auto="false"
-                        >
                     </div>
                     <div class="contact-form-footer">
                         <p class="contact-email-text">Email us <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
