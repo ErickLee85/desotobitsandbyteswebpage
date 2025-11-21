@@ -3,6 +3,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Contact Page GSAP Animations
 window.addEventListener('load', () => {
+       const CONTACT_FORM_ID = 'contactPageForm';
+       const CONTACT_API_BASE_URL = typeof API_BASE_URL !== 'undefined'
+            ? API_BASE_URL
+            : 'https://dbb-node-server.vercel.app';
+
        async function contactFormSubmission(contactForm) {
             const submitBtn = contactForm.querySelector('.contact-submit-btn');
             const originalBtnText = submitBtn.innerHTML;
@@ -16,9 +21,24 @@ window.addEventListener('load', () => {
                 // Get form data
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
+                const turnstileToken = turnstileState?.[CONTACT_FORM_ID]?.token;
+
+                if (!turnstileToken) {
+                    alert('Please complete the security check before submitting.');
+                    return;
+                }
+
+                const validation = await validateTurnstileToken(turnstileToken);
+                if (!validation.success) {
+                    alert('Security validation failed. Please try again.');
+                    resetTurnstileForForm(CONTACT_FORM_ID);
+                    return;
+                }
+
+                data.turnstileToken = turnstileToken;
                 
                 // Send to API
-                const response = await fetch('https://dbb-node-server.vercel.app/sendMessage', {
+                const response = await fetch(`${CONTACT_API_BASE_URL}/sendMessage`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -65,6 +85,7 @@ window.addEventListener('load', () => {
                     startVelocity: 45,
                     });
                     contactForm.reset();
+                    resetTurnstileForForm(CONTACT_FORM_ID);
                     // Close the contact form overlay
                     const contactOverlay = document.getElementById('contactOverlay');
                     if (contactOverlay) {
@@ -88,6 +109,7 @@ window.addEventListener('load', () => {
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 submitBtn.innerHTML = originalBtnText;
+                updateFormSubmitState(CONTACT_FORM_ID, Boolean(turnstileState?.[CONTACT_FORM_ID]?.token));
             }
         }
         const form = document.getElementById('contactPageForm');

@@ -1,6 +1,126 @@
  gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother, DrawSVGPlugin);
 
-        // Form submission handlers
+        const API_BASE_URL = 'https://dbb-node-server.vercel.app';
+        const turnstileState = {
+            contactForm: { token: null, widgetId: null },
+            getInTouchForm: { token: null, widgetId: null },
+            contactPageForm: { token: null, widgetId: null }
+        };
+
+        function updateFormSubmitState(formId, hasToken) {
+            const form = document.getElementById(formId);
+            if (!form) return;
+            const submitBtn = form.querySelector('button[type="submit"], .btn-submit, .btn-touch-submit');
+            if (!submitBtn) return;
+            submitBtn.disabled = !hasToken;
+            submitBtn.style.opacity = hasToken ? '1' : '0.5';
+            submitBtn.style.cursor = hasToken ? '' : 'not-allowed';
+        }
+
+        function storeTurnstileToken(formId, token) {
+            if (!turnstileState[formId]) return;
+            turnstileState[formId].token = token;
+            const form = document.getElementById(formId);
+            if (form) {
+                const tokenField = form.querySelector('input[name="turnstileToken"]');
+                if (tokenField) {
+                    tokenField.value = token || '';
+                }
+            }
+            updateFormSubmitState(formId, Boolean(token));
+        }
+
+        function resetTurnstileForForm(formId) {
+            if (!turnstileState[formId]) return;
+            const widgetId = turnstileState[formId].widgetId;
+            storeTurnstileToken(formId, null);
+            if (window.turnstile && typeof window.turnstile.reset === 'function' && widgetId) {
+                window.turnstile.reset(widgetId);
+            }
+        }
+
+        async function validateTurnstileToken(token) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/validateTurnstile`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token })
+                });
+                const result = await response.json();
+                return {
+                    success: response.ok && result.success,
+                    errors: result.errors || []
+                };
+            } catch (error) {
+                console.error('Turnstile validation error:', error);
+                return {
+                    success: false,
+                    errors: ['network-error']
+                };
+            }
+        }
+
+        function initializeTurnstileWidgets() {
+            if (!window.turnstile || typeof window.turnstile.render !== 'function') {
+                return;
+            }
+
+            const contactWidgetElement = document.getElementById('contactFormTurnstile');
+            if (contactWidgetElement && !turnstileState.contactForm.widgetId) {
+                turnstileState.contactForm.widgetId = window.turnstile.render(contactWidgetElement, {
+                    sitekey: contactWidgetElement.dataset.sitekey,
+                    theme: contactWidgetElement.dataset.theme || 'light',
+                    size: contactWidgetElement.dataset.size || 'normal',
+                    callback: (token) => storeTurnstileToken('contactForm', token),
+                    'error-callback': () => storeTurnstileToken('contactForm', null),
+                    'expired-callback': () => storeTurnstileToken('contactForm', null)
+                });
+            }
+
+            const getInTouchWidgetElement = document.getElementById('getInTouchTurnstile');
+            if (getInTouchWidgetElement && !turnstileState.getInTouchForm.widgetId) {
+                turnstileState.getInTouchForm.widgetId = window.turnstile.render(getInTouchWidgetElement, {
+                    sitekey: getInTouchWidgetElement.dataset.sitekey,
+                    theme: getInTouchWidgetElement.dataset.theme || 'light',
+                    size: getInTouchWidgetElement.dataset.size || 'normal',
+                    callback: (token) => storeTurnstileToken('getInTouchForm', token),
+                    'error-callback': () => storeTurnstileToken('getInTouchForm', null),
+                    'expired-callback': () => storeTurnstileToken('getInTouchForm', null)
+                });
+            }
+
+            const contactPageWidgetElement = document.getElementById('contactPageTurnstile');
+            if (contactPageWidgetElement && !turnstileState.contactPageForm.widgetId) {
+                turnstileState.contactPageForm.widgetId = window.turnstile.render(contactPageWidgetElement, {
+                    sitekey: contactPageWidgetElement.dataset.sitekey,
+                    theme: contactPageWidgetElement.dataset.theme || 'light',
+                    size: contactPageWidgetElement.dataset.size || 'normal',
+                    callback: (token) => storeTurnstileToken('contactPageForm', token),
+                    'error-callback': () => storeTurnstileToken('contactPageForm', null),
+                    'expired-callback': () => storeTurnstileToken('contactPageForm', null)
+                });
+            }
+        }
+
+        function setupTurnstileWhenReady(attempt = 0) {
+            if (window.turnstile && typeof window.turnstile.ready === 'function') {
+                window.turnstile.ready(initializeTurnstileWidgets);
+                return;
+            }
+
+            if (attempt < 10) {
+                setTimeout(() => setupTurnstileWhenReady(attempt + 1), 300);
+            }
+        }
+
+        setupTurnstileWhenReady();
+
+        storeTurnstileToken('contactForm', null);
+        storeTurnstileToken('getInTouchForm', null);
+        storeTurnstileToken('contactPageForm', null);
+
         async function submitContactForm(contactForm) {
             const submitBtn = contactForm.querySelector('.btn-submit');
             const originalBtnText = submitBtn.innerHTML;
@@ -14,9 +134,24 @@
                 // Get form data
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
-                
+                const turnstileToken = turnstileState.contactForm.token;
+
+                if (!turnstileToken) {
+                    alert('Please complete the security check before submitting.');
+                    return;
+                }
+
+                const validation = await validateTurnstileToken(turnstileToken);
+                if (!validation.success) {
+                    alert('Security validation failed. Please try again.');
+                    resetTurnstileForForm('contactForm');
+                    return;
+                }
+
+                data.turnstileToken = turnstileToken;
+          
                 // Send to API
-                const response = await fetch('https://dbb-node-server.vercel.app/sendMessage', {
+                const response = await fetch(`${API_BASE_URL}/sendMessage`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -63,6 +198,7 @@
                     startVelocity: 45,
                     });
                     contactForm.reset();
+                    resetTurnstileForForm('contactForm');
                     // Close the contact form overlay
                     const contactOverlay = document.getElementById('contactOverlay');
                     if (contactOverlay) {
@@ -85,7 +221,9 @@
                 // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
+                submitBtn.style.cursor = '';
                 submitBtn.innerHTML = originalBtnText;
+                updateFormSubmitState('contactForm', Boolean(turnstileState.contactForm.token));
             }
         }
         
@@ -102,9 +240,24 @@
                 // Get form data
                 const formData = new FormData(getInTouchForm);
                 const data = Object.fromEntries(formData);
+                const turnstileToken = turnstileState.getInTouchForm.token;
+
+                if (!turnstileToken) {
+                    alert('Please complete the security check before submitting.');
+                    return;
+                }
+
+                const validation = await validateTurnstileToken(turnstileToken);
+                if (!validation.success) {
+                    alert('Security validation failed. Please try again.');
+                    resetTurnstileForForm('getInTouchForm');
+                    return;
+                }
+
+                data.turnstileToken = turnstileToken;
                 
                 // Send to API
-                const response = await fetch('https://dbb-node-server.vercel.app/sendMessage', {
+                const response = await fetch(`${API_BASE_URL}/sendMessage`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -151,6 +304,7 @@
                     startVelocity: 45,
                     });
                     getInTouchForm.reset();
+                    resetTurnstileForForm('getInTouchForm');
                 } else {
                     alert('Failed to send message. Please try again.');
                 }
@@ -161,7 +315,9 @@
                 // Re-enable submit button
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
+                submitBtn.style.cursor = '';
                 submitBtn.innerHTML = originalBtnText;
+                updateFormSubmitState('getInTouchForm', Boolean(turnstileState.getInTouchForm.token));
             }
         }
 
