@@ -1,8 +1,100 @@
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Turnstile State Management
+const turnstileState = {};
+const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
+
+// Initialize Turnstile widgets
+function initializeTurnstile() {
+    // Check if Turnstile API is loaded
+    if (typeof turnstile === 'undefined') {
+        console.warn('Turnstile API not loaded yet, retrying...');
+        setTimeout(initializeTurnstile, 500);
+        return;
+    }
+
+    // Initialize for contact page form
+    const contactPageTurnstile = document.getElementById('contactPageTurnstile');
+    if (contactPageTurnstile && !turnstileState['contactPageForm']) {
+        turnstileState['contactPageForm'] = { token: null, widgetId: null };
+        turnstileState['contactPageForm'].widgetId = turnstile.render('#contactPageTurnstile', {
+            sitekey: TURNSTILE_SITE_KEY,
+            theme: 'light',
+            callback: function(token) {
+                turnstileState['contactPageForm'].token = token;
+                updateFormSubmitState('contactPageForm', true);
+            },
+            'expired-callback': function() {
+                turnstileState['contactPageForm'].token = null;
+                updateFormSubmitState('contactPageForm', false);
+            },
+            'error-callback': function() {
+                turnstileState['contactPageForm'].token = null;
+                updateFormSubmitState('contactPageForm', false);
+            }
+        });
+    }
+
+    // Initialize for overlay contact form
+    const contactFormTurnstile = document.getElementById('contactFormTurnstile');
+    if (contactFormTurnstile && !turnstileState['contactForm']) {
+        turnstileState['contactForm'] = { token: null, widgetId: null };
+        turnstileState['contactForm'].widgetId = turnstile.render('#contactFormTurnstile', {
+            sitekey: TURNSTILE_SITE_KEY,
+            theme: 'light',
+            callback: function(token) {
+                turnstileState['contactForm'].token = token;
+                updateFormSubmitState('contactForm', true);
+            },
+            'expired-callback': function() {
+                turnstileState['contactForm'].token = null;
+                updateFormSubmitState('contactForm', false);
+            },
+            'error-callback': function() {
+                turnstileState['contactForm'].token = null;
+                updateFormSubmitState('contactForm', false);
+            }
+        });
+    }
+}
+
+// Update form submit button state based on Turnstile verification
+function updateFormSubmitState(formId, isVerified) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+        // You can optionally disable the button until verified
+        // submitBtn.disabled = !isVerified;
+    }
+}
+
+// Reset Turnstile widget for a specific form
+function resetTurnstileForForm(formId) {
+    if (turnstileState[formId] && turnstileState[formId].widgetId !== null) {
+        turnstile.reset(turnstileState[formId].widgetId);
+        turnstileState[formId].token = null;
+    }
+}
+
+// Validate Turnstile token (client-side check - server should also validate)
+async function validateTurnstileToken(token) {
+    // Basic client-side validation
+    if (!token || token.length === 0) {
+        return { success: false };
+    }
+    // The actual validation should happen server-side
+    // This just confirms we have a token
+    return { success: true };
+}
+
 // Contact Page GSAP Animations
 window.addEventListener('load', () => {
+       // Initialize Turnstile widgets
+       initializeTurnstile();
+       
        const CONTACT_FORM_ID = 'contactPageForm';
        const CONTACT_API_BASE_URL = typeof API_BASE_URL !== 'undefined'
             ? API_BASE_URL
@@ -21,10 +113,13 @@ window.addEventListener('load', () => {
                 // Get form data
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
-                const turnstileToken = turnstileState?.[CONTACT_FORM_ID]?.token;
+                const turnstileToken = turnstileState[CONTACT_FORM_ID]?.token;
 
                 if (!turnstileToken) {
                     alert('Please complete the security check before submitting.');
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.innerHTML = originalBtnText;
                     return;
                 }
 
@@ -32,6 +127,9 @@ window.addEventListener('load', () => {
                 if (!validation.success) {
                     alert('Security validation failed. Please try again.');
                     resetTurnstileForForm(CONTACT_FORM_ID);
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.innerHTML = originalBtnText;
                     return;
                 }
 
@@ -109,7 +207,6 @@ window.addEventListener('load', () => {
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 submitBtn.innerHTML = originalBtnText;
-                updateFormSubmitState(CONTACT_FORM_ID, Boolean(turnstileState?.[CONTACT_FORM_ID]?.token));
             }
         }
         const form = document.getElementById('contactPageForm');
