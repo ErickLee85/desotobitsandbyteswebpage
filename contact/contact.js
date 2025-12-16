@@ -1,78 +1,60 @@
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-// Turnstile State Management
-const turnstileState = {};
-const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
-let turnstileInitialized = false;
+// Turnstile State Management - Only declare if not already defined by script.js
+if (typeof window.turnstileState === 'undefined') {
+    window.turnstileState = {};
+}
+if (typeof window.TURNSTILE_SITE_KEY === 'undefined') {
+    window.TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
+}
+if (typeof window.turnstileInitialized === 'undefined') {
+    window.turnstileInitialized = false;
+}
 
-// Initialize Turnstile widgets
-function initializeTurnstile() {
-    // Prevent multiple initializations
-    if (turnstileInitialized) {
-        return;
-    }
-
+// Initialize Turnstile for contact page form
+function initializeContactPageTurnstile() {
     // Check if Turnstile API is loaded
     if (typeof turnstile === 'undefined') {
         console.warn('Turnstile API not loaded yet, retrying...');
-        setTimeout(initializeTurnstile, 500);
+        setTimeout(initializeContactPageTurnstile, 500);
         return;
     }
 
-    turnstileInitialized = true;
-
     // Initialize for contact page form only
     const contactPageTurnstile = document.getElementById('contactPageTurnstile');
-    if (contactPageTurnstile && !turnstileState['contactPageForm'] && contactPageTurnstile.children.length === 0) {
-        turnstileState['contactPageForm'] = { token: null, widgetId: null };
+    if (contactPageTurnstile && !window.turnstileState['contactPageForm'] && contactPageTurnstile.children.length === 0) {
+        window.turnstileState['contactPageForm'] = { token: null, widgetId: null };
         try {
-            turnstileState['contactPageForm'].widgetId = turnstile.render('#contactPageTurnstile', {
-                sitekey: TURNSTILE_SITE_KEY,
+            window.turnstileState['contactPageForm'].widgetId = turnstile.render('#contactPageTurnstile', {
+                sitekey: window.TURNSTILE_SITE_KEY,
                 theme: 'light',
                 callback: function(token) {
-                    turnstileState['contactPageForm'].token = token;
-                    updateFormSubmitState('contactPageForm', true);
+                    window.turnstileState['contactPageForm'].token = token;
                 },
                 'expired-callback': function() {
-                    turnstileState['contactPageForm'].token = null;
-                    updateFormSubmitState('contactPageForm', false);
+                    window.turnstileState['contactPageForm'].token = null;
                 },
                 'error-callback': function() {
-                    turnstileState['contactPageForm'].token = null;
-                    updateFormSubmitState('contactPageForm', false);
+                    window.turnstileState['contactPageForm'].token = null;
                 }
             });
         } catch (e) {
             console.warn('Turnstile render error:', e);
         }
     }
-
-    // Note: The overlay contact form Turnstile (contactFormTurnstile) is handled by script.js
 }
 
-// Update form submit button state based on Turnstile verification
-function updateFormSubmitState(formId, isVerified) {
-    const form = document.getElementById(formId);
-    if (!form) return;
-    
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-        // You can optionally disable the button until verified
-        // submitBtn.disabled = !isVerified;
-    }
-}
-
-// Reset Turnstile widget for a specific form
-function resetTurnstileForForm(formId) {
-    if (turnstileState[formId] && turnstileState[formId].widgetId !== null) {
-        turnstile.reset(turnstileState[formId].widgetId);
-        turnstileState[formId].token = null;
+// Reset Turnstile widget for contact page form
+function resetContactPageTurnstile() {
+    if (window.turnstileState['contactPageForm'] && window.turnstileState['contactPageForm'].widgetId !== null && typeof turnstile !== 'undefined') {
+        turnstile.reset(window.turnstileState['contactPageForm'].widgetId);
+        window.turnstileState['contactPageForm'].token = null;
     }
 }
 
 // Validate Turnstile token (client-side check - server should also validate)
-async function validateTurnstileToken(token) {
+async function validateContactPageTurnstileToken(token) {
     // Basic client-side validation
     if (!token || token.length === 0) {
         return { success: false };
@@ -84,8 +66,8 @@ async function validateTurnstileToken(token) {
 
 // Contact Page GSAP Animations
 window.addEventListener('load', () => {
-       // Initialize Turnstile widgets
-       initializeTurnstile();
+       // Initialize Turnstile widgets for contact page
+       initializeContactPageTurnstile();
        
        const CONTACT_FORM_ID = 'contactPageForm';
        const CONTACT_API_BASE_URL = typeof API_BASE_URL !== 'undefined'
@@ -105,7 +87,7 @@ window.addEventListener('load', () => {
                 // Get form data
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
-                const turnstileToken = turnstileState[CONTACT_FORM_ID]?.token;
+                const turnstileToken = window.turnstileState[CONTACT_FORM_ID]?.token;
 
                 if (!turnstileToken) {
                     alert('Please complete the security check before submitting.');
@@ -115,10 +97,10 @@ window.addEventListener('load', () => {
                     return;
                 }
 
-                const validation = await validateTurnstileToken(turnstileToken);
+                const validation = await validateContactPageTurnstileToken(turnstileToken);
                 if (!validation.success) {
                     alert('Security validation failed. Please try again.');
-                    resetTurnstileForForm(CONTACT_FORM_ID);
+                    resetContactPageTurnstile();
                     submitBtn.disabled = false;
                     submitBtn.style.opacity = '1';
                     submitBtn.innerHTML = originalBtnText;
@@ -175,7 +157,7 @@ window.addEventListener('load', () => {
                     startVelocity: 45,
                     });
                     contactForm.reset();
-                    resetTurnstileForForm(CONTACT_FORM_ID);
+                    resetContactPageTurnstile();
                     // Close the contact form overlay
                     const contactOverlay = document.getElementById('contactOverlay');
                     if (contactOverlay) {
