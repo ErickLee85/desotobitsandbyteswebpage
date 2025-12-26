@@ -1477,6 +1477,21 @@
             console.log('DOMContentLoaded');
             const loader = document.querySelector('.spinner-container');
             
+            // Check if today is December 25th
+            const today = new Date();
+            const isChristmas = (today.getMonth() === 11 && today.getDate() === 25);
+            
+            if (!isChristmas) {
+                // Not Christmas - hide the overlay immediately
+                loader.classList.add('disabled');
+                setTimeout(() => {
+                    if (loader.parentNode) {
+                        document.body.removeChild(loader);
+                    }
+                }, 0);
+                return;
+            }
+            
             // Christmas Tree Animation
             gsap.registerPlugin(MotionPathPlugin);
             
