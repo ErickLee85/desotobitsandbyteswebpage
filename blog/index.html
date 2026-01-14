@@ -3,116 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="business blog, web development tips, software development insights, digital transformation, business growth">
+    <meta name="keywords" content="business blog, web development tips, software development insights, digital transformation, business growth, custom software, Olive Branch MS">
     <meta name="author" content="Desoto Bits & Bytes">
-    <meta name="description" content="Insights, tips, and strategies for growing your business with custom software solutions. Expert advice from Desoto Bits & Bytes.">
-    <title>Blog | Desoto Bits & Bytes</title>
+    <meta name="description" content="Insights, tips, and strategies for growing your business with custom software solutions. Expert advice from Desoto Bits & Bytes in Olive Branch, MS.">
+    <meta name="robots" content="index, follow">
+    <title>Blog | Desoto Bits & Bytes - Custom Software Insights</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://desotobitsandbytes.com/blog/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desotobitsandbytes.com/blog/">
+    <meta property="og:title" content="Blog | Desoto Bits & Bytes - Custom Software Insights">
+    <meta property="og:description" content="Insights, tips, and strategies for growing your business with custom software solutions. Expert advice from Desoto Bits & Bytes.">
+    <meta property="og:image" content="https://desotobitsandbytes.com/images/og-blog.jpg">
+    <meta property="og:site_name" content="Desoto Bits & Bytes">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://desotobitsandbytes.com/blog/">
+    <meta name="twitter:title" content="Blog | Desoto Bits & Bytes - Custom Software Insights">
+    <meta name="twitter:description" content="Insights, tips, and strategies for growing your business with custom software solutions. Expert advice from Desoto Bits & Bytes.">
+    <meta name="twitter:image" content="https://desotobitsandbytes.com/images/og-blog.jpg">
+    
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+    ></script>
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Desoto Bits & Bytes Blog",
+        "description": "Insights, tips, and strategies for growing your business with custom software solutions.",
+        "url": "https://desotobitsandbytes.com/blog/",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Desoto Bits & Bytes",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://desotobitsandbytes.com/images/logo_light.png"
+            }
+        },
+        "blogPost": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Why Your Business Needs a Website in 2026",
+                "description": "No website? You're invisible. Here's why that's costing you more than you think.",
+                "url": "https://desotobitsandbytes.com/blog/why-your-business-needs-a-website.html",
+                "datePublished": "2026-01-14",
+                "dateModified": "2026-01-14",
+                "author": {
+                    "@type": "Person",
+                    "name": "Erick"
+                },
+                "image": "https://desotobitsandbytes.com/images/company_building.jpg",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Desoto Bits & Bytes"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <a class="logo" href="../index.html">
-            <img src="../images/fulllogo.webp" alt="Desoto Bits & Bytes Logo">
-        </a>
+   <header>
+        <div class="logo">
+            <img src="../images/logo_light.png" alt="Desoto Bits and Bytes">
+        </div>
         <nav>
-            <a href="../index.html">Home</a>
-            <a href="../index.html#services">Services</a>
-            <a href="../index.html#work">Work</a>
-            <a href="index.html" class="active">Blog</a>
-            <a href="../contact/index.html">Contact</a>
+            <a href="/">Home</a>
+            <div class="nav-dropdown">
+                <a href="#" class="service-link">
+                    Services
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/mobile-apps" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="/web-applications" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="/company-websites" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="/api" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M482-80q-50 0-85-35t-35-85q0-38 22-68.5t56-43.5v-256L303-402q8 14 12.5 29.5T320-340q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t20 5.5l172-208q-24-17-38.5-42.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 31-14.5 56.5T547-661l172 208q10-4 20-5.5t21-1.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-17 4.5-32.5T657-402L520-568v254q36 12 59 43t23 71q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T522-200q0-17-11.5-28.5T482-240q-17 0-28.5 11.5T442-200q0 17 11.5 28.5T482-160ZM200-300q17 0 28.5-11.5T240-340q0-17-11.5-28.5T200-380q-17 0-28.5 11.5T160-340q0 17 11.5 28.5T200-300Zm560 0q17 0 28.5-11.5T800-340q0-17-11.5-28.5T760-380q-17 0-28.5 11.5T720-340q0 17 11.5 28.5T760-300ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="/ai_integration" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                </div>
+            </div>
+            <a href="/contact">Contact</a>
+            <a href="/blog">Blog</a>
         </nav>
         <div class="header-cta">
-            <a href="tel:16629321047" class="phone">(662) 932-1047</a>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="phone getQuoteBtn">
+                Get Quote
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+            </div>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu">
         <nav>
-            <a href="../index.html">Home</a>
-            <a href="../index.html#services">Services</a>
-            <a href="../index.html#work">Work</a>
-            <a href="index.html" class="active">Blog</a>
-            <a href="../contact/index.html">Contact</a>
+            <a href="/" class="mobile-menu-link">Home</a>
+            <div class="mobile-menu-dropdown">
+                <a href="#services" class="mobile-menu-link mobile-services-toggle">
+                    Services
+                    <svg class="mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="mobile-submenu">
+                    <a href="/mobile-apps" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="/web-applications" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="/company-websites" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="/api" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M482-80q-50 0-85-35t-35-85q0-38 22-68.5t56-43.5v-256L303-402q8 14 12.5 29.5T320-340q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-50 35-85t85-35q11 0 21 1.5t20 5.5l172-208q-24-17-38.5-42.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 31-14.5 56.5T547-661l172 208q10-4 20-5.5t21-1.5q50 0 85 35t35 85q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-17 4.5-32.5T657-402L520-568v254q36 12 59 43t23 71q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T522-200q0-17-11.5-28.5T482-240q-17 0-28.5 11.5T442-200q0 17 11.5 28.5T482-160ZM200-300q17 0 28.5-11.5T240-340q0-17-11.5-28.5T200-380q-17 0-28.5 11.5T160-340q0 17 11.5 28.5T200-300Zm560 0q17 0 28.5-11.5T800-340q0-17-11.5-28.5T760-380q-17 0-28.5 11.5T720-340q0 17 11.5 28.5T760-300ZM480-720q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="/ai_integration" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                </div>
+            </div>
+            <a href="/contact" class="mobile-menu-link">Contact</a>
+            <a href="/blog" class="mobile-menu-link">Blog</a>
         </nav>
+        <a href="tel:16629321047" class="phone">(662) 932-1047</a>
     </div>
 
     <main>
         <!-- Blog Hero -->
-        <section class="blog-hero">
+        <!-- <section class="blog-hero">
             <div class="blog-hero-content">
                 <span class="blog-label">Our Blog</span>
                 <h1>Insights & Ideas</h1>
                 <p>Straight talk about building software that actually works for your business.</p>
             </div>
-        </section>
+        </section> -->
 
-        <!-- Blog Grid -->
-        <section class="blog-grid-section">
-            <div class="blog-grid">
-                <!-- Blog Card 1 -->
-                <a href="why-your-business-needs-a-website.html" class="blog-card">
-                    <div class="blog-card-image">
-                        <div class="blog-card-placeholder">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#0091ff"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/></svg>
+        <!-- Recently Released Section -->
+        <section class="recent-posts-section" aria-labelledby="recent-posts-heading">
+            <h2 id="recent-posts-heading" class="section-title">Recently released blog posts</h2>
+            <div class="recent-posts-grid">
+                <!-- Featured Post (Large) -->
+                <article class="featured-post-wrapper">
+                    <a href="why-your-business-needs-a-website.html" class="featured-post" aria-label="Read article: Why Your Business Needs a Website in 2026">
+                        <figure class="featured-post-image">
+                            <div class="featured-post-placeholder">
+                                <img src="../images/company_building.jpg" alt="Modern office building representing business growth through digital presence" loading="lazy">
+                            </div>
+                        </figure>
+                        <div class="featured-post-content">
+                            <div class="post-meta">
+                                <span class="post-author">
+                                    <img src="../images/headshot_min.jpg" alt="Erick - Author" class="author-avatar-main" loading="lazy">
+                                </span>
+                                <span class="meta-dot" aria-hidden="true">•</span>
+                                <time datetime="2026-01-14" class="post-date">January 14, 2026</time>
+                                <span class="post-read-time"><span class="visually-hidden">Reading time:</span>3 min read</span>
+                            </div>
+                            <h3>Why Your Business Needs a Website in 2026</h3>
+                            <p>No website? You're invisible. Here's why that's costing you more than you think.</p>
+                            <span class="post-category">Business</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Side Posts Stack -->
+                <div class="side-posts">
+                    <!-- Side Post 1 (placeholder for future) -->
+                    <div class="side-post coming-soon">
+                        <div class="side-post-image">
+                            <div class="side-post-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#0091ff"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
+                            </div>
+                        </div>
+                        <div class="side-post-content">
+                            <div class="post-meta">
+                                <span class="post-author">Coming Soon</span>
+                            </div>
+                            <h4>More Articles Coming Soon</h4>
+                            <p>Stay tuned for more insights...</p>
                         </div>
                     </div>
-                    <div class="blog-card-content">
-                        <span class="blog-card-date">January 14, 2026</span>
-                        <h2>Why Your Business Needs a Website in 2026</h2>
-                        <p>No website? You're invisible. Here's why that's costing you more than you think.</p>
-                        <span class="blog-card-read">Read Article →</span>
-                    </div>
-                </a>
 
-                <!-- More blog cards will go here -->
+                    <!-- Side Post 2 (placeholder for future) -->
+                    <div class="side-post coming-soon">
+                        <div class="side-post-image">
+                            <div class="side-post-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#0091ff"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
+                            </div>
+                        </div>
+                        <div class="side-post-content">
+                            <div class="post-meta">
+                                <span class="post-author">Coming Soon</span>
+                            </div>
+                            <h4>New Content Weekly</h4>
+                            <p>Subscribe for updates...</p>
+                        </div>
+                    </div>
+
+                    <!-- Side Post 3 (placeholder for future) -->
+                    <div class="side-post coming-soon">
+                        <div class="side-post-image">
+                            <div class="side-post-placeholder">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#0091ff"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/></svg>
+                            </div>
+                        </div>
+                        <div class="side-post-content">
+                            <div class="post-meta">
+                                <span class="post-author">Coming Soon</span>
+                            </div>
+                            <h4>Expert Tips & Tricks</h4>
+                            <p>Learn from the pros...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Blog Posts Section -->
+        <section class="all-posts-section" aria-labelledby="all-posts-heading">
+            <h2 id="all-posts-heading" class="section-title">All blog posts</h2>
+            <div class="all-posts-grid" role="list">
+                <!-- Blog Card 1 -->
+                <article class="blog-card-wrapper" role="listitem">
+                    <a href="why-your-business-needs-a-website.html" class="blog-card" aria-label="Read article: Why Your Business Needs a Website in 2026">
+                        <figure class="blog-card-image">
+                            <div class="blog-card-placeholder">
+                                <img src="../images/company_building.jpg" alt="Modern office building representing business growth through digital presence" loading="lazy">
+                            </div>
+                        </figure>
+                        <div class="blog-card-content">
+                            <div class="post-meta">
+                                <span class="post-author">Erick</span>
+                                <span class="meta-dot" aria-hidden="true">•</span>
+                                <time datetime="2026-01-14" class="post-date">January 14, 2026</time>
+                                <span class="post-read-time"><span class="visually-hidden">Reading time:</span> 3 min read</span>
+                            </div>
+                            <h3>Why Your Business Needs a Website in 2026</h3>
+                            <p>No website? You're invisible. Here's why that's costing you more than you think.</p>
+                            <span class="post-category">Business</span>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- More blog cards will go here as we add posts -->
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="blog-cta-section">
+        <!-- <section class="blog-cta-section">
             <div class="blog-cta-content">
                 <h2>Ready to Build Something?</h2>
                 <p>Let's talk about your project.</p>
                 <a href="../contact/index.html" class="btn-primary">Get Started</a>
             </div>
-        </section>
+        </section> -->
+         <div class="contact-overlay" id="contactOverlay">
+        <div class="contact-form-panel" id="contactFormPanel">
+            <button class="contact-close-btn" id="contactCloseBtn" aria-label="Close contact form">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </button>
+            <div class="contact-form-content">
+                <h2 class="contact-form-title">Hey! How can we help?</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name & Company</label>
+                            <input type="text" id="name" name="name" placeholder="John from Apple" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@apple.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us more about your project</label>
+                        <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
+                    </div>
+                    <div id="contactFormTurnstile"></div>
+                    <div class="contact-form-footer">
+                        <p class="contact-email-text">Email us <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
+                        <button type="submit" class="btn btn-submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="../images/fulllogo.webp" alt="Desoto Bits & Bytes">
-                <p>Custom software that actually works.</p>
-            </div>
-            <div class="footer-links">
-                <a href="../index.html">Home</a>
-                <a href="../index.html#services">Services</a>
-                <a href="../contact/index.html">Contact</a>
-                <a href="index.html">Blog</a>
-            </div>
-            <div class="footer-contact">
-                <a href="tel:16629321047">(662) 932-1047</a>
-                <p>Olive Branch, MS</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Desoto Bits & Bytes. All rights reserved.</p>
-        </div>
-    </footer>
+          <footer class="footer-section">
+                    <div class="footer-wrapper">
+                        <p class="footer-copyright">© 2026 Desoto Bits and Bytes LLC. All rights reserved.</p>
+                        <div class="social-links" role="navigation" aria-label="Social media links">
+                            <a href="https://www.facebook.com/p/Desoto-Bits-Bytes-LLC-61560805109211/" class="social-link" rel="noopener noreferrer" target="_blank" aria-label="Visit our Facebook page">
+                                <img src="../images/socials/facebook-1-svgrepo-com.svg" alt="" class="social-icon" aria-hidden="true">
+                            </a>
+                            <a href="https://www.linkedin.com/company/desoto-bits-bytes/" class="social-link" rel="noopener noreferrer" target="_blank" aria-label="Visit our LinkedIn page">
+                                <img src="../images/socials/linkedin-1-svgrepo-com.svg" alt="" class="social-icon" aria-hidden="true">
+                            </a>
+                            <a href="https://www.google.com/search?q=desoto+bits+and+bytes" class="social-link" rel="noopener noreferrer" target="_blank" aria-label="Find us on Google">
+                                <img src="../images/socials/google-svgrepo-com.svg" alt="" class="social-icon" aria-hidden="true">
+                            </a>
+                        </div>
+                        <div class="footer-links" role="navigation" aria-label="Legal links">
+                            <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef" class="footer-link" rel="noopener noreferrer" target="_blank">Privacy Policy</a>
+                            <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-link" rel="noopener noreferrer" target="_blank">Terms of Service</a>
+                        </div>
+                    </div>
+        </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           const logo = document.querySelector('.logo')
+           logo.addEventListener('click',(e) => {
+            window.location.href = '../index.html'
+           })
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js" integrity="sha512-BQAAkzDHfly7jPwVhh0SpGxbvjRNEapCNkJ0VNSMFervZLsaeUch4P92skLoD70NXWlI1GOgrXRfR50b/quSSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js" integrity="sha512-t4hwZimhnCKT3YLAsEcAcRDkngVFfCcUIfNLIjklrIZAZKD+GfQMP7HbRcsVHxNS48WRBSywNU1uSM2zzLQt1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" integrity="sha512-yOZoZc/D5ZPHwjBduLkgeGHhFlQ7CsslA5D1egpQgeV1QcV4OdCcwmRLkH7p/hEHHF1cJp3H2OpGpd7oELFGxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="blog.js"></script>
-    <script src="../script.js"></script>
 </body>
 </html>
