@@ -542,6 +542,45 @@
             z-index: 3;
         }
 
+        .google-rating-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .google-rating-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .google-rating-stars svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .google-rating-text {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light);
+        }
+
+        .google-rating-score {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .google-rating-count {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         .btn {
             padding: 1rem 2rem;
             font-size: 1rem;
@@ -1714,6 +1753,11 @@
             .hero-cta {
                 flex-direction: column;
                 gap: 1rem;
+                width: 100%;
+            }
+
+            .google-rating-badge {
+                justify-content: center;
                 width: 100%;
             }
 
