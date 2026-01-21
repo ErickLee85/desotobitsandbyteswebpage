@@ -159,11 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navDropdown.classList.toggle('active');
         });
 
-        // Close dropdown when mouse leaves the dropdown area
-        navDropdown.addEventListener('mouseleave', () => {
-            navDropdown.classList.remove('active');
-        });
-
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!navDropdown.contains(e.target)) {
