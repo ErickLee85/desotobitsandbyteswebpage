@@ -555,8 +555,6 @@ body {
 .web-reviews-section {
     background: var(--dark);
     padding: 8rem 5%;
-    position: relative;
-    min-height: 100vh;
 }
 
 .web-reviews-heading {
@@ -571,46 +569,24 @@ body {
 .web-reviews-container {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    height: 600px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    touch-action: pan-y;
 }
 
 .web-reviews-track {
     display: flex;
-    gap: 3rem;
-    height: 100%;
-    position: relative;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .web-review-card {
-    min-width: 100%;
-    height: 100%;
     background: rgba(255, 255, 255, 0.05);
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    opacity: 0;
-    filter: blur(10px);
-    position: absolute;
-    will-change: opacity filter;
-    top: 0;
-    left: 0;
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .web-review-card.active {
-    opacity: 1;
-    filter: blur(0px);
-    position: relative;
-    will-change: opacity filter;
+    /* Active class no longer needed for visibility */
 }
 
 .web-review-stars {
@@ -621,25 +597,19 @@ body {
 }
 
 .web-review-text {
-    font-size: 2.0rem;
+    font-size: 1.3rem;
     line-height: 1.8;
-    color: var(--light);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
     font-weight: 400;
-    flex-grow: 1;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 8;
-    line-clamp: 8;
-    -webkit-box-orient: vertical;
 }
 
 .web-review-author {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .web-review-author-avatar {
@@ -648,7 +618,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: #f5f5f5;
 }
 
 .web-review-author-avatar img {
@@ -671,7 +641,7 @@ body {
 .web-review-author-company {
     font-family: "Bebas Neue", sans-serif;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
     font-weight: 400;
 }
 
