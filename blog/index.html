@@ -240,7 +240,7 @@
 
         <!-- Recently Released Section -->
         <section class="recent-posts-section" aria-labelledby="recent-posts-heading">
-            <h2 id="recent-posts-heading" class="section-title">Recently released blog posts</h2>
+            <h2 id="recent-posts-heading" class="section-title">Latest Blog Articles</h2>
             <div class="recent-posts-grid">
                 <!-- Featured Post (Large) - MVP Guide -->
                 <article class="featured-post-wrapper">
@@ -328,9 +328,39 @@
         <!-- All Blog Posts Section -->
         <section class="all-posts-section" aria-labelledby="all-posts-heading">
             <h2 id="all-posts-heading" class="section-title">All blog posts</h2>
+            
+            <!-- Search and Filter -->
+            <div class="blog-controls">
+                <div class="blog-search">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#666">
+                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                    </svg>
+                    <input type="text" id="blogSearch" class="blog-search-input" placeholder="Search articles..." aria-label="Search blog posts">
+                    <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#666">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="startups">Startups</button>
+                    <button class="filter-btn" data-filter="mobile-development">Mobile Development</button>
+                    <button class="filter-btn" data-filter="business">Business</button>
+                </div>
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#ccc">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+                <p>No posts found matching your search.</p>
+                <button class="reset-filters-btn" id="resetFilters">Clear filters</button>
+            </div>
+            
             <div class="all-posts-grid" role="list">
                 <!-- Blog Card - MVP Guide -->
-                <article class="blog-card-wrapper" role="listitem">
+                <article class="blog-card-wrapper" role="listitem" data-category="startups" data-title="How to Build an MVP on a Budget" data-description="Stop overthinking. Start building. Your practical guide to launching an MVP without draining your savings.">
                     <a href="mvp-guide-for-entrepreneurs.html" class="blog-card" aria-label="Read article: Building an MVP for Your Business Idea on a Budget">
                         <figure class="blog-card-image">
                             <div class="blog-card-placeholder">
@@ -352,7 +382,7 @@
                 </article>
 
                 <!-- Blog Card - Mobile App Mistakes -->
-                <article class="blog-card-wrapper" role="listitem">
+                <article class="blog-card-wrapper" role="listitem" data-category="mobile-development" data-title="7 Mobile App Mistakes That Cost Companies Thousands" data-description="Most apps fail within their first year. Here's why—and how to make sure yours doesn't.">
                     <a href="mobile-app-mistakes-companies-make.html" class="blog-card" aria-label="Read article: 7 Mobile App Mistakes That Cost Companies Thousands">
                         <figure class="blog-card-image">
                             <div class="blog-card-placeholder">
@@ -374,7 +404,7 @@
                 </article>
 
                 <!-- Blog Card - DIY vs Developer -->
-                <article class="blog-card-wrapper" role="listitem">
+                <article class="blog-card-wrapper" role="listitem" data-category="business" data-title="DIY Website Builder vs. Hiring a Developer: The Honest Truth" data-description="Wix looks cheap until you realize what you're actually paying for.">
                     <a href="diy-website-builder-vs-hiring-a-developer.html" class="blog-card" aria-label="Read article: DIY Website Builder vs. Hiring a Developer">
                         <figure class="blog-card-image">
                             <div class="blog-card-placeholder">
@@ -396,7 +426,7 @@
                 </article>
 
                 <!-- Blog Card - Why Your Business Needs a Website -->
-                <article class="blog-card-wrapper" role="listitem">
+                <article class="blog-card-wrapper" role="listitem" data-category="business" data-title="Why Your Business Needs a Website in 2026" data-description="No website? You're invisible. Here's why that's costing you more than you think.">
                     <a href="why-your-business-needs-a-website.html" class="blog-card" aria-label="Read article: Why Your Business Needs a Website in 2026">
                         <figure class="blog-card-image">
                             <div class="blog-card-placeholder">

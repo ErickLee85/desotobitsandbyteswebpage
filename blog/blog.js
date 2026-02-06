@@ -306,3 +306,112 @@ if (contactOverlay && contactFormPanel && getQuoteBtns.length > 0) {
         });
     }
 }
+
+// Blog Search and Filter Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('blogSearch');
+    const searchClear = document.getElementById('searchClear');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.all-posts-grid .blog-card-wrapper');
+    const noResults = document.getElementById('noResults');
+    const resetFilters = document.getElementById('resetFilters');
+    const allPostsGrid = document.querySelector('.all-posts-grid');
+    
+    if (!searchInput || !blogCards.length) return;
+    
+    let currentFilter = 'all';
+    let currentSearch = '';
+    
+    // Filter and search function
+    function filterAndSearch() {
+        let visibleCount = 0;
+        
+        blogCards.forEach(card => {
+            const category = card.dataset.category || '';
+            const title = (card.dataset.title || '').toLowerCase();
+            const description = (card.dataset.description || '').toLowerCase();
+            const searchText = currentSearch.toLowerCase();
+            
+            // Check filter match
+            const filterMatch = currentFilter === 'all' || category === currentFilter;
+            
+            // Check search match
+            const searchMatch = !searchText || 
+                title.includes(searchText) || 
+                description.includes(searchText) ||
+                category.replace('-', ' ').includes(searchText);
+            
+            if (filterMatch && searchMatch) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        
+        // Toggle no results message
+        if (noResults && allPostsGrid) {
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+                allPostsGrid.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                allPostsGrid.style.display = 'grid';
+            }
+        }
+    }
+    
+    // Search input handler
+    searchInput.addEventListener('input', (e) => {
+        currentSearch = e.target.value;
+        if (searchClear) {
+            searchClear.style.display = currentSearch ? 'flex' : 'none';
+        }
+        filterAndSearch();
+    });
+    
+    // Search clear button
+    if (searchClear) {
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            currentSearch = '';
+            searchClear.style.display = 'none';
+            filterAndSearch();
+            searchInput.focus();
+        });
+    }
+    
+    // Filter button click handler
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Set current filter
+            currentFilter = btn.dataset.filter;
+            filterAndSearch();
+        });
+    });
+    
+    // Reset filters button
+    if (resetFilters) {
+        resetFilters.addEventListener('click', () => {
+            // Reset search
+            searchInput.value = '';
+            currentSearch = '';
+            if (searchClear) searchClear.style.display = 'none';
+            
+            // Reset filter to "All"
+            currentFilter = 'all';
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === 'all') {
+                    btn.classList.add('active');
+                }
+            });
+            
+            filterAndSearch();
+        });
+    }
+});
