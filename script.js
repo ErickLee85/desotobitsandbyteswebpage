@@ -665,231 +665,45 @@
                          });
                      }
 
-                     // Services Section Pin Animation
-                    const servicesSection = document.querySelector('.services-section');
-                    const serviceItems = document.querySelectorAll('.service-item');
+                     // Services Section - Static display with SVG heading animation
                     const servicesHeading = document.querySelector('.services-heading');
                     
-                    if (servicesSection && serviceItems.length > 0) {
-                        // Animate the SVG text paths with DrawSVG (handwriting effect)
-                        if (servicesHeading) {
-                            const servicePaths = servicesHeading.querySelectorAll('.services-path');
-                            
-                            // Set initial state
-                            gsap.set(servicePaths, { drawSVG: '0% 0%' });
-                            
-                            // Animate drawing in
-                            gsap.to(servicePaths, {
-                                drawSVG: '100%',
-                                duration: 1.5,
-                                stagger: 0.08,
-                                scrollTrigger: {
-                                    trigger: servicesHeading,
-                                    start: "top 80%",
-                                    toggleActions: "play none none none",
-                                    markers: false
-                                }
-                            });
-                        }
-
-                        // Only pin on desktop devices
-                        if (!isMobile) {
-                            // Calculate total scroll distance: 5 items * 1200px = 6000px
-                            ScrollTrigger.create({
-                                trigger: servicesSection,
-                                start: "top top",
-                                end: "+=6000",
-                                pin: ".services-container",
-                                anticipatePin: 1,
-                                scrub: 1
-                            });
-                        }
-
-                        // Animate each service item as it comes into view
-                        serviceItems.forEach((item, index) => {
-                            const title = item.querySelector('.service-title');
-                            const description = item.querySelector('.service-description');
-                            const number = item.querySelector('.service-number');
-                            const featureItems = item.querySelectorAll('.service-feature-item');
-                            const mobileLearnMoreBtn = item.querySelector('.mobile-learn-more-btn');
-                            
-                            // On mobile, use simpler animations without scrub
-                            if (isMobile) {
-                                // Set initial states
-                                gsap.set([title, description], { 
-                                    opacity: 0, 
-                                    y: 30,
-                                    filter: 'blur(10px)'
-                                });
-                                gsap.set(number, { 
-                                    opacity: 0, 
-                                    y: 30,
-                                    filter: 'blur(10px)',
-                                    scale: 0.8 
-                                });
-                                gsap.set(featureItems, {
-                                    opacity: 0,
-                                    x: -30,
-                                    filter: 'blur(5px)'
-                                });
-                                if (mobileLearnMoreBtn) {
-                                    gsap.set(mobileLearnMoreBtn, {
-                                        opacity: 0,
-                                        y: 30,
-                                        filter: 'blur(5px)'
-                                    });
-                                }
-
-                                // Simple scroll-triggered animation for mobile
-                                const mobileTimeline = gsap.timeline({
-                                    scrollTrigger: {
-                                        trigger: item,
-                                        start: "top 80%",
-                                        toggleActions: "play none none none"
-                                    }
-                                });
-
-                                mobileTimeline
-                                    .to([number, title, description], {
-                                        opacity: 1,
-                                        y: 0,
-                                        filter: 'blur(0px)',
-                                        scale: 1,
-                                        duration: 1.2,
-                                        stagger: 0.2,
-                                        ease: 'power3.out'
-                                    })
-                                    .to(featureItems, {
-                                        opacity: 1,
-                                        x: 0,
-                                        filter: 'blur(0px)',
-                                        duration: 0.6,
-                                        stagger: 0.1,
-                                        ease: 'power2.out'
-                                    }, '-=0.3');
-                                if (mobileLearnMoreBtn) {
-                                    mobileTimeline.to(mobileLearnMoreBtn, {
-                                        opacity: 1,
-                                        y: 0,
-                                        filter: 'blur(0px)',
-                                        duration: 0.6,
-                                        ease: 'power2.out'
-                                    }, '-=0.2');
-                                }
-                            } else {
-                                // Desktop animation with scrub
-                                // Alternate between left and right animation
-                                const isEven = index % 2 === 0;
-                                const xOffset = isEven ? -200 : 200;
-                                
-                                // Set initial states - animate from x-axis
-                                gsap.set([title, description], { 
-                                    opacity: 0, 
-                                    x: xOffset,
-                                    filter: 'blur(10px)'
-                                });
-                                gsap.set(number, { 
-                                    opacity: 0, 
-                                    x: xOffset,
-                                    scale: 0.8 
-                                });
-                                gsap.set(featureItems, {
-                                    opacity: 0,
-                                    x: xOffset + 50,
-                                    filter: 'blur(5px)'
-                                });
-                                if (mobileLearnMoreBtn) {
-                                    gsap.set(mobileLearnMoreBtn, {
-                                        opacity: 0,
-                                        x: xOffset + 50,
-                                        filter: 'blur(5px)'
-                                    });
-                                }
-                                gsap.set(item, {
-                                    x: 0
-                                });
-
-                                // Create timeline for each service
-                                // Increased scroll distance from 800 to 1200 for more buffer
-                                const scrollDistance = 1200;
-                                const serviceTimeline = gsap.timeline({
-                                    scrollTrigger: {
-                                        trigger: servicesSection,
-                                        start: `top+=${index * scrollDistance} top`,
-                                        end: `top+=${(index + 1) * scrollDistance} top`,
-                                        scrub: 1,
-                                        onEnter: () => {
-                                            // Remove active class from all items
-                                            serviceItems.forEach(si => si.classList.remove('active'));
-                                            // Add active class to current item
-                                            item.classList.add('active');
-                                        },
-                                        onEnterBack: () => {
-                                            serviceItems.forEach(si => si.classList.remove('active'));
-                                            item.classList.add('active');
-                                        },
-                                        onLeave: () => {
-                                            if (index < serviceItems.length - 1) {
-                                                item.classList.remove('active');
-                                            }
-                                        },
-                                        onLeaveBack: () => {
-                                            if (index > 0) {
-                                                item.classList.remove('active');
-                                            }
-                                        }
-                                    }
-                                });
-
-                                // Animate from x-axis - number first, then title, then description, then features
-                                // Button appears earlier (at 60% of timeline instead of end) for more visibility
-                                serviceTimeline
-                                    .to(number, {
-                                        opacity: 1,
-                                        x: 0,
-                                        scale: 1,
-                                        duration: 0.8,
-                                        ease: 'power3.out'
-                                    })
-                                    .to(title, {
-                                        opacity: 1,
-                                        x: 0,
-                                        filter: 'blur(0px)',
-                                        duration: 1,
-                                        ease: 'power3.out'
-                                    }, '-=0.4')
-                                    .to(description, {
-                                        opacity: 1,
-                                        x: 0,
-                                        filter: 'blur(0px)',
-                                        duration: 1,
-                                        ease: 'power3.out'
-                                    }, '-=0.6')
-                                    .to(featureItems, {
-                                        opacity: 1,
-                                        x: 0,
-                                        filter: 'blur(0px)',
-                                        duration: 0.8,
-                                        stagger: 0.1,
-                                        ease: 'power2.out'
-                                    }, '-=0.4');
-                                if (mobileLearnMoreBtn) {
-                                    // Button appears earlier in the timeline (starts with features) for more visibility buffer
-                                    serviceTimeline.to(mobileLearnMoreBtn, {
-                                        opacity: 1,
-                                        x: 0,
-                                        filter: 'blur(0px)',
-                                        duration: 1.2, // Longer duration = more scroll distance = more time visible
-                                        ease: 'power2.out'
-                                    }, '-=0.6'); // Start earlier, overlapping significantly with features
-                                }
+                    // Animate the SVG text paths with DrawSVG (handwriting effect)
+                    if (servicesHeading) {
+                        const servicePaths = servicesHeading.querySelectorAll('.services-path');
+                        
+                        // Set initial state
+                        gsap.set(servicePaths, { drawSVG: '0% 0%' });
+                        
+                        // Animate drawing in
+                        gsap.to(servicePaths, {
+                            drawSVG: '100%',
+                            duration: 1.5,
+                            stagger: 0.08,
+                            scrollTrigger: {
+                                trigger: servicesHeading,
+                                start: "top 80%",
+                                toggleActions: "play none none none",
+                                markers: false
                             }
                         });
-
-                        // Set first service as active initially (only on desktop)
-                        if (!isMobile) {
-                            serviceItems[0]?.classList.add('active');
-                        }
+                    }
+                    
+                    // Animate service cards in with opacity
+                    const serviceCards = document.querySelectorAll('.service-card');
+                    if (serviceCards.length > 0) {
+                        gsap.set(serviceCards, { opacity: 0 });
+                        gsap.to(serviceCards, {
+                            opacity: 1,
+                            duration: 0.8,
+                            stagger: 0.15,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: '.services-grid',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        });
                     }
 
         function smoothScrollTo(element, duration = 800) {
