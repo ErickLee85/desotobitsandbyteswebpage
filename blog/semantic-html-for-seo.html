@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="semantic HTML, SEO, semantic HTML5, web accessibility, HTML elements, search engine optimization, semantic markup, website structure, web development">
+    <meta name="author" content="Desoto Bits & Bytes">
+    <meta name="description" content="Semantic HTML isn't a ranking factor—but Google still wants you to use it. Learn why semantic markup matters for SEO, accessibility, and building websites that search engines actually understand.">
+    <title>The Importance of Semantic HTML for SEO | Desoto Bits & Bytes</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.desotobitsandbytes.com/blog/semantic-html-for-seo.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.desotobitsandbytes.com/blog/semantic-html-for-seo.html">
+    <meta property="og:title" content="The Importance of Semantic HTML for SEO">
+    <meta property="og:description" content="Semantic HTML isn't a ranking factor—but Google still wants you to use it. Learn why semantic markup matters for SEO, accessibility, and building websites that search engines actually understand.">
+    <meta property="og:image" content="https://www.desotobitsandbytes.com/images/organic_seo.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Desoto Bits & Bytes">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-02-16">
+    <meta property="article:author" content="Erick Crowne">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.desotobitsandbytes.com/blog/semantic-html-for-seo.html">
+    <meta name="twitter:title" content="The Importance of Semantic HTML for SEO">
+    <meta name="twitter:description" content="Semantic HTML isn't a ranking factor—but Google still wants you to use it. Learn why semantic markup matters for SEO, accessibility, and building websites that search engines actually understand.">
+    <meta name="twitter:image" content="https://www.desotobitsandbytes.com/images/organic_seo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+    ></script>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="../styles.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The Importance of Semantic HTML for SEO",
+        "description": "Semantic HTML isn't a ranking factor—but Google still wants you to use it. Learn why semantic markup matters for SEO, accessibility, and building websites that search engines actually understand.",
+        "author": {
+            "@type": "Organization",
+            "name": "Desoto Bits & Bytes"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Desoto Bits & Bytes"
+        },
+        "datePublished": "2026-02-16",
+        "dateModified": "2026-02-16"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+   <header>
+        <div class="logo">
+            <img src="../images/logo_light.png" alt="Desoto Bits and Bytes">
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <div class="nav-dropdown">
+                <a href="#" class="service-link">
+                    Services
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/mobile-apps" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M200-40v-80q33 0 56.5 23.5T280-40h-80Zm160 0q0-66-47-113t-113-47v-80q100 0 170 70t70 170h-80Zm160 0q0-134-93-227t-227-93v-80q83 0 156 31.5T483-323q54 54 85.5 127T600-40h-80Zm240-800v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v404q0 33-23.5 56.5T680-40v-800H280v320h-80v-320q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840ZM508.5-731.5Q520-743 520-760t-11.5-28.5Q497-800 480-800t-28.5 11.5Q440-777 440-760t11.5 28.5Q463-720 480-720t28.5-11.5ZM680-40v-800 800Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="/web-applications" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M287-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm96.5-143.5Q760-287 760-320t-23.5-56.5Q713-400 680-400t-56.5 23.5Q600-353 600-320t23.5 56.5Q647-240 680-240t56.5-23.5Zm-280-320Q480-607 480-640t-23.5-56.5Q433-720 400-720t-56.5 23.5Q320-673 320-640t23.5 56.5Q367-560 400-560t56.5-23.5ZM400-640Zm12 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="/company-websites" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M838-65 720-183v89h-80v-226h226v80h-90l118 118-56 57ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 20-2 40t-6 40h-82q5-20 7.5-40t2.5-40q0-20-2.5-40t-7.5-40H654q3 20 4.5 40t1.5 40q0 20-1.5 40t-4.5 40h-80q3-20 4.5-40t1.5-40q0-20-1.5-40t-4.5-40H386q-3 20-4.5 40t-1.5 40q0 20 1.5 40t4.5 40h134v80H404q12 43 31 82.5t45 75.5q20 0 40-2.5t40-4.5v82q-20 2-40 4.5T480-80ZM170-400h136q-3-20-4.5-40t-1.5-40q0-20 1.5-40t4.5-40H170q-5 20-7.5 40t-2.5 40q0 20 2.5 40t7.5 40Zm34-240h118q9-37 22.5-72.5T376-782q-55 18-99 54.5T204-640Zm172 462q-18-34-31.5-69.5T322-320H204q29 51 73 87.5t99 54.5Zm28-462h152q-12-43-31-82.5T480-798q-26 36-45 75.5T404-640Zm234 0h118q-29-51-73-87.5T584-782q18 34 31.5 69.5T638-640Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="/api" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m430-30-56-57 73-73H313q-13 35-43.5 57.5T200-80q-50 0-85-35t-35-85q0-39 22.5-69.5T160-313v-334q-35-13-57.5-43.5T80-760q0-50 35-85t85-35q39 0 69.5 22.5T313-800h134l-73-73 56-57 170 170-170 170-56-57 73-73H313q-9 26-28 45t-45 28v334q26 9 45 28t28 45h134l-73-73 56-57 170 170L430-30Zm245-85q-35-35-35-85 0-40 22.5-70.5T720-313v-334q-35-12-57.5-42.5T640-760q0-50 35-85t85-35q50 0 85 35t35 85q0 40-22.5 70.5T800-647v334q35 13 57.5 43.5T880-200q0 50-35 85t-85 35q-50 0-85-35Zm-475-45q17 0 28.5-11.5T240-200q0-17-11.5-28.5T200-240q-17 0-28.5 11.5T160-200q0 17 11.5 28.5T200-160Zm560 0q17 0 28.5-11.5T800-200q0-17-11.5-28.5T760-240q-17 0-28.5 11.5T720-200q0 17 11.5 28.5T760-160ZM200-720q17 0 28.5-11.5T240-760q0-17-11.5-28.5T200-800q-17 0-28.5 11.5T160-760q0 17 11.5 28.5T200-720Zm560 0q17 0 28.5-11.5T800-760q0-17-11.5-28.5T760-800q-17 0-28.5 11.5T720-760q0 17 11.5 28.5T760-720ZM200-200Zm560 0ZM200-760Zm560 0Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="/ai_integration" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integration
+                    </a>
+                </div>
+            </div>
+            <a href="/contact">Contact</a>
+            <a href="/blog">Blog</a>
+        </nav>
+        <div class="header-cta">
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="phone getQuoteBtn">
+                Get Quote
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <nav>
+            <a href="/" class="mobile-menu-link">Home</a>
+            <div class="mobile-menu-dropdown">
+                <a href="#services" class="mobile-menu-link mobile-services-toggle">
+                    Services
+                    <svg class="mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="mobile-submenu">
+                    <a href="/mobile-apps" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-120q-33 0-56.5-23.5T40-200v-80q0-33 23.5-56.5T120-360h240q33 0 56.5 23.5T440-280v80q0 33-23.5 56.5T360-120H120Zm480 0q-33 0-56.5-23.5T520-200v-560q0-33 23.5-56.5T600-840h240q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120H600Zm-480-80h240v-80H120v80Zm480 0h240v-560H600v560Zm120-40q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240ZM120-440q-33 0-56.5-23.5T40-520v-240q0-33 23.5-56.5T120-840h240q33 0 56.5 23.5T440-760v240q0 33-23.5 56.5T360-440H120Zm160-200q17 0 28.5-11.5T320-680q0-17-11.5-28.5T280-720q-17 0-28.5 11.5T240-680q0 17 11.5 28.5T280-640ZM120-533l80-107 90 120h70v-240H120v227Zm120 293Zm480-240ZM240-640Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="/web-applications" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M320-120v-80h80v-80H160q-33 0-56.5-23.5T80-360v-400q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v400q0 33-23.5 56.5T800-280H560v80h80v80H320ZM160-360h640v-400H160v400Zm0 0v-400 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="/company-websites" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M80-120v-720h400v160h400v560H80Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h320v-400H480v80h80v80h-80v80h80v80h-80v80Zm160-240v-80h80v80h-80Zm0 160v-80h80v80h-80Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="/api" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m430-30-56-57 73-73H313q-13 35-43.5 57.5T200-80q-50 0-85-35t-35-85q0-39 22.5-69.5T160-313v-334q-35-13-57.5-43.5T80-760q0-50 35-85t85-35q39 0 69.5 22.5T313-800h134l-73-73 56-57 170 170-170 170-56-57 73-73H313q-9 26-28 45t-45 28v334q26 9 45 28t28 45h134l-73-73 56-57 170 170L430-30Zm245-85q-35-35-35-85 0-40 22.5-70.5T720-313v-334q-35-12-57.5-42.5T640-760q0-50 35-85t85-35q50 0 85 35t35 85q0 40-22.5 70.5T800-647v334q35 13 57.5 43.5T880-200q0 50-35 85t-85 35q-50 0-85-35Zm-475-45q17 0 28.5-11.5T240-200q0-17-11.5-28.5T200-240q-17 0-28.5 11.5T160-200q0 17 11.5 28.5T200-160Zm560 0q17 0 28.5-11.5T800-200q0-17-11.5-28.5T760-240q-17 0-28.5 11.5T720-200q0 17 11.5 28.5T760-160ZM200-720q17 0 28.5-11.5T240-760q0-17-11.5-28.5T200-800q-17 0-28.5 11.5T160-760q0 17 11.5 28.5T200-720Zm560 0q17 0 28.5-11.5T800-760q0-17-11.5-28.5T760-800q-17 0-28.5 11.5T720-760q0 17 11.5 28.5T760-720ZM200-200Zm560 0ZM200-760Zm560 0Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="/ai_integration" class="mobile-submenu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm200-80q25 0 42.5-17.5T420-500q0-25-17.5-42.5T360-560q-25 0-42.5 17.5T300-500q0 25 17.5 42.5T360-440Zm240 0q25 0 42.5-17.5T660-500q0-25-17.5-42.5T600-560q-25 0-42.5 17.5T540-500q0 25 17.5 42.5T600-440ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integration
+                    </a>
+                </div>
+            </div>
+            <a href="/contact" class="mobile-menu-link">Contact</a>
+            <a href="/blog">Blog</a>
+        </nav>
+        <a href="tel:16629321047" class="phone">(662) 932-1047</a>
+    </div>
+
+    <main>
+        <!-- Article Hero -->
+        <section class="article-hero">
+            <div class="article-hero-content">
+                <div class="article-meta">
+                    <span class="article-category">SEO • Feb 16, 2026 • 7 min read</span>
+                </div>
+                <h1>The Importance of Semantic HTML for SEO</h1>
+                <p class="article-excerpt">Your website might look great on the outside—but if it's a pile of divs on the inside, search engines have no idea what they're looking at.</p>
+                <div class="article-author">
+                    <img src="../images/headshot_min.jpg" alt="Erick" class="author-avatar">
+                    <span class="author-name">Written by Erick Crowne</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article-content">
+
+            <p class="lead">Here's a question most business owners never think to ask: does Google actually understand the structure of your website? Not just the words on the page—the structure. The layout. What's a heading, what's a sidebar, what's the actual content. If your site is built with nothing but &lt;div&gt; tags, the answer is probably no.</p>
+
+            <p>Every website you visit looks completely different on the back end than it does on the front end. You see a clean layout with nice fonts and images. Google sees code. And the way that code is written determines whether search engines can make sense of your content—or just see a wall of meaningless containers.</p>
+
+            <p>That's where semantic HTML comes in.</p>
+
+            <h2>What Is Semantic HTML?</h2>
+
+            <p>HTML (Hypertext Markup Language) is the foundation of every website. It's the code that tells browsers how to display content. But not all HTML is created equal.</p>
+
+            <p>Semantic HTML is a strategy of using HTML tags that actually describe the content they contain. Instead of wrapping everything in generic &lt;div&gt; and &lt;span&gt; tags that mean nothing, you use elements like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, and &lt;footer&gt; that tell browsers, search engines, and assistive technologies exactly what each piece of content is and what role it plays on the page.</p>
+
+            <p>Think of it like this: a &lt;div&gt; is a cardboard box with no label. A &lt;nav&gt; is a box clearly marked "Navigation." Both hold content. Only one tells you what's inside.</p>
+
+            <div class="highlight-box">
+                <p>Semantic HTML elements describe the meaning of your content. Non-semantic elements like &lt;div&gt; and &lt;span&gt; describe nothing—they're just containers.</p>
+            </div>
+
+            <h2>Why Search Engines Care</h2>
+
+            <p>Google's Search Quality Rater Guidelines make a clear distinction between three types of content on a webpage:</p>
+
+            <ul>
+                <li><strong>Main Content</strong> — The actual article, product info, or service description. This is what search engines want to index and rank.</li>
+                <li><strong>Supplementary Content</strong> — Navigation, sidebars, related links. Useful, but not what Google is there to crawl.</li>
+                <li><strong>Advertising Content</strong> — Ads, banners, promotions. Definitely not what search engines are interested in indexing.</li>
+            </ul>
+
+            <p>Here's the problem: if your entire page is a maze of &lt;div&gt; tags, Google has to guess which part is the main content and which part is the navigation bar. Semantic HTML eliminates the guesswork.</p>
+
+            <p>When you wrap your content in a &lt;main&gt; element, you're telling Google: "This is the important stuff. Right here. Index this." When you wrap your navigation in a &lt;nav&gt; element, you're saying: "This is just the menu—skip it for indexing purposes."</p>
+
+            <div class="stat-callout">
+                <div class="stat-number">100+</div>
+                <div class="stat-text">semantic HTML elements are available—but you don't need all of them to make a real difference</div>
+            </div>
+
+            <h2>Is It a Ranking Factor?</h2>
+
+            <p>Let's be straight about this: semantic HTML is <strong>not</strong> a direct Google ranking factor. Google's own John Mueller has said it plainly:</p>
+
+            <div class="highlight-box">
+                <p>"Semantic HTML does help to understand a page. However, it's not a magical multiplier for making a website rank higher... Please use semantic HTML. It's not a ranking factor, but it can help our systems to understand your content better."</p>
+            </div>
+
+            <p>So why should you care? Because understanding and ranking are deeply connected. If Google can better understand your page structure, it can more accurately determine what your content is about, how it relates to search queries, and whether it deserves to show up in results.</p>
+
+            <p>Think of it like this: semantic HTML won't magically push you to page one. But it removes barriers that might be keeping you from getting there. It's comparable to building a social media following—more followers won't directly boost your rankings, but they help you earn more links, drive traffic, and build authority.</p>
+
+            <h2>The Elements That Actually Matter</h2>
+
+            <p>You don't need to use all 100+ semantic elements. Here are the ones that make the biggest impact:</p>
+
+            <h3>&lt;main&gt;</h3>
+
+            <p>This is the big one. The &lt;main&gt; element tells search engines exactly where your primary content starts and ends. A page can only have one &lt;main&gt; section, and it should contain the content that's unique to that page—not your header, footer, or navigation.</p>
+
+            <h3>&lt;header&gt; and &lt;footer&gt;</h3>
+
+            <p>The &lt;header&gt; element wraps the top section of your page (logo, search bar, etc.), and &lt;footer&gt; wraps the bottom (copyright, legal links, social media). Both signal to crawlers: "This isn't the main content."</p>
+
+            <h3>&lt;nav&gt;</h3>
+
+            <p>Wrap your navigation links in a &lt;nav&gt; element. It tells search engines and screen readers that this section contains navigational links, not content to be indexed.</p>
+
+            <h3>&lt;article&gt;</h3>
+
+            <p>Use this for self-contained pieces of content like blog posts, news stories, or product cards. The &lt;article&gt; element can be nested inside &lt;main&gt; and tells crawlers "this is a complete, reusable piece of content."</p>
+
+            <h3>&lt;section&gt;</h3>
+
+            <p>Sections group related content together, like chapters in a book. If you have a long page with distinct topics, &lt;section&gt; elements help establish clear organization.</p>
+
+            <h3>&lt;aside&gt;</h3>
+
+            <p>Got a sidebar? A callout box? An affiliate ad sitting inside your article? Wrap it in &lt;aside&gt;. This tells search engines that the content is related but not part of the main narrative. Google doesn't need to index your sidebar as if it's the article.</p>
+
+            <h3>Heading Tags (H1-H6)</h3>
+
+            <p>These establish hierarchy. Your &lt;h1&gt; is the most important heading (usually the page title), and &lt;h2&gt; through &lt;h6&gt; create a logical outline beneath it. Search engines use this hierarchy to understand the structure and relative importance of your content.</p>
+
+            <h3>&lt;figure&gt; and &lt;img&gt;</h3>
+
+            <p>Images need context. The &lt;figure&gt; element wraps images and their captions, while the alt attribute on &lt;img&gt; describes what the image contains. This is critical for both SEO (Google Image search) and accessibility.</p>
+
+            <h2>Semantic HTML and Accessibility</h2>
+
+            <p>This is where semantic HTML stops being just an SEO conversation and becomes a human one. Accessibility isn't optional—and semantic HTML is the foundation of an accessible website.</p>
+
+            <ul>
+                <li><strong>Screen readers</strong> — Blind and visually impaired users rely on screen readers that navigate your page by its HTML structure. Without semantic elements, a screen reader has no idea what's a menu, what's an article, or what's a sidebar. Everything sounds the same.</li>
+                <li><strong>Keyboard navigation</strong> — Users with motor disabilities who navigate by keyboard depend on properly structured HTML to move through your site logically. Semantic elements create natural tab order and focus management.</li>
+                <li><strong>Responsive design</strong> — Properly tagged content adapts more predictably across screen sizes. When content is semantically organized, it doesn't break or shift in confusing ways on mobile.</li>
+                <li><strong>Future-proofing</strong> — As browsers and assistive technologies evolve, semantic HTML ensures your site stays compatible. You're building for tomorrow, not just today.</li>
+            </ul>
+
+            <div class="stat-callout">
+                <div class="stat-number">16%</div>
+                <div class="stat-text">of the global population experiences some form of disability—that's over 1 billion potential users</div>
+            </div>
+
+            <p>Building an accessible website isn't charity. It's good business. And semantic HTML is the easiest, most fundamental step you can take toward making your site usable by everyone.</p>
+
+            <h2>Common Mistakes We See</h2>
+
+            <p>After building and auditing dozens of websites, here are the semantic HTML mistakes we see over and over:</p>
+
+            <ul>
+                <li><strong>Div soup</strong> — The entire page is nested &lt;div&gt; tags, 20 layers deep, with zero semantic meaning. Google sees a blob. Screen readers see chaos.</li>
+                <li><strong>Skipping heading levels</strong> — Jumping from &lt;h1&gt; straight to &lt;h4&gt; because you liked the font size. Headings aren't for styling—they're for structure. Use CSS for aesthetics.</li>
+                <li><strong>Multiple &lt;h1&gt; tags</strong> — A page should have one &lt;h1&gt;. Period. More than one confuses the page hierarchy for both crawlers and users.</li>
+                <li><strong>Using headings for styling</strong> — Making text larger by wrapping it in an &lt;h2&gt; when it's not actually a heading. This pollutes your content structure.</li>
+                <li><strong>No &lt;main&gt; element</strong> — Surprisingly common, even on modern sites. Without it, you're forcing Google to guess where the important content lives.</li>
+                <li><strong>Missing alt text on images</strong> — If an image doesn't have alt text, it doesn't exist for screen readers or Google Image search. Describe what's in the image. Keep it concise.</li>
+                <li><strong>Inconsistent structure</strong> — Using semantic elements on some pages but not others. Google appreciates consistency across your entire site.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p>Pick a convention and be consistent. Google doesn't care exactly how you use your semantic elements—but it does care that you use them the same way across your entire site.</p>
+            </div>
+
+            <h2>What Good Semantic HTML Looks Like</h2>
+
+            <p>Here's the difference at a glance. A poorly structured page might look like this on the back end:</p>
+
+            <div class="pricing-table">
+                <div class="pricing-row pricing-header">
+                    <span>Non-Semantic (Bad)</span>
+                    <span>Semantic (Good)</span>
+                </div>
+                <div class="pricing-row">
+                    <span>&lt;div class="header"&gt;</span>
+                    <span>&lt;header&gt;</span>
+                </div>
+                <div class="pricing-row">
+                    <span>&lt;div class="nav"&gt;</span>
+                    <span>&lt;nav&gt;</span>
+                </div>
+                <div class="pricing-row">
+                    <span>&lt;div class="content"&gt;</span>
+                    <span>&lt;main&gt;</span>
+                </div>
+                <div class="pricing-row">
+                    <span>&lt;div class="post"&gt;</span>
+                    <span>&lt;article&gt;</span>
+                </div>
+                <div class="pricing-row">
+                    <span>&lt;div class="sidebar"&gt;</span>
+                    <span>&lt;aside&gt;</span>
+                </div>
+                <div class="pricing-row">
+                    <span>&lt;div class="footer"&gt;</span>
+                    <span>&lt;footer&gt;</span>
+                </div>
+            </div>
+
+            <p>Both produce the same visual result. But the semantic version communicates structure and meaning to every system that reads your code—from Googlebot to a screen reader to your future self trying to maintain it six months from now.</p>
+
+            <h2>How to Get Started</h2>
+
+            <p>You don't need to rewrite your entire website overnight. Start with these high-impact changes:</p>
+
+            <ul>
+                <li><strong>Add a &lt;main&gt; element</strong> — Wrap your primary content area. This single change gives Google the clearest signal about what to index.</li>
+                <li><strong>Replace structural &lt;div&gt;s</strong> — Swap out &lt;div class="header"&gt; for &lt;header&gt;, &lt;div class="nav"&gt; for &lt;nav&gt;, and so on. Same layout, better structure.</li>
+                <li><strong>Fix your heading hierarchy</strong> — One &lt;h1&gt; per page. &lt;h2&gt;s for main sections. &lt;h3&gt;s for subsections. No skipping levels.</li>
+                <li><strong>Audit your images</strong> — Every &lt;img&gt; should have descriptive alt text. Not "image1.jpg." Actually describe what's in the picture.</li>
+                <li><strong>Use &lt;aside&gt; for non-essential content</strong> — Sidebars, callout boxes, ads—anything that's not the main point of the page.</li>
+                <li><strong>Test with a screen reader</strong> — Try navigating your site with a screen reader. You'll immediately find the gaps in your semantic structure.</li>
+            </ul>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Semantic HTML isn't a silver bullet for SEO rankings. Google has said so directly. But it's a foundational practice that improves how search engines understand your content, how accessible your site is to people with disabilities, and how maintainable your code is long-term.</p>
+
+            <p>The websites that rank well aren't just the ones with great content—they're the ones that make it easy for everyone (humans and bots) to understand that content. Semantic HTML is how you do that at the code level.</p>
+
+            <p>It costs nothing to implement. It takes minimal effort to get right. And it sends a clear signal to Google: this site is built by people who know what they're doing.</p>
+
+            <p>If your website is still a pile of &lt;div&gt;s inside of &lt;div&gt;s, it's time to clean house.</p>
+
+            <!-- Sources -->
+            <div class="article-sources">
+                <h3>Sources</h3>
+                <ul>
+                    <li><a href="https://www.semrush.com/blog/semantic-html5-guide/" target="_blank" rel="noopener">Semantic HTML5 Guide - Semrush</a></li>
+                    <li><a href="https://www.searchenginejournal.com/why-you-should-consider-semantic-html-for-seo/506384/" target="_blank" rel="noopener">What Semantic HTML Is And Why It's Good For SEO - Search Engine Journal</a></li>
+                    <li><a href="https://seo.co/semantic-html/" target="_blank" rel="noopener">Why Semantic HTML Is Important for SEO - SEO.co</a></li>
+                </ul>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="article-cta">
+                <h3>Is Your Website Built Right?</h3>
+                <p>We build websites with clean, semantic code that search engines actually understand—not template-generated div soup. If your site needs a structural overhaul, let's talk.</p>
+                <a href="../contact/index.html" class="btn-primary">Let's Talk</a>
+            </div>
+        </article>
+           <!-- Contact Form Overlay -->
+    <div class="contact-overlay" id="contactOverlay">
+        <div class="contact-form-panel" id="contactFormPanel">
+            <button class="contact-close-btn" id="contactCloseBtn" aria-label="Close contact form">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </button>
+            <div class="contact-form-content">
+                <h2 class="contact-form-title">Hey! How can we help?</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name & Company</label>
+                            <input type="text" id="name" name="name" placeholder="John from Apple" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@apple.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell us more about your project</label>
+                        <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
+                    </div>
+                    <div id="contactFormTurnstile"></div>
+                    <div class="contact-form-footer">
+                        <p class="contact-email-text">Email us <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
+                        <button type="submit" class="btn btn-submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Footer -->
+          <footer class="footer-section">
+                    <div class="footer-wrapper">
+                        <p class="footer-copyright">© 2026 Desoto Bits and Bytes LLC. All rights reserved.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/p/Desoto-Bits-Bytes-LLC-61560805109211/" class="social-link">
+                                <img src="../images/socials/facebook-1-svgrepo-com.svg" alt="Desoto Bits & Bytes Facebook Profile" class="social-icon">
+                            </a>
+                            <a href="https://www.linkedin.com/company/desoto-bits-bytes/" class="social-link">
+                                <img src="../images/socials/linkedin-1-svgrepo-com.svg" alt="Desoto Bits & Bytes LinkedIn Profile" class="social-icon">
+                            </a>
+                            <a href="https://www.google.com/search?q=desoto+bits+and+bytes&sca_esv=f3fadf7a9157dba4&sxsrf=AE3TifObj9EwfOUsVn3T0m2vkMBPyDt0pg%3A1762600976301&source=hp&ei=ECgPaZmVD9KBqtsPidfviAc&iflsig=AOw8s4IAAAAAaQ82IFmrMfJNu5_J_qQTrinZjFQviXzN&oq=desoto&gs_lp=Egdnd3Mtd2l6IgZkZXNvdG8qAggAMgQQIxgnMgQQIxgnMgQQIxgnMg4QLhiABBixAxjHARivATIIEAAYgAQYsQMyEBAuGIAEGBQYhwIYxwEYrwEyEBAuGIAEGBQYhwIYxwEYrwEyDhAuGIAEGMcBGI4FGK8BMgUQABiABDIIEC4YgAQYsQNIlg9QAFjCA3AAeACQAQCYAWqgAc8EqgEDMy4zuAEByAEA-AEBmAIGoALbBMICCxAAGIAEGJECGIoFwgILEAAYgAQYsQMYgwHCAg4QLhiABBixAxjRAxjHAcICCxAuGIAEGNEDGMcBwgIREC4YgAQYsQMY0QMYgwEYxwHCAgsQLhiABBixAxiDAcICChAAGIAEGEMYigXCAhYQLhiABBixAxjRAxhDGIMBGMcBGIoFwgIQEC4YgAQYQxjHARiKBRivAcICERAuGIAEGJECGMcBGIoFGK8BwgITEC4YgAQYFBiHAhjHARiOBRivAcICCxAuGIAEGMcBGK8BwgIOEAAYgAQYkQIYsQMYigWYAwCSBwMzLjOgB_V1sgcDMy4zuAfbBMIHAzAuNsgHCQ&sclient=gws-wiz" class="social-link">
+                                <img src="../images/socials/google-svgrepo-com.svg" alt="Google Business Profile" class="social-icon">
+                            </a>
+                        </div>
+                        <div class="footer-links">
+                            <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef" class="footer-link">Privacy Policy</a>
+                            <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-link">Terms of Service</a>
+                        </div>
+                    </div>
+        </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+           const logo = document.querySelector('.logo')
+           logo.addEventListener('click',(e) => {
+            window.location.href = '../index.html'
+           })
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js" integrity="sha512-BQAAkzDHfly7jPwVhh0SpGxbvjRNEapCNkJ0VNSMFervZLsaeUch4P92skLoD70NXWlI1GOgrXRfR50b/quSSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js" integrity="sha512-t4hwZimhnCKT3YLAsEcAcRDkngVFfCcUIfNLIjklrIZAZKD+GfQMP7HbRcsVHxNS48WRBSywNU1uSM2zzLQt1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" integrity="sha512-yOZoZc/D5ZPHwjBduLkgeGHhFlQ7CsslA5D1egpQgeV1QcV4OdCcwmRLkH7p/hEHHF1cJp3H2OpGpd7oELFGxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" integrity="sha512-dgqdovLK5r/NMiV5YfWA0xC94DKGrm+6q1OZpuWHm+uBGLTck6wu58WAX9lmy8wec6cVnsgxbPJ60DtmNFnfgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" integrity="sha512-vuNgw6lF+p97XmL9lFpbQZWBXxIFnwUVt7J/uknE4NJru5GJjjhIAauXdDtNdezqOJFnit+M3AeaM+gZ93hlmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="blog.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>
