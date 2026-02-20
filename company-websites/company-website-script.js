@@ -24,6 +24,7 @@ window.addEventListener('load', () => {
     const companyHeroTitle = document.querySelector('.company-hero-title');
     if (companyHeroTitle) {
         const splitTitle = SplitText.create(companyHeroTitle, { type: "words" });
+        gsap.set(companyHeroTitle, { opacity: 1 });
         gsap.fromTo(splitTitle.words, {
             opacity: 0,
             y: 50,

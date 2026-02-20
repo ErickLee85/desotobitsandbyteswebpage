@@ -71,6 +71,7 @@ body {
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 1rem;
     text-transform: uppercase;
+    opacity: 0;
 }
 
 .company-hero-title {
@@ -80,6 +81,7 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.1;
     letter-spacing: -2px;
+    opacity: 0;
 }
 
 .company-hero-subtext {
@@ -87,6 +89,7 @@ body {
      color: var(--gray);
     line-height: 1.8;
     margin-bottom: 2.5rem;
+    opacity: 0;
 }
 
 .company-hero-subtext span {
@@ -113,6 +116,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Inter Tight', sans-serif;
+    opacity: 0;
 }
 
 .company-learn-more {
@@ -128,6 +132,7 @@ body {
     overflow: hidden;
     will-change: transform;
     cursor: pointer;
+    opacity: 0;
 }
 
 .company-learn-more::before {
