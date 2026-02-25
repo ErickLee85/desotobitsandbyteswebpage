@@ -33,4 +33,4 @@ Disallow: /*.txt$
 Allow: /robots.txt
 
 # Sitemap location
-Sitemap: https://desotobitsandbytes.com/sitemap.xml
+Sitemap: https://www.desotobitsandbytes.com/sitemap.xml
