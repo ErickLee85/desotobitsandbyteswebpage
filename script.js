@@ -1,5 +1,37 @@
  gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother, DrawSVGPlugin);
 
+        // ── Speculation Rules API ─────────────────────────────────────────
+        // Prerenders same-origin pages on hover (~200ms intent) for instant navigation.
+        // Falls back to prefetch on pointerdown for browsers that support prefetch but not prerender.
+        // Non-supporting browsers silently ignore this — zero cost.
+        if (HTMLScriptElement.supports && HTMLScriptElement.supports('speculationrules')) {
+            const specScript = document.createElement('script');
+            specScript.type = 'speculationrules';
+            specScript.textContent = JSON.stringify({
+                prerender: [{
+                    source: 'document',
+                    where: {
+                        and: [
+                            { href_matches: '/*' },
+                            { not: { selector_matches: '[target=_blank], .no-prerender' } }
+                        ]
+                    },
+                    eagerness: 'moderate'
+                }],
+                prefetch: [{
+                    source: 'document',
+                    where: {
+                        and: [
+                            { href_matches: '/*' },
+                            { not: { selector_matches: '[target=_blank]' } }
+                        ]
+                    },
+                    eagerness: 'conservative'
+                }]
+            });
+            document.head.appendChild(specScript);
+        }
+
         // Turnstile State Management
         const turnstileState = {};
         const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
