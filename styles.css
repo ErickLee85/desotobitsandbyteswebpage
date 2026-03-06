@@ -2285,7 +2285,8 @@
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: var(--accent);
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
             color: var(--dark);
             padding: 0.4rem 0.9rem;
             border-radius: 50px;
@@ -2293,6 +2294,13 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            transition: background 250ms ease-in-out;
+            border:thin solid rgba(0,0,0,0.2)
+        }
+
+        .blog-preview-badge:hover {
+            backdrop-filter: blur(0px);
+            background: transparent;
         }
 
         .blog-preview-card-body {
