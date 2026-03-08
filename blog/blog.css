@@ -37,98 +37,7 @@ body {
     border: 0;
 }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: var(--dark);
-    padding: 1.2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    overflow: visible;
-}
-
-.logo img {
-    height: 280px;
-    position: absolute;
-    width: auto;
-}
-
-nav {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-
-.header-cta .phone {
-    color: var(--light);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--light);
-    border-radius: 50px;
-    transition: all 0.3s;
-}
-
-.header-cta .phone:hover {
-    background: var(--light);
-    color: var(--dark);
-}
-
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 2px;
-    background: var(--light);
-    transition: all 0.3s;
-}
-
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: var(--dark);
-    padding: 2rem 5%;
-    z-index: 999;
-}
-
-.mobile-menu.active {
-    display: block;
-}
-
-.mobile-menu nav {
-    position: static;
-    transform: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
+/* Header/Nav styles are in styles.css */
 
 /* Blog Hero */
 .blog-hero {
@@ -195,6 +104,7 @@ nav {
     padding: 120px 5%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 200px;
 }
 
 .recent-posts-grid {
@@ -704,6 +614,7 @@ nav {
 .article-hero {
     padding: 140px 5% 60px;
     background: var(--light);
+    padding-top: 200px;
 }
 
 .article-hero-content {
@@ -1117,18 +1028,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-    nav {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .header-cta .phone {
-        display: none;
-    }
-
     .blog-grid {
         grid-template-columns: 1fr;
     }

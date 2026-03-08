@@ -126,7 +126,7 @@
             background: var(--primary);
             color: var(--light);
             border: none;
-            border-radius: 8px;
+            border-radius: 24px;
             font-family: 'Inter Tight', sans-serif;
             font-size: 1rem;
             font-weight: 600;
@@ -364,6 +364,50 @@
             opacity: 0;
             animation:fade-in-overlay 250ms linear forwards;
         }
+            .form-group label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark);
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: #f5f5f5;
+            border: 2px solid transparent;
+            border-radius: 24px;
+            color: var(--dark);
+            font-size: 1rem;
+            font-family: 'Inter Tight', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+          .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--dark);
+            background: #fff;
+        }
+        .input-container {
+                position:  relative !important;
+            }
+            .input-container > svg {
+                position: absolute;
+                top:50%;
+                left:25px;
+                transform: translate(-50%, -50%);
+                fill:gray;
+            }
+            .input-container input {
+                padding-left: 50px;
+                border-radius: 24px;
+            }
     </style>
 </head>
 <body>
@@ -374,11 +418,17 @@
             <form id="auth-form">
                 <div class="form-group">
                     <label for="email">Email</label>
+                    <div class="input-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
                     <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
+                    <div class="input-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm296.5-143.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
                 </div>
                 <div class="form-options" >
                     <label><input type="checkbox"> Remember me</label>
@@ -571,7 +621,8 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    showToast('Login successful!', '#32cd32');
+                    // showToast('Login successful!', '#32cd32');
+                    showToast('No user found', '#000000')
                     // TODO: redirect or store session
                 } else {
                     showToast(result.message || 'Login failed.', 'rgb(21,21,21)');
