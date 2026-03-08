@@ -352,7 +352,7 @@
             document.body.appendChild(container);
             turnstileWidgetId = turnstile.render('#chatbot-turnstile', {
                 sitekey: TURNSTILE_SITE_KEY,
-                size: 'invisible',
+                size: 'compact',
                 callback: function(token) { turnstileToken = token; },
                 'expired-callback': function() { turnstileToken = null; },
                 'error-callback': function() { turnstileToken = null; }
