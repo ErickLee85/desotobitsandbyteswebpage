@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Desoto Bits &amp; Bytes</title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0091ff;
+            --dark: #000000;
+            --light: #ffffff;
+            --gray: #666;
+        }
+
+        body {
+            font-family: 'Inter Tight', sans-serif;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* Left side - Auth form */
+        .auth-side {
+            flex: 1;
+            background: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .auth-form-container {
+            width: 100%;
+            max-width: 400px;
+       
+        }
+
+        .auth-form-container h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .auth-form-container p.subtitle {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            corner-shape:squircle;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+       input:focus {
+            border-color: var(--primary);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .form-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        .form-options label input[type="checkbox"] {
+            accent-color: var(--primary);
+        }
+
+        .form-options a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .form-options a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            corner-shape:squircle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:40px;
+            max-height: 40px;
+
+        }
+
+        .btn-login:hover {
+            background: #007ae6;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .forgot-pw-btn {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            background:transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Right side - Branding */
+        .brand-side {
+            flex: 1;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand-sidev a img {
+            max-width: 380px;
+            width: 80%;
+            height: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .brand-side {
+                display: none;
+            }
+
+            .auth-side {
+                height: 100vh;
+            }
+        }
+        /* HTML: <div class="loader"></div> */
+            .loader, .reset-loader {
+            width: 25px;
+            padding: 4px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #f2f2f2;
+            --_m: 
+                conic-gradient(#0000 10%,#000),
+                linear-gradient(#000 0 0) content-box;
+            -webkit-mask: var(--_m);
+                    mask: var(--_m);
+            -webkit-mask-composite: source-out;
+                    mask-composite: subtract;
+            animation: l3 1s infinite linear;
+            display: none;
+            }
+            @keyframes l3 {to{transform: rotate(1turn)}}
+            
+        .forgot-pw-overlay {
+            position: absolute;
+            inset:0;
+            width: 100%;
+            height: 100%;
+            padding:20px;
+            justify-content: center;
+            align-items: center;
+            background:rgba(0,0,0,0.3);
+            opacity: 0;
+            display: none;
+        }
+        .forgot-pw-overlay.visible {
+            animation: fade-in-overlay 250ms linear forwards;
+        }
+        .forgot-pw-modal {
+            height:auto;
+            width:500px;
+            background:rgb(255, 255, 255);
+            border-radius: 5px;
+            corner-shape:squircle;   
+            display: flex;
+            flex-direction: column;
+        }
+        .forgot-pw-modal.modal-visible{
+            scale: 0;
+            opacity: 0;
+            animation: scale 250ms linear forwards;
+        }
+        .forgot-pw-header {
+            width: 100%;
+            padding:10px 20px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            color:rgb(0, 0, 0);
+            font-weight: 500;
+
+        }
+        .forgot-pw-header button {
+            background:transparent;
+            height:40px;
+            width: 40px;
+            border-radius: 50%;
+            outline: none;
+            border:none;
+            color:rgb(255, 255, 255) !important;
+            transition: background 250ms ease-in-out;
+            cursor: pointer;
+        }
+        .forgot-pw-header button:hover {
+            background:rgb(211, 211, 211);
+        }
+        .forgot-pw-body {
+            width: 100%;
+            padding:50px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .forgot-pw-body input {
+               width: 100%;
+            padding: 0.75rem 1rem;
+            background:rgb(248,248,248);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            corner-shape:squircle;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+         .forgot-pw-body input:focus {
+            border-color: var(--primary);
+        }
+        .forgot-pw-footer {
+             width: 100%;
+            padding:10px 20px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            align-items: center;
+            font-size: 1.2rem;
+            color:rgb(0, 0, 0);
+            font-weight: 500;
+        }
+
+        @keyframes fade-in-overlay {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes scale {
+            to {scale:1;opacity: 1;}
+        }
+        .cancel-btn {
+             width: 100px;
+            padding: 0.85rem;
+            background: transparent;
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            corner-shape:squircle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:40px;
+            max-height: 40px;
+            transition: background 250ms ease-in-out;
+        }
+        .cancel-btn:hover {
+            background:#ddd;
+        }
+        .reset-pw-btn {
+             width: 100px;
+            padding: 0.85rem;
+            background: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter Tight', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            corner-shape:squircle;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:10px;
+            height:40px;
+            max-height: 40px;
+        }
+        .email-error {
+            font-size: 0.7rem;
+            color: rgb(190, 15, 15);
+            padding:5px;
+            opacity: 0;
+        }
+        .email-error.small-visible {
+            opacity: 0;
+            animation:fade-in-overlay 250ms linear forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-side">
+        <div class="auth-form-container">
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Sign in to your portal account</p>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options" >
+                    <label><input type="checkbox"> Remember me</label>
+                    <button class="forgot-pw-btn" type="button" onclick="showForgotPwModal()">Forgot Password?</button>
+                </div>
+                <div id="loginTurnstile" style="margin-bottom:1rem;"></div>
+                <button type="submit" class="btn-login">
+                    <span class="submit-text">Submit</span>
+                    <div class="loader"></div>
+                </button>
+            </form>
+            <div class="auth-footer">
+                Don't have an account? <a href="../../contact/">Contact us</a>
+            </div>
+        </div>
+    </div>
+    <div class="brand-side">
+       <a href="../../index.html">
+         <img src="../../images/logo_light.png" alt="Desoto Bits and Bytes">
+       </a>
+    </div>
+    <div class="forgot-pw-overlay">
+        <div class="forgot-pw-modal">
+            <div class="forgot-pw-header">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480h80q0 66 25 124.5t68.5 102q43.5 43.5 102 69T480-159q134 0 227-93t93-227q0-134-93-227t-227-93q-89 0-161.5 43.5T204-640h116v80H80v-240h80v80q55-73 138-116.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-80-240q-17 0-28.5-11.5T360-360v-120q0-17 11.5-28.5T400-520v-40q0-33 23.5-56.5T480-640q33 0 56.5 23.5T560-560v40q17 0 28.5 11.5T600-480v120q0 17-11.5 28.5T560-320H400Zm40-200h80v-40q0-17-11.5-28.5T480-600q-17 0-28.5 11.5T440-560v40Z"/></svg>
+                <p>Reset Password</p>
+                </div>
+                <button onclick="closeModal()" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                </button>
+            </div>
+            <form id="forgot-pw-form">
+                <div class="forgot-pw-body">
+                    <label for="forgot-pw-email">Email</label>
+                    <input type="email" name="forgot-pw-email" id="forgot-pw-email" placeholder="your@email.com" required>
+                    <small class="email-error">Enter a valid email address</small>
+                </div>
+                <div class="forgot-pw-footer">
+                    <button class="cancel-btn" type="button" onclick="closeModal()">Cancel</button>
+                    <button class="reset-pw-btn" type="submit">
+                        <div class="reset-loader"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480h80q0 66 25 124.5t68.5 102q43.5 43.5 102 69T480-159q134 0 227-93t93-227q0-134-93-227t-227-93q-89 0-161.5 43.5T204-640h116v80H80v-240h80v80q55-73 138-116.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-80-240q-17 0-28.5-11.5T360-360v-120q0-17 11.5-28.5T400-520v-40q0-33 23.5-56.5T480-640q33 0 56.5 23.5T560-560v40q17 0 28.5 11.5T600-480v120q0 17-11.5 28.5T560-320H400Zm40-200h80v-40q0-17-11.5-28.5T480-600q-17 0-28.5 11.5T440-560v40Z"/></svg>
+                        Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
+        const turnstileState = {
+            login: { token: null, widgetId: null }
+        };
+
+        function initTurnstile(containerId, stateKey) {
+            if (typeof turnstile === 'undefined') {
+                setTimeout(() => initTurnstile(containerId, stateKey), 500);
+                return;
+            }
+            const container = document.getElementById(containerId);
+            if (!container || container.children.length > 0) return;
+            try {
+                turnstileState[stateKey].widgetId = turnstile.render('#' + containerId, {
+                    sitekey: TURNSTILE_SITE_KEY,
+                    theme: 'light',
+                    callback: function(token) {
+                        turnstileState[stateKey].token = token;
+                    },
+                    'expired-callback': function() {
+                        turnstileState[stateKey].token = null;
+                    },
+                    'error-callback': function() {
+                        turnstileState[stateKey].token = null;
+                    }
+                });
+            } catch (e) {
+                console.warn('Turnstile render error:', e);
+            }
+        }
+
+        function resetTurnstileWidget(stateKey) {
+            if (turnstileState[stateKey].widgetId !== null && typeof turnstile !== 'undefined') {
+                turnstile.reset(turnstileState[stateKey].widgetId);
+                turnstileState[stateKey].token = null;
+            }
+        }
+
+        function showForgotPwModal() {
+            const overlay = document.querySelector('.forgot-pw-overlay')
+            overlay.style.display = 'flex'
+            overlay.classList.add('visible')
+            document.querySelector('.forgot-pw-modal').classList.add('modal-visible')
+        }
+        function closeModal() {
+            const overlay = document.querySelector('.forgot-pw-overlay')
+            overlay.style.display = 'none'
+            overlay.classList.remove('visible')
+            document.querySelector('.forgot-pw-modal').classList.remove('modal-visible')
+            document.getElementById('forgot-pw-form').reset()
+            document.querySelector('.email-error').classList.remove('small-visible')
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+        initTurnstile('loginTurnstile', 'login');
+
+        const authForm = document.getElementById('auth-form')
+        const forgotPwForm = document.getElementById('forgot-pw-form')
+
+        forgotPwForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!forgotPwForm.reportValidity()) return;
+
+            const { 'forgot-pw-email': email } = Object.fromEntries(new FormData(e.target));
+
+            const loader = document.querySelector('.reset-loader')
+            const svg = document.querySelector('.reset-pw-btn svg')
+            const resetBtn = document.querySelector('.reset-pw-btn')
+            resetBtn.disabled = true
+            svg.style.display = 'none'
+            loader.style.display = 'block'
+            await new Promise(resolve => setTimeout(resolve, 2000))
+            svg.style.display = 'block'
+            loader.style.display = 'none'
+            resetBtn.disabled = false
+
+            closeModal()
+
+            const toastNode = document.createElement("div");
+            toastNode.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                <span>Email sent to ${email}</span>
+                <button class="toast-close" style="background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;margin-left:auto;padding:0 4px;">&times;</button>
+            `;
+            toastNode.style.display = "flex";
+            toastNode.style.alignItems = "center";
+            toastNode.style.gap = "8px";
+            toastNode.style.width = "100%";
+
+            const resetToast = Toastify({
+                node: toastNode,
+                duration: 3000,
+                gravity: "bottom",
+                position: "left",
+                style: {
+                    background: "#32cd32",
+                    borderRadius: "8px",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: "400",
+                }
+            });
+            resetToast.showToast();
+            toastNode.querySelector('.toast-close').addEventListener('click', () => resetToast.hideToast());
+        })
+
+        const API_BASE_URL = 'https://dbb-node-server.vercel.app';
+
+        authForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!authForm.reportValidity()) return;
+
+            const loginToken = turnstileState.login.token;
+            if (!loginToken) {
+                alert('Please complete the security check before submitting.');
+                return;
+            }
+
+            const { email, password } = Object.fromEntries(new FormData(e.target));
+
+            const loader = document.querySelector('.loader')
+            const submitText = document.querySelector('.submit-text')
+            const formSubmitButton = document.querySelector('.btn-login')
+            submitText.style.display = 'none'
+            formSubmitButton.disabled = true;
+            loader.style.display = 'block'
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password, turnstileToken: loginToken })
+                });
+
+                if (response.status === 429) {
+                    showToast('Too many attempts. Please try again later.', 'rgb(190,15,15)');
+                    resetTurnstileWidget('login');
+                    return;
+                }
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showToast('Login successful!', '#32cd32');
+                    // TODO: redirect or store session
+                } else {
+                    showToast(result.message || 'Login failed.', 'rgb(21,21,21)');
+                    resetTurnstileWidget('login');
+                }
+            } catch (err) {
+                console.error('Login error:', err);
+                showToast('Something went wrong. Please try again.', 'rgb(190,15,15)');
+                resetTurnstileWidget('login');
+            } finally {
+                loader.style.display = 'none'
+                submitText.style.display = 'block'
+                formSubmitButton.disabled = false;
+            }
+        })
+
+        function showToast(message, bgColor) {
+            const toastNode = document.createElement("div");
+            const msgSpan = document.createElement('span');
+            msgSpan.textContent = message;
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'toast-close';
+            closeBtn.style.cssText = 'background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;margin-left:auto;padding:0 4px;';
+            closeBtn.innerHTML = '&times;';
+            toastNode.appendChild(msgSpan);
+            toastNode.appendChild(closeBtn);
+            toastNode.style.display = "flex";
+            toastNode.style.alignItems = "center";
+            toastNode.style.gap = "8px";
+            toastNode.style.width = "100%";
+
+            const toast = Toastify({
+                node: toastNode,
+                duration: 3000,
+                gravity: "bottom",
+                position: "left",
+                style: {
+                    background: bgColor,
+                    borderRadius: "8px",
+                    fontFamily: "'Inter Tight', sans-serif",
+                    fontWeight: "600",
+                }
+            });
+            toast.showToast();
+            toastNode.querySelector('.toast-close').addEventListener('click', () => toast.hideToast());
+        }
+
+        })
+    </script>
+</body>
+</html>
