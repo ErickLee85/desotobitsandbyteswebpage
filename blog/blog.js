@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 // Turnstile State Management
 const turnstileState = {};
 const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
@@ -128,6 +130,19 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link (except dropdown toggle)
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu nav a');
+        mobileMenuLinks.forEach(link => {
+            if (!link.classList.contains('mobile-services-toggle')) {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
         });
     }
 
@@ -143,6 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mobileDropdownArrow) {
                 mobileDropdownArrow.classList.toggle('rotated');
             }
+        });
+
+        // Close mobile menu when clicking submenu links
+        const submenuLinks = document.querySelectorAll('.mobile-submenu-link');
+        submenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                mobileMenuDropdown.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     }
 
@@ -175,6 +203,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Header hide/show on scroll
+let lastScrollY = 0;
+const navbar = document.querySelector('header');
+
+if (navbar) {
+    ScrollTrigger.create({
+        start: 'top top',
+        end: 'max',
+        onUpdate: (self) => {
+            const currentScrollY = self.scroll();
+            const scrollThreshold = 500;
+
+            if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
+                gsap.to(navbar, {
+                    y: -100,
+                    duration: 0.3,
+                });
+            } else if (currentScrollY < lastScrollY) {
+                gsap.to(navbar, {
+                    y: 0,
+                    duration: 0.3,
+                });
+            }
+
+            lastScrollY = currentScrollY;
+        }
+    });
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

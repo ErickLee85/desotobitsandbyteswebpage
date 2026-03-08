@@ -12,6 +12,7 @@
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -44,7 +45,8 @@
 
         .auth-form-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
+        
        
         }
 
@@ -101,13 +103,83 @@
         .form-options label {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
             color: var(--dark);
             cursor: pointer;
         }
 
-        .form-options label input[type="checkbox"] {
-            accent-color: var(--primary);
+        .remember-wrapper {
+            width: 46px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .remember-wrapper input[type="checkbox"] {
+            width: 46px;
+            height: 24px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: #ccc;
+            border-radius: 2px;
+            position: relative;
+            outline: 0;
+            transition: all .2s;
+            margin: 0;
+        }
+
+        .remember-wrapper input[type="checkbox"]:after {
+            position: absolute;
+            content: "";
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            z-index: 2;
+            border-radius: 2px;
+            transition: all .35s;
+        }
+
+        .remember-wrapper svg {
+            position: absolute;
+            top: 50%;
+            transform-origin: 50% 50%;
+            fill: #fff;
+            transition: all .35s;
+            z-index: 1;
+        }
+
+        .remember-wrapper .is_checked {
+            width: 12px;
+            left: 6px;
+            transform: translateY(-50%) scale(0);
+        }
+
+        .remember-wrapper .is_unchecked {
+            width: 10px;
+            right: 6px;
+            transform: translateY(-50%) scale(1);
+        }
+
+        .remember-wrapper input[type="checkbox"]:checked {
+            background: rgb(39, 161, 39);
+        }
+
+        .remember-wrapper input[type="checkbox"]:checked:after {
+            left: calc(100% - 22px);
+        }
+
+        .remember-wrapper input[type="checkbox"]:checked + .is_checked {
+            transform: translateY(-50%) scale(1);
+        }
+
+        .remember-wrapper input[type="checkbox"]:checked ~ .is_unchecked {
+            transform: translateY(-50%) scale(0);
         }
 
         .form-options a {
@@ -153,9 +225,9 @@
         }
 
         .forgot-pw-btn {
-            color: var(--primary);
+            color: #a1a1a1;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 400;
             background:transparent;
             outline: none;
             border: none;
@@ -175,10 +247,15 @@
             align-items: center;
         }
 
-        .brand-sidev a img {
-            max-width: 380px;
+        .brand-side a img {
             width: 80%;
             height: auto;
+            opacity: 0;
+        }
+
+        .auth-form-container {
+            opacity: 0;
+            transform: translateY(30px);
         }
 
         /* Responsive */
@@ -431,7 +508,18 @@
                     </div>
                 </div>
                 <div class="form-options" >
-                    <label><input type="checkbox"> Remember me</label>
+                    <label>
+                        <div class="remember-wrapper">
+                            <input type="checkbox" id="rememberMe">
+                            <svg class="is_checked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.67 426.67">
+                                <path d="M153.504 366.84c-8.657 0-17.323-3.303-23.927-9.912L9.914 237.265c-13.218-13.218-13.218-34.645 0-47.863 13.218-13.218 34.645-13.218 47.863 0l95.727 95.727 215.39-215.387c13.218-13.214 34.65-13.218 47.86 0 13.22 13.218 13.22 34.65 0 47.863L177.435 356.928c-6.61 6.605-15.27 9.91-23.932 9.91z"/>
+                            </svg>
+                            <svg class="is_unchecked" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982">
+                                <path d="M131.804 106.49l75.936-75.935c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.49 81.18 30.555 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.99 6.99-6.99 18.323 0 25.312L81.18 106.49 5.24 182.427c-6.99 6.99-6.99 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0L106.49 131.8l75.938 75.937c6.99 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.323 0-25.313l-75.936-75.936z" fill-rule="evenodd" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        Remember me
+                    </label>
                     <button class="forgot-pw-btn" type="button" onclick="showForgotPwModal()">Forgot Password?</button>
                 </div>
                 <div id="loginTurnstile" style="margin-bottom:1rem;"></div>
@@ -480,6 +568,9 @@
     </div>
     <script>
         const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
+        const email = document.getElementById('email')
+        const checkBox = document.getElementById('rememberMe')
+
         const turnstileState = {
             login: { token: null, widgetId: null }
         };
@@ -522,6 +613,10 @@
             overlay.style.display = 'flex'
             overlay.classList.add('visible')
             document.querySelector('.forgot-pw-modal').classList.add('modal-visible')
+            if(email.value.length > 0 && isValidEmail(email.value)) {
+                let forgotPwEmail = document.getElementById('forgot-pw-email')
+                forgotPwEmail.value = email.value
+            }
         }
         function closeModal() {
             const overlay = document.querySelector('.forgot-pw-overlay')
@@ -531,8 +626,66 @@
             document.getElementById('forgot-pw-form').reset()
             document.querySelector('.email-error').classList.remove('small-visible')
         }
+        const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+        function isValidEmail(email) {
+            return emailRegex.test(email);
+            }
 
         document.addEventListener('DOMContentLoaded', async () => {
+        function checkRememberMe () {
+            let rememberedEmail = localStorage.getItem('email')
+            if(rememberedEmail) {
+                checkBox.checked = true;
+                email.value = rememberedEmail
+            }
+        }
+
+     
+  
+        checkBox.addEventListener('change', function() {
+  
+            if(this.checked) {
+                if(email.value.length === 0) {
+                    alert('Please enter an email address')
+                    email.focus();
+                    checkBox.checked = false;
+                    return;
+                }
+                if(email.value.length > 0) {
+                    const emailTest = isValidEmail(email.value)
+                    if(emailTest === true) {
+                        localStorage.setItem('email', email.value)
+                        showToast(`${email.value} has been saved.`,'#239023')
+                    } else {
+                        alert('Invalid email')
+                        checkBox.checked = false;
+                        email.focus();
+                        return;
+                    }
+                }
+            } else {
+                let savedEmail = localStorage.getItem('email')
+                if(savedEmail.length > 0) {
+                    localStorage.removeItem('email')
+                    showToast('Email cleared from storage', '#239023')
+                }
+            }
+        })
+
+        gsap.to('.brand-side a img', {
+            opacity: 1,
+            duration: 2,
+            ease: 'power2.out'
+        });
+
+        gsap.to('.auth-form-container', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: 0.3,
+            ease: 'power2.out'
+        });
+
         initTurnstile('loginTurnstile', 'login');
 
         const authForm = document.getElementById('auth-form')
@@ -574,7 +727,7 @@
                 gravity: "bottom",
                 position: "left",
                 style: {
-                    background: "#32cd32",
+                    background: "#239023",
                     borderRadius: "8px",
                     fontFamily: "'Inter Tight', sans-serif",
                     fontWeight: "400",
@@ -621,7 +774,7 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    // showToast('Login successful!', '#32cd32');
+                    // showToast('Login successful!', '#239023');
                     showToast('No user found', '#000000')
                     // TODO: redirect or store session
                 } else {
@@ -639,7 +792,7 @@
             }
         })
 
-        function showToast(message, bgColor) {
+        function showToast(message, bgColor = 'rgb(21,21,21)') {
             const toastNode = document.createElement("div");
             const msgSpan = document.createElement('span');
             msgSpan.textContent = message;
@@ -670,6 +823,7 @@
             toastNode.querySelector('.toast-close').addEventListener('click', () => toast.hideToast());
         }
 
+           checkRememberMe()
         })
     </script>
 </body>
