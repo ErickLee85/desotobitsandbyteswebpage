@@ -273,6 +273,35 @@
             fill: #fff;
         }
 
+        .chatbot-skeleton {
+            align-self: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 12px 16px;
+            background: #fff;
+            border-radius: 16px;
+            border-bottom-left-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            max-width: 80%;
+        }
+
+        .chatbot-skeleton-line {
+            height: 10px;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: chatbot-shimmer 1.5s infinite;
+        }
+
+        .chatbot-skeleton-line:nth-child(1) { width: 140px; }
+        .chatbot-skeleton-line:nth-child(2) { width: 100px; }
+
+        @keyframes chatbot-shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
         @media (max-width: 480px) {
             .chatbot-window {
                 width: calc(100vw - 32px);
@@ -305,7 +334,10 @@
                     </div>
                 </div>
                 <div class="chatbot-messages">
-                    <div class="chatbot-msg bot">Hey there! 👋 How can I help you today?</div>
+                    <div class="chatbot-skeleton">
+                        <div class="chatbot-skeleton-line"></div>
+                        <div class="chatbot-skeleton-line"></div>
+                    </div>
                     <div class="chatbot-typing">
                         <span></span><span></span><span></span>
                     </div>
@@ -401,14 +433,96 @@
             return false;
         }
 
+        // Fetch a dynamic greeting from the API
+        async function fetchGreeting() {
+            var now = new Date();
+            var timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            var hour = now.getHours();
+            var period = hour < 12 ? 'morning' : hour < 17 ? 'afternoon' : 'evening';
+            var greetPrompt = 'It is currently ' + timeString + ' (' + period + '). Greet the visitor in a friendly, natural way and ask how you can help. Keep it to one or two short sentences.';
+
+            conversationHistory.push({ role: 'user', content: greetPrompt });
+
+            typing.classList.add('visible');
+            scrollToBottom();
+
+            try {
+                var response = await fetch(API_BASE_URL + '/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversationHistory })
+                });
+
+                if (!response.ok) {
+                    typing.classList.remove('visible');
+                    appendMessage('Hey there! How can I help you today?', 'bot');
+                    conversationHistory.pop();
+                    return;
+                }
+
+                var botMsg = document.createElement('div');
+                botMsg.className = 'chatbot-msg bot';
+                messages.insertBefore(botMsg, typing);
+                typing.classList.remove('visible');
+
+                var reader = response.body.getReader();
+                var decoder = new TextDecoder();
+                var fullText = '';
+                var buffer = '';
+
+                while (true) {
+                    var result = await reader.read();
+                    if (result.done) break;
+
+                    buffer += decoder.decode(result.value, { stream: true });
+                    var lines = buffer.split('\n');
+                    buffer = lines.pop() || '';
+
+                    for (var i = 0; i < lines.length; i++) {
+                        var line = lines[i].trim();
+                        if (!line.startsWith('data: ')) continue;
+                        var payload = line.slice(6);
+                        if (payload === '[DONE]') continue;
+
+                        try {
+                            var parsed = JSON.parse(payload);
+                            if (parsed.content) {
+                                fullText += parsed.content;
+                                botMsg.textContent = fullText;
+                                scrollToBottom();
+                            }
+                        } catch (e) { }
+                    }
+                }
+
+                if (!fullText) {
+                    botMsg.textContent = 'Hey there! How can I help you today?';
+                    fullText = botMsg.textContent;
+                }
+
+                // Replace the hidden prompt with a system-level entry so it doesn't show as a user message
+                conversationHistory.pop();
+                conversationHistory.push({ role: 'assistant', content: fullText });
+            } catch (err) {
+                typing.classList.remove('visible');
+                appendMessage('Hey there! How can I help you today?', 'bot');
+                conversationHistory.pop();
+            }
+        }
+
         // Toggle window
+        let greetingFetched = false;
         toggle.addEventListener('click', async function () {
             const isOpen = chatWindow.classList.toggle('visible');
             toggle.classList.toggle('open', isOpen);
-            if (isOpen) {
+            if (isOpen && !greetingFetched) {
                 // Validate turnstile silently when chat opens
                 var valid = await validateTurnstileOnce();
+                var skeleton = messages.querySelector('.chatbot-skeleton');
+                if (skeleton) skeleton.remove();
                 if (valid) {
+                    greetingFetched = true;
+                    await fetchGreeting();
                     input.disabled = false;
                     input.focus();
                 } else {
