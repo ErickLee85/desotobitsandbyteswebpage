@@ -17,6 +17,18 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: var(--primary);
+    z-index: 10000;
+    transition: width 0.1s linear;
+}
+
 body {
     font-family: 'Inter Tight', sans-serif;
     background: var(--light);
@@ -701,7 +713,7 @@ body {
     background-repeat: no-repeat;
     position: relative;
     padding: 200px 5% 80px;
-    min-height: 500px;
+    min-height: 90vh;
     display: flex;
     align-items: flex-end;
 }
@@ -834,9 +846,11 @@ body {
 
 /* Article Content */
 .article-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 0px auto;
     padding: 60px 5%;
+
+
 }
 
 .article-content h2 {

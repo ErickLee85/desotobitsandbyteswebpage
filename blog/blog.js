@@ -1,5 +1,19 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// Scroll Progress Indicator (blog posts only)
+if (document.querySelector('.article-content')) {
+    const progressBar = document.createElement('div');
+    progressBar.classList.add('scroll-progress');
+    document.body.prepend(progressBar);
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    });
+}
+
 // Turnstile State Management
 const turnstileState = {};
 const TURNSTILE_SITE_KEY = '0x4AAAAAACCREQrrdh14nsL1';
