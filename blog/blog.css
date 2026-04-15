@@ -688,7 +688,6 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(0, 0, 0, 0.1);
-    transform: rotate(-5deg);
 }
 
 .author-avatar-main{
@@ -697,7 +696,6 @@ body {
         border-radius: 50%;
         object-fit: cover;
         border: 2px solid rgba(0, 0, 0, 0.1);
-        transform: rotate(-5deg);
 }
 
 .author-name {
