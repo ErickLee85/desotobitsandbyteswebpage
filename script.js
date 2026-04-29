@@ -771,7 +771,7 @@
         if (anchorLinks.length > 0) {
         anchorLinks.forEach(anchor => {
             // Skip services dropdown triggers
-            if (anchor.classList.contains('service-link') || anchor.classList.contains('mobile-services-toggle')) {
+            if (anchor.classList.contains('service-link')) {
                 return;
             }
             
@@ -879,35 +879,11 @@
                 document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
             });
 
-            // Close mobile menu when clicking a link (except dropdown toggle)
+            // Close mobile menu when clicking a link
             mobileMenuLinks.forEach(link => {
-                if (!link.classList.contains('mobile-services-toggle')) {
-                    link.addEventListener('click', () => {
-                        menuToggle.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                        document.body.style.overflow = '';
-                    });
-                }
-            });
-        }
-
-        // Mobile services dropdown toggle
-        const mobileServicesToggle = document.querySelector('.mobile-services-toggle');
-        const mobileMenuDropdown = document.querySelector('.mobile-menu-dropdown');
-
-        if (mobileServicesToggle && mobileMenuDropdown) {
-            mobileServicesToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileMenuDropdown.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking submenu links
-            const submenuLinks = document.querySelectorAll('.mobile-submenu-link');
-            submenuLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     menuToggle.classList.remove('active');
                     mobileMenu.classList.remove('active');
-                    mobileMenuDropdown.classList.remove('active');
                     document.body.style.overflow = '';
                 });
             });
