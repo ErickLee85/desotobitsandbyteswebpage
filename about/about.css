@@ -1,0 +1,518 @@
+/* About Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0091ff;
+    --dark: #000000;
+    --light: #ffffff;
+    --gray: #666;
+    --card-bg: #fafafa;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    background: var(--dark);
+}
+
+/* ===== Hero ===== */
+.about-hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark);
+    background-image:
+        radial-gradient(circle at center, transparent 0%, var(--dark) 70%),
+        linear-gradient(rgba(41, 43, 41, 0.7) .1em, transparent .1em),
+        linear-gradient(90deg, rgba(40, 43, 40, 0.7) .1em, transparent .1em);
+    background-size: 100% 100%, 3em 3em, 3em 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 5% 6rem;
+}
+
+.about-hero-container {
+    max-width: 1300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.about-hero-title {
+    font-size: 4.5rem;
+    font-weight: 400;
+    color: var(--light);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+}
+
+.about-hero-title span {
+    background: linear-gradient(90deg, #0091ff, #6ec3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero-subtext {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 560px;
+}
+
+.about-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.about-tag {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+}
+
+.about-hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.about-cta {
+    background: var(--light);
+    color: var(--dark);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.about-cta:hover { transform: scale(1.05); }
+
+.about-cta-ghost {
+    background: transparent;
+    color: var(--light);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.about-cta-ghost:hover {
+    border-color: var(--light);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Portrait */
+.about-hero-portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 145, 255, 0.18);
+}
+
+.about-hero-portrait::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(0, 145, 255, 0.6), rgba(255, 255, 255, 0.05));
+    z-index: 0;
+}
+
+.about-hero-portrait img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+.about-hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.85rem 1.1rem;
+    border-radius: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.about-hero-badge strong {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 0.95rem;
+}
+.about-hero-badge span {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+}
+
+/* ===== Stats Strip ===== */
+.about-stats {
+    background: #050505;
+    padding: 4rem 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.about-stats-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.about-stat {
+    text-align: center;
+}
+.about-stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--light);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.about-stat-number span {
+    color: var(--primary);
+}
+.about-stat-label {
+    margin-top: 0.5rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ===== Story / Mission ===== */
+.about-story {
+    background: var(--light);
+    padding: 8rem 5%;
+}
+.about-story-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+.about-section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--primary);
+    text-transform: uppercase;
+    position: sticky;
+    top: 120px;
+}
+.about-story-content h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+.about-story-content p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+}
+.about-story-content p strong {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+/* ===== Service Pillars ===== */
+.about-pillars {
+    background: var(--dark);
+    padding: 8rem 5%;
+    color: white;
+}
+.about-pillars-header {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+.about-pillars-header h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.about-pillars-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.about-pillars-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.about-pillar {
+    background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.about-pillar:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 145, 255, 0.4);
+}
+.about-pillar-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(0, 145, 255, 0.12);
+    display: grid;
+    place-items: center;
+    margin-bottom: 1.25rem;
+}
+.about-pillar-icon svg {
+    fill: var(--primary);
+}
+.about-pillar h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+}
+.about-pillar p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ===== Timeline ===== */
+.about-timeline-section {
+    background: var(--light);
+    padding: 8rem 5%;
+}
+.about-timeline-header {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+.about-timeline-header h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.about-timeline-header p {
+    color: var(--gray);
+    font-size: 1.1rem;
+}
+.about-timeline {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2.5rem;
+}
+.about-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), rgba(0, 145, 255, 0.1));
+}
+.about-timeline-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+.about-timeline-item:last-child { padding-bottom: 0; }
+.about-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--light);
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 0 5px rgba(0, 145, 255, 0.1);
+}
+.about-timeline-year {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--primary);
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+.about-timeline-item h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+.about-timeline-item p {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+/* ===== Values / Quote ===== */
+.about-values {
+    background: var(--dark);
+    padding: 8rem 5%;
+    text-align: center;
+    color: white;
+}
+.about-values blockquote {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    font-size: 2.25rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--light);
+    position: relative;
+}
+.about-values blockquote::before {
+    content: '\201C';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 6rem;
+    color: var(--primary);
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 1rem;
+}
+.about-values cite {
+    color: rgba(255, 255, 255, 0.55);
+    font-style: normal;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* ===== CTA Banner ===== */
+.about-cta-banner {
+    background: var(--light);
+    padding: 6rem 5%;
+}
+.about-cta-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #000 0%, #0a1f2e 100%);
+    border-radius: 28px;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    color: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+.about-cta-banner-text h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+.about-cta-banner-text p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .about-hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .about-hero-portrait {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .about-hero-title { font-size: 3.5rem; }
+    .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+    .about-pillars-grid { grid-template-columns: 1fr 1fr; }
+    .about-story-container { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-section-label { position: static; }
+}
+
+@media (max-width: 768px) {
+    .about-hero { padding: 8rem 5% 4rem; }
+    .about-hero-title { font-size: 2.6rem; }
+    .about-hero-subtext { font-size: 1rem; }
+    .about-stats { padding: 3rem 5%; }
+    .about-stat-number { font-size: 3rem; }
+    .about-story, .about-pillars, .about-timeline-section, .about-values { padding: 5rem 5%; }
+    .about-story-content h2,
+    .about-pillars-header h2,
+    .about-timeline-header h2 { font-size: 2.2rem; }
+    .about-pillars-grid { grid-template-columns: 1fr; }
+    .about-values blockquote { font-size: 1.5rem; }
+    .about-cta-banner-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.75rem;
+    }
+    .about-cta-banner-text h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+    .about-hero-title { font-size: 2.1rem; }
+    .about-hero-cta { flex-direction: column; width: 100%; }
+    .about-cta, .about-cta-ghost { width: 100%; text-align: center; justify-content: center; }
+    .about-stats-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .about-stat-number { font-size: 2.4rem; }
+    .about-values blockquote { font-size: 1.25rem; }
+}

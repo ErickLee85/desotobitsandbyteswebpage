@@ -22,6 +22,249 @@ background-size: 100% 100%, 3em 3em, 3em 3em;
     position: relative;
 }
 
+/* ===== Contact Hero (intro + portrait) ===== */
+.contact-hero {
+    width: 100%;
+    background: var(--light);
+    background-image:
+        radial-gradient(circle at center, transparent 0%, var(--light) 70%),
+        linear-gradient(rgba(209, 209, 209, 0.5) .1em, transparent .1em),
+        linear-gradient(90deg, rgba(222, 222, 222, 0.5) .1em, transparent .1em);
+    background-size: 100% 100%, 3em 3em, 3em 3em;
+    padding: 11rem 5% 6rem;
+    padding-top:300px;
+}
+
+.contact-hero-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.contact-hero-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 4px;
+    color: var(--primary, #0091ff);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.contact-hero-title {
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 1.5rem;
+}
+
+.contact-hero-title span {
+    background: linear-gradient(90deg, #0091ff, #6ec3ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-hero-subtext {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.75;
+    max-width: 560px;
+    margin-bottom: 2.5rem;
+}
+
+.contact-hero-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+.contact-hero-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    background: rgb(247, 247, 247);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    color: #111;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+
+.contact-hero-info-item svg {
+    color: var(--primary, #0091ff);
+    flex-shrink: 0;
+}
+
+.contact-hero-info-item div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.contact-hero-info-item span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+}
+
+.contact-hero-info-item strong {
+    font-size: 0.92rem;
+    color: #111;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Portrait */
+.contact-hero-portrait {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-left: auto;
+    box-shadow: 0 30px 80px rgba(0, 145, 255, 0.18);
+}
+
+.contact-hero-portrait::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, rgba(0, 145, 255, 0.6), rgba(0, 0, 0, 0.05));
+    z-index: 0;
+}
+
+.contact-hero-portrait img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-hero-portrait-badge {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.85rem 1.1rem;
+    border-radius: 14px;
+    color: #fff;
+}
+
+.contact-hero-portrait-badge strong {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 0.95rem;
+    display: block;
+}
+
+.contact-hero-portrait-badge span {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    margin-top: 2px;
+}
+
+/* ===== Contact Form Section ===== */
+.contact-form-section {
+    background: #fafafa;
+    padding: 6rem 5%;
+}
+
+.contact-form-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-form-aside {
+    position: sticky;
+    top: 120px;
+}
+
+.contact-form-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--primary, #0091ff);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.contact-form-aside h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.contact-form-aside > p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-form-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.contact-form-perk {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #222;
+    font-size: 0.98rem;
+}
+
+@media(max-width:1024px) {
+    .contact-hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .contact-hero-portrait {
+        margin: 0 auto;
+        max-width: 380px;
+    }
+    .contact-hero-title { font-size: 3rem; }
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    .contact-form-aside { position: static; }
+}
+
+@media(max-width:768px) {
+    .contact-hero { padding: 8rem 5% 4rem; }
+    .contact-hero-title { font-size: 2.4rem; }
+    .contact-hero-subtext { font-size: 1rem; }
+    .contact-hero-info { grid-template-columns: 1fr; }
+    .contact-form-section { padding: 4rem 5%; }
+    .contact-form-aside h2 { font-size: 2rem; }
+}
+
 @media(max-width:1250px) {
     .contact-section-container {
         flex-direction: column;
@@ -56,6 +299,11 @@ background-size: 100% 100%, 3em 3em, 3em 3em;
 }
 
 @media(max-width:576px) {
+    .contact-hero-title { font-size: 1.95rem; }
+    .contact-hero-portrait-badge { bottom: 14px; left: 14px; padding: 0.7rem 0.9rem; }
+    .contact-hero-portrait-badge strong { font-size: 0.85rem; }
+    .contact-hero-portrait-badge span { font-size: 0.7rem; }
+
     .contact-section-container {
         padding-inline: 15px;
         gap: 30px;
@@ -218,4 +466,83 @@ background-size: 100% 100%, 3em 3em, 3em 3em;
 }
 textarea {
     border-radius: 24px;
+}
+
+/* Service Area Map */
+.service-area-section {
+    background: #ffffff;
+    padding: 6rem 0 0;
+    width: 100%;
+}
+
+.service-area-header {
+    text-align: center;
+    padding: 0 5%;
+    margin-bottom: 3rem;
+}
+
+.service-area-heading {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+}
+
+.service-area-subtext {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.service-area-map {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    height: 0;
+    padding-bottom: 42%;
+    overflow: hidden;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.service-area-map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+@media (max-width: 943px) {
+    .service-area-section {
+        padding: 4rem 0 0;
+    }
+    .service-area-portrait {
+        width: 180px;
+        margin-bottom: 2rem;
+    }
+    .service-area-heading {
+        font-size: 2.25rem;
+    }
+    .service-area-subtext {
+        font-size: 1rem;
+    }
+    .service-area-map {
+        padding-bottom: 70%;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-area-portrait {
+        width: 150px;
+    }
+    .service-area-heading {
+        font-size: 1.75rem;
+    }
+    .service-area-map {
+        padding-bottom: 100%;
+    }
 }

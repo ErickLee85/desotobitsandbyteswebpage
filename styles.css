@@ -1365,23 +1365,30 @@
         }
 
         .stats-image {
-            background: #f5f5f5;
+            background: transparent;
             overflow: hidden;
             width: 100%;
             aspect-ratio: 4/3;
             max-width: 600px;
             height:500px;
             overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            background: #e8e8e8;
+            padding: 30px;
+            border-style: solid;
+            border-width: 15px;
+            border-top-color: lighten(#000, 10%) !important;
+            border-right-color: lighten(#000, 0%);
+            border-bottom-color: lighten(#000, 20%);
+            border-left-color: lighten(#000, 0%);
+            box-shadow: 2px 2px 4px rgba(0,0,0,.6);
 
-            box-shadow:  5px 5px 10px #bebebe,
-             -5px -5px 10px #ffffff;
         }
         .stats-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 400ms ease;
-            object-position: top;
         }
 
         .stats-content h2 {
@@ -3294,4 +3301,16 @@
             position: absolute;
             right:10%;
             background:#242638;
+        }
+
+
+
+        .mobile-hero-subtitle, .web-hero-subtitle {
+                  font-family: "Bebas Neue", sans-serif;
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    letter-spacing: 3px;
+                    color: rgba(255, 255, 255, 0.7);
+                    margin-bottom: 1rem;
+                    text-transform: uppercase;
         }

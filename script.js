@@ -480,7 +480,34 @@
         });
         }
 
-        // (Navbar hide-on-scroll animation removed)
+        // Header hide/show on scroll
+        let lastScrollY = 0;
+        const navbar = document.querySelector('header');
+
+        if (navbar) {
+            ScrollTrigger.create({
+                start: 'top top',
+                end: 'max',
+                onUpdate: (self) => {
+                    const currentScrollY = self.scroll();
+                    const scrollThreshold = 500;
+
+                    if (currentScrollY > lastScrollY && currentScrollY > scrollThreshold) {
+                        gsap.to(navbar, {
+                            y: -100,
+                            duration: 0.3,
+                        });
+                    } else if (currentScrollY < lastScrollY) {
+                        gsap.to(navbar, {
+                            y: 0,
+                            duration: 0.3,
+                        });
+                    }
+
+                    lastScrollY = currentScrollY;
+                }
+            });
+        }
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
