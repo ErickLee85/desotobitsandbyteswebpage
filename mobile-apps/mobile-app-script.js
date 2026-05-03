@@ -164,49 +164,9 @@ async function submitGetInTouchForm(getInTouchForm) {
 
 // GSAP Animations for Mobile Reviews Section
 window.addEventListener('load', () => {
-    // Animate reviews heading on scroll
-    const mobileReviewsHeading = document.querySelector('.mobile-reviews-heading');
-    if (mobileReviewsHeading) {
-        let splitMobileReviewsHeading = SplitText.create([".mobile-reviews-heading"], { type: "words" });
-        gsap.fromTo(splitMobileReviewsHeading.words, {
-            opacity: 0,
-            filter: 'blur(10px)'
-        }, {
-            opacity: 1,
-            filter: 'blur(0px)',
-            duration: 1,
-            stagger: 0.1,
-            delay: 0.5,
-            scrollTrigger: {
-                trigger: mobileReviewsHeading,
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
-    }
+    // (Reviews heading and container entrance animations removed)
 
-    // Animate review container on scroll
-    const mobileReviewContainer = document.querySelector('.mobile-reviews-container');
-    if (mobileReviewContainer) {
-        gsap.fromTo(mobileReviewContainer, {
-            opacity: 0,
-            y: 50,
-            filter: 'blur(10px)'
-        }, {
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            duration: 1,
-            delay: 0.8,
-            scrollTrigger: {
-                trigger: mobileReviewContainer,
-                start: "top 80%",
-                toggleActions: "play none none none"
-            }
-        });
-    }
-
-    // Initialize first review card with GSAP
+    // Initialize first review card with GSAP (functional carousel state)
     const mobileReviewCards = document.querySelectorAll('.mobile-review-card');
     if (mobileReviewCards.length > 0) {
         mobileReviewCards[0].classList.add('active');
@@ -214,12 +174,6 @@ window.addEventListener('load', () => {
     }
 });
 
-const faqHeading = SplitText.create('.mobile-faq-heading', {type:'words'})
-gsap.fromTo(faqHeading.words, {opacity:0, filter:'blur(10px'}, {opacity:1, filter:'blur(0px)', stagger:0.1, duration:1,
-    scrollTrigger: {
-        trigger: '.mobile-faq-section',
-        start: 'top 80%',
-    }
-})
+// (Mobile FAQ heading entrance animation removed)
 
 // FAQ items are now always expanded - no accordion functionality needed

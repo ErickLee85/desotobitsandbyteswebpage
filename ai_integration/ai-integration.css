@@ -208,8 +208,6 @@ body {
             overflow: hidden;
             z-index: 100;
             position: relative;
-            filter: blur(10px);
-            opacity: 0.5;
     }
     .user {
         position: absolute;

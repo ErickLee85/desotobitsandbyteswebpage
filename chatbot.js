@@ -128,6 +128,10 @@
             display: inline-block;
         }
 
+        .chatbot-header-close {
+            display: none;
+        }
+
         .chatbot-messages {
             flex: 1;
             overflow-y: auto;
@@ -302,13 +306,130 @@
             100% { background-position: -200% 0; }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+            .chatbot-widget {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .chatbot-toggle {
+                width: 52px;
+                height: 52px;
+            }
+
+            .chatbot-toggle svg {
+                width: 26px;
+                height: 26px;
+            }
+
+            /* Full-screen sheet on mobile, anchored to viewport not the widget */
             .chatbot-window {
-                width: calc(100vw - 32px);
-                height: calc(100vh - 140px);
-                right: -8px;
-                bottom: 68px;
-                border-radius: 12px;
+                position: fixed;
+                inset: 0;
+                width: 100vw;
+                height: 100vh;
+                height: 100dvh;
+                max-height: 100dvh;
+                right: 0;
+                bottom: 0;
+                border-radius: 0;
+                transform: translateY(100%);
+                transition: transform 0.3s ease, opacity 0.25s;
+            }
+
+            .chatbot-window.visible {
+                transform: translateY(0);
+            }
+
+            .chatbot-header {
+                padding: 14px 16px;
+                padding-top: max(14px, env(safe-area-inset-top));
+                gap: 10px;
+                position: relative;
+            }
+
+            .chatbot-header-avatar {
+                width: 40px;
+                height: 40px;
+            }
+
+            .chatbot-header-name {
+                font-size: 1rem;
+            }
+
+            /* Close button inside the sheet header on mobile */
+            .chatbot-header-close {
+                display: flex;
+                margin-left: auto;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .chatbot-header-close svg {
+                width: 18px;
+                height: 18px;
+                fill: #fff;
+            }
+
+            .chatbot-messages {
+                padding: 16px 14px;
+                gap: 10px;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior: contain;
+            }
+
+            .chatbot-msg {
+                max-width: 85%;
+                font-size: 0.95rem;
+                padding: 11px 14px;
+            }
+
+            .chatbot-input-area {
+                padding: 10px 12px;
+                padding-bottom: max(10px, env(safe-area-inset-bottom));
+                gap: 8px;
+            }
+
+            .chatbot-input {
+                /* 16px prevents iOS zoom-on-focus */
+                font-size: 16px;
+                padding: 11px 16px;
+            }
+
+            .chatbot-send {
+                width: 42px;
+                height: 42px;
+            }
+
+            .chatbot-send svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            /* Hide the floating toggle while the sheet is open so it doesn't overlap */
+            .chatbot-toggle.open {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            /* Lock body scroll while chat sheet is open */
+            body.chatbot-open {
+                overflow: hidden;
+            }
+        }
+
+        @media (max-width: 600px) and (display-mode: standalone) {
+            .chatbot-header {
+                padding-top: max(20px, env(safe-area-inset-top));
             }
         }
     `;
@@ -332,6 +453,9 @@
                         <span class="chatbot-header-name">Desoto Bits & Bytes Assistant</span>
                         <span class="chatbot-header-status">Online</span>
                     </div>
+                    <button class="chatbot-header-close" aria-label="Close chat" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                    </button>
                 </div>
                 <div class="chatbot-messages">
                     <div class="chatbot-skeleton">
@@ -512,9 +636,17 @@
 
         // Toggle window
         let greetingFetched = false;
+        const headerClose = widget.querySelector('.chatbot-header-close');
+
+        function setOpen(open) {
+            chatWindow.classList.toggle('visible', open);
+            toggle.classList.toggle('open', open);
+            document.body.classList.toggle('chatbot-open', open && window.matchMedia('(max-width: 600px)').matches);
+        }
+
         toggle.addEventListener('click', async function () {
-            const isOpen = chatWindow.classList.toggle('visible');
-            toggle.classList.toggle('open', isOpen);
+            const isOpen = !chatWindow.classList.contains('visible');
+            setOpen(isOpen);
             if (isOpen && !greetingFetched) {
                 // Validate turnstile silently when chat opens
                 var valid = await validateTurnstileOnce();
@@ -524,7 +656,10 @@
                     greetingFetched = true;
                     await fetchGreeting();
                     input.disabled = false;
-                    input.focus();
+                    // Avoid auto-focus on mobile to prevent keyboard popping immediately
+                    if (!window.matchMedia('(max-width: 600px)').matches) {
+                        input.focus();
+                    }
                 } else {
                     appendMessage('Security check failed. Please refresh the page and try again.', 'bot');
                     input.disabled = true;
@@ -532,6 +667,12 @@
                 }
             }
         });
+
+        if (headerClose) {
+            headerClose.addEventListener('click', function () {
+                setOpen(false);
+            });
+        }
 
         // Send message
         async function sendMessage() {

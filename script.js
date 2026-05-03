@@ -348,354 +348,13 @@
                     });
                 }
             
-                        const trustedLogo = document.querySelector(".trusted-logo");
-                        if (trustedLogo) {
-                            document.fonts.ready.then(() => {
-                                let split4 = SplitText.create(".trusted-logo", {type:"words"});
-                                gsap.from(split4.words,{opacity:0, stagger:0.1,
-                                    scrollTrigger: {
-                                    trigger: split4.words[0].parentElement,
-                                    start: "top 85%",
-                                    toggleActions: "play none none none",
-                                }
-                                });
-                            });
-                        }
-                        
                         // Hero CTA animation
                         // const heroCta = document.querySelector(".hero-cta");
                         // if (heroCta) {
                         //     gsap.fromTo([".hero-cta"],{y:20,opacity:0},{y:0,opacity:1,duration:1,delay:1.5});
                         // }
                         
-                        // Stats section animations
-                        const statsSection = document.querySelector(".stats-section");
-                        if (statsSection) {
-                            const statsImage = document.querySelector(".stats-image");
-                            if (statsImage) {
-                                gsap.fromTo(".stats-image",{opacity:0},{
-                                    opacity:1,duration:1.5,scrollTrigger: {
-                                            trigger: ".stats-section",
-                                            start: "top 50%",
-                                            toggleActions: "play none none none",
-                                        }});
-                            }
-                            
-                            // Stats animation with ScrollTrigger
-                            const statItems = document.querySelectorAll(".stat-item");
-                            if (statItems.length > 0) {
-                                gsap.fromTo(".stat-item",
-                                    {
-                                        x: -50,
-                                        opacity: 0,
-                                        filter: 'blur(10px)'
-                                    },
-                                    {
-                                        x: 0,
-                                        opacity: 1,
-                                        filter: 'blur(0px)',
-                                        stagger: 0.2,
-                                        duration: 0.8,
-                                        ease: 'power3.out',
-                                        scrollTrigger: {
-                                            trigger: ".stats-section",
-                                            start: "top 50%",
-                                            toggleActions: "play none none none",
-                                        }
-                                    }
-                                );
-                            }
-
-                            // Stat number counter animation
-                            const statNumbers = document.querySelectorAll('.stat-number');
-                            if (statNumbers.length > 0) {
-                                statNumbers.forEach((statNumber) => {
-                                    const text = statNumber.textContent.trim();
-                                    // Extract number by removing all non-digits
-                                    const number = parseInt(text.replace(/\D/g, ''));
-                                    // Extract suffix - get everything after the last digit (including commas, +, etc.)
-                                    const suffix = text.replace(/[\d,]/g, '');
-                                    
-                                    // Function to format number with commas
-                                    const formatNumber = (num) => {
-                                        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                                    };
-                                    
-                                    gsap.fromTo(statNumber, 
-                                        { textContent: 0 },
-                                        {
-                                            textContent: number,
-                                            duration: 2,
-                                            ease: 'power1.out',
-                                            snap: { textContent: 1 },
-                                            scrollTrigger: {
-                                                trigger: ".stats-section",
-                                                start: "top 50%",
-                                                toggleActions: "play none none none",
-                                            },
-                                            onUpdate: function() {
-                                                const currentValue = Math.ceil(statNumber.textContent);
-                                                statNumber.textContent = formatNumber(currentValue) + suffix;
-                                            }
-                                        }
-                                    );
-                                });
-                            }
-                            
-                            // Stats content heading animation
-                            const statsContentH2 = document.querySelector(".stats-content h2");
-                            if (statsContentH2) {
-                                document.fonts.ready.then(() => {
-                                    let split5 = SplitText.create(".stats-content h2", {type:"words"});
-                                    gsap.fromTo(split5.words,{opacity:0,filter:'blur(5px)'},{opacity:1,filter:'blur(0px)',duration: 1,stagger: 0.1,delay:0.5,
-                                        scrollTrigger: {
-                                                trigger: ".stats-section",
-                                                start: "top 50%",
-                                                toggleActions: "play none none none",
-                                        }
-                                    });
-                                });
-                            }
-                            
-                            // Stats content paragraph animation
-                            const statsContentP = document.querySelector(".stats-content p");
-                            if (statsContentP) {
-                                document.fonts.ready.then(() => {
-                                    let split6 = SplitText.create(".stats-content p",{type:"words"});
-                                    gsap.fromTo(split6.words,{opacity:0},{opacity:1,duration:0.5,stagger:0.1,delay:1.2,
-                                         scrollTrigger: {
-                                                 trigger: ".stats-section",
-                                                 start: "top 50%",
-                                                 toggleActions: "play none none none",
-                                         }
-                                     });
-                                });
-                            }
-                        }
-
-                     // Mobile Hero Section Animations
-                     const mobileHeroSubtitle = document.querySelector('.mobile-hero-subtitle');
-                     const mobileHeroTitle = document.querySelector('.mobile-hero-title');
-                     const mobileHeroSubtext = document.querySelector('.mobile-hero-subtext');
-                     const mobileHeroCta = document.querySelector('.mobile-hero-cta');
-                     
-                     if (mobileHeroSubtitle) {
-                         document.fonts.ready.then(() => {
-                             let splitMobileSubtitle = SplitText.create([".mobile-hero-subtitle"], { type: "words" });
-                             gsap.fromTo(splitMobileSubtitle.words, {
-                                 opacity: 0
-                             }, {
-                                 opacity: 1,
-                                 duration: 1,
-                                 stagger: 0.1,
-                                 delay: 0.3
-                             });
-                         });
-                     }
-                     
-                     if (mobileHeroTitle) {
-                         document.fonts.ready.then(() => {
-                             let splitMobileTitle = SplitText.create([".mobile-hero-title"], { type: "words" });
-                             gsap.fromTo(splitMobileTitle.words, {
-                                 opacity: 0,
-                                 filter: 'blur(10px)'
-                             }, {
-                                 opacity: 1,
-                                 filter: 'blur(0px)',
-                                 duration: 1,
-                                 stagger: 0.1,
-                                 delay: 0.5
-                             });
-                         });
-                     }
-                     
-                     if (mobileHeroSubtext) {
-                         document.fonts.ready.then(() => {
-                             let splitMobileSubtext = SplitText.create([".mobile-hero-subtext"], { type: "words" });
-                             gsap.fromTo(splitMobileSubtext.words, {
-                                 opacity: 0
-                             }, {
-                                 opacity: 1,
-                                 duration: 0.5,
-                                 stagger: 0.1,
-                                 delay: 1.2
-                             });
-                         });
-                     }
-                     
-                     if (mobileHeroCta) {
-                         gsap.fromTo(".mobile-hero-cta button", {
-                             y: 20,
-                             opacity: 0
-                         }, {
-                             y: 0,
-                             opacity: 1,
-                             duration: 1,
-                             stagger: 0.1,
-                             delay: 1.5
-                         });
-                     }
-
-                     // Animate Mobile App Features Section
-                     
-                         const mobileAppFeaturesSection = document.querySelector('.mobile-app-features-section');
-                         if (mobileAppFeaturesSection) {
-                             const mobileAppFeaturesContent = document.querySelector('.mobile-app-features-content');
-                             const mobileAppFeaturesHeading = mobileAppFeaturesContent?.querySelector('h2');
-                             const mobileAppFeaturesParagraph = mobileAppFeaturesContent?.querySelector('p');
-                             const mobileAppFeatureItems = document.querySelectorAll('.mobile-app-feature-item');
-
-                             // Animate heading with SplitText
-                             if (mobileAppFeaturesHeading) {
-                                 document.fonts.ready.then(() => {
-                                     let splitMobileFeaturesHeading = SplitText.create(".mobile-app-features-content h2", {type:"words"});
-                                     gsap.fromTo(splitMobileFeaturesHeading.words, {
-                                         opacity: 0,
-                                         filter: 'blur(5px)'
-                                     }, {
-                                         opacity: 1,
-                                         filter: 'blur(0px)',
-                                         duration: 1,
-                                         stagger: 0.1,
-                                         delay: 0.5,
-                                         scrollTrigger: {
-                                             trigger: mobileAppFeaturesSection,
-                                             start: "top 80%",
-                                             toggleActions: "play none none none"
-                                         }
-                                     });
-                                 });
-                             }
-
-                             // Animate paragraph with SplitText
-                             if (mobileAppFeaturesParagraph) {
-                                 document.fonts.ready.then(() => {
-                                     let splitMobileFeaturesParagraph = SplitText.create(".mobile-app-features-content p", {type:"words"});
-                                     gsap.fromTo(splitMobileFeaturesParagraph.words, {
-                                         opacity: 0
-                                     }, {
-                                         opacity: 1,
-                                         duration: 0.5,
-                                         stagger: 0.1,
-                                         delay: 1.2,
-                                         scrollTrigger: {
-                                             trigger: mobileAppFeaturesSection,
-                                             start: "top 80%",
-                                             toggleActions: "play none none none"
-                                         }
-                                     });
-                                 });
-                             }
-
-                             // Animate feature items
-                             if (mobileAppFeatureItems.length > 0) {
-                                 // Set initial state
-                                 gsap.set(mobileAppFeatureItems, {
-                                     x: -50,
-                                     opacity: 0
-                                 });
-
-                                 // Animate on scroll
-                                 gsap.to(mobileAppFeatureItems, {
-                                     x: 0,
-                                     opacity: 1,
-                                     duration: 0.8,
-                                     stagger: 0.1,
-                                     delay: 1.5,
-                                     ease: 'power3.out',
-                                     scrollTrigger: {
-                                         trigger: mobileAppFeaturesSection,
-                                         start: "top 80%",
-                                         toggleActions: "play none none none"
-                                     }
-                                 });
-                             }
-
-                             // Animate image
-                             const mobileAppFeaturesImage = document.querySelector(".mobile-app-features-image");
-                             if (mobileAppFeaturesImage) {
-                                 gsap.fromTo(".mobile-app-features-image", {
-                                     opacity: 0
-                                 }, {
-                                     opacity: 1,
-                                     duration: 1.5,
-                                     scrollTrigger: {
-                                         trigger: mobileAppFeaturesSection,
-                                         start: "top 80%",
-                                         toggleActions: "play none none none"
-                                     }
-                                 });
-                             }
-
-                             // Animate mobile learn more button
-                           
-                         }
                      });
-
-                     // Animate WebGL section title and subtitle
-                     const webglTitle = document.querySelector('.webgl-title');
-                     const webglSubtitle = document.querySelector('.webgl-subtitle');
-                     const webglCanvas = document.querySelector('.webgl-content');
-                     
-                     if (webglTitle && webglSubtitle) {
-                         document.fonts.ready.then(() => {
-                             let splitWebglTitle = SplitText.create([".webgl-title"], { type: "words" });
-                             let splitWebglSubtitle = SplitText.create([".webgl-subtitle"], { type: "words" });
-                             
-                             gsap.fromTo(splitWebglTitle.words, {
-                                 opacity: 0,
-                                 filter: 'blur(10px)'
-                             }, {
-                                 opacity: 1,
-                                 filter: 'blur(0px)',
-                                 duration: 1,
-                                 stagger: 0.1,
-                                 delay: 0.5,
-                                 scrollTrigger: {
-                                     trigger: ".webgl-section",
-                                     start: "top 80%",
-                                     toggleActions: "play none none none"
-                                 }
-                             });
-                             
-                             gsap.fromTo(splitWebglSubtitle.words, {
-                                 opacity: 0
-                             }, {
-                                 opacity: 1,
-                                 duration: 1,
-                                 stagger: 0.1,
-                                 delay: 1.2,
-                                 scrollTrigger: {
-                                     trigger: ".webgl-section",
-                                     start: "top 80%",
-                                     toggleActions: "play none none none"
-                                 }
-                             });
-                         });
-                     }
-                     
-                     // Animate reviews heading on scroll
-                     const reviewsHeading = document.querySelector('.reviews-heading');
-                     if (reviewsHeading) {
-                         document.fonts.ready.then(() => {
-                             let splitReviewsHeading = SplitText.create([".reviews-heading"], { type: "words" });
-                             gsap.fromTo(splitReviewsHeading.words, {
-                                 opacity: 0,
-                                 filter: 'blur(10px)'
-                             }, {
-                                 opacity: 1,
-                                 filter: 'blur(0px)',
-                                 duration: 1,
-                                 stagger: 0.1,
-                                 delay: 0.5,
-                                 scrollTrigger: {
-                                     trigger: reviewsHeading,
-                                     start: "top 80%",
-                                     toggleActions: "play none none none"
-                                 }
-                             });
-                         });
-                     }
 
                      // Services Section - Static display with SVG heading animation
                     const servicesHeading = document.querySelector('.services-heading');
@@ -721,22 +380,7 @@
                         });
                     }
                     
-                    // Animate service cards in with opacity
-                    const serviceCards = document.querySelectorAll('.service-card');
-                    if (serviceCards.length > 0) {
-                        gsap.set(serviceCards, { opacity: 0 });
-                        gsap.to(serviceCards, {
-                            opacity: 1,
-                            duration: 0.8,
-                            stagger: 0.15,
-                            ease: 'power2.out',
-                            scrollTrigger: {
-                                trigger: '.services-grid',
-                                start: 'top 80%',
-                                toggleActions: 'play none none none'
-                            }
-                        });
-                    }
+                    // (Service card opacity stagger animation removed)
 
         function smoothScrollTo(element, duration = 800) {
             const startPosition = window.pageYOffset;
@@ -836,36 +480,7 @@
         });
         }
 
-        let lastScrollY = 0;
-        const navbar = document.querySelector('header'); // or whatever your navbar selector is
-
-        if (navbar) {
-        ScrollTrigger.create({
-        start: 'top top',
-        end: 'max',
-        onUpdate: (self) => {
-            const currentScrollY = self.scroll();
-            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const fiftyPercentScroll = 500;
-            
-            if (currentScrollY > lastScrollY && currentScrollY > fiftyPercentScroll) {
-            // Scrolling down & past 50% of page
-            gsap.to(navbar, {
-                y: -100, // adjust based on your navbar height
-                duration: 0.3,
-            });
-            } else if (currentScrollY < lastScrollY) {
-            // Scrolling up
-            gsap.to(navbar, {
-                y: 0,
-                duration: 0.3,
-            });
-            }
-            
-            lastScrollY = currentScrollY;
-        }
-        });
-        }
+        // (Navbar hide-on-scroll animation removed)
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -1077,105 +692,29 @@
              }
          }
 
-         // Get In Touch Section Animation
-         document.fonts.ready.then(() => {
-             const getInTouchHero = document.querySelector('.get-in-touch-hero');
-             if (getInTouchHero) {
-                 let splitTouchHero = SplitText.create([".get-in-touch-hero"], { type: "words" });
-                 gsap.fromTo(splitTouchHero.words, {
-                     opacity: 0,
-                     filter: 'blur(10px)'
-                 }, {
-                     opacity: 1,
-                     filter: 'blur(0px)',
-                     duration: 1,
-                     stagger: 0.1,
-                     delay: 0.5,
-                     scrollTrigger: {
-                         trigger: getInTouchHero,
-                         start: "top 80%",
-                         toggleActions: "play none none none"
-                     }
-                 });
-             }
-
-             // Animate arrow indicator
-             const heroArrowIndicator = document.getElementById('heroArrowIndicator');
-             if (heroArrowIndicator) {
-                 gsap.fromTo(heroArrowIndicator, {
-                     opacity: 0,
-                     scale: 0
-                 }, {
-                     opacity: 1,
-                     scale: 1,
-                     duration: 0.6,
-                     delay: 1.2,
-                     ease: 'back.out(1.7)',
-                     scrollTrigger: {
-                         trigger: getInTouchHero,
-                         start: "top 80%",
-                         toggleActions: "play none none none"
-                     }
-                 });
-
-                 // Click handler to scroll to form
-                 heroArrowIndicator.addEventListener('click', () => {
-                     const form = document.querySelector('.get-in-touch-right');
-                     if (form) {
-                         if (isMobile) {
-                             form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+         // Get In Touch Section (entrance animations removed; arrow click handler kept)
+         const heroArrowIndicator = document.getElementById('heroArrowIndicator');
+         if (heroArrowIndicator) {
+             // Click handler to scroll to form
+             heroArrowIndicator.addEventListener('click', () => {
+                 const form = document.querySelector('.get-in-touch-right');
+                 if (form) {
+                     if (isMobile) {
+                         form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                     } else {
+                         if (smoother) {
+                             smoother.scrollTo('.get-in-touch-right', true, "top top");
                          } else {
-                             if (smoother) {
-                                 smoother.scrollTo('.get-in-touch-right', true, "top top");
-                             } else {
-                                 gsap.to(window, {
-                                     duration: 1,
-                                     scrollTo: form,
-                                     ease: 'power3.inOut'
-                                 });
-                             }
+                             gsap.to(window, {
+                                 duration: 1,
+                                 scrollTo: form,
+                                 ease: 'power3.inOut'
+                             });
                          }
                      }
-                 });
-             }
-
-             // Animate left content
-             const getInTouchLeft = document.querySelector('.get-in-touch-left');
-             if (getInTouchLeft) {
-                 gsap.fromTo(getInTouchLeft, {
-                     opacity: 0,
-                     x: -50
-                 }, {
-                     opacity: 1,
-                     x: 0,
-                     duration: 0.8,
-                     scrollTrigger: {
-                         trigger: getInTouchLeft,
-                         start: "top 80%",
-                         toggleActions: "play none none none"
-                     }
-                 });
-             }
-
-             // Animate form fields
-             const formFields = document.querySelectorAll('.get-in-touch-form .form-field-group');
-             formFields.forEach((field, index) => {
-                 gsap.fromTo(field, {
-                     opacity: 0,
-                     y: 30
-                 }, {
-                     opacity: 1,
-                     y: 0,
-                     duration: 0.6,
-                     delay: 0.2 + (index * 0.1),
-                     scrollTrigger: {
-                         trigger: '.get-in-touch-right',
-                         start: "top 80%",
-                         toggleActions: "play none none none"
-                     }
-                 });
+                 }
              });
-         });
+         }
 
          // Get In Touch Form Submission
          const getInTouchForm = document.getElementById('getInTouchForm');
@@ -1289,43 +828,7 @@
         }
         } // End of contact form initialization check
 
-        // FAQ Bento Box Animation
-        document.fonts.ready.then(() => {
-
-            // Animate FAQ bento cards on scroll
-            const faqImg = document.querySelector('.faq-header-background');
-            if (faqImg) {
-            gsap.fromTo(faqImg, {
-                clipPath: 'circle(10% at 50% 50%)'
-            }, {
-                clipPath: 'circle(100% at 50% 50%)',
-                scrollTrigger: {
-                    trigger: '.faq-header-background',
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            });
-            }
-            const faqBentoCards = document.querySelectorAll('.faq-bento-card');
-            if (faqBentoCards.length > 0) {
-            faqBentoCards.forEach((card, index) => {
-                gsap.fromTo(card, {
-                    opacity: 0,
-                }, {
-                    opacity: 1,
-                    delay: index * 0.1,
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 85%",
-                        toggleActions: "play none none none"
-                    }
-                });
-            });
-            }
-
-            // Animate FAQ subtitle
-         
-        });
+        // FAQ Bento Box (entrance animations removed)
 
         // Marquee Animation
         class LogosMarquee {
