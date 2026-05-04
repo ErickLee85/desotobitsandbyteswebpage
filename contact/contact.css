@@ -159,12 +159,21 @@ background-size: 100% 100%, 3em 3em, 3em 3em;
     bottom: 24px;
     left: 24px;
     z-index: 2;
-    background: rgba(0, 0, 0, 0.72);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.85rem 1.1rem;
+    background:transparent;
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 6px;
     border-radius: 14px;
     color: #fff;
+    corner-shape:squircle;
+}
+.inner-div {
+    padding:5px;
+    background:black;
+    border-radius: 14px;
+    corner-shape:squircle;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding:5px;
 }
 
 .contact-hero-portrait-badge strong {
@@ -172,6 +181,7 @@ background-size: 100% 100%, 3em 3em, 3em 3em;
     letter-spacing: 1.5px;
     font-size: 0.95rem;
     display: block;
+    text-align: center;
 }
 
 .contact-hero-portrait-badge span {
@@ -300,9 +310,6 @@ background-size: 100% 100%, 3em 3em, 3em 3em;
 
 @media(max-width:576px) {
     .contact-hero-title { font-size: 1.95rem; }
-    .contact-hero-portrait-badge { bottom: 14px; left: 14px; padding: 0.7rem 0.9rem; }
-    .contact-hero-portrait-badge strong { font-size: 0.85rem; }
-    .contact-hero-portrait-badge span { font-size: 0.7rem; }
 
     .contact-section-container {
         padding-inline: 15px;
