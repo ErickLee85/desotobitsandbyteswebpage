@@ -378,6 +378,57 @@ if (contactOverlay && contactFormPanel && getQuoteBtns.length > 0) {
     }
 }
 
+const expandableImages = document.querySelectorAll('[data-expandable-image]');
+const imageLightbox = document.getElementById('imageLightbox');
+const imageLightboxImg = document.getElementById('imageLightboxImg');
+const imageLightboxCaption = document.getElementById('imageLightboxCaption');
+const imageLightboxClose = document.getElementById('imageLightboxClose');
+
+if (expandableImages.length > 0 && imageLightbox && imageLightboxImg && imageLightboxCaption && imageLightboxClose) {
+    let lastTrigger = null;
+
+    const closeImageLightbox = () => {
+        imageLightbox.classList.remove('active');
+        imageLightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+
+        if (lastTrigger) {
+            lastTrigger.focus();
+        }
+    };
+
+    const openImageLightbox = (trigger) => {
+        lastTrigger = trigger;
+        imageLightboxImg.src = trigger.dataset.imageSrc || '';
+        imageLightboxImg.alt = trigger.dataset.imageAlt || '';
+        imageLightboxCaption.textContent = trigger.dataset.imageCaption || '';
+        imageLightbox.classList.add('active');
+        imageLightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        imageLightboxClose.focus();
+    };
+
+    expandableImages.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            openImageLightbox(trigger);
+        });
+    });
+
+    imageLightboxClose.addEventListener('click', closeImageLightbox);
+
+    imageLightbox.addEventListener('click', (event) => {
+        if (event.target === imageLightbox || event.target.hasAttribute('data-lightbox-close')) {
+            closeImageLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && imageLightbox.classList.contains('active')) {
+            closeImageLightbox();
+        }
+    });
+}
+
 // Blog Search and Filter Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('blogSearch');
@@ -399,18 +450,19 @@ document.addEventListener('DOMContentLoaded', () => {
         
         blogCards.forEach(card => {
             const category = card.dataset.category || '';
+            const categories = category.split(/\s+/).filter(Boolean);
             const title = (card.dataset.title || '').toLowerCase();
             const description = (card.dataset.description || '').toLowerCase();
             const searchText = currentSearch.toLowerCase();
             
             // Check filter match
-            const filterMatch = currentFilter === 'all' || category === currentFilter;
+            const filterMatch = currentFilter === 'all' || categories.includes(currentFilter);
             
             // Check search match
             const searchMatch = !searchText || 
                 title.includes(searchText) || 
                 description.includes(searchText) ||
-                category.replace('-', ' ').includes(searchText);
+                categories.some(categoryName => categoryName.replace('-', ' ').includes(searchText));
             
             if (filterMatch && searchMatch) {
                 card.classList.remove('hidden');

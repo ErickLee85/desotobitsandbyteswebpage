@@ -948,6 +948,125 @@ body {
     margin-top: 0.5rem;
 }
 
+.article-inline-figure {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.article-inline-figure-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.article-inline-figure img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.article-inline-figure-button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 6px;
+    border-radius: 14px;
+}
+
+.article-inline-figure figcaption {
+    margin-top: 0.75rem;
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.image-lightbox.active {
+    display: flex;
+}
+
+.image-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 10, 12, 0.1);
+    backdrop-filter: blur(6px);
+}
+
+.image-lightbox-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1100px, 100%);
+    max-height: calc(100vh - 3rem);
+    padding: 1rem;
+    border-radius: 20px;
+    background: rgba(13, 16, 19, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.image-lightbox-dialog img {
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 9rem);
+    object-fit: cover;
+    border-radius: 14px;
+    transform: scale(1.1);
+}
+
+.image-lightbox-dialog p {
+    margin: 0.85rem 0 0;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.image-lightbox-close:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+    .image-lightbox {
+        padding: 1rem;
+    }
+
+    .image-lightbox-dialog {
+        padding: 0.75rem;
+    }
+
+    .image-lightbox-dialog img {
+        max-height: calc(100vh - 8rem);
+    }
+}
+
 /* Pricing Table */
 .pricing-table {
     margin: 2rem 0;
