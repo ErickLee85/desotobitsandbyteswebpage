@@ -447,7 +447,7 @@
             <div class="chatbot-window">
                 <div class="chatbot-header">
                     <div class="chatbot-header-avatar">
-                        <img src="/images/logo_dark.png" alt="Desoto Bits and Bytes">
+                        <img src="/images/logo_dark.png" alt="Desoto Bits and Bytes" width="40" height="40" decoding="async">
                     </div>
                     <div class="chatbot-header-info">
                         <span class="chatbot-header-name">Desoto Bits & Bytes Assistant</span>
