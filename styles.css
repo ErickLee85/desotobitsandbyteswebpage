@@ -2052,37 +2052,29 @@
         }
 
         .faq-header {
-            position: relative;
-            border-radius: 20px;
+            border-radius: 30px;
+            corner-shape:squircle;
             overflow: hidden;
             margin-bottom: 4rem;
-            min-height: 500px;
+            min-height: 400px;
+            background:black;
+            padding:20px;
+            border:2px solid black;
             display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .faq-header-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('./images/office_compressed.jpeg');
-            background-size: cover;
-            background-position: center;
-            filter:brightness(0.8);
-            z-index: 1;
         }
 
         .faq-header-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 4rem 5%;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 20px;
+            border-radius: 30px;
+            corner-shape:squircle;
+            border:1px solid #242638;
+            flex: 1;
+            background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(3, 3, 3) 45%, #242638 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
         }
 
         .faq-title {
