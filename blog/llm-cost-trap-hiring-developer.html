@@ -40,9 +40,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -205,7 +212,7 @@
                 <button
                     type="button"
                     class="article-inline-figure-button"
-                    data-expandable-image
+                    data-expandable-imagearticle-inline-figure-button
                     data-image-src="../images/pricing_ss.png"
                     data-image-alt="Screenshot of GitHub Copilot model multipliers showing premium model pricing increases"
                     data-image-caption="GitHub's model multiplier table makes the pricing jump visible: promotional rates disappear, then premium usage gets expensive fast."

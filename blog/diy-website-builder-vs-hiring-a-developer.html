@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -210,11 +217,11 @@
             <p>Here's what they don't mention in the commercials:</p>
 
             <ul>
-                <li><strong>Premium templates</strong> — The good ones cost extra. $50-$200 extra.</li>
-                <li><strong>Apps and plugins</strong> — Want a booking system? Email marketing integration? Better SEO tools? That's $10-$50/month each.</li>
-                <li><strong>Removing their branding</strong> — Want to ditch "Made with Wix" in your footer? Upgrade to a pricier plan.</li>
-                <li><strong>E-commerce fees</strong> — Selling products? They take a cut of every transaction on top of your monthly fee.</li>
-                <li><strong>Storage and bandwidth</strong> — Hit your limits and suddenly you need the "Business" tier.</li>
+                <li><strong>Premium templates</strong>. The good ones cost extra. $50-$200 extra.</li>
+                <li><strong>Apps and plugins</strong>. Want a booking system? Email marketing integration? Better SEO tools? That's $10-$50/month each.</li>
+                <li><strong>Removing their branding</strong>. Want to ditch "Made with Wix" in your footer? Upgrade to a pricier plan.</li>
+                <li><strong>E-commerce fees</strong>. Selling products? They take a cut of every transaction on top of your monthly fee.</li>
+                <li><strong>Storage and bandwidth</strong>. Hit your limits and suddenly you need the "Business" tier.</li>
             </ul>
 
             <p>That $16/month can easily become $50-$100/month once you add what you actually need.</p>
@@ -260,10 +267,10 @@
             <p>We're not here to trash website builders entirely. They have their place:</p>
 
             <ul>
-                <li><strong>Testing an idea</strong> — Validating a concept before investing serious money</li>
-                <li><strong>Personal projects</strong> — Portfolio sites, blogs, hobby pages</li>
-                <li><strong>Extremely tight budgets</strong> — When $200/month is genuinely not an option</li>
-                <li><strong>Temporary solutions</strong> — You need something live in 48 hours</li>
+                <li><strong>Testing an idea</strong>. Validating a concept before investing serious money</li>
+                <li><strong>Personal projects</strong>. Portfolio sites, blogs, hobby pages</li>
+                <li><strong>Extremely tight budgets</strong>. When $200/month is genuinely not an option</li>
+                <li><strong>Temporary solutions</strong>. You need something live in 48 hours</li>
             </ul>
 
             <p>If any of these describe you, a DIY builder might be the right call. No judgment.</p>
@@ -273,11 +280,11 @@
             <p>But if your website is a core part of how you get customers—which, for most businesses, it is—here's when going custom makes sense:</p>
 
             <ul>
-                <li><strong>You need to rank on Google</strong> — SEO isn't optional; it's how customers find you</li>
-                <li><strong>You want to stand out</strong> — Not look like Template #47 with different colors</li>
-                <li><strong>You need custom functionality</strong> — Booking systems, calculators, integrations with your other tools</li>
-                <li><strong>Your time is valuable</strong> — You'd rather focus on running your business</li>
-                <li><strong>You're thinking long-term</strong> — Building an asset you own, not renting space on someone else's platform</li>
+                <li><strong>You need to rank on Google</strong>. SEO isn't optional; it's how customers find you</li>
+                <li><strong>You want to stand out</strong>. Not look like Template #47 with different colors</li>
+                <li><strong>You need custom functionality</strong>. Booking systems, calculators, integrations with your other tools</li>
+                <li><strong>Your time is valuable</strong>. You'd rather focus on running your business</li>
+                <li><strong>You're thinking long-term</strong>. Building an asset you own, not renting space on someone else's platform</li>
             </ul>
 
             <h2>The Real Cost Comparison</h2>

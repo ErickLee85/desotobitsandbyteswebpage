@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -211,11 +218,11 @@
             <p>Forget the corporate jargon. A CRM is your business's central nervous system for customer data. Here's what it handles:</p>
 
             <ul>
-                <li><strong>Contact Management</strong> — Every customer and lead in one searchable database with their full interaction history</li>
-                <li><strong>Sales Pipeline Tracking</strong> — See exactly where every deal stands, what needs attention, and what's about to close</li>
-                <li><strong>Automated Follow-ups</strong> — Set triggers so no lead ever gets forgotten. New inquiry? Automatic email. No response in 3 days? Automatic reminder to your sales rep</li>
-                <li><strong>Customer Service History</strong> — When a customer calls, you instantly see their purchase history, past issues, and preferences. No more "can you tell me your account number again?"</li>
-                <li><strong>Reporting & Analytics</strong> — Real numbers on your sales performance, customer acquisition costs, churn rates, and team productivity</li>
+                <li><strong>Contact Management</strong>. Every customer and lead in one searchable database with their full interaction history</li>
+                <li><strong>Sales Pipeline Tracking</strong>. See exactly where every deal stands, what needs attention, and what's about to close</li>
+                <li><strong>Automated Follow-ups</strong>. Set triggers so no lead ever gets forgotten. New inquiry? Automatic email. No response in 3 days? Automatic reminder to your sales rep</li>
+                <li><strong>Customer Service History</strong>. When a customer calls, you instantly see their purchase history, past issues, and preferences. No more "can you tell me your account number again?"</li>
+                <li><strong>Reporting & Analytics</strong>. Real numbers on your sales performance, customer acquisition costs, churn rates, and team productivity</li>
             </ul>
 
             <p>A CRM doesn't just store data. It makes that data work for you.</p>
@@ -254,11 +261,11 @@
             <p>Off-the-shelf CRMs are built for everyone—which means they're built for no one. Here's what you actually get:</p>
 
             <ul>
-                <li><strong>Feature bloat</strong> — You're paying for 200 features when you need 15. Your team gets overwhelmed, adoption drops, and the CRM collects digital dust</li>
-                <li><strong>Forced workflows</strong> — Your business has to adapt to THEIR process instead of the other way around. Suddenly you're changing how you operate to fit software limitations</li>
-                <li><strong>Per-seat pricing that scales against you</strong> — Salesforce starts at $25/user/month. Add 10 team members, advanced features, and integrations? You're looking at $500-$2,000+/month for software you're only using 10% of</li>
-                <li><strong>Integration headaches</strong> — Connecting Zoho to your website, accounting software, and email marketing tool requires paid add-ons, third-party middleware like Zapier, and constant maintenance</li>
-                <li><strong>You don't own your data infrastructure</strong> — Their platform, their rules. Pricing changes, feature removals, and API restrictions happen at their discretion, not yours</li>
+                <li><strong>Feature bloat</strong>. You're paying for 200 features when you need 15. Your team gets overwhelmed, adoption drops, and the CRM collects digital dust</li>
+                <li><strong>Forced workflows</strong>. Your business has to adapt to THEIR process instead of the other way around. Suddenly you're changing how you operate to fit software limitations</li>
+                <li><strong>Per-seat pricing that scales against you</strong>. Salesforce starts at $25/user/month. Add 10 team members, advanced features, and integrations? You're looking at $500-$2,000+/month for software you're only using 10% of</li>
+                <li><strong>Integration headaches</strong>. Connecting Zoho to your website, accounting software, and email marketing tool requires paid add-ons, third-party middleware like Zapier, and constant maintenance</li>
+                <li><strong>You don't own your data infrastructure</strong>. Their platform, their rules. Pricing changes, feature removals, and API restrictions happen at their discretion, not yours</li>
             </ul>
 
             <div class="highlight-box">
@@ -336,11 +343,11 @@
             <p>People always ask "How much does a CRM cost?" The better question is "How much is operating without one costing me?"</p>
 
             <ul>
-                <li><strong>Lost leads</strong> — On average, 79% of marketing leads never convert to sales. The main cause? Lack of proper follow-up</li>
-                <li><strong>Wasted time</strong> — Sales reps spend only 35% of their time actually selling. The rest goes to admin work a CRM could automate</li>
-                <li><strong>Customer churn</strong> — Without visibility into customer satisfaction, you don't know someone's unhappy until they leave</li>
-                <li><strong>Missed upsells</strong> — If you don't know what a customer already bought, you can't recommend what they need next</li>
-                <li><strong>Bad decisions</strong> — Without data, you're guessing which products, campaigns, and strategies are working</li>
+                <li><strong>Lost leads</strong>. On average, 79% of marketing leads never convert to sales. The main cause? Lack of proper follow-up</li>
+                <li><strong>Wasted time</strong>. Sales reps spend only 35% of their time actually selling. The rest goes to admin work a CRM could automate</li>
+                <li><strong>Customer churn</strong>. Without visibility into customer satisfaction, you don't know someone's unhappy until they leave</li>
+                <li><strong>Missed upsells</strong>. If you don't know what a customer already bought, you can't recommend what they need next</li>
+                <li><strong>Bad decisions</strong>. Without data, you're guessing which products, campaigns, and strategies are working</li>
             </ul>
 
             <div class="stat-callout">
@@ -353,11 +360,11 @@
             <p>Here's how we approach building a CRM for a business:</p>
 
             <ul>
-                <li><strong>Discovery</strong> — We map out your exact sales process, customer journey, and pain points. No assumptions. We learn how your team actually works day-to-day</li>
-                <li><strong>Architecture</strong> — We design a system that connects to your website, email, accounting, and any other tools you use. Direct integrations. No middleware fees</li>
-                <li><strong>Build</strong> — Your CRM gets built with only the features your team needs. Clean interface. Fast. Intuitive. Your team can use it on day one without a 40-page training manual</li>
-                <li><strong>Automation</strong> — We wire up the follow-up sequences, lead scoring, notifications, and reporting that match your business logic—not a generic template</li>
-                <li><strong>Launch & Support</strong> — We deploy, train your team, and provide ongoing support. As your business evolves, your CRM evolves with it</li>
+                <li><strong>Discovery</strong>. We map out your exact sales process, customer journey, and pain points. No assumptions. We learn how your team actually works day-to-day</li>
+                <li><strong>Architecture</strong>. We design a system that connects to your website, email, accounting, and any other tools you use. Direct integrations. No middleware fees</li>
+                <li><strong>Build</strong>. Your CRM gets built with only the features your team needs. Clean interface. Fast. Intuitive. Your team can use it on day one without a 40-page training manual</li>
+                <li><strong>Automation</strong>. We wire up the follow-up sequences, lead scoring, notifications, and reporting that match your business logic—not a generic template</li>
+                <li><strong>Launch & Support</strong>. We deploy, train your team, and provide ongoing support. As your business evolves, your CRM evolves with it</li>
             </ul>
 
             <p>The result? A system that feels like it was always part of your business—because it was designed to be.</p>
@@ -367,11 +374,11 @@
             <p>A CRM is powerful on its own. But when it's connected to your other business tools, it becomes a command center. With a custom build, integration isn't an afterthought—it's baked into the foundation:</p>
 
             <ul>
-                <li><strong>Website + CRM</strong> — Every form submission automatically creates a lead in your CRM with the details the visitor provided. No Zapier. No copy-pasting</li>
-                <li><strong>Email + CRM</strong> — Every email you send and receive is logged against the customer's profile. Automated sequences trigger based on real customer behavior</li>
-                <li><strong>Accounting + CRM</strong> — See a customer's payment history, outstanding invoices, and lifetime value without switching tools or paying for a premium connector</li>
-                <li><strong>Marketing + CRM</strong> — Track which campaigns brought in which customers. Know your actual ROI on every marketing dollar—not a rough estimate from a third-party dashboard</li>
-                <li><strong>AI + CRM</strong> — Layer in AI agents that qualify leads, draft personalized follow-ups, and flag at-risk customers before they churn. This is where custom truly pulls ahead</li>
+                <li><strong>Website + CRM</strong>. Every form submission automatically creates a lead in your CRM with the details the visitor provided. No Zapier. No copy-pasting</li>
+                <li><strong>Email + CRM</strong>. Every email you send and receive is logged against the customer's profile. Automated sequences trigger based on real customer behavior</li>
+                <li><strong>Accounting + CRM</strong>. See a customer's payment history, outstanding invoices, and lifetime value without switching tools or paying for a premium connector</li>
+                <li><strong>Marketing + CRM</strong>. Track which campaigns brought in which customers. Know your actual ROI on every marketing dollar—not a rough estimate from a third-party dashboard</li>
+                <li><strong>AI + CRM</strong>. Layer in AI agents that qualify leads, draft personalized follow-ups, and flag at-risk customers before they churn. This is where custom truly pulls ahead</li>
             </ul>
 
             <div class="highlight-box">

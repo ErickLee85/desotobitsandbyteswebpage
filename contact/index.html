@@ -20,8 +20,15 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
     <link rel="stylesheet" href="contact.css">
     <link rel="canonical" href="https://www.desotobitsandbytes.com/contact">
 
@@ -245,7 +252,7 @@
                     <div class="contact-form-aside">
                         <p class="contact-form-eyebrow">Send a Message</p>
                         <h2>Tell me about your project</h2>
-                        <p>Share a few details below and I'll get back to you with next steps. Prefer email or a call? Both work — use the info above.</p>
+                        <p>Share a few details below and I'll get back to you with next steps. Prefer email or a call? Both work, use the info above.</p>
                         <div class="contact-form-perks">
                             <div class="contact-form-perk">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0091ff"><path d="m382-354 339-339-57-57-282 282-142-142-57 57 199 199Z"/></svg>

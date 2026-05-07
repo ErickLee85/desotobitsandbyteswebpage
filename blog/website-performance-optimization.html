@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -208,9 +215,9 @@
 
             <p>Before you can fix anything, you need to know where you stand. Here are two free tools that will tell you exactly how your site is performing:</p>
 
-            <p><strong>Google PageSpeed Insights</strong> — Go to <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">pagespeed.web.dev</a>, plug in your URL, and Google will score your site from 0-100 for both mobile and desktop. It also tells you exactly what's slowing things down.</p>
+            <p><strong>Google PageSpeed Insights</strong>. Go to <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">pagespeed.web.dev</a>, plug in your URL, and Google will score your site from 0-100 for both mobile and desktop. It also tells you exactly what's slowing things down.</p>
 
-            <p><strong>GTmetrix</strong> — Go to <a href="https://gtmetrix.com/" target="_blank" rel="noopener">gtmetrix.com</a> and enter your URL. You'll get a detailed waterfall chart showing exactly how long each element of your page takes to load. It's incredibly useful for pinpointing bottlenecks.</p>
+            <p><strong>GTmetrix</strong>. Go to <a href="https://gtmetrix.com/" target="_blank" rel="noopener">gtmetrix.com</a> and enter your URL. You'll get a detailed waterfall chart showing exactly how long each element of your page takes to load. It's incredibly useful for pinpointing bottlenecks.</p>
 
             <div class="highlight-box">
                 <p>If your PageSpeed score is below 50 on mobile, you have a serious problem. Below 70, there's meaningful room for improvement. Above 90? You're in great shape.</p>
@@ -231,10 +238,10 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Compress your images</strong> — Use tools like <a href="https://tinypng.com/" target="_blank" rel="noopener">TinyPNG</a> or <a href="https://squoosh.app/" target="_blank" rel="noopener">Squoosh</a> to reduce file sizes without visible quality loss. You can often cut image sizes by 60-80%.</li>
-                <li><strong>Use modern formats</strong> — WebP and AVIF are significantly smaller than JPEG and PNG at the same visual quality. Most browsers support them now.</li>
-                <li><strong>Resize to actual display size</strong> — Don't upload a 4000x3000 image if it's displayed at 800x600. Resize it first.</li>
-                <li><strong>Lazy load images below the fold</strong> — Add <code>loading="lazy"</code> to any image that isn't immediately visible when the page loads. The browser will only download them when the user scrolls near them.</li>
+                <li><strong>Compress your images</strong>. Use tools like <a href="https://tinypng.com/" target="_blank" rel="noopener">TinyPNG</a> or <a href="https://squoosh.app/" target="_blank" rel="noopener">Squoosh</a> to reduce file sizes without visible quality loss. You can often cut image sizes by 60-80%.</li>
+                <li><strong>Use modern formats</strong>. WebP and AVIF are significantly smaller than JPEG and PNG at the same visual quality. Most browsers support them now.</li>
+                <li><strong>Resize to actual display size</strong>. Don't upload a 4000x3000 image if it's displayed at 800x600. Resize it first.</li>
+                <li><strong>Lazy load images below the fold</strong>. Add <code>loading="lazy"</code> to any image that isn't immediately visible when the page loads. The browser will only download them when the user scrolls near them.</li>
             </ul>
 
             <div class="stat-callout">
@@ -251,10 +258,10 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Combine CSS and JavaScript files</strong> — Instead of loading 8 separate stylesheets, bundle them into one or two</li>
-                <li><strong>Remove plugins and scripts you don't use</strong> — That social media widget you installed two years ago? If nobody uses it, it's just dead weight</li>
-                <li><strong>Use CSS sprites for icons</strong> — Combine small images into a single file and use CSS to display the right portion</li>
-                <li><strong>Audit your third-party scripts</strong> — Analytics, chat widgets, tracking pixels, ad scripts. Each one adds requests and slows your page down. Be ruthless about what actually earns its keep</li>
+                <li><strong>Combine CSS and JavaScript files</strong>. Instead of loading 8 separate stylesheets, bundle them into one or two</li>
+                <li><strong>Remove plugins and scripts you don't use</strong>. That social media widget you installed two years ago? If nobody uses it, it's just dead weight</li>
+                <li><strong>Use CSS sprites for icons</strong>. Combine small images into a single file and use CSS to display the right portion</li>
+                <li><strong>Audit your third-party scripts</strong>. Analytics, chat widgets, tracking pixels, ad scripts. Each one adds requests and slows your page down. Be ruthless about what actually earns its keep</li>
             </ul>
 
             <h3>3. No Browser Caching</h3>
@@ -266,8 +273,8 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Set cache headers on your server</strong> — Static assets like images, CSS, and fonts should have long cache lifetimes (weeks or months)</li>
-                <li><strong>Use versioning for CSS/JS</strong> — Append a version number or hash to filenames (e.g., <code>styles.v2.css</code>) so browsers fetch the new version when you make changes, but keep the cached version otherwise</li>
+                <li><strong>Set cache headers on your server</strong>. Static assets like images, CSS, and fonts should have long cache lifetimes (weeks or months)</li>
+                <li><strong>Use versioning for CSS/JS</strong>. Append a version number or hash to filenames (e.g., <code>styles.v2.css</code>) so browsers fetch the new version when you make changes, but keep the cached version otherwise</li>
             </ul>
 
             <h3>4. Render-Blocking Resources</h3>
@@ -277,9 +284,9 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Defer non-essential JavaScript</strong> — Add the <code>defer</code> or <code>async</code> attribute to script tags that don't need to run immediately. This lets the page render while scripts download in the background</li>
-                <li><strong>Inline critical CSS</strong> — The CSS needed to render the visible part of your page (above the fold) can be inlined directly in the HTML. Everything else can load after</li>
-                <li><strong>Move scripts to the bottom</strong> — Unless a script absolutely must run before the page renders, put it right before the closing &lt;/body&gt; tag</li>
+                <li><strong>Defer non-essential JavaScript</strong>. Add the <code>defer</code> or <code>async</code> attribute to script tags that don't need to run immediately. This lets the page render while scripts download in the background</li>
+                <li><strong>Inline critical CSS</strong>. The CSS needed to render the visible part of your page (above the fold) can be inlined directly in the HTML. Everything else can load after</li>
+                <li><strong>Move scripts to the bottom</strong>. Unless a script absolutely must run before the page renders, put it right before the closing &lt;/body&gt; tag</li>
             </ul>
 
             <div class="highlight-box">
@@ -293,9 +300,9 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Upgrade to a quality host</strong> — You don't need to spend a fortune, but you do need a host with good server response times. Look for TTFB (Time to First Byte) under 200ms</li>
-                <li><strong>Consider a CDN</strong> — A Content Delivery Network stores copies of your site on servers around the world. Visitors get served from the server closest to them, which dramatically cuts load times. Cloudflare offers a solid free tier</li>
-                <li><strong>Use server-level caching</strong> — If your site is on WordPress, tools like WP Super Cache or W3 Total Cache can make a massive difference. For custom sites, look into server-side caching with your hosting provider</li>
+                <li><strong>Upgrade to a quality host</strong>. You don't need to spend a fortune, but you do need a host with good server response times. Look for TTFB (Time to First Byte) under 200ms</li>
+                <li><strong>Consider a CDN</strong>. A Content Delivery Network stores copies of your site on servers around the world. Visitors get served from the server closest to them, which dramatically cuts load times. Cloudflare offers a solid free tier</li>
+                <li><strong>Use server-level caching</strong>. If your site is on WordPress, tools like WP Super Cache or W3 Total Cache can make a massive difference. For custom sites, look into server-side caching with your hosting provider</li>
             </ul>
 
             <h3>6. Bloated Code</h3>
@@ -305,9 +312,9 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Minify CSS and JavaScript</strong> — Minification removes whitespace, comments, and unnecessary characters from your code. It doesn't change functionality—just reduces file size. Tools like Terser (JS) and CSSNano (CSS) handle this automatically</li>
-                <li><strong>Remove unused CSS</strong> — Tools like PurgeCSS scan your site and strip out any CSS rules that aren't actually used on any page. On a typical site, this can remove 50-90% of the stylesheet</li>
-                <li><strong>Audit your dependencies</strong> — That JavaScript library you imported for one animation? It might be 200KB. See if you can achieve the same effect with a few lines of vanilla CSS or JavaScript instead</li>
+                <li><strong>Minify CSS and JavaScript</strong>. Minification removes whitespace, comments, and unnecessary characters from your code. It doesn't change functionality—just reduces file size. Tools like Terser (JS) and CSSNano (CSS) handle this automatically</li>
+                <li><strong>Remove unused CSS</strong>. Tools like PurgeCSS scan your site and strip out any CSS rules that aren't actually used on any page. On a typical site, this can remove 50-90% of the stylesheet</li>
+                <li><strong>Audit your dependencies</strong>. That JavaScript library you imported for one animation? It might be 200KB. See if you can achieve the same effect with a few lines of vanilla CSS or JavaScript instead</li>
             </ul>
 
             <h3>7. No Text Compression</h3>
@@ -319,7 +326,7 @@
             <p><strong>How to fix it:</strong></p>
 
             <ul>
-                <li><strong>Enable GZIP or Brotli compression</strong> — Most hosting providers support this. It's usually a server configuration setting or a one-click option in your hosting panel. If you're using Cloudflare, it's on by default</li>
+                <li><strong>Enable GZIP or Brotli compression</strong>. Most hosting providers support this. It's usually a server configuration setting or a one-click option in your hosting panel. If you're using Cloudflare, it's on by default</li>
             </ul>
 
             <h2>Google's Core Web Vitals: What Actually Gets Measured</h2>
@@ -327,9 +334,9 @@
             <p>Google doesn't just say "your site is fast" or "your site is slow." They measure specific metrics called Core Web Vitals, and these directly influence your search rankings:</p>
 
             <ul>
-                <li><strong>Largest Contentful Paint (LCP)</strong> — How long it takes for the biggest visible element on the page to load. Should be under 2.5 seconds. This is usually your hero image or main heading</li>
-                <li><strong>Interaction to Next Paint (INP)</strong> — How quickly your page responds when someone clicks a button, taps a link, or types in a form field. Should be under 200 milliseconds</li>
-                <li><strong>Cumulative Layout Shift (CLS)</strong> — How much stuff moves around on the page while it's loading. Ever try to click a button and then an ad loads and pushes everything down? That's layout shift, and Google penalizes it. Should be under 0.1</li>
+                <li><strong>Largest Contentful Paint (LCP)</strong>. How long it takes for the biggest visible element on the page to load. Should be under 2.5 seconds. This is usually your hero image or main heading</li>
+                <li><strong>Interaction to Next Paint (INP)</strong>. How quickly your page responds when someone clicks a button, taps a link, or types in a form field. Should be under 200 milliseconds</li>
+                <li><strong>Cumulative Layout Shift (CLS)</strong>. How much stuff moves around on the page while it's loading. Ever try to click a button and then an ad loads and pushes everything down? That's layout shift, and Google penalizes it. Should be under 0.1</li>
             </ul>
 
             <div class="highlight-box">
@@ -341,11 +348,11 @@
             <p>If you're feeling overwhelmed, don't be. Start with these high-impact, low-effort fixes:</p>
 
             <ul>
-                <li><strong>Compress your images</strong> — Run every image on your site through TinyPNG or Squoosh. This alone can cut your page weight in half</li>
-                <li><strong>Add lazy loading to images</strong> — Add <code>loading="lazy"</code> to images below the fold. Five minutes of work for a noticeable improvement</li>
-                <li><strong>Remove unused plugins and scripts</strong> — Audit what's actually being loaded. If you don't need it, kill it</li>
-                <li><strong>Enable compression</strong> — Check if GZIP is enabled on your server. Google PageSpeed will tell you if it's not</li>
-                <li><strong>Test on mobile</strong> — Over 60% of web traffic is mobile. If your site is slow on a phone, it's slow for most of your visitors</li>
+                <li><strong>Compress your images</strong>. Run every image on your site through TinyPNG or Squoosh. This alone can cut your page weight in half</li>
+                <li><strong>Add lazy loading to images</strong>. Add <code>loading="lazy"</code> to images below the fold. Five minutes of work for a noticeable improvement</li>
+                <li><strong>Remove unused plugins and scripts</strong>. Audit what's actually being loaded. If you don't need it, kill it</li>
+                <li><strong>Enable compression</strong>. Check if GZIP is enabled on your server. Google PageSpeed will tell you if it's not</li>
+                <li><strong>Test on mobile</strong>. Over 60% of web traffic is mobile. If your site is slow on a phone, it's slow for most of your visitors</li>
             </ul>
 
             <div class="stat-callout">

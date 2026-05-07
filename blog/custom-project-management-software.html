@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -193,11 +200,11 @@
             <p>Let's be real about what you're actually getting when you subscribe to Asana, Monday.com, Jira, or ClickUp:</p>
 
             <ul>
-                <li><strong>Feature overload</strong> — These platforms have hundreds of features because they serve hundreds of industries. Your construction company doesn't need sprint planning. Your marketing agency doesn't need bug tracking. But you're paying for all of it</li>
-                <li><strong>Rigid workflows</strong> — Want a custom approval step between "In Progress" and "Review"? Want tasks to automatically route based on project type? Good luck. You'll spend hours with workarounds, automations that half-work, and support docs that assume you have a computer science degree</li>
-                <li><strong>Per-seat pricing that punishes growth</strong> — Monday.com's Pro plan runs $19/seat/month. A team of 20 is $380/month—$4,560/year. Scale to 50 people? That's $11,400/year. And that's before you hit the tier where you need Enterprise pricing "contact us" conversations</li>
-                <li><strong>Integration tax</strong> — Connecting your PM tool to your invoicing system, your CRM, your time tracker, or your client portal requires paid add-ons, Zapier subscriptions, or third-party middleware that breaks every time one platform pushes an update</li>
-                <li><strong>Your data lives on their servers</strong> — Their terms. Their pricing changes. Their API limitations. If Monday.com decides to sunset a feature you depend on, that's your problem to solve on their timeline</li>
+                <li><strong>Feature overload</strong>. These platforms have hundreds of features because they serve hundreds of industries. Your construction company doesn't need sprint planning. Your marketing agency doesn't need bug tracking. But you're paying for all of it</li>
+                <li><strong>Rigid workflows</strong>. Want a custom approval step between "In Progress" and "Review"? Want tasks to automatically route based on project type? Good luck. You'll spend hours with workarounds, automations that half-work, and support docs that assume you have a computer science degree</li>
+                <li><strong>Per-seat pricing that punishes growth</strong>. Monday.com's Pro plan runs $19/seat/month. A team of 20 is $380/month—$4,560/year. Scale to 50 people? That's $11,400/year. And that's before you hit the tier where you need Enterprise pricing "contact us" conversations</li>
+                <li><strong>Integration tax</strong>. Connecting your PM tool to your invoicing system, your CRM, your time tracker, or your client portal requires paid add-ons, Zapier subscriptions, or third-party middleware that breaks every time one platform pushes an update</li>
+                <li><strong>Your data lives on their servers</strong>. Their terms. Their pricing changes. Their API limitations. If Monday.com decides to sunset a feature you depend on, that's your problem to solve on their timeline</li>
             </ul>
 
             <div class="highlight-box">
@@ -328,11 +335,11 @@
             <p>Now add the hidden costs most people forget:</p>
 
             <ul>
-                <li><strong>Zapier subscription</strong> — $69-$149/month to connect your PM tool to the rest of your stack</li>
-                <li><strong>Lost productivity</strong> — Your team spending 20+ minutes a day navigating features they don't need or updating statuses in a workflow that doesn't match how they actually work</li>
-                <li><strong>Training costs</strong> — Every new hire needs onboarding on a complex tool they'll only use 30% of</li>
-                <li><strong>Workaround time</strong> — Hours spent building automations, custom fields, and hacks to make a generic tool approximate your real workflow</li>
-                <li><strong>Missed insights</strong> — Generic reporting tells you what happened. AI trained on your data tells you what's about to happen and what to do about it</li>
+                <li><strong>Zapier subscription</strong>. $69-$149/month to connect your PM tool to the rest of your stack</li>
+                <li><strong>Lost productivity</strong>. Your team spending 20+ minutes a day navigating features they don't need or updating statuses in a workflow that doesn't match how they actually work</li>
+                <li><strong>Training costs</strong>. Every new hire needs onboarding on a complex tool they'll only use 30% of</li>
+                <li><strong>Workaround time</strong>. Hours spent building automations, custom fields, and hacks to make a generic tool approximate your real workflow</li>
+                <li><strong>Missed insights</strong>. Generic reporting tells you what happened. AI trained on your data tells you what's about to happen and what to do about it</li>
             </ul>
 
             <div class="stat-callout">
@@ -347,11 +354,11 @@
             <p>Here's how we approach building a project management tool for a business:</p>
 
             <ul>
-                <li><strong>Discovery</strong> — We sit with your team. We watch how projects actually move through your organization—not how you think they should move. We document every handoff, every approval step, every place someone opens a different tool because the PM software can't handle it</li>
-                <li><strong>Architecture</strong> — We design the system around your workflow. Direct integrations with your existing tools—CRM, accounting, time tracking, client portals. No middleware. No glue code that breaks</li>
-                <li><strong>AI Layer</strong> — We connect AI to your historical project data. Past timelines, team performance, resource allocation, risk patterns—everything your AI needs to make predictions and recommendations specific to your business</li>
-                <li><strong>Build</strong> — Clean interface. Role-based views so everyone sees exactly what's relevant to them. Fast. Intuitive. Your team can use it on day one without a certification course</li>
-                <li><strong>Launch & Iterate</strong> — We deploy, train your team, provide ongoing support. As you take on new project types or restructure your team, the tool adapts—because it's built to</li>
+                <li><strong>Discovery</strong>. We sit with your team. We watch how projects actually move through your organization—not how you think they should move. We document every handoff, every approval step, every place someone opens a different tool because the PM software can't handle it</li>
+                <li><strong>Architecture</strong>. We design the system around your workflow. Direct integrations with your existing tools—CRM, accounting, time tracking, client portals. No middleware. No glue code that breaks</li>
+                <li><strong>AI Layer</strong>. We connect AI to your historical project data. Past timelines, team performance, resource allocation, risk patterns—everything your AI needs to make predictions and recommendations specific to your business</li>
+                <li><strong>Build</strong>. Clean interface. Role-based views so everyone sees exactly what's relevant to them. Fast. Intuitive. Your team can use it on day one without a certification course</li>
+                <li><strong>Launch & Iterate</strong>. We deploy, train your team, provide ongoing support. As you take on new project types or restructure your team, the tool adapts—because it's built to</li>
             </ul>
 
             <p>The result isn't just project management software. It's a system that makes your team faster, your estimates more accurate, your resource planning proactive instead of reactive, and your clients more informed—all without anyone spending their afternoon updating a status board nobody reads.</p>

@@ -8,53 +8,21 @@
     <meta name="description" content="Custom software development company in Olive Branch, MS serving DeSoto County, Southaven, Hernando, Horn Lake, and Memphis. We build CRM systems, web applications, mobile apps, and business automation software for local businesses.">
     <meta name="robots" content="index, follow">
     <title>Custom Software Development Olive Branch MS | Web & Mobile Apps DeSoto County | Desoto Bits & Bytes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://challenges.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" async defer></script>
+
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet" async defer>
     <link rel="stylesheet" href="./styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
     <link rel="canonical" href="https://www.desotobitsandbytes.com/">
-        <script type="speculationrules">
-        {
-            "prefetch": [
-                {
-                    "source": "list",
-                    "urls": [
-                        "/",
-                        "/ai_integration",
-                        "/api",
-                        "/auth/login/",
-                        "/blog",
-                        "/blog/ai-tasks-your-business-should-automate.html",
-                        "/blog/custom-project-management-software.html",
-                        "/blog/diy-website-builder-vs-hiring-a-developer.html",
-                        "/blog/how-ai-agents-save-time-in-sales-support-and-operations.html",
-                        "/blog/llm-cost-trap-hiring-developer.html",
-                        "/blog/integrating-ai-into-your-business.html",
-                        "/blog/mobile-app-mistakes-companies-make.html",
-                        "/blog/mvp-guide-for-entrepreneurs.html",
-                        "/blog/outgrown-microsoft-excel.html",
-                        "/blog/semantic-html-for-seo.html",
-                        "/blog/website-performance-optimization.html",
-                        "/blog/why-you-need-a-crm.html",
-                        "/blog/why-your-business-needs-a-website.html",
-                        "/company-websites",
-                        "/contact",
-                        "/mobile-apps",
-                        "/web-applications"
-                    ]
-                }
-            ]
-        }
-        </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -554,7 +522,7 @@
 
                     <div class="stats-right">
                         <div class="stats-image">
-                            <img src="./images/software_dev.jpg" alt="Erick Crowne - Founder and Lead Developer at Desoto Bits and Bytes" loading="eager">
+                            <img src="./images/software_dev.jpg" alt="Erick Crowne - Founder and Lead Developer at Desoto Bits and Bytes" loading="lazy">
                         </div>
                         
                         <div class="stats-content">
@@ -1205,7 +1173,7 @@
                                     <p class="blog-preview-card-excerpt">LLM pricing is getting more expensive, less predictable, and harder to justify for many businesses. Here's why relying too heavily on AI can cost more than hiring a developer in the first place.</p>
                                     <div class="blog-preview-card-footer">
                                         <div class="blog-preview-author">
-                                            <img src="./images/erick.png" alt="Erick Crowne" class="blog-preview-author-img">
+                                            <img src="./images/erick.png" alt="Erick Crowne" class="blog-preview-author-img" loading="lazy">
                                             <div class="blog-preview-author-info">
                                                 <span class="blog-preview-author-name">Erick Crowne</span>
                                                 <span class="blog-preview-date">May 6, 2026 · 9 min read</span>
@@ -1699,6 +1667,10 @@
             });
 
     </script> -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" async defer></script>
     
      <script type="importmap">
         {
@@ -1835,9 +1807,7 @@
                 // Not Christmas - hide the overlay immediately
                 loader.classList.add('disabled');
                 setTimeout(() => {
-                    if (loader.parentNode) {
-                        document.body.removeChild(loader);
-                    }
+                    loader.remove();
                 }, 0);
                 return;
             }
@@ -1981,9 +1951,7 @@
                             setTimeout(() => {
                                 loader.classList.add('disabled');
                                 setTimeout(() => {
-                                    if (loader.parentNode) {
-                                        document.body.removeChild(loader);
-                                    }
+                                    loader.remove();
                                 }, 500);
                             }, 1500);
                         }

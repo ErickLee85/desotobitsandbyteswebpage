@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -193,8 +200,8 @@
             <p>Here's what makes agents different from basic automation:</p>
 
             <ul>
-                <li><strong>Traditional Automation</strong> — "If X happens, do Y." Rigid. Breaks when anything unexpected occurs.</li>
-                <li><strong>AI Agents</strong> — "Here's the goal. Figure out how to get there." Flexible. Adapts to context, handles edge cases, learns over time.</li>
+                <li><strong>Traditional Automation</strong>. "If X happens, do Y." Rigid. Breaks when anything unexpected occurs.</li>
+                <li><strong>AI Agents</strong>. "Here's the goal. Figure out how to get there." Flexible. Adapts to context, handles edge cases, learns over time.</li>
             </ul>
 
             <p>A simple automated email sends the same template to every customer. An AI agent reads the customer's history, understands the context of their inquiry, drafts a personalized response, and decides whether to escalate to a human—all in seconds.</p>
@@ -235,10 +242,10 @@
             <p>AI agents can be connected to your existing databases to:</p>
 
             <ul>
-                <li><strong>Query data conversationally</strong> — Ask questions, get answers. It's that simple.</li>
-                <li><strong>Generate automated reports</strong> — Daily, weekly, monthly summaries delivered to your inbox without lifting a finger</li>
-                <li><strong>Spot anomalies</strong> — Flag unusual patterns before they become problems (sudden drop in orders, inventory discrepancies, billing errors)</li>
-                <li><strong>Update records intelligently</strong> — An agent can process incoming data, validate it against existing records, and update your database with human-level accuracy</li>
+                <li><strong>Query data conversationally</strong>. Ask questions, get answers. It's that simple.</li>
+                <li><strong>Generate automated reports</strong>. Daily, weekly, monthly summaries delivered to your inbox without lifting a finger</li>
+                <li><strong>Spot anomalies</strong>. Flag unusual patterns before they become problems (sudden drop in orders, inventory discrepancies, billing errors)</li>
+                <li><strong>Update records intelligently</strong>. An agent can process incoming data, validate it against existing records, and update your database with human-level accuracy</li>
             </ul>
 
             <div class="highlight-box">
@@ -264,10 +271,10 @@
             <p>AI can analyze your customer data to identify patterns that humans would miss (or take weeks to find):</p>
 
             <ul>
-                <li><strong>Lead scoring</strong> — Automatically rank prospects based on behavior and likelihood to convert</li>
-                <li><strong>Personalized outreach</strong> — Generate emails, proposals, and content tailored to each prospect's industry and pain points</li>
-                <li><strong>Churn prediction</strong> — Identify customers who are likely to leave before they actually do, giving you a chance to intervene</li>
-                <li><strong>Market analysis</strong> — Monitor competitors, industry trends, and customer sentiment automatically</li>
+                <li><strong>Lead scoring</strong>. Automatically rank prospects based on behavior and likelihood to convert</li>
+                <li><strong>Personalized outreach</strong>. Generate emails, proposals, and content tailored to each prospect's industry and pain points</li>
+                <li><strong>Churn prediction</strong>. Identify customers who are likely to leave before they actually do, giving you a chance to intervene</li>
+                <li><strong>Market analysis</strong>. Monitor competitors, industry trends, and customer sentiment automatically</li>
             </ul>
 
             <p>Your sales team stops guessing and starts closing. That's the difference.</p>
@@ -328,10 +335,10 @@
             <p>Let's flip the conversation. Instead of asking "How much does AI cost?", ask "How much is doing things manually costing me?"</p>
 
             <ul>
-                <li><strong>Time</strong> — How many hours per week does your team spend on tasks a machine could handle?</li>
-                <li><strong>Errors</strong> — How much do manual data entry mistakes cost you annually?</li>
-                <li><strong>Speed</strong> — How many leads go cold because your response time is measured in hours instead of seconds?</li>
-                <li><strong>Scaling</strong> — Can you handle 10x the volume without hiring 10x the people?</li>
+                <li><strong>Time</strong>. How many hours per week does your team spend on tasks a machine could handle?</li>
+                <li><strong>Errors</strong>. How much do manual data entry mistakes cost you annually?</li>
+                <li><strong>Speed</strong>. How many leads go cold because your response time is measured in hours instead of seconds?</li>
+                <li><strong>Scaling</strong>. Can you handle 10x the volume without hiring 10x the people?</li>
             </ul>
 
             <div class="stat-callout">
@@ -348,11 +355,11 @@
             <p>Real AI integration requires:</p>
 
             <ul>
-                <li><strong>Architecture planning</strong> — How does AI fit into your existing tech stack?</li>
-                <li><strong>Data security</strong> — Your customer data and business data need enterprise-level protection</li>
-                <li><strong>Custom training</strong> — The AI needs to understand YOUR business, not generic responses</li>
-                <li><strong>Ongoing optimization</strong> — AI improves over time, but only if someone is monitoring and refining it</li>
-                <li><strong>Scalability</strong> — What works for 100 customers needs to work for 10,000</li>
+                <li><strong>Architecture planning</strong>. How does AI fit into your existing tech stack?</li>
+                <li><strong>Data security</strong>. Your customer data and business data need enterprise-level protection</li>
+                <li><strong>Custom training</strong>. The AI needs to understand YOUR business, not generic responses</li>
+                <li><strong>Ongoing optimization</strong>. AI improves over time, but only if someone is monitoring and refining it</li>
+                <li><strong>Scalability</strong>. What works for 100 customers needs to work for 10,000</li>
             </ul>
 
             <div class="highlight-box">
@@ -364,10 +371,10 @@
             <p>Don't try to automate everything at once. That's a recipe for an expensive mess. Instead:</p>
 
             <ul>
-                <li><strong>Pick ONE pain point</strong> — What's the most time-consuming, repetitive process in your business right now?</li>
-                <li><strong>Measure the baseline</strong> — How much time/money does this process currently cost you?</li>
-                <li><strong>Start small, prove value</strong> — Automate that one thing. Measure the improvement. Then expand.</li>
-                <li><strong>Work with experts</strong> — Partner with a team that understands both AI and business operations</li>
+                <li><strong>Pick ONE pain point</strong>. What's the most time-consuming, repetitive process in your business right now?</li>
+                <li><strong>Measure the baseline</strong>. How much time/money does this process currently cost you?</li>
+                <li><strong>Start small, prove value</strong>. Automate that one thing. Measure the improvement. Then expand.</li>
+                <li><strong>Work with experts</strong>. Partner with a team that understands both AI and business operations</li>
             </ul>
 
             <p>The businesses winning with AI aren't the ones who went all-in on day one. They're the ones who started smart, proved ROI on a single use case, and scaled from there.</p>

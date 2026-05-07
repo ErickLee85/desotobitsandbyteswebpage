@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -200,9 +207,9 @@
             <p>Google's Search Quality Rater Guidelines make a clear distinction between three types of content on a webpage:</p>
 
             <ul>
-                <li><strong>Main Content</strong> — The actual article, product info, or service description. This is what search engines want to index and rank.</li>
-                <li><strong>Supplementary Content</strong> — Navigation, sidebars, related links. Useful, but not what Google is there to crawl.</li>
-                <li><strong>Advertising Content</strong> — Ads, banners, promotions. Definitely not what search engines are interested in indexing.</li>
+                <li><strong>Main Content</strong>. The actual article, product info, or service description. This is what search engines want to index and rank.</li>
+                <li><strong>Supplementary Content</strong>. Navigation, sidebars, related links. Useful, but not what Google is there to crawl.</li>
+                <li><strong>Advertising Content</strong>. Ads, banners, promotions. Definitely not what search engines are interested in indexing.</li>
             </ul>
 
             <p>Here's the problem: if your entire page is a maze of &lt;div&gt; tags, Google has to guess which part is the main content and which part is the navigation bar. Semantic HTML eliminates the guesswork.</p>
@@ -267,10 +274,10 @@
             <p>This is where semantic HTML stops being just an SEO conversation and becomes a human one. Accessibility isn't optional—and semantic HTML is the foundation of an accessible website.</p>
 
             <ul>
-                <li><strong>Screen readers</strong> — Blind and visually impaired users rely on screen readers that navigate your page by its HTML structure. Without semantic elements, a screen reader has no idea what's a menu, what's an article, or what's a sidebar. Everything sounds the same.</li>
-                <li><strong>Keyboard navigation</strong> — Users with motor disabilities who navigate by keyboard depend on properly structured HTML to move through your site logically. Semantic elements create natural tab order and focus management.</li>
-                <li><strong>Responsive design</strong> — Properly tagged content adapts more predictably across screen sizes. When content is semantically organized, it doesn't break or shift in confusing ways on mobile.</li>
-                <li><strong>Future-proofing</strong> — As browsers and assistive technologies evolve, semantic HTML ensures your site stays compatible. You're building for tomorrow, not just today.</li>
+                <li><strong>Screen readers</strong>. Blind and visually impaired users rely on screen readers that navigate your page by its HTML structure. Without semantic elements, a screen reader has no idea what's a menu, what's an article, or what's a sidebar. Everything sounds the same.</li>
+                <li><strong>Keyboard navigation</strong>. Users with motor disabilities who navigate by keyboard depend on properly structured HTML to move through your site logically. Semantic elements create natural tab order and focus management.</li>
+                <li><strong>Responsive design</strong>. Properly tagged content adapts more predictably across screen sizes. When content is semantically organized, it doesn't break or shift in confusing ways on mobile.</li>
+                <li><strong>Future-proofing</strong>. As browsers and assistive technologies evolve, semantic HTML ensures your site stays compatible. You're building for tomorrow, not just today.</li>
             </ul>
 
             <div class="stat-callout">
@@ -285,13 +292,13 @@
             <p>After building and auditing dozens of websites, here are the semantic HTML mistakes we see over and over:</p>
 
             <ul>
-                <li><strong>Div soup</strong> — The entire page is nested &lt;div&gt; tags, 20 layers deep, with zero semantic meaning. Google sees a blob. Screen readers see chaos.</li>
-                <li><strong>Skipping heading levels</strong> — Jumping from &lt;h1&gt; straight to &lt;h4&gt; because you liked the font size. Headings aren't for styling—they're for structure. Use CSS for aesthetics.</li>
-                <li><strong>Multiple &lt;h1&gt; tags</strong> — A page should have one &lt;h1&gt;. Period. More than one confuses the page hierarchy for both crawlers and users.</li>
-                <li><strong>Using headings for styling</strong> — Making text larger by wrapping it in an &lt;h2&gt; when it's not actually a heading. This pollutes your content structure.</li>
-                <li><strong>No &lt;main&gt; element</strong> — Surprisingly common, even on modern sites. Without it, you're forcing Google to guess where the important content lives.</li>
-                <li><strong>Missing alt text on images</strong> — If an image doesn't have alt text, it doesn't exist for screen readers or Google Image search. Describe what's in the image. Keep it concise.</li>
-                <li><strong>Inconsistent structure</strong> — Using semantic elements on some pages but not others. Google appreciates consistency across your entire site.</li>
+                <li><strong>Div soup</strong>. The entire page is nested &lt;div&gt; tags, 20 layers deep, with zero semantic meaning. Google sees a blob. Screen readers see chaos.</li>
+                <li><strong>Skipping heading levels</strong>. Jumping from &lt;h1&gt; straight to &lt;h4&gt; because you liked the font size. Headings aren't for styling—they're for structure. Use CSS for aesthetics.</li>
+                <li><strong>Multiple &lt;h1&gt; tags</strong>. A page should have one &lt;h1&gt;. Period. More than one confuses the page hierarchy for both crawlers and users.</li>
+                <li><strong>Using headings for styling</strong>. Making text larger by wrapping it in an &lt;h2&gt; when it's not actually a heading. This pollutes your content structure.</li>
+                <li><strong>No &lt;main&gt; element</strong>. Surprisingly common, even on modern sites. Without it, you're forcing Google to guess where the important content lives.</li>
+                <li><strong>Missing alt text on images</strong>. If an image doesn't have alt text, it doesn't exist for screen readers or Google Image search. Describe what's in the image. Keep it concise.</li>
+                <li><strong>Inconsistent structure</strong>. Using semantic elements on some pages but not others. Google appreciates consistency across your entire site.</li>
             </ul>
 
             <div class="highlight-box">
@@ -340,12 +347,12 @@
             <p>You don't need to rewrite your entire website overnight. Start with these high-impact changes:</p>
 
             <ul>
-                <li><strong>Add a &lt;main&gt; element</strong> — Wrap your primary content area. This single change gives Google the clearest signal about what to index.</li>
-                <li><strong>Replace structural &lt;div&gt;s</strong> — Swap out &lt;div class="header"&gt; for &lt;header&gt;, &lt;div class="nav"&gt; for &lt;nav&gt;, and so on. Same layout, better structure.</li>
-                <li><strong>Fix your heading hierarchy</strong> — One &lt;h1&gt; per page. &lt;h2&gt;s for main sections. &lt;h3&gt;s for subsections. No skipping levels.</li>
-                <li><strong>Audit your images</strong> — Every &lt;img&gt; should have descriptive alt text. Not "image1.jpg." Actually describe what's in the picture.</li>
-                <li><strong>Use &lt;aside&gt; for non-essential content</strong> — Sidebars, callout boxes, ads—anything that's not the main point of the page.</li>
-                <li><strong>Test with a screen reader</strong> — Try navigating your site with a screen reader. You'll immediately find the gaps in your semantic structure.</li>
+                <li><strong>Add a &lt;main&gt; element</strong>. Wrap your primary content area. This single change gives Google the clearest signal about what to index.</li>
+                <li><strong>Replace structural &lt;div&gt;s</strong>. Swap out &lt;div class="header"&gt; for &lt;header&gt;, &lt;div class="nav"&gt; for &lt;nav&gt;, and so on. Same layout, better structure.</li>
+                <li><strong>Fix your heading hierarchy</strong>. One &lt;h1&gt; per page. &lt;h2&gt;s for main sections. &lt;h3&gt;s for subsections. No skipping levels.</li>
+                <li><strong>Audit your images</strong>. Every &lt;img&gt; should have descriptive alt text. Not "image1.jpg." Actually describe what's in the picture.</li>
+                <li><strong>Use &lt;aside&gt; for non-essential content</strong>. Sidebars, callout boxes, ads—anything that's not the main point of the page.</li>
+                <li><strong>Test with a screen reader</strong>. Try navigating your site with a screen reader. You'll immediately find the gaps in your semantic structure.</li>
             </ul>
 
             <h2>The Bottom Line</h2>

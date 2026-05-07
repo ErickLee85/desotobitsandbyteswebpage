@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -203,11 +210,11 @@
             <p>For entrepreneurs, especially those running small or local companies, budgeting is everything. Here's why the MVP approach wins:</p>
 
             <ul>
-                <li><strong>Quick Validation</strong> — Confirm if customers want your solution before overcommitting</li>
-                <li><strong>Cost Savings</strong> — Avoid building features no one uses</li>
-                <li><strong>Faster Time to Market</strong> — Launch in weeks, not months</li>
-                <li><strong>Investor Appeal</strong> — A working MVP shows traction, making it easier to raise funds</li>
-                <li><strong>Real Feedback</strong> — Learn from actual users, not assumptions</li>
+                <li><strong>Quick Validation</strong>. Confirm if customers want your solution before overcommitting</li>
+                <li><strong>Cost Savings</strong>. Avoid building features no one uses</li>
+                <li><strong>Faster Time to Market</strong>. Launch in weeks, not months</li>
+                <li><strong>Investor Appeal</strong>. A working MVP shows traction, making it easier to raise funds</li>
+                <li><strong>Real Feedback</strong>. Learn from actual users, not assumptions</li>
             </ul>
 
             <p>In 2026, AI is a game-changer for budget MVPs—tools like AI code generators can cut dev time by 30-40%, keeping costs down.</p>
@@ -336,11 +343,11 @@
             <p>We've seen these sink plenty of promising ideas:</p>
 
             <ul>
-                <li><strong>Skipping validation</strong> — Building products no one actually wants</li>
-                <li><strong>Feature creep</strong> — Adding "just one more thing" until costs balloon</li>
-                <li><strong>Ignoring security</strong> — Even MVPs need HTTPS and basic protection</li>
-                <li><strong>Not measuring success</strong> — Define KPIs upfront so you know what winning looks like</li>
-                <li><strong>Going too cheap</strong> — Some things (like architecture decisions) matter from day one</li>
+                <li><strong>Skipping validation</strong>. Building products no one actually wants</li>
+                <li><strong>Feature creep</strong>. Adding "just one more thing" until costs balloon</li>
+                <li><strong>Ignoring security</strong>. Even MVPs need HTTPS and basic protection</li>
+                <li><strong>Not measuring success</strong>. Define KPIs upfront so you know what winning looks like</li>
+                <li><strong>Going too cheap</strong>. Some things (like architecture decisions) matter from day one</li>
             </ul>
 
             <h2>When to DIY vs. When to Hire</h2>

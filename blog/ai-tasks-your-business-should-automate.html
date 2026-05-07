@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -245,10 +252,10 @@
             <p>AI can handle the entire front end of this process:</p>
 
             <ul>
-                <li><strong>Categorize instantly</strong> — Billing question? Support issue? Sales inquiry? Partnership request? AI reads the content and tags it in seconds</li>
-                <li><strong>Route to the right person</strong> — Based on the category, urgency, and even the specific customer, AI sends the email directly to whoever should handle it</li>
-                <li><strong>Draft responses to common questions</strong> — "What are your hours?" "Do you offer refunds?" "How do I reset my password?" AI can generate accurate responses for your team to review and send with one click</li>
-                <li><strong>Prioritize by urgency</strong> — A customer threatening to cancel gets flagged immediately. A vendor asking about your holiday schedule can wait</li>
+                <li><strong>Categorize instantly</strong>. Billing question? Support issue? Sales inquiry? Partnership request? AI reads the content and tags it in seconds</li>
+                <li><strong>Route to the right person</strong>. Based on the category, urgency, and even the specific customer, AI sends the email directly to whoever should handle it</li>
+                <li><strong>Draft responses to common questions</strong>. "What are your hours?" "Do you offer refunds?" "How do I reset my password?" AI can generate accurate responses for your team to review and send with one click</li>
+                <li><strong>Prioritize by urgency</strong>. A customer threatening to cancel gets flagged immediately. A vendor asking about your holiday schedule can wait</li>
             </ul>
 
             <div class="stat-callout">
@@ -267,10 +274,10 @@
             <p>AI-powered reporting can:</p>
 
             <ul>
-                <li><strong>Pull data from multiple sources automatically</strong> — Your CRM, your accounting software, your inventory system, your website analytics—all consolidated into one view without anyone lifting a finger</li>
-                <li><strong>Generate summaries in plain English</strong> — Instead of digging through tables, you get "Revenue is up 12% this month, driven primarily by repeat customers in the 25-34 demographic. New customer acquisition dropped 8%—here are three possible reasons."</li>
-                <li><strong>Deliver reports on a schedule</strong> — Daily sales summary at 8 AM. Weekly pipeline review every Monday. Monthly financial overview on the 1st. Automatically.</li>
-                <li><strong>Spot trends humans miss</strong> — AI can identify patterns across thousands of data points that no human would catch reviewing spreadsheets manually</li>
+                <li><strong>Pull data from multiple sources automatically</strong>. Your CRM, your accounting software, your inventory system, your website analytics—all consolidated into one view without anyone lifting a finger</li>
+                <li><strong>Generate summaries in plain English</strong>. Instead of digging through tables, you get "Revenue is up 12% this month, driven primarily by repeat customers in the 25-34 demographic. New customer acquisition dropped 8%—here are three possible reasons."</li>
+                <li><strong>Deliver reports on a schedule</strong>. Daily sales summary at 8 AM. Weekly pipeline review every Monday. Monthly financial overview on the 1st. Automatically.</li>
+                <li><strong>Spot trends humans miss</strong>. AI can identify patterns across thousands of data points that no human would catch reviewing spreadsheets manually</li>
             </ul>
 
             <div class="highlight-box">
@@ -286,10 +293,10 @@
             <p>AI scheduling doesn't just book appointments. It manages the entire lifecycle:</p>
 
             <ul>
-                <li><strong>Handles the back-and-forth</strong> — Customer says "I'm free Tuesday or Thursday afternoon." AI checks your calendar, finds an open slot, and confirms—no human involved</li>
-                <li><strong>Sends confirmations and reminders</strong> — Automated confirmation immediately. Reminder 24 hours before. Another reminder 1 hour before. No-show rate drops dramatically</li>
-                <li><strong>Reschedules without drama</strong> — Customer needs to move the meeting? AI handles it, updates the calendar, and notifies everyone affected</li>
-                <li><strong>Triggers follow-up sequences</strong> — After a consultation, AI sends a thank-you email, a proposal follow-up three days later, and a check-in a week after that. Automatically. Every. Single. Time.</li>
+                <li><strong>Handles the back-and-forth</strong>. Customer says "I'm free Tuesday or Thursday afternoon." AI checks your calendar, finds an open slot, and confirms—no human involved</li>
+                <li><strong>Sends confirmations and reminders</strong>. Automated confirmation immediately. Reminder 24 hours before. Another reminder 1 hour before. No-show rate drops dramatically</li>
+                <li><strong>Reschedules without drama</strong>. Customer needs to move the meeting? AI handles it, updates the calendar, and notifies everyone affected</li>
+                <li><strong>Triggers follow-up sequences</strong>. After a consultation, AI sends a thank-you email, a proposal follow-up three days later, and a check-in a week after that. Automatically. Every. Single. Time.</li>
             </ul>
 
             <p>This ties directly into what we covered in our <a href="why-you-need-a-crm.html">CRM article</a>: 79% of marketing leads never convert to sales, and the primary cause is lack of follow-up. AI doesn't forget. It doesn't get busy. It follows up with every single lead on the exact timeline you define.</p>
@@ -333,10 +340,10 @@
             <p>AI doesn't replace your brand voice—but it eliminates the blank-page problem:</p>
 
             <ul>
-                <li><strong>Social media drafts</strong> — AI generates post ideas and first drafts based on your industry, your recent blog posts, and trending topics relevant to your audience. You review, tweak the tone, and post</li>
-                <li><strong>Email campaign copy</strong> — Need a promotional email for a new service? A re-engagement email for cold leads? AI drafts it in your brand voice, with subject line variations to test</li>
-                <li><strong>Blog outlines and first drafts</strong> — AI can research a topic, structure the argument, and write a solid first draft. You add your expertise and personality</li>
-                <li><strong>Repurpose existing content</strong> — That 2,000-word blog post? AI turns it into 10 social media posts, an email summary, and a set of FAQ responses. One piece of content becomes a month of material</li>
+                <li><strong>Social media drafts</strong>. AI generates post ideas and first drafts based on your industry, your recent blog posts, and trending topics relevant to your audience. You review, tweak the tone, and post</li>
+                <li><strong>Email campaign copy</strong>. Need a promotional email for a new service? A re-engagement email for cold leads? AI drafts it in your brand voice, with subject line variations to test</li>
+                <li><strong>Blog outlines and first drafts</strong>. AI can research a topic, structure the argument, and write a solid first draft. You add your expertise and personality</li>
+                <li><strong>Repurpose existing content</strong>. That 2,000-word blog post? AI turns it into 10 social media posts, an email summary, and a set of FAQ responses. One piece of content becomes a month of material</li>
             </ul>
 
             <div class="highlight-box">

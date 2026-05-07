@@ -43,9 +43,16 @@
         defer
     ></script>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="blog.css">
     <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
 
     <script type="application/ld+json">
     {
@@ -254,11 +261,11 @@
             <p>Excel has hard limits, and growing businesses hit them faster than you'd think:</p>
 
             <ul>
-                <li><strong>Row limit</strong> — Excel maxes out at 1,048,576 rows. That sounds like a lot until you're logging daily transactions or tracking thousands of products</li>
-                <li><strong>Performance degradation</strong> — Long before you hit the row limit, Excel starts crawling. Complex formulas, conditional formatting, and large datasets turn your workbook into molasses</li>
-                <li><strong>File size</strong> — A bloated spreadsheet can exceed 100MB. Try emailing that to your accountant</li>
-                <li><strong>No indexing</strong> — Databases use indexes to find data instantly. Excel searches row by row. The bigger the file, the slower the search</li>
-                <li><strong>Calculation chains</strong> — Every formula recalculates when you change a single cell. In a large workbook, this can freeze your screen for minutes</li>
+                <li><strong>Row limit</strong>. Excel maxes out at 1,048,576 rows. That sounds like a lot until you're logging daily transactions or tracking thousands of products</li>
+                <li><strong>Performance degradation</strong>. Long before you hit the row limit, Excel starts crawling. Complex formulas, conditional formatting, and large datasets turn your workbook into molasses</li>
+                <li><strong>File size</strong>. A bloated spreadsheet can exceed 100MB. Try emailing that to your accountant</li>
+                <li><strong>No indexing</strong>. Databases use indexes to find data instantly. Excel searches row by row. The bigger the file, the slower the search</li>
+                <li><strong>Calculation chains</strong>. Every formula recalculates when you change a single cell. In a large workbook, this can freeze your screen for minutes</li>
             </ul>
 
             <p>A properly designed database handles millions of records without breaking a sweat. Queries that would freeze Excel return results in milliseconds. And as your data grows, the system scales with it—not against it.</p>
@@ -275,11 +282,11 @@
             <p>When your business reaches the point where you need data to trigger actions, Excel is fundamentally the wrong tool. Here's what real software does that a spreadsheet can't:</p>
 
             <ul>
-                <li><strong>Automated workflows</strong> — New order comes in? System generates an invoice, notifies the warehouse, updates inventory, and sends the customer a confirmation email. All without a human touching anything</li>
-                <li><strong>Real-time dashboards</strong> — Not a chart you manually update every Friday. A live dashboard that shows revenue, pipeline, customer health, and team performance as it happens</li>
-                <li><strong>Notifications and alerts</strong> — Inventory below threshold? Customer hasn't ordered in 90 days? Payment overdue? The system tells you before it becomes a problem</li>
-                <li><strong>API integrations</strong> — Connect your data to your website, your payment processor, your shipping provider, your accounting software. Data flows between systems automatically</li>
-                <li><strong>AI-powered insights</strong> — Layer in AI agents that analyze your data, spot trends, predict churn, and suggest actions. Try getting that from a pivot table</li>
+                <li><strong>Automated workflows</strong>. New order comes in? System generates an invoice, notifies the warehouse, updates inventory, and sends the customer a confirmation email. All without a human touching anything</li>
+                <li><strong>Real-time dashboards</strong>. Not a chart you manually update every Friday. A live dashboard that shows revenue, pipeline, customer health, and team performance as it happens</li>
+                <li><strong>Notifications and alerts</strong>. Inventory below threshold? Customer hasn't ordered in 90 days? Payment overdue? The system tells you before it becomes a problem</li>
+                <li><strong>API integrations</strong>. Connect your data to your website, your payment processor, your shipping provider, your accounting software. Data flows between systems automatically</li>
+                <li><strong>AI-powered insights</strong>. Layer in AI agents that analyze your data, spot trends, predict churn, and suggest actions. Try getting that from a pivot table</li>
             </ul>
 
             <div class="highlight-box">
@@ -293,11 +300,11 @@
             <p>But "well enough" has a cost:</p>
 
             <ul>
-                <li><strong>Bad data leads to bad decisions</strong> — If your spreadsheet has errors (and statistically, it does), you're making business decisions based on wrong numbers</li>
-                <li><strong>Employee frustration</strong> — Your team spends hours wrestling with Excel instead of doing their actual jobs. That kills morale and productivity</li>
-                <li><strong>Security risks</strong> — A spreadsheet with customer data sitting on someone's desktop or floating through email is a data breach waiting to happen. No encryption. No access controls. No audit trail</li>
-                <li><strong>Opportunity cost</strong> — Every hour spent on manual data management is an hour not spent on growth, strategy, or serving customers</li>
-                <li><strong>Scaling ceiling</strong> — You literally cannot grow past a certain point on spreadsheets. The system breaks before your business does</li>
+                <li><strong>Bad data leads to bad decisions</strong>. If your spreadsheet has errors (and statistically, it does), you're making business decisions based on wrong numbers</li>
+                <li><strong>Employee frustration</strong>. Your team spends hours wrestling with Excel instead of doing their actual jobs. That kills morale and productivity</li>
+                <li><strong>Security risks</strong>. A spreadsheet with customer data sitting on someone's desktop or floating through email is a data breach waiting to happen. No encryption. No access controls. No audit trail</li>
+                <li><strong>Opportunity cost</strong>. Every hour spent on manual data management is an hour not spent on growth, strategy, or serving customers</li>
+                <li><strong>Scaling ceiling</strong>. You literally cannot grow past a certain point on spreadsheets. The system breaks before your business does</li>
             </ul>
 
             <h2>What the Upgrade Actually Looks Like</h2>
@@ -329,11 +336,11 @@
             <p>Here's how we approach it when a business comes to us with spreadsheet sprawl:</p>
 
             <ul>
-                <li><strong>Audit</strong> — We look at every spreadsheet your business relies on. What data matters. What processes they support. Where the pain points are</li>
-                <li><strong>Design</strong> — We design a database schema and application architecture that consolidates everything into one system. Clean, fast, and built for your workflow</li>
-                <li><strong>Build</strong> — We build your custom application—web-based, mobile-ready, with the exact features your team needs. No bloat. No learning curve</li>
-                <li><strong>Migrate</strong> — Your existing spreadsheet data gets imported into the new system. We clean it, deduplicate it, and structure it properly so you start with a solid foundation</li>
-                <li><strong>Train & Launch</strong> — Your team gets trained on a system that's simpler than the spreadsheets they were using. Because it was designed for them</li>
+                <li><strong>Audit</strong>. We look at every spreadsheet your business relies on. What data matters. What processes they support. Where the pain points are</li>
+                <li><strong>Design</strong>. We design a database schema and application architecture that consolidates everything into one system. Clean, fast, and built for your workflow</li>
+                <li><strong>Build</strong>. We build your custom application—web-based, mobile-ready, with the exact features your team needs. No bloat. No learning curve</li>
+                <li><strong>Migrate</strong>. Your existing spreadsheet data gets imported into the new system. We clean it, deduplicate it, and structure it properly so you start with a solid foundation</li>
+                <li><strong>Train & Launch</strong>. Your team gets trained on a system that's simpler than the spreadsheets they were using. Because it was designed for them</li>
             </ul>
 
             <div class="stat-callout">
