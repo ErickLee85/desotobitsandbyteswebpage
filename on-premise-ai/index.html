@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Private, on-premise AI in Olive Branch, MS. We install and secure ChatGPT-style AI on your own hardware so your data never leaves your building. Serving DeSoto County, Southaven, Hernando, Horn Lake, and Memphis.">
+    <meta name="keywords" content="on-premise AI Olive Branch MS, private AI DeSoto County, local LLM Southaven Mississippi, self-hosted AI Memphis TN, private ChatGPT for business, Ollama setup, Open WebUI install, local AI server Hernando MS, HIPAA friendly AI Mississippi, secure AI for law firms Memphis, offline AI Horn Lake MS">
+    <meta name="author" content="Desoto Bits & Bytes">
+    <meta name="robots" content="index, follow">
+    <title>On-Premise AI Olive Branch MS | Private Local AI for DeSoto County Businesses | Desoto Bits & Bytes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./on-premise-ai.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.classList.add('fonts-loading');
+        (document.fonts && document.fonts.ready
+            ? Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 2000); })])
+            : Promise.resolve()
+        ).then(function () { document.documentElement.classList.remove('fonts-loading'); });
+    </script>
+    <link rel="canonical" href="https://www.desotobitsandbytes.com/on-premise-ai">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.desotobitsandbytes.com/on-premise-ai">
+    <meta property="og:title" content="Private On-Premise AI in Olive Branch MS | Desoto Bits & Bytes">
+    <meta property="og:description" content="ChatGPT-style AI running on your own hardware. Your data never leaves your building. Serving DeSoto County, Southaven, Hernando, and Memphis.">
+    <meta property="og:image" content="https://www.desotobitsandbytes.com/images/logo_light.png">
+    <meta property="og:site_name" content="Desoto Bits & Bytes">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.desotobitsandbytes.com/on-premise-ai">
+    <meta name="twitter:title" content="Private On-Premise AI in Olive Branch MS | Desoto Bits & Bytes">
+    <meta name="twitter:description" content="ChatGPT-style AI running on your own hardware. Your data never leaves your building.">
+    <meta name="twitter:image" content="https://www.desotobitsandbytes.com/images/logo_light.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.desotobitsandbytes.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "On-Premise AI",
+                "item": "https://www.desotobitsandbytes.com/on-premise-ai"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "On-Premise AI Deployment",
+            "url": "https://www.desotobitsandbytes.com/on-premise-ai",
+            "serviceType": "Private On-Premise AI Installation & Management",
+            "provider": {
+                "@type": "LocalBusiness",
+                "name": "Desoto Bits & Bytes",
+                "image": "https://www.desotobitsandbytes.com/images/logo_light.png",
+                "description": "Veteran-owned software development company in Mississippi",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Olive Branch",
+                    "addressRegion": "MS",
+                    "addressCountry": "US"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "34.9618",
+                    "longitude": "-89.8297"
+                },
+                "telephone": "+16629321047",
+                "priceRange": "$"
+            },
+            "description": "Private AI assistants running on hardware you own. We deploy open-source models like Llama and IBM Granite with Ollama, Open WebUI, Docker, VPN access with MFA, and private document search.",
+            "areaServed": [
+                { "@type": "City", "name": "Olive Branch", "containedInPlace": { "@type": "State", "name": "Mississippi" } },
+                { "@type": "City", "name": "Southaven", "containedInPlace": { "@type": "State", "name": "Mississippi" } },
+                { "@type": "City", "name": "Hernando", "containedInPlace": { "@type": "State", "name": "Mississippi" } },
+                { "@type": "City", "name": "Horn Lake", "containedInPlace": { "@type": "State", "name": "Mississippi" } },
+                { "@type": "City", "name": "Memphis", "containedInPlace": { "@type": "State", "name": "Tennessee" } },
+                { "@type": "AdministrativeArea", "name": "DeSoto County, Mississippi" }
+            ],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "On-Premise AI Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Private AI Server Setup",
+                            "description": "Installation of open-source AI models on your own workstation or server"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Private Document Chat",
+                            "description": "Ask questions about files on your NAS or file server without uploading them to the cloud"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Secure Remote AI Access",
+                            "description": "VPN access with multi-factor authentication so your team can use the AI from anywhere"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "AI Hardware Consulting",
+                            "description": "Right-sized hardware recommendations for running local AI models"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Managed On-Premise AI Support",
+                            "description": "Ongoing model updates, security patching, and monitoring"
+                        }
+                    }
+                ]
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is on-premise AI?",
+                "acceptedAnswer": { "@type": "Answer", "text": "On-premise AI is a ChatGPT-style assistant that runs entirely on hardware you own, inside your office. Prompts, answers, and documents are processed locally and are never sent to a third-party cloud provider." }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need expensive hardware to run AI locally?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Smaller 7-8 billion parameter models run on a modern workstation with 16-32 GB of RAM, even without a GPU. A dedicated GPU and more memory make responses faster and support more users and larger models." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can my team use the private AI outside the office?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. We set up a VPN with multi-factor authentication so approved staff can securely reach your AI from laptops and phones without exposing the server to the public internet." }
+            },
+            {
+                "@type": "Question",
+                "name": "How good are local models compared to ChatGPT?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Modern open-source models like Llama and IBM Granite handle drafting, summarizing, and answering questions about your documents very well. The largest cloud models are still stronger at some complex reasoning tasks, so we help you choose the right mix." }
+            },
+            {
+                "@type": "Question",
+                "name": "Are there monthly fees?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The open-source models and software we deploy have no per-user or per-token fees. Your costs are the hardware, our setup, and an optional support plan." }
+            }
+        ]
+    }
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJTRDWHLY7"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PJTRDWHLY7');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="top-div">
+              <div class="logo">
+            <img src="../images/logo_light.png" alt="Desoto Bits and Bytes">
+        </div>
+        <div class="nav-top">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+            <a href="../auth/login/" class="portal-login">
+               <div class="inside-div">
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm146.5-204.5Q340-521 340-580t40.5-99.5Q421-720 480-720t99.5 40.5Q620-639 620-580t-40.5 99.5Q539-440 480-440t-99.5-40.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm100-95.5q47-15.5 86-44.5-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160q53 0 100-15.5ZM523-537q17-17 17-43t-17-43q-17-17-43-17t-43 17q-17 17-17 43t17 43q17 17 43 17t43-17Zm-43-43Zm0 360Z"/></svg>
+                Portal
+               </div>
+            </a>
+            <div class="phone getQuoteBtn">
+                <div class="inside-div">
+                Get in touch
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+                </div>
+            </div>
+        <div class="header-cta">
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+        </div>
+        </div>
+        <div class="bottom-div">
+            <nav>
+            <a href="/">Home</a>
+            <div class="nav-dropdown">
+                <a href="#" class="service-link">
+                    Services
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff">
+                        <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                    </svg>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/mobile-apps" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M200-40v-80q33 0 56.5 23.5T280-40h-80Zm160 0q0-66-47-113t-113-47v-80q100 0 170 70t70 170h-80Zm160 0q0-134-93-227t-227-93v-80q83 0 156 31.5T483-323q54 54 85.5 127T600-40h-80Zm240-800v124q18 7 29 22t11 34v80q0 19-11 34t-29 22v404q0 33-23.5 56.5T680-40v-800H280v320h-80v-320q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840ZM508.5-731.5Q520-743 520-760t-11.5-28.5Q497-800 480-800t-28.5 11.5Q440-777 440-760t11.5 28.5Q463-720 480-720t28.5-11.5ZM680-40v-800 800Z"/></svg>
+                        Mobile Apps
+                    </a>
+                    <a href="/web-applications" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M287-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM80-160v-112q0-33 17-62t47-44q51-26 115-44t141-18h14q6 0 12 2-8 18-13.5 37.5T404-360h-4q-71 0-127.5 18T180-306q-9 5-14.5 14t-5.5 20v32h252q6 21 16 41.5t22 38.5H80Zm560 40-12-60q-12-5-22.5-10.5T584-204l-58 18-40-68 46-40q-2-14-2-26t2-26l-46-40 40-68 58 18q11-8 21.5-13.5T628-460l12-60h80l12 60q12 5 22.5 11t21.5 15l58-20 40 70-46 40q2 12 2 25t-2 25l46 40-40 68-58-18q-11 8-21.5 13.5T732-180l-12 60h-80Zm96.5-143.5Q760-287 760-320t-23.5-56.5Q713-400 680-400t-56.5 23.5Q600-353 600-320t23.5 56.5Q647-240 680-240t56.5-23.5Zm-280-320Q480-607 480-640t-23.5-56.5Q433-720 400-720t-56.5 23.5Q320-673 320-640t23.5 56.5Q367-560 400-560t56.5-23.5ZM400-640Zm12 400Z"/></svg>
+                        Web Applications
+                    </a>
+                    <a href="/company-websites" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M838-65 720-183v89h-80v-226h226v80h-90l118 118-56 57ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 20-2 40t-6 40h-82q5-20 7.5-40t2.5-40q0-20-2.5-40t-7.5-40H654q3 20 4.5 40t1.5 40q0 20-1.5 40t-4.5 40h-80q3-20 4.5-40t1.5-40q0-20-1.5-40t-4.5-40H386q-3 20-4.5 40t-1.5 40q0 20 1.5 40t4.5 40h134v80H404q12 43 31 82.5t45 75.5q20 0 40-2.5t40-4.5v82q-20 2-40 4.5T480-80ZM170-400h136q-3-20-4.5-40t-1.5-40q0-20 1.5-40t4.5-40H170q-5 20-7.5 40t-2.5 40q0 20 2.5 40t7.5 40Zm34-240h118q9-37 22.5-72.5T376-782q-55 18-99 54.5T204-640Zm172 462q-18-34-31.5-69.5T322-320H204q29 51 73 87.5t99 54.5Zm28-462h152q-12-43-31-82.5T480-798q-26 36-45 75.5T404-640Zm234 0h118q-29-51-73-87.5T584-782q18 34 31.5 69.5T638-640Z"/></svg>
+                        Company Websites
+                    </a>
+                    <a href="/api" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m430-30-56-57 73-73H313q-13 35-43.5 57.5T200-80q-50 0-85-35t-35-85q0-39 22.5-69.5T160-313v-334q-35-13-57.5-43.5T80-760q0-50 35-85t85-35q39 0 69.5 22.5T313-800h134l-73-73 56-57 170 170-170 170-56-57 73-73H313q-9 26-28 45t-45 28v334q26 9 45 28t28 45h134l-73-73 56-57 170 170L430-30Zm245-85q-35-35-35-85 0-40 22.5-70.5T720-313v-334q-35-12-57.5-42.5T640-760q0-50 35-85t85-35q50 0 85 35t35 85q0 40-22.5 70.5T800-647v334q35 13 57.5 43.5T880-200q0 50-35 85t-85 35q-50 0-85-35Zm-475-45q17 0 28.5-11.5T240-200q0-17-11.5-28.5T200-240q-17 0-28.5 11.5T160-200q0 17 11.5 28.5T200-160Zm560 0q17 0 28.5-11.5T800-200q0-17-11.5-28.5T760-240q-17 0-28.5 11.5T720-200q0 17 11.5 28.5T760-160ZM200-720q17 0 28.5-11.5T240-760q0-17-11.5-28.5T200-800q-17 0-28.5 11.5T160-760q0 17 11.5 28.5T200-720Zm560 0q17 0 28.5-11.5T800-760q0-17-11.5-28.5T760-800q-17 0-28.5 11.5T720-760q0 17 11.5 28.5T760-720ZM200-200Zm560 0ZM200-760Zm560 0Z"/></svg>
+                        APIs
+                    </a>
+                    <a href="/ai_integration" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/></svg>
+                        AI Integrations
+                    </a>
+                    <a href="/on-premise-ai" class="dropdown-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M300-720q-25 0-42.5 17.5T240-660q0 25 17.5 42.5T300-600q25 0 42.5-17.5T360-660q0-25-17.5-42.5T300-720Zm0 400q-25 0-42.5 17.5T240-260q0 25 17.5 42.5T300-200q25 0 42.5-17.5T360-260q0-25-17.5-42.5T300-320ZM160-840h640q17 0 28.5 11.5T840-800v280q0 17-11.5 28.5T800-480H160q-17 0-28.5-11.5T120-520v-280q0-17 11.5-28.5T160-840Zm40 80v200h560v-200H200Zm-40 320h640q17 0 28.5 11.5T840-400v280q0 17-11.5 28.5T800-80H160q-17 0-28.5-11.5T120-120v-280q0-17 11.5-28.5T160-440Zm40 80v200h560v-200H200Zm0-400v200-200Zm0 400v200-200Z"/></svg>
+                        On-Premise AI
+                    </a>
+                </div>
+            </div>
+            <a href="/contact">Contact</a>
+            <a href="/blog">Blog</a>
+        </nav>
+
+        </div>
+    </header>
+    <div class="mobile-menu">
+        <nav>
+            <a href="/" class="mobile-menu-link">Home</a>
+            <div class="mobile-menu-section-label">Services</div>
+            <a href="/mobile-apps" class="mobile-menu-link mobile-service-link">Mobile Apps</a>
+            <a href="/web-applications" class="mobile-menu-link mobile-service-link">Web Applications</a>
+            <a href="/company-websites" class="mobile-menu-link mobile-service-link">Company Websites</a>
+            <a href="/api" class="mobile-menu-link mobile-service-link">APIs</a>
+            <a href="/ai_integration" class="mobile-menu-link mobile-service-link">AI Integrations</a>
+            <a href="/on-premise-ai" class="mobile-menu-link mobile-service-link">On-Premise AI</a>
+            <a href="/contact" class="mobile-menu-link">Contact</a>
+            <a href="/blog" class="mobile-menu-link">Blog</a>
+        </nav>
+        <a href="tel:16629321047" class="phone">(662) 932-1047</a>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main>
+            <!-- Hero -->
+            <section class="op-hero">
+                <div class="op-hero-container">
+                    <div class="op-hero-header">
+                        <h2 class="op-hero-subtitle">Services</h2>
+                        <h1 class="op-hero-title">Private, On-Premise AI in DeSoto County, MS</h1>
+                        <p class="op-hero-subtext">
+                            Get the power of ChatGPT <span>running on hardware you own</span>, inside your office.
+                            Your prompts, files, and customer data <span>never leave your building</span>.
+                            We design, install, and secure private AI for businesses in Olive Branch, Southaven, Hernando, Horn Lake, and Memphis.
+                        </p>
+                        <div class="op-hero-cta">
+                            <button class="op-cta getQuoteBtn">Get a free AI assessment</button>
+                            <button class="op-learn-more">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="op-terminal" aria-label="Example of a private AI server answering a question about local files">
+                        <div class="op-terminal-bar">
+                            <span></span><span></span><span></span>
+                            <p>ai-server &mdash; your office</p>
+                        </div>
+                        <div class="op-terminal-body" id="opTerminalBody"></div>
+                        <div class="op-terminal-badges">
+                            <span class="op-badge">● Local only</span>
+                            <span class="op-badge">● VPN + MFA</span>
+                            <span class="op-badge">● No per-token fees</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why on-premise -->
+            <section class="op-why" id="op-why">
+                <div class="op-why-container">
+                    <span class="op-section-eyebrow">Why keep AI in-house</span>
+                    <h2 class="op-section-heading">Your AI. Your hardware. Your data.</h2>
+                    <p class="op-section-lead">
+                        Cloud AI tools are convenient, but every prompt you type and every file you upload is processed on someone else's servers under someone else's data policy.
+                        On-premise AI gives your team the same productivity boost while you stay in full control.
+                    </p>
+                    <div class="op-card-grid">
+                        <article class="op-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm296.5-143.5Q560-327 560-360t-23.5-56.5Q513-440 480-440t-56.5 23.5Q400-393 400-360t23.5 56.5Q447-280 480-280t56.5-23.5ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg>
+                            <h3>Data never leaves</h3>
+                            <p>Contracts, patient notes, financials, and customer records stay on your network. Nothing is sent to OpenAI, Google, or anyone else.</p>
+                        </article>
+                        <article class="op-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q-44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z"/></svg>
+                            <h3>No per-seat AI bills</h3>
+                            <p>Open-source models have no monthly subscription or per-token charges. Add users without watching a usage meter climb.</p>
+                        </article>
+                        <article class="op-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>
+                            <h3>Compliance-friendly</h3>
+                            <p>Keeping data on-site makes it far easier to meet HIPAA, legal privilege, and client confidentiality requirements than sending it to a public AI service.</p>
+                        </article>
+                        <article class="op-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M790-56 414-434q-47 11-87.5 33T254-346l-84-86q32-32 69-56t79-42l-90-90q-41 21-76.5 46.5T84-516L0-602q32-32 66.5-57.5T140-708l-84-84 56-56 736 736-58 56Zm-310-64q-42 0-71-29.5T380-220q0-42 29-71t71-29q42 0 71 29t29 71q0 41-29 70.5T480-120Zm236-238-29-29-29-29-144-144q81 8 151.5 41T790-432l-74 74Zm160-158q-77-77-178.5-120.5T480-680q-21 0-40.5 1.5T400-674L298-776q44-12 89.5-18t92.5-6q142 0 265 53t215 145l-84 86Z"/></svg>
+                            <h3>Works offline</h3>
+                            <p>Your AI keeps answering even if the internet goes down or a cloud vendor has an outage, changes pricing, or retires a model.</p>
+                        </article>
+                        <article class="op-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+                            <h3>Chat with your files</h3>
+                            <p>Connect the AI to your NAS or file server and ask questions about your own documents, SOPs, and archives in plain English.</p>
+                        </article>
+                        <article class="op-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z"/></svg>
+                            <h3>Built for your team</h3>
+                            <p>A clean, browser-based chat interface with user accounts, so anyone in your office can use it on day one with no command line required.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stack -->
+            <section class="op-stack">
+                <div class="op-stack-container">
+                    <div>
+                        <span class="op-section-eyebrow">What we install</span>
+                        <h2 class="op-section-heading">A proven, open-source AI stack</h2>
+                        <p class="op-section-lead">
+                            We build on transparent, community-vetted open-source tools so there's no black box and no vendor lock-in.
+                            Every layer runs in isolated containers on your machine, and we hand you full ownership when we're done.
+                        </p>
+                        <ul class="op-check-list">
+                            <li>Open-source models like Meta Llama and IBM Granite, sized for your hardware</li>
+                            <li>Ollama model runtime for fast, local inference</li>
+                            <li>Open WebUI, a ChatGPT-style interface in any browser</li>
+                            <li>Docker containers for isolation, easy updates, and backups</li>
+                            <li>Windows 11 with WSL2 or a dedicated Linux server &mdash; your choice</li>
+                            <li>Private document search connected to your NAS or file server</li>
+                            <li>VPN with multi-factor authentication for secure remote and mobile access</li>
+                        </ul>
+                    </div>
+                    <div class="op-layers" aria-label="On-premise AI architecture">
+                        <div class="op-layer is-access">
+                            <span class="op-layer-name">Secure remote access</span>
+                            <span class="op-layer-tech">VPN + MFA &middot; phones &amp; laptops</span>
+                        </div>
+                        <div class="op-layer">
+                            <span class="op-layer-name">Chat interface</span>
+                            <span class="op-layer-tech">Open WebUI &middot; user accounts</span>
+                        </div>
+                        <div class="op-layer is-models">
+                            <span class="op-layer-name">AI models</span>
+                            <span class="op-layer-tech">Llama &middot; Granite &middot; 7B&ndash;70B</span>
+                        </div>
+                        <div class="op-layer">
+                            <span class="op-layer-name">Model runtime</span>
+                            <span class="op-layer-tech">Ollama</span>
+                        </div>
+                        <div class="op-layer">
+                            <span class="op-layer-name">Containers</span>
+                            <span class="op-layer-tech">Docker</span>
+                        </div>
+                        <div class="op-layer">
+                            <span class="op-layer-name">Operating system</span>
+                            <span class="op-layer-tech">Windows 11 + WSL2 or Linux</span>
+                        </div>
+                        <div class="op-layer is-hardware">
+                            <span class="op-layer-name">Your hardware &amp; storage</span>
+                            <span class="op-layer-tech">Workstation / server &middot; NAS</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hardware tiers -->
+            <section class="op-tiers">
+                <div class="op-tiers-container">
+                    <span class="op-section-eyebrow">Hardware</span>
+                    <h2 class="op-section-heading">Right-sized for your business</h2>
+                    <p class="op-section-lead">
+                        You don't need a data center. Many businesses start on a machine they already own.
+                        We'll recommend the smallest setup that comfortably handles your team and workload.
+                    </p>
+                    <div class="op-tier-grid">
+                        <article class="op-tier">
+                            <span class="op-tier-label">Starter</span>
+                            <h3>Existing workstation</h3>
+                            <p>Ideal for a solo professional or small office testing private AI for drafting, summaries, and Q&amp;A.</p>
+                            <dl>
+                                <dt>Memory</dt><dd>16&ndash;32 GB RAM</dd>
+                                <dt>GPU</dt><dd>Optional</dd>
+                                <dt>Storage</dt><dd>500 GB+ SSD</dd>
+                                <dt>Models</dt><dd>7B&ndash;8B</dd>
+                                <dt>Users</dt><dd>1&ndash;3</dd>
+                            </dl>
+                        </article>
+                        <article class="op-tier is-featured">
+                            <span class="op-tier-label">Most popular</span>
+                            <h3>Dedicated AI workstation</h3>
+                            <p>A purpose-built machine that serves your whole office quickly, with private document chat on your NAS.</p>
+                            <dl>
+                                <dt>Memory</dt><dd>64&ndash;96 GB RAM</dd>
+                                <dt>GPU</dt><dd>Single modern GPU</dd>
+                                <dt>Storage</dt><dd>1 TB+ NVMe</dd>
+                                <dt>Models</dt><dd>7B&ndash;14B, fast</dd>
+                                <dt>Users</dt><dd>5&ndash;25</dd>
+                            </dl>
+                        </article>
+                        <article class="op-tier">
+                            <span class="op-tier-label">Advanced</span>
+                            <h3>GPU AI server</h3>
+                            <p>For larger teams or heavier reasoning work that benefits from bigger models and more concurrent users.</p>
+                            <dl>
+                                <dt>Memory</dt><dd>128 GB+ RAM</dd>
+                                <dt>GPU</dt><dd>Multi-GPU</dd>
+                                <dt>Storage</dt><dd>2 TB+ NVMe</dd>
+                                <dt>Models</dt><dd>Up to 70B</dd>
+                                <dt>Users</dt><dd>25+</dd>
+                            </dl>
+                        </article>
+                    </div>
+                    <p class="op-tiers-note">Specs are typical starting points. Final recommendations depend on the models you need, response-speed expectations, and how many people will use the system at once.</p>
+                </div>
+            </section>
+
+            <!-- Process -->
+            <section class="op-process">
+                <div class="op-process-container">
+                    <span class="op-section-eyebrow">How it works</span>
+                    <h2 class="op-section-heading">From idea to private AI in weeks</h2>
+                    <p class="op-section-lead">A clear, hands-on process run by our Olive Branch team &mdash; on-site across DeSoto County and the Memphis area.</p>
+                    <ol class="op-steps">
+                        <li class="op-step">
+                            <h3>Assess</h3>
+                            <p>We learn your use cases, data sensitivity, team size, and any compliance needs.</p>
+                        </li>
+                        <li class="op-step">
+                            <h3>Spec hardware</h3>
+                            <p>We size the hardware, reuse what you have where possible, and help you source the rest.</p>
+                        </li>
+                        <li class="op-step">
+                            <h3>Install &amp; harden</h3>
+                            <p>We deploy the models, runtime, and chat interface in containers and lock down the network.</p>
+                        </li>
+                        <li class="op-step">
+                            <h3>Connect your data</h3>
+                            <p>We link your NAS or file shares so the AI can answer questions about your own documents.</p>
+                        </li>
+                        <li class="op-step">
+                            <h3>Train &amp; support</h3>
+                            <p>We train your team and offer ongoing updates, new models, and monitoring.</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Security -->
+            <section class="op-security">
+                <div class="op-security-container">
+                    <div>
+                        <span class="op-section-eyebrow">Security first</span>
+                        <h2 class="op-section-heading">Private by design, verified in practice</h2>
+                        <p class="op-section-lead">
+                            Running AI locally is the foundation, but we don't stop there. Every deployment is locked down so only your people can reach it,
+                            and so you can confirm nothing is quietly leaving your network.
+                        </p>
+                    </div>
+                    <ul class="op-security-list">
+                        <li>
+                            <strong>VPN with multi-factor authentication</strong>
+                            <span>Remote and mobile access goes through your own VPN with MFA. The AI server is never exposed directly to the internet.</span>
+                        </li>
+                        <li>
+                            <strong>Container isolation</strong>
+                            <span>Models and the chat interface run in isolated Docker containers with only the access they need.</span>
+                        </li>
+                        <li>
+                            <strong>Outbound traffic controls &amp; monitoring</strong>
+                            <span>Firewall rules block unnecessary outbound connections, and we can monitor network traffic so you can verify no data leaves.</span>
+                        </li>
+                        <li>
+                            <strong>Open-source transparency</strong>
+                            <span>We use widely reviewed open-source software and models, and keep them patched and up to date.</span>
+                        </li>
+                        <li>
+                            <strong>User accounts &amp; access control</strong>
+                            <span>Each person gets their own login, and admins control who can use which models and document collections.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="op-faq-section" id="op-faq">
+                <h2 class="op-faq-heading">Frequently Asked Questions</h2>
+                <div class="op-faq-container">
+                    <div class="op-faq-item">
+                        <h3 class="op-faq-question">What is on-premise AI?</h3>
+                        <div class="op-faq-answer">
+                            <p>On-premise AI is a ChatGPT-style assistant that runs entirely on hardware you own, inside your office. Prompts, answers, and documents are processed locally and are never sent to a third-party cloud provider. It's a great fit for law firms, medical and dental offices, accountants, and any DeSoto County business that handles sensitive information.</p>
+                        </div>
+                    </div>
+                    <div class="op-faq-item">
+                        <h3 class="op-faq-question">Do I need expensive hardware to run AI locally?</h3>
+                        <div class="op-faq-answer">
+                            <p>Not necessarily. Smaller 7&ndash;8 billion parameter models run on a modern workstation with 16&ndash;32 GB of RAM, even without a GPU. A dedicated GPU and more memory make responses faster and let you support more users and larger models. We'll recommend the right setup during your free assessment.</p>
+                        </div>
+                    </div>
+                    <div class="op-faq-item">
+                        <h3 class="op-faq-question">Can my team use the private AI outside the office?</h3>
+                        <div class="op-faq-answer">
+                            <p>Yes. We set up a VPN with multi-factor authentication so approved staff can securely reach your AI from laptops and phones, without exposing the server to the public internet.</p>
+                        </div>
+                    </div>
+                    <div class="op-faq-item">
+                        <h3 class="op-faq-question">How good are local models compared to ChatGPT?</h3>
+                        <div class="op-faq-answer">
+                            <p>Modern open-source models like Llama and IBM Granite handle drafting, summarizing, and answering questions about your documents very well. The largest cloud models are still stronger at some complex reasoning tasks, so we'll help you decide what belongs on-premise and where a <a href="/ai_integration">cloud AI integration</a> might make sense.</p>
+                        </div>
+                    </div>
+                    <div class="op-faq-item">
+                        <h3 class="op-faq-question">Are there monthly fees?</h3>
+                        <div class="op-faq-answer">
+                            <p>The open-source models and software we deploy have no per-user or per-token fees. Your costs are the hardware, our setup, and an optional support plan for updates, new models, and monitoring.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </main>
+
+                    <footer class="footer-section">
+                        <div class="footer-wrapper">
+                            <p class="footer-copyright">© 2026 Desoto Bits and Bytes LLC. All rights reserved.</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/p/Desoto-Bits-Bytes-LLC-61560805109211/" class="social-link">
+                                    <img src="../images/socials/facebook-1-svgrepo-com.svg" alt="Desoto Bits & Bytes Facebook Profile" class="social-icon">
+                                </a>
+                                <a href="https://www.linkedin.com/company/desoto-bits-bytes/" class="social-link">
+                                    <img src="../images/socials/linkedin-1-svgrepo-com.svg" alt="Desoto Bits & Bytes LinkedIn Profile" class="social-icon">
+                                </a>
+                                <a href="https://www.google.com/search?q=desoto+bits+and+bytes" class="social-link">
+                                    <img src="../images/socials/google-svgrepo-com.svg" alt="Google Business Profile" class="social-icon">
+                                </a>
+                            </div>
+                            <div class="footer-links">
+                                <a href="https://www.freeprivacypolicy.com/live/b6693b85-aefd-4a64-bca6-1269b1a274ef" class="footer-link">Privacy Policy</a>
+                                <a href="https://www.termsfeed.com/live/92d8be9e-76e1-4b92-8653-7215d6ef66c7" class="footer-link">Terms of Service</a>
+                            </div>
+                        </div>
+            </footer>
+        </div>
+    </div>
+        <div class="contact-overlay" id="contactOverlay">
+            <div class="contact-form-panel" id="contactFormPanel">
+                <button class="contact-close-btn" id="contactCloseBtn" aria-label="Close contact form">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </button>
+                <div class="contact-form-content">
+                    <h2 class="contact-form-title">Hey! How can we help?</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name & Company</label>
+                                <input type="text" id="name" name="name" placeholder="John from Apple" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="john@apple.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell us more about your project</label>
+                            <textarea id="message" name="message" rows="8" placeholder="Something about your great idea" required></textarea>
+                        </div>
+                        <div id="contactFormTurnstile"></div>
+                        <div class="contact-form-footer">
+                            <p class="contact-email-text">Email us <a href="mailto:admin@desotobitsandbytes.com" class="contact-email-link">admin@desotobitsandbytes.com</a></p>
+                            <button type="submit" class="btn btn-submit">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('click', () => {
+            window.location.href = '/';
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js" integrity="sha512-BQAAkzDHfly7jPwVhh0SpGxbvjRNEapCNkJ0VNSMFervZLsaeUch4P92skLoD70NXWlI1GOgrXRfR50b/quSSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollSmoother.min.js" integrity="sha512-t4hwZimhnCKT3YLAsEcAcRDkngVFfCcUIfNLIjklrIZAZKD+GfQMP7HbRcsVHxNS48WRBSywNU1uSM2zzLQt1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" integrity="sha512-yOZoZc/D5ZPHwjBduLkgeGHhFlQ7CsslA5D1egpQgeV1QcV4OdCcwmRLkH7p/hEHHF1cJp3H2OpGpd7oELFGxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" integrity="sha512-dgqdovLK5r/NMiV5YfWA0xC94DKGrm+6q1OZpuWHm+uBGLTck6wu58WAX9lmy8wec6cVnsgxbPJ60DtmNFnfgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/MotionPathPlugin.min.js" integrity="sha512-vuNgw6lF+p97XmL9lFpbQZWBXxIFnwUVt7J/uknE4NJru5GJjjhIAauXdDtNdezqOJFnit+M3AeaM+gZ93hlmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./on-premise-ai.js"></script>
+    <script src="../script.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+</html>

@@ -1189,19 +1189,8 @@
             justify-items: center;
         }
 
-        /* Center bottom row of 2 cards across 3-col grid */
-        .services-grid .service-card:nth-child(4) {
-            grid-column: 1 / 2;
-            justify-self: end;
-            width: 100%;
-        }
-        .services-grid .service-card:nth-child(5) {
-            grid-column: 2 / 3;
-            justify-self: start;
-            width: 100%;
-        }
-
         .service-card {
+            width: 100%;
             background: radial-gradient(circle 300px at 80% -30%, #1a1f2e, #0f1111);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 20px;
@@ -1989,20 +1978,6 @@
                 gap: 1rem;
             }
 
-            .services-grid .service-card:nth-child(4),
-            .services-grid .service-card:nth-child(5) {
-                grid-column: auto;
-                justify-self: auto;
-                margin: 0;
-            }
-
-            /* Center the 5th card on its own row */
-            .services-grid .service-card:nth-child(5) {
-                grid-column: 1 / -1;
-                max-width: 50%;
-                justify-self: center;
-            }
-
             .service-card-title {
                 font-size: 1.6rem;
             }
@@ -2023,10 +1998,6 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .services-grid .service-card:nth-child(5) {
-                max-width: 100%;
             }
 
             .service-card-title {
